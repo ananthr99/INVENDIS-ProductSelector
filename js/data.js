@@ -41,6 +41,7 @@ const PRODUCT_IMAGES = {
   'acmeter':     ['assets/images/AC Meter-1.png', 'assets/images/AC Meter-2.png'],
   'bcpmeter':    ['assets/images/Branch Circuit Power Meter.png'],
   'nms':         ['assets/images/NMS.jpg']
+  // New energy meter products (et0071 through et7021) have no product images yet
 };
 
 const PRODUCT_USE_CASES = {
@@ -86,6 +87,40 @@ const PRODUCT_USE_CASES = {
   'dcmeter':     ['Solar PV Monitoring', 'Battery System Monitoring', 'DC Plant Energy Metering', 'Telecom Power Monitoring'],
   'acmeter':     ['AC Distribution Monitoring', 'Motor Current Monitoring', 'Power Quality Analysis', 'Generator Output Metering'],
   'bcpmeter':    ['Panel-Level Energy Sub-metering', 'Data Center PDU Monitoring', 'Building Electrical Audit', 'Branch Circuit Monitoring'],
+  'et0071':      ['Residential Energy Monitoring', 'Tenant Sub-metering', 'Office Power Monitoring', 'Small Industry Metering'],
+  'et0073':      ['Residential Energy Monitoring', 'Tenant Sub-metering', 'DIN Rail Energy Metering', 'Building Sub-metering'],
+  'et0076':      ['CT-based Energy Metering', 'High-current Load Monitoring', 'Industrial Sub-metering', 'Tenant Energy Billing'],
+  'et0077':      ['Single Phase Energy Auditing', 'Office Sub-metering', 'Residential Power Monitoring', 'DIN Rail Metering'],
+  'et1300':      ['Industrial Energy Monitoring', 'Plant Power Metering', 'Three-phase Load Monitoring', 'Energy Cost Allocation'],
+  'et1315':      ['Industrial Energy Auditing', 'Plant Sub-metering', 'Demand Monitoring', 'Energy Cost Allocation'],
+  'et2031':      ['Energy Auditing', 'Power Quality Analysis', 'Load Profiling', 'Industrial Automation'],
+  'et2033':      ['Energy Data Logging', 'Power Quality Analysis', 'Load Profiling', 'Building Energy Management'],
+  'et2035':      ['ELCOM Compliant Metering', 'Power Quality Analysis', 'Industrial Energy Monitoring', 'Sub-metering'],
+  'et2071':      ['Demand Management', 'Plant Energy Monitoring', 'Power Quality Analysis', 'Load Profiling'],
+  'et2081':      ['Dual-Tariff Energy Billing', 'Industrial Power Monitoring', 'Energy Auditing', 'Load Management'],
+  'et2110':      ['Power Quality Monitoring', 'Harmonic Analysis', 'Industrial Energy Management', 'Building Energy Audit'],
+  'et2111':      ['THD Measurement', 'Power Quality Monitoring', 'Industrial Energy Audit', 'Harmonic Analysis'],
+  'et2113':      ['Harmonic Measurement', 'Power Quality Analysis', 'Industrial Energy Audit', 'Load Profiling'],
+  'et3061':      ['Three-phase Energy Sub-metering', 'Industrial Plant Monitoring', 'DIN Rail Power Metering', 'Energy Cost Allocation'],
+  'et4000':      ['Advanced Energy Auditing', 'Industrial Power Monitoring', 'Building Energy Management', 'SCADA Integration'],
+  'et4001':      ['Advanced Energy Monitoring', 'Building Management Systems', 'Industrial Automation', 'Sub-metering'],
+  'et4002':      ['Advanced Energy Auditing', 'Industrial Power Quality', 'Building Energy Management', 'Sub-metering'],
+  'et4021':      ['Advanced Energy Monitoring', 'Industrial Energy Audit', 'Power Quality Analysis', 'SCADA Integration'],
+  'et4031':      ['Relay-controlled Load Management', 'Energy Monitoring with Control', 'Industrial Automation', 'Power Quality'],
+  'et4061':      ['Advanced Energy Monitoring', 'Industrial Power Monitoring', 'Building Energy Management', 'Sub-metering'],
+  'et4062':      ['I/O Enabled Energy Monitoring', 'Industrial Energy Management', 'Building Automation', 'Process Control'],
+  'et4600':      ['AC Power Quality Monitoring', 'THD Analysis', 'Industrial Sub-metering', 'Building Energy Audit'],
+  'et4602ae':    ['AC Distribution Monitoring', 'Motor Current Monitoring', 'Power Quality Analysis', 'Generator Output Metering'],
+  'et5001':      ['Premium Energy Analysis', 'Harmonic Monitoring', 'Industrial Power Quality', 'Advanced Energy Management'],
+  'et6001':      ['IoT Energy Monitoring', 'Remote Energy Management', 'Smart Building', 'Industrial IoT Metering'],
+  'et6030':      ['Multi-circuit Energy Monitoring', 'Floor-level Sub-metering', 'Data Center Energy Metering', 'Complex Building Auditing'],
+  'et8000':      ['Backup Power Management', 'Critical Load Protection', 'Data Center Power Changeover', 'Generator Changeover'],
+  'iot-ac-meter': ['Remote Energy Monitoring', 'Cloud-based Energy Management', 'Smart Building IoT', 'Industrial IoT Metering'],
+  'iot-dc-meter': ['DC Plant Energy Monitoring', 'Solar PV Monitoring', 'Telecom Power Monitoring', 'Battery System Monitoring'],
+  'smart-meter-1ph': ['Utility AMI Metering', 'Smart City Metering', 'Residential Smart Metering', 'Remote Meter Reading'],
+  'smart-meter-3ph': ['Commercial AMI Metering', 'Industrial Smart Metering', 'Smart City Infrastructure', 'Remote Meter Reading'],
+  'elcom-ac-meter': ['ELCOM Compliant Installations', 'AC Distribution Monitoring', 'Power Quality Analysis', 'Industrial Sub-metering'],
+  'et7021':      ['Branch Circuit Sub-metering', 'Single/Three-phase BCPM', 'Panel-level Energy Monitoring', 'Electrical Audit'],
 };
 
 // Per-variant datasheets keyed by the exact part-number string from the last
@@ -196,6 +231,18 @@ const PART_DATASHEETS = {
   'PC310': 'assets/datasheets/PC310.pdf',
   'PC311': 'assets/datasheets/PC311.pdf',
   'PC312': 'assets/datasheets/PC312.pdf',
+  // ET0076 variants
+  'ET0076 32A': 'EnergyProductCatalogue/ET0076 32A.pdf',
+  'ET0076 63A': 'EnergyProductCatalogue/ET0076 63A.pdf',
+  // ET3061 / ET3062 (shared datasheet)
+  'ET3061': 'EnergyProductCatalogue/ET3061 & 3062 Compressed file.pdf',
+  'ET3062': 'EnergyProductCatalogue/ET3061 & 3062 Compressed file.pdf',
+  // ET4001 / ET4001S
+  'ET4001':  'EnergyProductCatalogue/ET4001.pdf',
+  'ET4001S': 'EnergyProductCatalogue/ET4001S.pdf',
+  // ET7021 / ET7023 BCPM
+  'ET7021': 'EnergyProductCatalogue/7021_7023 BCPM 1 Aug 2024.pdf',
+  'ET7023': 'EnergyProductCatalogue/7021_7023 BCPM 1 Aug 2024.pdf',
 };
 
 // Product-level (family) datasheets for products that have no per-variant sheets
@@ -213,4 +260,35 @@ const PRODUCT_DATASHEETS = {
   'mcx':         'assets/datasheets/MC-1.pdf',
   'miniups':     'assets/datasheets/Mini UPS_Metal Enclosure_Datasheet 1.pdf',
   'rn50pcba':    'assets/datasheets/RN50.pdf',
+  // New energy meters — datasheets in EnergyProductCatalogue/
+  'et0071':        'EnergyProductCatalogue/ET0071 rev 2.pdf',
+  'et0073':        'EnergyProductCatalogue/ET0073 Vertical Display.pdf',
+  'et0077':        'EnergyProductCatalogue/ET0077 Horizontal Display.pdf',
+  'et1300':        'EnergyProductCatalogue/ET1300.pdf',
+  'et1315':        'EnergyProductCatalogue/ET1315.pdf',
+  'et2031':        'EnergyProductCatalogue/ET2031.pdf',
+  'et2033':        'EnergyProductCatalogue/ET2033.pdf',
+  'et2035':        'EnergyProductCatalogue/ET2035 (ELCOM) Rev.2.pdf',
+  'et2071':        'EnergyProductCatalogue/ET2071.pdf',
+  'et2081':        'EnergyProductCatalogue/ET2081.pdf',
+  'et2110':        'EnergyProductCatalogue/ET2110 V.1.pdf',
+  'et2111':        'EnergyProductCatalogue/ET2111.pdf',
+  'et2113':        'EnergyProductCatalogue/ET2113.pdf',
+  'et4000':        'EnergyProductCatalogue/ET4000.pdf',
+  'et4002':        'EnergyProductCatalogue/ET4002.pdf',
+  'et4021':        'EnergyProductCatalogue/ET4021.pdf',
+  'et4031':        'EnergyProductCatalogue/ET4031.pdf',
+  'et4061':        'EnergyProductCatalogue/ET4061.pdf',
+  'et4062':        'EnergyProductCatalogue/ET4062.pdf',
+  'et4600':        'EnergyProductCatalogue/ET4600 V.2.pdf',
+  'et4602ae':      'EnergyProductCatalogue/ET4602AE.pdf',
+  'et5001':        'EnergyProductCatalogue/ET5001.pdf',
+  'et6001':        'EnergyProductCatalogue/ET6001.pdf',
+  'et6030':        'EnergyProductCatalogue/ET 6030.pdf',
+  'et8000':        'EnergyProductCatalogue/ET-8000 ATS 20 June 2024 Compress file 1.pdf',
+  'iot-ac-meter':  'EnergyProductCatalogue/Iot Enabled AC meter rev.1.pdf',
+  'iot-dc-meter':  'EnergyProductCatalogue/Iot Enabled DC meter.pdf',
+  'smart-meter-1ph': 'EnergyProductCatalogue/Single phase smart meter 21 March 2024.pdf',
+  'smart-meter-3ph': 'EnergyProductCatalogue/Three phase smart meter 30 may 2024.pdf',
+  'elcom-ac-meter':  'EnergyProductCatalogue/AC Meter Spec ELCOM rev 2.pdf',
 };
