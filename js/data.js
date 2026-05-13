@@ -36,12 +36,166 @@ const PRODUCT_IMAGES = {
   'rn50pcba':    ['assets/images/RN50-PCB-A.png'],
   'rvw50':       ['assets/images/RVW 50-M12.png'],
   'miniups':     ['assets/images/Mini UPS.png'],
-  'multimeter':  ['assets/images/Multi Function Meter.png', 'assets/images/Multi Function Meter-2.png'],
-  'dcmeter':     ['assets/images/DC Meter-1.png', 'assets/images/DC Meter-2.png'],
-  'acmeter':     ['assets/images/AC Meter-1.png', 'assets/images/AC Meter-2.png'],
+  'multimeter':  [
+    'assets/meterimages/4640/DSC_0024.png',
+    'assets/meterimages/4640/DSC_0025.png',
+    'assets/meterimages/4640/DSC_0026.png',
+    'assets/meterimages/4640/DSC_0027.png',
+    'assets/meterimages/4640/DSC_0028.png',
+    'assets/meterimages/4640/DSC_0030.png',
+    'assets/meterimages/4640/DSC_0031.png',
+    'assets/meterimages/4640/DSC_0032.png',
+    'assets/meterimages/4640/DSC_0033.png',
+    'assets/meterimages/4640/DSC_0034.png'
+  ],
+  'dcmeter':     [
+    'assets/meterimages/1641/IMG20240408155017 copy.png',
+    'assets/meterimages/1641/IMG20240408155025 copy.png',
+    'assets/meterimages/1641/IMG20240408155030 copy.png'
+  ],
+  'acmeter':     [
+    'assets/meterimages/4602/IMG20240408154841 copy.png',
+    'assets/meterimages/4602/IMG20240408154919 copy.png',
+    'assets/meterimages/4602/IMG20240408154927 copy.png',
+    'assets/meterimages/4602/IMG20240408154941 copy.png'
+  ],
   'bcpmeter':    ['assets/images/Branch Circuit Power Meter.png'],
-  'nms':         ['assets/images/NMS.jpg']
-  // New energy meter products (et0071 through et7021) have no product images yet
+  'nms':         ['assets/images/NMS.jpg'],
+  'et1300': [
+    'assets/meterimages/1300/ET1300.png',
+    'assets/meterimages/1300/ET_1300.png',
+    'assets/meterimages/1300/ET_1300_1.png',
+    'assets/meterimages/1300/IMG20240408160146 copy.png',
+    'assets/meterimages/1300/IMG20240408160223 copy.png',
+    'assets/meterimages/1300/IMG20240408160235 copy.png',
+    'assets/meterimages/1300/IMG20240408160447 copy.png'
+  ],
+  'et2031': [
+    'assets/meterimages/2031/ET_2031.png',
+    'assets/meterimages/2031/ET_2031_1.png',
+    'assets/meterimages/2031/ET_2031_2.png',
+    'assets/meterimages/2031/IMG20240408155408 copy.png',
+    'assets/meterimages/2031/IMG20240408155418 copy.png',
+    'assets/meterimages/2031/IMG20240408155424 copy.png'
+  ],
+  'et2033': [
+    'assets/meterimages/2033/ET_2033.png',
+    'assets/meterimages/2033/ET_2033_1.png',
+    'assets/meterimages/2033/ET_2033_2.png',
+    'assets/meterimages/2033/IMG20240408155309 copy.png',
+    'assets/meterimages/2033/IMG20240408155323 copy.png',
+    'assets/meterimages/2033/IMG20240408155337 copy.png'
+  ],
+  'et2071': [
+    'assets/meterimages/2071/ET_2071.png',
+    'assets/meterimages/2071/ET_2071_1.png',
+    'assets/meterimages/2071/ET_2071_2.png',
+    'assets/meterimages/ET 2071/ET_2071.jpg',
+    'assets/meterimages/ET 2071/ET_2071_1.jpg',
+    'assets/meterimages/ET 2071/ET_2071_2.jpg',
+    'assets/meterimages/ET 2071/ET_2071_3.jpg'
+  ],
+  'et2081': [
+    'assets/meterimages/2081/ET_2081.png',
+    'assets/meterimages/2081/ET_2081_1.png',
+    'assets/meterimages/2081/ET_2081_2.png',
+    'assets/meterimages/ET 2081/ET_2081.jpg',
+    'assets/meterimages/ET 2081/ET_2081_1.jpg',
+    'assets/meterimages/ET 2081/ET_2081_2.jpg',
+    'assets/meterimages/ET 2081/ET_2081_3.jpg'
+  ],
+  'et2111': [
+    'assets/meterimages/2111/IMG20240408155942 copy.png',
+    'assets/meterimages/2111/IMG20240408155947 copy.png',
+    'assets/meterimages/2111/IMG20240408155954 copy.png'
+  ],
+  'et2113': [
+    'assets/meterimages/2113/IMG20240408155455 copy.png',
+    'assets/meterimages/2113/IMG20240408155511 copy.png',
+    'assets/meterimages/2113/IMG20240408155521 copy.png',
+    'assets/meterimages/2113/IMG20240408155529 copy.png',
+    'assets/meterimages/ET 2113/0V9A2439.jpg',
+    'assets/meterimages/ET 2113/0V9A2440.jpg',
+    'assets/meterimages/ET 2113/0V9A2586.jpg'
+  ],
+  'et3061': [
+    'assets/meterimages/3062/0V9A2475.jpg',
+    'assets/meterimages/3062/0V9A2477.jpg',
+    'assets/meterimages/3062/0V9A2582.jpg'
+  ],
+  'et4000': [
+    'assets/meterimages/4000/ET_4000.png',
+    'assets/meterimages/4000/ET_4000_1.png',
+    'assets/meterimages/4000/IMG20240408155635 copy.png',
+    'assets/meterimages/4000/IMG20240408155645 copy.png',
+    'assets/meterimages/4000/IMG20240408155654 copy.png',
+    'assets/meterimages/4000/IMG20240408160806 copy.png',
+    'assets/meterimages/4000/IMG20240408160811 copy.png',
+    'assets/meterimages/4000/IMG20240408160823 copy.png'
+  ],
+  'et4001': [
+    'assets/meterimages/4001/ET_4001.png',
+    'assets/meterimages/4001/ET_4001_1.png',
+    'assets/meterimages/ET 4001/ET_4001.jpg',
+    'assets/meterimages/ET 4001/ET_4001_1.jpg',
+    'assets/meterimages/4001/IMG20240408160854 copy.png',
+    'assets/meterimages/4001/IMG20240408160902 copy.png'
+  ],
+  'et4002': [
+    'assets/meterimages/4002/IMG20240408160920 copy.png',
+    'assets/meterimages/4002/IMG20240408160926 copy.png',
+    'assets/meterimages/4002/IMG20240408160943 copy.png'
+  ],
+  'et4021': [
+    'assets/meterimages/ET 4021/ET_4021.jpg',
+    'assets/meterimages/ET 4021/ET_4021_1.jpg',
+    'assets/meterimages/ET 4021/ET_4021_2.png',
+    'assets/meterimages/4021/IMG20240408160610 copy.png',
+    'assets/meterimages/4021/IMG20240408160614 copy.png',
+    'assets/meterimages/4021/IMG20240408160629 copy.png'
+  ],
+  'et4031': [
+    'assets/meterimages/4031/ET_4031.png',
+    'assets/meterimages/4031/ET_4031_1.png',
+    'assets/meterimages/ET 4031/0V9A2434.jpg',
+    'assets/meterimages/ET 4031/0V9A2436.jpg',
+    'assets/meterimages/ET 4031/0V9A2583.jpg',
+    'assets/meterimages/4031/IMG20240408155753 copy.png',
+    'assets/meterimages/4031/IMG20240408155803 copy.png',
+    'assets/meterimages/4031/IMG20240408155818 copy.png'
+  ],
+  'et4061': [
+    'assets/meterimages/4061/IMG20240408160533 copy.png',
+    'assets/meterimages/4061/IMG20240408160539 copy.png',
+    'assets/meterimages/4061/IMG20240408160548 copy.png'
+  ],
+  'et4062': [
+    'assets/meterimages/4062/IMG20240408155222 copy.png',
+    'assets/meterimages/4062/IMG20240408155244 copy.png',
+    'assets/meterimages/4062/IMG20240408155854 copy.png',
+    'assets/meterimages/4062/IMG20240408155902 copy.png',
+    'assets/meterimages/4062/IMG20240408155911 copy.png'
+  ],
+  'et5001': [
+    'assets/meterimages/5001/ET_5001.png',
+    'assets/meterimages/5001/ET_5001_1.png',
+    'assets/meterimages/5001/ET_5001_2.png',
+    'assets/meterimages/ET 5001/ET_5001.jpg',
+    'assets/meterimages/5001/IMG20240408160958 copy.png',
+    'assets/meterimages/5001/IMG20240408161004 copy.png',
+    'assets/meterimages/5001/IMG20240408161012 copy.png'
+  ],
+  'et6001': [
+    'assets/meterimages/6001/IMG20240408160737 copy.png',
+    'assets/meterimages/6001/IMG20240408160744 copy.png',
+    'assets/meterimages/6001/IMG20240408160750 copy.png',
+    'assets/meterimages/ET 6001/ET 6001(1).jpg'
+  ],
+  'et8000': [
+    'assets/meterimages/8000/ET_8000.png',
+    'assets/meterimages/8000/ET_8000_1.png',
+    'assets/meterimages/8000/ET_8000_2.png'
+  ]
 };
 
 const PRODUCT_USE_CASES = {
@@ -232,17 +386,17 @@ const PART_DATASHEETS = {
   'PC311': 'assets/datasheets/PC311.pdf',
   'PC312': 'assets/datasheets/PC312.pdf',
   // ET0076 variants
-  'ET0076 32A': 'EnergyProductCatalogue/ET0076 32A.pdf',
-  'ET0076 63A': 'EnergyProductCatalogue/ET0076 63A.pdf',
+  'ET0076 32A': 'assets/meterdatasheets/ET0076 32A.pdf',
+  'ET0076 63A': 'assets/meterdatasheets/ET0076 63A.pdf',
   // ET3061 / ET3062 (shared datasheet)
-  'ET3061': 'EnergyProductCatalogue/ET3061 & 3062 Compressed file.pdf',
-  'ET3062': 'EnergyProductCatalogue/ET3061 & 3062 Compressed file.pdf',
+  'ET3061': 'assets/meterdatasheets/ET3061 & 3062 Compressed file.pdf',
+  'ET3062': 'assets/meterdatasheets/ET3061 & 3062 Compressed file.pdf',
   // ET4001 / ET4001S
-  'ET4001':  'EnergyProductCatalogue/ET4001.pdf',
-  'ET4001S': 'EnergyProductCatalogue/ET4001S.pdf',
+  'ET4001':  'assets/meterdatasheets/ET4001.pdf',
+  'ET4001S': 'assets/meterdatasheets/ET4001S.pdf',
   // ET7021 / ET7023 BCPM
-  'ET7021': 'EnergyProductCatalogue/7021_7023 BCPM 1 Aug 2024.pdf',
-  'ET7023': 'EnergyProductCatalogue/7021_7023 BCPM 1 Aug 2024.pdf',
+  'ET7021': 'assets/meterdatasheets/7021_7023 BCPM 1 Aug 2024.pdf',
+  'ET7023': 'assets/meterdatasheets/7021_7023 BCPM 1 Aug 2024.pdf',
 };
 
 // Product-level (family) datasheets for products that have no per-variant sheets
@@ -260,35 +414,35 @@ const PRODUCT_DATASHEETS = {
   'mcx':         'assets/datasheets/MC-1.pdf',
   'miniups':     'assets/datasheets/Mini UPS_Metal Enclosure_Datasheet 1.pdf',
   'rn50pcba':    'assets/datasheets/RN50.pdf',
-  // New energy meters — datasheets in EnergyProductCatalogue/
-  'et0071':        'EnergyProductCatalogue/ET0071 rev 2.pdf',
-  'et0073':        'EnergyProductCatalogue/ET0073 Vertical Display.pdf',
-  'et0077':        'EnergyProductCatalogue/ET0077 Horizontal Display.pdf',
-  'et1300':        'EnergyProductCatalogue/ET1300.pdf',
-  'et1315':        'EnergyProductCatalogue/ET1315.pdf',
-  'et2031':        'EnergyProductCatalogue/ET2031.pdf',
-  'et2033':        'EnergyProductCatalogue/ET2033.pdf',
-  'et2035':        'EnergyProductCatalogue/ET2035 (ELCOM) Rev.2.pdf',
-  'et2071':        'EnergyProductCatalogue/ET2071.pdf',
-  'et2081':        'EnergyProductCatalogue/ET2081.pdf',
-  'et2110':        'EnergyProductCatalogue/ET2110 V.1.pdf',
-  'et2111':        'EnergyProductCatalogue/ET2111.pdf',
-  'et2113':        'EnergyProductCatalogue/ET2113.pdf',
-  'et4000':        'EnergyProductCatalogue/ET4000.pdf',
-  'et4002':        'EnergyProductCatalogue/ET4002.pdf',
-  'et4021':        'EnergyProductCatalogue/ET4021.pdf',
-  'et4031':        'EnergyProductCatalogue/ET4031.pdf',
-  'et4061':        'EnergyProductCatalogue/ET4061.pdf',
-  'et4062':        'EnergyProductCatalogue/ET4062.pdf',
-  'et4600':        'EnergyProductCatalogue/ET4600 V.2.pdf',
-  'et4602ae':      'EnergyProductCatalogue/ET4602AE.pdf',
-  'et5001':        'EnergyProductCatalogue/ET5001.pdf',
-  'et6001':        'EnergyProductCatalogue/ET6001.pdf',
-  'et6030':        'EnergyProductCatalogue/ET 6030.pdf',
-  'et8000':        'EnergyProductCatalogue/ET-8000 ATS 20 June 2024 Compress file 1.pdf',
-  'iot-ac-meter':  'EnergyProductCatalogue/Iot Enabled AC meter rev.1.pdf',
-  'iot-dc-meter':  'EnergyProductCatalogue/Iot Enabled DC meter.pdf',
-  'smart-meter-1ph': 'EnergyProductCatalogue/Single phase smart meter 21 March 2024.pdf',
-  'smart-meter-3ph': 'EnergyProductCatalogue/Three phase smart meter 30 may 2024.pdf',
-  'elcom-ac-meter':  'EnergyProductCatalogue/AC Meter Spec ELCOM rev 2.pdf',
+  // New energy meters — datasheets in assets/meterdatasheets/
+  'et0071':        'assets/meterdatasheets/ET0071 rev 2.pdf',
+  'et0073':        'assets/meterdatasheets/ET0073 Vertical Display.pdf',
+  'et0077':        'assets/meterdatasheets/ET0077 Horizontal Display.pdf',
+  'et1300':        'assets/meterdatasheets/ET1300.pdf',
+  'et1315':        'assets/meterdatasheets/ET1315.pdf',
+  'et2031':        'assets/meterdatasheets/ET2031.pdf',
+  'et2033':        'assets/meterdatasheets/ET2033.pdf',
+  'et2035':        'assets/meterdatasheets/ET2035 (ELCOM) Rev.2.pdf',
+  'et2071':        'assets/meterdatasheets/ET2071.pdf',
+  'et2081':        'assets/meterdatasheets/ET2081.pdf',
+  'et2110':        'assets/meterdatasheets/ET2110 V.1.pdf',
+  'et2111':        'assets/meterdatasheets/ET2111.pdf',
+  'et2113':        'assets/meterdatasheets/ET2113.pdf',
+  'et4000':        'assets/meterdatasheets/ET4000.pdf',
+  'et4002':        'assets/meterdatasheets/ET4002.pdf',
+  'et4021':        'assets/meterdatasheets/ET4021.pdf',
+  'et4031':        'assets/meterdatasheets/ET4031.pdf',
+  'et4061':        'assets/meterdatasheets/ET4061.pdf',
+  'et4062':        'assets/meterdatasheets/ET4062.pdf',
+  'et4600':        'assets/meterdatasheets/ET4600 V.2.pdf',
+  'et4602ae':      'assets/meterdatasheets/ET4602AE.pdf',
+  'et5001':        'assets/meterdatasheets/ET5001.pdf',
+  'et6001':        'assets/meterdatasheets/ET6001.pdf',
+  'et6030':        'assets/meterdatasheets/ET 6030.pdf',
+  'et8000':        'assets/meterdatasheets/ET-8000 ATS 20 June 2024 Compress file 1.pdf',
+  'iot-ac-meter':  'assets/meterdatasheets/Iot Enabled AC meter rev.1.pdf',
+  'iot-dc-meter':  'assets/meterdatasheets/Iot Enabled DC meter.pdf',
+  'smart-meter-1ph': 'assets/meterdatasheets/Single phase smart meter 21 March 2024.pdf',
+  'smart-meter-3ph': 'assets/meterdatasheets/Three phase smart meter 30 may 2024.pdf',
+  'elcom-ac-meter':  'assets/meterdatasheets/AC Meter Spec ELCOM rev 2.pdf',
 };

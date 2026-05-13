@@ -4,7 +4,7 @@ function getFiltered() {
   const fWifi = document.getElementById('fWifi').value;
   const fPorts = document.getElementById('fPorts').value;
   const fSerial = document.getElementById('fSerial').value;
-  return PRODUCTS.filter(p => {
+  const results = PRODUCTS.filter(p => {
     if (activeCat !== 'All' && p.cat !== activeCat) return false;
     if (q && !p.name.toLowerCase().includes(q) && !p.desc.toLowerCase().includes(q) && !p.cat.toLowerCase().includes(q) && !p.cpu.toLowerCase().includes(q)) return false;
     if (fCell === '5G' && p.cellular_gen !== '5G') return false;
@@ -23,6 +23,13 @@ function getFiltered() {
     if (fSerial === 'both' && !(p.rs485 && p.rs232)) return false;
     return true;
   });
+  results.sort((a, b) => {
+    const aHasImg = !!(PRODUCT_IMAGES[a.id] && PRODUCT_IMAGES[a.id].length);
+    const bHasImg = !!(PRODUCT_IMAGES[b.id] && PRODUCT_IMAGES[b.id].length);
+    if (aHasImg === bHasImg) return 0;
+    return aHasImg ? -1 : 1;
+  });
+  return results;
 }
 
 function hasActiveFilters() {
