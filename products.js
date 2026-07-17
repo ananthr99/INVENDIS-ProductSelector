@@ -395,7 +395,7 @@ const PRODUCTS_DATA = [
     "power": "12 VDC",
     "ports": 4,
     "os": "OpenWRT Linux",
-    "desc": "Dual-modem 4G/3G/2G router with Wi-Fi 2.4 GHz, 1× WAN + 3× LAN",
+    "desc": "Dual-modem 4G/3G/2G router with Wi-Fi 4, 1× WAN + 3× LAN",
     "housing": "Sheet Metal",
     "dims": "123×28×121 mm",
     "weight": "360 g",
@@ -403,7 +403,7 @@ const PRODUCTS_DATA = [
     "variants": {
       "headers": ["Cellular", "Wi-Fi", "4G/5G", "No. of Modems", "Part Number"],
       "rows": [
-        ["✓", "Wi-Fi 2.4", "4G", "Dual", "RE44"],
+        ["✓", "Wi-Fi 4", "4G", "Dual", "RE44"],
         ["✓", "—", "4G", "Dual", "RE04"]
       ]
     }
@@ -432,7 +432,7 @@ const PRODUCTS_DATA = [
     "variants": {
       "headers": ["Cellular", "Wi-Fi", "4G/5G", "RS485", "No. of Modems", "Part Number"],
       "rows": [
-        ["✓", "Wi-Fi 2.4", "4G", "✓", "Single", "RI44"]
+        ["✓", "Wi-Fi 4", "4G", "✓", "Single", "RI44"]
       ]
     }
   },
@@ -547,11 +547,11 @@ const PRODUCTS_DATA = [
     "weight": "280 g",
     "op_temp": "-20–60 °C",
     "variants": {
-      "headers": ["Cellular", "Wi-Fi", "4G/5G", "No. of Modems", "Part Number"],
+      "headers": ["Cellular", "Wi-Fi", "4G/5G", "RS485", "No. of Modems", "Part Number"],
       "rows": [
-        ["✓", "Wi-Fi", "4G", "Single", "IE44-A"],
-        ["✓", "Wi-Fi", "4G", "Single", "IE44-C"],
-        ["✓", "Wi-Fi", "4G", "Single", "IE44-A-EX1 (e-SIM)"]
+        ["✓", "Wi-Fi", "4G", "✓", "Single", "IE44-A"],
+        ["✓", "Wi-Fi", "4G", "✓", "Single", "IE44-C"],
+        ["✓", "Wi-Fi", "4G", "✓", "Single", "IE44-A-EX1 (e-SIM)"]
       ]
     }
   },
@@ -579,10 +579,10 @@ const PRODUCTS_DATA = [
     "variants": {
       "headers": ["Cellular", "Wi-Fi", "4G/5G", "RS485", "No. of Modems", "Part Number"],
       "rows": [
-        ["✓", "Wi-Fi 2.4", "4G", "✓", "Single", "IA44-C"],
-        ["✓", "Wi-Fi 2.4", "4G", "✓", "Single", "IA44-B (4 GB eMMC)"],
-        ["✓", "Wi-Fi 2.4", "4G", "—", "Single", "IA44-A"],
-        ["—", "Wi-Fi 2.4", "—", "✓", "—", "IA40-C"]
+        ["✓", "Wi-Fi 4", "4G", "✓", "Single", "IA44-C"],
+        ["✓", "Wi-Fi 4", "4G", "✓", "Single", "IA44-B (4 GB eMMC)"],
+        ["✓", "Wi-Fi 4", "4G", "—", "Single", "IA44-A"],
+        ["—", "Wi-Fi 4", "—", "✓", "—", "IA40-C"]
       ]
     }
   },
@@ -610,9 +610,9 @@ const PRODUCTS_DATA = [
     "variants": {
       "headers": ["Cellular", "Wi-Fi", "RS485", "DIO", "4G/5G", "No. of Modems", "Part Number"],
       "rows": [
-        ["✓", "Wi-Fi 2.4", "—", "—", "4G", "Single", "RFN44-A"],
-        ["✓", "Wi-Fi 2.4", "✓", "—", "4G", "Single", "RFN44-B (RS485)"],
-        ["✓", "Wi-Fi 2.4", "—", "✓", "4G", "Single", "RFN44-C (1× DI, 1× DO)"]
+        ["✓", "Wi-Fi 4", "—", "—", "4G", "Single", "RFN44-A"],
+        ["✓", "Wi-Fi 4", "✓", "—", "4G", "Single", "RFN44-B (RS485)"],
+        ["✓", "Wi-Fi 4", "—", "✓", "4G", "Single", "RFN44-C (1× DI, 1× DO)"]
       ]
     }
   },
@@ -640,8 +640,8 @@ const PRODUCTS_DATA = [
     "variants": {
       "headers": ["Cellular", "Wi-Fi", "RS485", "RS232", "4G/5G", "No. of Modems", "Part Number"],
       "rows": [
-        ["✓", "Wi-Fi 2.4", "✓", "✓", "4G", "Single", "IAB44-C"],
-        ["✓", "Wi-Fi 2.4", "✓", "✓", "4G", "Single", "IAB44-B (4 GB eMMC)"],
+        ["✓", "Wi-Fi 4", "✓", "✓", "4G", "Single", "IAB44-C"],
+        ["✓", "Wi-Fi 4", "✓", "✓", "4G", "Single", "IAB44-B (4 GB eMMC)"],
         ["✓", "—", "✓", "✓", "4G", "Single", "IAB04-B (4 GB eMMC)"],
         ["✓", "—", "✓", "✓", "4G", "Single", "IAB04-C"]
       ]
@@ -671,8 +671,8 @@ const PRODUCTS_DATA = [
     "variants": {
       "headers": ["Cellular", "Wi-Fi", "RS485", "4G/5G", "No. of Modems", "Part Number"],
       "rows": [
-        ["✓", "Wi-Fi 2.4", "✓", "4G", "Single", "IAC44-C"],
-        ["✓", "Wi-Fi 2.4", "—", "4G", "Single", "IAC44-A"],
+        ["✓", "Wi-Fi 4", "✓", "4G", "Single", "IAC44-C"],
+        ["✓", "Wi-Fi 4", "—", "4G", "Single", "IAC44-A"],
         ["✓", "—", "—", "4G", "Single", "IAC04-A"],
         ["✓", "—", "✓", "4G", "Single", "IAC04-C"]
       ]
@@ -702,8 +702,8 @@ const PRODUCTS_DATA = [
     "variants": {
       "headers": ["Cellular", "Wi-Fi", "4G/5G", "RS485", "No. of Modems", "Part Number"],
       "rows": [
-        ["✓", "Wi-Fi 2.4", "4G", "—", "Single", "IAF44-C1"],
-        ["✓", "Wi-Fi 2.4", "4G", "✓", "Single", "IAF44-C2"],
+        ["✓", "Wi-Fi 4", "4G", "—", "Single", "IAF44-C1"],
+        ["✓", "Wi-Fi 4", "4G", "✓", "Single", "IAF44-C2"],
         ["✓", "—", "4G", "✓", "Single", "IAF04-C2"],
         ["—", "—", "4G", "—", "Single", "IAF04-C1"]
       ]
@@ -985,7 +985,7 @@ const PRODUCTS_DATA = [
     "power": "12–24 VDC",
     "ports": 1,
     "os": "OpenWRT Linux",
-    "desc": "Serial-to-Ethernet converter with 2× RS485 and optional Wi-Fi 2.4 GHz",
+    "desc": "Serial-to-Ethernet converter with 2× RS485 and optional Wi-Fi 4",
     "housing": "Sheet Metal",
     "dims": "80×26×78 mm",
     "weight": "400 g",
@@ -995,13 +995,13 @@ const PRODUCTS_DATA = [
       "rows": [
         ["—", "—", "✓", "1", "PC310"],
         ["—", "—", "✓", "2", "PC311"],
-        ["—", "Wi-Fi 2.4", "✓", "1", "PC312"]
+        ["—", "Wi-Fi 4", "✓", "1", "PC312"]
       ]
     }
   },
   {
     "id": "multimeter",
-    "name": "Multi-Function Meter",
+    "name": "ET7022",
     "cat": "Energy Meter",
     "cpu": "—",
     "ram": "—",
@@ -1024,7 +1024,7 @@ const PRODUCTS_DATA = [
   },
   {
     "id": "dcmeter",
-    "name": "DC Meter",
+    "name": "ET1641",
     "cat": "Energy Meter",
     "cpu": "—",
     "ram": "—",
@@ -1047,7 +1047,7 @@ const PRODUCTS_DATA = [
   },
   {
     "id": "acmeter",
-    "name": "AC Meter",
+    "name": "ET4602",
     "cat": "Energy Meter",
     "cpu": "—",
     "ram": "—",

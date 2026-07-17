@@ -136,13 +136,28 @@ function openDetail(id) {
         ${buildImageCarousel(p.id, p.name)}
         ${(PRODUCT_USE_CASES[p.id]||[]).length ? `<div class="modal-use-cases"><div class="modal-use-cases-label">Typical Use Cases</div><div class="modal-use-cases-chips">${(PRODUCT_USE_CASES[p.id]).map(u=>`<span class="use-case-chip">${u}</span>`).join('')}</div></div>` : ''}
         <div class="modal-body">
+          ${p.cat === 'Energy Meter' ? `
+          <div class="spec-section">
+            <div class="spec-section-title">Communication</div>
+            ${srow('RS485 / Modbus', rsLabel(p.rs485, p.variants, 'RS485'))}
+            ${srow('RS232', rsLabel(p.rs232, p.variants, 'RS232'))}
+            ${srow('Power supply', p.power)}
+          </div>
+          <div class="spec-section">
+            <div class="spec-section-title">Physical</div>
+            ${srow('Enclosure', p.housing)}
+            ${p.ip ? srow('IP Rating', p.ip) : ''}
+            ${srow('Dimensions', p.dims || '—')}
+            ${srow('Weight', p.weight || '—')}
+            ${srow('Operating temp', p.op_temp || '—')}
+          </div>` : `
           <div class="spec-section">
             <div class="spec-section-title">Connectivity</div>
             ${srow('Cellular',p.cellular_gen==='none'?'None':p.cell)}
             ${srow('Wi-Fi',wifiLabel(p.wifi))}
             ${srow('Ethernet ports',p.ports>0?p.ports+' ports':'N/A')}
-            ${srow('RS485',p.rs485?'Yes':'No')}
-            ${srow('RS232',p.rs232?'Yes':'No')}
+            ${srow('RS485',rsLabel(p.rs485, p.variants, 'RS485'))}
+            ${srow('RS232',rsLabel(p.rs232, p.variants, 'RS232'))}
           </div>
           <div class="spec-section">
             <div class="spec-section-title">Hardware</div>
@@ -156,7 +171,7 @@ function openDetail(id) {
             ${srow('Weight',p.weight||'—')}
             ${srow('Operating temp',p.op_temp||'—')}
           </div>
-          ${p.os&&p.os!=='—'?`<div class="spec-section"><div class="spec-section-title">Software</div>${srow('Operating system',p.os)}</div>`:''}
+          ${p.os&&p.os!=='—'?`<div class="spec-section"><div class="spec-section-title">Software</div>${srow('Operating system',p.os)}</div>`:''}`}
           ${buildVariantsTable(p.variants)}
           ${buildDatasheetsSection(p.id)}
         </div>
