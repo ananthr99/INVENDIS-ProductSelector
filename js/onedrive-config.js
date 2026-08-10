@@ -11,7 +11,7 @@ const ONEDRIVE_CONFIG = {
 
   // The drive ID of the admin's OneDrive — all users access this one drive regardless of who is logged in.
   // Leave blank initially, then go to Setup tab → Drive ID card, click Fetch, and paste the value here.
-  driveId: '',
+  driveId: 'b!z7x5W35VhUKVFJt2-MUdiOFbnnWJBKNIvHvPPfHmM_IWj7HO3XogRY93in8gJxpA',
 
   // GitHub repo where images and datasheets are stored (must match your GitHub Pages repo).
   githubOwner: 'ananthr99',
