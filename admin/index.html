@@ -846,6 +846,10 @@ async function saveProduct() {
   p.images    = [...currentImgs, ...newImageUrls];
   p.datasheet = currentDs || null;
 
+  // Re-read latest Gist data before writing so we don't overwrite concurrent changes by others.
+  updateOverlay('Syncing latest data…');
+  try { await readFromGist(); } catch {}
+
   const idx   = products.findIndex(x => x.id === p.id);
   const isNew = idx < 0;
   if (idx >= 0) {
@@ -881,6 +885,7 @@ async function deleteProduct() {
   const p = products.find(x => x.id === selectedId);
   if (!p || !confirm(`Delete "${p.name}"? This cannot be undone.`)) return;
   showOverlay('Deleting…');
+  try { await readFromGist(); } catch {}
   products = products.filter(x => x.id !== selectedId);
   try { await writeExcel(); await writeJson(); }
   catch(e) { showToast('Delete failed: ' + e.message, 'err'); hideOverlay(); return; }
@@ -897,6 +902,8 @@ async function saveCats() {
   cats = [...document.querySelectorAll('.cat-row-input')].map(i => i.value.trim()).filter(Boolean);
   showOverlay('Saving categories…');
   try {
+    try { await readFromGist(); } catch {}
+    cats = [...document.querySelectorAll('.cat-row-input')].map(i => i.value.trim()).filter(Boolean);
     await writeExcel(); await writeJson(); renderSidebar(); renderCatDropdown(); hideOverlay();
     showToast('Categories saved!', 'ok');
     logChange('Updated categories', cats.slice(0, 6).join(', ') + (cats.length > 6 ? '…' : ''));
