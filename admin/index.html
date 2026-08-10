@@ -178,8 +178,30 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#f4f6f9;color:#1a1d23
 .toast.show{opacity:1}
 .toast.err{background:#dc2626}
 .toast.ok{background:#059669}
+.toast.warn{background:#b45309}
 .overlay{position:fixed;inset:0;background:rgba(255,255,255,.88);display:none;align-items:center;justify-content:center;flex-direction:column;gap:12px;z-index:150}
 .overlay p{font-size:14px;color:#374151}
+
+/* ── Log toolbar ── */
+.log-toolbar{display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.log-toolbar-left{display:flex;align-items:center;gap:6px;flex:1;font-size:12px;color:#6b7280}
+.log-toolbar-left input[type=checkbox]{accent-color:#1A6FC4;cursor:pointer;width:13px;height:13px}
+.log-entry{display:flex;gap:10px;padding:9px 12px;background:#fff;border:1px solid #e5e7eb;border-radius:7px;margin-bottom:5px;align-items:flex-start}
+.log-entry-cb{accent-color:#1A6FC4;cursor:pointer;width:13px;height:13px;margin-top:4px;flex-shrink:0}
+.btn-log-del{background:none;border:1px solid #e5e7eb;border-radius:6px;padding:4px 10px;font-family:inherit;font-size:12px;color:#6b7280;cursor:pointer;transition:all .15s}
+.btn-log-del:hover{border-color:#dc2626;color:#dc2626}
+.btn-log-del.danger:hover{background:#dc2626;color:#fff;border-color:#dc2626}
+
+/* ── Sync diff ── */
+.sync-diff{margin-top:10px;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;font-size:13px}
+.sync-diff-row{display:flex;align-items:flex-start;gap:10px;padding:9px 12px;border-bottom:1px solid #f0f0f0}
+.sync-diff-row:last-child{border-bottom:none}
+.sync-diff-badge{font-size:10px;font-weight:700;letter-spacing:.04em;border-radius:4px;padding:2px 6px;flex-shrink:0;margin-top:2px}
+.s-add{background:#D1FAE5;color:#065F46}.s-rem{background:#FEE2E2;color:#991B1B}.s-mod{background:#FEF3C7;color:#92400E}.s-ok{background:#EFF6FF;color:#1e40af}
+.sync-diff-name{font-weight:500;color:#1a1d23;font-size:13px}
+.sync-diff-detail{color:#6b7280;margin-top:2px;font-size:11px;font-family:'DM Mono',monospace}
+.btn-overwrite{background:#dc2626;color:#fff;border:none;border-radius:7px;padding:8px 18px;font-family:inherit;font-size:13px;font-weight:500;cursor:pointer;margin-top:12px;transition:background .15s;display:none}
+.btn-overwrite:hover{background:#b91c1c}
 </style>
 </head>
 <body>
@@ -401,6 +423,13 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#f4f6f9;color:#1a1d23
             <p style="margin-top:6px"><span class="dot" id="dotGH"></span><span id="statusGH"></span></p>
             <p style="margin-top:6px"><span class="dot" id="dotUrl"></span><span id="statusUrl"></span></p>
           </div>
+          <div class="info-card">
+            <h4>Manual Sync — Repo → Gist</h4>
+            <p style="font-size:13px;color:#6b7280;margin-bottom:10px">Recovery tool: compares what is in <code style="font-family:'DM Mono',monospace;background:#f4f6f9;padding:1px 4px;border-radius:3px;font-size:11px">data/products.json</code> (GitHub repo) against the live Gist. Use this to restore the Gist if it has bad or missing data.</p>
+            <button class="btn-get" onclick="loadSyncComparison()">Load &amp; Compare</button>
+            <div id="syncDiffPanel" style="display:none;margin-top:12px"></div>
+            <button class="btn-overwrite" id="btnOverwriteGist" onclick="overwriteGistFromRepo()">Overwrite Gist with Repo Content</button>
+          </div>
         </div>
       </div>
 
@@ -410,6 +439,14 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#f4f6f9;color:#1a1d23
           <div class="changelog-header">
             <h2>Activity Log</h2>
             <button class="btn-refresh" onclick="loadChangelog()">Refresh</button>
+          </div>
+          <div id="logToolbar" class="log-toolbar" style="display:none">
+            <div class="log-toolbar-left">
+              <input type="checkbox" id="logSelectAll" onchange="toggleSelectAllLogs(this.checked)" title="Select all">
+              <span>Select all</span>
+            </div>
+            <button class="btn-log-del" onclick="deleteSelectedLogs()">Delete Selected</button>
+            <button class="btn-log-del danger" onclick="deleteAllLogs()">Delete All</button>
           </div>
           <div id="changelogContent"><p style="color:#9ca3af;font-size:13px">Loading…</p></div>
         </div>
@@ -487,6 +524,8 @@ let folderCtx   = null; // resolved after login: { ownDrive:true } | { driveId, 
 let products    = [];
 let cats        = [];
 let selectedId  = null;
+let lastGistJson  = null; // snapshot of last successfully written Gist content, used for rollback
+let _syncRepoJson = null; // repo JSON fetched by loadSyncComparison(), used by overwriteGistFromRepo()
 let currentImgs = [];   // existing image URLs for the selected product
 let pendingImgs = [];   // [{file, dataUrl}] not yet uploaded
 let pendingDs   = null; // File object pending upload
@@ -635,6 +674,7 @@ async function readFromGist() {
   const data    = await res.json();
   const content = data.files?.['products.json']?.content;
   if (!content) throw new Error('products.json not found in Gist');
+  lastGistJson = content; // snapshot for rollback if a subsequent write partially fails
   const parsed = JSON.parse(content);
   products = (parsed.products || []).sort((a, b) => a.order - b.order);
   cats     = parsed.cats || [];
@@ -695,11 +735,13 @@ async function writeJson() {
   const jsonStr = JSON.stringify(buildJsonData(), null, 2);
   const bytes   = new TextEncoder().encode(jsonStr);
 
-  // Upload to own OneDrive backup only if the admin is running (own drive available).
+  // Non-critical OneDrive backup — failure here never blocks the save.
   if (!folderCtx.noOneDrive) {
-    try { await uploadFile(`${FOLDER}/products.json`, bytes.buffer, 'application/json'); } catch { /* non-critical backup */ }
+    try { await uploadFile(`${FOLDER}/products.json`, bytes.buffer, 'application/json'); } catch {}
   }
 
+  // Step 1: Write to Gist (primary live source).
+  // If this throws, the repo is untouched — no rollback needed, just propagate.
   const gistData = await pushToGist(jsonStr);
   if (gistData && !CFG.gistId) {
     const rawUrl = `https://gist.githubusercontent.com/${gistData.owner.login}/${gistData.id}/raw/products.json`;
@@ -707,8 +749,20 @@ async function writeJson() {
     showGistInfo(gistData.id, rawUrl);
   }
 
-  // Also commit data/products.json to the repo so it stays in sync with the Gist.
-  try { await pushFileToGitHub('data/products.json', bytes.buffer, 'Update products catalogue'); } catch {}
+  // Step 2: Write to repo — must stay in sync with the Gist.
+  // If this fails, roll back the Gist to its previous state so both stay consistent.
+  try {
+    await pushFileToGitHub('data/products.json', bytes.buffer, 'Update products catalogue');
+  } catch(repoErr) {
+    console.error('[Admin] Repo sync failed — rolling back Gist to previous state:', repoErr.message);
+    if (lastGistJson) {
+      try { await pushToGist(lastGistJson); }
+      catch(rbErr) { console.error('[Admin] Gist rollback also failed:', rbErr.message); }
+    }
+    throw new Error('Gist rolled back. Please try again.');
+  }
+
+  lastGistJson = jsonStr; // update snapshot after both writes succeed
 }
 
 async function pushToGist(jsonStr) {
@@ -904,11 +958,11 @@ async function deleteProduct() {
 
 // ─── Save Categories ──────────────────────────────────────────────────────────
 async function saveCats() {
-  cats = [...document.querySelectorAll('.cat-row-input')].map(i => i.value.trim()).filter(Boolean);
+  cats = [...document.querySelectorAll('.cat-row-input')].map(i => i.value.trim()).filter(c => c && c.toLowerCase() !== 'all');
   showOverlay('Saving categories…');
   try {
     try { await readFromGist(); } catch {}
-    cats = [...document.querySelectorAll('.cat-row-input')].map(i => i.value.trim()).filter(Boolean);
+    cats = [...document.querySelectorAll('.cat-row-input')].map(i => i.value.trim()).filter(c => c && c.toLowerCase() !== 'all');
     await writeExcel(); await writeJson(); renderSidebar(); renderCatDropdown(); hideOverlay();
     showToast('Categories saved!', 'ok');
     logChange('Updated categories', cats.slice(0, 6).join(', ') + (cats.length > 6 ? '…' : ''));
@@ -918,7 +972,8 @@ async function saveCats() {
 
 // ─── Sidebar ──────────────────────────────────────────────────────────────────
 function renderSidebar() {
-  document.getElementById('catPills').innerHTML = ['', ...cats].map(c => `
+  const safeCats = cats.filter(c => c.toLowerCase() !== 'all');
+  document.getElementById('catPills').innerHTML = ['', ...safeCats].map(c => `
     <button class="cat-pill ${sidebarCat === c ? 'active' : ''}"
       onclick="setSidebarCat('${esc(c)}')">${c || 'All'}</button>`).join('');
 
@@ -1001,8 +1056,9 @@ function hideEditForm() {
 // ─── Category Dropdown ────────────────────────────────────────────────────────
 function renderCatDropdown(selected) {
   const sel = document.getElementById('fCat');
-  sel.innerHTML = cats.length
-    ? cats.map(c => `<option value="${esc(c)}" ${c===selected?'selected':''}>${esc(c)}</option>`).join('')
+  const safeCats = cats.filter(c => c.toLowerCase() !== 'all');
+  sel.innerHTML = safeCats.length
+    ? safeCats.map(c => `<option value="${esc(c)}" ${c===selected?'selected':''}>${esc(c)}</option>`).join('')
     : '<option value="">— add categories first —</option>';
 }
 
@@ -1076,6 +1132,7 @@ function renderCatList() {
 function addCat() {
   const inp = document.getElementById('newCatInput');
   const val = inp.value.trim(); if (!val) return;
+  if (val.toLowerCase() === 'all') { showToast('"All" is reserved — it is added automatically', 'err'); return; }
   cats.push(val); renderCatList(); inp.value = '';
 }
 function removeCat(i) { cats.splice(i,1); renderCatList(); }
@@ -1220,27 +1277,32 @@ async function loadChangelog() {
 }
 
 function renderChangelog(entries) {
-  const el = document.getElementById('changelogContent');
+  const el      = document.getElementById('changelogContent');
+  const toolbar = document.getElementById('logToolbar');
   if (!entries.length) {
     el.innerHTML = '<p style="color:#9ca3af;font-size:13px">No activity recorded yet — changes will appear here after the first save.</p>';
+    toolbar.style.display = 'none';
     return;
   }
+  toolbar.style.display = 'flex';
+  document.getElementById('logSelectAll').checked = false;
   const todayLabel     = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
   const yesterdayLabel = new Date(Date.now() - 86400000).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
   const groups = {};
-  entries.forEach(e => {
+  entries.forEach((e, idx) => {
     const raw     = new Date(e.ts).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
     const display = raw === todayLabel ? 'Today' : raw === yesterdayLabel ? 'Yesterday' : raw;
     if (!groups[display]) groups[display] = [];
-    groups[display].push(e);
+    groups[display].push({ e, idx });
   });
   el.innerHTML = Object.entries(groups).map(([label, items]) => `
     <div class="log-date-group">
       <div class="log-date-label">${label}</div>
-      ${items.map(e => {
+      ${items.map(({ e, idx }) => {
         const time = new Date(e.ts).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
         return `<div class="log-entry">
-          <div class="log-entry-dot"></div>
+          <input type="checkbox" class="log-entry-cb" data-idx="${idx}">
+          <div class="log-entry-dot" style="margin-top:4px"></div>
           <div class="log-body">
             <div class="log-action">${esc(e.action)}${e.detail ? ' — ' + esc(e.detail) : ''}</div>
             ${e.changes ? `<div class="log-changes">${esc(e.changes)}</div>` : ''}
@@ -1249,6 +1311,166 @@ function renderChangelog(entries) {
         </div>`;
       }).join('')}
     </div>`).join('');
+}
+
+function toggleSelectAllLogs(checked) {
+  document.querySelectorAll('.log-entry-cb').forEach(cb => cb.checked = checked);
+}
+
+async function deleteSelectedLogs() {
+  const checked = [...document.querySelectorAll('.log-entry-cb:checked')];
+  if (!checked.length) { showToast('Select entries to delete first', 'err'); return; }
+  if (!confirm(`Delete ${checked.length} selected log ${checked.length === 1 ? 'entry' : 'entries'}?`)) return;
+  const indices = new Set(checked.map(cb => Number(cb.dataset.idx)));
+  const token = getGithubToken();
+  if (!token || !CFG.gistId) { showToast('GitHub token required', 'err'); return; }
+  showOverlay('Deleting selected logs…');
+  try {
+    const r = await fetch(`https://api.github.com/gists/${CFG.gistId}`, {
+      headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' },
+      cache: 'no-store'
+    });
+    if (!r.ok) throw new Error(`Fetch failed (${r.status})`);
+    const d = await r.json();
+    const c = d.files?.['changelog.json']?.content;
+    const filtered = (c ? JSON.parse(c) : []).filter((_, i) => !indices.has(i));
+    await patchChangelog(filtered);
+    hideOverlay();
+    renderChangelog(filtered);
+    showToast(`Deleted ${indices.size} log ${indices.size === 1 ? 'entry' : 'entries'}`, 'ok');
+  } catch(e) {
+    hideOverlay();
+    showToast('Delete failed: ' + e.message, 'err');
+  }
+}
+
+async function deleteAllLogs() {
+  if (!confirm('Delete all activity log entries? This cannot be undone.')) return;
+  const token = getGithubToken();
+  if (!token || !CFG.gistId) { showToast('GitHub token required', 'err'); return; }
+  showOverlay('Clearing activity log…');
+  try {
+    await patchChangelog([]);
+    hideOverlay();
+    renderChangelog([]);
+    showToast('Activity log cleared', 'ok');
+  } catch(e) {
+    hideOverlay();
+    showToast('Failed: ' + e.message, 'err');
+  }
+}
+
+async function patchChangelog(entries) {
+  const token = getGithubToken();
+  const res = await fetch(`https://api.github.com/gists/${CFG.gistId}`, {
+    method: 'PATCH',
+    headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
+    body: JSON.stringify({ files: { 'changelog.json': { content: JSON.stringify(entries, null, 2) } } })
+  });
+  if (!res.ok) throw new Error(`Gist PATCH failed (${res.status})`);
+}
+
+// ─── Manual Sync (Repo → Gist) ───────────────────────────────────────────────
+async function loadSyncComparison() {
+  const panel = document.getElementById('syncDiffPanel');
+  const btn   = document.getElementById('btnOverwriteGist');
+  panel.innerHTML = '<p style="color:#9ca3af;font-size:13px">Loading…</p>';
+  panel.style.display = 'block';
+  btn.style.display = 'none';
+  _syncRepoJson = null;
+  const token = getGithubToken();
+  if (!token || !CFG.gistId || !CFG.githubOwner || !CFG.githubRepo) {
+    panel.innerHTML = '<p style="color:#dc2626;font-size:13px">GitHub token, Gist ID, and repo config all required.</p>';
+    return;
+  }
+  try {
+    const [gistRes, repoRes] = await Promise.all([
+      fetch(`https://api.github.com/gists/${CFG.gistId}`, {
+        headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' }, cache: 'no-store'
+      }),
+      fetch(`https://api.github.com/repos/${CFG.githubOwner}/${CFG.githubRepo}/contents/data/products.json`, {
+        headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' }, cache: 'no-store'
+      })
+    ]);
+    if (!gistRes.ok) throw new Error(`Gist fetch failed (${gistRes.status})`);
+    if (!repoRes.ok) throw new Error(`Repo file fetch failed (${repoRes.status})`);
+    const gistJson  = await gistRes.json();
+    const repoJson  = await repoRes.json();
+    const gistContent = gistJson.files?.['products.json']?.content;
+    if (!gistContent) throw new Error('products.json not found in Gist');
+    const repoContent = atob(repoJson.content.replace(/\n/g, ''));
+    _syncRepoJson = repoContent;
+    renderSyncDiff(panel, btn, JSON.parse(gistContent), JSON.parse(repoContent), gistJson.updated_at);
+  } catch(e) {
+    panel.innerHTML = `<p style="color:#dc2626;font-size:13px">${esc(e.message)}</p>`;
+  }
+}
+
+function renderSyncDiff(panel, btn, gistData, repoData, gistUpdatedAt) {
+  const rows = [];
+  if (JSON.stringify(gistData.cats||[]) !== JSON.stringify(repoData.cats||[])) {
+    rows.push({ badge:'mod', label:'Categories',
+      detail:`Gist: [${(gistData.cats||[]).join(', ')}]  →  Repo: [${(repoData.cats||[]).join(', ')}]` });
+  }
+  const gistMap = Object.fromEntries((gistData.products||[]).map(p => [p.id, p]));
+  const repoMap = Object.fromEntries((repoData.products||[]).map(p => [p.id, p]));
+  for (const id of new Set([...Object.keys(gistMap), ...Object.keys(repoMap)])) {
+    const g = gistMap[id], r = repoMap[id];
+    if (g && !r) {
+      rows.push({ badge:'rem', label: g.name||id, detail:'In Gist only — will be removed by overwrite' });
+    } else if (!g && r) {
+      rows.push({ badge:'add', label: r.name||id, detail:'In repo only — will be added by overwrite' });
+    } else {
+      const fields = ['name','cat','desc','cpu','ram','storage','cell','cellular_gen','wifi','rs485','rs232','ip','power','ports','os','housing','dims','weight','op_temp'];
+      const changed = fields.filter(f => String(g[f]??'') !== String(r[f]??''));
+      if (JSON.stringify(g.images||[]) !== JSON.stringify(r.images||[])) changed.push('images');
+      if (JSON.stringify(g.use_cases||[]) !== JSON.stringify(r.use_cases||[])) changed.push('use_cases');
+      if (String(g.datasheet||'') !== String(r.datasheet||'')) changed.push('datasheet');
+      if (changed.length) rows.push({ badge:'mod', label: g.name||id, detail:'Changed: ' + changed.join(', ') });
+    }
+  }
+  const gistTime = gistUpdatedAt ? new Date(gistUpdatedAt).toLocaleString() : '—';
+  let html = `<p style="font-size:12px;color:#6b7280;margin-bottom:8px">
+    Gist updated: <strong>${gistTime}</strong> &nbsp;·&nbsp;
+    Gist: <strong>${(gistData.products||[]).length} products</strong> &nbsp;·&nbsp;
+    Repo: <strong>${(repoData.products||[]).length} products</strong></p>`;
+  if (!rows.length) {
+    html += `<div class="sync-diff"><div class="sync-diff-row">
+      <span class="sync-diff-badge s-ok">IN SYNC</span>
+      <div class="sync-diff-name" style="color:#1e40af">Gist and repo are identical — no action needed</div>
+    </div></div>`;
+    btn.style.display = 'none';
+  } else {
+    html += `<div class="sync-diff">` + rows.map(row => `
+      <div class="sync-diff-row">
+        <span class="sync-diff-badge ${row.badge==='add'?'s-add':row.badge==='rem'?'s-rem':'s-mod'}">${row.badge==='add'?'REPO ONLY':row.badge==='rem'?'GIST ONLY':'MODIFIED'}</span>
+        <div>
+          <div class="sync-diff-name">${esc(row.label)}</div>
+          <div class="sync-diff-detail">${esc(row.detail)}</div>
+        </div>
+      </div>`).join('') + `</div>`;
+    btn.style.display = 'block';
+  }
+  panel.innerHTML = html;
+}
+
+async function overwriteGistFromRepo() {
+  if (!_syncRepoJson) { showToast('Load comparison first', 'err'); return; }
+  if (!confirm('Overwrite the live Gist with repo content? The main site will immediately reflect the repo data.')) return;
+  showOverlay('Overwriting Gist…');
+  try {
+    await pushToGist(_syncRepoJson);
+    lastGistJson  = _syncRepoJson;
+    _syncRepoJson = null;
+    hideOverlay();
+    document.getElementById('syncDiffPanel').style.display = 'none';
+    document.getElementById('btnOverwriteGist').style.display = 'none';
+    showToast('Gist overwritten with repo content', 'ok');
+    try { await readFromGist(); renderSidebar(); } catch {}
+  } catch(e) {
+    hideOverlay();
+    showToast('Overwrite failed: ' + e.message, 'err');
+  }
 }
 
 // ─── Tab Switching ────────────────────────────────────────────────────────────
