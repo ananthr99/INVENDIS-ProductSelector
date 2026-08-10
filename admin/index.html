@@ -1056,7 +1056,8 @@ function renderDatasheet() {
   if (pendingDs) {
     w.innerHTML = `<div class="ds-row pending"><span>📄 ${esc(pendingDs.name)} <em style="color:#1A6FC4">(pending upload)</em></span><button class="ds-rm" onclick="clearDatasheet()">×</button></div>`;
   } else if (currentDs) {
-    w.innerHTML = `<div class="ds-row"><a href="${currentDs}" target="_blank">📄 View current datasheet</a><button class="ds-rm" onclick="clearDatasheet()">×</button></div>`;
+    const dsHref = currentDs.startsWith('http') ? currentDs : '../' + currentDs;
+    w.innerHTML = `<div class="ds-row"><a href="${dsHref}" target="_blank">📄 View current datasheet</a><button class="ds-rm" onclick="clearDatasheet()">×</button></div>`;
   } else {
     w.innerHTML = '';
   }
