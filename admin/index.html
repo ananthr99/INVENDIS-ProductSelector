@@ -397,17 +397,40 @@ const FOLDER = CFG.folderPath || 'ProductSelector';
 const GRAPH  = 'https://graph.microsoft.com/v1.0';
 const SCOPES = ['Files.ReadWrite','User.Read'];
 
-// ─── Secrets (browser localStorage — never committed to the repo) ────────────
+// ─── Secrets ─────────────────────────────────────────────────────────────────
+let sessionToken = ''; // loaded from OneDrive after login; falls back to localStorage
+
 function getGithubToken() {
-  return localStorage.getItem('invendis_github_token') || '';
+  return sessionToken || localStorage.getItem('invendis_github_token') || CFG.githubToken || '';
 }
-function saveGithubToken() {
+
+async function saveGithubToken() {
   const val = document.getElementById('ghTokenInput').value.trim();
   if (!val) { showToast('Enter a token first', 'err'); return; }
+
   localStorage.setItem('invendis_github_token', val);
+  sessionToken = val;
+
+  try {
+    const bytes = new TextEncoder().encode(JSON.stringify({ githubToken: val }));
+    await uploadFile(`${FOLDER}/admin-config.json`, bytes.buffer, 'application/json');
+    showToast('Token saved to OneDrive — works on all devices!', 'ok');
+  } catch {
+    showToast('Saved to this browser only (sign in to OneDrive to sync across devices)', 'ok');
+  }
+
   document.getElementById('ghTokenInput').value = '';
   renderSetupStatus();
-  showToast('Token saved to browser!', 'ok');
+}
+
+async function loadAdminConfig() {
+  try {
+    const buf  = await callGraph('GET', `/me/drive/root:/${FOLDER}/admin-config.json:/content`, null, true);
+    const conf = JSON.parse(new TextDecoder().decode(new Uint8Array(buf)));
+    if (conf.githubToken) sessionToken = conf.githubToken;
+  } catch {
+    // file not found yet — fall back to localStorage silently
+  }
 }
 
 // ─── State ────────────────────────────────────────────────────────────────────
