@@ -13,7 +13,7 @@ const ONEDRIVE_CONFIG = {
   folderDriveId: 'b!z7x5W35VhUKVFJt2-MUdiOFbnnWJBKNIvHvPPfHmM_IWj7HO3XogRY93in8gJxpA',
 
   // Item ID of the ProductSelector folder inside that drive — fetch from the same Setup card.
-  folderItemId: '',
+  folderItemId: '01VPRX4TGQ4WYDDXBM5NGJMB2OOSKQGT5U',
 
   // GitHub repo where images and datasheets are stored (must match your GitHub Pages repo).
   githubOwner: 'ananthr99',
@@ -31,6 +31,7 @@ const ONEDRIVE_CONFIG = {
   allowedEmails: [
     'ananth.r@invendis.com',
     'ananya.chengta@invendis.com',
-    'shreesha.nataraj@invendis.com'
+    'shreesha.nataraj@invendis.com',
+    'ravi.shankar@invendis.com'
   ]
 };
