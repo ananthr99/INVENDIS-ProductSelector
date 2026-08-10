@@ -12,7 +12,7 @@ No framework, no build step. Open `index.html` directly in a browser or serve th
 - **Filter** by category tab, cellular generation, Wi-Fi standard, port count, and serial interface (RS485/RS232)
 - **Search** by name, model, description, or CPU keyword
 - **Compare** up to 3 products side-by-side in a spec table (differences highlighted in yellow)
-- **Detail modal** — click any product to see its image carousel, typical use cases, full specs, and product variants table
+- **Detail modal** — click any product to see its image carousel, typical use cases, full specs, and product variants table, along with product datasheets (if available)
 - **Datasheets** — each variant row shows View and Download buttons if a PDF exists; otherwise a pre-filled "Contact us" mailto link is shown
 - **Enquire** — mailto button pre-filled with the product name goes directly to `sales@invendis.com`
 - **Fully responsive** — works on desktop, tablet, and mobile (modal becomes a bottom sheet on small screens)
