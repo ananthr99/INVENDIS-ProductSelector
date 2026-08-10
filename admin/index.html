@@ -688,6 +688,7 @@ async function loadData() {
 
   document.getElementById('headerUser').textContent = accs[0].username || accs[0].name || '';
   try {
+    await loadAdminConfig();
     await readExcel();
     renderSidebar();
     showScreen('dash');

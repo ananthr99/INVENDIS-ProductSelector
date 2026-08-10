@@ -9,10 +9,6 @@ const ONEDRIVE_CONFIG = {
   // OneDrive folder that will hold products.xlsx and products.json.
   folderPath: 'ProductSelector',
 
-  // GitHub Personal Access Token — repo is private so safe to commit here.
-  // Needs 'repo' + 'gist' scopes. Rotate at: github.com → Settings → Developer settings → PATs.
-  githubToken: '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',
-
   // GitHub repo where images and datasheets are stored (must match your GitHub Pages repo).
   githubOwner: 'ananthr99',
   githubRepo:  'INVENDIS-ProductSelector',
