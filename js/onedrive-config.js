@@ -18,5 +18,11 @@ const ONEDRIVE_CONFIG = {
   gistId: '57765f919922afcc14bce0bfd78b2b10',
 
   // Raw Gist URL — main site fetches products from this URL.
-  productsJsonUrl: 'https://gist.githubusercontent.com/ananthr99/57765f919922afcc14bce0bfd78b2b10/raw/products.json'
+  productsJsonUrl: 'https://gist.githubusercontent.com/ananthr99/57765f919922afcc14bce0bfd78b2b10/raw/products.json',
+
+  // Allowlist — only these Microsoft account emails can access the admin panel.
+  // Add or remove emails as needed. Case-insensitive.
+  allowedEmails: [
+    'ananth.r@invendis.com'
+  ]
 };

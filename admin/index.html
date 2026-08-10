@@ -653,6 +653,16 @@ async function loadData() {
   showScreen('loading');
   const accs = msalInst.getAllAccounts();
   if (!accs.length) { showScreen('login'); return; }
+
+  const email   = (accs[0].username || '').toLowerCase();
+  const allowed = (CFG.allowedEmails || []).map(e => e.toLowerCase());
+  if (allowed.length && !allowed.includes(email)) {
+    msalInst.logoutPopup({ account: accs[0] }).catch(() => {});
+    document.getElementById('loginErr').textContent = `Access denied — ${email} is not an authorised account.`;
+    showScreen('login');
+    return;
+  }
+
   document.getElementById('headerUser').textContent = accs[0].username || accs[0].name || '';
   try {
     await readExcel();
