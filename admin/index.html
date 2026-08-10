@@ -170,7 +170,8 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#f4f6f9;color:#1a1d23
 .log-entry-dot{width:8px;height:8px;border-radius:50%;background:#1A6FC4;flex-shrink:0;margin-top:5px}
 .log-body{flex:1;min-width:0}
 .log-action{font-size:13px;font-weight:500;color:#1a1d23}
-.log-meta-row{font-size:11px;color:#9ca3af;margin-top:2px}
+.log-changes{font-size:11px;color:#6b7280;margin-top:3px;font-family:'DM Mono',monospace;line-height:1.6}
+.log-meta-row{font-size:11px;color:#9ca3af;margin-top:3px}
 
 /* ── Toast / Overlay ── */
 .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#1a1d23;color:#fff;padding:9px 18px;border-radius:8px;font-size:13px;pointer-events:none;opacity:0;transition:opacity .2s;z-index:200;white-space:nowrap}
@@ -704,6 +705,9 @@ async function writeJson() {
     CFG.gistId = gistData.id;
     showGistInfo(gistData.id, rawUrl);
   }
+
+  // Also commit data/products.json to the repo so it stays in sync with the Gist.
+  try { await pushFileToGitHub('data/products.json', bytes.buffer, 'Update products catalogue'); } catch {}
 }
 
 async function pushToGist(jsonStr) {
@@ -850,8 +854,9 @@ async function saveProduct() {
   updateOverlay('Syncing latest data…');
   try { await readFromGist(); } catch {}
 
-  const idx   = products.findIndex(x => x.id === p.id);
-  const isNew = idx < 0;
+  const idx        = products.findIndex(x => x.id === p.id);
+  const isNew      = idx < 0;
+  const oldProduct = idx >= 0 ? { ...products[idx] } : null;
   if (idx >= 0) {
     p.part_datasheets = products[idx].part_datasheets || {};
     products[idx] = p;
@@ -873,10 +878,8 @@ async function saveProduct() {
   renderSidebar();
   hideOverlay();
   showToast('Saved and published!', 'ok');
-  const logDetail = p.name + ' (' + p.id + ')'
-    + (pendingImgCount > 0 ? ` · ${pendingImgCount} image${pendingImgCount > 1 ? 's' : ''} uploaded` : '')
-    + (hadPendingDs ? ' · datasheet updated' : '');
-  logChange(isNew ? 'Added product' : 'Updated product', logDetail);
+  const changes = diffProduct(oldProduct, p, pendingImgCount, hadPendingDs);
+  logChange(isNew ? 'Added product' : 'Updated product', p.name + ' (' + p.id + ')', changes);
 }
 
 // ─── Delete Product ───────────────────────────────────────────────────────────
@@ -1130,7 +1133,45 @@ function updateTokenBanner() {
 }
 
 // ─── Activity Log ─────────────────────────────────────────────────────────────
-async function logChange(action, detail) {
+function diffProduct(old, neu, imgCount, hadDs) {
+  if (!old) {
+    const parts = [];
+    if (neu.cat)   parts.push(`Category: ${neu.cat}`);
+    if (imgCount)  parts.push(`+${imgCount} image${imgCount > 1 ? 's' : ''}`);
+    if (hadDs)     parts.push('with datasheet');
+    return parts.join(' · ');
+  }
+  const changes = [];
+  const fields = [
+    ['name','Name'],['cat','Category'],['cpu','CPU'],['ram','RAM'],
+    ['storage','Storage'],['cell','Cellular'],['cellular_gen','Cellular gen'],
+    ['wifi','Wi-Fi'],['ip','IP'],['power','Power'],['ports','Ports'],
+    ['os','OS'],['housing','Housing'],['dims','Dimensions'],
+    ['weight','Weight'],['op_temp','Op. temp']
+  ];
+  for (const [k, label] of fields) {
+    const ov = String(old[k] ?? '');
+    const nv = String(neu[k] ?? '');
+    if (ov !== nv) changes.push(`${label}: ${ov || '—'} → ${nv || '—'}`);
+  }
+  if (String(old.desc || '') !== String(neu.desc || '')) changes.push('Description updated');
+  if (!!old.rs485 !== !!neu.rs485) changes.push(`RS485: ${neu.rs485 ? 'enabled' : 'disabled'}`);
+  if (!!old.rs232 !== !!neu.rs232) changes.push(`RS232: ${neu.rs232 ? 'enabled' : 'disabled'}`);
+  if (imgCount > 0) changes.push(`+${imgCount} image${imgCount > 1 ? 's' : ''}`);
+  const removedImgs = (old.images || []).length - ((neu.images || []).length - imgCount);
+  if (removedImgs > 0) changes.push(`-${removedImgs} image${removedImgs > 1 ? 's' : ''}`);
+  if (hadDs) changes.push('datasheet updated');
+  else if (old.datasheet && !neu.datasheet) changes.push('datasheet removed');
+  const oldUC = old.use_cases || [], newUC = neu.use_cases || [];
+  const addedUC = newUC.filter(u => !oldUC.includes(u));
+  const removedUC = oldUC.filter(u => !newUC.includes(u));
+  if (addedUC.length)   changes.push(`+use case: ${addedUC.join(', ')}`);
+  if (removedUC.length) changes.push(`-use case: ${removedUC.join(', ')}`);
+  const out = changes.join(' · ');
+  return out.length > 300 ? out.slice(0, 297) + '…' : out;
+}
+
+async function logChange(action, detail, changes) {
   const token = getGithubToken();
   if (!token || !CFG.gistId) return;
   try {
@@ -1144,7 +1185,7 @@ async function logChange(action, detail) {
       }
     } catch {}
     const user = (msalInst.getAllAccounts()[0]?.username || 'unknown').toLowerCase();
-    entries.unshift({ ts: new Date().toISOString(), user, action, detail: detail || '' });
+    entries.unshift({ ts: new Date().toISOString(), user, action, detail: detail || '', changes: changes || '' });
     if (entries.length > 500) entries = entries.slice(0, 500);
     await fetch(`https://api.github.com/gists/${CFG.gistId}`, {
       method: 'PATCH',
@@ -1194,6 +1235,7 @@ function renderChangelog(entries) {
           <div class="log-entry-dot"></div>
           <div class="log-body">
             <div class="log-action">${esc(e.action)}${e.detail ? ' — ' + esc(e.detail) : ''}</div>
+            ${e.changes ? `<div class="log-changes">${esc(e.changes)}</div>` : ''}
             <div class="log-meta-row">${esc(e.user)} · ${time}</div>
           </div>
         </div>`;

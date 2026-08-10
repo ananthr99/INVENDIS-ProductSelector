@@ -100,7 +100,7 @@ function renderGrid(list, r) {
       <div class="card-name">${p.name}</div>
       <div class="card-desc">${p.desc}</div>
       <div class="card-specs">
-        ${p.cellular_gen!=='none'?`<span class="spec-pill highlight">${p.cellular_gen}</span>`:''}
+        ${p.cellular_gen&&p.cellular_gen!=='none'?`<span class="spec-pill highlight">${p.cellular_gen}</span>`:''}
         ${p.wifi!=='none'?`<span class="spec-pill highlight">${wifiLabel(p.wifi)}</span>`:''}
         ${p.rs485?'<span class="spec-pill warn">RS485</span>':''}
         ${p.rs232?'<span class="spec-pill warn">RS232</span>':''}
