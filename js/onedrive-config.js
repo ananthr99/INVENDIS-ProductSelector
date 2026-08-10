@@ -9,9 +9,11 @@ const ONEDRIVE_CONFIG = {
   // OneDrive folder that will hold products.xlsx and products.json.
   folderPath: 'ProductSelector',
 
-  // The drive ID of the admin's OneDrive — all users access this one drive regardless of who is logged in.
-  // Leave blank initially, then go to Setup tab → Drive ID card, click Fetch, and paste the value here.
-  driveId: 'b!z7x5W35VhUKVFJt2-MUdiOFbnnWJBKNIvHvPPfHmM_IWj7HO3XogRY93in8gJxpA',
+  // Admin's OneDrive drive ID — go to Setup tab → Shared Folder card → Fetch IDs while signed in as admin.
+  folderDriveId: 'b!z7x5W35VhUKVFJt2-MUdiOFbnnWJBKNIvHvPPfHmM_IWj7HO3XogRY93in8gJxpA',
+
+  // Item ID of the ProductSelector folder inside that drive — fetch from the same Setup card.
+  folderItemId: '',
 
   // GitHub repo where images and datasheets are stored (must match your GitHub Pages repo).
   githubOwner: 'ananthr99',

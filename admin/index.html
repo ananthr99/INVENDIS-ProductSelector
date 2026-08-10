@@ -369,10 +369,22 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#f4f6f9;color:#1a1d23
             </div>
           </div>
           <div class="info-card">
+            <h4>Shared Folder IDs</h4>
+            <p>Sign in as the primary admin, click Fetch, then paste both values into <code style="font-family:'DM Mono',monospace;background:#f4f6f9;padding:1px 4px;border-radius:3px;font-size:11px">js/onedrive-config.js</code> and redeploy. This lets all authorised users access the same folder without needing admin consent.</p>
+            <button class="btn-get" style="margin-top:10px" onclick="fetchFolderIds()">Fetch Folder IDs</button>
+            <div id="folderIdsBox" style="display:none;margin-top:12px">
+              <p style="font-size:12px;margin-bottom:3px">Paste into <code style="font-family:'DM Mono',monospace;background:#f4f6f9;padding:1px 4px;border-radius:3px">onedrive-config.js → folderDriveId</code>:</p>
+              <div class="mono-box" id="folderDriveIdVal" style="cursor:text;user-select:all;word-break:break-all;margin-bottom:10px"></div>
+              <p style="font-size:12px;margin-bottom:3px">Paste into <code style="font-family:'DM Mono',monospace;background:#f4f6f9;padding:1px 4px;border-radius:3px">onedrive-config.js → folderItemId</code>:</p>
+              <div class="mono-box" id="folderItemIdVal" style="cursor:text;user-select:all;word-break:break-all"></div>
+            </div>
+          </div>
+          <div class="info-card">
             <h4>Status</h4>
             <p><span class="dot" id="dotConfig"></span><span id="statusConfig"></span></p>
             <p style="margin-top:6px"><span class="dot" id="dotGH"></span><span id="statusGH"></span></p>
             <p style="margin-top:6px"><span class="dot" id="dotUrl"></span><span id="statusUrl"></span></p>
+            <p style="margin-top:6px"><span class="dot" id="dotFolder"></span><span id="statusFolder"></span></p>
           </div>
         </div>
       </div>
@@ -505,9 +517,24 @@ async function callGraph(method, path, body = null, asBuffer = false) {
   return asBuffer ? res.arrayBuffer() : res.json();
 }
 
+async function fetchFolderIds() {
+  try {
+    const item = await callGraph('GET', `/me/drive/root:/${FOLDER}`);
+    document.getElementById('folderDriveIdVal').textContent = item.parentReference.driveId;
+    document.getElementById('folderItemIdVal').textContent  = item.id;
+    document.getElementById('folderIdsBox').style.display   = 'block';
+  } catch(e) { showToast('Error: ' + e.message, 'err'); }
+}
+
 // ─── Folder discovery ────────────────────────────────────────────────────────
 async function resolveFolder() {
-  // 1. Try the logged-in user's own drive
+  // 1. Use pre-configured folder IDs — most reliable, bypasses sharedWithMe lookup.
+  //    Set via Setup tab → Shared Folder card while signed in as admin.
+  if (CFG.folderDriveId && CFG.folderItemId) {
+    folderCtx = { ownDrive: false, driveId: CFG.folderDriveId, folderId: CFG.folderItemId };
+    return;
+  }
+  // 2. Try the logged-in user's own drive (admin before IDs are configured)
   try {
     await callGraph('GET', `/me/drive/root:/${FOLDER}`);
     folderCtx = { ownDrive: true };
@@ -516,10 +543,10 @@ async function resolveFolder() {
     const m = e.message || '';
     if (!m.includes('404') && !m.includes('itemNotFound')) throw e;
   }
-  // 2. Fall back to items shared with the user
+  // 3. Last resort: items shared with the user
   const resp  = await callGraph('GET', '/me/drive/sharedWithMe');
   const found = (resp.value || []).find(i => i.name === FOLDER && i.remoteItem?.folder);
-  if (!found) throw new Error(`'${FOLDER}' folder not found — ask the admin to share it with you from their OneDrive`);
+  if (!found) throw new Error(`'${FOLDER}' folder not found — ask the admin to configure folderItemId in onedrive-config.js`);
   folderCtx = {
     ownDrive: false,
     driveId:  found.remoteItem.parentReference.driveId,
@@ -1026,6 +1053,9 @@ function renderSetupStatus() {
     : 'githubOwner / githubRepo not set — image and datasheet uploads will fail';
   document.getElementById('dotUrl').className         = 'dot ' + (hasUrl ? 'ok' : 'warn');
   document.getElementById('statusUrl').textContent    = hasUrl ? 'productsJsonUrl set — main site loads live data' : 'productsJsonUrl not set — main site uses static data';
+  const hasFolder = !!(CFG.folderDriveId && CFG.folderItemId);
+  document.getElementById('dotFolder').className      = 'dot ' + (hasFolder ? 'ok' : 'warn');
+  document.getElementById('statusFolder').textContent = hasFolder ? 'Shared folder IDs configured — all admins can access the same OneDrive folder' : 'folderItemId not set — go to Setup → Shared Folder IDs card to fetch it';
 
   const gistMsg = document.getElementById('gistStatusMsg');
   if (!hasToken) {
