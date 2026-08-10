@@ -5,7 +5,8 @@
     "Gateway",
     "Switch",
     "Energy Meter",
-    "Other"
+    "Other",
+    "PCB"
   ],
   "products": [
     {
@@ -13,7 +14,7 @@
       "name": "Intel X6425",
       "cat": "Router",
       "order": 0,
-      "desc": "High-performance x86 edge compute router with 5G (Telit FN990A28), dual-band Wi-Fi 6, and up to 64 GB RAM",
+      "desc": "High-performance x86 edge compute router with 5G (Telit FN990A28), dual-band Wi-Fi 6, and up to 32GB RAM",
       "cpu": "Intel X86 Atom X6425E, 4-core up to 3 GHz",
       "ram": "Up to 32 GB DDR4 3200",
       "storage": "Up to 1 TB SATA SSD",
@@ -31,7 +32,7 @@
       "weight": "—",
       "op_temp": "0–50 °C",
       "images": [
-        "assets/images/intelx6425.png"
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/intel-x6425-1786338085484-zbct.png"
       ],
       "use_cases": [
         "Edge Computing",
@@ -55,11 +56,11 @@
       "cell": "4G/5G",
       "cellular_gen": "5G",
       "wifi": "WiFi6",
-      "rs485": false,
-      "rs232": false,
+      "rs485": "false",
+      "rs232": "false",
       "ip": "",
       "power": "12V DC",
-      "ports": 4,
+      "ports": "4",
       "os": "OpenWRT / Ubuntu / Windows 11 / Windows IoT",
       "housing": "Aluminium",
       "dims": "150×160×55 mm",
@@ -332,11 +333,11 @@
       "cell": "4G/5G",
       "cellular_gen": "5G",
       "wifi": "WiFi6",
-      "rs485": false,
-      "rs232": false,
+      "rs485": "false",
+      "rs232": "false",
       "ip": "",
       "power": "9–30 VDC",
-      "ports": 7,
+      "ports": "7",
       "os": "OpenWRT Linux",
       "housing": "Sheet Metal",
       "dims": "190×45×120 mm",
@@ -448,7 +449,7 @@
     },
     {
       "id": "ru60",
-      "name": "RU60",
+      "name": "RUXX",
       "cat": "Router",
       "order": 6,
       "desc": "Ceiling-mount Wi-Fi 6 access point with AP/Station/EasyMesh support, no cellular",
@@ -456,13 +457,13 @@
       "ram": "1 GB DDR4",
       "storage": "1 Gb NAND",
       "cell": "none",
-      "cellular_gen": "none",
+      "cellular_gen": "",
       "wifi": "WiFi6",
-      "rs485": false,
-      "rs232": false,
+      "rs485": "false",
+      "rs232": "false",
       "ip": "IP30",
       "power": "12 VDC",
-      "ports": 2,
+      "ports": "2",
       "os": "OpenWRT Linux",
       "housing": "Metal",
       "dims": "209×30×154 mm",
@@ -477,7 +478,7 @@
         "Wi-Fi Mesh Extension",
         "Guest Network"
       ],
-      "datasheet": "",
+      "datasheet": null,
       "part_datasheets": {
         "RU60": "assets/datasheets/RU60.pdf"
       },
@@ -4142,6 +4143,58 @@
             "38 Whr",
             "9–10 hours",
             "Mini UPS 38W"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ru00",
+      "name": "RU00",
+      "cat": "Router",
+      "order": 76,
+      "desc": "Ceiling-mount Wi-Fi 6 access point with AP/Station/EasyMesh support, no cellular",
+      "cpu": "MediaTek MT7981, 1 GB DDR4, 1 Gb NAND",
+      "ram": "1 GB DDR4",
+      "storage": "1 Gb NAND",
+      "cell": "none",
+      "cellular_gen": "",
+      "wifi": "WiFi6",
+      "rs485": "false",
+      "rs232": "false",
+      "ip": "IP30",
+      "power": "12 VDC",
+      "ports": "2",
+      "os": "OpenWRT Linux",
+      "housing": "Metal",
+      "dims": "209×30×154 mm",
+      "weight": "950 g",
+      "op_temp": "-20–60 °C",
+      "images": [
+        "assets/images/ru60.png"
+      ],
+      "use_cases": [
+        "Indoor Wi-Fi Coverage",
+        "Office Hotspot",
+        "Wi-Fi Mesh Extension",
+        "Guest Network"
+      ],
+      "datasheet": null,
+      "part_datasheets": {},
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "4G/5G",
+          "No. of Modems",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "—",
+            "Wi-Fi 6",
+            "—",
+            "—",
+            "RU60"
           ]
         ]
       }
