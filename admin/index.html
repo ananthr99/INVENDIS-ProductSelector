@@ -602,7 +602,15 @@ async function readFromGist() {
 }
 
 async function readExcel() {
-  if (folderCtx.noOneDrive) { await readFromGist(); return; }
+  // Gist is the shared source of truth for everyone — this ensures all admins
+  // always see each other's changes regardless of who made them.
+  try {
+    await readFromGist();
+    if (products.length > 0 || cats.length > 0) return;
+  } catch { /* Gist empty or not yet created — fall through to OneDrive Excel */ }
+
+  // First-time / Gist-empty fallback: read from admin's own OneDrive Excel.
+  if (folderCtx.noOneDrive) throw new Error('No products in Gist yet — ask the admin to publish first');
   const buf     = await callGraph('GET', `${folderPath('products.xlsx')}:/content`, null, true);
   const wb      = XLSX.read(new Uint8Array(buf), { type: 'array' });
   const ws      = wb.Sheets[wb.SheetNames[0]];
