@@ -23,6 +23,8 @@ const ONEDRIVE_CONFIG = {
   // Allowlist — only these Microsoft account emails can access the admin panel.
   // Add or remove emails as needed. Case-insensitive.
   allowedEmails: [
-    'ananth.r@invendis.com'
+    'ananth.r@invendis.com',
+    'ananya.chengta@invendis.com',
+    'shreesha.nataraj@invendis.com'
   ]
 };
