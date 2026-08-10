@@ -3955,7 +3955,7 @@
     {
       "id": "rn50pcba",
       "name": "RN50-PCBA",
-      "cat": "Other",
+      "cat": "PCB",
       "order": 72,
       "desc": "PCB-form router module with M12 connectors, PoE powered — for embedded/vehicle use",
       "cpu": "MediaTek MT7621, 512 MB DDR3",

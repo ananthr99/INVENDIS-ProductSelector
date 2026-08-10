@@ -762,7 +762,8 @@ async function pushFileToGitHub(repoPath, buffer, commitMessage) {
   let sha;
   try {
     const r = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${repoPath}?ref=${branch}`, {
-      headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' }
+      headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' },
+      cache: 'no-store'
     });
     if (r.ok) { const d = await r.json(); sha = d.sha; }
   } catch {}

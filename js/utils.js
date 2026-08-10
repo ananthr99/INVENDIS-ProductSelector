@@ -1,5 +1,6 @@
 function catBadgeClass(c) {
-  return {Router:'b-router',Gateway:'b-gateway',Switch:'b-switch','Energy Meter':'b-energy',Other:'b-other'}[c]||'b-other';
+  const map = {Router:'b-router',Gateway:'b-gateway',Switch:'b-switch','Energy Meter':'b-energy',Other:'b-other',PCB:'b-pcb'};
+  return map[c] || 'b-other';
 }
 
 function wifiLabel(w) {

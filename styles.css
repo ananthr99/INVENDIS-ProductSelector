@@ -320,6 +320,7 @@ select.active-filter { border-color: var(--blue); background-color: var(--blue-p
 .b-switch { background: #FFF3E0; color: #8B5200; }
 .b-energy { background: #F9EAF3; color: #7B2563; }
 .b-other { background: #EEF0F3; color: #3A4D63; }
+.b-pcb   { background: #ECFDF5; color: #065F46; }
 
 .card-thumb-wrap {
   margin: -18px -18px 4px -18px;
