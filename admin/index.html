@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin — Invendis Product Selector</title>
+<link rel="icon" type="image/png" href="../assets/invendis_logo.png">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@azure/msal-browser@2.38.4/lib/msal-browser.min.js"></script>
 <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
@@ -369,22 +370,10 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#f4f6f9;color:#1a1d23
             </div>
           </div>
           <div class="info-card">
-            <h4>Shared Folder IDs</h4>
-            <p>Sign in as the primary admin, click Fetch, then paste both values into <code style="font-family:'DM Mono',monospace;background:#f4f6f9;padding:1px 4px;border-radius:3px;font-size:11px">js/onedrive-config.js</code> and redeploy. This lets all authorised users access the same folder without needing admin consent.</p>
-            <button class="btn-get" style="margin-top:10px" onclick="fetchFolderIds()">Fetch Folder IDs</button>
-            <div id="folderIdsBox" style="display:none;margin-top:12px">
-              <p style="font-size:12px;margin-bottom:3px">Paste into <code style="font-family:'DM Mono',monospace;background:#f4f6f9;padding:1px 4px;border-radius:3px">onedrive-config.js → folderDriveId</code>:</p>
-              <div class="mono-box" id="folderDriveIdVal" style="cursor:text;user-select:all;word-break:break-all;margin-bottom:10px"></div>
-              <p style="font-size:12px;margin-bottom:3px">Paste into <code style="font-family:'DM Mono',monospace;background:#f4f6f9;padding:1px 4px;border-radius:3px">onedrive-config.js → folderItemId</code>:</p>
-              <div class="mono-box" id="folderItemIdVal" style="cursor:text;user-select:all;word-break:break-all"></div>
-            </div>
-          </div>
-          <div class="info-card">
             <h4>Status</h4>
             <p><span class="dot" id="dotConfig"></span><span id="statusConfig"></span></p>
             <p style="margin-top:6px"><span class="dot" id="dotGH"></span><span id="statusGH"></span></p>
             <p style="margin-top:6px"><span class="dot" id="dotUrl"></span><span id="statusUrl"></span></p>
-            <p style="margin-top:6px"><span class="dot" id="dotFolder"></span><span id="statusFolder"></span></p>
           </div>
         </div>
       </div>
@@ -423,12 +412,20 @@ async function saveGithubToken() {
   localStorage.setItem('invendis_github_token', val);
   sessionToken = val;
 
+  // Always save to the user's own OneDrive regardless of folderCtx,
+  // so the token persists across browsers for this Microsoft account.
   try {
+    const token = await getToken();
     const bytes = new TextEncoder().encode(JSON.stringify({ githubToken: val }));
-    await uploadFile(`${FOLDER}/admin-config.json`, bytes.buffer, 'application/json');
-    showToast('Token saved to OneDrive — works on all devices!', 'ok');
+    const res   = await fetch(`${GRAPH}/me/drive/root:/${FOLDER}/admin-config.json:/content`, {
+      method: 'PUT',
+      headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+      body: bytes.buffer
+    });
+    if (res.ok) showToast('Token saved — auto-loaded on your next sign-in from any browser', 'ok');
+    else        showToast('Saved to this browser only', 'ok');
   } catch {
-    showToast('Saved to this browser only (sign in to OneDrive to sync across devices)', 'ok');
+    showToast('Saved to this browser only', 'ok');
   }
 
   document.getElementById('ghTokenInput').value = '';
@@ -436,12 +433,14 @@ async function saveGithubToken() {
 }
 
 async function loadAdminConfig() {
+  // Always reads from the user's own OneDrive — works for admin (file exists)
+  // and employees (creates on first token save; falls back to localStorage until then).
   try {
-    const buf  = await callGraph('GET', `${folderPath('admin-config.json')}:/content`, null, true);
+    const buf  = await callGraph('GET', `/me/drive/root:/${FOLDER}/admin-config.json:/content`, null, true);
     const conf = JSON.parse(new TextDecoder().decode(new Uint8Array(buf)));
     if (conf.githubToken) sessionToken = conf.githubToken;
   } catch {
-    // file not found yet — fall back to localStorage silently
+    // not found yet — fall back to localStorage silently
   }
 }
 
@@ -517,48 +516,27 @@ async function callGraph(method, path, body = null, asBuffer = false) {
   return asBuffer ? res.arrayBuffer() : res.json();
 }
 
-async function fetchFolderIds() {
-  try {
-    const item = await callGraph('GET', `/me/drive/root:/${FOLDER}`);
-    document.getElementById('folderDriveIdVal').textContent = item.parentReference.driveId;
-    document.getElementById('folderItemIdVal').textContent  = item.id;
-    document.getElementById('folderIdsBox').style.display   = 'block';
-  } catch(e) { showToast('Error: ' + e.message, 'err'); }
-}
-
 // ─── Folder discovery ────────────────────────────────────────────────────────
 async function resolveFolder() {
-  // 1. Use pre-configured folder IDs — most reliable, bypasses sharedWithMe lookup.
-  //    Set via Setup tab → Shared Folder card while signed in as admin.
-  if (CFG.folderDriveId && CFG.folderItemId) {
-    folderCtx = { ownDrive: false, driveId: CFG.folderDriveId, folderId: CFG.folderItemId };
-    return;
-  }
-  // 2. Try the logged-in user's own drive (admin before IDs are configured)
+  // Check if the logged-in user owns the ProductSelector folder in their own OneDrive.
+  // Admin: folder exists → full OneDrive read/write.
+  // Employee: folder not found → noOneDrive flag; Gist used as data source instead.
   try {
     await callGraph('GET', `/me/drive/root:/${FOLDER}`);
     folderCtx = { ownDrive: true };
-    return;
   } catch(e) {
     const m = e.message || '';
-    if (!m.includes('404') && !m.includes('itemNotFound')) throw e;
+    if (m.includes('404') || m.includes('itemNotFound')) {
+      folderCtx = { noOneDrive: true };
+    } else {
+      throw e;
+    }
   }
-  // 3. Last resort: items shared with the user
-  const resp  = await callGraph('GET', '/me/drive/sharedWithMe');
-  const found = (resp.value || []).find(i => i.name === FOLDER && i.remoteItem?.folder);
-  if (!found) throw new Error(`'${FOLDER}' folder not found — ask the admin to configure folderItemId in onedrive-config.js`);
-  folderCtx = {
-    ownDrive: false,
-    driveId:  found.remoteItem.parentReference.driveId,
-    folderId: found.remoteItem.id
-  };
 }
 
-// Returns the Graph path for a file relative to the ProductSelector folder.
-// relPath examples: 'products.xlsx', 'images/foo.jpg', 'admin-config.json'
+// Returns the Graph path for a file relative to the ProductSelector folder (admin only).
 function folderPath(relPath) {
-  if (folderCtx.ownDrive) return `/me/drive/root:/${FOLDER}/${relPath}`;
-  return `/drives/${folderCtx.driveId}/items/${folderCtx.folderId}:/${relPath}`;
+  return `/me/drive/root:/${FOLDER}/${relPath}`;
 }
 
 // Strips the leading 'ProductSelector/' prefix from paths passed to uploadFile/createLink.
@@ -610,7 +588,21 @@ function rowToProduct(headers, values) {
   return p;
 }
 
+async function readFromGist() {
+  const gistId = CFG.gistId;
+  if (!gistId) throw new Error('gistId not set in onedrive-config.js — cannot load products');
+  const res  = await fetch(`https://api.github.com/gists/${gistId}`);
+  if (!res.ok) throw new Error(`Gist fetch failed (${res.status})`);
+  const data    = await res.json();
+  const content = data.files?.['products.json']?.content;
+  if (!content) throw new Error('products.json not found in Gist');
+  const parsed = JSON.parse(content);
+  products = (parsed.products || []).sort((a, b) => a.order - b.order);
+  cats     = parsed.cats || [];
+}
+
 async function readExcel() {
+  if (folderCtx.noOneDrive) { await readFromGist(); return; }
   const buf     = await callGraph('GET', `${folderPath('products.xlsx')}:/content`, null, true);
   const wb      = XLSX.read(new Uint8Array(buf), { type: 'array' });
   const ws      = wb.Sheets[wb.SheetNames[0]];
@@ -628,6 +620,7 @@ async function readExcel() {
 }
 
 async function writeExcel() {
+  if (folderCtx.noOneDrive) return; // employees have no OneDrive access — skip
   const wb  = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet([COLS, ...products.map(productToRow)]), 'Products');
   XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet([['name'], ...cats.map(c => [c])]), 'Categories');
@@ -654,7 +647,11 @@ function buildJsonData() {
 async function writeJson() {
   const jsonStr = JSON.stringify(buildJsonData(), null, 2);
   const bytes   = new TextEncoder().encode(jsonStr);
-  await uploadFile(`${FOLDER}/products.json`, bytes.buffer, 'application/json');
+
+  // Upload to own OneDrive backup only if the admin is running (own drive available).
+  if (!folderCtx.noOneDrive) {
+    try { await uploadFile(`${FOLDER}/products.json`, bytes.buffer, 'application/json'); } catch { /* non-critical backup */ }
+  }
 
   const gistData = await pushToGist(jsonStr);
   if (gistData && !CFG.gistId) {
@@ -760,12 +757,7 @@ async function loadData() {
     renderSidebar();
     showScreen('dash');
   } catch(e) {
-    const msg = e.message || '';
-    if (msg.includes('404') || msg.includes('itemNotFound')) {
-      showToast('products.xlsx not found — run migrate.html first', 'err');
-    } else {
-      showToast('Load error: ' + msg, 'err');
-    }
+    showToast('Load error: ' + (e.message || 'unknown error'), 'err');
     showScreen('login');
   }
 }
@@ -1053,9 +1045,6 @@ function renderSetupStatus() {
     : 'githubOwner / githubRepo not set — image and datasheet uploads will fail';
   document.getElementById('dotUrl').className         = 'dot ' + (hasUrl ? 'ok' : 'warn');
   document.getElementById('statusUrl').textContent    = hasUrl ? 'productsJsonUrl set — main site loads live data' : 'productsJsonUrl not set — main site uses static data';
-  const hasFolder = !!(CFG.folderDriveId && CFG.folderItemId);
-  document.getElementById('dotFolder').className      = 'dot ' + (hasFolder ? 'ok' : 'warn');
-  document.getElementById('statusFolder').textContent = hasFolder ? 'Shared folder IDs configured — all admins can access the same OneDrive folder' : 'folderItemId not set — go to Setup → Shared Folder IDs card to fetch it';
 
   const gistMsg = document.getElementById('gistStatusMsg');
   if (!hasToken) {
