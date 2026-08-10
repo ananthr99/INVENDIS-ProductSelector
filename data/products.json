@@ -4007,7 +4007,7 @@
     {
       "id": "rvw50",
       "name": "RVW 50 with M12",
-      "cat": "PCB",
+      "cat": "Other",
       "order": 73,
       "desc": "M12 connector router: 1× WAN + 3× LAN (all M12), Wi-Fi 5 — harsh environment design",
       "cpu": "MediaTek MT7621, 512 MB DDR3",
