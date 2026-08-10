@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Migration — Invendis Product Selector</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@azure/msal-browser@2.38.4/lib/msal-browser.min.js"></script>
+<script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+<script src="products.js"></script>
+<script src="js/data.js"></script>
+<script src="js/onedrive-config.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',system-ui,sans-serif;background:#f4f6f9;color:#1a1d23;min-height:100vh;padding:40px 20px}
+.wrap{max-width:640px;margin:0 auto}
+h1{font-size:22px;font-weight:600;margin-bottom:6px}
+.subtitle{font-size:14px;color:#666;margin-bottom:28px;line-height:1.5}
+.warn{background:#fff8e1;border:1px solid #ffd54f;border-radius:8px;padding:16px 20px;margin-bottom:24px;font-size:13px;color:#7a5700;line-height:1.6}
+.warn strong{display:block;margin-bottom:4px;font-size:14px}
+.card{background:#fff;border-radius:10px;border:1px solid #e5e7eb;padding:24px;margin-bottom:20px}
+.card h2{font-size:15px;font-weight:600;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #f0f0f0}
+.btn{padding:10px 22px;border:none;border-radius:7px;font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;transition:all .15s;display:inline-flex;align-items:center;gap:8px}
+.btn-ms{background:#0078d4;color:#fff}
+.btn-ms:hover{background:#005fa3}
+.btn-ms:disabled{opacity:.5;cursor:not-allowed}
+.btn-go{background:#1A6FC4;color:#fff}
+.btn-go:hover{background:#1558a0}
+.btn-go:disabled{opacity:.5;cursor:not-allowed}
+.btn-out{background:#f5f5f5;color:#555;border:1px solid #e0e0e0}
+.btn-out:hover{background:#e8e8e8}
+.err{color:#c0392b;font-size:13px;margin-top:8px}
+.user-row{font-size:13px;color:#555;margin-bottom:14px}
+.user-row strong{color:#1a1d23}
+.progress-wrap{display:none;margin-top:16px}
+.progress-track{background:#e5e7eb;border-radius:20px;height:8px;margin:10px 0}
+.progress-fill{background:#1A6FC4;border-radius:20px;height:8px;width:0;transition:width .3s}
+.progress-label{font-size:13px;color:#555}
+.log{background:#f4f6f9;border-radius:7px;padding:14px;font-size:12px;font-family:monospace;line-height:1.8;max-height:260px;overflow-y:auto;display:none;border:1px solid #e5e7eb;margin-top:10px}
+.log .ok{color:#219653}
+.log .err{color:#c0392b}
+.log .info{color:#1A6FC4}
+.done{display:none;background:#e8f5e9;border:1px solid #a5d6a7;border-radius:8px;padding:16px 20px;font-size:14px;color:#1b5e20;line-height:1.6;margin-top:16px}
+.done strong{display:block;font-size:15px;margin-bottom:6px}
+.done ul{padding-left:18px;line-height:2.2;margin-top:6px}
+.done a{color:#1A6FC4}
+.url-box{background:#fff;border:1px solid #e5e7eb;border-radius:6px;padding:10px 12px;font-family:monospace;font-size:12px;word-break:break-all;color:#1A6FC4;margin-top:8px;cursor:text;user-select:all}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Data Migration Tool</h1>
+  <p class="subtitle">Run this <strong>once</strong> to copy all existing products from the JS files into your OneDrive folder as an Excel file (<code>products.xlsx</code>) and a public JSON file (<code>products.json</code>). After migration, use the admin panel to make changes.</p>
+
+  <div class="warn">
+    <strong>Read before running</strong>
+    This will create a <code>ProductSelector/</code> folder in your OneDrive and upload all products. If you run it again, it will overwrite any changes made through the admin panel. Only run this once on a fresh setup, or when you intentionally want to reset data back to what is in the code.
+  </div>
+
+  <!-- Step 1: Sign in -->
+  <div class="card" id="loginCard">
+    <h2>Step 1 — Sign in with Microsoft</h2>
+    <p style="font-size:13px;color:#666;margin-bottom:16px">Sign in with the Microsoft account whose OneDrive will store the product data.</p>
+    <button class="btn btn-ms" id="btnLogin" onclick="doLogin()" disabled>
+      <svg width="18" height="18" viewBox="0 0 21 21" fill="none">
+        <rect x="1" y="1" width="9" height="9" fill="#f25022"/><rect x="11" y="1" width="9" height="9" fill="#7fba00"/>
+        <rect x="1" y="11" width="9" height="9" fill="#00a4ef"/><rect x="11" y="11" width="9" height="9" fill="#ffb900"/>
+      </svg>
+      Sign in with Microsoft
+    </button>
+    <p class="err" id="loginErr"></p>
+  </div>
+
+  <!-- Step 2: Migrate -->
+  <div class="card" id="migrateCard" style="display:none">
+    <h2>Step 2 — Migrate Data</h2>
+    <p class="user-row">Signed in as: <strong id="signedInAs"></strong></p>
+    <p style="font-size:13px;color:#666;margin-bottom:6px">Products found in products.js: <strong id="productCount"></strong></p>
+    <p style="font-size:13px;color:#666;margin-bottom:16px">Target OneDrive folder: <strong id="targetFolder"></strong></p>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn btn-go" id="btnMigrate" onclick="startMigration()">Start Migration</button>
+      <button class="btn btn-out" onclick="doSignOut()">Sign out</button>
+    </div>
+
+    <div class="progress-wrap" id="progressWrap">
+      <p class="progress-label" id="progressLabel">Starting…</p>
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="log" id="log"></div>
+    </div>
+
+    <div class="done" id="doneMsg">
+      <strong>Migration complete!</strong>
+      All products and categories have been written to OneDrive.
+      <ul>
+        <li>Open the <a href="admin/">admin panel</a> to manage products</li>
+        <li>Go to <strong>Admin → Setup tab → Get Public URL</strong> to get the <code>productsJsonUrl</code></li>
+        <li>Paste that URL into <code>js/onedrive-config.js</code> → <code>productsJsonUrl</code></li>
+        <li>Open the <a href="index.html">main site</a> to verify everything looks correct</li>
+        <li><strong>Delete this file</strong> (migrate.html) when done — it is no longer needed</li>
+      </ul>
+      <div id="jsonUrlSection" style="margin-top:14px;display:none">
+        <p style="font-size:13px;font-weight:600">Public URL for products.json (copy into onedrive-config.js):</p>
+        <div class="url-box" id="jsonUrl"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const CFG    = typeof ONEDRIVE_CONFIG !== 'undefined' ? ONEDRIVE_CONFIG : {};
+const FOLDER = CFG.folderPath || 'ProductSelector';
+const GRAPH  = 'https://graph.microsoft.com/v1.0';
+const SCOPES = ['Files.ReadWrite','User.Read'];
+const COLS   = [
+  'id','name','cat','order','desc',
+  'cpu','ram','storage','cell','cellular_gen','wifi',
+  'rs485','rs232','ip','power','ports','os',
+  'housing','dims','weight','op_temp',
+  'images','use_cases','datasheet','variants_json','part_datasheets'
+];
+
+document.getElementById('productCount').textContent = typeof PRODUCTS_DATA !== 'undefined' ? PRODUCTS_DATA.length : '?';
+document.getElementById('targetFolder').textContent = FOLDER;
+
+// ─── MSAL ────────────────────────────────────────────────────────────────────
+let msalInst;
+
+(async () => {
+  if (!CFG.clientId || CFG.clientId === 'YOUR_CLIENT_ID') {
+    document.getElementById('loginErr').textContent =
+      'clientId not set — open js/onedrive-config.js and paste your Azure App Registration client ID.';
+    document.getElementById('btnLogin').disabled = true;
+    return;
+  }
+  try {
+    msalInst = new msal.PublicClientApplication({
+      auth: {
+        clientId:    CFG.clientId,
+        authority:  `https://login.microsoftonline.com/${CFG.tenantId || 'common'}`,
+        redirectUri: window.location.href.split('?')[0],
+      },
+      cache: { cacheLocation: 'sessionStorage' }
+    });
+    await msalInst.initialize();
+    await msalInst.handleRedirectPromise().catch(() => {});
+    document.getElementById('btnLogin').disabled = false;
+    const accs = msalInst.getAllAccounts();
+    if (accs.length) showMigrateCard(accs[0]);
+  } catch(e) {
+    console.error('[migrate] MSAL init failed:', e);
+    document.getElementById('loginErr').textContent = 'MSAL init error: ' + e.message;
+  }
+})();
+
+async function doLogin() {
+  if (!msalInst) {
+    document.getElementById('loginErr').textContent = 'Not initialized — check clientId in js/onedrive-config.js.';
+    return;
+  }
+  const btn = document.getElementById('btnLogin');
+  btn.disabled = true;
+  document.getElementById('loginErr').textContent = '';
+  try {
+    const r = await msalInst.loginPopup({ scopes: SCOPES });
+    showMigrateCard(r.account);
+  } catch(e) {
+    document.getElementById('loginErr').textContent = e.message || 'Sign-in failed';
+    btn.disabled = false;
+  }
+}
+
+async function doSignOut() {
+  await msalInst.logoutPopup().catch(()=>{});
+  document.getElementById('loginCard').style.display   = 'block';
+  document.getElementById('migrateCard').style.display = 'none';
+  document.getElementById('btnLogin').disabled = false;
+}
+
+function showMigrateCard(account) {
+  document.getElementById('loginCard').style.display   = 'none';
+  document.getElementById('migrateCard').style.display = 'block';
+  document.getElementById('signedInAs').textContent    = account.username || account.name || '';
+}
+
+async function getToken() {
+  const accs = msalInst.getAllAccounts();
+  if (!accs.length) throw new Error('Not signed in');
+  try {
+    const r = await msalInst.acquireTokenSilent({ scopes: SCOPES, account: accs[0] });
+    return r.accessToken;
+  } catch {
+    const r = await msalInst.acquireTokenPopup({ scopes: SCOPES });
+    return r.accessToken;
+  }
+}
+
+// ─── Graph API ───────────────────────────────────────────────────────────────
+async function uploadFile(path, buffer, mime) {
+  const token = await getToken();
+  const res = await fetch(`${GRAPH}/me/drive/root:/${path}:/content`, {
+    method: 'PUT',
+    headers: { Authorization: `Bearer ${token}`, 'Content-Type': mime },
+    body: buffer
+  });
+  if (!res.ok) throw new Error(`Upload ${res.status}: ${await res.text()}`);
+  return res.json();
+}
+
+async function createLink(path) {
+  const token = await getToken();
+  const res = await fetch(`${GRAPH}/me/drive/root:/${path}:/createLink`, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ type: 'view', scope: 'anonymous' })
+  });
+  if (!res.ok) throw new Error(`CreateLink ${res.status}: ${await res.text()}`);
+  const data = await res.json();
+  return data.link?.webUrl || '';
+}
+
+// ─── Migration ────────────────────────────────────────────────────────────────
+function logLine(msg, cls='') {
+  const el = document.getElementById('log');
+  el.style.display = 'block';
+  const line = document.createElement('div');
+  line.className = cls; line.textContent = msg;
+  el.appendChild(line); el.scrollTop = el.scrollHeight;
+}
+
+function setProgress(done, total, label) {
+  document.getElementById('progressFill').style.width  = Math.round(done/total*100) + '%';
+  document.getElementById('progressLabel').textContent = label;
+}
+
+function productToRow(p, i) {
+  const dsKey = cell => String(cell||'').replace(/\s*\(.*\)$/, '').trim();
+  const partDs = {};
+  if (p.variants?.rows?.length) {
+    p.variants.rows.forEach(row => {
+      const pn = dsKey(row[row.length-1]);
+      if (typeof PART_DATASHEETS !== 'undefined' && PART_DATASHEETS[pn]) partDs[pn] = PART_DATASHEETS[pn];
+    });
+  }
+  return COLS.map(col => {
+    if (col === 'order')          return i;
+    if (col === 'images')         return JSON.stringify((typeof PRODUCT_IMAGES !== 'undefined' && PRODUCT_IMAGES[p.id]) || []);
+    if (col === 'use_cases')      return JSON.stringify((typeof PRODUCT_USE_CASES !== 'undefined' && PRODUCT_USE_CASES[p.id]) || []);
+    if (col === 'datasheet')      return (typeof PRODUCT_DATASHEETS !== 'undefined' && PRODUCT_DATASHEETS[p.id]) || '';
+    if (col === 'variants_json')  return JSON.stringify(p.variants || null);
+    if (col === 'part_datasheets')return JSON.stringify(partDs);
+    return p[col] ?? '';
+  });
+}
+
+async function startMigration() {
+  const btn = document.getElementById('btnMigrate');
+  btn.disabled = true; btn.textContent = 'Migrating…';
+  document.getElementById('progressWrap').style.display = 'block';
+  document.getElementById('doneMsg').style.display      = 'none';
+
+  const products = typeof PRODUCTS_DATA !== 'undefined' ? PRODUCTS_DATA : [];
+  const cats     = ['All','Router','Gateway','Switch','Energy Meter','Other'];
+  const total    = 3; // Excel + JSON + sharing link
+  let done = 0;
+
+  // ── Build Excel ──
+  setProgress(done, total, 'Building Excel file…');
+  logLine('Building products.xlsx…', 'info');
+  let xlsxBytes;
+  try {
+    const wb  = XLSX.utils.book_new();
+    const pWS = XLSX.utils.aoa_to_sheet([COLS, ...products.map((p, i) => productToRow(p, i))]);
+    const cWS = XLSX.utils.aoa_to_sheet([['name'], ...cats.map(c => [c])]);
+    XLSX.utils.book_append_sheet(wb, pWS, 'Products');
+    XLSX.utils.book_append_sheet(wb, cWS, 'Categories');
+    xlsxBytes = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
+    logLine(`✓ Built Excel with ${products.length} products`, 'ok');
+  } catch(e) { logLine('✗ Excel build failed: ' + e.message, 'err'); btn.disabled=false; btn.textContent='Retry'; return; }
+
+  // ── Upload Excel ──
+  done++; setProgress(done, total, 'Uploading products.xlsx to OneDrive…');
+  logLine('Uploading products.xlsx…', 'info');
+  try {
+    await uploadFile(`${FOLDER}/products.xlsx`, new Uint8Array(xlsxBytes).buffer,
+      'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    logLine('✓ products.xlsx uploaded', 'ok');
+  } catch(e) { logLine('✗ Excel upload failed: ' + e.message, 'err'); btn.disabled=false; btn.textContent='Retry'; return; }
+
+  // ── Build & Upload JSON ──
+  done++; setProgress(done, total, 'Uploading products.json…');
+  logLine('Building and uploading products.json…', 'info');
+  try {
+    const data = {
+      cats,
+      products: products.map((p, i) => {
+        const dsKey = cell => String(cell||'').replace(/\s*\(.*\)$/, '').trim();
+        const partDs = {};
+        if (p.variants?.rows?.length) {
+          p.variants.rows.forEach(row => {
+            const pn = dsKey(row[row.length-1]);
+            if (typeof PART_DATASHEETS !== 'undefined' && PART_DATASHEETS[pn]) partDs[pn] = PART_DATASHEETS[pn];
+          });
+        }
+        return {
+          ...p,
+          order:           i,
+          images:          (typeof PRODUCT_IMAGES     !== 'undefined' && PRODUCT_IMAGES[p.id])     || [],
+          use_cases:       (typeof PRODUCT_USE_CASES  !== 'undefined' && PRODUCT_USE_CASES[p.id])  || [],
+          datasheet:       (typeof PRODUCT_DATASHEETS !== 'undefined' && PRODUCT_DATASHEETS[p.id]) || null,
+          part_datasheets: partDs
+        };
+      })
+    };
+    const jsonBytes = new TextEncoder().encode(JSON.stringify(data, null, 2));
+    await uploadFile(`${FOLDER}/products.json`, jsonBytes.buffer, 'application/json');
+    logLine('✓ products.json uploaded', 'ok');
+  } catch(e) { logLine('✗ JSON upload failed: ' + e.message, 'err'); btn.disabled=false; btn.textContent='Retry'; return; }
+
+  // ── Create Sharing Link for products.json ──
+  done++; setProgress(done, total, 'Creating public sharing link…');
+  logLine('Creating public sharing link for products.json…', 'info');
+  let publicUrl = '';
+  try {
+    publicUrl = await createLink(`${FOLDER}/products.json`);
+    logLine('✓ Public URL created', 'ok');
+  } catch(e) {
+    logLine('⚠ Could not create sharing link automatically: ' + e.message, 'err');
+    logLine('  Go to Admin → Setup tab → Get Public URL after logging in', 'info');
+  }
+
+  // ── Done ──
+  setProgress(total, total, 'Migration complete!');
+  logLine('', '');
+  logLine(`Done — ${products.length} products migrated to OneDrive.`, 'info');
+
+  document.getElementById('doneMsg').style.display = 'block';
+  if (publicUrl) {
+    document.getElementById('jsonUrlSection').style.display = 'block';
+    document.getElementById('jsonUrl').textContent = publicUrl;
+  }
+  btn.textContent = 'Migration Complete';
+}
+</script>
+</body>
+</html>

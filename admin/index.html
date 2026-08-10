@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Invendis Product Selector</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@azure/msal-browser@2.38.4/lib/msal-browser.min.js"></script>
+<script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+<script src="../js/onedrive-config.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',system-ui,sans-serif;background:#f4f6f9;color:#1a1d23;font-size:14px;line-height:1.5;height:100vh;overflow:hidden}
+
+/* ── Screens ── */
+.screen{display:none;height:100vh}
+.screen.active{display:flex}
+
+/* ── Setup ── */
+#sSetup{align-items:center;justify-content:center;background:#f4f6f9;overflow-y:auto}
+.setup-box{background:#fff;border-radius:12px;border:1px solid #e5e7eb;padding:36px 40px;max-width:580px;width:100%;margin:20px}
+.setup-box h1{font-size:20px;font-weight:600;margin-bottom:8px}
+.setup-box>p{color:#6b7280;font-size:13px;margin-bottom:20px}
+.setup-box ol{padding-left:20px;color:#4b5563;font-size:13px;line-height:2.2}
+.setup-box code{background:#f4f6f9;padding:1px 5px;border-radius:4px;font-family:'DM Mono',monospace;font-size:12px}
+.setup-box pre{background:#1a1d23;color:#c5d8f0;padding:16px;border-radius:8px;font-size:12px;overflow-x:auto;line-height:1.8;margin:12px 0 16px}
+
+/* ── Login ── */
+#sLogin{align-items:center;justify-content:center}
+.login-box{background:#fff;border-radius:12px;border:1px solid #e5e7eb;padding:48px 40px;max-width:360px;width:100%;text-align:center}
+.login-logo{height:32px;margin-bottom:24px}
+.login-box h1{font-size:22px;font-weight:600;margin-bottom:8px}
+.login-box p{color:#6b7280;font-size:13px;margin-bottom:28px}
+.btn-ms{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#0078d4;color:#fff;border:none;border-radius:8px;padding:12px 20px;font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;width:100%;transition:background .15s}
+.btn-ms:hover{background:#005fa3}
+.btn-ms:disabled{opacity:.5;cursor:not-allowed}
+.login-err{color:#dc2626;font-size:12px;margin-top:12px;min-height:18px}
+
+/* ── Loading ── */
+#sLoading{align-items:center;justify-content:center;flex-direction:column;gap:12px}
+.spinner{width:28px;height:28px;border:3px solid #e5e7eb;border-top-color:#1A6FC4;border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ── Dashboard ── */
+#sDash{flex-direction:column}
+.admin-header{height:52px;background:#fff;border-bottom:1px solid #e5e7eb;display:flex;align-items:center;padding:0 16px;gap:10px;flex-shrink:0}
+.admin-header img{height:24px}
+.admin-header-title{font-weight:600;font-size:14px;flex:1}
+.admin-header-user{font-size:12px;color:#6b7280}
+.btn-signout{background:none;border:1px solid #e5e7eb;border-radius:6px;padding:4px 12px;font-family:inherit;font-size:12px;color:#6b7280;cursor:pointer;transition:all .15s}
+.btn-signout:hover{border-color:#1A6FC4;color:#1A6FC4}
+.dash-body{display:flex;flex:1;overflow:hidden}
+
+/* ── Sidebar ── */
+.sidebar{width:264px;flex-shrink:0;background:#fff;border-right:1px solid #e5e7eb;display:flex;flex-direction:column;overflow:hidden}
+.sidebar-top{padding:10px;border-bottom:1px solid #f0f0f0;flex-shrink:0}
+.sidebar-search{width:100%;padding:7px 10px;border:1.5px solid #e5e7eb;border-radius:7px;font-family:inherit;font-size:13px;transition:border-color .15s}
+.sidebar-search:focus{outline:none;border-color:#1A6FC4}
+.cat-filter{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.cat-pill{background:none;border:1px solid #e5e7eb;border-radius:20px;padding:2px 9px;font-family:inherit;font-size:11px;font-weight:500;cursor:pointer;color:#6b7280;transition:all .15s}
+.cat-pill.active{background:#1A6FC4;border-color:#1A6FC4;color:#fff}
+.product-list{flex:1;overflow-y:auto;padding:6px}
+.product-item{padding:9px 11px;border-radius:7px;cursor:pointer;border:1.5px solid transparent;margin-bottom:2px;transition:background .1s}
+.product-item:hover{background:#f4f6f9}
+.product-item.active{background:#eff6ff;border-color:#1A6FC4}
+.product-item-name{font-weight:500;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.product-item-cat{font-size:11px;color:#6b7280;margin-top:1px}
+.sidebar-bottom{padding:10px;border-top:1px solid #f0f0f0;flex-shrink:0}
+.btn-add{width:100%;padding:9px;background:#1A6FC4;color:#fff;border:none;border-radius:7px;font-family:inherit;font-size:13px;font-weight:500;cursor:pointer;transition:background .15s}
+.btn-add:hover{background:#1558a0}
+
+/* ── Content ── */
+.content{flex:1;display:flex;flex-direction:column;overflow:hidden}
+.tab-bar{display:flex;padding:0 16px;background:#fff;border-bottom:1px solid #e5e7eb;flex-shrink:0}
+.tab{background:none;border:none;padding:13px 14px;font-family:inherit;font-size:13px;font-weight:500;cursor:pointer;color:#6b7280;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .15s}
+.tab.active{color:#1A6FC4;border-bottom-color:#1A6FC4}
+.tab-panel{flex:1;overflow-y:auto;display:none;flex-direction:column}
+.tab-panel.active{display:flex}
+
+/* ── No Selection ── */
+.no-selection{flex:1;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:#9ca3af}
+.no-selection svg{opacity:.25;width:44px;height:44px}
+
+/* ── Edit Form ── */
+.edit-form{flex:1;overflow-y:auto;padding:20px 24px 48px}
+.form-actions{display:flex;align-items:center;gap:10px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid #f0f0f0}
+.btn-save{background:#1A6FC4;color:#fff;border:none;border-radius:7px;padding:9px 20px;font-family:inherit;font-size:13px;font-weight:500;cursor:pointer;transition:background .15s}
+.btn-save:hover{background:#1558a0}
+.btn-del{background:none;border:1px solid #e5e7eb;border-radius:7px;padding:9px 14px;font-family:inherit;font-size:13px;color:#6b7280;cursor:pointer;transition:all .15s;margin-left:auto}
+.btn-del:hover{border-color:#dc2626;color:#dc2626}
+.form-section{margin-bottom:24px}
+.form-section>h3{font-size:11px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+.field{margin-bottom:10px}
+.field label{display:block;font-size:11px;font-weight:600;color:#374151;text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+.field .hint{font-weight:400;text-transform:none;color:#9ca3af;letter-spacing:0;font-size:10px}
+.field input,.field select,.field textarea{width:100%;padding:7px 9px;border:1.5px solid #e5e7eb;border-radius:7px;font-family:inherit;font-size:13px;color:#1a1d23;background:#fff;transition:border-color .15s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:#1A6FC4}
+.field textarea{resize:vertical;min-height:66px}
+.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.field-grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+
+/* ── Tag Editor ── */
+.tag-editor{display:flex;flex-wrap:wrap;gap:5px;min-height:34px;padding:5px;border:1.5px solid #e5e7eb;border-radius:7px;background:#fff;margin-bottom:6px}
+.tag{display:inline-flex;align-items:center;gap:3px;background:#eff6ff;color:#1A6FC4;border-radius:20px;padding:2px 8px;font-size:12px;font-weight:500}
+.tag-rm{background:none;border:none;cursor:pointer;color:#93c5fd;font-size:14px;line-height:1;padding:0;display:flex;align-items:center}
+.tag-rm:hover{color:#1A6FC4}
+.tag-input{width:100%;padding:6px 8px;border:1.5px solid #e5e7eb;border-radius:7px;font-family:inherit;font-size:13px}
+.tag-input:focus{outline:none;border-color:#1A6FC4}
+
+/* ── Image Grid ── */
+.image-grid{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+.img-item{position:relative;width:96px;height:96px;border-radius:8px;overflow:hidden;border:1.5px solid #e5e7eb;background:#f9fafb;flex-shrink:0}
+.img-item img{width:100%;height:100%;object-fit:contain}
+.img-rm{position:absolute;top:3px;right:3px;background:rgba(0,0,0,.55);color:#fff;border:none;border-radius:50%;width:18px;height:18px;font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1}
+.img-badge{position:absolute;bottom:3px;left:3px;background:#1A6FC4;color:#fff;font-size:9px;font-weight:600;border-radius:3px;padding:1px 4px;text-transform:uppercase}
+.btn-upload{display:inline-block;border:1.5px dashed #cbd5e1;border-radius:7px;padding:7px 14px;font-size:13px;color:#6b7280;cursor:pointer;transition:all .15s}
+.btn-upload:hover{border-color:#1A6FC4;color:#1A6FC4}
+.btn-upload input{display:none}
+
+/* ── Datasheet ── */
+.ds-row{display:flex;align-items:center;gap:8px;padding:8px 10px;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:7px;margin-bottom:8px;font-size:13px}
+.ds-row a{color:#1A6FC4;text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}
+.ds-row span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;color:#374151}
+.ds-row.pending{background:#eff6ff;border-color:#93c5fd}
+.ds-rm{background:none;border:none;color:#9ca3af;cursor:pointer;font-size:18px;flex-shrink:0;line-height:1}
+.ds-rm:hover{color:#dc2626}
+
+/* ── Categories Panel ── */
+.cats-panel{padding:20px 24px;max-width:480px}
+.cats-panel h2{font-size:16px;font-weight:600;margin-bottom:6px}
+.cats-panel .sub{color:#6b7280;font-size:13px;margin-bottom:18px;line-height:1.5}
+.cat-row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.cat-row input{flex:1;padding:7px 9px;border:1.5px solid #e5e7eb;border-radius:7px;font-family:inherit;font-size:13px}
+.cat-row input:focus{outline:none;border-color:#1A6FC4}
+.cat-rm{background:none;border:1px solid #e5e7eb;border-radius:6px;width:28px;height:28px;cursor:pointer;color:#9ca3af;font-size:15px;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.cat-rm:hover{border-color:#dc2626;color:#dc2626}
+.add-cat{display:flex;gap:8px;margin-top:12px}
+.add-cat input{flex:1;padding:7px 9px;border:1.5px solid #e5e7eb;border-radius:7px;font-family:inherit;font-size:13px}
+.add-cat input:focus{outline:none;border-color:#1A6FC4}
+.add-cat button{background:#1A6FC4;color:#fff;border:none;border-radius:7px;padding:7px 14px;font-family:inherit;font-size:13px;cursor:pointer;white-space:nowrap}
+.add-cat button:hover{background:#1558a0}
+
+/* ── Setup Panel ── */
+.setup-panel{padding:20px 24px;max-width:580px}
+.setup-panel h2{font-size:16px;font-weight:600;margin-bottom:16px}
+.info-card{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:16px 18px;margin-bottom:14px}
+.info-card h4{font-size:13px;font-weight:600;margin-bottom:8px}
+.info-card p{font-size:13px;color:#6b7280;margin-bottom:6px;line-height:1.6}
+.mono-box{font-family:'DM Mono',monospace;font-size:11px;background:#f4f6f9;padding:8px 10px;border-radius:6px;word-break:break-all;color:#1A6FC4;line-height:1.8}
+.btn-get{background:#1A6FC4;color:#fff;border:none;border-radius:6px;padding:7px 14px;font-family:inherit;font-size:13px;cursor:pointer;margin-top:6px}
+.btn-get:hover{background:#1558a0}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px;vertical-align:middle}
+.dot.ok{background:#10b981}
+.dot.warn{background:#f59e0b}
+
+/* ── Toast / Overlay ── */
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#1a1d23;color:#fff;padding:9px 18px;border-radius:8px;font-size:13px;pointer-events:none;opacity:0;transition:opacity .2s;z-index:200;white-space:nowrap}
+.toast.show{opacity:1}
+.toast.err{background:#dc2626}
+.toast.ok{background:#059669}
+.overlay{position:fixed;inset:0;background:rgba(255,255,255,.88);display:none;align-items:center;justify-content:center;flex-direction:column;gap:12px;z-index:150}
+.overlay p{font-size:14px;color:#374151}
+</style>
+</head>
+<body>
+
+<!-- Setup Error -->
+<div id="sSetup" class="screen">
+  <div class="setup-box">
+    <h1>Setup Required</h1>
+    <p>Fill in your Azure App Registration details in <code>js/onedrive-config.js</code> before using the admin panel.</p>
+    <pre>const ONEDRIVE_CONFIG = {
+  clientId: '<strong>YOUR_CLIENT_ID</strong>',  ← paste your App ID here
+  tenantId: 'common',
+  folderPath: 'ProductSelector',
+  productsJsonUrl: ''
+};</pre>
+    <p><strong>Steps to get your Client ID (one-time, ~10 min):</strong></p>
+    <ol>
+      <li>Go to <strong>portal.azure.com</strong> → Azure Active Directory → App registrations</li>
+      <li>Click <strong>New registration</strong> → Name it "ProductSelector Admin" → Register</li>
+      <li>Copy the <strong>Application (client) ID</strong> and paste it as <code>clientId</code> above</li>
+      <li>In the app: go to <strong>Authentication</strong> → Add platform → Single-page application</li>
+      <li>Set redirect URI to: <code id="redirectHint"></code></li>
+      <li>Go to <strong>API permissions</strong> → Add a permission → Microsoft Graph → Delegated<br>
+          Add both <code>Files.ReadWrite</code> and <code>User.Read</code></li>
+    </ol>
+  </div>
+</div>
+
+<!-- Login -->
+<div id="sLogin" class="screen">
+  <div class="login-box">
+    <img src="../assets/invendis_logo.png" class="login-logo" alt="Invendis" onerror="this.style.display='none'">
+    <h1>Product Admin</h1>
+    <p>Sign in with your Microsoft account to manage products</p>
+    <button class="btn-ms" id="btnSignIn" onclick="signIn()">
+      <svg width="20" height="20" viewBox="0 0 21 21" fill="none">
+        <rect x="1"  y="1"  width="9" height="9" fill="#f25022"/>
+        <rect x="11" y="1"  width="9" height="9" fill="#7fba00"/>
+        <rect x="1"  y="11" width="9" height="9" fill="#00a4ef"/>
+        <rect x="11" y="11" width="9" height="9" fill="#ffb900"/>
+      </svg>
+      Sign in with Microsoft
+    </button>
+    <p class="login-err" id="loginErr"></p>
+  </div>
+</div>
+
+<!-- Loading -->
+<div id="sLoading" class="screen">
+  <div class="spinner"></div>
+  <p style="color:#6b7280;font-size:13px">Loading products…</p>
+</div>
+
+<!-- Dashboard -->
+<div id="sDash" class="screen">
+  <header class="admin-header">
+    <img src="../assets/invendis_logo.png" alt="Invendis" onerror="this.style.display='none'">
+    <span class="admin-header-title">Product Admin</span>
+    <span class="admin-header-user" id="headerUser"></span>
+    <button class="btn-signout" onclick="signOut()">Sign out</button>
+  </header>
+
+  <div class="dash-body">
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <input class="sidebar-search" id="sideSearch" type="text" placeholder="Search products…" oninput="renderSidebar()">
+        <div class="cat-filter" id="catPills"></div>
+      </div>
+      <div class="product-list" id="productList"></div>
+      <div class="sidebar-bottom">
+        <button class="btn-add" onclick="newProduct()">+ Add Product</button>
+      </div>
+    </aside>
+
+    <main class="content">
+      <div class="tab-bar">
+        <button class="tab active" id="tabProducts" onclick="switchTab('products')">Products</button>
+        <button class="tab"        id="tabCats"     onclick="switchTab('cats')">Categories</button>
+        <button class="tab"        id="tabSetup"    onclick="switchTab('setup')">Setup</button>
+      </div>
+
+      <!-- Products Panel -->
+      <div class="tab-panel active" id="panelProducts">
+        <div class="no-selection" id="noSelection">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
+            <rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
+          </svg>
+          <span>Select a product from the sidebar to edit</span>
+        </div>
+        <div class="edit-form" id="editForm" style="display:none">
+          <div class="form-actions">
+            <button class="btn-save" onclick="saveProduct()">Save &amp; Publish</button>
+            <button class="btn-del"  onclick="deleteProduct()">Delete</button>
+          </div>
+
+          <div class="form-section">
+            <h3>Basic Info</h3>
+            <div class="field-grid">
+              <div class="field"><label>Product ID <span class="hint">— slug, no spaces</span></label><input id="fId" type="text" placeholder="silbo-r10"></div>
+              <div class="field"><label>Display Name</label><input id="fName" type="text" placeholder="SILBO R10"></div>
+              <div class="field"><label>Category</label><select id="fCat"></select></div>
+              <div class="field"><label>Sort Order <span class="hint">— lower = first</span></label><input id="fOrder" type="number" value="0"></div>
+            </div>
+            <div class="field"><label>Description</label><textarea id="fDesc" rows="3" placeholder="Brief product description…"></textarea></div>
+          </div>
+
+          <div class="form-section">
+            <h3>Use Cases</h3>
+            <div class="tag-editor" id="useCaseTags"></div>
+            <input class="tag-input" id="useCaseInput" type="text" placeholder="Type a use case and press Enter…" onkeydown="handleTagKey(event)">
+          </div>
+
+          <div class="form-section">
+            <h3>Specifications</h3>
+            <div class="field-grid-3">
+              <div class="field"><label>CPU</label><input id="fCpu" type="text"></div>
+              <div class="field"><label>RAM</label><input id="fRam" type="text"></div>
+              <div class="field"><label>Storage</label><input id="fStorage" type="text"></div>
+              <div class="field"><label>Cellular Module</label><input id="fCell" type="text" placeholder="e.g. EC25-AF"></div>
+              <div class="field"><label>Cellular Gen</label><select id="fCellGen"><option value="">— None —</option><option>5G</option><option>4G</option><option>3G</option></select></div>
+              <div class="field"><label>Wi-Fi</label><input id="fWifi" type="text" placeholder="e.g. 802.11ax"></div>
+              <div class="field"><label>RS485 Ports</label><input id="fRs485" type="text"></div>
+              <div class="field"><label>RS232 Ports</label><input id="fRs232" type="text"></div>
+              <div class="field"><label>IP Rating</label><input id="fIp" type="text" placeholder="e.g. IP30"></div>
+              <div class="field"><label>Power Input</label><input id="fPower" type="text" placeholder="e.g. 9–36V DC"></div>
+              <div class="field"><label>Ethernet Ports</label><input id="fPorts" type="text"></div>
+              <div class="field"><label>OS</label><input id="fOs" type="text" placeholder="e.g. OpenWrt"></div>
+              <div class="field"><label>Housing</label><input id="fHousing" type="text"></div>
+              <div class="field"><label>Dimensions</label><input id="fDims" type="text" placeholder="e.g. 140×90×30 mm"></div>
+              <div class="field"><label>Weight</label><input id="fWeight" type="text"></div>
+              <div class="field"><label>Operating Temp</label><input id="fOpTemp" type="text" placeholder="e.g. -40 to +70°C"></div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>Product Images</h3>
+            <div class="image-grid" id="imageGrid"></div>
+            <label class="btn-upload">+ Add Images<input type="file" accept="image/*" multiple onchange="handleImageFiles(event)"></label>
+          </div>
+
+          <div class="form-section">
+            <h3>Product Datasheet</h3>
+            <div id="datasheetWrap"></div>
+            <label class="btn-upload">Upload PDF<input type="file" accept=".pdf" onchange="handleDatasheetFile(event)"></label>
+          </div>
+
+          <div class="form-section">
+            <details>
+              <summary style="cursor:pointer;user-select:none;list-style:none;display:flex;align-items:center;gap:6px">
+                <span style="font-size:11px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:.06em">Variants</span>
+                <span style="font-size:11px;color:#9ca3af">— Advanced, edit carefully</span>
+              </summary>
+              <p style="font-size:12px;color:#6b7280;margin:8px 0 6px;line-height:1.5">JSON with <code style="font-family:'DM Mono',monospace;background:#f4f6f9;padding:1px 4px;border-radius:3px;font-size:11px">cols</code> and <code style="font-family:'DM Mono',monospace;background:#f4f6f9;padding:1px 4px;border-radius:3px;font-size:11px">rows</code> keys. Controls the ordering table on the product card. Leave blank if not applicable.</p>
+              <div class="field"><textarea id="fVariants" rows="10" style="font-family:'DM Mono',monospace;font-size:12px" placeholder='{"cols":["Part No.","RAM","Storage"],"rows":[["PART-001","512MB","4GB"]]}'></textarea></div>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <!-- Categories Panel -->
+      <div class="tab-panel" id="panelCats">
+        <div class="cats-panel">
+          <h2>Categories</h2>
+          <p class="sub">These appear as filter tabs on the main site. "All" is always shown first automatically.</p>
+          <div id="catList"></div>
+          <div class="add-cat">
+            <input id="newCatInput" type="text" placeholder="New category name…" onkeydown="if(event.key==='Enter')addCat()">
+            <button onclick="addCat()">Add</button>
+          </div>
+          <button class="btn-save" style="margin-top:20px" onclick="saveCats()">Save &amp; Publish</button>
+        </div>
+      </div>
+
+      <!-- Setup Panel -->
+      <div class="tab-panel" id="panelSetup">
+        <div class="setup-panel">
+          <h2>Setup &amp; Configuration</h2>
+          <div class="info-card">
+            <h4>OneDrive Storage</h4>
+            <p>All data lives in your OneDrive folder: <strong id="setupFolder"></strong></p>
+            <div class="mono-box">
+              📁 ProductSelector/<br>
+              &nbsp;&nbsp;📊 products.xlsx &nbsp;&nbsp;— database (Excel)<br>
+              &nbsp;&nbsp;📄 products.json &nbsp;&nbsp;— public file read by main site<br>
+              &nbsp;&nbsp;📁 images/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;— product images<br>
+              &nbsp;&nbsp;📁 datasheets/ &nbsp;&nbsp;&nbsp;&nbsp;— PDF datasheets
+            </div>
+          </div>
+          <div class="info-card">
+            <h4>GitHub Token</h4>
+            <p>Personal Access Token with <code style="font-family:'DM Mono',monospace;background:#f4f6f9;padding:1px 4px;border-radius:3px;font-size:11px">repo</code> + <code style="font-family:'DM Mono',monospace;background:#f4f6f9;padding:1px 4px;border-radius:3px;font-size:11px">gist</code> scopes. Saved to your browser only — never committed to the repo.</p>
+            <div style="display:flex;gap:8px;margin-top:10px">
+              <input type="password" id="ghTokenInput" placeholder="ghp_…" style="flex:1;padding:7px 9px;border:1.5px solid #e5e7eb;border-radius:7px;font-family:'DM Mono',monospace;font-size:12px;color:#1a1d23">
+              <button class="btn-get" onclick="saveGithubToken()">Save</button>
+            </div>
+            <p id="ghTokenStatus" style="font-size:12px;margin-top:6px;color:#6b7280"></p>
+          </div>
+          <div class="info-card">
+            <h4>GitHub Gist — Public JSON</h4>
+            <p id="gistStatusMsg"></p>
+            <div id="gistInfoSection" style="display:none;margin-top:10px">
+              <p style="font-size:12px;margin-bottom:4px">Gist ID — paste into <code style="font-family:'DM Mono',monospace;background:#f4f6f9;padding:1px 4px;border-radius:3px">onedrive-config.js → gistId</code>:</p>
+              <div class="mono-box" id="gistIdBox" style="cursor:text;user-select:all;margin-bottom:10px"></div>
+              <p style="font-size:12px;margin-bottom:4px">Raw URL — paste into <code style="font-family:'DM Mono',monospace;background:#f4f6f9;padding:1px 4px;border-radius:3px">onedrive-config.js → productsJsonUrl</code>:</p>
+              <div class="mono-box" id="gistUrlBox" style="cursor:text;user-select:all"></div>
+            </div>
+          </div>
+          <div class="info-card">
+            <h4>Status</h4>
+            <p><span class="dot" id="dotConfig"></span><span id="statusConfig"></span></p>
+            <p style="margin-top:6px"><span class="dot" id="dotGH"></span><span id="statusGH"></span></p>
+            <p style="margin-top:6px"><span class="dot" id="dotUrl"></span><span id="statusUrl"></span></p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<div class="overlay" id="overlay"><div class="spinner"></div><p id="overlayMsg">Saving…</p></div>
+
+<script>
+// ─── Constants ────────────────────────────────────────────────────────────────
+const COLS = [
+  'id','name','cat','order','desc',
+  'cpu','ram','storage','cell','cellular_gen','wifi',
+  'rs485','rs232','ip','power','ports','os',
+  'housing','dims','weight','op_temp',
+  'images','use_cases','datasheet','variants_json','part_datasheets'
+];
+const CFG    = typeof ONEDRIVE_CONFIG !== 'undefined' ? ONEDRIVE_CONFIG : {};
+const FOLDER = CFG.folderPath || 'ProductSelector';
+const GRAPH  = 'https://graph.microsoft.com/v1.0';
+const SCOPES = ['Files.ReadWrite','User.Read'];
+
+// ─── Secrets (browser localStorage — never committed to the repo) ────────────
+function getGithubToken() {
+  return localStorage.getItem('invendis_github_token') || '';
+}
+function saveGithubToken() {
+  const val = document.getElementById('ghTokenInput').value.trim();
+  if (!val) { showToast('Enter a token first', 'err'); return; }
+  localStorage.setItem('invendis_github_token', val);
+  document.getElementById('ghTokenInput').value = '';
+  renderSetupStatus();
+  showToast('Token saved to browser!', 'ok');
+}
+
+// ─── State ────────────────────────────────────────────────────────────────────
+let products    = [];
+let cats        = [];
+let selectedId  = null;
+let currentImgs = [];   // existing image URLs for the selected product
+let pendingImgs = [];   // [{file, dataUrl}] not yet uploaded
+let pendingDs   = null; // File object pending upload
+let currentDs   = '';   // current datasheet URL
+let sidebarCat  = '';
+let msalInst;
+
+// ─── MSAL / Auth ─────────────────────────────────────────────────────────────
+function initMsal() {
+  msalInst = new msal.PublicClientApplication({
+    auth: {
+      clientId:    CFG.clientId,
+      authority:  `https://login.microsoftonline.com/${CFG.tenantId || 'common'}`,
+      redirectUri: window.location.href.split('?')[0],
+    },
+    cache: { cacheLocation: 'sessionStorage' }
+  });
+}
+
+async function signIn() {
+  const btn = document.getElementById('btnSignIn');
+  btn.disabled = true;
+  document.getElementById('loginErr').textContent = '';
+  try {
+    await msalInst.loginPopup({ scopes: SCOPES });
+    loadData();
+  } catch(e) {
+    document.getElementById('loginErr').textContent = e.message || 'Sign-in failed';
+    btn.disabled = false;
+  }
+}
+
+function signOut() {
+  msalInst.logoutPopup().catch(() => {}).finally(() => showScreen('login'));
+}
+
+async function getToken() {
+  const accs = msalInst.getAllAccounts();
+  if (!accs.length) throw new Error('Not signed in');
+  try {
+    const r = await msalInst.acquireTokenSilent({ scopes: SCOPES, account: accs[0] });
+    return r.accessToken;
+  } catch {
+    const r = await msalInst.acquireTokenPopup({ scopes: SCOPES });
+    return r.accessToken;
+  }
+}
+
+// ─── Graph API ───────────────────────────────────────────────────────────────
+async function callGraph(method, path, body = null, asBuffer = false) {
+  const token   = await getToken();
+  const headers = { Authorization: `Bearer ${token}` };
+  const opts    = { method, headers };
+  if (body instanceof ArrayBuffer || ArrayBuffer.isView(body)) {
+    headers['Content-Type'] = 'application/octet-stream';
+    opts.body = body;
+  } else if (body !== null) {
+    headers['Content-Type'] = 'application/json';
+    opts.body = JSON.stringify(body);
+  }
+  const res = await fetch(GRAPH + path, opts);
+  if (!res.ok) throw new Error(`Graph ${res.status}: ${await res.text()}`);
+  if (res.status === 204) return null;
+  return asBuffer ? res.arrayBuffer() : res.json();
+}
+
+async function uploadFile(onedrivePath, buffer, mime) {
+  const token = await getToken();
+  const res = await fetch(`${GRAPH}/me/drive/root:/${onedrivePath}:/content`, {
+    method: 'PUT',
+    headers: { Authorization: `Bearer ${token}`, 'Content-Type': mime },
+    body: buffer
+  });
+  if (!res.ok) throw new Error(`Upload ${res.status}: ${await res.text()}`);
+  return res.json();
+}
+
+async function createLink(onedrivePath) {
+  const r = await callGraph('POST', `/me/drive/root:/${onedrivePath}:/createLink`, {
+    type: 'view', scope: 'anonymous'
+  });
+  return r.link?.webUrl || '';
+}
+
+// ─── Excel (SheetJS) ─────────────────────────────────────────────────────────
+function productToRow(p) {
+  return COLS.map(col => {
+    if (col === 'variants_json')   return JSON.stringify(p.variants        ?? null);
+    if (col === 'images')          return JSON.stringify(p.images          ?? []);
+    if (col === 'use_cases')       return JSON.stringify(p.use_cases       ?? []);
+    if (col === 'part_datasheets') return JSON.stringify(p.part_datasheets ?? {});
+    return p[col] ?? '';
+  });
+}
+
+function rowToProduct(headers, values) {
+  const p = {};
+  headers.forEach((h, i) => p[h] = values[i] ?? '');
+  try { p.images          = JSON.parse(p.images          || '[]');   } catch { p.images = []; }
+  try { p.use_cases       = JSON.parse(p.use_cases       || '[]');   } catch { p.use_cases = []; }
+  try { p.variants        = JSON.parse(p.variants_json   || 'null'); } catch { p.variants = null; }
+  try { p.part_datasheets = JSON.parse(p.part_datasheets || '{}');   } catch { p.part_datasheets = {}; }
+  delete p.variants_json;
+  p.order = Number(p.order) || 0;
+  return p;
+}
+
+async function readExcel() {
+  const buf     = await callGraph('GET', `/me/drive/root:/${FOLDER}/products.xlsx:/content`, null, true);
+  const wb      = XLSX.read(new Uint8Array(buf), { type: 'array' });
+  const ws      = wb.Sheets[wb.SheetNames[0]];
+  const rawRows = XLSX.utils.sheet_to_json(ws, { header: 1, defval: '' });
+  const headers = rawRows[0] || [];
+  products = rawRows.slice(1)
+    .filter(r => r.some(Boolean))
+    .map(r => rowToProduct(headers, r))
+    .sort((a, b) => a.order - b.order);
+  const wsCats = wb.Sheets[wb.SheetNames[1]];
+  if (wsCats) {
+    const cRows = XLSX.utils.sheet_to_json(wsCats, { header: 1, defval: '' });
+    cats = cRows.slice(1).map(r => r[0]).filter(Boolean);
+  }
+}
+
+async function writeExcel() {
+  const wb  = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet([COLS, ...products.map(productToRow)]), 'Products');
+  XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet([['name'], ...cats.map(c => [c])]), 'Categories');
+  const bytes = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
+  await uploadFile(`${FOLDER}/products.xlsx`, new Uint8Array(bytes).buffer,
+    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+}
+
+function buildJsonData() {
+  return {
+    cats,
+    products: products.map(p => {
+      const out = {};
+      COLS.filter(c => c !== 'variants_json').forEach(c => { out[c] = p[c] ?? null; });
+      out.images          = Array.isArray(p.images)    ? p.images    : [];
+      out.use_cases       = Array.isArray(p.use_cases) ? p.use_cases : [];
+      out.variants        = p.variants        ?? null;
+      out.part_datasheets = p.part_datasheets ?? {};
+      return out;
+    })
+  };
+}
+
+async function writeJson() {
+  const jsonStr = JSON.stringify(buildJsonData(), null, 2);
+  const bytes   = new TextEncoder().encode(jsonStr);
+  await uploadFile(`${FOLDER}/products.json`, bytes.buffer, 'application/json');
+
+  const gistData = await pushToGist(jsonStr);
+  if (gistData && !CFG.gistId) {
+    const rawUrl = `https://gist.githubusercontent.com/${gistData.owner.login}/${gistData.id}/raw/products.json`;
+    CFG.gistId = gistData.id;
+    showGistInfo(gistData.id, rawUrl);
+  }
+}
+
+async function pushToGist(jsonStr) {
+  const token  = getGithubToken();
+  const gistId = CFG.gistId;
+  if (!token || token === 'YOUR_GITHUB_TOKEN') return;
+
+  const payload = {
+    description: 'Invendis ProductSelector — products.json',
+    public: true,
+    files: { 'products.json': { content: jsonStr } }
+  };
+
+  const url    = gistId ? `https://api.github.com/gists/${gistId}` : 'https://api.github.com/gists';
+  const method = gistId ? 'PATCH' : 'POST';
+
+  const res = await fetch(url, {
+    method,
+    headers: {
+      Authorization: `Bearer ${token}`,
+      Accept: 'application/vnd.github+json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  });
+  if (!res.ok) throw new Error(`GitHub Gist ${res.status}: ${await res.text()}`);
+  return res.json();
+}
+
+
+// ─── GitHub File Upload ───────────────────────────────────────────────────────
+function arrayBufferToBase64(buffer) {
+  const bytes = new Uint8Array(buffer);
+  let binary = '';
+  const chunk = 8192;
+  for (let i = 0; i < bytes.length; i += chunk)
+    binary += String.fromCharCode.apply(null, bytes.subarray(i, i + chunk));
+  return btoa(binary);
+}
+
+async function pushFileToGitHub(repoPath, buffer, commitMessage) {
+  const owner  = CFG.githubOwner;
+  const repo   = CFG.githubRepo;
+  const branch = CFG.githubBranch || 'main';
+  const token  = getGithubToken();
+  if (!owner || !repo || !token) throw new Error('GitHub repo not configured — open Setup tab and save your token');
+
+  const base64 = arrayBufferToBase64(buffer);
+
+  // Fetch existing file SHA (required by GitHub API when updating)
+  let sha;
+  try {
+    const r = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${repoPath}?ref=${branch}`, {
+      headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' }
+    });
+    if (r.ok) { const d = await r.json(); sha = d.sha; }
+  } catch {}
+
+  const body = { message: commitMessage, content: base64, branch };
+  if (sha) body.sha = sha;
+
+  const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${repoPath}`, {
+    method: 'PUT',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      Accept: 'application/vnd.github+json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+  });
+  if (!res.ok) throw new Error(`GitHub upload ${res.status}: ${await res.text()}`);
+
+  return `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${repoPath}`;
+}
+
+// ─── Load ─────────────────────────────────────────────────────────────────────
+async function loadData() {
+  showScreen('loading');
+  const accs = msalInst.getAllAccounts();
+  if (!accs.length) { showScreen('login'); return; }
+  document.getElementById('headerUser').textContent = accs[0].username || accs[0].name || '';
+  try {
+    await readExcel();
+    renderSidebar();
+    showScreen('dash');
+  } catch(e) {
+    const msg = e.message || '';
+    if (msg.includes('404') || msg.includes('itemNotFound')) {
+      showToast('products.xlsx not found — run migrate.html first', 'err');
+    } else {
+      showToast('Load error: ' + msg, 'err');
+    }
+    showScreen('login');
+  }
+}
+
+// ─── Save Product ─────────────────────────────────────────────────────────────
+async function saveProduct() {
+  const p = collectForm();
+  if (!p.id)   { showToast('Product ID is required', 'err'); return; }
+  if (!p.name) { showToast('Display name is required', 'err'); return; }
+
+  const varTxt = document.getElementById('fVariants').value.trim();
+  if (varTxt) {
+    try { p.variants = JSON.parse(varTxt); }
+    catch { showToast('Variants JSON is not valid — fix before saving', 'err'); return; }
+  }
+
+  showOverlay('Uploading images…');
+
+  const newImageUrls = [];
+  for (const pi of pendingImgs) {
+    try {
+      const ext  = pi.file.name.split('.').pop().toLowerCase();
+      const name = `${p.id}-${Date.now()}-${Math.random().toString(36).slice(2,6)}.${ext}`;
+      const url  = await pushFileToGitHub(`assets/images/${name}`, await pi.file.arrayBuffer(), `Add image ${name}`);
+      newImageUrls.push(url);
+    } catch(e) { showToast('Image upload failed: ' + e.message, 'err'); hideOverlay(); return; }
+  }
+
+  if (pendingDs) {
+    updateOverlay('Uploading datasheet…');
+    try {
+      const name = `${p.id}-datasheet.pdf`;
+      currentDs = await pushFileToGitHub(`assets/datasheets/${name}`, await pendingDs.arrayBuffer(), `Add datasheet ${name}`);
+    } catch(e) { showToast('Datasheet upload failed: ' + e.message, 'err'); hideOverlay(); return; }
+  }
+
+  p.images    = [...currentImgs, ...newImageUrls];
+  p.datasheet = currentDs || null;
+
+  const idx = products.findIndex(x => x.id === p.id);
+  if (idx >= 0) {
+    p.part_datasheets = products[idx].part_datasheets || {};
+    products[idx] = p;
+  } else {
+    p.order = products.length ? Math.max(...products.map(x => x.order)) + 1 : 0;
+    products.push(p);
+  }
+  products.sort((a, b) => a.order - b.order);
+
+  updateOverlay('Saving to Excel…');
+  try { await writeExcel(); } catch(e) { showToast('Excel save failed: ' + e.message, 'err'); hideOverlay(); return; }
+
+  updateOverlay('Publishing…');
+  try { await writeJson(); } catch(e) { showToast('Publish failed: ' + e.message, 'err'); hideOverlay(); return; }
+
+  pendingImgs = [];
+  pendingDs   = null;
+  selectedId  = p.id;
+  renderSidebar();
+  hideOverlay();
+  showToast('Saved and published!', 'ok');
+}
+
+// ─── Delete Product ───────────────────────────────────────────────────────────
+async function deleteProduct() {
+  if (!selectedId) return;
+  const p = products.find(x => x.id === selectedId);
+  if (!p || !confirm(`Delete "${p.name}"? This cannot be undone.`)) return;
+  showOverlay('Deleting…');
+  products = products.filter(x => x.id !== selectedId);
+  try { await writeExcel(); await writeJson(); }
+  catch(e) { showToast('Delete failed: ' + e.message, 'err'); hideOverlay(); return; }
+  selectedId = null;
+  hideEditForm();
+  renderSidebar();
+  hideOverlay();
+  showToast('Product deleted', 'ok');
+}
+
+// ─── Save Categories ──────────────────────────────────────────────────────────
+async function saveCats() {
+  cats = [...document.querySelectorAll('.cat-row-input')].map(i => i.value.trim()).filter(Boolean);
+  showOverlay('Saving categories…');
+  try { await writeExcel(); await writeJson(); renderSidebar(); renderCatDropdown(); hideOverlay(); showToast('Categories saved!', 'ok'); }
+  catch(e) { showToast('Save failed: ' + e.message, 'err'); hideOverlay(); }
+}
+
+// ─── Sidebar ──────────────────────────────────────────────────────────────────
+function renderSidebar() {
+  document.getElementById('catPills').innerHTML = ['', ...cats].map(c => `
+    <button class="cat-pill ${sidebarCat === c ? 'active' : ''}"
+      onclick="setSidebarCat('${esc(c)}')">${c || 'All'}</button>`).join('');
+
+  const q  = (document.getElementById('sideSearch')?.value || '').toLowerCase();
+  const fp = products.filter(p =>
+    (!sidebarCat || p.cat === sidebarCat) &&
+    (!q || (p.name||'').toLowerCase().includes(q) || (p.id||'').toLowerCase().includes(q)));
+  document.getElementById('productList').innerHTML = fp.length
+    ? fp.map(p => `<div class="product-item ${p.id === selectedId ? 'active' : ''}" onclick="selectProduct('${esc(p.id)}')">
+        <div class="product-item-name">${esc(p.name || p.id)}</div>
+        <div class="product-item-cat">${esc(p.cat || '—')}</div></div>`).join('')
+    : '<div style="padding:16px;color:#9ca3af;font-size:13px;text-align:center">No products</div>';
+}
+
+function setSidebarCat(c) { sidebarCat = c; renderSidebar(); }
+
+// ─── Product Form ─────────────────────────────────────────────────────────────
+function selectProduct(id) {
+  selectedId = id;
+  const p = products.find(x => x.id === id);
+  if (!p) return;
+  renderSidebar();
+  populateForm(p);
+  document.getElementById('noSelection').style.display = 'none';
+  document.getElementById('editForm').style.display = 'block';
+  switchTab('products');
+}
+
+function populateForm(p) {
+  [['fId',p.id],['fName',p.name],['fOrder',p.order??0],['fDesc',p.desc],
+   ['fCpu',p.cpu],['fRam',p.ram],['fStorage',p.storage],['fCell',p.cell],
+   ['fWifi',p.wifi],['fRs485',p.rs485],['fRs232',p.rs232],['fIp',p.ip],
+   ['fPower',p.power],['fPorts',p.ports],['fOs',p.os],['fHousing',p.housing],
+   ['fDims',p.dims],['fWeight',p.weight],['fOpTemp',p.op_temp]
+  ].forEach(([id, val]) => { const el = document.getElementById(id); if (el) el.value = val ?? ''; });
+  document.getElementById('fCellGen').value  = p.cellular_gen || '';
+  document.getElementById('fVariants').value = p.variants ? JSON.stringify(p.variants, null, 2) : '';
+  renderCatDropdown(p.cat);
+  renderUseCaseTags(p.use_cases || []);
+  currentImgs = [...(p.images || [])];
+  pendingImgs  = [];
+  renderImageGrid();
+  currentDs = p.datasheet || '';
+  pendingDs  = null;
+  renderDatasheet();
+}
+
+function collectForm() {
+  const v = id => (document.getElementById(id)?.value || '').trim();
+  return {
+    id: v('fId'), name: v('fName'), cat: v('fCat'),
+    order: Number(v('fOrder')) || 0, desc: v('fDesc'),
+    cpu: v('fCpu'), ram: v('fRam'), storage: v('fStorage'),
+    cell: v('fCell'), cellular_gen: v('fCellGen'), wifi: v('fWifi'),
+    rs485: v('fRs485'), rs232: v('fRs232'), ip: v('fIp'),
+    power: v('fPower'), ports: v('fPorts'), os: v('fOs'),
+    housing: v('fHousing'), dims: v('fDims'), weight: v('fWeight'),
+    op_temp: v('fOpTemp'), use_cases: getUseCaseTags(),
+    variants: null, part_datasheets: {}
+  };
+}
+
+function newProduct() {
+  selectedId = null;
+  const p = { id:'', name:'', cat: cats[0]||'', order: products.length,
+    desc:'', images:[], use_cases:[], variants:null, part_datasheets:{} };
+  renderSidebar();
+  populateForm(p);
+  document.getElementById('noSelection').style.display = 'none';
+  document.getElementById('editForm').style.display = 'block';
+  document.getElementById('fId').focus();
+  switchTab('products');
+}
+
+function hideEditForm() {
+  document.getElementById('editForm').style.display = 'none';
+  document.getElementById('noSelection').style.display = 'flex';
+}
+
+// ─── Category Dropdown ────────────────────────────────────────────────────────
+function renderCatDropdown(selected) {
+  const sel = document.getElementById('fCat');
+  sel.innerHTML = cats.length
+    ? cats.map(c => `<option value="${esc(c)}" ${c===selected?'selected':''}>${esc(c)}</option>`).join('')
+    : '<option value="">— add categories first —</option>';
+}
+
+// ─── Use Cases ────────────────────────────────────────────────────────────────
+function renderUseCaseTags(arr) {
+  document.getElementById('useCaseTags').innerHTML = arr.map((t, i) => `
+    <span class="tag">${esc(t)}<button class="tag-rm" onclick="removeTag(${i})">×</button></span>`).join('');
+}
+function getUseCaseTags() {
+  return [...document.querySelectorAll('#useCaseTags .tag')]
+    .map(el => el.childNodes[0].textContent.trim()).filter(Boolean);
+}
+function handleTagKey(e) {
+  if (e.key !== 'Enter') return;
+  e.preventDefault();
+  const inp = document.getElementById('useCaseInput');
+  const val = inp.value.trim();
+  if (!val) return;
+  const tags = getUseCaseTags(); tags.push(val);
+  renderUseCaseTags(tags); inp.value = '';
+}
+function removeTag(i) { const t = getUseCaseTags(); t.splice(i,1); renderUseCaseTags(t); }
+
+// ─── Images ──────────────────────────────────────────────────────────────────
+function resolveImg(url) {
+  if (!url) return '';
+  if (url.startsWith('http')) return url;
+  return '../' + url.replace(/^\.\//, '');
+}
+function renderImageGrid() {
+  const ex = currentImgs.map((url, i) => `<div class="img-item">
+    <img src="${resolveImg(url)}" alt="" onerror="this.style.opacity='.3'">
+    <button class="img-rm" onclick="removeExistingImg(${i})">×</button></div>`).join('');
+  const pn = pendingImgs.map((pi, i) => `<div class="img-item">
+    <img src="${pi.dataUrl}" alt=""><span class="img-badge">New</span>
+    <button class="img-rm" onclick="removePendingImg(${i})">×</button></div>`).join('');
+  document.getElementById('imageGrid').innerHTML = ex + pn;
+}
+function handleImageFiles(e) {
+  [...e.target.files].forEach(file => {
+    const r = new FileReader();
+    r.onload = ev => { pendingImgs.push({ file, dataUrl: ev.target.result }); renderImageGrid(); };
+    r.readAsDataURL(file);
+  });
+  e.target.value = '';
+}
+function removeExistingImg(i) { currentImgs.splice(i,1); renderImageGrid(); }
+function removePendingImg(i)  { pendingImgs.splice(i,1); renderImageGrid(); }
+
+// ─── Datasheet ────────────────────────────────────────────────────────────────
+function renderDatasheet() {
+  const w = document.getElementById('datasheetWrap');
+  if (pendingDs) {
+    w.innerHTML = `<div class="ds-row pending"><span>📄 ${esc(pendingDs.name)} <em style="color:#1A6FC4">(pending upload)</em></span><button class="ds-rm" onclick="clearDatasheet()">×</button></div>`;
+  } else if (currentDs) {
+    w.innerHTML = `<div class="ds-row"><a href="${currentDs}" target="_blank">📄 View current datasheet</a><button class="ds-rm" onclick="clearDatasheet()">×</button></div>`;
+  } else {
+    w.innerHTML = '';
+  }
+}
+function handleDatasheetFile(e) { pendingDs = e.target.files[0]||null; renderDatasheet(); e.target.value=''; }
+function clearDatasheet() { pendingDs = null; currentDs = ''; renderDatasheet(); }
+
+// ─── Categories Panel ─────────────────────────────────────────────────────────
+function renderCatList() {
+  document.getElementById('catList').innerHTML = cats.map((c,i) => `
+    <div class="cat-row"><input class="cat-row-input" type="text" value="${esc(c)}">
+    <button class="cat-rm" onclick="removeCat(${i})">×</button></div>`).join('');
+}
+function addCat() {
+  const inp = document.getElementById('newCatInput');
+  const val = inp.value.trim(); if (!val) return;
+  cats.push(val); renderCatList(); inp.value = '';
+}
+function removeCat(i) { cats.splice(i,1); renderCatList(); }
+
+// ─── Setup Panel ─────────────────────────────────────────────────────────────
+function showGistInfo(id, rawUrl) {
+  document.getElementById('gistIdBox').textContent  = id;
+  document.getElementById('gistUrlBox').textContent = rawUrl;
+  document.getElementById('gistInfoSection').style.display = 'block';
+  document.getElementById('gistStatusMsg').textContent = 'Gist created! Copy the values below into js/onedrive-config.js:';
+  switchTab('setup');
+}
+
+async function getPublicJsonUrl() {
+  showOverlay('Getting public URL…');
+  try {
+    const url = await createLink(`${FOLDER}/products.json`);
+    document.getElementById('publicUrlText').textContent = url;
+    document.getElementById('publicUrlBox').style.display = 'block';
+    hideOverlay();
+    showToast('URL ready — copy it into onedrive-config.js', 'ok');
+  } catch(e) { hideOverlay(); showToast('Could not get URL (publish first): ' + e.message, 'err'); }
+}
+function renderSetupStatus() {
+  document.getElementById('setupFolder').textContent = FOLDER;
+  const hasCid   = !!(CFG.clientId && CFG.clientId !== 'YOUR_CLIENT_ID');
+  const hasToken = !!getGithubToken();
+  const hasGist  = !!CFG.gistId;
+  const hasUrl   = !!CFG.productsJsonUrl;
+
+  const ghTokenStatus = document.getElementById('ghTokenStatus');
+  if (ghTokenStatus) ghTokenStatus.textContent = hasToken ? 'Token is saved in this browser.' : 'No token saved yet.';
+  const hasGHRepo = !!(CFG.githubOwner && CFG.githubRepo);
+  document.getElementById('dotConfig').className      = 'dot ' + (hasCid ? 'ok' : 'warn');
+  document.getElementById('statusConfig').textContent = hasCid ? 'Azure App Registration configured' : 'clientId not set in js/onedrive-config.js';
+  document.getElementById('dotGH').className          = 'dot ' + (hasGHRepo ? 'ok' : 'warn');
+  document.getElementById('statusGH').textContent     = hasGHRepo
+    ? `GitHub repo: ${CFG.githubOwner}/${CFG.githubRepo} — images & datasheets upload here`
+    : 'githubOwner / githubRepo not set — image and datasheet uploads will fail';
+  document.getElementById('dotUrl').className         = 'dot ' + (hasUrl ? 'ok' : 'warn');
+  document.getElementById('statusUrl').textContent    = hasUrl ? 'productsJsonUrl set — main site loads live data' : 'productsJsonUrl not set — main site uses static data';
+
+  const gistMsg = document.getElementById('gistStatusMsg');
+  if (!hasToken) {
+    gistMsg.textContent = 'GitHub token not set — enter it in the GitHub Token section above and click Save.';
+  } else if (!hasGist) {
+    gistMsg.textContent = 'Token configured. Click "Save & Publish" on any product to create the Gist and get your URL.';
+  } else if (hasUrl) {
+    gistMsg.textContent = 'Gist connected — every Save & Publish updates the live site automatically.';
+  } else {
+    gistMsg.textContent = 'Gist ID set but productsJsonUrl is missing — copy the raw URL into onedrive-config.js.';
+  }
+}
+
+// ─── Tab Switching ────────────────────────────────────────────────────────────
+function switchTab(name) {
+  ['products','cats','setup'].forEach(t => {
+    document.getElementById('panel' + cap(t)).classList.toggle('active', t === name);
+    document.getElementById('tab'   + cap(t)).classList.toggle('active', t === name);
+  });
+  if (name === 'cats')  renderCatList();
+  if (name === 'setup') renderSetupStatus();
+}
+
+// ─── Screens ─────────────────────────────────────────────────────────────────
+function showScreen(name) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  const map = { setup:'sSetup', login:'sLogin', loading:'sLoading', dash:'sDash' };
+  document.getElementById(map[name]).classList.add('active');
+}
+
+// ─── Toast / Overlay ─────────────────────────────────────────────────────────
+let toastTimer;
+function showToast(msg, type='') {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.className = 'toast show' + (type ? ' '+type : '');
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('show'), 3200);
+}
+function showOverlay(msg)   { document.getElementById('overlay').style.display='flex'; document.getElementById('overlayMsg').textContent=msg; }
+function updateOverlay(msg) { document.getElementById('overlayMsg').textContent=msg; }
+function hideOverlay()      { document.getElementById('overlay').style.display='none'; }
+
+// ─── Utils ───────────────────────────────────────────────────────────────────
+function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function cap(s) { return s.charAt(0).toUpperCase()+s.slice(1); }
+
+// ─── Init ─────────────────────────────────────────────────────────────────────
+(async function init() {
+  const configured = !!(CFG.clientId && CFG.clientId !== 'YOUR_CLIENT_ID');
+  if (!configured) {
+    document.getElementById('redirectHint').textContent = window.location.href.split('?')[0];
+    showScreen('setup'); return;
+  }
+  initMsal();
+  await msalInst.initialize();
+  try { await msalInst.handleRedirectPromise(); } catch {}
+  if (msalInst.getAllAccounts().length) { loadData(); }
+  else { showScreen('login'); }
+})();
+</script>
+</body>
+</html>
