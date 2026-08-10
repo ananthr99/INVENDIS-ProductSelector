@@ -629,7 +629,8 @@ function rowToProduct(headers, values) {
 async function readFromGist() {
   const gistId = CFG.gistId;
   if (!gistId) throw new Error('gistId not set in onedrive-config.js — cannot load products');
-  const res  = await fetch(`https://api.github.com/gists/${gistId}`);
+  const _ghdr = getGithubToken() ? { Authorization: `Bearer ${getGithubToken()}` } : {};
+  const res  = await fetch(`https://api.github.com/gists/${gistId}`, { headers: _ghdr });
   if (!res.ok) throw new Error(`Gist fetch failed (${res.status})`);
   const data    = await res.json();
   const content = data.files?.['products.json']?.content;
@@ -1178,7 +1179,9 @@ async function logChange(action, detail, changes) {
   try {
     let entries = [];
     try {
-      const r = await fetch(`https://api.github.com/gists/${CFG.gistId}`);
+      const r = await fetch(`https://api.github.com/gists/${CFG.gistId}`, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
       if (r.ok) {
         const d = await r.json();
         const c = d.files?.['changelog.json']?.content;
@@ -1202,8 +1205,11 @@ async function loadChangelog() {
   el.innerHTML = '<p style="color:#9ca3af;font-size:13px">Loading…</p>';
   try {
     if (!CFG.gistId) throw new Error('Gist not configured yet — publish a product first');
-    const r = await fetch(`https://api.github.com/gists/${CFG.gistId}`);
-    if (!r.ok) throw new Error('Could not fetch activity log');
+    const _tok = getGithubToken();
+    const r = await fetch(`https://api.github.com/gists/${CFG.gistId}`,
+      _tok ? { headers: { Authorization: `Bearer ${_tok}` } } : {}
+    );
+    if (!r.ok) throw new Error(`Could not fetch activity log (${r.status})`);
     const d = await r.json();
     const c = d.files?.['changelog.json']?.content;
     renderChangelog(c ? JSON.parse(c) : []);
