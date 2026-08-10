@@ -9,6 +9,10 @@ const ONEDRIVE_CONFIG = {
   // OneDrive folder that will hold products.xlsx and products.json.
   folderPath: 'ProductSelector',
 
+  // The drive ID of the admin's OneDrive — all users access this one drive regardless of who is logged in.
+  // Leave blank initially, then go to Setup tab → Drive ID card, click Fetch, and paste the value here.
+  driveId: '',
+
   // GitHub repo where images and datasheets are stored (must match your GitHub Pages repo).
   githubOwner: 'ananthr99',
   githubRepo:  'INVENDIS-ProductSelector',

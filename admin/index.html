@@ -369,10 +369,20 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#f4f6f9;color:#1a1d23
             </div>
           </div>
           <div class="info-card">
+            <h4>OneDrive Drive ID</h4>
+            <p>Required so all admins access the same OneDrive folder. Sign in as the primary admin, click Fetch, then paste the ID into <code style="font-family:'DM Mono',monospace;background:#f4f6f9;padding:1px 4px;border-radius:3px;font-size:11px">js/onedrive-config.js → driveId</code> and redeploy.</p>
+            <button class="btn-get" style="margin-top:10px" onclick="fetchDriveId()">Fetch My Drive ID</button>
+            <div id="driveIdBox" style="display:none;margin-top:10px">
+              <p style="font-size:12px;margin-bottom:4px">Copy and paste into <code style="font-family:'DM Mono',monospace;background:#f4f6f9;padding:1px 4px;border-radius:3px">onedrive-config.js → driveId</code>:</p>
+              <div class="mono-box" id="driveIdValue" style="cursor:text;user-select:all;word-break:break-all"></div>
+            </div>
+          </div>
+          <div class="info-card">
             <h4>Status</h4>
             <p><span class="dot" id="dotConfig"></span><span id="statusConfig"></span></p>
             <p style="margin-top:6px"><span class="dot" id="dotGH"></span><span id="statusGH"></span></p>
             <p style="margin-top:6px"><span class="dot" id="dotUrl"></span><span id="statusUrl"></span></p>
+            <p style="margin-top:6px"><span class="dot" id="dotDrive"></span><span id="statusDrive"></span></p>
           </div>
         </div>
       </div>
@@ -392,10 +402,13 @@ const COLS = [
   'housing','dims','weight','op_temp',
   'images','use_cases','datasheet','variants_json','part_datasheets'
 ];
-const CFG    = typeof ONEDRIVE_CONFIG !== 'undefined' ? ONEDRIVE_CONFIG : {};
-const FOLDER = CFG.folderPath || 'ProductSelector';
-const GRAPH  = 'https://graph.microsoft.com/v1.0';
-const SCOPES = ['Files.ReadWrite','User.Read'];
+const CFG        = typeof ONEDRIVE_CONFIG !== 'undefined' ? ONEDRIVE_CONFIG : {};
+const FOLDER     = CFG.folderPath || 'ProductSelector';
+const GRAPH      = 'https://graph.microsoft.com/v1.0';
+const SCOPES     = ['Files.ReadWrite','User.Read'];
+// All Graph drive calls go to the admin's dedicated drive so any authorised user accesses the same data.
+// Falls back to /me/drive only if driveId hasn't been configured yet (bootstrap).
+const DRIVE_ROOT = CFG.driveId ? `/drives/${CFG.driveId}` : `/me/drive`;
 
 // ─── Secrets ─────────────────────────────────────────────────────────────────
 let sessionToken = ''; // loaded from OneDrive after login; falls back to localStorage
@@ -425,7 +438,7 @@ async function saveGithubToken() {
 
 async function loadAdminConfig() {
   try {
-    const buf  = await callGraph('GET', `/me/drive/root:/${FOLDER}/admin-config.json:/content`, null, true);
+    const buf  = await callGraph('GET', `${DRIVE_ROOT}/root:/${FOLDER}/admin-config.json:/content`, null, true);
     const conf = JSON.parse(new TextDecoder().decode(new Uint8Array(buf)));
     if (conf.githubToken) sessionToken = conf.githubToken;
   } catch {
@@ -505,7 +518,7 @@ async function callGraph(method, path, body = null, asBuffer = false) {
 
 async function uploadFile(onedrivePath, buffer, mime) {
   const token = await getToken();
-  const res = await fetch(`${GRAPH}/me/drive/root:/${onedrivePath}:/content`, {
+  const res = await fetch(`${GRAPH}${DRIVE_ROOT}/root:/${onedrivePath}:/content`, {
     method: 'PUT',
     headers: { Authorization: `Bearer ${token}`, 'Content-Type': mime },
     body: buffer
@@ -514,8 +527,16 @@ async function uploadFile(onedrivePath, buffer, mime) {
   return res.json();
 }
 
+async function fetchDriveId() {
+  try {
+    const d = await callGraph('GET', '/me/drive');
+    document.getElementById('driveIdValue').textContent = d.id;
+    document.getElementById('driveIdBox').style.display = 'block';
+  } catch(e) { showToast('Error fetching drive ID: ' + e.message, 'err'); }
+}
+
 async function createLink(onedrivePath) {
-  const r = await callGraph('POST', `/me/drive/root:/${onedrivePath}:/createLink`, {
+  const r = await callGraph('POST', `${DRIVE_ROOT}/root:/${onedrivePath}:/createLink`, {
     type: 'view', scope: 'anonymous'
   });
   return r.link?.webUrl || '';
@@ -545,7 +566,7 @@ function rowToProduct(headers, values) {
 }
 
 async function readExcel() {
-  const buf     = await callGraph('GET', `/me/drive/root:/${FOLDER}/products.xlsx:/content`, null, true);
+  const buf     = await callGraph('GET', `${DRIVE_ROOT}/root:/${FOLDER}/products.xlsx:/content`, null, true);
   const wb      = XLSX.read(new Uint8Array(buf), { type: 'array' });
   const ws      = wb.Sheets[wb.SheetNames[0]];
   const rawRows = XLSX.utils.sheet_to_json(ws, { header: 1, defval: '' });
@@ -986,6 +1007,9 @@ function renderSetupStatus() {
     : 'githubOwner / githubRepo not set — image and datasheet uploads will fail';
   document.getElementById('dotUrl').className         = 'dot ' + (hasUrl ? 'ok' : 'warn');
   document.getElementById('statusUrl').textContent    = hasUrl ? 'productsJsonUrl set — main site loads live data' : 'productsJsonUrl not set — main site uses static data';
+  const hasDrive = !!CFG.driveId;
+  document.getElementById('dotDrive').className       = 'dot ' + (hasDrive ? 'ok' : 'warn');
+  document.getElementById('statusDrive').textContent  = hasDrive ? `Dedicated drive configured — all admins share the same OneDrive` : 'driveId not set — only the primary admin can access data (fetch it from the Drive ID card above)';
 
   const gistMsg = document.getElementById('gistStatusMsg');
   if (!hasToken) {
