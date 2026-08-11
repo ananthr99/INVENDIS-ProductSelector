@@ -29,17 +29,15 @@
       "os": "Ubuntu/Oracle Linux/OpenWRT/Windows",
       "housing": "Aluminum Heat Sink with CRCA Enclosure",
       "dims": "150mm X 160mm X 52.8mm ( L X W X H) (w/o mounting options) (*Dimensions will vary depending on the mounting option chosen.)",
-      "weight": "",
+      "weight": "â",
       "op_temp": "0 ~ 50℃",
       "images": [
         "assets/images/inv-ce-xx.png",
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-ce-xx-1786440083061-lstd.png"
       ],
       "use_cases": [
-        "SD-WAN Gateway",
-        "Branch Office Router",
-        "Edge Compute Node",
-        "IoT Data Hub"
+        "Enterprise Branch Connectivity  Provides secure and uninterrupted connectivity for branch offices with multi-WAN support (SD-WAN), enabling seamless failover and optimized network performance.",
+        "Infotainment System for Vehicles  The Intel X7425E platform enables advanced vehicle infotainment, telematics, and connectivity solutions. It supports GPS navigation, multimedia applications, 4G/5G communication, Wi-Fi hotspot functionality, and real-time vehicle monitoring, making it ideal for connected vehicles, fleet management, and smart transportation systems."
       ],
       "datasheet": "assets/datasheets/Intel X7425E SDWAN Box.pdf",
       "part_datasheets": {},
