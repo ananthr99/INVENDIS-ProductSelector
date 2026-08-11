@@ -4221,9 +4221,7 @@
       "dims": "150x210x65mm (LxWxH)",
       "weight": "",
       "op_temp": "0 -50°C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/intel-x6425E-1786438350478-u7rn.png"
-      ],
+      "images": [],
       "use_cases": [
         "Edge Computing",
         "5G Connectivity Hub",
