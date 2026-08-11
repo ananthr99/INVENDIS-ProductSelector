@@ -1,12 +1,12 @@
 {
   "cats": [
-    "All",
     "Router",
     "Gateway",
     "Switch",
     "Energy Meter",
     "Other",
-    "PCB"
+    "PCB",
+    "Intel Based Devices"
   ],
   "products": [
     {
