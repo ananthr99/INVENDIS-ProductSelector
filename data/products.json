@@ -4198,58 +4198,6 @@
           ]
         ]
       }
-    },
-    {
-      "id": "ruKK",
-      "name": "RUKK",
-      "cat": "Router",
-      "order": 77,
-      "desc": "Ceiling-mount Wi-Fi 6 access point with AP/Station/EasyMesh support, no cellular",
-      "cpu": "MediaTek MT7981, 1 GB DDR4, 1 Gb NAND",
-      "ram": "1 GB DDR4",
-      "storage": "1 Gb NAND",
-      "cell": "none",
-      "cellular_gen": "",
-      "wifi": "WiFi6",
-      "rs485": "false",
-      "rs232": "false",
-      "ip": "IP30",
-      "power": "12 VDC",
-      "ports": "2",
-      "os": "OpenWRT Linux",
-      "housing": "Metal",
-      "dims": "209Ã30Ã154 mm",
-      "weight": "950 g",
-      "op_temp": "-20â60 Â°C",
-      "images": [
-        "assets/images/ru60.png"
-      ],
-      "use_cases": [
-        "Indoor Wi-Fi Coverage",
-        "Office Hotspot",
-        "Wi-Fi Mesh Extension",
-        "Guest Network"
-      ],
-      "datasheet": null,
-      "part_datasheets": {},
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "4G/5G",
-          "No. of Modems",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "â",
-            "Wi-Fi 6",
-            "â",
-            "â",
-            "RU60"
-          ]
-        ]
-      }
     }
   ]
 }
