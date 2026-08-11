@@ -10,41 +10,6 @@
   ],
   "products": [
     {
-      "id": "intel-x6425",
-      "name": "Intel X6425",
-      "cat": "Router",
-      "order": 0,
-      "desc": "High-performance x86 edge compute router with 5G (Telit FN990A28), dual-band Wi-Fi 6, and up to 32GB RAM",
-      "cpu": "Intel X86 Atom X6425E, 4-core up to 3 GHz",
-      "ram": "Up to 32 GB DDR4 3200",
-      "storage": "Up to 1 TB SATA SSD",
-      "cell": "5G",
-      "cellular_gen": "5G",
-      "wifi": "WiFi6",
-      "rs485": "false",
-      "rs232": "false",
-      "ip": "IP30",
-      "power": "19 / 24 VDC",
-      "ports": "4",
-      "os": "Oracle Linux v9.5 / Ubuntu 23 / Windows 10+",
-      "housing": "Aluminium",
-      "dims": "150Ã210Ã65 mm",
-      "weight": "â",
-      "op_temp": "0â50 Â°C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/intel-x6425-1786338085484-zbct.png"
-      ],
-      "use_cases": [
-        "Edge Computing",
-        "5G Connectivity Hub",
-        "Video Analytics",
-        "SD-WAN Aggregator"
-      ],
-      "datasheet": "assets/datasheets/Intel X6425 Based Industrial PC.pdf",
-      "part_datasheets": {},
-      "variants": null
-    },
-    {
       "id": "inv-ce-xx",
       "name": "INV-CE-XX",
       "cat": "Intel Based Devices",
