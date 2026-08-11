@@ -560,7 +560,10 @@ async function signIn() {
 
 function signOut() {
   folderCtx = null;
-  msalInst.logoutPopup().catch(() => {}).finally(() => showScreen('login'));
+  // Clear the local MSAL session cache without touching the Microsoft account.
+  // logoutPopup() would sign the user out of their MS account globally — not what we want.
+  msalInst.getAllAccounts().forEach(a => msalInst.clearCache({ account: a }));
+  showScreen('login');
 }
 
 async function getToken() {
