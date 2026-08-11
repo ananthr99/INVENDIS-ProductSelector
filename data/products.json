@@ -4214,15 +4214,15 @@
       "rs485": "false",
       "rs232": "false",
       "ip": "IP30",
-      "power": "19 / 24 VDC",
-      "ports": "4",
+      "power": "19 VDC",
+      "ports": "10/100/1000 Mbps (2x I226 Intel) , 2x RTL8125BG(Realtek)",
       "os": "Oracle Linux v9.5 / Ubuntu 23 / Windows 10+",
       "housing": "Aluminium",
-      "dims": "150Ã210Ã65 mm",
-      "weight": "â",
-      "op_temp": "0â50 Â°C",
+      "dims": "150x210x65mm (LxWxH)",
+      "weight": "",
+      "op_temp": "0 -50°C",
       "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/intel-x6425-1786338085484-zbct.png"
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/intel-x6425E-1786438350478-u7rn.png"
       ],
       "use_cases": [
         "Edge Computing",
