@@ -67,7 +67,8 @@
       "weight": "",
       "op_temp": "0 ~ 50℃",
       "images": [
-        "assets/images/inv-ce-xx.png"
+        "assets/images/inv-ce-xx.png",
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-ce-xx-1786440083061-lstd.png"
       ],
       "use_cases": [
         "SD-WAN Gateway",
