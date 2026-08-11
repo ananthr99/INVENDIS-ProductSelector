@@ -453,7 +453,7 @@
       "cat": "Router",
       "order": 6,
       "desc": "",
-      "cpu": "MediaTek MT7981, 1 GB DDR4, 1 Gb NAND",
+      "cpu": "",
       "ram": "1 GB DDR4",
       "storage": "1 Gb NAND",
       "cell": "none",
