@@ -560,8 +560,8 @@ async function signIn() {
 
 function signOut() {
   folderCtx = null;
-  // Remove accounts from MSAL's local cache only — does not sign out of Microsoft globally.
-  msalInst.getAllAccounts().forEach(a => msalInst.removeAccount(a));
+  sessionToken = '';
+  sessionStorage.clear(); // wipes MSAL's cached tokens; GitHub token is in localStorage so unaffected
   showScreen('login');
 }
 
