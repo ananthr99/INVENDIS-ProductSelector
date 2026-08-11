@@ -4198,6 +4198,41 @@
           ]
         ]
       }
+    },
+    {
+      "id": "intel-x6425E",
+      "name": "Intel X6425E",
+      "cat": "Router",
+      "order": 77,
+      "desc": "This is a compact, fanless industrial edge computer built for reliable on-site compute, networking, and connectivity in space-constrained deployments. Its key differentiators are the Intel Atom x6425E processor, up to 32 GB RAM, modular SSD and 5G/Wi Fi options, plus rugged features like an aluminium enclosure, IP30 rating, and wide operating temperature support. It is best suited for industrial automation, IoT gateways, networking edge nodes, and remote monitoring use cases across manufacturing, utilities, retail, and smart infrastructure.",
+      "cpu": "Intel X86 Atom, X6425E, 4 cores with base frequency 2GHz and Turbo Frequency of upto 3GHz",
+      "ram": "Up to 32 GB DDR4 3200 MHz",
+      "storage": "1x M.2 (Key-B), 512 GB SATA SSD Module (Up to 1 TB)",
+      "cell": "5G",
+      "cellular_gen": "5G",
+      "wifi": "WiFi6",
+      "rs485": "false",
+      "rs232": "false",
+      "ip": "IP30",
+      "power": "19 / 24 VDC",
+      "ports": "4",
+      "os": "Oracle Linux v9.5 / Ubuntu 23 / Windows 10+",
+      "housing": "Aluminium",
+      "dims": "150Ã210Ã65 mm",
+      "weight": "â",
+      "op_temp": "0â50 Â°C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/intel-x6425-1786338085484-zbct.png"
+      ],
+      "use_cases": [
+        "Edge Computing",
+        "5G Connectivity Hub",
+        "Video Analytics",
+        "SD-WAN Aggregator"
+      ],
+      "datasheet": "assets/datasheets/Intel X6425 Based Industrial PC.pdf",
+      "part_datasheets": {},
+      "variants": null
     }
   ]
 }
