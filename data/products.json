@@ -426,7 +426,7 @@
       "os": "OpenWRT Linux",
       "housing": "Plastic",
       "dims": "209 × 30 × 154 mm",
-      "weight": "",
+      "weight": "350g",
       "op_temp": "−20°C to 60°C",
       "images": [
         "assets/images/ru60.png"
@@ -437,7 +437,7 @@
         "Wi-Fi Mesh Extension",
         "Guest Network"
       ],
-      "datasheet": null,
+      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/ru60-datasheet.pdf",
       "part_datasheets": {
         "RU60": "assets/datasheets/RU60.pdf"
       },
