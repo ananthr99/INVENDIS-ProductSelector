@@ -482,7 +482,7 @@
       "weight": "950 g",
       "op_temp": "0°C-50°C",
       "images": [
-        "assets/images/ro-xx.png"
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/roxx-1786520658941-g4je.png"
       ],
       "use_cases": [
         "Telecom Backhaul & Site Connectivity",
