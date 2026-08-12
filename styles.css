@@ -39,13 +39,17 @@ body {
   min-height: 100vh;
   font-size: 15px;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* ── Header logos ── */
+.header-left { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
 .header-logo-link { display: flex; align-items: center; flex-shrink: 0; }
 .header-logo-img { display: block; object-fit: contain; }
 .header-logo-invendis { height: 36px; }
 .header-logo-silbo { height: 36px; }
+.header-logo-mii { height: 44px; }
+.header-logo-divider { width: 1px; height: 28px; background: #d1d5db; flex-shrink: 0; }
 .header-right {
   display: flex;
   align-items: center;
