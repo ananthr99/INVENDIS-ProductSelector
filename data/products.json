@@ -425,7 +425,7 @@
       "ports": "2 10/100/1000 Mbps",
       "os": "OpenWRT Linux",
       "housing": "Plastic",
-      "dims": "209 × 30 × 154 mm",
+      "dims": "190 x 190 x 50 mm (L x W x H)",
       "weight": "350g",
       "op_temp": "−20°C to 60°C",
       "images": [
