@@ -952,7 +952,7 @@
       "weight": "360 g",
       "op_temp": "0~ 50 ˚C",
       "images": [
-        "assets/images/re-xx.png"
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rexx-1786531665463-3vlw.jpg"
       ],
       "use_cases": [
         "Digital Signage & Remote Display Networks",
