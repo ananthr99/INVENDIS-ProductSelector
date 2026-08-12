@@ -432,10 +432,9 @@
         "assets/images/ru60.png"
       ],
       "use_cases": [
-        "Indoor Wi-Fi Coverage",
-        "Office Hotspot",
-        "Wi-Fi Mesh Extension",
-        "Guest Network"
+        "Enterprise & Office Wireless Connectivity",
+        "Retail & Commercial Space Networking",
+        "Industrial Wireless Network Extension"
       ],
       "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/ru60-datasheet.pdf",
       "part_datasheets": {
