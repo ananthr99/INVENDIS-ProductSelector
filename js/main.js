@@ -71,7 +71,7 @@ async function initApp() {
     PRODUCTS = PRODUCTS_DATA;
   }
 
-  document.getElementById('statTotal').textContent = PRODUCTS.length;
+  updateHeroStats();
   render();
 }
 

@@ -1,3 +1,20 @@
+function updateHeroStats() {
+  const el = document.getElementById('heroStats');
+  if (!el) return;
+  const labels = {
+    'Router':'routers','Gateway':'gateways','Switch':'switches',
+    'Energy Meter':'meters','PCB':'PCBs','Other':'other',
+    'Intel Based Devices':'Intel devices'
+  };
+  function catLabel(c) { return labels[c] || c.toLowerCase(); }
+  let html = `<div class="hero-stat"><span class="num">${PRODUCTS.length}</span><span class="lbl">total</span></div>`;
+  CATS.filter(c => c !== 'All').forEach(cat => {
+    const n = PRODUCTS.filter(p => p.cat === cat).length;
+    if (n > 0) html += `<div class="hero-stat"><span class="num">${n}</span><span class="lbl">${catLabel(cat)}</span></div>`;
+  });
+  el.innerHTML = html;
+}
+
 function buildCatTabs() {
   const tabs = document.getElementById('catTabs');
   const counts = {};
@@ -14,7 +31,6 @@ function render() {
   const totalPages = Math.ceil(list.length / PAGE_SIZE);
   if (currentPage > totalPages) currentPage = Math.max(1, totalPages);
 
-  document.getElementById('statFiltered').textContent = list.length;
   const rc = document.getElementById('resultsCount');
   const start = (currentPage - 1) * PAGE_SIZE + 1;
   const end = Math.min(currentPage * PAGE_SIZE, list.length);

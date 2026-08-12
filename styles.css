@@ -131,21 +131,29 @@ header {
 .hero {
   background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
   color: white;
-  padding: 48px 32px 36px;
+  padding: 28px 32px;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
-.hero-inner { max-width: 1280px; margin: 0 auto; }
-.hero h1 { font-size: 28px; font-weight: 600; letter-spacing: -0.3px; margin-bottom: 6px; }
-.hero p { color: rgba(255,255,255,0.6); font-size: 14px; }
-.hero-stats {
+.hero-inner {
+  max-width: 1280px;
+  margin: 0 auto;
   display: flex;
-  gap: 28px;
-  margin-top: 24px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
   flex-wrap: wrap;
 }
-.hero-stat { display: flex; flex-direction: column; gap: 2px; }
-.hero-stat .num { font-size: 22px; font-weight: 600; color: var(--accent); font-family: var(--mono); }
-.hero-stat .lbl { font-size: 11px; color: rgba(255,255,255,0.45); letter-spacing: 0.06em; text-transform: uppercase; }
+.hero-title h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; margin-bottom: 3px; }
+.hero-title p { color: rgba(255,255,255,0.5); font-size: 13px; }
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+.hero-stat { display: flex; align-items: baseline; gap: 6px; }
+.hero-stat .num { font-size: 20px; font-weight: 700; color: #ffffff; font-family: var(--mono); }
+.hero-stat .lbl { font-size: 13px; color: rgba(255,255,255,0.5); }
 
 /* ── Main layout ── */
 .main { max-width: 1280px; margin: 0 auto; padding: 28px 32px 60px; }
