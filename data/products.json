@@ -475,7 +475,7 @@
       "rs232": "false",
       "ip": "IP30",
       "power": "9–30 VDC",
-      "ports": "7",
+      "ports": "6 x 10/100/1000 Mbps",
       "os": "OpenWRT 21/23",
       "housing": "Sheet Metal",
       "dims": "210 × 25 × 135 mm (W × H × D)",
