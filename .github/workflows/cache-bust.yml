@@ -1,33 +1,38 @@
-name: Cache Bust
+name: Deploy to Pages
 
 on:
   push:
     branches: [main]
-    paths:
-      - 'js/**'
-      - 'products.js'
-      - 'admin/**'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  cache-bust:
+  deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Inject git SHA as cache-bust version
         run: |
           SHA=$(git rev-parse --short HEAD)
           sed -i "s/__VER__/$SHA/g" index.html
-          echo "Replaced __VER__ with $SHA"
+          echo "Cache-busted with SHA: $SHA"
 
-      - name: Commit updated index.html
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add index.html
-          git diff --staged --quiet || git commit -m "chore: cache-bust [skip ci]"
-          git push
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - id: deployment
+        uses: actions/deploy-pages@v5
