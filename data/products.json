@@ -564,7 +564,9 @@
       "dims": "110 x 55 x 144 mm (W x H x D)",
       "weight": "480 g",
       "op_temp": "0~ 50 ˚C",
-      "images": [],
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rtxx-1786524726723-byku.png"
+      ],
       "use_cases": [
         "Industrial Automation & Machine Connectivity",
         "IoT Gateway for Smart Deployments",
