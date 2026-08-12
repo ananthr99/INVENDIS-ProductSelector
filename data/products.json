@@ -429,7 +429,7 @@
       "weight": "350g",
       "op_temp": "−20°C to 60°C",
       "images": [
-        "assets/images/ru60.png"
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/ru60-1786524861223-6f3m.png"
       ],
       "use_cases": [
         "Enterprise & Office Wireless Connectivity",
