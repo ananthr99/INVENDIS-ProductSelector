@@ -200,7 +200,7 @@
       "os": "Ubuntu / Oracle / OpenWRT /Windows/ VyOS",
       "housing": "Sheet Metal",
       "dims": "232mmx 202 x 44mm",
-      "weight": "",
+      "weight": "1500",
       "op_temp": "0 ~ 50℃",
       "images": [],
       "use_cases": [
