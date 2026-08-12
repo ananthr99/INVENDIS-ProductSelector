@@ -331,8 +331,8 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#f4f6f9;color:#1a1d23
               <div class="field"><label>Cellular Module</label><input id="fCell" type="text" placeholder="e.g. EC25-AF"></div>
               <div class="field"><label>Cellular Gen</label><select id="fCellGen"><option value="">— None —</option><option>5G</option><option>4G</option><option>3G</option></select></div>
               <div class="field"><label>Wi-Fi</label><input id="fWifi" type="text" placeholder="e.g. 802.11ax"></div>
-              <div class="field"><label>RS485 Ports</label><input id="fRs485" type="text"></div>
-              <div class="field"><label>RS232 Ports</label><input id="fRs232" type="text"></div>
+              <div class="field"><label>RS485</label><select id="fRs485"><option value="">— None —</option><option>Yes</option><option>No</option><option>Optional</option></select></div>
+              <div class="field"><label>RS232</label><select id="fRs232"><option value="">— None —</option><option>Yes</option><option>No</option><option>Optional</option></select></div>
               <div class="field"><label>IP Rating</label><input id="fIp" type="text" placeholder="e.g. IP30"></div>
               <div class="field"><label>Power Input</label><input id="fPower" type="text" placeholder="e.g. 9–36V DC"></div>
               <div class="field"><label>Ethernet Ports</label><input id="fPorts" type="text"></div>
@@ -916,7 +916,8 @@ async function saveProduct() {
   updateOverlay('Syncing latest data…');
   try { await readFromGist(); } catch {}
 
-  const idx        = products.findIndex(x => x.id === p.id);
+  const lookupId   = selectedId ?? p.id;
+  const idx        = products.findIndex(x => x.id === lookupId);
   const isNew      = idx < 0;
   const oldProduct = idx >= 0 ? { ...products[idx] } : null;
   if (idx >= 0) {

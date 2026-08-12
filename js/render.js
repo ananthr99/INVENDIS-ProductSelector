@@ -102,8 +102,8 @@ function renderGrid(list, r) {
       <div class="card-specs">
         ${p.cellular_gen&&p.cellular_gen!=='none'?`<span class="spec-pill highlight">${p.cellular_gen}</span>`:''}
         ${p.wifi!=='none'?`<span class="spec-pill highlight">${wifiLabel(p.wifi)}</span>`:''}
-        ${p.rs485?'<span class="spec-pill warn">RS485</span>':''}
-        ${p.rs232?'<span class="spec-pill warn">RS232</span>':''}
+        ${(p.rs485==='Yes'||p.rs485==='Optional')?`<span class="spec-pill warn">RS485${p.rs485==='Optional'?' (Opt)':''}</span>`:''}
+        ${(p.rs232==='Yes'||p.rs232==='Optional')?`<span class="spec-pill warn">RS232${p.rs232==='Optional'?' (Opt)':''}</span>`:''}
         ${p.ports>0?`<span class="spec-pill">${p.ports} ports</span>`:''}
         ${p.ip?`<span class="spec-pill">${p.ip}</span>`:''}
       </div>
@@ -142,7 +142,7 @@ function renderList(list, r) {
       <div class="list-desc">${p.desc}</div>
       <div class="list-cell">${p.cellular_gen!=='none'?`<span class="yes-pill">${p.cellular_gen}</span>`:'<span class="no-pill">—</span>'}</div>
       <div class="list-cell">${p.wifi!=='none'?`<span class="yes-pill">${wifiLabel(p.wifi)}</span>`:'<span class="no-pill">—</span>'}</div>
-      <div class="list-cell">${p.rs485?'<span class="yes-pill">Yes</span>':'<span class="no-pill">—</span>'}</div>
+      <div class="list-cell">${p.rs485==='Yes'?'<span class="yes-pill">Yes</span>':p.rs485==='Optional'?'<span class="yes-pill">Opt</span>':'<span class="no-pill">—</span>'}</div>
       <div class="list-cell">${p.ports>0?p.ports:'—'}</div>
       <div class="list-cell" onclick="event.stopPropagation()">
         <input type="checkbox" style="width:14px;height:14px;accent-color:#1A6FC4;cursor:pointer" ${compareSet.has(p.id)?'checked':''} onchange="toggleCompare('${p.id}',this.checked)">
