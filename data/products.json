@@ -764,8 +764,8 @@
       "cell": "none",
       "cellular_gen": "",
       "wifi": "Wi-Fi 4",
-      "rs485": "false",
-      "rs232": "false",
+      "rs485": "No",
+      "rs232": "No",
       "ip": "",
       "power": "12 VDC",
       "ports": "5 X 10/100/1000",
@@ -774,7 +774,9 @@
       "dims": "110 x 26 x 95 mm (W x H x D)",
       "weight": "200 g",
       "op_temp": "0~ 50 ˚C",
-      "images": [],
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rv00-1786528984998-xos5.png"
+      ],
       "use_cases": [
         "M2M Communication & Remote Asset Connectivity",
         "Transportation & Fleet Connectivity",
