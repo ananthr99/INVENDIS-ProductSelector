@@ -774,7 +774,9 @@
       "dims": "110 x 26 x 95 mm (W x H x D)",
       "weight": "200 g",
       "op_temp": "0~ 50 ˚C",
-      "images": [],
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rv00-1786528134435-pnq3.png"
+      ],
       "use_cases": [
         "M2M Communication & Remote Asset Connectivity",
         "Transportation & Fleet Connectivity",
