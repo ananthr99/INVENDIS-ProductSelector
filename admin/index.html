@@ -345,6 +345,12 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#f4f6f9;color:#1a1d23
           </div>
 
           <div class="form-section">
+            <h3>Additional Specs <span class="hint">— e.g. HDMI ports, USB ports, DP ports</span></h3>
+            <div id="additionalSpecsRows"></div>
+            <button type="button" onclick="addSpecRow()" style="margin-top:8px;font-size:12px;padding:4px 12px;border:1px dashed #9ca3af;background:none;border-radius:4px;cursor:pointer;color:#6b7280">+ Add Spec</button>
+          </div>
+
+          <div class="form-section">
             <h3>Product Images</h3>
             <div class="image-grid" id="imageGrid"></div>
             <label class="btn-upload">+ Add Images<input type="file" accept="image/*" multiple onchange="handleImageFiles(event)"></label>
@@ -1013,6 +1019,7 @@ function populateForm(p) {
   document.getElementById('fVariants').value = p.variants ? JSON.stringify(p.variants, null, 2) : '';
   renderCatDropdown(p.cat);
   renderUseCaseTags(p.use_cases || []);
+  renderAdditionalSpecs(p.additional_specs || []);
   currentImgs = [...(p.images || [])];
   pendingImgs  = [];
   renderImageGrid();
@@ -1032,6 +1039,7 @@ function collectForm() {
     power: v('fPower'), ports: v('fPorts'), os: v('fOs'),
     housing: v('fHousing'), dims: v('fDims'), weight: v('fWeight'),
     op_temp: v('fOpTemp'), use_cases: getUseCaseTags(),
+    additional_specs: getAdditionalSpecs(),
     variants: null, part_datasheets: {}
   };
 }
@@ -1060,6 +1068,29 @@ function renderCatDropdown(selected) {
   sel.innerHTML = safeCats.length
     ? safeCats.map(c => `<option value="${esc(c)}" ${c===selected?'selected':''}>${esc(c)}</option>`).join('')
     : '<option value="">— add categories first —</option>';
+}
+
+// ─── Additional Specs ─────────────────────────────────────────────────────────
+function renderAdditionalSpecs(arr) {
+  const container = document.getElementById('additionalSpecsRows');
+  container.innerHTML = '';
+  (arr || []).forEach((item, i) => addSpecRow(item.k, item.v));
+}
+function addSpecRow(k, v) {
+  const container = document.getElementById('additionalSpecsRows');
+  const row = document.createElement('div');
+  row.className = 'spec-row';
+  row.style.cssText = 'display:flex;gap:8px;margin-bottom:6px;align-items:center';
+  row.innerHTML = `<input type="text" placeholder="Spec name (e.g. HDMI Ports)" value="${esc(k||'')}" style="flex:1;min-width:0">
+    <input type="text" placeholder="Value (e.g. 2)" value="${esc(v||'')}" style="flex:1;min-width:0">
+    <button type="button" onclick="this.parentElement.remove()" style="background:none;border:none;cursor:pointer;color:#9ca3af;font-size:16px;line-height:1;padding:0 4px" title="Remove">×</button>`;
+  container.appendChild(row);
+}
+function getAdditionalSpecs() {
+  return [...document.querySelectorAll('#additionalSpecsRows .spec-row')].map(row => {
+    const inputs = row.querySelectorAll('input');
+    return { k: inputs[0].value.trim(), v: inputs[1].value.trim() };
+  }).filter(s => s.k || s.v);
 }
 
 // ─── Use Cases ────────────────────────────────────────────────────────────────
