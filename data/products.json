@@ -4127,6 +4127,38 @@
           ]
         ]
       }
+    },
+    {
+      "id": "inv-ci-xx",
+      "name": "INV-CI-XX",
+      "cat": "Intel Based Devices",
+      "order": 77,
+      "desc": "INV CI XX is a compact, Intel® X7425E-powered industrial computer designed for reliable edge computing and industrial automation. It features multiple Ethernet ports, optional 4G/5G connectivity, Wi-Fi, and flexible storage options for secure, high-performance deployments.",
+      "cpu": "Intel N150/x7425E/x7433RE/x7835RE/i3-N305/N355, 4/8 cores with 3.4GHz Turbo Frequency",
+      "ram": "64GB DDR5 SODIMM (Max) (Memory to be Separately Ordered)",
+      "storage": "One M.2 (B Key,2280), Upto 512GB SSD, Upto 64GB eMMC ((Memory to be Separately Ordered)",
+      "cell": "4G/5G",
+      "cellular_gen": "5G",
+      "wifi": "WiFi6",
+      "rs485": "false",
+      "rs232": "true",
+      "ip": "",
+      "power": "12 VDC",
+      "ports": "6 X 10/100/1000 (Realtek RTL8111H)",
+      "os": "Ubuntu / Oracle / OpenWRT /Windows/ VyOS",
+      "housing": "Sheet Metal",
+      "dims": "232mmx 202 x 44mm",
+      "weight": "",
+      "op_temp": "0 ~ 50℃",
+      "images": [],
+      "use_cases": [
+        "Multi-Site Enterprise WAN Management",
+        "Video Surveillance & Security Networks",
+        "Industrial Gateway / Edge Computing"
+      ],
+      "datasheet": null,
+      "part_datasheets": {},
+      "variants": null
     }
   ]
 }
