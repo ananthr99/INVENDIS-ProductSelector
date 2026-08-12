@@ -104,8 +104,8 @@
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-cea-xx-1786441531237-gu5u.png"
       ],
       "use_cases": [
-        "Industrial Automation & Control  Collect data from PLCs, energy meters, VFDs, sensors, and analysers run custom SCADA software or lightweight SCADA to show data locally and Push data to cloud platforms using MQTT, OPC-UA, HTTPS, or REST APIs.",
-        "Machine Monitoring & OEE System  Monitor production machines and calculate: Availability Performance Quality OEE"
+        "Industrial Automation & Control",
+        "Machine Monitoring & OEE System"
       ],
       "datasheet": "assets/datasheets/Brief Specs Intel X7425E Alder Lake Industrial Automation PC (2) (1).pdf",
       "part_datasheets": {},
