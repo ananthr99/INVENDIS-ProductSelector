@@ -690,7 +690,8 @@
       "weight": "390 g",
       "op_temp": "0-50 ˚C",
       "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvxx-1786526209549-0r85.jpg"
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvxx-1786526209549-0r85.jpg",
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvxx-1786529549392-1o06.png"
       ],
       "use_cases": [
         "M2M Communication & Remote Asset Connectivity",
