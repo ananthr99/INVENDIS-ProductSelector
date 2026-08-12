@@ -34,7 +34,7 @@ function openCompareModal() {
   ];
   function val(p, key) {
     if (!key) return '—';
-    if (key==='rs485'||key==='rs232') return p[key]?'Yes':'No';
+    if (key==='rs485'||key==='rs232') return hasSerial(p[key]) ? p[key] : 'No';
     return p[key]||'—';
   }
   const rows = fields.map(([label,key]) => {

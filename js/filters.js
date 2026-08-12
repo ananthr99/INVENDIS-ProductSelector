@@ -18,9 +18,9 @@ function getFiltered() {
     if (fPorts === '5' && (p.ports < 3 || p.ports > 5)) return false;
     if (fPorts === '8' && (p.ports < 6 || p.ports > 8)) return false;
     if (fPorts === '10' && p.ports < 9) return false;
-    if (fSerial === 'rs485' && !p.rs485) return false;
-    if (fSerial === 'rs232' && !p.rs232) return false;
-    if (fSerial === 'both' && !(p.rs485 && p.rs232)) return false;
+    if (fSerial === 'rs485' && !hasSerial(p.rs485)) return false;
+    if (fSerial === 'rs232' && !hasSerial(p.rs232)) return false;
+    if (fSerial === 'both' && !(hasSerial(p.rs485) && hasSerial(p.rs232))) return false;
     return true;
   });
   results.sort((a, b) => {
