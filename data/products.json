@@ -228,12 +228,12 @@
       "rs232": "true",
       "ip": "",
       "power": "12V DC",
-      "ports": "2",
-      "os": "Oracle Linux / Ubuntu 23 / Windows 10+",
-      "housing": "Aluminium",
-      "dims": "150Ã123Ã35 mm",
+      "ports": "2 x 10/100/1000 Mbps (Realtek RTL8111H)",
+      "os": "Oracle Linux v.9.5 and above Ubuntu 23, Windows 10 and above",
+      "housing": "Aluminum Heat Sink with CRCA Enclosure (Fanless Design), Sheet Metal (Fan Design)",
+      "dims": "150mmx210mmx65mm (LxWxH)",
       "weight": "995 g",
-      "op_temp": "0â50 Â°C",
+      "op_temp": "0 -50°C",
       "images": [
         "assets/images/inv-cd-xx-1.png",
         "assets/images/inv-cd-xx-2.png"
