@@ -951,9 +951,7 @@
       "dims": "123.2 x 28 x 120.6mm (W x H x D)",
       "weight": "360 g",
       "op_temp": "0~ 50 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rexx-1786531665463-3vlw.jpg"
-      ],
+      "images": [],
       "use_cases": [
         "Digital Signage & Remote Display Networks",
         "Environmental & Field Data Collection",
