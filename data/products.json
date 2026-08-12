@@ -828,7 +828,7 @@
       "weight": "370 g",
       "op_temp": "0~ 50 ˚C",
       "images": [
-        "assets/images/rd-xx.png"
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rdxx-1786531258044-3th9.png"
       ],
       "use_cases": [
         "Smart Transportation Connectivity",
