@@ -236,7 +236,8 @@
       "op_temp": "0 -50°C",
       "images": [
         "assets/images/inv-cd-xx-1.png",
-        "assets/images/inv-cd-xx-2.png"
+        "assets/images/inv-cd-xx-2.png",
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-cd-xx-1786515792452-i9dg.png"
       ],
       "use_cases": [
         "Industrial Machine Vision & Quality Inspection",
