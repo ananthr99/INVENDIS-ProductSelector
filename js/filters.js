@@ -9,11 +9,12 @@ function getFiltered() {
     if (q && !p.name.toLowerCase().includes(q) && !p.desc.toLowerCase().includes(q) && !p.cat.toLowerCase().includes(q) && !p.cpu.toLowerCase().includes(q)) return false;
     if (fCell === '5G' && p.cellular_gen !== '5G') return false;
     if (fCell === '4G' && p.cellular_gen !== '4G') return false;
-    if (fCell === 'none' && p.cellular_gen !== 'none') return false;
+    if (fCell === '-' && hasCellular(p.cellular_gen)) return false;
     if (fWifi === 'WiFi6' && p.wifi !== 'WiFi6') return false;
     if (fWifi === 'WiFi5' && p.wifi !== 'WiFi5') return false;
-    if (fWifi === 'WiFi24' && p.wifi !== 'WiFi24') return false;
-    if (fWifi === 'none' && p.wifi !== 'none') return false;
+    if (fWifi === 'WiFi4/2.4GHz' && p.wifi !== 'WiFi4/2.4GHz' && p.wifi !== 'WiFi24') return false;
+    if (fWifi === 'WiFi4' && p.wifi !== 'WiFi4' && p.wifi !== 'Wi-Fi 4') return false;
+    if (fWifi === '-' && hasWifi(p.wifi)) return false;
     if (fPorts === '2' && p.ports > 2) return false;
     if (fPorts === '5' && (p.ports < 3 || p.ports > 5)) return false;
     if (fPorts === '8' && (p.ports < 6 || p.ports > 8)) return false;

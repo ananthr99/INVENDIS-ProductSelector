@@ -21,6 +21,8 @@ function downloadFile(url) {
     });
 }
 
+function isHf(p, key) { return (p.hidden_fields || []).includes(key); }
+
 function buildVariantsTable(v) {
   if (!v || !v.headers || !v.rows) return '';
 
@@ -139,39 +141,39 @@ function openDetail(id) {
           ${p.cat === 'Energy Meter' ? `
           <div class="spec-section">
             <div class="spec-section-title">Communication</div>
-            ${srow('RS485 / Modbus', rsLabel(p.rs485, p.variants, 'RS485'))}
-            ${srow('RS232', rsLabel(p.rs232, p.variants, 'RS232'))}
-            ${srow('Power supply', p.power)}
+            ${isHf(p,'rs485')   ? '' : srow('RS485 / Modbus', rsLabel(p.rs485, p.variants, 'RS485'))}
+            ${isHf(p,'rs232')   ? '' : srow('RS232', rsLabel(p.rs232, p.variants, 'RS232'))}
+            ${isHf(p,'power')   ? '' : srow('Power supply', p.power)}
           </div>
           <div class="spec-section">
             <div class="spec-section-title">Physical</div>
-            ${srow('Enclosure', p.housing)}
-            ${p.ip ? srow('IP Rating', p.ip) : ''}
-            ${srow('Dimensions', p.dims || '—')}
-            ${srow('Weight', p.weight || '—')}
-            ${srow('Operating temp', p.op_temp || '—')}
+            ${isHf(p,'housing') ? '' : srow('Enclosure', p.housing)}
+            ${p.ip && !isHf(p,'ip') ? srow('IP Rating', p.ip) : ''}
+            ${isHf(p,'dims')    ? '' : srow('Dimensions', p.dims || '-')}
+            ${isHf(p,'weight')  ? '' : srow('Weight', p.weight || '-')}
+            ${isHf(p,'op_temp') ? '' : srow('Operating temp', p.op_temp || '-')}
           </div>` : `
           <div class="spec-section">
             <div class="spec-section-title">Connectivity</div>
-            ${srow('Cellular',p.cellular_gen==='none'?'None':p.cell)}
-            ${srow('Wi-Fi',wifiLabel(p.wifi))}
-            ${srow('Ethernet ports',p.ports>0?p.ports+' ports':'N/A')}
-            ${srow('RS485',rsLabel(p.rs485, p.variants, 'RS485'))}
-            ${srow('RS232',rsLabel(p.rs232, p.variants, 'RS232'))}
+            ${isHf(p,'cellular_gen') ? '' : srow('Cellular', hasCellular(p.cellular_gen)?p.cell:'-')}
+            ${isHf(p,'wifi')         ? '' : srow('Wi-Fi', wifiLabel(p.wifi))}
+            ${isHf(p,'ports')        ? '' : srow('Ethernet ports', p.ports>0?p.ports+' ports':'-')}
+            ${isHf(p,'rs485')        ? '' : srow('RS485', rsLabel(p.rs485, p.variants, 'RS485'))}
+            ${isHf(p,'rs232')        ? '' : srow('RS232', rsLabel(p.rs232, p.variants, 'RS232'))}
           </div>
           <div class="spec-section">
             <div class="spec-section-title">Hardware</div>
-            ${srow('CPU',p.cpu)}
-            ${srow('RAM',p.ram||'—')}
-            ${srow('Storage',p.storage||'—')}
-            ${srow('Power input',p.power)}
-            ${srow('IP / Housing',p.ip||'Not specified')}
-            ${srow('Enclosure',p.housing)}
-            ${srow('Dimensions',p.dims||'—')}
-            ${srow('Weight',p.weight||'—')}
-            ${srow('Operating temp',p.op_temp||'—')}
+            ${isHf(p,'cpu')     ? '' : srow('CPU', p.cpu)}
+            ${isHf(p,'ram')     ? '' : srow('RAM', p.ram||'-')}
+            ${isHf(p,'storage') ? '' : srow('Storage', p.storage||'-')}
+            ${isHf(p,'power')   ? '' : srow('Power input', p.power)}
+            ${isHf(p,'ip')      ? '' : srow('IP / Housing', p.ip||'-')}
+            ${isHf(p,'housing') ? '' : srow('Enclosure', p.housing)}
+            ${isHf(p,'dims')    ? '' : srow('Dimensions', p.dims||'-')}
+            ${isHf(p,'weight')  ? '' : srow('Weight', p.weight||'-')}
+            ${isHf(p,'op_temp') ? '' : srow('Operating temp', p.op_temp||'-')}
           </div>
-          ${p.os&&p.os!=='—'?`<div class="spec-section"><div class="spec-section-title">Software</div>${srow('Operating system',p.os)}</div>`:''}`}
+          ${p.os && p.os !== '-' && !isHf(p,'os') ? `<div class="spec-section"><div class="spec-section-title">Software</div>${srow('Operating system',p.os)}</div>` : ''}`}
           ${buildVariantsTable(p.variants)}
           ${buildDatasheetsSection(p.id)}
         </div>

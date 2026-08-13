@@ -33,15 +33,15 @@ function openCompareModal() {
     ['Dimensions','dims'],['Weight','weight'],['Operating temp','op_temp'],['OS','os']
   ];
   function val(p, key) {
-    if (!key) return '—';
-    if (key==='rs485'||key==='rs232') return hasSerial(p[key]) ? p[key] : 'No';
-    return p[key]||'—';
+    if (!key) return '-';
+    if (key==='rs485'||key==='rs232') return hasSerial(p[key]) ? p[key] : '-';
+    return p[key]||'-';
   }
   const rows = fields.map(([label,key]) => {
     const vals = sel.map(p => {
       if (!key) {
         if (label==='Wi-Fi') return wifiLabel(p.wifi);
-        if (label==='Ethernet ports') return p.ports>0?p.ports+' ports':'N/A';
+        if (label==='Ethernet ports') return p.ports>0?p.ports+' ports':'-';
       }
       return val(p, key);
     });

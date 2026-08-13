@@ -4,8 +4,17 @@ function catBadgeClass(c) {
 }
 
 function wifiLabel(w) {
-  return {WiFi6:'Wi-Fi 6',WiFi5:'Wi-Fi 5',WiFi24:'Wi-Fi 4',none:'—'}[w]||w;
+  const map = {
+    'WiFi6':'Wi-Fi 6', 'WiFi5':'Wi-Fi 5',
+    'WiFi4/2.4GHz':'Wi-Fi 4/2.4GHz', 'WiFi24':'Wi-Fi 4/2.4GHz',
+    'WiFi4':'Wi-Fi 4', 'Wi-Fi 4':'Wi-Fi 4',
+    '-':'-', 'none':'-', 'false':'-', '':'-'
+  };
+  return map[w] !== undefined ? map[w] : w;
 }
+
+function hasCellular(c) { return !!c && c !== '-' && c !== 'none' && c !== ''; }
+function hasWifi(w)     { return !!w && w !== '-' && w !== 'none' && w !== 'false' && w !== ''; }
 
 function srow(k, v) {
   return `<div class="spec-row"><span class="spec-key">${k}</span><span class="spec-val">${v}</span></div>`;
@@ -13,7 +22,7 @@ function srow(k, v) {
 
 function hasSerial(v) { return v === 'Yes' || v === 'Optional'; }
 function rsLabel(flag, variants, colName) {
-  if (!hasSerial(flag)) return 'No';
+  if (!hasSerial(flag)) return '-';
   if (!variants || !variants.headers || !variants.rows) return flag;
   const colIdx = variants.headers.indexOf(colName);
   if (colIdx === -1) return flag;
