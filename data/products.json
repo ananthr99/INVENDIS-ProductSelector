@@ -2027,7 +2027,7 @@
       "housing": "Industrial Aluminium",
       "dims": "56Ã110Ã114 mm",
       "weight": "300 g",
-      "op_temp": "",
+      "op_temp": "-",
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/xa82-1786616057198-xm2u.png"
       ],
