@@ -1324,7 +1324,7 @@
       "cell": "4G",
       "cellular_gen": "4G",
       "wifi": "WiFi4",
-      "rs485": "",
+      "rs485": "Yes",
       "rs232": "",
       "ip": "IP30",
       "power": "9-30 VDC",
