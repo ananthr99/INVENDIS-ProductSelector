@@ -2085,9 +2085,7 @@
       "dims": "45Ã110Ã95 mm",
       "weight": "386 g",
       "op_temp": "â",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/xc80-1786617709490-b5yg.png"
-      ],
+      "images": [],
       "use_cases": [
         "Factory Floor Device Connectivity",
         "Smart Security Infrastructure",
