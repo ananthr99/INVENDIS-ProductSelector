@@ -3809,33 +3809,30 @@
       "name": "MC-X (Media Converter)",
       "cat": "Other",
       "order": 71,
-      "desc": "Gigabit media converter RJ45 â fiber (SC duplex), up to 10 km, single-mode",
+      "desc": "The MC X solves a common infrastructure challenge — extending Ethernet beyond its 100m copper limit — by converting 10/100/1000 Base-T signals to single-mode fibre over distances up to 10Km at 1310nm. Weighing just 187g and drawing as little as 5V, it is a no-frills, cost-effective bridge for campus networks, industrial sites, and telecom installations where long-haul fibre connectivity needs to be added without overhauling existing copper-based equipment.",
       "cpu": "â",
       "ram": "â",
       "storage": "â",
       "cell": "none",
-      "cellular_gen": "none",
+      "cellular_gen": "",
       "wifi": "none",
-      "rs485": false,
-      "rs232": false,
+      "rs485": "",
+      "rs232": "",
       "ip": "",
       "power": "5â12 VDC",
-      "ports": 2,
+      "ports": "2",
       "os": "â",
       "housing": "Steel Metal",
       "dims": "92Ã66Ã26 mm",
       "weight": "187 g",
       "op_temp": "0â70 Â°C",
       "images": [
-        "assets/images/mc-x.png"
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/mcx-1786622212112-0olz.png"
       ],
       "use_cases": [
-        "Long-Distance Fiber Link",
-        "Building-to-Building Network",
-        "Campus Fiber Extension",
-        "Fiber Backhaul"
+        "Long-Distance Network Extension"
       ],
-      "datasheet": "assets/datasheets/MC-1.pdf",
+      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/mcx-datasheet.pdf",
       "part_datasheets": {},
       "variants": {
         "headers": [
