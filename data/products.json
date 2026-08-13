@@ -1981,9 +1981,7 @@
       "dims": "56Ã110Ã114 mm",
       "weight": "300 g",
       "op_temp": "â",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/xa82-1786615640813-0s74.png"
-      ],
+      "images": [],
       "use_cases": [
         "CCTV & Video Surveillance Deployment",
         "Enterprise & Smart Building Connectivity",
