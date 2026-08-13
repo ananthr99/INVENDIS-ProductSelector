@@ -8,6 +8,53 @@
     "PCB",
     "Intel Based Devices"
   ],
+  "dropdowns": {
+    "wifi": [
+      "WiFi6",
+      "WiFi5",
+      "WiFi4/2.4GHz",
+      "WiFi4",
+      "-"
+    ],
+    "cellular_gen": [
+      "5G",
+      "4G",
+      "3G",
+      "-"
+    ],
+    "rs485": [
+      "Yes",
+      "No",
+      "Optional",
+      "-"
+    ],
+    "rs232": [
+      "Yes",
+      "No",
+      "Optional",
+      "-"
+    ],
+    "housing": [
+      "Aluminium",
+      "Industrial Aluminium",
+      "Aluminium Heat Sink",
+      "Sheet Metal",
+      "Metal",
+      "IP67 Enclosure",
+      "Other",
+      "-"
+    ],
+    "op_temp": [
+      "0–50 °C",
+      "0–60 °C",
+      "-20–55 °C",
+      "-20–60 °C",
+      "-20–70 °C",
+      "-40–70 °C",
+      "-40–85 °C",
+      "-"
+    ]
+  },
   "products": [
     {
       "id": "inv-ce-xx",
@@ -1969,10 +2016,10 @@
       "ram": "â",
       "storage": "â",
       "cell": "none",
-      "cellular_gen": "",
-      "wifi": "none",
-      "rs485": "",
-      "rs232": "",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
       "ip": "",
       "power": "9â57 VDC",
       "ports": "10",
@@ -1980,7 +2027,7 @@
       "housing": "Industrial Aluminium",
       "dims": "56Ã110Ã114 mm",
       "weight": "300 g",
-      "op_temp": "â",
+      "op_temp": "",
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/xa82-1786616057198-xm2u.png"
       ],
