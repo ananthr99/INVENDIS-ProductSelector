@@ -1964,33 +1964,32 @@
       "name": "XA82-2",
       "cat": "Switch",
       "order": 26,
-      "desc": "8-port gigabit unmanaged PoE switch + 2Ã SFP, 240W PoE budget, 30W per port",
+      "desc": "The XA-82-2 cuts through network complexity by delivering plug-and-play Gigabit switching with zero configuration overhead — eight PoE-capable ports, two SFP uplinks, and a 240W total PoE budget ready to power cameras, access points, and IP phones straight out of the box. Its wide 9-57Vdc input range and DIN rail-mountable aluminium body make it equally at home in a control cabinet or a harsh field enclosure, serving installers and contractors who need reliable, no-fuss layer-2 connectivity without the cost of managed switch complexity.",
       "cpu": "â",
       "ram": "â",
       "storage": "â",
       "cell": "none",
-      "cellular_gen": "none",
+      "cellular_gen": "",
       "wifi": "none",
-      "rs485": false,
-      "rs232": false,
+      "rs485": "",
+      "rs232": "",
       "ip": "",
       "power": "9â57 VDC",
-      "ports": 10,
+      "ports": "10",
       "os": "â",
       "housing": "Industrial Aluminium",
       "dims": "56Ã110Ã114 mm",
       "weight": "300 g",
       "op_temp": "â",
       "images": [
-        "assets/images/xa-82-2.png"
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/xa82-1786615640813-0s74.png"
       ],
       "use_cases": [
-        "IP Camera Networks",
-        "VoIP Deployment",
-        "Access Point Powering",
-        "Industrial PoE Switching"
+        "CCTV & Video Surveillance Deployment",
+        "Enterprise & Smart Building Connectivity",
+        "Industrial Cabinet & Field Network Expansion"
       ],
-      "datasheet": "",
+      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xa82-datasheet.pdf",
       "part_datasheets": {
         "XA82-2 Unmanaged PoE Switch": "assets/datasheets/XA-82-2.pdf"
       },
