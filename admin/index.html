@@ -820,8 +820,9 @@ function buildJsonData() {
     products: products.map(p => {
       const out = {};
       COLS.filter(c => c !== 'variants_json').forEach(c => { out[c] = p[c] ?? null; });
-      out.images          = Array.isArray(p.images)    ? p.images    : [];
-      out.use_cases       = Array.isArray(p.use_cases) ? p.use_cases : [];
+      out.images          = Array.isArray(p.images)        ? p.images        : [];
+      out.use_cases       = Array.isArray(p.use_cases)    ? p.use_cases    : [];
+      out.hidden_fields   = Array.isArray(p.hidden_fields) ? p.hidden_fields : [];
       out.variants        = p.variants        ?? null;
       out.part_datasheets = p.part_datasheets ?? {};
       return out;
