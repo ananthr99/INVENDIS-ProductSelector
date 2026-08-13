@@ -1904,7 +1904,9 @@
       "dims": "",
       "weight": "1853 g",
       "op_temp": "-10°C to 70°C",
-      "images": [],
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/isense-1786612536077-wooc.png"
+      ],
       "use_cases": [
         "Energy Monitoring & Power Management",
         "Process Automation & Industrial Control",
