@@ -2067,7 +2067,6 @@
         "XA82-2 Unmanaged PoE Switch": "assets/datasheets/XA-82-2.pdf"
       },
       "hidden_fields": [
-        "cpu",
         "ram",
         "storage"
       ],
