@@ -2034,15 +2034,13 @@
       "dims": "56Ã110Ã114 mm",
       "weight": "451 g",
       "op_temp": "â",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/xb82-1786616325726-iaqn.png"
-      ],
+      "images": [],
       "use_cases": [
         "Wireless Access Point Aggregation",
         "IP Telephony & Communication Networks",
         "Remote Edge Network Distribution"
       ],
-      "datasheet": null,
+      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xb82-datasheet.pdf",
       "part_datasheets": {
         "XB82-2 Unmanaged PoE Switch": "assets/datasheets/XB-82-2.pdf"
       },
