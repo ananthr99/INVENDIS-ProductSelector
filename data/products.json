@@ -2116,14 +2116,16 @@
       "rs485": "-",
       "rs232": "-",
       "ip": "",
-      "power": "9â57 VDC",
+      "power": "9-57 VDC",
       "ports": "10",
       "os": "â",
       "housing": "Industrial Aluminium",
       "dims": "56 mm x 110 mm x 114 mm",
       "weight": "451 g",
       "op_temp": "0~ 50 ˚C",
-      "images": [],
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/xb82-1786698669725-9cdo.png"
+      ],
       "use_cases": [
         "Wireless Access Point Aggregation",
         "IP Telephony & Communication Networks",
@@ -2135,9 +2137,16 @@
       },
       "hidden_fields": [
         "cpu",
-        "ram"
+        "ram",
+        "storage",
+        "os"
       ],
-      "additional_specs": [],
+      "additional_specs": [
+        {
+          "k": "SFP",
+          "v": "2"
+        }
+      ],
       "variants": {
         "headers": [
           "Cellular",
