@@ -89,6 +89,7 @@
       "datasheet": "assets/datasheets/Intel X7425E SDWAN Box.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "note": "Part number format: INV-CX-x7425e-[Type][Display]-[eMMC]-[SSD]-[RAM]-[Modem]. RAM: 1=4 GB â¦ 5=64 GB DDR5 | eMMC: 1=8 GB â¦ 5=128 GB | SSD: 1=128 GB â¦ 4=1 TB | Modem: 0=None, 4=4G, 5=5G | Wi-Fi: 0=None, 6=Wi-Fi 6",
         "headers": [
@@ -158,6 +159,7 @@
       "datasheet": "assets/datasheets/Brief Specs Intel X7425E Alder Lake Industrial Automation PC (2) (1).pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "note": "Part number format: INV-CX-x7425e-[Type][Display]-[eMMC]-[SSD]-[RAM]-[Modem]. RAM: 1=4 GB â¦ 5=64 GB DDR5 | eMMC: 1=8 GB â¦ 5=128 GB | SSD: 1=128 GB â¦ 4=1 TB | Modem: 0=None, 4=4G, 5=5G | Wi-Fi: 0=None, 6=Wi-Fi 6",
         "headers": [
@@ -228,6 +230,7 @@
       "datasheet": "assets/datasheets/Intel X6425 Based Industrial PC.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -261,6 +264,7 @@
       "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/inv-ci-xx-datasheet.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -298,6 +302,7 @@
       "datasheet": "assets/datasheets/INV-CD-N350_Datasheet.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "note": "Part number format: INV-CX-x7425e-[Type][Display]-[eMMC]-[SSD]-[RAM]-[Modem]. RAM: 1=4 GB â¦ 5=64 GB DDR5 | eMMC: 1=8 GB â¦ 5=128 GB | SSD: 1=128 GB â¦ 4=1 TB | Modem: 0=None, 4=4G, 5=5G | Wi-Fi: 0=None, 6=Wi-Fi 6",
         "headers": [
@@ -377,6 +382,12 @@
         "RTS65-2": "assets/datasheets/RTS65-2.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [
+        {
+          "k": "HDMI",
+          "v": "2"
+        }
+      ],
       "variants": {
         "headers": [
           "Cellular",
@@ -494,6 +505,7 @@
         "RU60": "assets/datasheets/RU60.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
@@ -550,6 +562,7 @@
         "RO64-1": "assets/datasheets/RO64-1.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
@@ -641,6 +654,7 @@
         "RT65-2": "assets/datasheets/RT65-2.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
@@ -762,6 +776,7 @@
         "RV50": "assets/datasheets/RV50.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
@@ -844,6 +859,7 @@
         "RV00": "assets/datasheets/RV00.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
@@ -902,6 +918,7 @@
         "RDS00": "assets/datasheets/RDS00.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Wi-Fi",
@@ -1022,6 +1039,7 @@
         "RE04": "assets/datasheets/RE04.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
@@ -1079,6 +1097,7 @@
         "RI44": "assets/datasheets/RI44.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
@@ -1136,6 +1155,7 @@
         "MT7621-01 ODU": "assets/datasheets/ODU-MT7621.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
@@ -1189,6 +1209,7 @@
       "datasheet": "",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
@@ -1249,6 +1270,7 @@
         "IDF45": "assets/datasheets/IDF45.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
@@ -1340,6 +1362,7 @@
         "IE44-A-EX1": "assets/datasheets/IE44A-EX1.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
@@ -1415,6 +1438,7 @@
         "IA40-C": "assets/datasheets/IA40-C.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
@@ -1497,6 +1521,7 @@
         "RFN44-C": "assets/datasheets/RFN44-C.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
@@ -1573,6 +1598,7 @@
         "IAB04-C": "assets/datasheets/IAB04-C.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
@@ -1661,6 +1687,7 @@
         "IAC04-C": "assets/datasheets/IAC04-C.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
@@ -1740,6 +1767,7 @@
         "IAF04-C1": "assets/datasheets/IAF04-C1.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
@@ -1823,6 +1851,7 @@
         "ID54": "assets/datasheets/ID54.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
@@ -1904,6 +1933,7 @@
         "IDB54": "assets/datasheets/IDB54 (1).pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
@@ -1991,6 +2021,7 @@
         "iSense Blue Plus Pro": "assets/datasheets/Isense Blue Plus Pro.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Wi-Fi",
@@ -2075,6 +2106,7 @@
         "storage",
         "os"
       ],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
@@ -2127,6 +2159,7 @@
         "XB82-2 Unmanaged PoE Switch": "assets/datasheets/XB-82-2.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
@@ -2179,6 +2212,7 @@
         "XC-80-1 Unmanaged PoE Switch": "assets/datasheets/XC-80-1.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
@@ -2233,6 +2267,7 @@
         "XD50-1 Unmanaged PoE Switch": "assets/datasheets/XD-50-1.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
@@ -2285,6 +2320,7 @@
         "XF-100-1 Unmanaged PoE Switch": "assets/datasheets/XF-100-1.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
@@ -2339,6 +2375,7 @@
         "XG82-2L Gigabit Ethernet Managed Switch": "assets/datasheets/XG-82-2L Updated.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
@@ -2395,6 +2432,7 @@
         "PC312": "assets/datasheets/PC312.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
@@ -2471,6 +2509,7 @@
       "datasheet": "assets/datasheets/INV 4640 MFM.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -2509,6 +2548,7 @@
       "datasheet": "assets/datasheets/ET1641 DC Meter.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -2548,6 +2588,7 @@
       "datasheet": "assets/datasheets/ET4602 AC Meter.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -2583,6 +2624,7 @@
       "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/bcpmeter-datasheet.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -2617,6 +2659,7 @@
       "datasheet": "assets/meterdatasheets/ET0071 rev 2.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -2651,6 +2694,7 @@
       "datasheet": "assets/meterdatasheets/ET0073 Vertical Display.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -2688,6 +2732,7 @@
         "ET0076 63A": "assets/meterdatasheets/ET0076 63A.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Current Range",
@@ -2737,6 +2782,7 @@
       "datasheet": "assets/meterdatasheets/ET0077 Horizontal Display.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -2779,6 +2825,7 @@
       "datasheet": "assets/meterdatasheets/ET1300.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -2813,6 +2860,7 @@
       "datasheet": "assets/meterdatasheets/ET1315.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -2854,6 +2902,7 @@
       "datasheet": "assets/meterdatasheets/ET2031.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -2895,6 +2944,7 @@
       "datasheet": "assets/meterdatasheets/ET2033.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -2929,6 +2979,7 @@
       "datasheet": "assets/meterdatasheets/ET2035 (ELCOM) Rev.2.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -2971,6 +3022,7 @@
       "datasheet": "assets/meterdatasheets/ET2071.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -3013,6 +3065,7 @@
       "datasheet": "assets/meterdatasheets/ET2081.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -3047,6 +3100,7 @@
       "datasheet": "assets/meterdatasheets/ET2110 V.1.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -3085,6 +3139,7 @@
       "datasheet": "assets/meterdatasheets/ET2111.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -3127,6 +3182,7 @@
       "datasheet": "assets/meterdatasheets/ET2113.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -3168,6 +3224,7 @@
         "ET3062": "assets/meterdatasheets/ET3061 & 3062 Compressed file.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Model",
@@ -3226,6 +3283,7 @@
       "datasheet": "assets/meterdatasheets/ET4000.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -3270,6 +3328,7 @@
         "ET4001S": "assets/meterdatasheets/ET4001S.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Type",
@@ -3323,6 +3382,7 @@
       "datasheet": "assets/meterdatasheets/ET4002.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -3364,6 +3424,7 @@
       "datasheet": "assets/meterdatasheets/ET4021.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -3407,6 +3468,7 @@
       "datasheet": "assets/meterdatasheets/ET4031.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -3445,6 +3507,7 @@
       "datasheet": "assets/meterdatasheets/ET4061.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -3485,6 +3548,7 @@
       "datasheet": "assets/meterdatasheets/ET4062.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -3519,6 +3583,7 @@
       "datasheet": "assets/meterdatasheets/ET4600 V.2.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -3553,6 +3618,7 @@
       "datasheet": "assets/meterdatasheets/ET4602AE.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -3595,6 +3661,7 @@
       "datasheet": "assets/meterdatasheets/ET5001.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -3634,6 +3701,7 @@
       "datasheet": "assets/meterdatasheets/ET6001.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -3668,6 +3736,7 @@
       "datasheet": "assets/meterdatasheets/ET 6030.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -3706,6 +3775,7 @@
       "datasheet": "assets/meterdatasheets/ET-8000 ATS 20 June 2024 Compress file 1.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -3740,6 +3810,7 @@
       "datasheet": "assets/meterdatasheets/Iot Enabled AC meter rev.1.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -3774,6 +3845,7 @@
       "datasheet": "assets/meterdatasheets/Iot Enabled DC meter.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -3808,6 +3880,7 @@
       "datasheet": "assets/meterdatasheets/Single phase smart meter 21 March 2024.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -3842,6 +3915,7 @@
       "datasheet": "assets/meterdatasheets/Three phase smart meter 30 may 2024.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -3876,6 +3950,7 @@
       "datasheet": "assets/meterdatasheets/AC Meter Spec ELCOM rev 2.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -3913,6 +3988,7 @@
         "ET7023": "assets/meterdatasheets/7021_7023 BCPM 1 Aug 2024.pdf"
       },
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Phase Type",
@@ -3961,6 +4037,7 @@
       "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/mcx-datasheet.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Interface",
@@ -4024,6 +4101,7 @@
       "datasheet": "assets/datasheets/RN50.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
@@ -4077,6 +4155,7 @@
       "datasheet": null,
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
@@ -4130,6 +4209,7 @@
       "datasheet": "",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": null
     },
     {
@@ -4166,6 +4246,7 @@
       "datasheet": "assets/datasheets/Mini UPS_Metal Enclosure_Datasheet 1.pdf",
       "part_datasheets": {},
       "hidden_fields": [],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Battery",
