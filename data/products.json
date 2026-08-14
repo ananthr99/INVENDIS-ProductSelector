@@ -2532,7 +2532,12 @@
         "rs485",
         "rs232"
       ],
-      "additional_specs": [],
+      "additional_specs": [
+        {
+          "k": "RS485",
+          "v": "1"
+        }
+      ],
       "variants": null
     },
     {
