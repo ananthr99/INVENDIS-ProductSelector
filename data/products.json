@@ -345,9 +345,9 @@
       "storage": "128 MB NAND",
       "cell": "4G/5G",
       "cellular_gen": "5G",
-      "wifi": "false",
-      "rs485": "false",
-      "rs232": "false",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
       "ip": "IP30",
       "power": "9–30 VDC Dual Source",
       "ports": "4× LAN 10/100/1000 +1× WAN 10/100/1000 +2× SFP",
@@ -355,7 +355,7 @@
       "housing": "Sheet Metal",
       "dims": "190 × 45 × 120 mm",
       "weight": "700 g",
-      "op_temp": "0°C-50°C",
+      "op_temp": "",
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rtsxx-1786516658709-95je.png",
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rtsxx-1786516662516-fxsy.png"
