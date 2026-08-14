@@ -376,7 +376,7 @@ select.active-filter { border-color: var(--blue); background-color: var(--blue-p
 .use-case-chip-sm { font-size: 10px; font-weight: 500; padding: 2px 7px; border-radius: 20px; background: #EAF2FB; color: #1A6FC4; border: 1px solid #C4DCF5; white-space: nowrap; }
 
 .card-footer {
-  margin-top: 6px;
+  margin-top: auto;
   padding-top: 10px;
   border-top: 1px solid var(--border);
   display: flex;
