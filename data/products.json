@@ -2047,11 +2047,11 @@
       "rs485": "-",
       "rs232": "-",
       "ip": "",
-      "power": "9â57 VDC",
-      "ports": "10",
+      "power": "9-57 VDC",
+      "ports": "8 x 10/100/1000 Mbps (MDI/MDIX)",
       "os": "â",
       "housing": "Industrial Aluminium",
-      "dims": "56Ã110Ã114 mm",
+      "dims": "56 mm x 110 mm x 114 mm (W x H x D)",
       "weight": "300 g",
       "op_temp": "-",
       "images": [
@@ -2067,9 +2067,13 @@
         "XA82-2 Unmanaged PoE Switch": "assets/datasheets/XA-82-2.pdf"
       },
       "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "wifi",
         "cpu",
         "ram",
-        "storage"
+        "storage",
+        "os"
       ],
       "variants": {
         "headers": [
