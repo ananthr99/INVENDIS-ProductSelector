@@ -365,10 +365,10 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#f4f6f9;color:#1a1d23
               <div class="field"><label>Power Input</label><input id="fPower" type="text" placeholder="e.g. 9–36V DC"></div>
               <div class="field"><label>Ethernet Ports</label><input id="fPorts" type="text"></div>
               <div class="field"><label>OS</label><input id="fOs" type="text" placeholder="e.g. OpenWrt"></div>
-              <div class="field"><label>Housing</label><select id="fHousing"></select></div>
+              <div class="field"><label>Housing</label><input id="fHousing" type="text" placeholder="e.g. Aluminium"></div>
               <div class="field"><label>Dimensions</label><input id="fDims" type="text" placeholder="e.g. 140×90×30 mm"></div>
               <div class="field"><label>Weight</label><input id="fWeight" type="text"></div>
-              <div class="field"><label>Operating Temp</label><select id="fOpTemp"></select></div>
+              <div class="field"><label>Operating Temp</label><input id="fOpTemp" type="text" placeholder="e.g. -20–60 °C"></div>
             </div>
           </div>
 
@@ -574,16 +574,12 @@ const DROPDOWN_FIELD_LABELS = {
   cellular_gen: 'Cellular Gen',
   rs485:        'RS485',
   rs232:        'RS232',
-  housing:      'Housing',
-  op_temp:      'Operating Temp'
 };
 const DEFAULT_DROPDOWNS = {
   wifi:         ['WiFi6', 'WiFi5', 'WiFi4/2.4GHz', 'WiFi4', '-'],
   cellular_gen: ['5G', '4G', '3G', '-'],
   rs485:        ['Yes', 'No', 'Optional', '-'],
   rs232:        ['Yes', 'No', 'Optional', '-'],
-  housing:      ['Aluminium', 'Industrial Aluminium', 'Aluminium Heat Sink', 'Sheet Metal', 'Metal', 'IP67 Enclosure', 'Other', '-'],
-  op_temp:      ['0–50 °C', '0–60 °C', '-20–55 °C', '-20–60 °C', '-20–70 °C', '-40–70 °C', '-40–85 °C', '-']
 };
 
 const CONVERTIBLE_TEXT_FIELDS = {
@@ -596,6 +592,8 @@ const CONVERTIBLE_TEXT_FIELDS = {
   os:      { label: 'OS',              htmlId: 'fOs',      placeholder: 'e.g. OpenWrt' },
   dims:    { label: 'Dimensions',      htmlId: 'fDims',    placeholder: 'e.g. 140×90×30 mm' },
   weight:  { label: 'Weight',          htmlId: 'fWeight',  placeholder: '' },
+  housing: { label: 'Housing',         htmlId: 'fHousing', placeholder: 'e.g. Aluminium' },
+  op_temp: { label: 'Operating Temp',  htmlId: 'fOpTemp',  placeholder: 'e.g. -20–60 °C' },
 };
 
 const HIDEABLE_FIELD_MAP = {
@@ -775,6 +773,9 @@ async function readFromGist() {
   } else {
     dropdowns = JSON.parse(JSON.stringify(DEFAULT_DROPDOWNS));
   }
+  // Remove fields that are no longer managed as dropdowns (now plain text inputs)
+  delete dropdowns['housing'];
+  delete dropdowns['op_temp'];
 }
 
 async function readExcel() {
@@ -1114,7 +1115,6 @@ function renderFormDropdowns() {
   const builtinSelects = {
     wifi: 'fWifi', cellular_gen: 'fCellGen',
     rs485: 'fRs485', rs232: 'fRs232',
-    housing: 'fHousing', op_temp: 'fOpTemp'
   };
   // Populate all fields currently in dropdowns (builtin + user-converted)
   Object.keys(dropdowns).forEach(field => {
@@ -1177,8 +1177,8 @@ function populateForm(p) {
   document.getElementById('fWifi').value    = normWifi(p.wifi);
   document.getElementById('fRs485').value   = normSerial(p.rs485);
   document.getElementById('fRs232').value   = normSerial(p.rs232);
-  document.getElementById('fHousing').value = p.housing || '-';
-  document.getElementById('fOpTemp').value  = p.op_temp  || '-';
+  document.getElementById('fHousing').value = p.housing || '';
+  document.getElementById('fOpTemp').value  = p.op_temp  || '';
   currentPartDs = { ...(p.part_datasheets || {}) };
   pendingPartDs = [];
   renderVariantsEditor(p.variants ?? null);
