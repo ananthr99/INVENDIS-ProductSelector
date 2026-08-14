@@ -2299,19 +2299,21 @@
       "ram": "â",
       "storage": "â",
       "cell": "none",
-      "cellular_gen": "",
-      "wifi": "none",
-      "rs485": "",
-      "rs232": "",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
       "ip": "",
-      "power": "9â30 VDC",
-      "ports": "10",
+      "power": "9-30 VDC",
+      "ports": "10x 10/100 Mbps (MDI/MDIX)",
       "os": "â",
       "housing": "Sheet Metal",
-      "dims": "45Ã116Ã90 mm",
+      "dims": "45 mm x 116 mm x 90 mm (W x H x D)",
       "weight": "416 g",
-      "op_temp": "â",
-      "images": [],
+      "op_temp": "0~ 50 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/xf100-1786701452959-v1y6.png"
+      ],
       "use_cases": [
         "Large Camera & Surveillance Networks",
         "Smart Office & Campus Device Connectivity",
@@ -2321,7 +2323,17 @@
       "part_datasheets": {
         "XF-100-1 Unmanaged PoE Switch": "assets/datasheets/XF-100-1.pdf"
       },
-      "hidden_fields": [],
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "wifi",
+        "cpu",
+        "ram",
+        "storage",
+        "os",
+        "rs485",
+        "rs232"
+      ],
       "additional_specs": [],
       "variants": {
         "headers": [
