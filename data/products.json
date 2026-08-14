@@ -382,12 +382,7 @@
         "RTS65-2": "assets/datasheets/RTS65-2.pdf"
       },
       "hidden_fields": [],
-      "additional_specs": [
-        {
-          "k": "HDMI",
-          "v": "2"
-        }
-      ],
+      "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
