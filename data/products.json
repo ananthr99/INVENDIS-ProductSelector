@@ -2364,18 +2364,18 @@
       "ram": "â",
       "storage": "â",
       "cell": "none",
-      "cellular_gen": "",
-      "wifi": "none",
-      "rs485": "",
-      "rs232": "",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
       "ip": "",
-      "power": "44â57 VDC",
-      "ports": "10",
+      "power": "44-57 VDC",
+      "ports": "8 x 10/100/1000 Mbps",
       "os": "â",
       "housing": "Industrial Aluminium",
-      "dims": "200Ã120Ã55 mm",
+      "dims": "200 mm x 120 mm x 55mm (WxLxH)",
       "weight": "675 g",
-      "op_temp": "â",
+      "op_temp": "0~ 60 ˚C",
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/xg82-1786619202122-909f.png"
       ],
@@ -2388,7 +2388,18 @@
       "part_datasheets": {
         "XG82-2L Gigabit Ethernet Managed Switch": "assets/datasheets/XG-82-2L Updated.pdf"
       },
-      "hidden_fields": [],
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "wifi",
+        "cpu",
+        "ram",
+        "storage",
+        "ip",
+        "os",
+        "rs485",
+        "rs232"
+      ],
       "additional_specs": [],
       "variants": {
         "headers": [
