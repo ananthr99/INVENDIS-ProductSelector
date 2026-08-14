@@ -2239,18 +2239,18 @@
       "ram": "â",
       "storage": "â",
       "cell": "none",
-      "cellular_gen": "",
-      "wifi": "none",
-      "rs485": "",
-      "rs232": "",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
       "ip": "",
-      "power": "9â30 VDC",
-      "ports": "5",
-      "os": "â",
+      "power": "9-30 VDC",
+      "ports": "5 x 10/100",
+      "os": "",
       "housing": "Sheet Metal",
-      "dims": "27Ã112Ã94 mm",
+      "dims": "27 mm x 112 mm x 94 mm (W x H x D)",
       "weight": "307 g",
-      "op_temp": "â",
+      "op_temp": "0~ 50 ˚C",
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/xd50-1786618369532-d69m.png"
       ],
@@ -2263,7 +2263,12 @@
       "part_datasheets": {
         "XD50-1 Unmanaged PoE Switch": "assets/datasheets/XD-50-1.pdf"
       },
-      "hidden_fields": [],
+      "hidden_fields": [
+        "cpu",
+        "ram",
+        "storage",
+        "os"
+      ],
       "additional_specs": [],
       "variants": {
         "headers": [
