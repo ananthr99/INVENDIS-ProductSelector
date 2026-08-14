@@ -99,6 +99,16 @@ function navigateCarousel(dir) {
   if (counter) counter.textContent = `${carouselIdx + 1} / ${carouselImages.length}`;
 }
 
+function buildAdditionalSpecsSection(p) {
+  const specs = p.additional_specs;
+  if (!specs || !specs.length) return '';
+  return `
+    <div class="spec-section">
+      <div class="spec-section-title">Additional Specifications</div>
+      ${specs.map(s => srow(s.k, s.v || '-')).join('')}
+    </div>`;
+}
+
 function buildDatasheetsSection(id) {
   const file = PRODUCT_DATASHEETS[id];
   if (!file) return '';
@@ -174,6 +184,7 @@ function openDetail(id) {
             ${isHf(p,'op_temp') ? '' : srow('Operating temp', p.op_temp||'-')}
           </div>
           ${p.os && p.os !== '-' && !isHf(p,'os') ? `<div class="spec-section"><div class="spec-section-title">Software</div>${srow('Operating system',p.os)}</div>` : ''}`}
+          ${buildAdditionalSpecsSection(p)}
           ${buildVariantsTable(p.variants)}
           ${buildDatasheetsSection(p.id)}
         </div>
