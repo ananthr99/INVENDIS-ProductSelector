@@ -138,31 +138,114 @@ async function loadChangelog() {
 }
 
 function renderChangelog(entries) {
-  const el      = document.getElementById('changelogContent');
   const toolbar = document.getElementById('logToolbar');
+  const filters = document.getElementById('logFilters');
+  const paging  = document.getElementById('logPagination');
   if (!entries.length) {
-    el.innerHTML = '<p style="color:#9ca3af;font-size:13px">No activity recorded yet — changes will appear here after the first save.</p>';
+    document.getElementById('changelogContent').innerHTML =
+      '<p style="color:#9ca3af;font-size:13px">No activity recorded yet — changes will appear here after the first save.</p>';
     toolbar.style.display = 'none';
+    if (filters) filters.style.display = 'none';
+    if (paging)  paging.style.display  = 'none';
     return;
   }
+  _allLogEntries = entries;
+  _logPage       = 1;
+  _logFilter     = { q: '', user: '', when: '', type: '' };
+  document.getElementById('logSearchInput').value = '';
+  document.getElementById('logUserFilter').value  = '';
+  document.getElementById('logWhenFilter').value  = '';
+  document.getElementById('logTypeFilter').value  = '';
+  const users = [...new Set(entries.map(e => e.user).filter(Boolean))].sort();
+  document.getElementById('logUserFilter').innerHTML =
+    '<option value="">All users</option>' +
+    users.map(u => `<option value="${esc(u)}">${esc(u)}</option>`).join('');
   toolbar.style.display = 'flex';
+  if (filters) filters.style.display = 'flex';
   document.getElementById('logSelectAll').checked = false;
-  const todayLabel     = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
-  const yesterdayLabel = new Date(Date.now() - 86400000).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+  applyLogFilters();
+}
+
+function setLogFilter(key, val) {
+  _logFilter[key] = val;
+  _logPage = 1;
+  applyLogFilters();
+}
+
+function clearLogFilters() {
+  _logFilter = { q: '', user: '', when: '', type: '' };
+  _logPage   = 1;
+  document.getElementById('logSearchInput').value = '';
+  document.getElementById('logUserFilter').value  = '';
+  document.getElementById('logWhenFilter').value  = '';
+  document.getElementById('logTypeFilter').value  = '';
+  applyLogFilters();
+}
+
+function applyLogFilters() {
+  const { q, user, when, type } = _logFilter;
+  const now          = Date.now();
+  const startOfToday = new Date(); startOfToday.setHours(0,0,0,0);
+  const startOfYest  = new Date(startOfToday - 86400000);
+
+  const filtered = _allLogEntries
+    .map((e, origIdx) => ({ e, origIdx }))
+    .filter(({ e }) => {
+      if (user && e.user !== user) return false;
+      if (type) {
+        const a = (e.action || '').toLowerCase();
+        if (type === 'added'      && !a.includes('add'))     return false;
+        if (type === 'updated'    && !a.includes('updat'))   return false;
+        if (type === 'deleted'    && !a.includes('delet'))   return false;
+        if (type === 'categories' && !a.includes('categor')) return false;
+      }
+      if (when) {
+        const ts = new Date(e.ts);
+        if (when === 'today'     && ts < startOfToday) return false;
+        if (when === 'yesterday' && (ts < startOfYest || ts >= startOfToday)) return false;
+        if (when === 'week'      && ts < new Date(now - 7  * 86400000)) return false;
+        if (when === 'month'     && ts < new Date(now - 30 * 86400000)) return false;
+      }
+      if (q) {
+        const ql = q.toLowerCase();
+        if (![(e.user||''),(e.action||''),(e.detail||''),(e.changes||'')]
+              .some(s => s.toLowerCase().includes(ql))) return false;
+      }
+      return true;
+    });
+
+  _renderLogPage(filtered);
+}
+
+function _renderLogPage(filtered) {
+  const el         = document.getElementById('changelogContent');
+  const total      = filtered.length;
+  const totalPages = Math.max(1, Math.ceil(total / LOG_PAGE_SIZE));
+  if (_logPage > totalPages) _logPage = totalPages;
+
+  if (!total) {
+    el.innerHTML = '<p style="color:#9ca3af;font-size:13px">No entries match the current filters.</p>';
+    _renderLogPagination(0, 0);
+    return;
+  }
+
+  const page           = filtered.slice((_logPage - 1) * LOG_PAGE_SIZE, _logPage * LOG_PAGE_SIZE);
+  const todayLabel     = new Date().toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' });
+  const yesterdayLabel = new Date(Date.now() - 86400000).toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' });
   const groups = {};
-  entries.forEach((e, idx) => {
-    const raw     = new Date(e.ts).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+  page.forEach(({ e, origIdx }) => {
+    const raw     = new Date(e.ts).toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' });
     const display = raw === todayLabel ? 'Today' : raw === yesterdayLabel ? 'Yesterday' : raw;
     if (!groups[display]) groups[display] = [];
-    groups[display].push({ e, idx });
+    groups[display].push({ e, origIdx });
   });
   el.innerHTML = Object.entries(groups).map(([label, items]) => `
     <div class="log-date-group">
       <div class="log-date-label">${label}</div>
-      ${items.map(({ e, idx }) => {
-        const time = new Date(e.ts).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+      ${items.map(({ e, origIdx }) => {
+        const time = new Date(e.ts).toLocaleTimeString('en-GB', { hour:'2-digit', minute:'2-digit' });
         return `<div class="log-entry">
-          <input type="checkbox" class="log-entry-cb" data-idx="${idx}">
+          <input type="checkbox" class="log-entry-cb" data-idx="${origIdx}">
           <div class="log-entry-dot" style="margin-top:4px"></div>
           <div class="log-body">
             <div class="log-action">${esc(e.action)}${e.detail ? ' — ' + esc(e.detail) : ''}</div>
@@ -172,6 +255,29 @@ function renderChangelog(entries) {
         </div>`;
       }).join('')}
     </div>`).join('');
+  _renderLogPagination(totalPages, total);
+  document.getElementById('logSelectAll').checked = false;
+}
+
+function _renderLogPagination(totalPages, total) {
+  const el = document.getElementById('logPagination');
+  if (!el) return;
+  if (totalPages <= 1) { el.innerHTML = ''; el.style.display = 'none'; return; }
+  const start = (_logPage - 1) * LOG_PAGE_SIZE + 1;
+  const end   = Math.min(_logPage * LOG_PAGE_SIZE, total);
+  el.style.display = 'flex';
+  el.innerHTML = `
+    <span class="log-page-info">Showing ${start}–${end} of ${total}</span>
+    <div class="log-page-btns">
+      <button class="log-pg-btn" onclick="goLogPage(${_logPage - 1})" ${_logPage === 1 ? 'disabled' : ''}>&#8249;</button>
+      <span class="log-page-cur">${_logPage} / ${totalPages}</span>
+      <button class="log-pg-btn" onclick="goLogPage(${_logPage + 1})" ${_logPage === totalPages ? 'disabled' : ''}>&#8250;</button>
+    </div>`;
+}
+
+function goLogPage(p) {
+  _logPage = p;
+  applyLogFilters();
 }
 
 function toggleSelectAllLogs(checked) {
@@ -343,22 +449,30 @@ async function overwriteGistFromRepo() {
 
 async function overwriteRepoFromGist() {
   if (!_syncGistJson) { showToast('Load comparison first', 'err'); return; }
-  if (!confirm('Overwrite repo data/products.json with Gist content? This commits to GitHub.')) return;
-  showOverlay('Overwriting repo…');
+  if (!confirm('Overwrite repo data/products.json and OneDrive products.xlsx with Gist content?')) return;
+
+  const parsed = JSON.parse(_syncGistJson);
+  products  = (parsed.products || []).sort((a, b) => a.order - b.order);
+  cats      = parsed.cats || [];
+  if (parsed.dropdowns) dropdowns = { ...DEFAULT_DROPDOWNS, ...parsed.dropdowns };
+
+  showOverlay('Updating OneDrive…');
+  try { await writeExcel(); } catch(e) { showToast('Excel update failed: ' + e.message, 'err'); hideOverlay(); return; }
+
+  updateOverlay('Updating repo…');
   try {
     const bytes = new TextEncoder().encode(_syncGistJson);
     await pushFileToGitHub('data/products.json', bytes.buffer, 'Sync products.json from Gist');
-    _syncRepoJson = null;
-    _syncGistJson = null;
-    hideOverlay();
-    document.getElementById('syncDiffPanel').style.display = 'none';
-    document.getElementById('btnOverwriteGist').style.display = 'none';
-    document.getElementById('btnOverwriteRepo').style.display = 'none';
-    showToast('Repo overwritten with Gist content', 'ok');
-  } catch(e) {
-    hideOverlay();
-    showToast('Overwrite failed: ' + e.message, 'err');
-  }
+  } catch(e) { showToast('Repo update failed: ' + e.message, 'err'); hideOverlay(); return; }
+
+  _syncRepoJson = null;
+  _syncGistJson = null;
+  hideOverlay();
+  document.getElementById('syncDiffPanel').style.display = 'none';
+  document.getElementById('btnOverwriteGist').style.display = 'none';
+  document.getElementById('btnOverwriteRepo').style.display = 'none';
+  renderSidebar();
+  showToast('OneDrive and repo updated from Gist', 'ok');
 }
 
 // ─── Field Options Editor ─────────────────────────────────────────────────────

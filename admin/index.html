@@ -273,6 +273,25 @@
             <h2>Activity Log</h2>
             <button class="btn-refresh" onclick="loadChangelog()">Refresh</button>
           </div>
+          <div id="logFilters" class="log-filters" style="display:none">
+            <input type="text" id="logSearchInput" placeholder="Search by product, user or change…" oninput="setLogFilter('q',this.value)">
+            <select id="logUserFilter" onchange="setLogFilter('user',this.value)"><option value="">All users</option></select>
+            <select id="logWhenFilter" onchange="setLogFilter('when',this.value)">
+              <option value="">All time</option>
+              <option value="today">Today</option>
+              <option value="yesterday">Yesterday</option>
+              <option value="week">This week</option>
+              <option value="month">This month</option>
+            </select>
+            <select id="logTypeFilter" onchange="setLogFilter('type',this.value)">
+              <option value="">All types</option>
+              <option value="added">Added</option>
+              <option value="updated">Updated</option>
+              <option value="deleted">Deleted</option>
+              <option value="categories">Categories</option>
+            </select>
+            <button class="btn-clear-filters" onclick="clearLogFilters()">Clear</button>
+          </div>
           <div id="logToolbar" class="log-toolbar" style="display:none">
             <div class="log-toolbar-left">
               <input type="checkbox" id="logSelectAll" onchange="toggleSelectAllLogs(this.checked)" title="Select all">
@@ -282,6 +301,7 @@
             <button class="btn-log-del danger" onclick="deleteAllLogs()">Delete All</button>
           </div>
           <div id="changelogContent"><p style="color:#9ca3af;font-size:13px">Loading…</p></div>
+          <div id="logPagination" class="log-pagination" style="display:none"></div>
         </div>
       </div>
     </main>
