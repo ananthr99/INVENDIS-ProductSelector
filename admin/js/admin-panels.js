@@ -433,12 +433,17 @@ async function overwriteGistFromRepo() {
   try {
     await pushToGist(_syncRepoJson);
     lastGistJson  = _syncRepoJson;
+    const repoData = JSON.parse(_syncRepoJson);
     _syncRepoJson = null;
     _syncGistJson = null;
     hideOverlay();
-    document.getElementById('syncDiffPanel').style.display = 'none';
-    document.getElementById('btnOverwriteGist').style.display = 'none';
-    document.getElementById('btnOverwriteRepo').style.display = 'none';
+    const panel = document.getElementById('syncDiffPanel');
+    const btn   = document.getElementById('btnOverwriteGist');
+    const btn2  = document.getElementById('btnOverwriteRepo');
+    btn.style.display  = 'none';
+    btn2.style.display = 'none';
+    panel.style.display = 'block';
+    renderSyncDiff(panel, btn, btn2, repoData, repoData, new Date().toISOString());
     showToast('Gist overwritten with repo content', 'ok');
     try { await readFromGist(); renderSidebar(); } catch {}
   } catch(e) {
@@ -459,7 +464,7 @@ async function overwriteRepoFromGist() {
   showOverlay('Updating OneDrive…');
   try { await writeExcel(); } catch(e) { showToast('Excel update failed: ' + e.message, 'err'); hideOverlay(); return; }
 
-  updateOverlay('Updating repo…');
+  updateOverlay('Pushing to repo…');
   try {
     const bytes = new TextEncoder().encode(_syncGistJson);
     await pushFileToGitHub('data/products.json', bytes.buffer, 'Sync products.json from Gist');
@@ -468,9 +473,15 @@ async function overwriteRepoFromGist() {
   _syncRepoJson = null;
   _syncGistJson = null;
   hideOverlay();
-  document.getElementById('syncDiffPanel').style.display = 'none';
-  document.getElementById('btnOverwriteGist').style.display = 'none';
-  document.getElementById('btnOverwriteRepo').style.display = 'none';
+
+  const panel = document.getElementById('syncDiffPanel');
+  const btn   = document.getElementById('btnOverwriteGist');
+  const btn2  = document.getElementById('btnOverwriteRepo');
+  btn.style.display  = 'none';
+  btn2.style.display = 'none';
+  panel.style.display = 'block';
+  renderSyncDiff(panel, btn, btn2, parsed, parsed, null);
+
   renderSidebar();
   showToast('OneDrive and repo updated from Gist', 'ok');
 }
