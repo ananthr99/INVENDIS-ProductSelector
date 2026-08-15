@@ -368,7 +368,9 @@ async function loadSyncComparison() {
     const repoJson  = await repoRes.json();
     const gistContent = gistJson.files?.['products.json']?.content;
     if (!gistContent) throw new Error('products.json not found in Gist');
-    const repoContent = atob(repoJson.content.replace(/\n/g, ''));
+    const repoBase64  = repoJson.content.replace(/\n/g, '');
+    const repoBytes   = Uint8Array.from(atob(repoBase64), c => c.charCodeAt(0));
+    const repoContent = new TextDecoder().decode(repoBytes);
     _syncRepoJson = repoContent;
     _syncGistJson = gistContent;
     renderSyncDiff(panel, btn, btn2, JSON.parse(gistContent), JSON.parse(repoContent), gistJson.updated_at);
