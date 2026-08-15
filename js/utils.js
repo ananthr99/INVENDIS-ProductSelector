@@ -20,7 +20,7 @@ function srow(k, v) {
   return `<div class="spec-row"><span class="spec-key">${k}</span><span class="spec-val">${v}</span></div>`;
 }
 
-function hasSerial(v) { return v === 'Yes' || v === 'Optional'; }
+function hasSerial(v) { return v === true || v === 'Yes' || v === 'Optional'; }
 function rsLabel(flag, variants, colName) {
   if (!hasSerial(flag)) return '-';
   if (!variants || !variants.headers || !variants.rows) return flag;

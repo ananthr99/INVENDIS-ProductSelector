@@ -1,5 +1,8 @@
-function downloadFile(url) {
+function downloadFile(url, btn) {
   const filename = decodeURIComponent(url.split('/').pop());
+  const origHtml = btn ? btn.innerHTML : null;
+  if (btn) { btn.disabled = true; btn.textContent = '…'; }
+
   fetch(url)
     .then(r => r.blob())
     .then(blob => {
@@ -10,6 +13,7 @@ function downloadFile(url) {
       a.click();
       document.body.removeChild(a);
       setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+      if (btn) { btn.disabled = false; btn.innerHTML = origHtml; }
     })
     .catch(() => {
       const a = document.createElement('a');
@@ -18,6 +22,7 @@ function downloadFile(url) {
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
+      if (btn) { btn.disabled = false; btn.innerHTML = origHtml; }
     });
 }
 
@@ -51,8 +56,8 @@ function buildVariantsTable(v) {
       const file = PART_DATASHEETS[pn];
       if (file) {
         dsCell = `<td class="cell-datasheet">
-             <a class="ds-btn ds-view" href="${file}" target="_blank" rel="noopener">View</a>
-             <button class="ds-btn ds-download" onclick="downloadFile('${file}')">&#x2193;</button>
+            <a class="ds-btn ds-view" href="${file}" target="_blank" rel="noopener">View</a>
+            <button class="ds-btn ds-download" onclick="downloadFile('${file}',this)">&#x2193;</button>
            </td>`;
       } else {
         const mailSubject = encodeURIComponent('Datasheet Request: ' + pn);
@@ -83,10 +88,10 @@ function buildImageCarousel(id, name) {
   carouselIdx = 0;
   const multi = imgs.length > 1;
   return `
-    <div class="product-image-wrap">
-      ${multi ? `<button class="carousel-btn carousel-prev" onclick="navigateCarousel(-1)">&#8249;</button>` : ''}
-      <img class="carousel-img" id="carouselImg" src="${imgs[0]}" alt="${name}">
-      ${multi ? `<button class="carousel-btn carousel-next" onclick="navigateCarousel(1)">&#8250;</button>` : ''}
+    <div class="product-image-wrap loading">
+      ${multi ? `<button class="carousel-btn carousel-prev" aria-label="Previous image" onclick="navigateCarousel(-1)">&#8249;</button>` : ''}
+      <img class="carousel-img" id="carouselImg" src="${imgs[0]}" alt="${name}" onload="this.style.opacity=1; this.parentElement.classList.remove('loading')">
+      ${multi ? `<button class="carousel-btn carousel-next" aria-label="Next image" onclick="navigateCarousel(1)">&#8250;</button>` : ''}
       ${multi ? `<div class="carousel-counter" id="carouselCounter">1 / ${imgs.length}</div>` : ''}
     </div>`;
 }
@@ -94,7 +99,10 @@ function buildImageCarousel(id, name) {
 function navigateCarousel(dir) {
   if (!carouselImages.length) return;
   carouselIdx = (carouselIdx + dir + carouselImages.length) % carouselImages.length;
-  document.getElementById('carouselImg').src = carouselImages[carouselIdx];
+  const img = document.getElementById('carouselImg');
+  img.style.opacity = 0;
+  img.parentElement.classList.add('loading');
+  img.src = carouselImages[carouselIdx];
   const counter = document.getElementById('carouselCounter');
   if (counter) counter.textContent = `${carouselIdx + 1} / ${carouselImages.length}`;
 }
@@ -125,7 +133,7 @@ function buildDatasheetsSection(id) {
         <span class="datasheet-label">Product Datasheet</span>
         <div class="datasheet-btns">
           <a class="ds-btn ds-view" href="${file}" target="_blank" rel="noopener">View</a>
-          <button class="ds-btn ds-download" onclick="downloadFile('${file}')">Download</button>
+          <button class="ds-btn ds-download" onclick="downloadFile('${file}',this)">Download</button>
         </div>
       </div>
     </div>`;

@@ -19,12 +19,20 @@ function buildCatTabs() {
   const tabs = document.getElementById('catTabs');
   const counts = {};
   CATS.forEach(c => { counts[c] = c === 'All' ? PRODUCTS.length : PRODUCTS.filter(p => p.cat === c).length; });
-  tabs.innerHTML = CATS.map(c => `
-    <button class="cat-tab ${activeCat===c?'active':''}" onclick="setCat('${c}')">
-      ${c} <span class="count">${counts[c]}</span>
-    </button>
-  `).join('');
+  tabs.innerHTML = '';
+  CATS.forEach(c => {
+    const btn = document.createElement('button');
+    btn.className = 'cat-tab' + (activeCat === c ? ' active' : '');
+    btn.appendChild(document.createTextNode(c + ' '));
+    const span = document.createElement('span');
+    span.className = 'count';
+    span.textContent = counts[c];
+    btn.appendChild(span);
+    btn.addEventListener('click', () => setCat(c));
+    tabs.appendChild(btn);
+  });
 }
+
 
 function render() {
   const list = getFiltered();
@@ -45,10 +53,11 @@ function render() {
   });
   const r = document.getElementById('results');
   if (!list.length) {
+    r.className = '';
     r.innerHTML = `<div class="empty-state">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M8 11h6M11 8v6"/></svg>
-      <h3>No products found</h3>
-      <p>Try adjusting your search or filters above.</p>
+      <h3>No Products Found</h3>
+      <p>Try adjusting your search filters.</p>
     </div>`;
     renderPagination(0, 0);
     return;
@@ -58,6 +67,7 @@ function render() {
   else renderList(page, r);
   renderPagination(totalPages, list.length);
   updateCompareTray();
+  syncURL();
 }
 
 function renderPagination(totalPages, total) {
@@ -106,11 +116,11 @@ function renderGrid(list, r) {
   r.className = 'grid-view';
   r.innerHTML = list.map(p => {
     const imgs = PRODUCT_IMAGES[p.id];
-    const thumb = imgs?.length ? `<div class="card-thumb-wrap"><img class="card-thumb" src="${imgs[0]}" alt="${p.name}"></div>` : '';
+    const thumb = imgs?.length ? `<div class="card-thumb-wrap"><img class="card-thumb" src="${imgs[0]}" alt="${p.name}" loading="lazy"></div>` : '';
     const uc = PRODUCT_USE_CASES[p.id] || [];
     const ucHtml = uc.length ? `<div class="card-use-cases">${uc.slice(0,2).map(u=>`<span class="use-case-chip-sm">${u}</span>`).join('')}</div>` : '';
     return `
-    <div class="card ${compareSet.has(p.id)?'compare-selected':''}">
+    <div class="card ${compareSet.has(p.id)?'compare-selected':''}" onclick="openDetail('${p.id}')">
       ${thumb}
       <span class="badge ${catBadgeClass(p.cat)}">${p.cat}</span>
       <div class="card-name">${p.name}</div>
@@ -118,8 +128,8 @@ function renderGrid(list, r) {
       <div class="card-specs">
         ${hasCellular(p.cellular_gen)?`<span class="spec-pill highlight">${p.cellular_gen}</span>`:''}
         ${hasWifi(p.wifi)?`<span class="spec-pill highlight">${wifiLabel(p.wifi)}</span>`:''}
-        ${(p.rs485==='Yes'||p.rs485==='Optional')?`<span class="spec-pill warn">RS485${p.rs485==='Optional'?' (Opt)':''}</span>`:''}
-        ${(p.rs232==='Yes'||p.rs232==='Optional')?`<span class="spec-pill warn">RS232${p.rs232==='Optional'?' (Opt)':''}</span>`:''}
+        ${(p.rs485===true||p.rs485==='Yes'||p.rs485==='Optional')?`<span class="spec-pill warn">RS485${p.rs485==='Optional'?' (Opt)':''}</span>`:''}
+        ${(p.rs232===true||p.rs232==='Yes'||p.rs232==='Optional')?`<span class="spec-pill warn">RS232${p.rs232==='Optional'?' (Opt)':''}</span>`:''}
         ${p.ports>0?`<span class="spec-pill">${p.ports} ports</span>`:''}
         ${p.ip?`<span class="spec-pill">${p.ip}</span>`:''}
       </div>
@@ -128,7 +138,7 @@ function renderGrid(list, r) {
         <label class="compare-check" onclick="event.stopPropagation()">
           <input type="checkbox" ${compareSet.has(p.id)?'checked':''} onchange="toggleCompare('${p.id}',this.checked)"> Compare
         </label>
-        <span class="details-link" onclick="openDetail('${p.id}')">Details →</span>
+        <span class="details-link" onclick="event.stopPropagation();openDetail('${p.id}')">Details →</span>
       </div>
     </div>
   `;
@@ -147,7 +157,7 @@ function renderList(list, r) {
     <span style="text-align:center">Compare</span>
   </div>` + list.map(p => {
     const imgs = PRODUCT_IMAGES[p.id];
-    const thumb = imgs?.length ? `<img class="list-thumb" src="${imgs[0]}" alt="${p.name}">` : `<span></span>`;
+    const thumb = imgs?.length ? `<img class="list-thumb" src="${imgs[0]}" alt="${p.name}" loading="lazy">` : `<span></span>`;
     return `
     <div class="list-row ${compareSet.has(p.id)?'compare-selected':''}" onclick="openDetail('${p.id}')">
       ${thumb}
@@ -158,7 +168,7 @@ function renderList(list, r) {
       <div class="list-desc">${p.desc}</div>
       <div class="list-cell">${hasCellular(p.cellular_gen)?`<span class="yes-pill">${p.cellular_gen}</span>`:'<span class="no-pill">-</span>'}</div>
       <div class="list-cell">${hasWifi(p.wifi)?`<span class="yes-pill">${wifiLabel(p.wifi)}</span>`:'<span class="no-pill">-</span>'}</div>
-      <div class="list-cell">${p.rs485==='Yes'?'<span class="yes-pill">Yes</span>':p.rs485==='Optional'?'<span class="yes-pill">Opt</span>':'<span class="no-pill">-</span>'}</div>
+      <div class="list-cell">${(p.rs485===true||p.rs485==='Yes')?'<span class="yes-pill">Yes</span>':p.rs485==='Optional'?'<span class="yes-pill">Opt</span>':'<span class="no-pill">-</span>'}</div>
       <div class="list-cell">${p.ports>0?p.ports:'-'}</div>
       <div class="list-cell" onclick="event.stopPropagation()">
         <input type="checkbox" style="width:14px;height:14px;accent-color:#1A6FC4;cursor:pointer" ${compareSet.has(p.id)?'checked':''} onchange="toggleCompare('${p.id}',this.checked)">
@@ -169,8 +179,14 @@ function renderList(list, r) {
 }
 
 function setView(v) {
+  if (v === 'list' && window.innerWidth <= 640) {
+    showToast('List view is not available on small screens.');
+    return;
+  }
   viewMode = v;
   document.getElementById('btnGrid').classList.toggle('active', v==='grid');
   document.getElementById('btnList').classList.toggle('active', v==='list');
   render();
 }
+
+

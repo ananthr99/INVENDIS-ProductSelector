@@ -1,6 +1,14 @@
+function showToast(msg) {
+  const t = document.createElement('div');
+  t.className = 'toast';
+  t.textContent = msg;
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 3000);
+}
+
 function toggleCompare(id, checked) {
   if (checked) {
-    if (compareSet.size >= 3) { alert('You can compare up to 3 products at a time.'); return; }
+    if (compareSet.size >= 3) { showToast('You can compare up to 3 products at a time.'); return; }
     compareSet.add(id);
   } else {
     compareSet.delete(id);
@@ -25,7 +33,7 @@ function clearCompare() { compareSet.clear(); render(); }
 
 function openCompareModal() {
   const sel = PRODUCTS.filter(p => compareSet.has(p.id));
-  if (sel.length < 2) { alert('Please select at least 2 products to compare.'); return; }
+  if (sel.length < 2) { showToast('Please select at least 2 products to compare.'); return; }
   const fields = [
     ['Category','cat'],['CPU','cpu'],['RAM','ram'],['Cellular','cellular_gen'],
     ['Wi-Fi',null],['Ethernet ports',null],['Power input','power'],
@@ -73,8 +81,25 @@ function openCompareModal() {
         </div>
         <div class="modal-actions">
           <a class="btn-enquire" href="mailto:sales@invendis.com?subject=Enquiry: ${encodeURIComponent(sel.map(p=>p.name).join(', '))}">Enquire about these products</a>
+          <button class="btn-add-compare" id="btnCopyCompare" onclick="copyCompare()">Copy table</button>
+          <button class="btn-add-compare" onclick="window.print()">Print / PDF</button>
           <button class="btn-add-compare" onclick="closeModal()">Close</button>
         </div>
       </div>
     </div>`;
+}
+
+function copyCompare() {
+  const table = document.querySelector('.compare-table');
+  if (!table) return;
+  const text = Array.from(table.querySelectorAll('tr'))
+    .map(row => Array.from(row.querySelectorAll('th,td'))
+      .map(cell => cell.textContent.trim()).join('\t'))
+    .join('\n');
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById('btnCopyCompare');
+    if (!btn) return;
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy table', 2000);
+  });
 }

@@ -51,3 +51,30 @@ function clearFilters() {
   currentPage = 1;
   render();
 }
+
+function syncURL() {
+  const params = new URLSearchParams();
+  const q = document.getElementById('search').value.trim();
+  if (q) params.set('q', q);
+  if (activeCat !== 'All') params.set('cat', activeCat);
+  const fCell = document.getElementById('fCell').value;
+  const fWifi = document.getElementById('fWifi').value;
+  const fPorts = document.getElementById('fPorts').value;
+  const fSerial = document.getElementById('fSerial').value;
+  if (fCell) params.set('cell', fCell);
+  if (fWifi) params.set('wifi', fWifi);
+  if (fPorts) params.set('ports', fPorts);
+  if (fSerial) params.set('serial', fSerial);
+  const newUrl = params.toString() ? `?${params.toString()}` : location.pathname;
+  history.replaceState(null, '', newUrl);
+}
+
+function loadFromURL() {
+  const p = new URLSearchParams(location.search);
+  if (p.get('q'))      document.getElementById('search').value = p.get('q');
+  if (p.get('cat') && CATS.includes(p.get('cat'))) activeCat = p.get('cat');
+  if (p.get('cell'))   document.getElementById('fCell').value = p.get('cell');
+  if (p.get('wifi'))   document.getElementById('fWifi').value = p.get('wifi');
+  if (p.get('ports'))  document.getElementById('fPorts').value = p.get('ports');
+  if (p.get('serial')) document.getElementById('fSerial').value = p.get('serial');
+}

@@ -1,16 +1,36 @@
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+  if (e.key === 'ArrowLeft'  && carouselImages.length > 1) navigateCarousel(-1);
+  if (e.key === 'ArrowRight' && carouselImages.length > 1) navigateCarousel(1);
+});
 
 async function fetchProductData() {
+  const CACHE_KEY = 'invendis_products_cache';
+  const CACHE_TTL = 2 * 60 * 1000; // 2 minutes
+
+  // Return cached data if still fresh
+  try {
+    const cached = sessionStorage.getItem(CACHE_KEY);
+    if (cached) {
+      const { ts, data } = JSON.parse(cached);
+      if (Date.now() - ts < CACHE_TTL) return data;
+    }
+  } catch(e) { /* ignore corrupt cache */ }
+
   const gistId = typeof ONEDRIVE_CONFIG !== 'undefined' && ONEDRIVE_CONFIG.gistId;
 
-  // 1. Try Gist API — always fresh, but limited to 60 unauthenticated req/hour
+  // 1. Try Gist API
   if (gistId) {
     try {
       const res = await fetch(`https://api.github.com/gists/${gistId}`, { cache: 'no-store' });
       if (res.ok) {
         const gist    = await res.json();
         const content = gist.files?.['products.json']?.content;
-        if (content) return JSON.parse(content);
+        if (content) {
+          const data = JSON.parse(content);
+          sessionStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), data }));
+          return data;
+        }
       }
       console.warn('[ProductSelector] Gist API returned', res.status, '— trying repo fallback');
     } catch(e) {
@@ -18,10 +38,14 @@ async function fetchProductData() {
     }
   }
 
-  // 2. Fallback: data/products.json committed to the repo (no rate limits, updates within ~1 min of a save)
+  // 2. Fallback: data/products.json
   try {
     const res = await fetch(`data/products.json?t=${Date.now()}`, { cache: 'no-store' });
-    if (res.ok) return await res.json();
+    if (res.ok) {
+      const data = await res.json();
+      sessionStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), data }));
+      return data;
+    }
     console.warn('[ProductSelector] data/products.json returned', res.status);
   } catch(e) {
     console.warn('[ProductSelector] data/products.json fetch error:', e.message);
@@ -29,6 +53,7 @@ async function fetchProductData() {
 
   return null;
 }
+
 
 function applyData(data) {
   if (!data) return;
@@ -72,7 +97,20 @@ async function initApp() {
   }
 
   updateHeroStats();
+  loadFromURL();
   render();
 }
 
 initApp();
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth <= 640 && viewMode === 'list') {
+    setView('grid');
+  }
+});
+
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) {
+    sessionStorage.removeItem('invendis_products_cache');
+  }
+});

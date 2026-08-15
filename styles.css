@@ -307,7 +307,7 @@ select.active-filter { border-color: var(--blue); background-color: var(--blue-p
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 18px;
-  cursor: default;
+  cursor: pointer;
   transition: box-shadow 0.18s, border-color 0.18s, transform 0.15s;
   display: flex;
   flex-direction: column;
@@ -587,19 +587,32 @@ select.active-filter { border-color: var(--blue); background-color: var(--blue-p
 .modal-desc { font-size: 13px; color: var(--text-muted); margin-top: 6px; line-height: 1.5; }
 .product-image-wrap {
   position: relative;
-  background: #f5f7fa;
-  border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px 60px;
-  min-height: 180px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  min-height: 220px;
 }
+
+.product-image-wrap.loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
 .carousel-img {
   max-height: 260px;
   max-width: 100%;
   object-fit: contain;
   display: block;
+  opacity: 0;
+  transition: opacity 0.25s ease;
 }
 .carousel-btn {
   position: absolute;
@@ -966,10 +979,15 @@ footer {
     overflow: hidden;
   }
 
-  /* List view — collapse to single column */
+    /* List view — thumbnail + name/desc card layout */
   .list-head { display: none; }
-  .list-row { grid-template-columns: 60px 1fr; gap: 10px; }
-  .list-row .list-cell:not(:first-child):not(:nth-child(2)) { display: none; }
+  .list-row {
+    grid-template-columns: 56px 1fr;
+    align-items: start;
+  }
+  .list-row > *:first-child { grid-row: span 2; align-self: center; }
+  .list-row .list-desc { grid-column: 2; margin-top: 2px; }
+  .list-row .list-cell { display: none; }
 
   /* Compare tray */
   .compare-tray { padding: 10px 20px; gap: 8px; }
@@ -1026,7 +1044,7 @@ footer {
 
   /* Grid — 2 columns */
   .grid-view { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-  .card { padding: 13px; gap: 6px; }
+  .card { cursor: pointer; padding: 13px; gap: 6px; }
   .card-thumb-wrap { height: 135px; margin: -13px -13px 4px -13px; }
   .card-name { font-size: 14px; }
   .card-desc { -webkit-line-clamp: 3; }
@@ -1068,7 +1086,7 @@ footer {
 
   /* Grid */
   .grid-view { gap: 8px; }
-  .card { padding: 10px; gap: 5px; }
+  .card { cursor: pointer; padding: 10px; gap: 5px; }
   .card-thumb-wrap { height: 115px; margin: -10px -10px 4px -10px; }
   .card-name { font-size: 13px; }
   .card-desc { font-size: 11px; -webkit-line-clamp: 3; }
@@ -1086,4 +1104,42 @@ footer {
   .compare-tray { flex-direction: column; align-items: stretch; gap: 8px; padding: 10px 12px; }
   .btn-compare { width: 100%; }
   .btn-clear-compare { width: 100%; text-align: center; }
+}
+
+/* ── Toast notification ── */
+.toast {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  background: var(--warn-bg);
+  color: var(--warn-text);
+  border: 1px solid #f0d080;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: var(--shadow-md);
+  z-index: 9999;
+  opacity: 0;
+  animation: toastIn 0.2s ease forwards, toastOut 0.3s ease 2.7s forwards;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+@keyframes toastIn {
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+@keyframes toastOut {
+  to { opacity: 0; transform: translateX(-50%) translateY(-8px); }
+}
+
+/* ── Print styles (Compare modal) ── */
+@media print {
+  body > *:not(#modalRoot) { display: none !important; }
+  #modalRoot .modal-overlay { position: static; background: none; padding: 0; }
+  #modalRoot .modal { box-shadow: none; max-height: none; max-width: 100%; border: none; border-radius: 0; }
+  .modal-close-bar, .modal-actions { display: none !important; }
+  .compare-table { width: 100%; font-size: 12px; }
+  .diff-row { background: #fff9e0 !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
 }
