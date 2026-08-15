@@ -87,9 +87,10 @@
       <div class="tab-bar">
         <button class="tab active" id="tabProducts" onclick="switchTab('products')">Products</button>
         <button class="tab"        id="tabCats"     onclick="switchTab('cats')">Categories</button>
-        <button class="tab"        id="tabSetup"    onclick="switchTab('setup')">Setup</button>
-        <button class="tab"        id="tabChangelog" onclick="switchTab('changelog')">Activity</button>
         <button class="tab"        id="tabFields"    onclick="switchTab('fields')">Field Options</button>
+        <div style="flex:1"></div>
+        <button class="tab"        id="tabSetup"    onclick="switchTab('setup')">Setup</button>
+        <button class="tab"        id="tabChangelog" onclick="switchTab('changelog')">Activity Log</button>
       </div>
 
       <!-- Token warning banner -->
@@ -241,11 +242,14 @@
             <p style="margin-top:6px"><span class="dot" id="dotUrl"></span><span id="statusUrl"></span></p>
           </div>
           <div class="info-card">
-            <h4>Manual Sync — Repo → Gist</h4>
-            <p style="font-size:13px;color:#6b7280;margin-bottom:10px">Recovery tool: compares what is in <code style="font-family:'DM Mono',monospace;background:#f4f6f9;padding:1px 4px;border-radius:3px;font-size:11px">data/products.json</code> (GitHub repo) against the live Gist. Use this to restore the Gist if it has bad or missing data.</p>
+            <h4>Manual Sync</h4>
+            <p style="font-size:13px;color:#6b7280;margin-bottom:10px">Recovery tool: compares <code style="font-family:'DM Mono',monospace;background:#f4f6f9;padding:1px 4px;border-radius:3px;font-size:11px">data/products.json</code> (GitHub repo) against the live Gist. Use the buttons below to bring either side in sync with the other.</p>
             <button class="btn-get" onclick="loadSyncComparison()">Load &amp; Compare</button>
             <div id="syncDiffPanel" style="display:none;margin-top:12px"></div>
-            <button class="btn-overwrite" id="btnOverwriteGist" onclick="overwriteGistFromRepo()">Overwrite Gist with Repo Content</button>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
+              <button class="btn-overwrite" id="btnOverwriteGist" onclick="overwriteGistFromRepo()">Overwrite Gist with Repo Content</button>
+              <button class="btn-overwrite btn-overwrite-gist" id="btnOverwriteRepo" onclick="overwriteRepoFromGist()">Overwrite Repo with Gist Content</button>
+            </div>
           </div>
         </div>
       </div>

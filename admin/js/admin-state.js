@@ -56,6 +56,7 @@ let dropdowns   = JSON.parse(JSON.stringify(DEFAULT_DROPDOWNS));
 let selectedId  = null;
 let lastGistJson  = null; // snapshot of last successfully written Gist content, used for rollback
 let _syncRepoJson = null; // repo JSON fetched by loadSyncComparison(), used by overwriteGistFromRepo()
+let _syncGistJson = null; // gist JSON fetched by loadSyncComparison(), used by overwriteRepoFromGist()
 let currentImgs = [];   // existing image URLs for the selected product
 let pendingImgs = [];   // [{file, dataUrl}] not yet uploaded
 let pendingDs      = null; // File object pending upload
@@ -68,7 +69,7 @@ let msalInst;
 
 // ─── Tab Switching ────────────────────────────────────────────────────────────
 function switchTab(name) {
-  ['products','cats','setup','changelog','fields'].forEach(t => {
+  ['products','cats','fields','setup','changelog'].forEach(t => {
     document.getElementById('panel' + cap(t)).classList.toggle('active', t === name);
     document.getElementById('tab'   + cap(t)).classList.toggle('active', t === name);
   });

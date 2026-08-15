@@ -235,10 +235,13 @@ async function patchChangelog(entries) {
 async function loadSyncComparison() {
   const panel = document.getElementById('syncDiffPanel');
   const btn   = document.getElementById('btnOverwriteGist');
+  const btn2  = document.getElementById('btnOverwriteRepo');
   panel.innerHTML = '<p style="color:#9ca3af;font-size:13px">Loading…</p>';
   panel.style.display = 'block';
   btn.style.display = 'none';
+  btn2.style.display = 'none';
   _syncRepoJson = null;
+  _syncGistJson = null;
   const token = getGithubToken();
   if (!token || !CFG.gistId || !CFG.githubOwner || !CFG.githubRepo) {
     panel.innerHTML = '<p style="color:#dc2626;font-size:13px">GitHub token, Gist ID, and repo config all required.</p>';
@@ -261,13 +264,14 @@ async function loadSyncComparison() {
     if (!gistContent) throw new Error('products.json not found in Gist');
     const repoContent = atob(repoJson.content.replace(/\n/g, ''));
     _syncRepoJson = repoContent;
-    renderSyncDiff(panel, btn, JSON.parse(gistContent), JSON.parse(repoContent), gistJson.updated_at);
+    _syncGistJson = gistContent;
+    renderSyncDiff(panel, btn, btn2, JSON.parse(gistContent), JSON.parse(repoContent), gistJson.updated_at);
   } catch(e) {
     panel.innerHTML = `<p style="color:#dc2626;font-size:13px">${esc(e.message)}</p>`;
   }
 }
 
-function renderSyncDiff(panel, btn, gistData, repoData, gistUpdatedAt) {
+function renderSyncDiff(panel, btn, btn2, gistData, repoData, gistUpdatedAt) {
   const rows = [];
   if (JSON.stringify(gistData.cats||[]) !== JSON.stringify(repoData.cats||[])) {
     rows.push({ badge:'mod', label:'Categories',
@@ -311,6 +315,7 @@ function renderSyncDiff(panel, btn, gistData, repoData, gistUpdatedAt) {
         </div>
       </div>`).join('') + `</div>`;
     btn.style.display = 'block';
+    btn2.style.display = 'block';
   }
   panel.innerHTML = html;
 }
@@ -323,11 +328,33 @@ async function overwriteGistFromRepo() {
     await pushToGist(_syncRepoJson);
     lastGistJson  = _syncRepoJson;
     _syncRepoJson = null;
+    _syncGistJson = null;
     hideOverlay();
     document.getElementById('syncDiffPanel').style.display = 'none';
     document.getElementById('btnOverwriteGist').style.display = 'none';
+    document.getElementById('btnOverwriteRepo').style.display = 'none';
     showToast('Gist overwritten with repo content', 'ok');
     try { await readFromGist(); renderSidebar(); } catch {}
+  } catch(e) {
+    hideOverlay();
+    showToast('Overwrite failed: ' + e.message, 'err');
+  }
+}
+
+async function overwriteRepoFromGist() {
+  if (!_syncGistJson) { showToast('Load comparison first', 'err'); return; }
+  if (!confirm('Overwrite repo data/products.json with Gist content? This commits to GitHub.')) return;
+  showOverlay('Overwriting repo…');
+  try {
+    const bytes = new TextEncoder().encode(_syncGistJson);
+    await pushFileToGitHub('data/products.json', bytes.buffer, 'Sync products.json from Gist');
+    _syncRepoJson = null;
+    _syncGistJson = null;
+    hideOverlay();
+    document.getElementById('syncDiffPanel').style.display = 'none';
+    document.getElementById('btnOverwriteGist').style.display = 'none';
+    document.getElementById('btnOverwriteRepo').style.display = 'none';
+    showToast('Repo overwritten with Gist content', 'ok');
   } catch(e) {
     hideOverlay();
     showToast('Overwrite failed: ' + e.message, 'err');

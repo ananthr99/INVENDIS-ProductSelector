@@ -217,6 +217,8 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#f4f6f9;color:#1a1d23
 .sync-diff-detail{color:#6b7280;margin-top:2px;font-size:11px;font-family:'DM Mono',monospace}
 .btn-overwrite{background:#dc2626;color:#fff;border:none;border-radius:7px;padding:8px 18px;font-family:inherit;font-size:13px;font-weight:500;cursor:pointer;margin-top:12px;transition:background .15s;display:none}
 .btn-overwrite:hover{background:#b91c1c}
+.btn-overwrite.btn-overwrite-gist{background:#059669}
+.btn-overwrite.btn-overwrite-gist:hover{background:#047857}
 
 /* ── Confirm dialog ── */
 .confirm-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;z-index:9999}
