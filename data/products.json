@@ -10,32 +10,32 @@
   ],
   "catColors": {
     "Router": {
+      "bg": "#EAF2FB",
+      "fg": "#1260A8"
+    },
+    "Gateway": {
       "bg": "#E4F5EE",
       "fg": "#0F6040"
     },
-    "Gateway": {
+    "Switch": {
       "bg": "#FFF3E0",
       "fg": "#8B5200"
     },
-    "Switch": {
+    "Energy Meter": {
       "bg": "#F9EAF3",
       "fg": "#7B2563"
     },
-    "Energy Meter": {
+    "Other": {
       "bg": "#EEF0F3",
       "fg": "#3A4D63"
     },
-    "Other": {
+    "PCB": {
       "bg": "#ECFDF5",
       "fg": "#065F46"
     },
-    "PCB": {
+    "Intel Based Devices": {
       "bg": "#FEF2F2",
       "fg": "#991B1B"
-    },
-    "Intel Based Devices": {
-      "bg": "#EEF2FF",
-      "fg": "#3730A3"
     }
   },
   "dropdowns": {
