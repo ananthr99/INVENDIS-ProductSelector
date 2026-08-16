@@ -1124,6 +1124,31 @@ footer {
   .btn-clear-compare { width: 100%; text-align: center; }
 }
 
+/* ── Wide monitors and large TVs ── */
+
+/* 1440 px — reduce side gaps while keeping 4 columns */
+@media (min-width: 1440px) {
+  .header-inner, .hero-inner, .main, .footer-inner, .footer-bottom { max-width: 1400px; }
+}
+
+/* 1640 px — 5 columns */
+@media (min-width: 1640px) {
+  .header-inner, .hero-inner, .main, .footer-inner, .footer-bottom { max-width: 1580px; }
+  .grid-view { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+
+/* 1880 px (Full HD / 1920 p monitors) — 6 columns */
+@media (min-width: 1880px) {
+  .header-inner, .hero-inner, .main, .footer-inner, .footer-bottom { max-width: 1840px; }
+  .grid-view { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
+
+/* 2400 px (2 K / ultra-wide) — 7 columns */
+@media (min-width: 2400px) {
+  .header-inner, .hero-inner, .main, .footer-inner, .footer-bottom { max-width: 2340px; }
+  .grid-view { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+}
+
 /* ── Toast notification ── */
 .toast {
   position: fixed;
