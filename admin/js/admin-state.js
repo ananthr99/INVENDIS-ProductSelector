@@ -11,6 +11,40 @@ const FOLDER     = CFG.folderPath || 'ProductSelector';
 const GRAPH      = 'https://graph.microsoft.com/v1.0';
 const SCOPES     = ['Files.ReadWrite','User.Read'];
 
+// ─── Category colour palette ──────────────────────────────────────────────────
+const LEGACY_CAT_COLORS = {
+  'Router':       { bg:'#EAF2FB', fg:'#1260A8' },
+  'Gateway':      { bg:'#E4F5EE', fg:'#0F6040' },
+  'Switch':       { bg:'#FFF3E0', fg:'#8B5200' },
+  'Energy Meter': { bg:'#F9EAF3', fg:'#7B2563' },
+  'Other':        { bg:'#EEF0F3', fg:'#3A4D63' },
+  'PCB':          { bg:'#ECFDF5', fg:'#065F46' },
+};
+const CAT_COLOR_PALETTE = [
+  { bg:'#EAF2FB', fg:'#1260A8', label:'Blue'   },
+  { bg:'#E4F5EE', fg:'#0F6040', label:'Green'  },
+  { bg:'#FFF3E0', fg:'#8B5200', label:'Orange' },
+  { bg:'#F9EAF3', fg:'#7B2563', label:'Purple' },
+  { bg:'#EEF0F3', fg:'#3A4D63', label:'Gray'   },
+  { bg:'#ECFDF5', fg:'#065F46', label:'Teal'   },
+  { bg:'#FEF2F2', fg:'#991B1B', label:'Red'    },
+  { bg:'#EEF2FF', fg:'#3730A3', label:'Indigo' },
+  { bg:'#FEFCE8', fg:'#854D0E', label:'Yellow' },
+  { bg:'#FDF2F8', fg:'#9D174D', label:'Pink'   },
+];
+function _colorToPaletteIdx(color) {
+  if (!color) return 4;
+  const idx = CAT_COLOR_PALETTE.findIndex(p => p.bg === color.bg && p.fg === color.fg);
+  return idx >= 0 ? idx : 4;
+}
+function _catColorIndicesFromMap(catNames, colorMap) {
+  return catNames.map(name => {
+    if (colorMap[name]) return _colorToPaletteIdx(colorMap[name]);
+    if (LEGACY_CAT_COLORS[name]) return _colorToPaletteIdx(LEGACY_CAT_COLORS[name]);
+    return 4;
+  });
+}
+
 // ─── Site Config defaults ──────────────────────────────────────────────────────
 const DEFAULT_SITE_CONFIG = {
   email:           'sales@invendis.com',
@@ -84,8 +118,11 @@ let currentDs      = '';   // current datasheet URL
 let currentPartDs  = {};   // existing part_datasheets {partNo: url}
 let pendingPartDs  = [];   // [{partNo, file}] not yet uploaded
 let sidebarCat  = '';
-let siteConfig   = JSON.parse(JSON.stringify(DEFAULT_SITE_CONFIG));
-let pendingLogos = {}; // { invendis:{file,dataUrl}, silbo:{...}, mii:{...} }
+let siteConfig        = JSON.parse(JSON.stringify(DEFAULT_SITE_CONFIG));
+let pendingLogos      = {}; // { invendis:{file,dataUrl}, silbo:{...}, mii:{...} }
+let catColors         = {}; // { "Router": {bg,fg}, ... }
+let catColorIndices   = []; // parallel to cats[], palette index for each cat
+let _newCatColorIdx   = 4; // palette index for the next cat to be added (default gray)
 let isSiteDirty  = false;
 let currentTab   = 'products';
 let msalInst;

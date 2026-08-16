@@ -126,11 +126,24 @@ async function deleteProduct() {
 
 // ─── Save Categories ──────────────────────────────────────────────────────────
 async function saveCats() {
-  cats = [...document.querySelectorAll('.cat-row-input')].map(i => i.value.trim()).filter(c => c && c.toLowerCase() !== 'all');
+  const inputs = [...document.querySelectorAll('.cat-row-input')];
+  // Snapshot colour selections by name before readFromGist can overwrite catColorIndices
+  const colorByName = {};
+  inputs.forEach((inp, i) => { const n = inp.value.trim(); if (n) colorByName[n] = catColorIndices[i] ?? 4; });
+
   showOverlay('Saving categories…');
   try {
     try { await readFromGist(); } catch {}
-    cats = [...document.querySelectorAll('.cat-row-input')].map(i => i.value.trim()).filter(c => c && c.toLowerCase() !== 'all');
+    cats = inputs.map(i => i.value.trim()).filter(c => c && c.toLowerCase() !== 'all');
+
+    // Rebuild catColorIndices + catColors from snapshot
+    catColorIndices = cats.map(name => colorByName[name] ?? _colorToPaletteIdx(LEGACY_CAT_COLORS[name]));
+    catColors = {};
+    cats.forEach((name, i) => {
+      const p = CAT_COLOR_PALETTE[catColorIndices[i] ?? 4];
+      catColors[name] = { bg: p.bg, fg: p.fg };
+    });
+
     await writeExcel(); await writeJson(); renderSidebar(); renderCatDropdown(); hideOverlay();
     showToast('Categories saved!', 'ok');
     logChange('Updated categories', cats.slice(0, 6).join(', ') + (cats.length > 6 ? '…' : ''));
@@ -178,15 +191,44 @@ function selectProduct(id) {
 }
 
 // ─── Categories Panel ─────────────────────────────────────────────────────────
+function _catSwatches(catIdx, selPi) {
+  return CAT_COLOR_PALETTE.map((p, pi) =>
+    `<button class="cat-color-swatch${pi === selPi ? ' selected' : ''}" style="background:${p.bg}" onclick="setCatColor(${catIdx},${pi})" title="${p.label}"></button>`
+  ).join('');
+}
+function _renderNewCatColorPicker() {
+  const el = document.getElementById('newCatColorPicker');
+  if (!el) return;
+  el.innerHTML = CAT_COLOR_PALETTE.map((p, pi) =>
+    `<button class="cat-color-swatch${pi === _newCatColorIdx ? ' selected' : ''}" style="background:${p.bg}" onclick="setNewCatColor(${pi})" title="${p.label}"></button>`
+  ).join('');
+}
 function renderCatList() {
   document.getElementById('catList').innerHTML = cats.map((c,i) => `
-    <div class="cat-row"><input class="cat-row-input" type="text" value="${esc(c)}">
-    <button class="cat-rm" onclick="removeCat(${i})">×</button></div>`).join('');
+    <div class="cat-row">
+      <div class="cat-row-top">
+        <input class="cat-row-input" type="text" value="${esc(c)}">
+        <button class="cat-rm" onclick="removeCat(${i})">×</button>
+      </div>
+      <div class="cat-color-picker">${_catSwatches(i, catColorIndices[i] ?? 4)}</div>
+    </div>`).join('');
+  _renderNewCatColorPicker();
+}
+function setCatColor(catIdx, paletteIdx) {
+  catColorIndices[catIdx] = paletteIdx;
+  renderCatList();
+}
+function setNewCatColor(paletteIdx) {
+  _newCatColorIdx = paletteIdx;
+  _renderNewCatColorPicker();
 }
 function addCat() {
   const inp = document.getElementById('newCatInput');
   const val = inp.value.trim(); if (!val) return;
   if (val.toLowerCase() === 'all') { showToast('"All" is reserved — it is added automatically', 'err'); return; }
-  cats.push(val); renderCatList(); inp.value = '';
+  cats.push(val);
+  catColorIndices.push(_newCatColorIdx);
+  renderCatList();
+  inp.value = '';
 }
-function removeCat(i) { cats.splice(i,1); renderCatList(); }
+function removeCat(i) { cats.splice(i,1); catColorIndices.splice(i,1); renderCatList(); }

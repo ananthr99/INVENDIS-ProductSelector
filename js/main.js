@@ -55,11 +55,29 @@ async function fetchProductData() {
 }
 
 
+function injectCatColorStyles(catColors) {
+  if (!catColors || !Object.keys(catColors).length) return;
+  const FIXED = { Router:'b-router', Gateway:'b-gateway', Switch:'b-switch', 'Energy Meter':'b-energy', Other:'b-other', PCB:'b-pcb' };
+  const slug  = n => 'b-cat-' + n.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+  let css = '';
+  for (const [name, col] of Object.entries(catColors)) {
+    const cls = FIXED[name] || slug(name);
+    css += `.${cls}{background:${col.bg};color:${col.fg}}\n`;
+  }
+  let el = document.getElementById('_dynCatColors');
+  if (!el) { el = document.createElement('style'); el.id = '_dynCatColors'; document.head.appendChild(el); }
+  el.textContent = css;
+}
+
 function applyData(data) {
   if (!data) return;
 
   if (Array.isArray(data.cats) && data.cats.length) {
     CATS.splice(0, CATS.length, ...data.cats);
+  }
+
+  if (data.catColors) {
+    injectCatColorStyles(data.catColors);
   }
 
   if (Array.isArray(data.products) && data.products.length) {

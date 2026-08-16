@@ -111,6 +111,8 @@ async function readFromGist() {
   // Remove fields that are no longer managed as dropdowns (now plain text inputs)
   delete dropdowns['housing'];
   delete dropdowns['op_temp'];
+  catColors       = parsed.catColors || {};
+  catColorIndices = _catColorIndicesFromMap(cats, catColors);
   siteConfig = parsed.siteConfig
     ? { ...DEFAULT_SITE_CONFIG, ...parsed.siteConfig }
     : JSON.parse(JSON.stringify(DEFAULT_SITE_CONFIG));
@@ -140,6 +142,7 @@ async function readExcel() {
     const cRows = XLSX.utils.sheet_to_json(wsCats, { header: 1, defval: '' });
     cats = cRows.slice(1).map(r => r[0]).filter(Boolean);
   }
+  catColorIndices = _catColorIndicesFromMap(cats, {});
 }
 
 async function writeExcel() {
@@ -155,6 +158,7 @@ async function writeExcel() {
 function buildJsonData() {
   return {
     cats,
+    catColors,
     dropdowns,
     siteConfig,
     products: products.map(p => {
