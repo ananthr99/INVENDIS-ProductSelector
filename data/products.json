@@ -8,6 +8,36 @@
     "PCB",
     "Intel Based Devices"
   ],
+  "catColors": {
+    "Router": {
+      "bg": "#EAF2FB",
+      "fg": "#1260A8"
+    },
+    "Gateway": {
+      "bg": "#E4F5EE",
+      "fg": "#0F6040"
+    },
+    "Switch": {
+      "bg": "#FFF3E0",
+      "fg": "#8B5200"
+    },
+    "Energy Meter": {
+      "bg": "#F9EAF3",
+      "fg": "#7B2563"
+    },
+    "Other": {
+      "bg": "#EEF0F3",
+      "fg": "#3A4D63"
+    },
+    "PCB": {
+      "bg": "#ECFDF5",
+      "fg": "#065F46"
+    },
+    "Intel Based Devices": {
+      "bg": "#FEF2F2",
+      "fg": "#991B1B"
+    }
+  },
   "dropdowns": {
     "wifi": [
       "WiFi6",
