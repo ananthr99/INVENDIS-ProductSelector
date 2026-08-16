@@ -631,6 +631,7 @@ function _setLogoPreview(key, url) {
 function previewLogo(key, input) {
   const file = input.files[0];
   if (!file) return;
+  isSiteDirty = true;
   const reader = new FileReader();
   reader.onload = e => {
     pendingLogos[key] = { file, dataUrl: e.target.result };
@@ -679,6 +680,7 @@ async function saveSiteSettings() {
   updateOverlay('Publishing…');
   try {
     await writeJson();
+    isSiteDirty = false;
     hideOverlay();
     showToast('Site settings saved & published', 'ok');
 
@@ -704,6 +706,7 @@ function resetSiteSettings() {
   if (!confirm('Reset all site settings to defaults?')) return;
   siteConfig = JSON.parse(JSON.stringify(DEFAULT_SITE_CONFIG));
   pendingLogos = {};
+  isSiteDirty = false;
   renderSiteSettings();
   showToast('Reset to defaults — click Save to publish', '');
 }

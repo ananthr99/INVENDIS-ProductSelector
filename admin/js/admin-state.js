@@ -84,12 +84,22 @@ let currentDs      = '';   // current datasheet URL
 let currentPartDs  = {};   // existing part_datasheets {partNo: url}
 let pendingPartDs  = [];   // [{partNo, file}] not yet uploaded
 let sidebarCat  = '';
-let siteConfig  = JSON.parse(JSON.stringify(DEFAULT_SITE_CONFIG));
+let siteConfig   = JSON.parse(JSON.stringify(DEFAULT_SITE_CONFIG));
 let pendingLogos = {}; // { invendis:{file,dataUrl}, silbo:{...}, mii:{...} }
+let isSiteDirty  = false;
+let currentTab   = 'products';
 let msalInst;
 
 // ─── Tab Switching ────────────────────────────────────────────────────────────
 function switchTab(name) {
+  if (currentTab === 'site' && isSiteDirty && name !== 'site') {
+    showConfirm('You have unsaved changes. Discard them?', () => {
+      isSiteDirty = false;
+      switchTab(name);
+    });
+    return;
+  }
+  currentTab = name;
   ['products','cats','fields','site','setup','changelog'].forEach(t => {
     document.getElementById('panel' + cap(t)).classList.toggle('active', t === name);
     document.getElementById('tab'   + cap(t)).classList.toggle('active', t === name);
