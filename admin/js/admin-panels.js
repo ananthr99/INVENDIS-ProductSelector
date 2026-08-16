@@ -198,6 +198,7 @@ function applyLogFilters() {
         if (type === 'updated'    && !a.includes('updat'))   return false;
         if (type === 'deleted'    && !a.includes('delet'))   return false;
         if (type === 'categories' && !a.includes('categor')) return false;
+        if (type === 'site'       && !a.includes('site'))    return false;
       }
       if (when) {
         const ts = new Date(e.ts);
@@ -639,6 +640,8 @@ function previewLogo(key, input) {
 }
 
 async function saveSiteSettings() {
+  const oldConfig = { ...siteConfig };
+
   siteConfig = {
     ...siteConfig,
     email:           (document.getElementById('cfgEmail')?.value           || '').trim(),
@@ -654,6 +657,7 @@ async function saveSiteSettings() {
   showOverlay('Saving site settings…');
 
   // Upload any pending logo files
+  const uploadedLogos = [];
   const logoMap = { invendis: 'assets/invendis_logo.png', silbo: 'assets/silbo_logo.png', mii: 'assets/make-in-india.png' };
   for (const [key, repoPath] of Object.entries(logoMap)) {
     const pending = pendingLogos[key];
@@ -663,6 +667,7 @@ async function saveSiteSettings() {
       const buf = await pending.file.arrayBuffer();
       await pushFileToGitHub(repoPath, buf, 'Update ' + key + ' logo');
       siteConfig['logo' + cap(key)] = repoPath + '?v=' + Date.now();
+      uploadedLogos.push(key);
       delete pendingLogos[key];
     } catch(e) {
       hideOverlay();
@@ -676,6 +681,19 @@ async function saveSiteSettings() {
     await writeJson();
     hideOverlay();
     showToast('Site settings saved & published', 'ok');
+
+    const fieldLabels = {
+      email: 'Email', phone: 'Phone', address: 'Address',
+      heroSubtitle: 'Hero subtitle', footerBrandText: 'Footer tagline',
+      copyright: 'Copyright', invendisUrl: 'Invendis URL', silboUrl: 'SILBO URL'
+    };
+    const changed = [];
+    for (const [key, label] of Object.entries(fieldLabels)) {
+      if (oldConfig[key] !== siteConfig[key]) changed.push(label);
+    }
+    const logoLabels = { invendis: 'Invendis logo', silbo: 'SILBO logo', mii: 'MII logo' };
+    uploadedLogos.forEach(k => changed.push(logoLabels[k] || k + ' logo'));
+    logChange('Updated site settings', changed.join(' · ') || 'no changes', '');
   } catch(e) {
     hideOverlay();
     showToast('Save failed: ' + e.message, 'err');
