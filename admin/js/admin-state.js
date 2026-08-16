@@ -11,6 +11,21 @@ const FOLDER     = CFG.folderPath || 'ProductSelector';
 const GRAPH      = 'https://graph.microsoft.com/v1.0';
 const SCOPES     = ['Files.ReadWrite','User.Read'];
 
+// ─── Site Config defaults ──────────────────────────────────────────────────────
+const DEFAULT_SITE_CONFIG = {
+  email:           'sales@invendis.com',
+  phone:           '+91 6361509463',
+  address:         'No. 230, 1st Cross, 38th Main\nBOOHBCS Layout, BTM 2nd Stage\nBangalore – 560 068',
+  heroSubtitle:    'Browse the 2026 Invendis catalogue',
+  footerBrandText: 'Industrial IoT hardware — routers, gateways, switches, and energy meters.',
+  copyright:       '2026 Invendis Technologies India Private Limited. All rights reserved.',
+  invendisUrl:     'https://www.invendis.com',
+  silboUrl:        'https://www.silbonetworks.com',
+  logoInvendis:    'assets/invendis_logo.png',
+  logoSilbo:       'assets/silbo_logo.png',
+  logoMii:         'assets/make-in-india.png',
+};
+
 // ─── Dropdown defaults ────────────────────────────────────────────────────────
 const DROPDOWN_FIELD_LABELS = {
   wifi:         'Wi-Fi',
@@ -69,11 +84,13 @@ let currentDs      = '';   // current datasheet URL
 let currentPartDs  = {};   // existing part_datasheets {partNo: url}
 let pendingPartDs  = [];   // [{partNo, file}] not yet uploaded
 let sidebarCat  = '';
+let siteConfig  = JSON.parse(JSON.stringify(DEFAULT_SITE_CONFIG));
+let pendingLogos = {}; // { invendis:{file,dataUrl}, silbo:{...}, mii:{...} }
 let msalInst;
 
 // ─── Tab Switching ────────────────────────────────────────────────────────────
 function switchTab(name) {
-  ['products','cats','fields','setup','changelog'].forEach(t => {
+  ['products','cats','fields','site','setup','changelog'].forEach(t => {
     document.getElementById('panel' + cap(t)).classList.toggle('active', t === name);
     document.getElementById('tab'   + cap(t)).classList.toggle('active', t === name);
   });
@@ -81,6 +98,7 @@ function switchTab(name) {
   if (name === 'setup')     renderSetupStatus();
   if (name === 'changelog') loadChangelog();
   if (name === 'fields')    renderDropdownEditor();
+  if (name === 'site')      renderSiteSettings();
 }
 
 // ─── Screens ─────────────────────────────────────────────────────────────────

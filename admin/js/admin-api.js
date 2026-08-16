@@ -111,6 +111,9 @@ async function readFromGist() {
   // Remove fields that are no longer managed as dropdowns (now plain text inputs)
   delete dropdowns['housing'];
   delete dropdowns['op_temp'];
+  siteConfig = parsed.siteConfig
+    ? { ...DEFAULT_SITE_CONFIG, ...parsed.siteConfig }
+    : JSON.parse(JSON.stringify(DEFAULT_SITE_CONFIG));
 }
 
 async function readExcel() {
@@ -153,6 +156,7 @@ function buildJsonData() {
   return {
     cats,
     dropdowns,
+    siteConfig,
     products: products.map(p => {
       const out = {};
       COLS.filter(c => c !== 'variants_json').forEach(c => { out[c] = p[c] ?? null; });

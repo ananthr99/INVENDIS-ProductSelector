@@ -605,3 +605,87 @@ async function saveFieldOptions() {
     showToast('Save failed: ' + e.message, 'err');
   }
 }
+
+// ─── Site Settings Panel ──────────────────────────────────────────────────────
+function renderSiteSettings() {
+  const set = (id, val) => { const el = document.getElementById(id); if (el) el.value = val || ''; };
+  set('cfgEmail',          siteConfig.email);
+  set('cfgPhone',          siteConfig.phone);
+  set('cfgAddress',        siteConfig.address);
+  set('cfgHeroSubtitle',   siteConfig.heroSubtitle);
+  set('cfgFooterBrandText',siteConfig.footerBrandText);
+  set('cfgCopyright',      siteConfig.copyright);
+  set('cfgInvendisUrl',    siteConfig.invendisUrl);
+  set('cfgSilboUrl',       siteConfig.silboUrl);
+  _setLogoPreview('Invendis', siteConfig.logoInvendis);
+  _setLogoPreview('Silbo',    siteConfig.logoSilbo);
+  _setLogoPreview('Mii',      siteConfig.logoMii);
+}
+
+function _setLogoPreview(key, url) {
+  const el = document.getElementById('previewLogo' + key);
+  if (el && url) el.src = url.split('?')[0]; // strip cache-bust before setting preview
+}
+
+function previewLogo(key, input) {
+  const file = input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    pendingLogos[key] = { file, dataUrl: e.target.result };
+    _setLogoPreview(cap(key), e.target.result);
+  };
+  reader.readAsDataURL(file);
+}
+
+async function saveSiteSettings() {
+  siteConfig = {
+    ...siteConfig,
+    email:           (document.getElementById('cfgEmail')?.value           || '').trim(),
+    phone:           (document.getElementById('cfgPhone')?.value           || '').trim(),
+    address:         (document.getElementById('cfgAddress')?.value         || '').trim(),
+    heroSubtitle:    (document.getElementById('cfgHeroSubtitle')?.value    || '').trim(),
+    footerBrandText: (document.getElementById('cfgFooterBrandText')?.value || '').trim(),
+    copyright:       (document.getElementById('cfgCopyright')?.value       || '').trim(),
+    invendisUrl:     (document.getElementById('cfgInvendisUrl')?.value     || '').trim(),
+    silboUrl:        (document.getElementById('cfgSilboUrl')?.value        || '').trim(),
+  };
+
+  showOverlay('Saving site settings…');
+
+  // Upload any pending logo files
+  const logoMap = { invendis: 'assets/invendis_logo.png', silbo: 'assets/silbo_logo.png', mii: 'assets/make-in-india.png' };
+  for (const [key, repoPath] of Object.entries(logoMap)) {
+    const pending = pendingLogos[key];
+    if (!pending) continue;
+    try {
+      updateOverlay('Uploading ' + key + ' logo…');
+      const buf = await pending.file.arrayBuffer();
+      await pushFileToGitHub(repoPath, buf, 'Update ' + key + ' logo');
+      siteConfig['logo' + cap(key)] = repoPath + '?v=' + Date.now();
+      delete pendingLogos[key];
+    } catch(e) {
+      hideOverlay();
+      showToast('Logo upload failed: ' + e.message, 'err');
+      return;
+    }
+  }
+
+  updateOverlay('Publishing…');
+  try {
+    await writeJson();
+    hideOverlay();
+    showToast('Site settings saved & published', 'ok');
+  } catch(e) {
+    hideOverlay();
+    showToast('Save failed: ' + e.message, 'err');
+  }
+}
+
+function resetSiteSettings() {
+  if (!confirm('Reset all site settings to defaults?')) return;
+  siteConfig = JSON.parse(JSON.stringify(DEFAULT_SITE_CONFIG));
+  pendingLogos = {};
+  renderSiteSettings();
+  showToast('Reset to defaults — click Save to publish', '');
+}

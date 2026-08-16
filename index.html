@@ -25,18 +25,18 @@
         <header>
             <div class="header-inner">
                 <div class="header-left">
-                    <a class="header-logo-link" href="https://www.invendis.com" target="_blank">
-                        <img src="assets/invendis_logo.png" alt="Invendis" class="header-logo-img header-logo-invendis">
+                    <a class="header-logo-link" href="https://www.invendis.com" target="_blank" data-cfg="invendisUrl">
+                        <img src="assets/invendis_logo.png" alt="Invendis" class="header-logo-img header-logo-invendis" data-cfg="logoInvendis">
                     </a>
-                    <img src="assets/make-in-india.png" alt="Make in India" class="header-logo-img header-logo-mii">
+                    <img src="assets/make-in-india.png" alt="Make in India" class="header-logo-img header-logo-mii" data-cfg="logoMii">
                 </div>
                 <div class="header-right">
                     <div class="header-contact">
-                        <a href="tel:+916361509463">+91 6361509463</a>
-                        <a href="mailto:sales@invendis.com">sales@invendis.com</a>
+                        <a href="tel:+916361509463" data-cfg="phone">+91 6361509463</a>
+                        <a href="mailto:sales@invendis.com" data-cfg="email">sales@invendis.com</a>
                     </div>
-                    <a class="header-logo-link" href="https://www.silbonetworks.com" target="_blank">
-                        <img src="assets/silbo_logo.png" alt="SILBO — An Invendis Product" class="header-logo-img header-logo-silbo">
+                    <a class="header-logo-link" href="https://www.silbonetworks.com" target="_blank" data-cfg="silboUrl">
+                        <img src="assets/silbo_logo.png" alt="SILBO — An Invendis Product" class="header-logo-img header-logo-silbo" data-cfg="logoSilbo">
                     </a>
                 </div>
             </div>
@@ -46,7 +46,7 @@
             <div class="hero-inner">
                 <div class="hero-title">
                     <h1>Product Selector</h1>
-                    <p>Browse the 2026 Invendis catalogue</p>
+                    <p data-cfg="heroSubtitle">Browse the 2026 Invendis catalogue</p>
                 </div>
                 <div class="hero-stats" id="heroStats"></div>
             </div>
@@ -119,24 +119,24 @@
             <div class="footer-inner">
                 <div class="footer-brand">
                     <div class="footer-logos">
-                        <a href="https://www.invendis.com" target="_blank">
-                            <img src="assets/invendis_logo.png" alt="Invendis" class="footer-logo-img footer-logo-invendis">
+                        <a href="https://www.invendis.com" target="_blank" data-cfg="invendisUrl">
+                            <img src="assets/invendis_logo.png" alt="Invendis" class="footer-logo-img footer-logo-invendis" data-cfg="logoInvendis">
                         </a>
-                        <a href="https://www.silbonetworks.com" target="_blank">
-                            <img src="assets/silbo_logo.png" alt="SILBO — An Invendis Product" class="footer-logo-img footer-logo-silbo">
+                        <a href="https://www.silbonetworks.com" target="_blank" data-cfg="silboUrl">
+                            <img src="assets/silbo_logo.png" alt="SILBO — An Invendis Product" class="footer-logo-img footer-logo-silbo" data-cfg="logoSilbo">
                         </a>
                     </div>
-                    <p style="margin-top:12px">Industrial IoT hardware — routers, gateways, switches, and energy meters.</p>
+                    <p style="margin-top:12px" data-cfg="footerBrandText">Industrial IoT hardware — routers, gateways, switches, and energy meters.</p>
                     <div class="footer-mii">
-                        <img src="assets/make-in-india.png" alt="Make in India" class="footer-mii-img">
+                        <img src="assets/make-in-india.png" alt="Make in India" class="footer-mii-img" data-cfg="logoMii">
                         Made in India
                     </div>
                 </div>
                 <div class="footer-contact">
                     <h4>Contact Sales</h4>
-                    <p><a href="mailto:sales@invendis.com">sales@invendis.com</a></p>
-                    <p><a href="tel:+916361509463">+91 6361509463</a></p>
-                    <p style="margin-top:8px; font-size:12px; color:rgba(255,255,255,0.35)">No. 230, 1st Cross, 38th Main<br>BOOHBCS Layout, BTM 2nd Stage<br>Bangalore – 560 068</p>
+                    <p><a href="mailto:sales@invendis.com" data-cfg="email">sales@invendis.com</a></p>
+                    <p><a href="tel:+916361509463" data-cfg="phone">+91 6361509463</a></p>
+                    <p style="margin-top:8px; font-size:12px; color:rgba(255,255,255,0.35)" data-cfg="address">No. 230, 1st Cross, 38th Main<br>BOOHBCS Layout, BTM 2nd Stage<br>Bangalore – 560 068</p>
                 </div>
                 <div class="footer-contact">
                     <h4>Resources</h4>
@@ -145,7 +145,7 @@
                 </div>
             </div>
             
-            <div class="footer-bottom">
+            <div class="footer-bottom" data-cfg="copyright">
                 &copy; 2026 Invendis Technologies India Private Limited. All rights reserved.
             </div>
         </footer>

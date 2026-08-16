@@ -88,6 +88,7 @@
         <button class="tab active" id="tabProducts" onclick="switchTab('products')">Products</button>
         <button class="tab"        id="tabCats"     onclick="switchTab('cats')">Categories</button>
         <button class="tab"        id="tabFields"    onclick="switchTab('fields')">Field Options</button>
+        <button class="tab"        id="tabSite"      onclick="switchTab('site')">Site</button>
         <div style="flex:1"></div>
         <button class="tab"        id="tabSetup"    onclick="switchTab('setup')">Setup</button>
         <button class="tab"        id="tabChangelog" onclick="switchTab('changelog')">Activity Log</button>
@@ -198,6 +199,114 @@
             <button onclick="addCat()">Add</button>
           </div>
           <button class="btn-save" style="margin-top:20px" onclick="saveCats()">Save &amp; Publish</button>
+        </div>
+      </div>
+
+      <!-- Site Settings Panel -->
+      <div class="tab-panel" id="panelSite">
+        <div class="site-settings-grid">
+
+          <!-- Contact -->
+          <div class="site-section">
+            <div class="site-section-title">Contact Information</div>
+            <div class="site-field-row">
+              <label class="site-label">Sales Email</label>
+              <input type="email" id="cfgEmail" class="site-input" placeholder="sales@invendis.com">
+            </div>
+            <div class="site-field-row">
+              <label class="site-label">Phone Number</label>
+              <input type="text" id="cfgPhone" class="site-input" placeholder="+91 XXXXX XXXXX">
+            </div>
+          </div>
+
+          <!-- Address -->
+          <div class="site-section">
+            <div class="site-section-title">Office Address</div>
+            <div class="site-field-row">
+              <label class="site-label">Address</label>
+              <textarea id="cfgAddress" class="site-input site-textarea" rows="3" placeholder="Street, City, PIN"></textarea>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="site-section">
+            <div class="site-section-title">Page Content</div>
+            <div class="site-field-row">
+              <label class="site-label">Hero Subtitle</label>
+              <input type="text" id="cfgHeroSubtitle" class="site-input" placeholder="Browse the 2026 catalogue…">
+            </div>
+            <div class="site-field-row">
+              <label class="site-label">Footer Tagline</label>
+              <textarea id="cfgFooterBrandText" class="site-input site-textarea" rows="2" placeholder="Industrial IoT hardware…"></textarea>
+            </div>
+            <div class="site-field-row">
+              <label class="site-label">Copyright Line</label>
+              <input type="text" id="cfgCopyright" class="site-input" placeholder="2026 Company Name. All rights reserved.">
+            </div>
+          </div>
+
+          <!-- Links -->
+          <div class="site-section">
+            <div class="site-section-title">Website Links</div>
+            <div class="site-field-row">
+              <label class="site-label">Invendis URL</label>
+              <input type="url" id="cfgInvendisUrl" class="site-input" placeholder="https://www.invendis.com">
+            </div>
+            <div class="site-field-row">
+              <label class="site-label">SILBO URL</label>
+              <input type="url" id="cfgSilboUrl" class="site-input" placeholder="https://www.silbonetworks.com">
+            </div>
+          </div>
+
+          <!-- Logos — full width -->
+          <div class="site-section site-section-full">
+            <div class="site-section-title">Logos</div>
+            <div class="logo-upload-grid">
+
+              <div class="logo-upload-card">
+                <div class="logo-upload-label">Invendis Logo</div>
+                <div class="logo-preview-wrap">
+                  <img id="previewLogoInvendis" src="../assets/invendis_logo.png" alt="Invendis" class="logo-preview-img logo-preview-light">
+                </div>
+                <label class="btn-logo-pick">
+                  Choose file
+                  <input type="file" accept="image/*" style="display:none" onchange="previewLogo('invendis',this)">
+                </label>
+                <div class="logo-hint">PNG/SVG, transparent background recommended</div>
+              </div>
+
+              <div class="logo-upload-card">
+                <div class="logo-upload-label">SILBO Logo</div>
+                <div class="logo-preview-wrap">
+                  <img id="previewLogoSilbo" src="../assets/silbo_logo.png" alt="SILBO" class="logo-preview-img logo-preview-light">
+                </div>
+                <label class="btn-logo-pick">
+                  Choose file
+                  <input type="file" accept="image/*" style="display:none" onchange="previewLogo('silbo',this)">
+                </label>
+                <div class="logo-hint">PNG/SVG, transparent background recommended</div>
+              </div>
+
+              <div class="logo-upload-card">
+                <div class="logo-upload-label">Make in India Badge</div>
+                <div class="logo-preview-wrap logo-preview-dark">
+                  <img id="previewLogoMii" src="../assets/make-in-india.png" alt="Make in India" class="logo-preview-img">
+                </div>
+                <label class="btn-logo-pick">
+                  Choose file
+                  <input type="file" accept="image/*" style="display:none" onchange="previewLogo('mii',this)">
+                </label>
+                <div class="logo-hint">PNG with transparent background</div>
+              </div>
+
+            </div>
+          </div>
+
+        </div><!-- /.site-settings-grid -->
+
+        <div class="site-actions">
+          <button class="btn-save-site" onclick="saveSiteSettings()">Save &amp; Publish</button>
+          <button class="btn-reset-site" onclick="resetSiteSettings()">Reset to Defaults</button>
         </div>
       </div>
 

@@ -76,6 +76,47 @@ function applyData(data) {
       return d;
     });
   }
+
+  if (data.siteConfig) {
+    applySiteConfig(data.siteConfig);
+  }
+}
+
+function applySiteConfig(cfg) {
+  if (!cfg) return;
+  if (cfg.email) {
+    document.querySelectorAll('[data-cfg="email"]').forEach(el => {
+      el.href = 'mailto:' + cfg.email;
+      el.textContent = cfg.email;
+    });
+  }
+  if (cfg.phone) {
+    document.querySelectorAll('[data-cfg="phone"]').forEach(el => {
+      el.href = 'tel:' + cfg.phone.replace(/\s/g, '');
+      el.textContent = cfg.phone;
+    });
+  }
+  if (cfg.heroSubtitle) {
+    document.querySelectorAll('[data-cfg="heroSubtitle"]').forEach(el => el.textContent = cfg.heroSubtitle);
+  }
+  if (cfg.footerBrandText) {
+    document.querySelectorAll('[data-cfg="footerBrandText"]').forEach(el => el.textContent = cfg.footerBrandText);
+  }
+  if (cfg.address) {
+    document.querySelectorAll('[data-cfg="address"]').forEach(el => {
+      el.innerHTML = cfg.address.replace(/\n/g, '<br>');
+    });
+  }
+  if (cfg.copyright) {
+    document.querySelectorAll('[data-cfg="copyright"]').forEach(el => {
+      el.innerHTML = '© ' + cfg.copyright;
+    });
+  }
+  if (cfg.logoInvendis) document.querySelectorAll('[data-cfg="logoInvendis"]').forEach(el => el.src = cfg.logoInvendis);
+  if (cfg.logoSilbo)    document.querySelectorAll('[data-cfg="logoSilbo"]').forEach(el => el.src = cfg.logoSilbo);
+  if (cfg.logoMii)      document.querySelectorAll('[data-cfg="logoMii"]').forEach(el => el.src = cfg.logoMii);
+  if (cfg.invendisUrl)  document.querySelectorAll('[data-cfg="invendisUrl"]').forEach(el => el.href = cfg.invendisUrl);
+  if (cfg.silboUrl)     document.querySelectorAll('[data-cfg="silboUrl"]').forEach(el => el.href = cfg.silboUrl);
 }
 
 async function initApp() {
