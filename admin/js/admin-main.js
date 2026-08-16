@@ -15,3 +15,9 @@
 window.addEventListener('beforeunload', e => {
   if (isDirty) { e.preventDefault(); e.returnValue = ''; }
 });
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('.cat-color-select')) {
+    document.querySelectorAll('.cat-color-drop.open').forEach(d => d.classList.remove('open'));
+  }
+});

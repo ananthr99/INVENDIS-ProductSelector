@@ -191,35 +191,56 @@ function selectProduct(id) {
 }
 
 // ─── Categories Panel ─────────────────────────────────────────────────────────
-function _catSwatches(catIdx, selPi) {
+function _colorDropOptions(selPi, onclickFn) {
   return CAT_COLOR_PALETTE.map((p, pi) =>
-    `<button class="cat-color-swatch${pi === selPi ? ' selected' : ''}" style="background:${p.bg};color:${p.fg}" onclick="setCatColor(${catIdx},${pi})">${p.label}</button>`
+    `<button class="cat-color-option${pi === selPi ? ' selected' : ''}" style="background:${p.bg};color:${p.fg}" onclick="${onclickFn(pi)}">${p.label}</button>`
   ).join('');
 }
-function _renderNewCatColorPicker() {
-  const el = document.getElementById('newCatColorPicker');
-  if (!el) return;
-  el.innerHTML = CAT_COLOR_PALETTE.map((p, pi) =>
-    `<button class="cat-color-swatch${pi === _newCatColorIdx ? ' selected' : ''}" style="background:${p.bg};color:${p.fg}" onclick="setNewCatColor(${pi})">${p.label}</button>`
-  ).join('');
+function toggleCatColorDrop(dropId) {
+  const drop = document.getElementById(dropId);
+  if (!drop) return;
+  const isOpen = drop.classList.contains('open');
+  document.querySelectorAll('.cat-color-drop.open').forEach(d => d.classList.remove('open'));
+  if (!isOpen) drop.classList.add('open');
 }
 function renderCatList() {
-  document.getElementById('catList').innerHTML = cats.map((c,i) => `
+  document.getElementById('catList').innerHTML = cats.map((c, i) => {
+    const pi = catColorIndices[i] ?? 4;
+    const p  = CAT_COLOR_PALETTE[pi];
+    return `
     <div class="cat-row">
       <div class="cat-row-top">
         <input class="cat-row-input" type="text" value="${esc(c)}">
+        <div class="cat-color-select">
+          <button class="cat-color-btn" style="background:${p.bg};color:${p.fg}" onclick="toggleCatColorDrop('catDrop${i}')">${p.label} &#9662;</button>
+          <div class="cat-color-drop" id="catDrop${i}">
+            ${_colorDropOptions(pi, pi2 => `setCatColor(${i},${pi2})`)}
+          </div>
+        </div>
         <button class="cat-rm" onclick="removeCat(${i})">×</button>
       </div>
-      <div class="cat-color-picker">${_catSwatches(i, catColorIndices[i] ?? 4)}</div>
-    </div>`).join('');
+    </div>`;
+  }).join('');
   _renderNewCatColorPicker();
+}
+function _renderNewCatColorPicker() {
+  const el = document.getElementById('newCatColorSelect');
+  if (!el) return;
+  const p = CAT_COLOR_PALETTE[_newCatColorIdx];
+  el.innerHTML = `
+    <button class="cat-color-btn" style="background:${p.bg};color:${p.fg}" onclick="toggleCatColorDrop('newCatDrop')">${p.label} &#9662;</button>
+    <div class="cat-color-drop" id="newCatDrop">
+      ${_colorDropOptions(_newCatColorIdx, pi => `setNewCatColor(${pi})`)}
+    </div>`;
 }
 function setCatColor(catIdx, paletteIdx) {
   catColorIndices[catIdx] = paletteIdx;
+  document.querySelectorAll('.cat-color-drop.open').forEach(d => d.classList.remove('open'));
   renderCatList();
 }
 function setNewCatColor(paletteIdx) {
   _newCatColorIdx = paletteIdx;
+  document.querySelectorAll('.cat-color-drop.open').forEach(d => d.classList.remove('open'));
   _renderNewCatColorPicker();
 }
 function addCat() {
