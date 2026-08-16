@@ -193,14 +193,14 @@ function selectProduct(id) {
 // ─── Categories Panel ─────────────────────────────────────────────────────────
 function _catSwatches(catIdx, selPi) {
   return CAT_COLOR_PALETTE.map((p, pi) =>
-    `<button class="cat-color-swatch${pi === selPi ? ' selected' : ''}" style="background:${p.bg}" onclick="setCatColor(${catIdx},${pi})" title="${p.label}"></button>`
+    `<button class="cat-color-swatch${pi === selPi ? ' selected' : ''}" style="background:${p.bg};color:${p.fg}" onclick="setCatColor(${catIdx},${pi})">${p.label}</button>`
   ).join('');
 }
 function _renderNewCatColorPicker() {
   const el = document.getElementById('newCatColorPicker');
   if (!el) return;
   el.innerHTML = CAT_COLOR_PALETTE.map((p, pi) =>
-    `<button class="cat-color-swatch${pi === _newCatColorIdx ? ' selected' : ''}" style="background:${p.bg}" onclick="setNewCatColor(${pi})" title="${p.label}"></button>`
+    `<button class="cat-color-swatch${pi === _newCatColorIdx ? ' selected' : ''}" style="background:${p.bg};color:${p.fg}" onclick="setNewCatColor(${pi})">${p.label}</button>`
   ).join('');
 }
 function renderCatList() {

@@ -124,16 +124,16 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#f4f6f9;color:#1a1d23
 .cat-row-top input:focus{outline:none;border-color:#1A6FC4}
 .cat-rm{background:none;border:1px solid #e5e7eb;border-radius:6px;width:28px;height:28px;cursor:pointer;color:#9ca3af;font-size:15px;display:flex;align-items:center;justify-content:center;transition:all .15s}
 .cat-rm:hover{border-color:#dc2626;color:#dc2626}
-.cat-color-picker{display:flex;flex-wrap:wrap;gap:5px;padding:2px 0}
-.cat-color-swatch{width:18px;height:18px;border-radius:50%;border:2px solid transparent;cursor:pointer;padding:0;transition:transform .1s}
-.cat-color-swatch:hover{transform:scale(1.2)}
-.cat-color-swatch.selected{outline:2px solid #1A6FC4;outline-offset:2px}
+.cat-color-picker{display:flex;flex-wrap:wrap;gap:5px;padding:3px 0}
+.cat-color-swatch{padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;font-family:inherit;cursor:pointer;border:1.5px solid transparent;white-space:nowrap;transition:opacity .1s,box-shadow .1s}
+.cat-color-swatch:hover{opacity:.85}
+.cat-color-swatch.selected{box-shadow:0 0 0 2px #fff,0 0 0 4px #1A6FC4}
 .add-cat{display:flex;gap:8px;margin-top:12px}
 .add-cat input{flex:1;padding:7px 9px;border:1.5px solid #e5e7eb;border-radius:7px;font-family:inherit;font-size:13px}
 .add-cat input:focus{outline:none;border-color:#1A6FC4}
 .add-cat button{background:#1A6FC4;color:#fff;border:none;border-radius:7px;padding:7px 14px;font-family:inherit;font-size:13px;cursor:pointer;white-space:nowrap}
 .add-cat button:hover{background:#1558a0}
-#newCatColorPicker{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;padding:2px 0}
+#newCatColorPicker{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;padding:3px 0}
 
 /* ── Setup Panel ── */
 .setup-panel{padding:20px 24px;max-width:580px}
