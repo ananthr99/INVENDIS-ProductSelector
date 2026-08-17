@@ -1197,9 +1197,7 @@
       "dims": "110 x 55 x 144 mm (W x H x D)",
       "weight": "480 g",
       "op_temp": "0 ~ 50˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rt65odu-1786952492433-co07.png"
-      ],
+      "images": [],
       "use_cases": [
         "Smart Transportation & Traffic Connectivity",
         "Mission-Critical Remote Site Networking",
