@@ -4151,35 +4151,39 @@
       "name": "RN50-PCBA",
       "cat": "PCB",
       "order": 72,
-      "desc": "PCB-form router module with M12 connectors, PoE powered â for embedded/vehicle use",
-      "cpu": "MediaTek MT7621, 512 MB DDR3",
+      "desc": "The RN50-PCB-A is a board-level cellular router designed for OEMs and product integrators who need to embed carrier-grade MultiWAN connectivity — with Ethernet, cellular, and Wi-Fi failover — directly into their own hardware platforms. Its M12 connectors, PoE input, and slim 209 x 30mm profile make it a natural fit for space-constrained vehicle-mounted systems, industrial panels, and ruggedised equipment where off-the-shelf box routers are simply not an option.",
+      "cpu": "MediaTek MT7621",
       "ram": "256/512 MB DDR3",
       "storage": "32/64 MB Flash",
       "cell": "none",
-      "cellular_gen": "",
+      "cellular_gen": "-",
       "wifi": "WiFi5",
-      "rs485": "false",
-      "rs232": "false",
+      "rs485": "-",
+      "rs232": "-",
       "ip": "",
       "power": "Active PoE 44â57 VDC",
-      "ports": "2",
+      "ports": "2 x 10/100/1000 (M12 Connector)",
       "os": "OpenWRT Linux",
       "housing": "Industrial Aluminium",
-      "dims": "209Ã30Ã154 mm",
-      "weight": "â",
-      "op_temp": "â",
+      "dims": "209 x 30 x 154 mm (W x H x D)",
+      "weight": "",
+      "op_temp": "0 ~ 50˚C",
       "images": [
-        "assets/images/RN50-PCB-A.png"
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rn50pcba-1786956166244-5pmy.png"
       ],
       "use_cases": [
-        "Vehicle / Rolling Stock Networking",
-        "Embedded System Integration",
-        "Harsh Environment Deployment",
-        "M12 Ruggedized Networks"
+        "Vehicle & Transportation Systems",
+        "Passengers Infotainment AP for Railways"
       ],
       "datasheet": "assets/datasheets/RN50.pdf",
       "part_datasheets": {},
-      "hidden_fields": [],
+      "hidden_fields": [
+        "ip",
+        "rs485",
+        "rs232",
+        "housing",
+        "weight"
+      ],
       "additional_specs": [],
       "variants": {
         "headers": [
