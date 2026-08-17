@@ -4209,35 +4209,39 @@
       "name": "RVW 50 with M12",
       "cat": "Other",
       "order": 73,
-      "desc": "M12 connector router: 1Ã WAN + 3Ã LAN (all M12), Wi-Fi 5 â harsh environment design",
-      "cpu": "MediaTek MT7621, 512 MB DDR3",
+      "desc": "Engineered for vehicle and transit applications, the RVW 50 with M12 swaps standard RJ45 ports for vibration-resistant M12 connectors across its 1+3 Gigabit interfaces, making it inherently suited to the shock and movement demands of rolling stock, fleet vehicles, and mobile command units. Powered over a single PoE cable at 44-57VDC and supporting Multi-WAN failover with Easy Mesh Wi-Fi, it delivers uninterrupted in-vehicle connectivity without the connector reliability concerns that plague conventional router deployments in motion.",
+      "cpu": "MediaTek MT7621",
       "ram": "256/512 MB DDR3",
       "storage": "32/64 MB Flash",
       "cell": "none",
-      "cellular_gen": "",
+      "cellular_gen": "-",
       "wifi": "WiFi5",
-      "rs485": "false",
-      "rs232": "false",
+      "rs485": "-",
+      "rs232": "-",
       "ip": "",
-      "power": "Active PoE 44â57 VDC",
-      "ports": "4",
+      "power": "Active PoE 44-57 VDC",
+      "ports": "4 X 10/100/1000 (M12 Connector)",
       "os": "OpenWRT Linux",
       "housing": "Industrial Aluminium",
-      "dims": "209Ã30Ã154 mm",
-      "weight": "â",
-      "op_temp": "â",
+      "dims": "209 x 30 x 154 mm (W x H x D)",
+      "weight": "",
+      "op_temp": "0 ~ 50˚C",
       "images": [
-        "assets/images/RVW 50-M12.png"
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvw50-1786956752772-la08.png"
       ],
       "use_cases": [
-        "Railcar / Train Wi-Fi",
-        "Agricultural Machinery",
-        "Marine / Vessel Networking",
-        "Military Vehicle Comms"
+        "Transit & Passenger Connectivity",
+        "Mobile Field Operations",
+        "Industrial Fleet Networking"
       ],
       "datasheet": null,
       "part_datasheets": {},
-      "hidden_fields": [],
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "rs485",
+        "rs232"
+      ],
       "additional_specs": [],
       "variants": {
         "headers": [
