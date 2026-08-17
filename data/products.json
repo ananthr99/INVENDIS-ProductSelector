@@ -1248,9 +1248,7 @@
       "dims": "110 x 44 x 94 mm (W x H x D)",
       "weight": "500 g",
       "op_temp": "-20 ~ 60 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/idfxx-1786964320890-sr81.png"
-      ],
+      "images": [],
       "use_cases": [
         "Telecom Tower Connectivity",
         "Smart Utility & Street Cabinet Networking",
