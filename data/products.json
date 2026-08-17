@@ -1358,7 +1358,11 @@
         "IE44-C": "assets/datasheets/IE44C.pdf",
         "IE44-A-EX1": "assets/datasheets/IE44A-EX1.pdf"
       },
-      "hidden_fields": [],
+      "hidden_fields": [
+        "ip",
+        "rs485",
+        "rs232"
+      ],
       "additional_specs": [],
       "variants": {
         "headers": [
