@@ -1414,7 +1414,7 @@
       "cellular_gen": "4G",
       "wifi": "WiFi4",
       "rs485": "Yes",
-      "rs232": "",
+      "rs232": "-",
       "ip": "IP30",
       "power": "9-30 VDC",
       "ports": "2 x 10/100/1000",
@@ -1438,7 +1438,9 @@
         "IA44-A": "assets/datasheets/IA44-A.pdf",
         "IA40-C": "assets/datasheets/IA40-C.pdf"
       },
-      "hidden_fields": [],
+      "hidden_fields": [
+        "rs232"
+      ],
       "additional_specs": [],
       "variants": {
         "headers": [
