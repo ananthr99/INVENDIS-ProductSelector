@@ -406,7 +406,7 @@
       "ram": "1 GB DDR4",
       "storage": "1 Gb NAND",
       "cell": "none",
-      "cellular_gen": "",
+      "cellular_gen": "-",
       "wifi": "WiFi6",
       "rs485": "No",
       "rs232": "No",
@@ -442,10 +442,10 @@
         ],
         "rows": [
           [
-            "â",
+            "—",
             "Wi-Fi 6",
-            "â",
-            "â",
+            "—",
+            "—",
             "RU60"
           ]
         ]
