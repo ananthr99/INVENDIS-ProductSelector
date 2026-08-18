@@ -4326,24 +4326,7 @@
         "rs232"
       ],
       "additional_specs": [],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "4G/5G",
-          "No. of Modems",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "â",
-            "Wi-Fi 5",
-            "â",
-            "Single",
-            "RVW 50"
-          ]
-        ]
-      }
+      "variants": null
     },
     {
       "id": "nms",
