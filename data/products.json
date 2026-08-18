@@ -2731,46 +2731,6 @@
       "variants": null
     },
     {
-      "id": "et6001",
-      "name": "ET6001",
-      "cat": "Energy Meter",
-      "order": 62,
-      "desc": "High-end IoT-capable multi-function energy meter â V, A, kW, kWh, PF, RS485 Modbus RTU",
-      "cpu": "â",
-      "ram": "â",
-      "storage": "â",
-      "cell": "none",
-      "cellular_gen": "none",
-      "wifi": "none",
-      "rs485": true,
-      "rs232": false,
-      "ip": "",
-      "power": "85â265V AC",
-      "ports": 0,
-      "os": "â",
-      "housing": "Panel mount",
-      "dims": "â",
-      "weight": "â",
-      "op_temp": "â",
-      "images": [
-        "assets/meterimages/6001/IMG20240408160737 copy.png",
-        "assets/meterimages/6001/IMG20240408160744 copy.png",
-        "assets/meterimages/6001/IMG20240408160750 copy.png",
-        "assets/meterimages/ET 6001/ET 6001(1).jpg"
-      ],
-      "use_cases": [
-        "IoT Energy Monitoring",
-        "Remote Energy Management",
-        "Smart Building",
-        "Industrial IoT Metering"
-      ],
-      "datasheet": "assets/meterdatasheets/ET6001.pdf",
-      "part_datasheets": {},
-      "hidden_fields": [],
-      "additional_specs": [],
-      "variants": null
-    },
-    {
       "id": "et6030",
       "name": "ET6030",
       "cat": "Energy Meter",
