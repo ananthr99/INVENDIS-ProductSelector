@@ -27,6 +27,7 @@ function downloadFile(url, btn) {
 }
 
 function isHf(p, key) { return (p.hidden_fields || []).includes(key); }
+function anyVisible(p, ...keys) { return keys.some(k => !isHf(p, k)); }
 
 function buildVariantsTable(v) {
   if (!v || !v.headers || !v.rows) return '';
@@ -157,29 +158,29 @@ function openDetail(id) {
         ${(PRODUCT_USE_CASES[p.id]||[]).length ? `<div class="modal-use-cases"><div class="modal-use-cases-label">Typical Use Cases</div><div class="modal-use-cases-chips">${(PRODUCT_USE_CASES[p.id]).map(u=>`<span class="use-case-chip">${u}</span>`).join('')}</div></div>` : ''}
         <div class="modal-body">
           ${p.cat === 'Energy Meter' ? `
-          <div class="spec-section">
+          ${anyVisible(p,'rs485','rs232','power') ? `<div class="spec-section">
             <div class="spec-section-title">Communication</div>
             ${isHf(p,'rs485')   ? '' : srow('RS485 / Modbus', rsLabel(p.rs485, p.variants, 'RS485'))}
             ${isHf(p,'rs232')   ? '' : srow('RS232', rsLabel(p.rs232, p.variants, 'RS232'))}
             ${isHf(p,'power')   ? '' : srow('Power supply', p.power)}
-          </div>
-          <div class="spec-section">
+          </div>` : ''}
+          ${anyVisible(p,'housing','ip','dims','weight','op_temp') ? `<div class="spec-section">
             <div class="spec-section-title">Physical</div>
             ${isHf(p,'housing') ? '' : srow('Enclosure', p.housing)}
             ${p.ip && !isHf(p,'ip') ? srow('IP Rating', p.ip) : ''}
             ${isHf(p,'dims')    ? '' : srow('Dimensions', p.dims || '-')}
             ${isHf(p,'weight')  ? '' : srow('Weight', p.weight || '-')}
             ${isHf(p,'op_temp') ? '' : srow('Operating temp', p.op_temp || '-')}
-          </div>` : `
-          <div class="spec-section">
+          </div>` : ''}` : `
+          ${anyVisible(p,'cellular_gen','wifi','ports','rs485','rs232') ? `<div class="spec-section">
             <div class="spec-section-title">Connectivity</div>
             ${isHf(p,'cellular_gen') ? '' : srow('Cellular', hasCellular(p.cellular_gen)?p.cell:'-')}
             ${isHf(p,'wifi')         ? '' : srow('Wi-Fi', wifiLabel(p.wifi))}
             ${isHf(p,'ports')        ? '' : srow('Ethernet ports', p.ports>0?p.ports+' ports':'-')}
             ${isHf(p,'rs485')        ? '' : srow('RS485', rsLabel(p.rs485, p.variants, 'RS485'))}
             ${isHf(p,'rs232')        ? '' : srow('RS232', rsLabel(p.rs232, p.variants, 'RS232'))}
-          </div>
-          <div class="spec-section">
+          </div>` : ''}
+          ${anyVisible(p,'cpu','ram','storage','power','ip','housing','dims','weight','op_temp') ? `<div class="spec-section">
             <div class="spec-section-title">Hardware</div>
             ${isHf(p,'cpu')     ? '' : srow('CPU', p.cpu)}
             ${isHf(p,'ram')     ? '' : srow('RAM', p.ram||'-')}
@@ -190,7 +191,7 @@ function openDetail(id) {
             ${isHf(p,'dims')    ? '' : srow('Dimensions', p.dims||'-')}
             ${isHf(p,'weight')  ? '' : srow('Weight', p.weight||'-')}
             ${isHf(p,'op_temp') ? '' : srow('Operating temp', p.op_temp||'-')}
-          </div>
+          </div>` : ''}
           ${p.os && p.os !== '-' && !isHf(p,'os') ? `<div class="spec-section"><div class="spec-section-title">Software</div>${srow('Operating system',p.os)}</div>` : ''}`}
           ${buildAdditionalSpecsSection(p)}
           ${buildVariantsTable(p.variants)}
