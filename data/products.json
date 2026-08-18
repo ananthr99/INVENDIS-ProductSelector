@@ -2731,48 +2731,6 @@
       "variants": null
     },
     {
-      "id": "et4021",
-      "name": "ET4021",
-      "cat": "Energy Meter",
-      "order": 55,
-      "desc": "Advanced multi-function panel meter â V, A, kW, kVA, kVAR, PF, kWh, RS485 Modbus RTU",
-      "cpu": "â",
-      "ram": "â",
-      "storage": "â",
-      "cell": "none",
-      "cellular_gen": "none",
-      "wifi": "none",
-      "rs485": true,
-      "rs232": false,
-      "ip": "",
-      "power": "85â265V AC",
-      "ports": 0,
-      "os": "â",
-      "housing": "Panel mount",
-      "dims": "â",
-      "weight": "â",
-      "op_temp": "â",
-      "images": [
-        "assets/meterimages/ET 4021/ET_4021.jpg",
-        "assets/meterimages/ET 4021/ET_4021_1.jpg",
-        "assets/meterimages/ET 4021/ET_4021_2.png",
-        "assets/meterimages/4021/IMG20240408160610 copy.png",
-        "assets/meterimages/4021/IMG20240408160614 copy.png",
-        "assets/meterimages/4021/IMG20240408160629 copy.png"
-      ],
-      "use_cases": [
-        "Advanced Energy Monitoring",
-        "Industrial Energy Audit",
-        "Power Quality Analysis",
-        "SCADA Integration"
-      ],
-      "datasheet": "assets/meterdatasheets/ET4021.pdf",
-      "part_datasheets": {},
-      "hidden_fields": [],
-      "additional_specs": [],
-      "variants": null
-    },
-    {
       "id": "et4031",
       "name": "ET4031",
       "cat": "Energy Meter",
