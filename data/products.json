@@ -2731,48 +2731,6 @@
       "variants": null
     },
     {
-      "id": "et2031",
-      "name": "ET2031",
-      "cat": "Energy Meter",
-      "order": 43,
-      "desc": "Three phase multi-function power meter â V, A, kW, kVA, kVAR, PF, kWh, RS485 Modbus",
-      "cpu": "â",
-      "ram": "â",
-      "storage": "â",
-      "cell": "none",
-      "cellular_gen": "none",
-      "wifi": "none",
-      "rs485": true,
-      "rs232": false,
-      "ip": "",
-      "power": "85â265V AC",
-      "ports": 0,
-      "os": "â",
-      "housing": "Panel mount",
-      "dims": "â",
-      "weight": "â",
-      "op_temp": "â",
-      "images": [
-        "assets/meterimages/2031/ET_2031.png",
-        "assets/meterimages/2031/ET_2031_1.png",
-        "assets/meterimages/2031/ET_2031_2.png",
-        "assets/meterimages/2031/IMG20240408155408 copy.png",
-        "assets/meterimages/2031/IMG20240408155418 copy.png",
-        "assets/meterimages/2031/IMG20240408155424 copy.png"
-      ],
-      "use_cases": [
-        "Energy Auditing",
-        "Power Quality Analysis",
-        "Load Profiling",
-        "Industrial Automation"
-      ],
-      "datasheet": "assets/meterdatasheets/ET2031.pdf",
-      "part_datasheets": {},
-      "hidden_fields": [],
-      "additional_specs": [],
-      "variants": null
-    },
-    {
       "id": "et2033",
       "name": "ET2033",
       "cat": "Energy Meter",
