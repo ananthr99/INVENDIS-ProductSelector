@@ -241,8 +241,8 @@
       "cell": "4G/5G",
       "cellular_gen": "5G",
       "wifi": "WiFi6",
-      "rs485": "false",
-      "rs232": "true",
+      "rs485": "-",
+      "rs232": "-",
       "ip": "IP30",
       "power": "12V DC",
       "ports": "2 x 10/100/1000 Mbps (Realtek RTL8111H)",
@@ -265,41 +265,7 @@
       "part_datasheets": {},
       "hidden_fields": [],
       "additional_specs": [],
-      "variants": {
-        "note": "Part number format: INV-CX-x7425e-[Type][Display]-[eMMC]-[SSD]-[RAM]-[Modem]. RAM: 1=4 GB â¦ 5=64 GB DDR5 | eMMC: 1=8 GB â¦ 5=128 GB | SSD: 1=128 GB â¦ 4=1 TB | Modem: 0=None, 4=4G, 5=5G | Wi-Fi: 0=None, 6=Wi-Fi 6",
-        "headers": [
-          "Type",
-          "Code",
-          "Description",
-          "Example Part No."
-        ],
-        "rows": [
-          [
-            "Mini-PC / NUC",
-            "D",
-            "Compact form-factor desktop/NUC",
-            "INV-CD60-214-H"
-          ],
-          [
-            "SDWAN Router",
-            "E",
-            "Software-defined WAN router",
-            "INV-CE65-214-C"
-          ],
-          [
-            "Industrial PC",
-            "Ea",
-            "RS485, RS232, 4Ã DIO",
-            "â"
-          ],
-          [
-            "6-Port SDWAN",
-            "Eb",
-            "6Ã GbE, dual 5G modem support",
-            "â"
-          ]
-        ]
-      }
+      "variants": null
     },
     {
       "id": "rtsxx",
