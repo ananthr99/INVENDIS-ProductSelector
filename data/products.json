@@ -2731,59 +2731,6 @@
       "variants": null
     },
     {
-      "id": "et7021",
-      "name": "ET7021 / ET7023 BCPM",
-      "cat": "Energy Meter",
-      "order": 70,
-      "desc": "Branch circuit power meters â ET7021 single-phase, ET7023 three-phase, RS485 Modbus, DIN rail / panel",
-      "cpu": "â",
-      "ram": "â",
-      "storage": "â",
-      "cell": "none",
-      "cellular_gen": "none",
-      "wifi": "none",
-      "rs485": true,
-      "rs232": false,
-      "ip": "",
-      "power": "85â265V AC",
-      "ports": 0,
-      "os": "â",
-      "housing": "DIN rail / Panel mount",
-      "dims": "â",
-      "weight": "â",
-      "op_temp": "â",
-      "images": [],
-      "use_cases": [
-        "Branch Circuit Sub-metering",
-        "Single/Three-phase BCPM",
-        "Panel-level Energy Monitoring",
-        "Electrical Audit"
-      ],
-      "datasheet": "",
-      "part_datasheets": {
-        "ET7021": "assets/meterdatasheets/7021_7023 BCPM 1 Aug 2024.pdf",
-        "ET7023": "assets/meterdatasheets/7021_7023 BCPM 1 Aug 2024.pdf"
-      },
-      "hidden_fields": [],
-      "additional_specs": [],
-      "variants": {
-        "headers": [
-          "Phase Type",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "Single phase",
-            "ET7021"
-          ],
-          [
-            "Three phase",
-            "ET7023"
-          ]
-        ]
-      }
-    },
-    {
       "id": "mcx",
       "name": "MC-X (Media Converter)",
       "cat": "Other",
