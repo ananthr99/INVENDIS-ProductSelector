@@ -2231,6 +2231,9 @@
         "XC-80-1 Unmanaged PoE Switch": "assets/datasheets/XC-80-1.pdf"
       },
       "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "wifi",
         "cpu",
         "ram",
         "storage",
