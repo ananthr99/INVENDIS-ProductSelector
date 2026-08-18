@@ -4448,58 +4448,82 @@
       "name": "Mini UPS",
       "cat": "Other",
       "order": 75,
-      "desc": "Compact UPS: 19 Whr (3â5 hr) or 38 Whr (9â10 hr) runtime, user-replaceable 18650/26650 cell",
+      "desc": "The Mini UPS keeps low-voltage devices alive through power cuts, delivering up to 10 hours of backup from its user-replaceable 38Whr battery via dual 12V output ports. With auto turn-on, built-in short circuit and thermal protection, it is a practical fit for network installers and system integrators looking to add affordable power resilience to routers, IP cameras, and access points without the bulk of a traditional UPS.",
       "cpu": "â",
       "ram": "â",
       "storage": "â",
       "cell": "none",
-      "cellular_gen": "none",
-      "wifi": "none",
-      "rs485": false,
-      "rs232": false,
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "No",
+      "rs232": "No",
       "ip": "",
       "power": "12V in / 12V out (2A/3A)",
-      "ports": 0,
+      "ports": "0",
       "os": "â",
       "housing": "Plastic",
       "dims": "â",
       "weight": "â",
       "op_temp": "â",
       "images": [
-        "assets/images/Mini UPS.png"
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/miniups-1787031823007-0u2g.png"
       ],
       "use_cases": [
-        "Router Power Backup",
-        "Industrial Device Continuity",
-        "Remote Site Power Resilience",
-        "Gateway Failover Power"
+        "Router & Modem Power Backup",
+        "CCTV & Security Continuity",
+        "Smart Device Power Resilience"
       ],
       "datasheet": "assets/datasheets/Mini UPS_Metal Enclosure_Datasheet 1.pdf",
       "part_datasheets": {},
-      "hidden_fields": [],
-      "additional_specs": [],
-      "variants": {
-        "headers": [
-          "Battery",
-          "Capacity",
-          "Backup Time",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "18650 cells",
-            "19 Whr",
-            "3â5 hours",
-            "Mini UPS 19W"
-          ],
-          [
-            "26650 cells",
-            "38 Whr",
-            "9â10 hours",
-            "Mini UPS 38W"
-          ]
-        ]
-      }
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "wifi",
+        "cpu",
+        "ram",
+        "storage",
+        "ip",
+        "power",
+        "ports",
+        "os",
+        "rs485",
+        "rs232",
+        "housing",
+        "dims",
+        "weight",
+        "op_temp"
+      ],
+      "additional_specs": [
+        {
+          "k": "Input/Output",
+          "v": "12 V Input, 12V/2A/3A Output"
+        },
+        {
+          "k": "Output Port",
+          "v": "Dual Output port"
+        },
+        {
+          "k": "Battery",
+          "v": "User replaceable (18650/26650), overcharge and discharge protection. Thermal protection"
+        },
+        {
+          "k": "Power",
+          "v": "19 Whr, backup time 3-5 hours/ 38 Whr, backup time 9-10 hours"
+        },
+        {
+          "k": "On/Off",
+          "v": "Auto turn on feature"
+        },
+        {
+          "k": "LED Indicators",
+          "v": "Charging and output power status indicators"
+        },
+        {
+          "k": "Protection",
+          "v": "Short Circuit Protection"
+        }
+      ],
+      "variants": null
     }
   ]
 }
