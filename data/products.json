@@ -4350,18 +4350,18 @@
       "name": "NMS",
       "cat": "Other",
       "order": 74,
-      "desc": "Network management system: remote monitoring, config push, auto-provisioning, alerts â supports 10 to 10,000+ devices",
+      "desc": "",
       "cpu": "Software platform",
       "ram": "â",
       "storage": "â",
       "cell": "none",
-      "cellular_gen": "none",
-      "wifi": "none",
-      "rs485": false,
-      "rs232": false,
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "No",
+      "rs232": "No",
       "ip": "",
       "power": "â",
-      "ports": 0,
+      "ports": "0",
       "os": "Web-based, OpenWRT compatible",
       "housing": "Software / Cloud",
       "dims": "â",
@@ -4371,15 +4371,76 @@
         "assets/images/NMS.jpg"
       ],
       "use_cases": [
-        "ISP Router Management",
-        "Smart City IoT Gateways",
-        "Enterprise Network Monitoring",
-        "Energy & Infrastructure Remote Sites"
+        "Remote Monitoring for EV Charging Stations",
+        "IoT-Based Milk Collection & Distribution Monitoring",
+        "Water Storage & Distribution Monitoring"
       ],
-      "datasheet": "",
+      "datasheet": null,
       "part_datasheets": {},
-      "hidden_fields": [],
-      "additional_specs": [],
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "wifi",
+        "cpu",
+        "ram",
+        "storage",
+        "ip",
+        "power",
+        "ports",
+        "os",
+        "rs485",
+        "rs232",
+        "housing",
+        "dims",
+        "weight",
+        "op_temp"
+      ],
+      "additional_specs": [
+        {
+          "k": "Centralized Monitoring",
+          "v": "View health, performance, and status of all routers  on a single dashboard."
+        },
+        {
+          "k": "Remote Configuration",
+          "v": "Push updates, modify settings, and change  firmware remotely."
+        },
+        {
+          "k": "Auto-Provisioning",
+          "v": "Automatically configure new routers when added  to the network."
+        },
+        {
+          "k": "Secure Management",
+          "v": "HTTPS, VPN, SSH, and encrypted communication."
+        },
+        {
+          "k": "Real-Time Analytics",
+          "v": "Monitor uptime, signal strength, bandwidth usage,  and connected clients."
+        },
+        {
+          "k": "Event & Alert Logging",
+          "v": "Receive alerts for device disconnection, high  usage, or firmware failure."
+        },
+        {
+          "k": "Supports Multi-Vendor Device Compatibility",
+          "v": "Compatible with OpenWRT-based devices"
+        },
+        {
+          "k": "Scalability",
+          "v": "0 to 10,000+ devices"
+        },
+        {
+          "k": "Protocol Support",
+          "v": "HTTP(S), SSH"
+        },
+        {
+          "k": "Alerts & Logging",
+          "v": "Email"
+        },
+        {
+          "k": "Web Interface",
+          "v": "Responsive UI, Role-Based Access, Device Grouping"
+        }
+      ],
       "variants": null
     },
     {
