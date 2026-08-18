@@ -263,7 +263,10 @@
       ],
       "datasheet": "assets/datasheets/INV-CD-N350_Datasheet.pdf",
       "part_datasheets": {},
-      "hidden_fields": [],
+      "hidden_fields": [
+        "rs485",
+        "rs232"
+      ],
       "additional_specs": [],
       "variants": null
     },
