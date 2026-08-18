@@ -291,7 +291,7 @@
       "housing": "Sheet Metal",
       "dims": "190 × 45 × 120 mm",
       "weight": "700 g",
-      "op_temp": "-",
+      "op_temp": "0°C - 50°C",
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rtsxx-1786516658709-95je.png",
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rtsxx-1786516662516-fxsy.png"
@@ -324,70 +324,70 @@
         ],
         "rows": [
           [
-            "â",
-            "â",
-            "â",
-            "â",
+            "—",
+            "—",
+            "—",
+            "—",
             "RTS00"
           ],
           [
-            "â",
-            "â",
+            "✓",
+            "—",
             "4G",
             "Single",
             "RTS04-1"
           ],
           [
-            "â",
-            "â",
+            "✓",
+            "—",
             "4G",
             "Dual",
             "RTS04-2"
           ],
           [
-            "â",
-            "â",
+            "✓",
+            "—",
             "5G",
             "Single",
             "RTS05-1"
           ],
           [
-            "â",
-            "â",
+            "✓",
+            "—",
             "5G",
             "Dual",
             "RTS05-2"
           ],
           [
-            "â",
+            "—",
             "Wi-Fi 6",
-            "â",
-            "â",
+            "—",
+            "—",
             "RTS-60"
           ],
           [
-            "â",
+            "✓",
             "Wi-Fi 6",
             "4G",
             "Single",
             "RTS64-1"
           ],
           [
-            "â",
+            "✓",
             "Wi-Fi 6",
             "4G",
             "Dual",
             "RTS64-2"
           ],
           [
-            "â",
+            "✓",
             "Wi-Fi 6",
             "5G",
             "Single",
             "RTS65-1"
           ],
           [
-            "â",
+            "✓",
             "Wi-Fi 6",
             "5G",
             "Dual",
