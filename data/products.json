@@ -167,8 +167,8 @@
       "cell": "5G",
       "cellular_gen": "5G",
       "wifi": "WiFi6",
-      "rs485": "false",
-      "rs232": "false",
+      "rs485": "-",
+      "rs232": "-",
       "ip": "IP30",
       "power": "19 VDC",
       "ports": "10/100/1000 Mbps (2x I226 Intel) , 2x RTL8125BG(Realtek)",
@@ -188,7 +188,10 @@
       ],
       "datasheet": "assets/datasheets/Intel X6425 Based Industrial PC.pdf",
       "part_datasheets": {},
-      "hidden_fields": [],
+      "hidden_fields": [
+        "rs485",
+        "rs232"
+      ],
       "additional_specs": [],
       "variants": null
     },
