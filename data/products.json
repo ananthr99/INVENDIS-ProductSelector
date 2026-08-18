@@ -2297,7 +2297,9 @@
         "cpu",
         "ram",
         "storage",
-        "os"
+        "os",
+        "rs485",
+        "rs232"
       ],
       "additional_specs": [],
       "variants": {
