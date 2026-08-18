@@ -2731,45 +2731,6 @@
       "variants": null
     },
     {
-      "id": "et4061",
-      "name": "ET4061",
-      "cat": "Energy Meter",
-      "order": 57,
-      "desc": "Advanced multi-function energy meter â V, A, kW, kVA, kVAR, kWh, PF, RS485 Modbus RTU",
-      "cpu": "â",
-      "ram": "â",
-      "storage": "â",
-      "cell": "none",
-      "cellular_gen": "none",
-      "wifi": "none",
-      "rs485": true,
-      "rs232": false,
-      "ip": "",
-      "power": "85â265V AC",
-      "ports": 0,
-      "os": "â",
-      "housing": "Panel mount",
-      "dims": "â",
-      "weight": "â",
-      "op_temp": "â",
-      "images": [
-        "assets/meterimages/4061/IMG20240408160533 copy.png",
-        "assets/meterimages/4061/IMG20240408160539 copy.png",
-        "assets/meterimages/4061/IMG20240408160548 copy.png"
-      ],
-      "use_cases": [
-        "Advanced Energy Monitoring",
-        "Industrial Power Monitoring",
-        "Building Energy Management",
-        "Sub-metering"
-      ],
-      "datasheet": "assets/meterdatasheets/ET4061.pdf",
-      "part_datasheets": {},
-      "hidden_fields": [],
-      "additional_specs": [],
-      "variants": null
-    },
-    {
       "id": "et4062",
       "name": "ET4062",
       "cat": "Energy Meter",
