@@ -2731,45 +2731,6 @@
       "variants": null
     },
     {
-      "id": "et2111",
-      "name": "ET2111",
-      "cat": "Energy Meter",
-      "order": 49,
-      "desc": "Three phase advanced power analyzer with THD measurement â V, A, kW, kVA, PF, RS485 Modbus",
-      "cpu": "â",
-      "ram": "â",
-      "storage": "â",
-      "cell": "none",
-      "cellular_gen": "none",
-      "wifi": "none",
-      "rs485": true,
-      "rs232": false,
-      "ip": "",
-      "power": "85â265V AC",
-      "ports": 0,
-      "os": "â",
-      "housing": "Panel mount",
-      "dims": "â",
-      "weight": "â",
-      "op_temp": "â",
-      "images": [
-        "assets/meterimages/2111/IMG20240408155942 copy.png",
-        "assets/meterimages/2111/IMG20240408155947 copy.png",
-        "assets/meterimages/2111/IMG20240408155954 copy.png"
-      ],
-      "use_cases": [
-        "THD Measurement",
-        "Power Quality Monitoring",
-        "Industrial Energy Audit",
-        "Harmonic Analysis"
-      ],
-      "datasheet": "assets/meterdatasheets/ET2111.pdf",
-      "part_datasheets": {},
-      "hidden_fields": [],
-      "additional_specs": [],
-      "variants": null
-    },
-    {
       "id": "et2113",
       "name": "ET2113",
       "cat": "Energy Meter",
