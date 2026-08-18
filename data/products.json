@@ -91,8 +91,8 @@
       "cell": "4G/5G",
       "cellular_gen": "5G",
       "wifi": "WiFi6",
-      "rs485": "false",
-      "rs232": "false",
+      "rs485": "-",
+      "rs232": "-",
       "ip": "IP30",
       "power": "12 VDC",
       "ports": "4 x 10/100/1000 (RTL8111H)",
@@ -102,8 +102,8 @@
       "weight": "1800",
       "op_temp": "0 ~ 50℃",
       "images": [
-        "assets/images/inv-ce-xx.png",
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-ce-xx-1786440083061-lstd.png"
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-ce-xx-1787034276436-nw65.png",
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-ce-xx-1787034279559-vg60.png"
       ],
       "use_cases": [
         "Enterprise Branch Connectivity",
@@ -113,41 +113,7 @@
       "part_datasheets": {},
       "hidden_fields": [],
       "additional_specs": [],
-      "variants": {
-        "note": "Part number format: INV-CX-x7425e-[Type][Display]-[eMMC]-[SSD]-[RAM]-[Modem]. RAM: 1=4 GB â¦ 5=64 GB DDR5 | eMMC: 1=8 GB â¦ 5=128 GB | SSD: 1=128 GB â¦ 4=1 TB | Modem: 0=None, 4=4G, 5=5G | Wi-Fi: 0=None, 6=Wi-Fi 6",
-        "headers": [
-          "Type",
-          "Code",
-          "Description",
-          "Example Part No."
-        ],
-        "rows": [
-          [
-            "Mini-PC / NUC",
-            "D",
-            "Compact form-factor desktop/NUC",
-            "INV-CD60-214-H"
-          ],
-          [
-            "SDWAN Router",
-            "E",
-            "Software-defined WAN router",
-            "INV-CE65-214-C"
-          ],
-          [
-            "Industrial PC",
-            "Ea",
-            "RS485, RS232, 4Ã DIO",
-            "â"
-          ],
-          [
-            "6-Port SDWAN",
-            "Eb",
-            "6Ã GbE, dual 5G modem support",
-            "â"
-          ]
-        ]
-      }
+      "variants": null
     },
     {
       "id": "inv-cea-xx",
