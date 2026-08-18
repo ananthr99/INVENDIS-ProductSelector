@@ -2369,6 +2369,7 @@
         "cpu",
         "ram",
         "storage",
+        "ip",
         "os",
         "rs485",
         "rs232"
