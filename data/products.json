@@ -2731,59 +2731,6 @@
       "variants": null
     },
     {
-      "id": "et0076",
-      "name": "ET0076",
-      "cat": "Energy Meter",
-      "order": 39,
-      "desc": "Single phase CT-type energy meter â kWh, kVAh, PF, RS485 Modbus RTU; available in 32A and 63A current range",
-      "cpu": "â",
-      "ram": "â",
-      "storage": "â",
-      "cell": "none",
-      "cellular_gen": "none",
-      "wifi": "none",
-      "rs485": true,
-      "rs232": false,
-      "ip": "",
-      "power": "85â265V AC",
-      "ports": 0,
-      "os": "â",
-      "housing": "DIN rail",
-      "dims": "â",
-      "weight": "â",
-      "op_temp": "â",
-      "images": [],
-      "use_cases": [
-        "CT-based Energy Metering",
-        "High-current Load Monitoring",
-        "Industrial Sub-metering",
-        "Tenant Energy Billing"
-      ],
-      "datasheet": "",
-      "part_datasheets": {
-        "ET0076 32A": "assets/meterdatasheets/ET0076 32A.pdf",
-        "ET0076 63A": "assets/meterdatasheets/ET0076 63A.pdf"
-      },
-      "hidden_fields": [],
-      "additional_specs": [],
-      "variants": {
-        "headers": [
-          "Current Range",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "32A",
-            "ET0076 32A"
-          ],
-          [
-            "63A",
-            "ET0076 63A"
-          ]
-        ]
-      }
-    },
-    {
       "id": "et0077",
       "name": "ET0077",
       "cat": "Energy Meter",
