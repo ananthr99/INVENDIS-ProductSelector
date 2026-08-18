@@ -2731,63 +2731,6 @@
       "variants": null
     },
     {
-      "id": "et3061",
-      "name": "ET3061 & ET3062",
-      "cat": "Energy Meter",
-      "order": 51,
-      "desc": "Three phase DIN rail energy meters â kW, kWh, PF, V, A, RS485 Modbus RTU",
-      "cpu": "â",
-      "ram": "â",
-      "storage": "â",
-      "cell": "none",
-      "cellular_gen": "none",
-      "wifi": "none",
-      "rs485": true,
-      "rs232": false,
-      "ip": "",
-      "power": "85â265V AC",
-      "ports": 0,
-      "os": "â",
-      "housing": "DIN rail",
-      "dims": "â",
-      "weight": "â",
-      "op_temp": "â",
-      "images": [
-        "assets/meterimages/3062/0V9A2475.jpg",
-        "assets/meterimages/3062/0V9A2477.jpg",
-        "assets/meterimages/3062/0V9A2582.jpg"
-      ],
-      "use_cases": [
-        "Three-phase Energy Sub-metering",
-        "Industrial Plant Monitoring",
-        "DIN Rail Power Metering",
-        "Energy Cost Allocation"
-      ],
-      "datasheet": "",
-      "part_datasheets": {
-        "ET3061": "assets/meterdatasheets/ET3061 & 3062 Compressed file.pdf",
-        "ET3062": "assets/meterdatasheets/ET3061 & 3062 Compressed file.pdf"
-      },
-      "hidden_fields": [],
-      "additional_specs": [],
-      "variants": {
-        "headers": [
-          "Model",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "ET3061",
-            "ET3061"
-          ],
-          [
-            "ET3062",
-            "ET3062"
-          ]
-        ]
-      }
-    },
-    {
       "id": "et4000",
       "name": "ET4000",
       "cat": "Energy Meter",
