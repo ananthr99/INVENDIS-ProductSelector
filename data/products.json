@@ -2731,45 +2731,6 @@
       "variants": null
     },
     {
-      "id": "et8000",
-      "name": "ET8000 ATS",
-      "cat": "Energy Meter",
-      "order": 64,
-      "desc": "Automatic Transfer Switch with energy monitoring â RS485 Modbus, source changeover, panel mount",
-      "cpu": "â",
-      "ram": "â",
-      "storage": "â",
-      "cell": "none",
-      "cellular_gen": "none",
-      "wifi": "none",
-      "rs485": true,
-      "rs232": false,
-      "ip": "",
-      "power": "85â265V AC",
-      "ports": 0,
-      "os": "â",
-      "housing": "Panel / cabinet mount",
-      "dims": "â",
-      "weight": "â",
-      "op_temp": "â",
-      "images": [
-        "assets/meterimages/8000/ET_8000.png",
-        "assets/meterimages/8000/ET_8000_1.png",
-        "assets/meterimages/8000/ET_8000_2.png"
-      ],
-      "use_cases": [
-        "Backup Power Management",
-        "Critical Load Protection",
-        "Data Center Power Changeover",
-        "Generator Changeover"
-      ],
-      "datasheet": "assets/meterdatasheets/ET-8000 ATS 20 June 2024 Compress file 1.pdf",
-      "part_datasheets": {},
-      "hidden_fields": [],
-      "additional_specs": [],
-      "variants": null
-    },
-    {
       "id": "iot-ac-meter",
       "name": "IoT AC Meter",
       "cat": "Energy Meter",
