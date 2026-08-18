@@ -2731,66 +2731,6 @@
       "variants": null
     },
     {
-      "id": "et4001",
-      "name": "ET4001 / ET4001S",
-      "cat": "Energy Meter",
-      "order": 53,
-      "desc": "Advanced multi-function energy meter â V, A, kW, kVA, kWh, PF, RS485 Modbus; ET4001S adds surge protection",
-      "cpu": "â",
-      "ram": "â",
-      "storage": "â",
-      "cell": "none",
-      "cellular_gen": "none",
-      "wifi": "none",
-      "rs485": true,
-      "rs232": false,
-      "ip": "",
-      "power": "85â265V AC",
-      "ports": 0,
-      "os": "â",
-      "housing": "Panel mount",
-      "dims": "â",
-      "weight": "â",
-      "op_temp": "â",
-      "images": [
-        "assets/meterimages/4001/ET_4001.png",
-        "assets/meterimages/4001/ET_4001_1.png",
-        "assets/meterimages/ET 4001/ET_4001.jpg",
-        "assets/meterimages/ET 4001/ET_4001_1.jpg",
-        "assets/meterimages/4001/IMG20240408160854 copy.png",
-        "assets/meterimages/4001/IMG20240408160902 copy.png"
-      ],
-      "use_cases": [
-        "Advanced Energy Monitoring",
-        "Building Management Systems",
-        "Industrial Automation",
-        "Sub-metering"
-      ],
-      "datasheet": "",
-      "part_datasheets": {
-        "ET4001": "assets/meterdatasheets/ET4001.pdf",
-        "ET4001S": "assets/meterdatasheets/ET4001S.pdf"
-      },
-      "hidden_fields": [],
-      "additional_specs": [],
-      "variants": {
-        "headers": [
-          "Type",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "Standard",
-            "ET4001"
-          ],
-          [
-            "Surge protected",
-            "ET4001S"
-          ]
-        ]
-      }
-    },
-    {
       "id": "et4002",
       "name": "ET4002",
       "cat": "Energy Meter",
