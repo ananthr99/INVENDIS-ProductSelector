@@ -2568,6 +2568,9 @@
       "datasheet": "assets/datasheets/INV 4640 MFM.pdf",
       "part_datasheets": {},
       "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "wifi",
         "cpu",
         "ram",
         "storage",
