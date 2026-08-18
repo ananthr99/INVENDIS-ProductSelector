@@ -4180,18 +4180,18 @@
       "ram": "â",
       "storage": "â",
       "cell": "none",
-      "cellular_gen": "",
-      "wifi": "none",
-      "rs485": "",
-      "rs232": "",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
       "ip": "",
-      "power": "5â12 VDC",
+      "power": "5-12 VDC IN",
       "ports": "2",
       "os": "â",
       "housing": "Steel Metal",
-      "dims": "92Ã66Ã26 mm",
+      "dims": "92 x 66 x 26 mm (HxWxD)",
       "weight": "187 g",
-      "op_temp": "0â70 Â°C",
+      "op_temp": "0 ~ 70℃",
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/mcx-1786622212112-0olz.png"
       ],
@@ -4200,8 +4200,61 @@
       ],
       "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/mcx-datasheet.pdf",
       "part_datasheets": {},
-      "hidden_fields": [],
-      "additional_specs": [],
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "wifi",
+        "cpu",
+        "ram",
+        "storage",
+        "ip",
+        "ports",
+        "os",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Description",
+          "v": "10/100/1000 Base-T to 1000 Base-LX"
+        },
+        {
+          "k": "Fiber Wavelength",
+          "v": "1310nm"
+        },
+        {
+          "k": "Max Distance",
+          "v": "10Km"
+        },
+        {
+          "k": "Ports",
+          "v": "One RJ - 45 and One Fiber port (Duplex SC type  connector)"
+        },
+        {
+          "k": "Mode",
+          "v": "Single - mode"
+        },
+        {
+          "k": "Auto MDI Support",
+          "v": "Yes"
+        },
+        {
+          "k": "Input Voltage Range",
+          "v": "5-12 VDC IN"
+        },
+        {
+          "k": "Enclosure",
+          "v": "Steel Metal Enclosure"
+        },
+        {
+          "k": "Humidity",
+          "v": "5% to 90%"
+        },
+        {
+          "k": "Standard Packaging",
+          "v": "MC-1 Media Converter with Sheet Metal Housing , 01-meter Ethernet cable, Power Adaptor"
+        }
+      ],
       "variants": {
         "headers": [
           "Interface",
