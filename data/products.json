@@ -2496,7 +2496,13 @@
         "PC311": "assets/datasheets/PC311.pdf",
         "PC312": "assets/datasheets/PC312.pdf"
       },
-      "hidden_fields": [],
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "ip",
+        "rs485",
+        "rs232"
+      ],
       "additional_specs": [],
       "variants": {
         "headers": [
