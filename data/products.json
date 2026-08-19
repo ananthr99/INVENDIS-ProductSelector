@@ -1083,7 +1083,38 @@
       },
       "hidden_fields": [],
       "additional_specs": [],
-      "variants": null
+      "variants": {
+        "headers": [
+          "Wi-Fi",
+          "Cellular",
+          "Gen",
+          "No of Modem",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "✓",
+            "✓",
+            "4G",
+            "Single",
+            "IE44-A"
+          ],
+          [
+            "✓",
+            "✓",
+            "4G",
+            "Single",
+            "IE44-C"
+          ],
+          [
+            "✓",
+            "✓",
+            "4G",
+            "Single",
+            "IE44-A-EX1 (e-SIM)"
+          ]
+        ]
+      }
     },
     {
       "id": "rt65odu",
