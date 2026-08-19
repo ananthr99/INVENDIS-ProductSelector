@@ -2521,17 +2521,9 @@
         }
       ],
       "variants": {
-        "headers": [
-          "RS485",
-          "Weight",
-          "Operating temp"
-        ],
+        "headers": [],
         "rows": [
-          [
-            "1 x RS485",
-            "750 g",
-            "0 to 50 degrees "
-          ]
+          []
         ]
       }
     },
