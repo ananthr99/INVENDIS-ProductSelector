@@ -2999,7 +2999,9 @@
       "dims": "209 x 30 x 154 mm (W x H x D)",
       "weight": "",
       "op_temp": "0 ~ 50˚C",
-      "images": [],
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvw50-1787139223379-b4ct.png"
+      ],
       "use_cases": [
         "Transit & Passenger Connectivity",
         "Mobile Field Operations",
