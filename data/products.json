@@ -2386,17 +2386,17 @@
         "headers": [
           "Cellular",
           "Wi-Fi",
-          "PoE Out",
-          "PoE Budget",
+          "PoE",
+          "No of Modems",
           "Part Number"
         ],
         "rows": [
           [
-            "â",
-            "â",
-            "â",
-            "240W",
-            "XG82-2L Gigabit Ethernet Managed Switch"
+            "-",
+            "-",
+            "✓",
+            "Single",
+            "XG 82-2L Lite Managed Switch"
           ]
         ]
       }
