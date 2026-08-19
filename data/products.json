@@ -1180,7 +1180,9 @@
       "dims": "110 x 44 x 94 mm (W x H x D)",
       "weight": "500 g",
       "op_temp": "-20 ~ 60 ˚C",
-      "images": [],
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/idfxx-1787121319469-96hn.png"
+      ],
       "use_cases": [
         "Telecom Tower Connectivity",
         "Smart Utility & Street Cabinet Networking",
@@ -1196,7 +1198,7 @@
         "IDF45": "assets/datasheets/IDF45.pdf"
       },
       "hidden_fields": [
-        "rs485",
+        "ip",
         "rs232"
       ],
       "additional_specs": [],
@@ -1210,42 +1212,42 @@
         ],
         "rows": [
           [
-            "â",
+            "✓",
             "-",
             "4G",
             "Single",
             "IDF04"
           ],
           [
-            "â",
+            "✓",
             "Wi-Fi 5",
             "4G",
             "Single",
             "IDF54"
           ],
           [
-            "â",
+            "✓",
             "Wi-Fi 4",
             "4G",
             "Single",
             "IDF44"
           ],
           [
-            "â",
+            "✓",
             "-",
             "5G",
             "Single",
             "IDF05"
           ],
           [
-            "â",
+            "✓",
             "Wi-Fi 5",
             "5G",
             "Single",
             "IDF55"
           ],
           [
-            "â",
+            "✓",
             "Wi-Fi 4",
             "5G",
             "Single",
