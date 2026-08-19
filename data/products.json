@@ -2890,7 +2890,24 @@
         "weight"
       ],
       "additional_specs": [],
-      "variants": null
+      "variants": {
+        "headers": [
+          "Wi-Fi",
+          "Cellular",
+          "Gen",
+          "No of Modem",
+          "Final Product"
+        ],
+        "rows": [
+          [
+            "WiFi-5",
+            "-",
+            "5G",
+            "Single",
+            "RN 50 PCB-A"
+          ]
+        ]
+      }
     },
     {
       "id": "rvw50",
