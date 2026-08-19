@@ -1079,7 +1079,7 @@
       ],
       "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/mt7621odu-datasheet.pdf",
       "part_datasheets": {
-        "MT7621-01 ODU": "assets/datasheets/ODU-MT7621.pdf"
+        "MT7621-01 ODU": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/mt7621odu-MT7621-01_ODU.pdf"
       },
       "hidden_fields": [],
       "additional_specs": [],
