@@ -207,8 +207,8 @@
       "cell": "4G/5G",
       "cellular_gen": "5G",
       "wifi": "WiFi6",
-      "rs485": "false",
-      "rs232": "true",
+      "rs485": "-",
+      "rs232": "-",
       "ip": "",
       "power": "12 VDC",
       "ports": "6 X 10/100/1000 (Realtek RTL8111H)",
@@ -217,7 +217,9 @@
       "dims": "232mmx 202 x 44mm",
       "weight": "1500",
       "op_temp": "0 ~ 50℃",
-      "images": [],
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-ci-xx-1787128560223-yg9d.png"
+      ],
       "use_cases": [
         "Multi-Site Enterprise WAN Management",
         "Video Surveillance & Security Networks",
