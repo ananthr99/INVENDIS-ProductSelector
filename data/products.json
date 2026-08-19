@@ -1014,9 +1014,7 @@
       "dims": "123.2 x 28 x 120.6mm (W x H x D)",
       "weight": "370 g",
       "op_temp": "0~ 50 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/ri44-1787117832105-j66y.png"
-      ],
+      "images": [],
       "use_cases": [
         "CCTV & Video Surveillance Connectivity for ISP communication Tower"
       ],
