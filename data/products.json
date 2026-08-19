@@ -760,8 +760,8 @@
       "ram": "512 MB DDR3",
       "storage": "32/64 MB Flash",
       "cell": "none",
-      "cellular_gen": "",
-      "wifi": "Wi-Fi 4",
+      "cellular_gen": "-",
+      "wifi": "WiFi4",
       "rs485": "No",
       "rs232": "No",
       "ip": "",
@@ -796,11 +796,11 @@
         ],
         "rows": [
           [
-            "â",
-            "â",
-            "â",
-            "â",
-            "RV00"
+            "—",
+            "—",
+            "—",
+            "—",
+            "—"
           ]
         ]
       }
