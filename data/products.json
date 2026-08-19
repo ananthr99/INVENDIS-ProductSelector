@@ -2058,16 +2058,16 @@
         "headers": [
           "Cellular",
           "Wi-Fi",
-          "PoE Out",
-          "PoE Budget",
+          "PoE ",
+          "No of Modem",
           "Part Number"
         ],
         "rows": [
           [
-            "â",
-            "â",
-            "â",
-            "240W, 30W/port",
+            "-",
+            "-",
+            "✓",
+            "Single",
             "XA82-2 Unmanaged PoE Switch"
           ]
         ]
