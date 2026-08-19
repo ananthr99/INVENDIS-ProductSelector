@@ -2557,7 +2557,9 @@
       "dims": "â",
       "weight": "â",
       "op_temp": "â",
-      "images": [],
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/dcmeter-1787137006487-aowj.png"
+      ],
       "use_cases": [
         "Telecom Power Monitoring",
         "Solar & Battery System Analytics",
