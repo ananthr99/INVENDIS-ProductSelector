@@ -2762,13 +2762,15 @@
       "dims": "",
       "weight": "",
       "op_temp": "",
-      "images": [],
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/MFMET4640-1787136837806-6zw4.png"
+      ],
       "use_cases": [
         "Energy Consumption Monitoring",
         "Industrial Power Quality Analysis",
         "Utility & Compliance Metering"
       ],
-      "datasheet": null,
+      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/MFMET4640-datasheet.pdf",
       "part_datasheets": {},
       "hidden_fields": [
         "cell",
