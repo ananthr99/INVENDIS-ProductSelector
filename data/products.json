@@ -1078,9 +1078,7 @@
         "Remote Outdoor Asset Connectivity"
       ],
       "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/mt7621odu-datasheet.pdf",
-      "part_datasheets": {
-        "MT7621-01 ODU": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/mt7621odu-MT7621-01_ODU.pdf"
-      },
+      "part_datasheets": {},
       "hidden_fields": [],
       "additional_specs": [],
       "variants": {
