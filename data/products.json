@@ -1599,7 +1599,7 @@
       "cellular_gen": "4G",
       "wifi": "WiFi4",
       "rs485": "Yes",
-      "rs232": "",
+      "rs232": "-",
       "ip": "",
       "power": "9-30 VDC",
       "ports": "5 x 10/100",
@@ -1623,7 +1623,10 @@
         "IAC04-A": "assets/datasheets/IAC04-A.pdf",
         "IAC04-C": "assets/datasheets/IAC04-C.pdf"
       },
-      "hidden_fields": [],
+      "hidden_fields": [
+        "ip",
+        "rs232"
+      ],
       "additional_specs": [],
       "variants": {
         "headers": [
@@ -1636,33 +1639,33 @@
         ],
         "rows": [
           [
-            "â",
+            "✓",
             "Wi-Fi 4",
-            "â",
+            "✓",
             "4G",
             "Single",
             "IAC44-C"
           ],
           [
-            "â",
+            "✓",
             "Wi-Fi 4",
-            "â",
+            "—",
             "4G",
             "Single",
             "IAC44-A"
           ],
           [
-            "â",
-            "â",
-            "â",
+            "✓",
+            "—",
+            "—",
             "4G",
             "Single",
             "IAC04-A"
           ],
           [
-            "â",
-            "â",
-            "â",
+            "✓",
+            "—",
+            "✓",
             "4G",
             "Single",
             "IAC04-C"
