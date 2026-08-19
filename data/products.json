@@ -2500,9 +2500,7 @@
       "dims": "185 x 110 x 30 (WXHXD)",
       "weight": "750gm (approx.)",
       "op_temp": "-10-75°C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/bcpm-1787137309777-pnxf.png"
-      ],
+      "images": [],
       "use_cases": [
         "Branch-Level Energy Monitoring",
         "Data Centre & Facility Load Profiling",
