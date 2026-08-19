@@ -2256,16 +2256,14 @@
         "headers": [
           "Cellular",
           "Wi-Fi",
-          "PoE Out",
-          "PoE Budget",
+          "PoE",
           "Part Number"
         ],
         "rows": [
           [
-            "â",
-            "â",
-            "â",
-            "240W, 30W/port",
+            "-",
+            "-",
+            "✓",
             "XD50-1 Unmanaged PoE Switch"
           ]
         ]
