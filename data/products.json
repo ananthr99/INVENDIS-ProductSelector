@@ -1763,8 +1763,8 @@
       "cell": "4G",
       "cellular_gen": "4G",
       "wifi": "WiFi5",
-      "rs485": "",
-      "rs232": "",
+      "rs485": "-",
+      "rs232": "-",
       "ip": "",
       "power": "9â30 VDC",
       "ports": "4 x 10/100/1000",
@@ -1788,7 +1788,11 @@
         "ID54-B": "assets/datasheets/ID54-B.pdf",
         "ID54": "assets/datasheets/ID54.pdf"
       },
-      "hidden_fields": [],
+      "hidden_fields": [
+        "ip",
+        "rs485",
+        "rs232"
+      ],
       "additional_specs": [],
       "variants": {
         "headers": [
@@ -1801,34 +1805,34 @@
         ],
         "rows": [
           [
-            "â",
+            "✓",
             "Wi-Fi 5",
             "4G",
-            "â",
+            "✓",
             "Single",
             "ID55-B (4 GB eMMC)"
           ],
           [
-            "â",
-            "â",
+            "✓",
+            "—",
             "4G",
-            "â",
+            "—",
             "Single",
             "ID55"
           ],
           [
-            "â",
+            "✓",
             "Wi-Fi 5",
             "4G",
-            "â",
+            "✓",
             "Single",
             "ID54-B (4 GB eMMC)"
           ],
           [
-            "â",
-            "â",
+            "✓",
+            "—",
             "4G",
-            "â",
+            "—",
             "Single",
             "ID54"
           ]
