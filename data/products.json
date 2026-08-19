@@ -2741,7 +2741,7 @@
       "id": "mcx",
       "name": "MC-X (Media Converter)",
       "cat": "Other",
-      "order": 71,
+      "order": 67,
       "desc": "The MC X solves a common infrastructure challenge — extending Ethernet beyond its 100m copper limit — by converting 10/100/1000 Base-T signals to single-mode fibre over distances up to 10Km at 1310nm. Weighing just 187g and drawing as little as 5V, it is a no-frills, cost-effective bridge for campus networks, industrial sites, and telecom installations where long-haul fibre connectivity needs to be added without overhauling existing copper-based equipment.",
       "cpu": "â",
       "ram": "â",
