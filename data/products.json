@@ -217,9 +217,7 @@
       "dims": "232mmx 202 x 44mm",
       "weight": "1500",
       "op_temp": "0 ~ 50℃",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-ci-xx-1787128560223-yg9d.png"
-      ],
+      "images": [],
       "use_cases": [
         "Multi-Site Enterprise WAN Management",
         "Video Surveillance & Security Networks",
@@ -227,7 +225,10 @@
       ],
       "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/inv-ci-xx-datasheet.pdf",
       "part_datasheets": {},
-      "hidden_fields": [],
+      "hidden_fields": [
+        "rs485",
+        "rs232"
+      ],
       "additional_specs": [],
       "variants": null
     },
