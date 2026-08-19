@@ -1874,7 +1874,9 @@
         "IDB55": "assets/datasheets/IDB55.pdf",
         "IDB54": "assets/datasheets/IDB54 (1).pdf"
       },
-      "hidden_fields": [],
+      "hidden_fields": [
+        "ip"
+      ],
       "additional_specs": [],
       "variants": {
         "headers": [
@@ -1888,38 +1890,38 @@
         ],
         "rows": [
           [
-            "â",
+            "✓",
             "Wi-Fi 5",
             "5G",
-            "â",
-            "â",
+            "✓",
+            "✓",
             "Single",
             "IDB55-B"
           ],
           [
-            "â",
+            "✓",
             "Wi-Fi 5",
             "5G",
-            "â",
-            "â",
+            "—",
+            "—",
             "Single",
             "IDB55"
           ],
           [
-            "â",
+            "✓",
             "Wi-Fi 5",
             "4G",
-            "â",
-            "â",
+            "✓",
+            "✓",
             "Single",
             "IDB54-B"
           ],
           [
-            "â",
+            "✓",
             "Wi-Fi 5",
             "4G",
-            "â",
-            "â",
+            "—",
+            "—",
             "Single",
             "IDB54"
           ]
