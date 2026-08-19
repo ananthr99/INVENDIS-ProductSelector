@@ -1279,32 +1279,28 @@
           "Cellular",
           "Wi-Fi",
           "4G/5G",
-          "RS485",
           "No. of Modems",
           "Part Number"
         ],
         "rows": [
           [
-            "â",
-            "Wi-Fi",
+            "✓",
+            "Wi-Fi 4",
             "4G",
-            "â",
             "Single",
             "IE44-A"
           ],
           [
-            "â",
-            "Wi-Fi",
+            "✓",
+            "Wi-Fi 4",
             "4G",
-            "â",
             "Single",
             "IE44-C"
           ],
           [
-            "â",
-            "Wi-Fi",
+            "✓",
+            "Wi-Fi 4",
             "4G",
-            "â",
             "Single",
             "IE44-A-EX1 (e-SIM)"
           ]
