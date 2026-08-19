@@ -2547,7 +2547,7 @@
     },
     {
       "id": "dcmeter",
-      "name": "ET1641",
+      "name": "ET1641 (DC Meter)",
       "cat": "Energy Meter",
       "order": 34,
       "desc": "The DC Meter monitors up to four independent current channels alongside a DC voltage input across a 20-60V range — self-powered directly from the rectifier it measures, eliminating the need for a separate auxiliary supply. With 1% FSR accuracy, derived power and energy readings up to 65kW and 100,000 kWh, it is purpose-built for battery systems, solar installations, telecom rectifiers, and EV charging infrastructure where precise DC energy accountability is non-negotiable",
