@@ -1693,9 +1693,7 @@
       "dims": "110 x 44 x 94 mm (W x H x D)",
       "weight": "400 g",
       "op_temp": "0~ 50 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/iafxx-1787124519485-vwwl.png"
-      ],
+      "images": [],
       "use_cases": [
         "Remote Sensor & Transducer data to cloud",
         "Drinking Water Treatment plant data to remote Cloud SCADA",
