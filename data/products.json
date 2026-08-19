@@ -2759,9 +2759,7 @@
       "dims": "",
       "weight": "",
       "op_temp": "",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/MFMET4640-1787136321502-3m8n.png"
-      ],
+      "images": [],
       "use_cases": [
         "Energy Consumption Monitoring",
         "Industrial Power Quality Analysis",
@@ -2787,7 +2785,48 @@
         "weight",
         "op_temp"
       ],
-      "additional_specs": [],
+      "additional_specs": [
+        {
+          "k": "Meter Type",
+          "v": "Three phase multi functional panel mountable meter"
+        },
+        {
+          "k": "Voltage",
+          "v": "Phase Wise- LL, LN, Max and Min Values"
+        },
+        {
+          "k": "Current",
+          "v": "L1, L2, L3- Max and Min Values and neutral current"
+        },
+        {
+          "k": "Line Frequency",
+          "v": "Hz"
+        },
+        {
+          "k": "Current Rating",
+          "v": "CT Primary Programmable (CTS 1A/5A)"
+        },
+        {
+          "k": "Aux Supply",
+          "v": "85-270V AC/DC"
+        },
+        {
+          "k": "Voltage Range",
+          "v": "60-415 V (Line to Line)"
+        },
+        {
+          "k": "Current",
+          "v": "CT Primary Programmable, Secondary 5A"
+        },
+        {
+          "k": "PF Range",
+          "v": "0.5 lag to unity to 0.5 lead"
+        },
+        {
+          "k": "Resolution",
+          "v": "0.1kW/kVA"
+        }
+      ],
       "variants": null
     },
     {
