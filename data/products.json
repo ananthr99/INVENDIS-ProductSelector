@@ -2124,15 +2124,13 @@
           "Cellular",
           "Wi-Fi",
           "PoE Out",
-          "PoE Budget",
           "Part Number"
         ],
         "rows": [
           [
-            "â",
-            "â",
-            "â",
-            "240W, 30W/port",
+            "-",
+            "-",
+            "✓",
             "XB82-2 Unmanaged PoE Switch"
           ]
         ]
