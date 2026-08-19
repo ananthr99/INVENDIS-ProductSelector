@@ -1520,7 +1520,9 @@
       "dims": "110 x 44 x 94 mm (W x H x D)",
       "weight": "427 g",
       "op_temp": "0~ 50 ˚C",
-      "images": [],
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/iabxx-1787122808489-w1hl.png"
+      ],
       "use_cases": [
         "Smart Energy & Utility Automation",
         "Industrial Process Monitoring",
@@ -1546,37 +1548,37 @@
         ],
         "rows": [
           [
-            "â",
+            "✓",
             "Wi-Fi 4",
-            "â",
-            "â",
+            "✓",
+            "✓",
             "4G",
             "Single",
             "IAB44-C"
           ],
           [
-            "â",
+            "✓",
             "Wi-Fi 4",
-            "â",
-            "â",
+            "✓",
+            "✓",
             "4G",
             "Single",
             "IAB44-B (4 GB eMMC)"
           ],
           [
-            "â",
-            "â",
-            "â",
-            "â",
+            "✓",
+            "—",
+            "✓",
+            "✓",
             "4G",
             "Single",
             "IAB04-B (4 GB eMMC)"
           ],
           [
-            "â",
-            "â",
-            "â",
-            "â",
+            "✓",
+            "—",
+            "✓",
+            "✓",
             "4G",
             "Single",
             "IAB04-C"
