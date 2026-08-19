@@ -1083,7 +1083,24 @@
       },
       "hidden_fields": [],
       "additional_specs": [],
-      "variants": null
+      "variants": {
+        "headers": [
+          "Wi-Fi",
+          "Cellular",
+          "Gen",
+          "No of Model",
+          "Final Product"
+        ],
+        "rows": [
+          [
+            "-",
+            "✓",
+            "4G",
+            "Single",
+            "MT7621-01 ODU"
+          ]
+        ]
+      }
     },
     {
       "id": "rt65odu",
