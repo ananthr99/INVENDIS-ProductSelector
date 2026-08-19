@@ -1008,13 +1008,15 @@
       "rs232": "No",
       "ip": "",
       "power": "9-30 VDC",
-      "ports": "5",
+      "ports": "5 x 10/100 Mbps",
       "os": "OpenWRT Linux",
       "housing": "Sheet Metal",
       "dims": "123.2 x 28 x 120.6mm (W x H x D)",
       "weight": "370 g",
       "op_temp": "0~ 50 ˚C",
-      "images": [],
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/ri44-1787117832105-j66y.png"
+      ],
       "use_cases": [
         "CCTV & Video Surveillance Connectivity for ISP communication Tower"
       ],
@@ -1022,23 +1024,25 @@
       "part_datasheets": {
         "RI44": "assets/datasheets/RI44.pdf"
       },
-      "hidden_fields": [],
+      "hidden_fields": [
+        "ip",
+        "rs485",
+        "rs232"
+      ],
       "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
           "Wi-Fi",
           "4G/5G",
-          "RS485",
           "No. of Modems",
           "Part Number"
         ],
         "rows": [
           [
-            "â",
+            "✓",
             "Wi-Fi 4",
             "4G",
-            "â",
             "Single",
             "RI44"
           ]
