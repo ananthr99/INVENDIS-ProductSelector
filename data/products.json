@@ -2617,7 +2617,7 @@
     },
     {
       "id": "acmeter",
-      "name": "ET4602",
+      "name": "ET4602 (AC Meter)",
       "cat": "Energy Meter",
       "order": 35,
       "desc": "Where the AC Meter (INV 4602) earns its place is in dual-source energy environments — separately tracking kWh consumption from both grid (EB) and diesel generator (DG) supplies across all three phases, giving operators a clear split of utility versus backup power costs. With 2000VAC-isolated RS485 communication, phase-wise voltage and current breakdowns, and a wide 45-65Hz frequency tolerance, it serves energy auditors, building managers, and industrial plants looking to bring accountability and precision to their power monitoring without deploying multiple devices.",
