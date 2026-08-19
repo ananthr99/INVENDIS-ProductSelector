@@ -2704,45 +2704,6 @@
       "variants": null
     },
     {
-      "id": "bcpmeter",
-      "name": "Branch Circuit Power Meter",
-      "cat": "Energy Meter",
-      "order": 36,
-      "desc": "Designed to bring circuit-level visibility to distribution boards, the Branch Circuit Power Meter tracks active power, energy, and power factor across individual single and three-phase branches — giving electrical teams a granular breakdown of consumption that a single main meter cannot provide. Its DIN rail form factor, Modbus RS485 communication, and wide 85-270V auxiliary supply make it a straightforward retrofit into existing panels for data centres, commercial buildings, and industrial facilities focused on load profiling and energy cost allocation.",
-      "cpu": "â",
-      "ram": "â",
-      "storage": "â",
-      "cell": "none",
-      "cellular_gen": "-",
-      "wifi": "-",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "",
-      "power": "85â270V AC/DC",
-      "ports": "0",
-      "os": "â",
-      "housing": "DIN rail",
-      "dims": "185x110x30 mm",
-      "weight": "750 g",
-      "op_temp": "-10-75°C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/bcpmeter-1786621673821-g22q.png"
-      ],
-      "use_cases": [
-        "Branch-Level Energy Monitoring",
-        "Data Centre & Facility Load Profiling",
-        "Energy Cost Allocation"
-      ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/bcpmeter-datasheet.pdf",
-      "part_datasheets": {},
-      "hidden_fields": [
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [],
-      "variants": null
-    },
-    {
       "id": "MFMET4640",
       "name": "Multi-Function Meter",
       "cat": "Router",
