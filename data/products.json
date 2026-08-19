@@ -1124,15 +1124,20 @@
       "dims": "110 x 55 x 144 mm (W x H x D)",
       "weight": "480 g",
       "op_temp": "0 ~ 50˚C",
-      "images": [],
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rt65odu-1787119700265-ewjt.png"
+      ],
       "use_cases": [
         "Smart Transportation & Traffic Connectivity",
         "Mission-Critical Remote Site Networking",
         "High-Availability Outdoor Wi-Fi Coverage"
       ],
-      "datasheet": null,
+      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rt65odu-datasheet.pdf",
       "part_datasheets": {},
-      "hidden_fields": [],
+      "hidden_fields": [
+        "rs485",
+        "rs232"
+      ],
       "additional_specs": [],
       "variants": {
         "headers": [
@@ -1144,7 +1149,7 @@
         ],
         "rows": [
           [
-            "â",
+            "✓",
             "Wi-Fi 6",
             "5G",
             "Single",
