@@ -2866,7 +2866,7 @@
       "rs485": "-",
       "rs232": "-",
       "ip": "",
-      "power": "Active PoE 44â57 VDC",
+      "power": "Active PoE 44-57 VDC",
       "ports": "2 x 10/100/1000 (M12 Connector)",
       "os": "OpenWRT Linux",
       "housing": "Industrial Aluminium",
