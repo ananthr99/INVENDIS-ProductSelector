@@ -1771,7 +1771,7 @@
       "id": "idxx",
       "name": "IDXX-X",
       "cat": "Gateway",
-      "order": 23,
+      "order": 19,
       "desc": "The IDXX-X punches well above its weight class, pairing a generous 512MB RAM and Gigabit WAN/LAN ports with 802.11 b/g/n/ac dual-band Wi-Fi — a significant step up from entry-level industrial routers. This added horsepower makes it a strong candidate for bandwidth-intensive applications across smart factories, digital infrastructure, and multi-site enterprise deployments where throughput and scalability cannot be compromised.",
       "cpu": "MediaTek MT7621",
       "ram": "512 MB DDR3",
