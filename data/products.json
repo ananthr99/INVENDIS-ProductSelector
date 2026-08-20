@@ -3282,6 +3282,39 @@
       "hidden_fields": [],
       "additional_specs": [],
       "variants": null
+    },
+    {
+      "id": "INVCF",
+      "name": "INV-CF-XX",
+      "cat": "Router",
+      "order": 78,
+      "desc": "",
+      "cpu": "",
+      "ram": "",
+      "storage": "",
+      "cell": "",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "",
+      "ports": "",
+      "os": "",
+      "housing": "",
+      "dims": "",
+      "weight": "",
+      "op_temp": "",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/INVCF-1787204167555-zv9d.png",
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/INVCF-1787204170766-43o3.png"
+      ],
+      "use_cases": [],
+      "datasheet": null,
+      "part_datasheets": {},
+      "hidden_fields": [],
+      "additional_specs": [],
+      "variants": null
     }
   ]
 }
