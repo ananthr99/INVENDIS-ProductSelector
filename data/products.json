@@ -2416,7 +2416,7 @@
       "id": "pc3xx",
       "name": "PC3XX",
       "cat": "Switch",
-      "order": 32,
+      "order": 28,
       "desc": "Stripped back to the essentials, the PC310 is a ultra-compact serial-to-IP gateway that bridges RS485 field devices with modern IP networks through a minimal yet capable footprint of just 80 x 26 x 78 mm. Running OpenWRT Linux on a 12-24V supply, it slots effortlessly into existing DIN rail enclosures across building automation, metering, and light industrial applications where space is tight and simplicity of deployment matters most.",
       "cpu": "MediaTek MT7628",
       "ram": "128 MB DDR2",
