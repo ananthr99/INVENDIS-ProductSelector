@@ -3249,6 +3249,39 @@
       "hidden_fields": [],
       "additional_specs": [],
       "variants": null
+    },
+    {
+      "id": "ADLAMLSOMBOARD",
+      "name": "Intel ADL/AML SOM Board DDR4",
+      "cat": "PCB",
+      "order": 77,
+      "desc": "",
+      "cpu": "",
+      "ram": "",
+      "storage": "",
+      "cell": "",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "",
+      "ports": "",
+      "os": "",
+      "housing": "",
+      "dims": "",
+      "weight": "",
+      "op_temp": "",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/ADLAMLSOMBOARD-1787204033547-9qj7.png",
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/ADLAMLSOMBOARD-1787204037868-omoz.png"
+      ],
+      "use_cases": [],
+      "datasheet": null,
+      "part_datasheets": {},
+      "hidden_fields": [],
+      "additional_specs": [],
+      "variants": null
     }
   ]
 }
