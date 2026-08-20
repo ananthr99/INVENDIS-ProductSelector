@@ -120,6 +120,45 @@
       "variants": null
     },
     {
+      "id": "inv-ce-xx",
+      "name": "INV-CE-XX",
+      "cat": "Intel Based Devices",
+      "order": 2,
+      "desc": "A rugged, fanless SD-WAN edge appliance powered by Intel X7425E, designed for high-performance networking at distributed sites. It combines multi-WAN connectivity (Ethernet, 4G/5G, Wi-Fi) with flexible OS support and industrial-grade reliability, making it ideal for seamless failover, traffic optimization, and edge computing. Best suited for telecom, industrial IoT, smart infrastructure, and enterprise branch deployments.",
+      "cpu": "Intel N150/x7425E/x7433RE/x7835RE/i3-N305/N355, 4/8 cores with 3.4GHz Turbo Frequency",
+      "ram": "32GB DDR5 SODIMM (Max) (Memory to be separately ordered)",
+      "storage": "One M.2 (B Key,2280), Upto 512GB SSD, Upto64GB eMMC",
+      "cell": "4G/5G",
+      "cellular_gen": "5G",
+      "wifi": "WiFi6",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "IP30",
+      "power": "12 VDC",
+      "ports": "4 x 10/100/1000 (RTL8111H)",
+      "os": "Ubuntu/Oracle Linux/OpenWRT/Windows",
+      "housing": "Aluminum Heat Sink with CRCA Enclosure",
+      "dims": "150mm X 160mm X 52.8mm ( L X W X H) (w/o mounting options) (*Dimensions will vary depending on the mounting option chosen.)",
+      "weight": "1800",
+      "op_temp": "0 ~ 50℃",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-ce-xx-1787034276436-nw65.png",
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-ce-xx-1787034279559-vg60.png"
+      ],
+      "use_cases": [
+        "Enterprise Branch Connectivity",
+        "Infotainment System for Vehicles"
+      ],
+      "datasheet": "assets/datasheets/Intel X7425E SDWAN Box.pdf",
+      "part_datasheets": {},
+      "hidden_fields": [
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [],
+      "variants": null
+    },
+    {
       "id": "intel-x6425E",
       "name": "Intel X6425E",
       "cat": "Intel Based Devices",
@@ -2769,45 +2808,6 @@
           "v": "0.1kW/kVA"
         }
       ],
-      "variants": null
-    },
-    {
-      "id": "inv-ce-xx",
-      "name": "INV-CE-XX",
-      "cat": "Intel Based Devices",
-      "order": 50,
-      "desc": "A rugged, fanless SD-WAN edge appliance powered by Intel X7425E, designed for high-performance networking at distributed sites. It combines multi-WAN connectivity (Ethernet, 4G/5G, Wi-Fi) with flexible OS support and industrial-grade reliability, making it ideal for seamless failover, traffic optimization, and edge computing. Best suited for telecom, industrial IoT, smart infrastructure, and enterprise branch deployments.",
-      "cpu": "Intel N150/x7425E/x7433RE/x7835RE/i3-N305/N355, 4/8 cores with 3.4GHz Turbo Frequency",
-      "ram": "32GB DDR5 SODIMM (Max) (Memory to be separately ordered)",
-      "storage": "One M.2 (B Key,2280), Upto 512GB SSD, Upto64GB eMMC",
-      "cell": "4G/5G",
-      "cellular_gen": "5G",
-      "wifi": "WiFi6",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "IP30",
-      "power": "12 VDC",
-      "ports": "4 x 10/100/1000 (RTL8111H)",
-      "os": "Ubuntu/Oracle Linux/OpenWRT/Windows",
-      "housing": "Aluminum Heat Sink with CRCA Enclosure",
-      "dims": "150mm X 160mm X 52.8mm ( L X W X H) (w/o mounting options) (*Dimensions will vary depending on the mounting option chosen.)",
-      "weight": "1800",
-      "op_temp": "0 ~ 50℃",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-ce-xx-1787034276436-nw65.png",
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-ce-xx-1787034279559-vg60.png"
-      ],
-      "use_cases": [
-        "Enterprise Branch Connectivity",
-        "Infotainment System for Vehicles"
-      ],
-      "datasheet": "assets/datasheets/Intel X7425E SDWAN Box.pdf",
-      "part_datasheets": {},
-      "hidden_fields": [
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [],
       "variants": null
     },
     {
