@@ -83,7 +83,7 @@
       "id": "inv-cea-xx",
       "name": "INV-CEA-XX",
       "cat": "Intel Based Devices",
-      "order": 2,
+      "order": 1,
       "desc": "The INV-CEA-XX is a fanless industrial gateway designed for high-performance edge computing and robust connectivity, featuring an Intel X7425E processor and extensive cellular/Wi-Fi expansion capabilities. It differentiates itself through its quad-Gigabit Ethernet ports, dual isolated serial interfaces (RS232/RS485), and flexible mounting options, making it highly adaptable for harsh environments. This device is primarily targeted at industrial automation, telecommunications, and smart city infrastructure where reliable, long-term operation is critical.",
       "cpu": "Intel N150/x7425E/x7433RE/x7835RE/i3-N305/N355, 4/8 cores with 3.4GHz Turbo Frequency",
       "ram": "64GB DDR5 SODIMM (Max) (Memory to be Separately Ordered)",
