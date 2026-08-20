@@ -2490,6 +2490,120 @@
       }
     },
     {
+      "id": "mcx",
+      "name": "MC-X (Media Converter)",
+      "cat": "Other",
+      "order": 29,
+      "desc": "The MC X solves a common infrastructure challenge — extending Ethernet beyond its 100m copper limit — by converting 10/100/1000 Base-T signals to single-mode fibre over distances up to 10Km at 1310nm. Weighing just 187g and drawing as little as 5V, it is a no-frills, cost-effective bridge for campus networks, industrial sites, and telecom installations where long-haul fibre connectivity needs to be added without overhauling existing copper-based equipment.",
+      "cpu": "â",
+      "ram": "â",
+      "storage": "â",
+      "cell": "none",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "5-12 VDC IN",
+      "ports": "2",
+      "os": "â",
+      "housing": "Steel Metal",
+      "dims": "92 x 66 x 26 mm (HxWxD)",
+      "weight": "187 g",
+      "op_temp": "0 ~ 70℃",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/mcx-1786622212112-0olz.png"
+      ],
+      "use_cases": [
+        "Long-Distance Network Extension"
+      ],
+      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/mcx-datasheet.pdf",
+      "part_datasheets": {},
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "wifi",
+        "cpu",
+        "ram",
+        "storage",
+        "ip",
+        "ports",
+        "os",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Description",
+          "v": "10/100/1000 Base-T to 1000 Base-LX"
+        },
+        {
+          "k": "Fiber Wavelength",
+          "v": "1310nm"
+        },
+        {
+          "k": "Max Distance",
+          "v": "10Km"
+        },
+        {
+          "k": "Ports",
+          "v": "One RJ - 45 and One Fiber port (Duplex SC type  connector)"
+        },
+        {
+          "k": "Mode",
+          "v": "Single - mode"
+        },
+        {
+          "k": "Auto MDI Support",
+          "v": "Yes"
+        },
+        {
+          "k": "Input Voltage Range",
+          "v": "5-12 VDC IN"
+        },
+        {
+          "k": "Enclosure",
+          "v": "Steel Metal Enclosure"
+        },
+        {
+          "k": "Humidity",
+          "v": "5% to 90%"
+        },
+        {
+          "k": "Standard Packaging",
+          "v": "MC-1 Media Converter with Sheet Metal Housing , 01-meter Ethernet cable, Power Adaptor"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Interface",
+          "Mode",
+          "Max Distance",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "1 x RJ45 + 1x Fiber SC",
+            "Single-mode",
+            "5 km",
+            "ISMC1-SD851G-S5"
+          ],
+          [
+            "1x RJ45 + 1x Fiber SC",
+            "Single-mode",
+            "10 km",
+            "ISMC1-SD311G-10"
+          ],
+          [
+            "1x RJ45 + 1x Fiber SC",
+            "Single-mode",
+            "20 km",
+            "SMC1-SD311G-20"
+          ]
+        ]
+      }
+    },
+    {
       "id": "bcpm",
       "name": "ET7022 (BCPM)",
       "cat": "Energy Meter",
@@ -2839,120 +2953,6 @@
       "hidden_fields": [],
       "additional_specs": [],
       "variants": null
-    },
-    {
-      "id": "mcx",
-      "name": "MC-X (Media Converter)",
-      "cat": "Other",
-      "order": 67,
-      "desc": "The MC X solves a common infrastructure challenge — extending Ethernet beyond its 100m copper limit — by converting 10/100/1000 Base-T signals to single-mode fibre over distances up to 10Km at 1310nm. Weighing just 187g and drawing as little as 5V, it is a no-frills, cost-effective bridge for campus networks, industrial sites, and telecom installations where long-haul fibre connectivity needs to be added without overhauling existing copper-based equipment.",
-      "cpu": "â",
-      "ram": "â",
-      "storage": "â",
-      "cell": "none",
-      "cellular_gen": "-",
-      "wifi": "-",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "",
-      "power": "5-12 VDC IN",
-      "ports": "2",
-      "os": "â",
-      "housing": "Steel Metal",
-      "dims": "92 x 66 x 26 mm (HxWxD)",
-      "weight": "187 g",
-      "op_temp": "0 ~ 70℃",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/mcx-1786622212112-0olz.png"
-      ],
-      "use_cases": [
-        "Long-Distance Network Extension"
-      ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/mcx-datasheet.pdf",
-      "part_datasheets": {},
-      "hidden_fields": [
-        "cell",
-        "cellular_gen",
-        "wifi",
-        "cpu",
-        "ram",
-        "storage",
-        "ip",
-        "ports",
-        "os",
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Description",
-          "v": "10/100/1000 Base-T to 1000 Base-LX"
-        },
-        {
-          "k": "Fiber Wavelength",
-          "v": "1310nm"
-        },
-        {
-          "k": "Max Distance",
-          "v": "10Km"
-        },
-        {
-          "k": "Ports",
-          "v": "One RJ - 45 and One Fiber port (Duplex SC type  connector)"
-        },
-        {
-          "k": "Mode",
-          "v": "Single - mode"
-        },
-        {
-          "k": "Auto MDI Support",
-          "v": "Yes"
-        },
-        {
-          "k": "Input Voltage Range",
-          "v": "5-12 VDC IN"
-        },
-        {
-          "k": "Enclosure",
-          "v": "Steel Metal Enclosure"
-        },
-        {
-          "k": "Humidity",
-          "v": "5% to 90%"
-        },
-        {
-          "k": "Standard Packaging",
-          "v": "MC-1 Media Converter with Sheet Metal Housing , 01-meter Ethernet cable, Power Adaptor"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Interface",
-          "Mode",
-          "Max Distance",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "1 x RJ45 + 1x Fiber SC",
-            "Single-mode",
-            "5 km",
-            "ISMC1-SD851G-S5"
-          ],
-          [
-            "1x RJ45 + 1x Fiber SC",
-            "Single-mode",
-            "10 km",
-            "ISMC1-SD311G-10"
-          ],
-          [
-            "1x RJ45 + 1x Fiber SC",
-            "Single-mode",
-            "20 km",
-            "SMC1-SD311G-20"
-          ]
-        ]
-      }
     },
     {
       "id": "rn50pcba",
