@@ -1859,7 +1859,7 @@
       "id": "idbxx",
       "name": "IDBXX-X",
       "cat": "Gateway",
-      "order": 24,
+      "order": 20,
       "desc": "Where the IDB54 stands out is its configurable WAN/LAN port — giving network administrators the flexibility to repurpose a Gigabit port based on deployment needs — paired with 512MB RAM and dual-band 802.11 b/g/n/ac Wi-Fi for high-throughput performance. Housed in a rugged aluminium shell rated for -20 to 60°C operation, it is tailored for enterprises and system integrators who need a versatile, high-performance edge router that adapts to evolving network topologies across commercial and industrial sites.",
       "cpu": "MediaTek MT7621",
       "ram": "512 MB DDR3",
