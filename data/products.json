@@ -3219,6 +3219,36 @@
         }
       ],
       "variants": null
+    },
+    {
+      "id": "MC661",
+      "name": "M.2 MC661 LTE Module",
+      "cat": "PCB",
+      "order": 76,
+      "desc": "",
+      "cpu": "",
+      "ram": "",
+      "storage": "",
+      "cell": "",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "",
+      "ports": "",
+      "os": "",
+      "housing": "",
+      "dims": "",
+      "weight": "",
+      "op_temp": "",
+      "images": [],
+      "use_cases": [],
+      "datasheet": null,
+      "part_datasheets": {},
+      "hidden_fields": [],
+      "additional_specs": [],
+      "variants": null
     }
   ]
 }
