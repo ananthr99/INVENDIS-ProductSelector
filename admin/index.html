@@ -422,6 +422,22 @@
 <div class="toast" id="toast"></div>
 <div class="overlay" id="overlay"><div class="spinner"></div><p id="overlayMsg">Saving…</p></div>
 
+<div class="log-diff-overlay" id="logDiffModal" style="display:none" onclick="if(event.target===this)closeLogDiffModal()">
+  <div class="log-diff-box">
+    <div class="log-diff-header">
+      <div class="log-diff-header-text">
+        <div class="log-diff-title" id="logDiffTitle"></div>
+        <div class="log-diff-meta" id="logDiffMeta"></div>
+      </div>
+      <button class="log-diff-close" onclick="closeLogDiffModal()">×</button>
+    </div>
+    <div class="log-diff-body" id="logDiffBody"></div>
+    <div class="log-diff-footer">
+      <button class="confirm-btn-cancel" onclick="closeLogDiffModal()">Close</button>
+    </div>
+  </div>
+</div>
+
 <script src="js/admin-state.js"></script>
 <script src="js/admin-auth.js"></script>
 <script src="js/admin-api.js"></script>

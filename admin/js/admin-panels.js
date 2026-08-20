@@ -56,43 +56,104 @@ function updateTokenBanner() {
 // ─── Activity Log ─────────────────────────────────────────────────────────────
 function diffProduct(old, neu, imgCount, hadDs) {
   if (!old) {
+    // New product — capture initial values as structured diff
+    const diff = [];
+    const initFields = [
+      ['Category', neu.cat], ['Sort Order', neu.order != null ? String(neu.order) : null],
+      ['CPU', neu.cpu], ['RAM', neu.ram], ['Storage', neu.storage],
+      ['Cellular Module', neu.cell], ['Cellular Gen', neu.cellular_gen], ['Wi-Fi', neu.wifi],
+      ['RS485', neu.rs485], ['RS232', neu.rs232], ['IP Rating', neu.ip],
+      ['Power Input', neu.power], ['Ports', neu.ports != null ? String(neu.ports) : null],
+      ['OS', neu.os], ['Housing', neu.housing], ['Dimensions', neu.dims],
+      ['Weight', neu.weight], ['Op. Temp', neu.op_temp]
+    ];
+    initFields.forEach(([label, val]) => {
+      if (val && String(val).trim() && String(val) !== '-') diff.push({ type: 'field-new', label, value: String(val) });
+    });
+    if (neu.desc) diff.push({ type: 'text-new', label: 'Description', value: neu.desc });
+    if (neu.use_cases?.length) diff.push({ type: 'list-new', label: 'Use Cases', items: neu.use_cases });
+    if (imgCount > 0) diff.push({ type: 'images', added: imgCount, removed: 0 });
+    if (hadDs) diff.push({ type: 'datasheet', change: 'added' });
+
     const parts = [];
-    if (neu.cat)   parts.push(`Category: ${neu.cat}`);
-    if (imgCount)  parts.push(`+${imgCount} image${imgCount > 1 ? 's' : ''}`);
-    if (hadDs)     parts.push('with datasheet');
-    return parts.join(' · ');
+    if (neu.cat) parts.push(`Category: ${neu.cat}`);
+    if (imgCount) parts.push(`+${imgCount} image${imgCount > 1 ? 's' : ''}`);
+    if (hadDs) parts.push('with datasheet');
+    return { summary: parts.join(' · '), diff };
   }
+
   const changes = [];
+  const diff = [];
+
   const fields = [
-    ['name','Name'],['cat','Category'],['cpu','CPU'],['ram','RAM'],
-    ['storage','Storage'],['cell','Cellular'],['cellular_gen','Cellular gen'],
-    ['wifi','Wi-Fi'],['ip','IP'],['power','Power'],['ports','Ports'],
-    ['os','OS'],['housing','Housing'],['dims','Dimensions'],
-    ['weight','Weight'],['op_temp','Op. temp']
+    ['name','Name'], ['cat','Category'], ['order','Sort Order'],
+    ['cpu','CPU'], ['ram','RAM'], ['storage','Storage'],
+    ['cell','Cellular Module'], ['cellular_gen','Cellular Gen'], ['wifi','Wi-Fi'],
+    ['rs485','RS485'], ['rs232','RS232'], ['ip','IP Rating'],
+    ['power','Power Input'], ['ports','Ports'], ['os','OS'],
+    ['housing','Housing'], ['dims','Dimensions'], ['weight','Weight'], ['op_temp','Op. Temp']
   ];
   for (const [k, label] of fields) {
     const ov = String(old[k] ?? '');
     const nv = String(neu[k] ?? '');
-    if (ov !== nv) changes.push(`${label}: ${ov || '—'} → ${nv || '—'}`);
+    if (ov !== nv) {
+      changes.push(`${label}: ${ov || '—'} → ${nv || '—'}`);
+      diff.push({ type: 'field', label, old: ov || '—', new: nv || '—' });
+    }
   }
-  if (String(old.desc || '') !== String(neu.desc || '')) changes.push('Description updated');
-  if (!!old.rs485 !== !!neu.rs485) changes.push(`RS485: ${neu.rs485 ? 'enabled' : 'disabled'}`);
-  if (!!old.rs232 !== !!neu.rs232) changes.push(`RS232: ${neu.rs232 ? 'enabled' : 'disabled'}`);
-  if (imgCount > 0) changes.push(`+${imgCount} image${imgCount > 1 ? 's' : ''}`);
+
+  if (String(old.desc || '') !== String(neu.desc || '')) {
+    changes.push('Description updated');
+    diff.push({ type: 'text', label: 'Description', old: old.desc || '', new: neu.desc || '' });
+  }
+
   const removedImgs = (old.images || []).length - ((neu.images || []).length - imgCount);
-  if (removedImgs > 0) changes.push(`-${removedImgs} image${removedImgs > 1 ? 's' : ''}`);
-  if (hadDs) changes.push('datasheet updated');
-  else if (old.datasheet && !neu.datasheet) changes.push('datasheet removed');
+  if (imgCount > 0 || removedImgs > 0) {
+    if (imgCount > 0)    changes.push(`+${imgCount} image${imgCount > 1 ? 's' : ''}`);
+    if (removedImgs > 0) changes.push(`-${removedImgs} image${removedImgs > 1 ? 's' : ''}`);
+    diff.push({ type: 'images', added: imgCount, removed: Math.max(0, removedImgs) });
+  }
+
+  if (hadDs) {
+    changes.push('datasheet updated');
+    diff.push({ type: 'datasheet', change: 'updated' });
+  } else if (old.datasheet && !neu.datasheet) {
+    changes.push('datasheet removed');
+    diff.push({ type: 'datasheet', change: 'removed' });
+  }
+
   const oldUC = old.use_cases || [], newUC = neu.use_cases || [];
   const addedUC = newUC.filter(u => !oldUC.includes(u));
   const removedUC = oldUC.filter(u => !newUC.includes(u));
-  if (addedUC.length)   changes.push(`+use case: ${addedUC.join(', ')}`);
-  if (removedUC.length) changes.push(`-use case: ${removedUC.join(', ')}`);
+  if (addedUC.length || removedUC.length) {
+    if (addedUC.length)   changes.push(`+use case: ${addedUC.join(', ')}`);
+    if (removedUC.length) changes.push(`-use case: ${removedUC.join(', ')}`);
+    diff.push({ type: 'list', label: 'Use Cases', added: addedUC, removed: removedUC });
+  }
+
+  const oldHF = old.hidden_fields || [], newHF = neu.hidden_fields || [];
+  const addedHF = newHF.filter(f => !oldHF.includes(f));
+  const removedHF = oldHF.filter(f => !newHF.includes(f));
+  if (addedHF.length || removedHF.length) {
+    changes.push('hidden fields updated');
+    diff.push({ type: 'list', label: 'Hidden Fields', added: addedHF, removed: removedHF });
+  }
+
+  if (JSON.stringify(old.additional_specs || []) !== JSON.stringify(neu.additional_specs || [])) {
+    changes.push('additional specs updated');
+    diff.push({ type: 'specs', old: old.additional_specs || [], new: neu.additional_specs || [] });
+  }
+
+  if (JSON.stringify(old.variants ?? null) !== JSON.stringify(neu.variants ?? null)) {
+    changes.push('variants updated');
+    diff.push({ type: 'variants' });
+  }
+
   const out = changes.join(' · ');
-  return out.length > 300 ? out.slice(0, 297) + '…' : out;
+  return { summary: out.length > 300 ? out.slice(0, 297) + '…' : out, diff };
 }
 
-async function logChange(action, detail, changes) {
+async function logChange(action, detail, changes, diff) {
   const token = getGithubToken();
   if (!token || !CFG.gistId) return;
   try {
@@ -108,7 +169,9 @@ async function logChange(action, detail, changes) {
       }
     } catch {}
     const user = (msalInst.getAllAccounts()[0]?.username || 'unknown').toLowerCase();
-    entries.unshift({ ts: new Date().toISOString(), user, action, detail: detail || '', changes: changes || '' });
+    const entry = { ts: new Date().toISOString(), user, action, detail: detail || '', changes: changes || '' };
+    if (diff && diff.length) entry.diff = diff;
+    entries.unshift(entry);
     if (entries.length > 500) entries = entries.slice(0, 500);
     await fetch(`https://api.github.com/gists/${CFG.gistId}`, {
       method: 'PATCH',
@@ -164,6 +227,97 @@ function renderChangelog(entries) {
   if (filters) filters.style.display = 'flex';
   document.getElementById('logSelectAll').checked = false;
   applyLogFilters();
+}
+
+// ─── Log Diff Modal ───────────────────────────────────────────────────────────
+function showLogDiffModal(origIdx) {
+  const e = _allLogEntries[origIdx];
+  if (!e) return;
+  const diff = e.diff || [];
+  const ts = new Date(e.ts).toLocaleString('en-GB', { day:'numeric', month:'short', year:'numeric', hour:'2-digit', minute:'2-digit' });
+
+  document.getElementById('logDiffTitle').textContent = `${e.action}${e.detail ? ' — ' + e.detail : ''}`;
+  document.getElementById('logDiffMeta').textContent  = `${e.user} · ${ts}`;
+
+  const fieldItems    = diff.filter(d => d.type === 'field');
+  const fieldNewItems = diff.filter(d => d.type === 'field-new');
+  const textItems     = diff.filter(d => d.type === 'text' || d.type === 'text-new');
+  const otherItems    = diff.filter(d => !['field','field-new','text','text-new'].includes(d.type));
+
+  let html = '';
+
+  if (!diff.length) {
+    html = '<p class="diff-empty">No detailed changes recorded for this entry.</p>';
+  } else {
+    if (fieldItems.length) {
+      html += `<div class="diff-section"><div class="diff-section-title">Changed Fields</div>
+        <table class="diff-table">
+          <thead><tr><th>Field</th><th>Before</th><th></th><th>After</th></tr></thead>
+          <tbody>${fieldItems.map(d =>
+            `<tr><td class="diff-key">${esc(d.label)}</td><td class="diff-old">${esc(d.old)}</td><td class="diff-arrow">→</td><td class="diff-new">${esc(d.new)}</td></tr>`
+          ).join('')}</tbody>
+        </table></div>`;
+    }
+
+    if (fieldNewItems.length) {
+      html += `<div class="diff-section"><div class="diff-section-title">Initial Values</div>
+        <table class="diff-table">
+          <thead><tr><th>Field</th><th colspan="3">Value</th></tr></thead>
+          <tbody>${fieldNewItems.map(d =>
+            `<tr><td class="diff-key">${esc(d.label)}</td><td class="diff-new" colspan="3">${esc(d.value)}</td></tr>`
+          ).join('')}</tbody>
+        </table></div>`;
+    }
+
+    textItems.forEach(d => {
+      const renderText = s => s ? esc(s) : '<em class="diff-empty-text">empty</em>';
+      if (d.type === 'text') {
+        html += `<div class="diff-section"><div class="diff-section-title">${esc(d.label)}</div>
+          <div class="diff-text-row"><span class="diff-text-label diff-text-old-label">Before</span><div class="diff-text-body diff-old-bg">${renderText(d.old)}</div></div>
+          <div class="diff-text-row" style="margin-top:6px"><span class="diff-text-label diff-text-new-label">After</span><div class="diff-text-body diff-new-bg">${renderText(d.new)}</div></div>
+        </div>`;
+      } else {
+        html += `<div class="diff-section"><div class="diff-section-title">${esc(d.label)}</div>
+          <div class="diff-text-body diff-new-bg">${renderText(d.value)}</div>
+        </div>`;
+      }
+    });
+
+    otherItems.forEach(d => {
+      if (d.type === 'images') {
+        const parts = [];
+        if (d.added   > 0) parts.push(`<span class="diff-badge-add">+${d.added} added</span>`);
+        if (d.removed > 0) parts.push(`<span class="diff-badge-rem">−${d.removed} removed</span>`);
+        html += `<div class="diff-section"><div class="diff-section-title">Images</div><div class="diff-pill-row">${parts.join('')}</div></div>`;
+      } else if (d.type === 'datasheet') {
+        const cls = d.change === 'removed' ? 'diff-badge-rem' : 'diff-badge-add';
+        html += `<div class="diff-section"><div class="diff-section-title">Datasheet</div><div class="diff-pill-row"><span class="${cls}">${esc(d.change)}</span></div></div>`;
+      } else if (d.type === 'list' || d.type === 'list-new') {
+        const rows = d.type === 'list-new'
+          ? (d.items || []).map(v => `<div class="diff-list-item diff-list-add">+ ${esc(v)}</div>`).join('')
+          : [...(d.added || []).map(v => `<div class="diff-list-item diff-list-add">+ ${esc(v)}</div>`),
+             ...(d.removed || []).map(v => `<div class="diff-list-item diff-list-rem">− ${esc(v)}</div>`)].join('');
+        html += `<div class="diff-section"><div class="diff-section-title">${esc(d.label)}</div>${rows}</div>`;
+      } else if (d.type === 'specs') {
+        const renderSpecs = arr => arr.length
+          ? arr.map(s => `<span class="diff-spec-chip">${esc(s.k)}: ${esc(s.v)}</span>`).join('')
+          : '<em class="diff-empty-text">none</em>';
+        html += `<div class="diff-section"><div class="diff-section-title">Additional Specs</div>
+          <div class="diff-text-row"><span class="diff-text-label diff-text-old-label">Before</span><div class="diff-text-body diff-old-bg">${renderSpecs(d.old)}</div></div>
+          <div class="diff-text-row" style="margin-top:6px"><span class="diff-text-label diff-text-new-label">After</span><div class="diff-text-body diff-new-bg">${renderSpecs(d.new)}</div></div>
+        </div>`;
+      } else if (d.type === 'variants') {
+        html += `<div class="diff-section"><div class="diff-section-title">Variants</div><div class="diff-pill-row"><span class="diff-badge-mod">updated</span></div></div>`;
+      }
+    });
+  }
+
+  document.getElementById('logDiffBody').innerHTML = html;
+  document.getElementById('logDiffModal').style.display = 'flex';
+}
+
+function closeLogDiffModal() {
+  document.getElementById('logDiffModal').style.display = 'none';
 }
 
 function setLogFilter(key, val) {
@@ -251,7 +405,7 @@ function _renderLogPage(filtered) {
           <div class="log-body">
             <div class="log-action">${esc(e.action)}${e.detail ? ' — ' + esc(e.detail) : ''}</div>
             ${e.changes ? `<div class="log-changes">${esc(e.changes)}</div>` : ''}
-            <div class="log-meta-row">${esc(e.user)} · ${time}</div>
+            <div class="log-meta-row">${esc(e.user)} · ${time}${e.diff && e.diff.length ? `<button class="btn-log-details" onclick="showLogDiffModal(${origIdx})">Details</button>` : ''}</div>
           </div>
         </div>`;
       }).join('')}

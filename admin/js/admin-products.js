@@ -119,8 +119,8 @@ async function saveProduct() {
   renderSidebar();
   hideOverlay();
   showToast('Saved and published!', 'ok');
-  const changes = diffProduct(oldProduct, p, pendingImgCount, hadPendingDs);
-  logChange(isNew ? 'Added product' : 'Updated product', p.name + ' (' + p.id + ')', changes);
+  const { summary, diff } = diffProduct(oldProduct, p, pendingImgCount, hadPendingDs);
+  logChange(isNew ? 'Added product' : 'Updated product', p.name + ' (' + p.id + ')', summary, diff);
 }
 
 // ─── Delete Product ───────────────────────────────────────────────────────────
