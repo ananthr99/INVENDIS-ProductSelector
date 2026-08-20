@@ -111,7 +111,10 @@
       ],
       "datasheet": "assets/datasheets/Intel X7425E SDWAN Box.pdf",
       "part_datasheets": {},
-      "hidden_fields": [],
+      "hidden_fields": [
+        "rs485",
+        "rs232"
+      ],
       "additional_specs": [],
       "variants": null
     },
