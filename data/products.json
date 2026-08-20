@@ -2564,65 +2564,6 @@
       }
     },
     {
-      "id": "bcpm",
-      "name": "ET7022 (BCPM)",
-      "cat": "Energy Meter",
-      "order": 33,
-      "desc": "Designed to bring circuit-level visibility to distribution boards, the Branch Circuit Power Meter tracks active power, energy, and power factor across individual single and three-phase branches — giving electrical teams a granular breakdown of consumption that a single main meter cannot provide. Its DIN rail form factor, Modbus RS485 communication, and wide 85-270V auxiliary supply make it a straightforward retrofit into existing panels for data centres, commercial buildings, and industrial facilities focused on load profiling and energy cost allocation.",
-      "cpu": "â",
-      "ram": "â",
-      "storage": "â",
-      "cell": "none",
-      "cellular_gen": "-",
-      "wifi": "-",
-      "rs485": "No",
-      "rs232": "No",
-      "ip": "",
-      "power": "85â270V AC/DC",
-      "ports": "0",
-      "os": "â",
-      "housing": "Panel mount",
-      "dims": "185 x 110 x 30 (WXHXD)",
-      "weight": "750gm (approx.)",
-      "op_temp": "-10-75°C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/bcpm-1787139262779-6be3.png"
-      ],
-      "use_cases": [
-        "Branch-Level Energy Monitoring",
-        "Data Centre & Facility Load Profiling",
-        "Energy Cost Allocation"
-      ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/bcpm-datasheet.pdf",
-      "part_datasheets": {},
-      "hidden_fields": [
-        "cell",
-        "cellular_gen",
-        "wifi",
-        "cpu",
-        "ram",
-        "storage",
-        "ip",
-        "power",
-        "ports",
-        "os",
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "RS485",
-          "v": "1"
-        }
-      ],
-      "variants": {
-        "headers": [],
-        "rows": [
-          []
-        ]
-      }
-    },
-    {
       "id": "rvw50",
       "name": "RVW 50 with M12",
       "cat": "PCB",
@@ -3219,6 +3160,65 @@
         }
       ],
       "variants": null
+    },
+    {
+      "id": "bcpm",
+      "name": "ET7022 (BCPM)",
+      "cat": "Energy Meter",
+      "order": 40,
+      "desc": "Designed to bring circuit-level visibility to distribution boards, the Branch Circuit Power Meter tracks active power, energy, and power factor across individual single and three-phase branches — giving electrical teams a granular breakdown of consumption that a single main meter cannot provide. Its DIN rail form factor, Modbus RS485 communication, and wide 85-270V auxiliary supply make it a straightforward retrofit into existing panels for data centres, commercial buildings, and industrial facilities focused on load profiling and energy cost allocation.",
+      "cpu": "â",
+      "ram": "â",
+      "storage": "â",
+      "cell": "none",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "No",
+      "rs232": "No",
+      "ip": "",
+      "power": "85â270V AC/DC",
+      "ports": "0",
+      "os": "â",
+      "housing": "Panel mount",
+      "dims": "185 x 110 x 30 (WXHXD)",
+      "weight": "750gm (approx.)",
+      "op_temp": "-10-75°C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/bcpm-1787139262779-6be3.png"
+      ],
+      "use_cases": [
+        "Branch-Level Energy Monitoring",
+        "Data Centre & Facility Load Profiling",
+        "Energy Cost Allocation"
+      ],
+      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/bcpm-datasheet.pdf",
+      "part_datasheets": {},
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "wifi",
+        "cpu",
+        "ram",
+        "storage",
+        "ip",
+        "power",
+        "ports",
+        "os",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "RS485",
+          "v": "1"
+        }
+      ],
+      "variants": {
+        "headers": [],
+        "rows": [
+          []
+        ]
+      }
     },
     {
       "id": "INVCF",
