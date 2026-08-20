@@ -2093,7 +2093,7 @@
       "id": "xb82",
       "name": "XB82-2",
       "cat": "Switch",
-      "order": 27,
+      "order": 23,
       "desc": "The XB-82-2 cuts through network complexity by delivering plug-and-play Gigabit switching with zero configuration overhead — eight PoE-capable ports, two SFP uplinks, and a 240W total PoE budget ready to power cameras, access points, and IP phones straight out of the box. Its wide 9-57Vdc input range and DIN rail-mountable aluminium body make it equally at home in a control cabinet or a harsh field enclosure, serving installers and contractors who need reliable, no-fuss layer-2 connectivity without the cost of managed switch complexity.",
       "cpu": "â",
       "ram": "â",
