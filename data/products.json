@@ -1514,7 +1514,7 @@
       "id": "iabxx",
       "name": "IABXX-X",
       "cat": "Gateway",
-      "order": 20,
+      "order": 16,
       "desc": "The IABXX-X is a rugged cellular router designed for reliable industrial connectivity, featuring a MediaTek MT7628 CPU with 128MB RAM and dual Nano SIM slots for flexible network redundancy. Running on OpenWRT-based Linux, it operates seamlessly across harsh environments — from -30 to 70°C storage temperatures — making it an ideal fit for IoT deployments, remote infrastructure monitoring, and industrial automation where uptime and durability are non-negotiable.",
       "cpu": "MediaTek MT7628",
       "ram": "128 MB DDR2",
