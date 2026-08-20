@@ -481,12 +481,9 @@
       "dims": "",
       "weight": "",
       "op_temp": "",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/itx-arl-board-1787218998367-f2k5.png",
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/itx-arl-board-1787219002042-flwb.png"
-      ],
+      "images": [],
       "use_cases": [],
-      "datasheet": null,
+      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/itx-arl-board-datasheet.pdf",
       "part_datasheets": {},
       "hidden_fields": [
         "cell",
