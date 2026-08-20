@@ -55,7 +55,7 @@ function normWifi(v) {
 function populateForm(p) {
   renderFormDropdowns();
   renderVisibilityToggles(p.hidden_fields || []);
-  [['fId',p.id],['fName',p.name],['fOrder',p.order??0],['fDesc',p.desc],
+  [['fId',p.id],['fName',p.name],['fOrder',p.order??''],['fDesc',p.desc],
    ['fCpu',p.cpu],['fRam',p.ram],['fStorage',p.storage],['fCell',p.cell],
    ['fIp',p.ip],['fPower',p.power],['fPorts',p.ports],['fOs',p.os],
    ['fDims',p.dims],['fWeight',p.weight]
@@ -85,7 +85,7 @@ function collectForm() {
   const v = id => (document.getElementById(id)?.value || '').trim();
   return {
     id: v('fId'), name: v('fName'), cat: v('fCat'),
-    order: Number(v('fOrder')) || 0, desc: v('fDesc'),
+    order: v('fOrder') !== '' ? Number(v('fOrder')) : null, desc: v('fDesc'),
     cpu: v('fCpu'), ram: v('fRam'), storage: v('fStorage'),
     cell: v('fCell'), cellular_gen: v('fCellGen'), wifi: v('fWifi'),
     rs485: v('fRs485'), rs232: v('fRs232'), ip: v('fIp'),
@@ -100,7 +100,7 @@ function collectForm() {
 
 function newProduct() {
   selectedId = null;
-  const p = { id:'', name:'', cat: cats[0]||'', order: products.length,
+  const p = { id:'', name:'', cat: cats[0]||'', order: null,
     desc:'', images:[], use_cases:[], hidden_fields:[], variants:null, part_datasheets:{} };
   renderSidebar();
   populateForm(p);

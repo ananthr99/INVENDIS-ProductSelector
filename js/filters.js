@@ -25,6 +25,9 @@ function getFiltered() {
     return true;
   });
   results.sort((a, b) => {
+    const aOrder = (a.order != null) ? a.order : Infinity;
+    const bOrder = (b.order != null) ? b.order : Infinity;
+    if (aOrder !== bOrder) return aOrder - bOrder;
     const aHasImg = !!(PRODUCT_IMAGES[a.id] && PRODUCT_IMAGES[a.id].length);
     const bHasImg = !!(PRODUCT_IMAGES[b.id] && PRODUCT_IMAGES[b.id].length);
     if (aHasImg === bHasImg) return 0;

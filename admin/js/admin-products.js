@@ -33,6 +33,15 @@ async function saveProduct() {
   if (!p.id)   { showToast('Product ID is required', 'err'); return; }
   if (!p.name) { showToast('Display name is required', 'err'); return; }
 
+  const lookupIdEarly = selectedId ?? p.id;
+  if (p.order !== null) {
+    const duplicate = products.find(x => x.id !== lookupIdEarly && x.order === p.order);
+    if (duplicate) {
+      showToast(`Sort order ${p.order} is already used by "${duplicate.name}" — choose a different number`, 'err');
+      return;
+    }
+  }
+
   p.variants = getVariantsFromEditor();
 
   const pendingImgCount = pendingImgs.length;
@@ -76,17 +85,25 @@ async function saveProduct() {
   updateOverlay('Syncing latest data…');
   try { await readFromGist(); } catch {}
 
-  const lookupId   = selectedId ?? p.id;
+  const lookupId = selectedId ?? p.id;
+  if (p.order !== null) {
+    const dupeAfterSync = products.find(x => x.id !== lookupId && x.order === p.order);
+    if (dupeAfterSync) {
+      showToast(`Sort order ${p.order} conflicts with "${dupeAfterSync.name}" — choose a different number`, 'err');
+      hideOverlay();
+      return;
+    }
+  }
+
   const idx        = products.findIndex(x => x.id === lookupId);
   const isNew      = idx < 0;
   const oldProduct = idx >= 0 ? { ...products[idx] } : null;
   if (idx >= 0) {
     products[idx] = p;
   } else {
-    p.order = products.length ? Math.max(...products.map(x => x.order)) + 1 : 0;
     products.push(p);
   }
-  products.sort((a, b) => a.order - b.order);
+  products.sort((a, b) => (a.order ?? Infinity) - (b.order ?? Infinity));
 
   updateOverlay('Saving to Excel…');
   try { await writeExcel(); } catch(e) { showToast('Excel save failed: ' + e.message, 'err'); hideOverlay(); return; }
