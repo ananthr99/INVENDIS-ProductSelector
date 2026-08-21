@@ -85,7 +85,8 @@
 
     <main class="content">
       <div class="tab-bar">
-        <button class="tab active" id="tabProducts" onclick="switchTab('products')">Products</button>
+        <button class="tab active" id="tabDashboard" onclick="switchTab('dashboard')">Dashboard</button>
+        <button class="tab"        id="tabProducts"  onclick="switchTab('products')">Products</button>
         <button class="tab"        id="tabCats"     onclick="switchTab('cats')">Categories</button>
         <button class="tab"        id="tabFields"    onclick="switchTab('fields')">Field Options</button>
         <button class="tab"        id="tabSite"      onclick="switchTab('site')">Site</button>
@@ -100,8 +101,63 @@
         <button onclick="switchTab('setup')">Go to Setup →</button>
       </div>
 
+      <!-- Dashboard Panel -->
+      <div class="tab-panel active" id="panelDashboard">
+        <div class="dash-home">
+          <div class="dash-welcome-banner">
+            <div class="dash-welcome-left">
+              <div class="dash-welcome-label">LOGGED IN AS</div>
+              <div class="dash-welcome-name" id="dashUserName"></div>
+              <div class="dash-welcome-email" id="dashUserEmail"></div>
+            </div>
+            <div class="dash-welcome-right">
+              <div class="dash-clock" id="dashClock"></div>
+              <div class="dash-date"  id="dashDate"></div>
+            </div>
+          </div>
+
+          <div class="dash-section-label">HOW IT WORKS</div>
+          <div class="dash-steps">
+            <div class="dash-step">
+              <div class="dash-step-num step-blue">1</div>
+              <div class="dash-step-title">Edit Content</div>
+              <div class="dash-step-desc">Open the Products tab from the top bar, select a product from the sidebar, and make your changes.</div>
+            </div>
+            <div class="dash-step-sep">›</div>
+            <div class="dash-step">
+              <div class="dash-step-num step-purple">2</div>
+              <div class="dash-step-title">Save &amp; Publish</div>
+              <div class="dash-step-desc">Click the Save &amp; Publish button — this triggers the update.</div>
+            </div>
+            <div class="dash-step-sep">›</div>
+            <div class="dash-step">
+              <div class="dash-step-num step-green">3</div>
+              <div class="dash-step-title">GitHub Updated</div>
+              <div class="dash-step-desc">Changes are written directly to the live branch (gh-pages) in seconds, and synced to the source branch (main) with no rebuild triggered.</div>
+            </div>
+            <div class="dash-step-sep">›</div>
+            <div class="dash-step">
+              <div class="dash-step-num step-red">4</div>
+              <div class="dash-step-title">Live on Website</div>
+              <div class="dash-step-desc">The website fetches content at runtime — your changes are visible immediately. No build required.</div>
+            </div>
+          </div>
+
+          <div class="dash-section-label">KEY THINGS TO REMEMBER</div>
+          <div class="dash-tips-card">
+            <ul class="dash-tips-list">
+              <li>Always click Save &amp; Publish to apply changes — navigating away without saving will lose your edits.</li>
+              <li>If a change doesn't appear on the site, do a hard refresh: Ctrl + Shift + R (Windows) or Cmd + Shift + R (Mac).</li>
+              <li>Product images and datasheets are uploaded immediately when selected, but paths are only saved when you click Save &amp; Publish.</li>
+              <li>Every save is logged in the Activity Log — you can see who changed what and when.</li>
+              <li>The source code (main branch) stays in sync automatically after every save, but does not trigger a site rebuild.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <!-- Products Panel -->
-      <div class="tab-panel active" id="panelProducts">
+      <div class="tab-panel" id="panelProducts">
         <div class="no-selection" id="noSelection">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>

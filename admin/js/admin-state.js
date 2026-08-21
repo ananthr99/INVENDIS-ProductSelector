@@ -124,7 +124,7 @@ let catColors         = {}; // { "Router": {bg,fg}, ... }
 let catColorIndices   = []; // parallel to cats[], palette index for each cat
 let _newCatColorIdx   = 4; // palette index for the next cat to be added (default gray)
 let isSiteDirty  = false;
-let currentTab   = 'products';
+let currentTab   = 'dashboard';
 let msalInst;
 
 // ─── Tab Switching ────────────────────────────────────────────────────────────
@@ -137,10 +137,11 @@ function switchTab(name) {
     return;
   }
   currentTab = name;
-  ['products','cats','fields','site','setup','changelog'].forEach(t => {
+  ['dashboard','products','cats','fields','site','setup','changelog'].forEach(t => {
     document.getElementById('panel' + cap(t)).classList.toggle('active', t === name);
     document.getElementById('tab'   + cap(t)).classList.toggle('active', t === name);
   });
+  document.querySelector('.sidebar').classList.toggle('hidden', name === 'dashboard');
   if (name === 'cats')      renderCatList();
   if (name === 'setup')     renderSetupStatus();
   if (name === 'changelog') loadChangelog();

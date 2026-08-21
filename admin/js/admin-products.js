@@ -13,19 +13,39 @@ async function loadData() {
     return;
   }
 
-  document.getElementById('headerUser').textContent = accs[0].username || accs[0].name || '';
+  document.getElementById('headerUser').textContent = accs[0].name || accs[0].username || '';
   try {
     await resolveFolder();
     await loadAdminConfig();
     await readExcel();
     renderSidebar();
     showScreen('dash');
+    switchTab('dashboard');
+    renderDashboard(accs[0]);
     updateTokenBanner();
   } catch(e) {
     showToast('Load error: ' + (e.message || 'unknown error'), 'err');
     showScreen('login');
   }
 }
+
+function renderDashboard(account) {
+  document.getElementById('dashUserName').textContent  = account.name     || account.username || '';
+  document.getElementById('dashUserEmail').textContent = account.username || '';
+
+  function tick() {
+    const now = new Date();
+    const timeStr = now.toLocaleTimeString('en-US', { hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:true });
+    const dateStr = now.toLocaleDateString('en-US',  { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+    const ce = document.getElementById('dashClock');
+    const de = document.getElementById('dashDate');
+    if (ce) ce.textContent = timeStr;
+    if (de) de.textContent = dateStr;
+  }
+  tick();
+  setInterval(tick, 1000);
+}
+
 
 // ─── Save Product ─────────────────────────────────────────────────────────────
 async function saveProduct() {
