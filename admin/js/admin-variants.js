@@ -36,8 +36,10 @@ function _renderVariantsTable() {
   rows.forEach((row, ri) => {
     t += `<tr style="border-bottom:1px solid #f3f4f6">`;
     headers.forEach((_, ci) => {
+      const isLastCol = ci === headers.length - 1;
       t += `<td style="padding:3px 4px"><input type="text" value="${esc(row[ci] ?? '')}"
         oninput="variantData.rows[${ri}][${ci}]=this.value"
+        ${isLastCol ? `onchange="_renderVariantsTable()"` : ''}
         style="${cellInputStyle}"></td>`;
     });
     // Datasheet cell — keyed by last column value (matches main site logic)
