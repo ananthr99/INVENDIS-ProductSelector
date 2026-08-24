@@ -171,6 +171,21 @@
             <button class="btn-del"  onclick="deleteProduct()">Delete</button>
           </div>
 
+          <div class="special-chars-bar" id="specialCharsBar">
+            <span class="special-chars-label">Special chars</span>
+            <button type="button" class="special-chars-btn" onclick="insertSpecialChar('✓')" title="Check mark">✓</button>
+            <button type="button" class="special-chars-btn" onclick="insertSpecialChar('—')" title="Em dash">—</button>
+            <button type="button" class="special-chars-btn" onclick="insertSpecialChar('×')" title="Multiplication / cross">×</button>
+            <button type="button" class="special-chars-btn" onclick="insertSpecialChar('·')" title="Middle dot">·</button>
+            <button type="button" class="special-chars-btn" onclick="insertSpecialChar('→')" title="Right arrow">→</button>
+            <button type="button" class="special-chars-btn" onclick="insertSpecialChar('←')" title="Left arrow">←</button>
+            <button type="button" class="special-chars-btn" onclick="insertSpecialChar('…')" title="Ellipsis">…</button>
+            <button type="button" class="special-chars-btn" onclick="insertSpecialChar('°')" title="Degree">°</button>
+            <button type="button" class="special-chars-btn" onclick="insertSpecialChar('±')" title="Plus-minus">±</button>
+            <span class="special-chars-hint">Focus a field then click to insert · or click to copy</span>
+            <span class="special-chars-feedback" id="specialCharsFeedback"></span>
+          </div>
+
           <div class="form-section">
             <h3>Basic Info</h3>
             <div class="field-grid">
@@ -504,5 +519,6 @@
 <script src="js/admin-products.js"></script>
 <script src="js/admin-panels.js"></script>
 <script src="js/admin-main.js"></script>
+<script src="js/admin-special-chars.js"></script>
 </body>
 </html>
