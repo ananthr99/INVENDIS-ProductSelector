@@ -3438,13 +3438,11 @@
       "power": "12 V DC or 9-30V DC",
       "ports": "4x 10/100/1000 Mbps",
       "os": "Open-WRT based Linux OS",
-      "housing": "",
-      "dims": "",
-      "weight": "",
+      "housing": "Sheet Metal",
+      "dims": "190 x 30 x 100 mm (W x H x D)",
+      "weight": "520",
       "op_temp": "",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvcp-1787568766978-rk3v.png"
-      ],
+      "images": [],
       "use_cases": [],
       "datasheet": null,
       "part_datasheets": {},
