@@ -3455,7 +3455,20 @@
         "rs232"
       ],
       "additional_specs": [],
-      "variants": null
+      "variants": {
+        "headers": [
+          "",
+          "",
+          ""
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
     }
   ]
 }
