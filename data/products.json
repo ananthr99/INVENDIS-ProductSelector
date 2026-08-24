@@ -638,7 +638,8 @@
         "RT64-1": "assets/datasheets/RT64-1.pdf",
         "RT64-2": "assets/datasheets/RT64-2.pdf",
         "RT65-1": "assets/datasheets/RT65-1.pdf",
-        "RT65-2": "assets/datasheets/RT65-2.pdf"
+        "RT65-2": "assets/datasheets/RT65-2.pdf",
+        "RT66-2": "contact_us"
       },
       "hidden_fields": [],
       "additional_specs": [],
@@ -720,6 +721,13 @@
             "5G",
             "Dual",
             "RT65-2"
+          ],
+          [
+            "✓",
+            "Wi-Fi 6",
+            "6G",
+            "Dual",
+            "RT66-2"
           ]
         ]
       }
