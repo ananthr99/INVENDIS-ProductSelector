@@ -3395,6 +3395,36 @@
       "hidden_fields": [],
       "additional_specs": [],
       "variants": null
+    },
+    {
+      "id": "rvcp",
+      "name": "RVCP",
+      "cat": "Router",
+      "order": 100,
+      "desc": "",
+      "cpu": "",
+      "ram": "",
+      "storage": "",
+      "cell": "",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "",
+      "ports": "",
+      "os": "",
+      "housing": "",
+      "dims": "",
+      "weight": "",
+      "op_temp": "",
+      "images": [],
+      "use_cases": [],
+      "datasheet": null,
+      "part_datasheets": {},
+      "hidden_fields": [],
+      "additional_specs": [],
+      "variants": null
     }
   ]
 }
