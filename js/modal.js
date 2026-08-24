@@ -55,7 +55,7 @@ function buildVariantsTable(v) {
     if (hasDs) {
       const pn = dsKey(row[row.length - 1]);
       const file = PART_DATASHEETS[pn];
-      if (file) {
+      if (file && file !== 'contact_us') {
         dsCell = `<td class="cell-datasheet">
             <a class="ds-btn ds-view" href="${file}" target="_blank" rel="noopener">View</a>
             <button class="ds-btn ds-download" onclick="downloadFile('${file}',this)">&#x2193;</button>
@@ -121,21 +121,23 @@ function buildAdditionalSpecsSection(p) {
 function buildDatasheetsSection(id) {
   const file = PRODUCT_DATASHEETS[id];
   if (!file) return '';
-  return `
-    <div class="spec-section datasheet-section">
-      <div class="spec-section-title">Datasheet</div>
-      <div class="datasheet-item">
-        <svg class="datasheet-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  const svgIcon = `<svg class="datasheet-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
           <polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
           <line x1="8" y1="13" x2="16" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
           <line x1="8" y1="17" x2="12" y2="17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
+        </svg>`;
+  const btns = file === 'contact_us'
+    ? `<a class="ds-btn ds-contact" href="mailto:sales@invendis.com?subject=${encodeURIComponent('Datasheet Request')}&body=${encodeURIComponent('Hi Invendis team,\n\nI would like to request the datasheet for this product.\n\nThank you.')}" title="Datasheet not available — contact us for more information">Contact us</a>`
+    : `<a class="ds-btn ds-view" href="${file}" target="_blank" rel="noopener">View</a>
+          <button class="ds-btn ds-download" onclick="downloadFile('${file}',this)">Download</button>`;
+  return `
+    <div class="spec-section datasheet-section">
+      <div class="spec-section-title">Datasheet</div>
+      <div class="datasheet-item">
+        ${svgIcon}
         <span class="datasheet-label">Product Datasheet</span>
-        <div class="datasheet-btns">
-          <a class="ds-btn ds-view" href="${file}" target="_blank" rel="noopener">View</a>
-          <button class="ds-btn ds-download" onclick="downloadFile('${file}',this)">Download</button>
-        </div>
+        <div class="datasheet-btns">${btns}</div>
       </div>
     </div>`;
 }

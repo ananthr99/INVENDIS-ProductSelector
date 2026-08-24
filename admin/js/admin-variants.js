@@ -50,13 +50,17 @@ function _renderVariantsTable() {
     } else if (pending) {
       dsCell = `<span style="font-size:11px;color:#1A6FC4">📄 ${esc(pending.file.name)}</span>
         <button type="button" onclick="removeRowDs('${esc(partNo)}')" style="${rmBtnStyle}" title="Remove">×</button>`;
+    } else if (existing === 'contact_us') {
+      dsCell = `<span style="font-size:11px;color:#1A6FC4;white-space:nowrap">Contact us</span>
+        <button type="button" onclick="removeRowDs('${esc(partNo)}')" style="${rmBtnStyle}" title="Remove">×</button>`;
     } else if (existing) {
       const href = existing.startsWith('http') ? existing : '../' + existing;
       dsCell = `<a href="${href}" target="_blank" style="font-size:12px;color:#1A6FC4;white-space:nowrap">📄 View</a>
         <button type="button" onclick="removeRowDs('${esc(partNo)}')" style="${rmBtnStyle}" title="Remove">×</button>`;
     } else {
       dsCell = `<label style="font-size:11px;padding:3px 8px;border:1px dashed #9ca3af;border-radius:4px;cursor:pointer;color:#6b7280;white-space:nowrap">
-        Upload PDF<input type="file" accept=".pdf" style="display:none" onchange="handleRowDsFile(event,'${esc(partNo)}')"></label>`;
+        Upload PDF<input type="file" accept=".pdf" style="display:none" onchange="handleRowDsFile(event,'${esc(partNo)}')"></label>
+        <button type="button" onclick="setRowDsContactUs('${esc(partNo)}')" style="font-size:11px;padding:3px 8px;border:1px dashed #9ca3af;border-radius:4px;cursor:pointer;color:#6b7280;white-space:nowrap;background:none;margin-left:4px">Contact us</button>`;
     }
     t += `<td style="padding:3px 8px;white-space:nowrap">${dsCell}</td>`;
     t += `<td style="padding:3px;text-align:center"><button type="button" onclick="removeVariantRow(${ri})" style="${rmBtnStyle}" title="Remove row">×</button></td></tr>`;
@@ -122,5 +126,11 @@ function handleRowDsFile(e, partNo) {
 function removeRowDs(partNo) {
   delete currentPartDs[partNo];
   pendingPartDs = pendingPartDs.filter(p => p.partNo !== partNo);
+  _renderVariantsTable();
+}
+function setRowDsContactUs(partNo) {
+  if (!partNo) return;
+  pendingPartDs = pendingPartDs.filter(p => p.partNo !== partNo);
+  currentPartDs[partNo] = 'contact_us';
   _renderVariantsTable();
 }

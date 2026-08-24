@@ -29,6 +29,8 @@ function renderDatasheet() {
   const w = document.getElementById('datasheetWrap');
   if (pendingDs) {
     w.innerHTML = `<div class="ds-row pending"><span>📄 ${esc(pendingDs.name)} <em style="color:#1A6FC4">(pending upload)</em></span><button class="ds-rm" onclick="clearDatasheet()">×</button></div>`;
+  } else if (currentDs === 'contact_us') {
+    w.innerHTML = `<div class="ds-row"><span style="color:#1A6FC4;font-size:13px">Contact us</span><button class="ds-rm" onclick="clearDatasheet()">×</button></div>`;
   } else if (currentDs) {
     const dsHref = currentDs.startsWith('http') ? currentDs : '../' + currentDs;
     w.innerHTML = `<div class="ds-row"><a href="${dsHref}" target="_blank">📄 View current datasheet</a><button class="ds-rm" onclick="clearDatasheet()">×</button></div>`;
@@ -38,3 +40,4 @@ function renderDatasheet() {
 }
 function handleDatasheetFile(e) { pendingDs = e.target.files[0]||null; renderDatasheet(); e.target.value=''; }
 function clearDatasheet() { pendingDs = null; currentDs = ''; renderDatasheet(); }
+function setDsContactUs() { pendingDs = null; currentDs = 'contact_us'; renderDatasheet(); }
