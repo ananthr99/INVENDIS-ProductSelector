@@ -3409,7 +3409,16 @@
           "v": "RTL9601D"
         }
       ],
-      "variants": null
+      "variants": {
+        "headers": [
+          "Interface"
+        ],
+        "rows": [
+          [
+            "Controller-RTL9601D"
+          ]
+        ]
+      }
     },
     {
       "id": "rvcp",
