@@ -3405,6 +3405,64 @@
       }
     },
     {
+      "id": "RUC",
+      "name": "RUC",
+      "cat": "Gateway",
+      "order": 94,
+      "desc": "",
+      "cpu": "MediaTek MT7981",
+      "ram": "512 MB DDR3 RAM",
+      "storage": "128 MB NAND",
+      "cell": "",
+      "cellular_gen": "-",
+      "wifi": "WiFi6",
+      "rs485": "No",
+      "rs232": "-",
+      "ip": "",
+      "power": "12 VDC",
+      "ports": "3",
+      "os": "Open-WRT based Linux OS",
+      "housing": "Plastic",
+      "dims": "105 x 200 x 105 mm (W x H x D)",
+      "weight": "590 grams",
+      "op_temp": "0~ 50 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/RUC-1787651360182-73rk.png"
+      ],
+      "use_cases": [],
+      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/RUC-datasheet.pdf",
+      "part_datasheets": {},
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "ip",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports Additional Spec",
+          "v": "1 x Gigabit WAN (PoE IN IEEE802.3at), 2 x Gigabit LAN"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "WiFi",
+          "Gen",
+          "Modem"
+        ],
+        "rows": [
+          [
+            "✓",
+            "Wi-Fi 6",
+            "4G",
+            "Single"
+          ]
+        ]
+      }
+    },
+    {
       "id": "RVH",
       "name": "RVH 44",
       "cat": "Gateway",
