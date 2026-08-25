@@ -3441,10 +3441,6 @@
       ],
       "additional_specs": [
         {
-          "k": "Ethernet Ports-Additional Details",
-          "v": ""
-        },
-        {
           "k": "Interface",
           "v": "USB 3.0/ 2.0 Host (Optional)"
         }
