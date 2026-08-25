@@ -3517,7 +3517,7 @@
       "power": "9-30 VDC",
       "ports": "6",
       "os": "Open-WRT based Linux OS",
-      "housing": "Industr",
+      "housing": "",
       "dims": "110 x 44 x 94 mm (W x H x D)",
       "weight": "400gm",
       "op_temp": "0 ~ 60 ˚C",
@@ -3531,21 +3531,37 @@
       "additional_specs": [
         {
           "k": "Ethernet Ports- Additional Details",
-          "v": "Gigabit Ethernet (Configurable WAN/LAN"
+          "v": "Gigabit Ethernet (Configurable WAN/LAN)"
         }
       ],
       "variants": {
         "headers": [
-          ""
+          "Celluar",
+          "Wi-Fi",
+          "Gen",
+          "Modem",
+          "Part Number"
         ],
         "rows": [
           [
+            "✓",
+            "Wi-Fi 5",
+            "5G",
+            "Single",
             "RVG 55-C"
           ],
           [
+            "✓",
+            "Wi-Fi 5",
+            "4G",
+            "Single",
             "RVG 54-C"
           ],
           [
+            "✓",
+            "Wi-Fi 5",
+            "4G",
+            "Single",
             "RVG 44-C"
           ]
         ]
