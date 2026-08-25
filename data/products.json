@@ -3622,10 +3622,16 @@
       "dims": "110 x 44 x 94 mm (W x H x D)",
       "weight": "400gm",
       "op_temp": "0 ~ 60 ˚C",
-      "images": [],
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvg-1787660371066-5vj2.png"
+      ],
       "use_cases": [],
       "datasheet": null,
-      "part_datasheets": {},
+      "part_datasheets": {
+        "RVG 55-C": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvg-RVG_55-C.pdf",
+        "RVG 54-C": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvg-RVG_54-C.pdf",
+        "RVG 44-C": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvg-RVG_44-C.pdf"
+      },
       "hidden_fields": [
         "rs232"
       ],
@@ -3653,17 +3659,17 @@
           ],
           [
             "✓",
-            "Wi-Fi 5",
-            "4G",
-            "Single",
-            "RVG 54-C"
-          ],
-          [
-            "✓",
-            "Wi-Fi 5",
+            "Wi-Fi 4",
             "4G",
             "Single",
             "RVG 44-C"
+          ],
+          [
+            "✓",
+            "Wi-FI 5",
+            "5G ",
+            "Single",
+            "RVG 54-C"
           ]
         ]
       }
