@@ -3447,6 +3447,58 @@
       "variants": null
     },
     {
+      "id": "rvg",
+      "name": "RVG 55",
+      "cat": "Gateway",
+      "order": 97,
+      "desc": "",
+      "cpu": "MediaTek MT7621 Dual-core 880 MHz",
+      "ram": "512MB DDR3",
+      "storage": "32MB",
+      "cell": "RM 500U CNV",
+      "cellular_gen": "5G",
+      "wifi": "WiFi5",
+      "rs485": "Yes",
+      "rs232": "-",
+      "ip": "IP 30",
+      "power": "9-30 VDC",
+      "ports": "6",
+      "os": "Open-WRT based Linux OS",
+      "housing": "Industr",
+      "dims": "110 x 44 x 94 mm (W x H x D)",
+      "weight": "400gm",
+      "op_temp": "0 ~ 60 ˚C",
+      "images": [],
+      "use_cases": [],
+      "datasheet": null,
+      "part_datasheets": {},
+      "hidden_fields": [
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports- Additional Details",
+          "v": "Gigabit Ethernet (Configurable WAN/LAN"
+        }
+      ],
+      "variants": {
+        "headers": [
+          ""
+        ],
+        "rows": [
+          [
+            "RVG 55-C"
+          ],
+          [
+            "RVG 54-C"
+          ],
+          [
+            "RVG 44-C"
+          ]
+        ]
+      }
+    },
+    {
       "id": "xi244-2M",
       "name": "XI 244-2M",
       "cat": "Switch",
