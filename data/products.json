@@ -3449,12 +3449,7 @@
           "v": "USB 3.0/ 2.0 Host (Optional)"
         }
       ],
-      "variants": {
-        "headers": [
-          ""
-        ],
-        "rows": []
-      }
+      "variants": null
     },
     {
       "id": "RUC",
