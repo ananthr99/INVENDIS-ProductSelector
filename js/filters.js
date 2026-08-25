@@ -6,7 +6,14 @@ function getFiltered() {
   const fSerial = document.getElementById('fSerial').value;
   const results = PRODUCTS.filter(p => {
     if (activeCat !== 'All' && p.cat !== activeCat) return false;
-    if (q && !p.name.toLowerCase().includes(q)) return false;
+    if (q) {
+      const haystack = [
+        p.name,
+        p.desc,
+        ...(PRODUCT_USE_CASES[p.id] || []),
+      ].join(' ').toLowerCase();
+      if (!haystack.includes(q)) return false;
+    }
     if (fCell === '5G' && p.cellular_gen !== '5G') return false;
     if (fCell === '4G' && p.cellular_gen !== '4G') return false;
     if (fCell === '-' && hasCellular(p.cellular_gen)) return false;
