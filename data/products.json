@@ -3426,9 +3426,7 @@
       "dims": "110 x 44 x 94 mm (W x H x D)",
       "weight": "400 gm",
       "op_temp": "0 ~ 60 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/RVH-1787644279911-5fci.png"
-      ],
+      "images": [],
       "use_cases": [],
       "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/RVH-datasheet.pdf",
       "part_datasheets": {},
