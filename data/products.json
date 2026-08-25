@@ -3422,6 +3422,74 @@
       }
     },
     {
+      "id": "xi244-2M",
+      "name": "XI 244-2M",
+      "cat": "Switch",
+      "order": 98,
+      "desc": "",
+      "cpu": "",
+      "ram": "",
+      "storage": "",
+      "cell": "",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "",
+      "ports": "",
+      "os": "",
+      "housing": "",
+      "dims": "",
+      "weight": "",
+      "op_temp": "",
+      "images": [],
+      "use_cases": [],
+      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xi244-2M-datasheet.pdf",
+      "part_datasheets": {},
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "wifi",
+        "cpu",
+        "ram",
+        "storage",
+        "ip",
+        "power",
+        "ports",
+        "os",
+        "rs485",
+        "rs232",
+        "housing",
+        "dims",
+        "weight",
+        "op_temp"
+      ],
+      "additional_specs": [
+        {
+          "k": "Chipset",
+          "v": "EN8853D+EN8808Q*2+EN8804+3*AN8503"
+        },
+        {
+          "k": "Interface",
+          "v": "24 x 10/100/1000Mbps+4G Combo(RJ45 Or Fiber) Auto-Negotiation ports,The Fiber is SFP"
+        },
+        {
+          "k": "Transfer Method",
+          "v": "Store-and-Forward"
+        },
+        {
+          "k": "MAC Address Table",
+          "v": "32K"
+        },
+        {
+          "k": "Switching Capacity",
+          "v": "56Gbps"
+        }
+      ],
+      "variants": null
+    },
+    {
       "id": "fibocomm",
       "name": "Fibocomm M.2 Module",
       "cat": "PCB",
