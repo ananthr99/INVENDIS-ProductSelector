@@ -95,7 +95,7 @@
       "rs232": "-",
       "ip": "IP30",
       "power": "19 VDC",
-      "ports": "10/100/1000 Mbps (2x I226 Intel) , 2x RTL8125BG(Realtek)",
+      "ports": "4",
       "os": "Oracle Linux v9.5 / Ubuntu 23 / Windows 10+",
       "housing": "Aluminium",
       "dims": "150x210x65mm (LxWxH)",
@@ -116,7 +116,12 @@
         "rs485",
         "rs232"
       ],
-      "additional_specs": [],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports- Additional Details",
+          "v": "Gigabit Ethernet, (2x I226 Intel) , 2x RTL8125BG(Realtek)"
+        }
+      ],
       "variants": null
     },
     {
