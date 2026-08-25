@@ -229,7 +229,7 @@
       "rs232": "-",
       "ip": "",
       "power": "12 VDC",
-      "ports": "6 X 10/100/1000 (Realtek RTL8111H)",
+      "ports": "6",
       "os": "Ubuntu / Oracle / OpenWRT /Windows/ VyOS",
       "housing": "Sheet Metal",
       "dims": "232mmx 202 x 44mm",
@@ -249,7 +249,12 @@
         "rs485",
         "rs232"
       ],
-      "additional_specs": [],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Gigabit Ethernet (Realtek RTL8111H)"
+        }
+      ],
       "variants": null
     },
     {
