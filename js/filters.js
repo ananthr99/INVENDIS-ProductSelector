@@ -22,10 +22,10 @@ function getFiltered() {
     if (fWifi === 'WiFi4/2.4GHz' && p.wifi !== 'WiFi4/2.4GHz' && p.wifi !== 'WiFi24') return false;
     if (fWifi === 'WiFi4' && p.wifi !== 'WiFi4' && p.wifi !== 'Wi-Fi 4') return false;
     if (fWifi === '-' && hasWifi(p.wifi)) return false;
-    if (fPorts === '2' && p.ports > 2) return false;
-    if (fPorts === '5' && (p.ports < 3 || p.ports > 5)) return false;
-    if (fPorts === '8' && (p.ports < 6 || p.ports > 8)) return false;
-    if (fPorts === '10' && p.ports < 9) return false;
+    if (fPorts === '2' && portsCount(p) > 2) return false;
+    if (fPorts === '5' && (portsCount(p) < 3 || portsCount(p) > 5)) return false;
+    if (fPorts === '8' && (portsCount(p) < 6 || portsCount(p) > 8)) return false;
+    if (fPorts === '10' && portsCount(p) < 9) return false;
     if (fSerial === 'rs485' && !hasSerial(p.rs485)) return false;
     if (fSerial === 'rs232' && !hasSerial(p.rs232)) return false;
     if (fSerial === 'both' && !(hasSerial(p.rs485) && hasSerial(p.rs232))) return false;

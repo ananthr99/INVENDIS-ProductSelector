@@ -15,6 +15,8 @@ function wifiLabel(w) {
 
 function hasCellular(c) { return !!c && c !== '-' && c !== 'none' && c !== ''; }
 function hasWifi(w)     { return !!w && w !== '-' && w !== 'none' && w !== 'false' && w !== ''; }
+function portsCount(p)   { return typeof p.ports === 'number' ? p.ports : parseInt(p.ports) || 0; }
+function portsDisplay(p) { return typeof p.ports === 'string' && p.ports.trim() ? p.ports : (p.ports > 0 ? p.ports + ' ports' : '-'); }
 
 function srow(k, v) {
   return `<div class="spec-row"><span class="spec-key">${k}</span><span class="spec-val">${v}</span></div>`;

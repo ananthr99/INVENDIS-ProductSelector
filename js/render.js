@@ -130,7 +130,7 @@ function renderGrid(list, r) {
         ${hasWifi(p.wifi)&&!isHf(p,'wifi')?`<span class="spec-pill highlight">${wifiLabel(p.wifi)}</span>`:''}
         ${(p.rs485===true||p.rs485==='Yes'||p.rs485==='Optional')&&!isHf(p,'rs485')?`<span class="spec-pill warn">RS485${p.rs485==='Optional'?' (Opt)':''}</span>`:''}
         ${(p.rs232===true||p.rs232==='Yes'||p.rs232==='Optional')&&!isHf(p,'rs232')?`<span class="spec-pill warn">RS232${p.rs232==='Optional'?' (Opt)':''}</span>`:''}
-        ${p.ports>0&&!isHf(p,'ports')?`<span class="spec-pill">${p.ports} ports</span>`:''}
+        ${portsCount(p)>0&&!isHf(p,'ports')?`<span class="spec-pill">${portsCount(p)} ports</span>`:''}
         ${p.ip&&!isHf(p,'ip')?`<span class="spec-pill">${p.ip}</span>`:''}
       </div>
       ${ucHtml}
@@ -169,7 +169,7 @@ function renderList(list, r) {
       <div class="list-cell">${hasCellular(p.cellular_gen)&&!isHf(p,'cellular_gen')?`<span class="yes-pill">${p.cellular_gen}</span>`:'<span class="no-pill">-</span>'}</div>
       <div class="list-cell">${hasWifi(p.wifi)&&!isHf(p,'wifi')?`<span class="yes-pill">${wifiLabel(p.wifi)}</span>`:'<span class="no-pill">-</span>'}</div>
       <div class="list-cell">${(p.rs485===true||p.rs485==='Yes')&&!isHf(p,'rs485')?'<span class="yes-pill">Yes</span>':p.rs485==='Optional'&&!isHf(p,'rs485')?'<span class="yes-pill">Opt</span>':'<span class="no-pill">-</span>'}</div>
-      <div class="list-cell">${p.ports>0?p.ports:'-'}</div>
+      <div class="list-cell">${portsCount(p)>0?portsDisplay(p):'-'}</div>
       <div class="list-cell" onclick="event.stopPropagation()">
         <input type="checkbox" style="width:14px;height:14px;accent-color:#1A6FC4;cursor:pointer" ${compareSet.has(p.id)?'checked':''} onchange="toggleCompare('${p.id}',this.checked)">
       </div>

@@ -178,7 +178,7 @@ function openDetail(id) {
             <div class="spec-section-title">Connectivity</div>
             ${isHf(p,'cellular_gen') ? '' : srow('Cellular', hasCellular(p.cellular_gen)?p.cell:'-')}
             ${isHf(p,'wifi')         ? '' : srow('Wi-Fi', wifiLabel(p.wifi))}
-            ${isHf(p,'ports')        ? '' : srow('Ethernet ports', p.ports>0?p.ports+' ports':'-')}
+            ${isHf(p,'ports') ? '' : srow('Ethernet ports', portsDisplay(p))}
             ${isHf(p,'rs485')        ? '' : srow('RS485', rsLabel(p.rs485, p.variants, 'RS485'))}
             ${isHf(p,'rs232')        ? '' : srow('RS232', rsLabel(p.rs232, p.variants, 'RS232'))}
           </div>` : ''}
