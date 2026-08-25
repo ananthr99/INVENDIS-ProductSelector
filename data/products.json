@@ -3405,6 +3405,57 @@
       }
     },
     {
+      "id": "RVH",
+      "name": "RVH 44",
+      "cat": "Gateway",
+      "order": 95,
+      "desc": "",
+      "cpu": "MediaTek MT7621 Dual-core 880 MHz",
+      "ram": "512MB DDR3",
+      "storage": "32MB",
+      "cell": "",
+      "cellular_gen": "4G",
+      "wifi": "WiFi4",
+      "rs485": "Yes",
+      "rs232": "Yes",
+      "ip": "IP 30",
+      "power": "9-30 Vdc",
+      "ports": "5",
+      "os": "Open-WRT based Linux OS",
+      "housing": "Industrial Aluminium or Sheet Metal",
+      "dims": "110 x 44 x 94 mm (W x H x D)",
+      "weight": "400 gm",
+      "op_temp": "0 ~ 60 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/RVH-1787644279911-5fci.png"
+      ],
+      "use_cases": [],
+      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/RVH-datasheet.pdf",
+      "part_datasheets": {},
+      "hidden_fields": [
+        "cell"
+      ],
+      "additional_specs": [],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "Gen",
+          "Modem",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "✓",
+            "Wi-Fi 4",
+            "4 G",
+            "Single",
+            "RVH 44"
+          ]
+        ]
+      }
+    },
+    {
       "id": "inv-cd-xx",
       "name": "INV-CD-XX",
       "cat": "Intel Based Devices",
