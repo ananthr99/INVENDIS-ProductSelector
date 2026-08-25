@@ -3371,7 +3371,9 @@
       ],
       "use_cases": [],
       "datasheet": null,
-      "part_datasheets": {},
+      "part_datasheets": {
+        "GPON ONU": "contact_us"
+      },
       "hidden_fields": [
         "cell",
         "cellular_gen",
@@ -3391,11 +3393,13 @@
       ],
       "variants": {
         "headers": [
-          "Interface"
+          "Interface",
+          "Part Number"
         ],
         "rows": [
           [
-            "Controller-RTL9601D"
+            "Controller-RTL9601D",
+            "GPON ONU"
           ]
         ]
       }
