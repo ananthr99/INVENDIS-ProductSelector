@@ -184,7 +184,7 @@
       "rs232": "-",
       "ip": "",
       "power": "12V DC",
-      "ports": "Four 10/100/1000 Ports ((Realtek RTL8111H)",
+      "ports": "4",
       "os": "Ubuntu / Oracle Linux / OpenWRT / Windows",
       "housing": "Aluminum Heat Sink with CRCA Enclosure",
       "dims": "150 X 250 X 55mm ( L X W X H)",
@@ -205,7 +205,12 @@
         "rs485",
         "rs232"
       ],
-      "additional_specs": [],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports-Additional Details",
+          "v": "Gigabit Ethernet ((Realtek RTL8111H)"
+        }
+      ],
       "variants": null
     },
     {
