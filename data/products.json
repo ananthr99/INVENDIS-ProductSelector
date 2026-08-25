@@ -258,47 +258,6 @@
       "variants": null
     },
     {
-      "id": "inv-cd-xx",
-      "name": "INV-CD-XX",
-      "cat": "Intel Based Devices",
-      "order": 5,
-      "desc": "This compact, fanless edge computing system is designed for AI inference, networking, and industrial applications, combining an Intel® Core™ N350 processor with flexible expansion for AI accelerators or NVMe storage. Key differentiators include dual Gigabit LAN, multiple display outputs (up to 4K), wide OS support, and robust I/O in a small form factor. It targets edge AI deployments, smart retail, industrial automation, and network security solutions.",
-      "cpu": "Intel N150/x7425E/x7433RE/x7835RE/i3-N305/N355, 4/8 cores with 3.4GHz Turbo Frequency",
-      "ram": "64GB DDR5 SODIMM (Max) (Memory to be Separately Ordered)",
-      "storage": "1x M.2 (Key-B), 512 GB SATA SSD Module (Up to 1 TB",
-      "cell": "4G/5G",
-      "cellular_gen": "5G",
-      "wifi": "WiFi6",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "IP30",
-      "power": "12V DC",
-      "ports": "2 x 10/100/1000 Mbps (Realtek RTL8111H)",
-      "os": "Oracle Linux v.9.5 and above Ubuntu 23, Windows 10 and above",
-      "housing": "Aluminum Heat Sink with CRCA Enclosure (Fanless Design), Sheet Metal (Fan Design)",
-      "dims": "150mmx210mmx65mm (LxWxH)",
-      "weight": "995 g",
-      "op_temp": "0 -50°C",
-      "images": [
-        "assets/images/inv-cd-xx-1.png",
-        "assets/images/inv-cd-xx-2.png",
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-cd-xx-1786515792452-i9dg.png"
-      ],
-      "use_cases": [
-        "Industrial Machine Vision & Quality Inspection",
-        "Smart Traffic & Transportation Edge Nodes",
-        "Edge Security & Surveillance with AI Analytics"
-      ],
-      "datasheet": "assets/datasheets/INV-CD-N350_Datasheet.pdf",
-      "part_datasheets": {},
-      "hidden_fields": [
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [],
-      "variants": null
-    },
-    {
       "id": "rtsxx",
       "name": "RTSXX",
       "cat": "Router",
@@ -3440,6 +3399,52 @@
           ]
         ]
       }
+    },
+    {
+      "id": "inv-cd-xx",
+      "name": "INV-CD-XX",
+      "cat": "Intel Based Devices",
+      "order": 96,
+      "desc": "This compact, fanless edge computing system is designed for AI inference, networking, and industrial applications, combining an Intel® Core™ N350 processor with flexible expansion for AI accelerators or NVMe storage. Key differentiators include dual Gigabit LAN, multiple display outputs (up to 4K), wide OS support, and robust I/O in a small form factor. It targets edge AI deployments, smart retail, industrial automation, and network security solutions.",
+      "cpu": "Intel N150/x7425E/x7433RE/x7835RE/i3-N305/N355, 4/8 cores with 3.4GHz Turbo Frequency",
+      "ram": "64GB DDR5 SODIMM (Max) (Memory to be Separately Ordered)",
+      "storage": "1x M.2 (Key-B), 512 GB SATA SSD Module (Up to 1 TB",
+      "cell": "4G/5G",
+      "cellular_gen": "5G",
+      "wifi": "WiFi6",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "IP30",
+      "power": "12V DC",
+      "ports": "2",
+      "os": "Oracle Linux v.9.5 and above Ubuntu 23, Windows 10 and above",
+      "housing": "Aluminum Heat Sink with CRCA Enclosure (Fanless Design), Sheet Metal (Fan Design)",
+      "dims": "150mmx210mmx65mm (LxWxH)",
+      "weight": "995 g",
+      "op_temp": "0 -50°C",
+      "images": [
+        "assets/images/inv-cd-xx-1.png",
+        "assets/images/inv-cd-xx-2.png",
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-cd-xx-1786515792452-i9dg.png"
+      ],
+      "use_cases": [
+        "Industrial Machine Vision & Quality Inspection",
+        "Smart Traffic & Transportation Edge Nodes",
+        "Edge Security & Surveillance with AI Analytics"
+      ],
+      "datasheet": "assets/datasheets/INV-CD-N350_Datasheet.pdf",
+      "part_datasheets": {},
+      "hidden_fields": [
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports-Additional Details",
+          "v": "Gigabit Ethernet (Realtek RTL8111H)"
+        }
+      ],
+      "variants": null
     },
     {
       "id": "xi244-2M",
