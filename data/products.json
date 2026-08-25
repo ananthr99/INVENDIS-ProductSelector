@@ -3612,15 +3612,17 @@
       "rs232": "-",
       "ip": "",
       "power": "12 V DC or 9-30V DC",
-      "ports": "4x 10/100/1000 Mbps",
+      "ports": "4",
       "os": "Open-WRT based Linux OS",
       "housing": "Sheet Metal",
       "dims": "190 x 30 x 100 mm (W x H x D)",
       "weight": "520",
-      "op_temp": "",
-      "images": [],
+      "op_temp": "0 -50°C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvcp-1787643260652-71vm.png"
+      ],
       "use_cases": [],
-      "datasheet": null,
+      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvcp-datasheet.pdf",
       "part_datasheets": {},
       "hidden_fields": [
         "cell",
@@ -3629,17 +3631,34 @@
         "rs485",
         "rs232"
       ],
-      "additional_specs": [],
+      "additional_specs": [
+        {
+          "k": "Ethernet Port-Additional Details",
+          "v": "Gigabit Ethernet"
+        },
+        {
+          "k": "SFP Ports",
+          "v": "1"
+        },
+        {
+          "k": "USB Port",
+          "v": "1 X 3.0"
+        }
+      ],
       "variants": {
         "headers": [
-          "",
-          "",
-          "Part Number "
+          "Cellular",
+          "Wi-Fi",
+          "Gen",
+          "Modem",
+          "Part Number"
         ],
         "rows": [
           [
-            "RVCP04",
-            "",
+            "—",
+            "✓",
+            "4G",
+            "Single",
             "RVCP 04"
           ]
         ]
