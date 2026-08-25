@@ -3426,9 +3426,7 @@
       "dims": "105 x 200 x 105 mm (W x H x D)",
       "weight": "590 grams",
       "op_temp": "0~ 50 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/RUC-1787651360182-73rk.png"
-      ],
+      "images": [],
       "use_cases": [],
       "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/RUC-datasheet.pdf",
       "part_datasheets": {},
@@ -3450,14 +3448,16 @@
           "Cellular",
           "WiFi",
           "Gen",
-          "Modem"
+          "Modem",
+          "Part Number"
         ],
         "rows": [
           [
             "✓",
             "Wi-Fi 6",
             "4G",
-            "Single"
+            "Single",
+            "RUC 65"
           ]
         ]
       }
