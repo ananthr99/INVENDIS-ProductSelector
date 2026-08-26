@@ -3409,7 +3409,7 @@
     {
       "id": "rdb40",
       "name": "RDB40",
-      "cat": "Router",
+      "cat": "Gateway",
       "order": 92,
       "desc": "",
       "cpu": "MediaTek MT7628",
@@ -3454,7 +3454,7 @@
         ],
         "rows": [
           [
-            "",
+            "-",
             "",
             "",
             "",
