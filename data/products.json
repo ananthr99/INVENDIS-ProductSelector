@@ -3355,7 +3355,7 @@
     },
     {
       "id": "itx-arl-board",
-      "name": "Arrow",
+      "name": "Arrowlake ITX",
       "cat": "Intel Based Devices",
       "order": 89,
       "desc": "",
@@ -3369,7 +3369,7 @@
       "rs232": "-",
       "ip": "",
       "power": "",
-      "ports": "2 x 10/100/1000/2500 Mbps",
+      "ports": "2",
       "os": "",
       "housing": "",
       "dims": "",
@@ -3402,6 +3402,10 @@
         {
           "k": "Wi-Fi",
           "v": "One M.2 ( E Key, 3052 for Wifi/BLE Module 802.11b/g/n/ac/ax (1 x PCIe, 1 X USB2.0)"
+        },
+        {
+          "k": "Ethernet Ports-Additional Details",
+          "v": "Gigabit Ethernet 2500 Mbps"
         }
       ],
       "variants": null
