@@ -3885,6 +3885,36 @@
           ]
         ]
       }
+    },
+    {
+      "id": "XG822L",
+      "name": "XG-82-2L",
+      "cat": "Switch",
+      "order": null,
+      "desc": "",
+      "cpu": "",
+      "ram": "",
+      "storage": "",
+      "cell": "",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "",
+      "ports": "",
+      "os": "",
+      "housing": "",
+      "dims": "",
+      "weight": "",
+      "op_temp": "",
+      "images": [],
+      "use_cases": [],
+      "datasheet": null,
+      "part_datasheets": {},
+      "hidden_fields": [],
+      "additional_specs": [],
+      "variants": null
     }
   ]
 }
