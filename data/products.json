@@ -3408,7 +3408,7 @@
     },
     {
       "id": "rdb40",
-      "name": "RDB-XX",
+      "name": "RDB40",
       "cat": "Router",
       "order": 92,
       "desc": "",
@@ -3424,13 +3424,18 @@
       "power": "",
       "ports": "",
       "os": "",
-      "housing": "",
-      "dims": "",
-      "weight": "",
-      "op_temp": "",
-      "images": [],
-      "use_cases": [],
-      "datasheet": null,
+      "housing": "Plastic",
+      "dims": "190mmx190mmx40mm (W x D x H)",
+      "weight": "290 gm",
+      "op_temp": "0-50 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rdb40-1787726970581-q7up.png"
+      ],
+      "use_cases": [
+        "BLE Tracking for Employee Movement",
+        "Package Tracking"
+      ],
+      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rdb40-datasheet.pdf",
       "part_datasheets": {},
       "hidden_fields": [
         "cell",
@@ -3439,7 +3444,24 @@
         "rs232"
       ],
       "additional_specs": [],
-      "variants": null
+      "variants": {
+        "headers": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      }
     },
     {
       "id": "rvcd",
