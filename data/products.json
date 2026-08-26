@@ -3412,11 +3412,11 @@
       "cat": "Intel Based Devices",
       "order": 90,
       "desc": "",
-      "cpu": "",
-      "ram": "",
-      "storage": "",
+      "cpu": "Intel N150/x7425E/x7433RE/x7835RE/i3-N305/N355, 4/8 cores with 3.4GHz Turbo Frequency",
+      "ram": "32GB DDR5 SODIMM (Max)",
+      "storage": "One M.2 (B Key,2280), Upto 512GB SSD, Upto64GB eMMC",
       "cell": "",
-      "cellular_gen": "-",
+      "cellular_gen": "5G",
       "wifi": "-",
       "rs485": "-",
       "rs232": "-",
@@ -3432,7 +3432,9 @@
       "use_cases": [],
       "datasheet": null,
       "part_datasheets": {},
-      "hidden_fields": [],
+      "hidden_fields": [
+        "cell"
+      ],
       "additional_specs": [],
       "variants": null
     },
