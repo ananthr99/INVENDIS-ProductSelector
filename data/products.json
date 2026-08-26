@@ -439,59 +439,6 @@
       }
     },
     {
-      "id": "itx-arl-board",
-      "name": "INV CG-XX",
-      "cat": "Intel Based Devices",
-      "order": 6,
-      "desc": "",
-      "cpu": "Intel® Core™ Ultra Processors (Series 2) (Ultra 5 & Ultra 7)",
-      "ram": "64 GB DDR5 CSODIMM (Max) (Memory to be separately ordered)",
-      "storage": "One M.2 (B Key,2280), Upto 512GB SSD, 2 x SATA3 (6Gb/s)",
-      "cell": "",
-      "cellular_gen": "-",
-      "wifi": "-",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "",
-      "power": "",
-      "ports": "2 x 10/100/1000/2500 Mbps",
-      "os": "",
-      "housing": "",
-      "dims": "",
-      "weight": "",
-      "op_temp": "",
-      "images": [],
-      "use_cases": [],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/itx-arl-board-datasheet.pdf",
-      "part_datasheets": {},
-      "hidden_fields": [
-        "cell",
-        "cellular_gen",
-        "wifi",
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Cellular",
-          "v": "One M.2( B Key, supports both types 3042 and 3052) with USB2.0, USB3.0 and PCIe x 1 Supporting both 4G and 5G Modems."
-        },
-        {
-          "k": "Sim",
-          "v": "2x Nano SIM"
-        },
-        {
-          "k": "Graphics",
-          "v": "Intel® Arc™ 140T GPU, 1 x 8 PCIe Gen 5 Discreet Graphics Support (Optional)"
-        },
-        {
-          "k": "Wi-Fi",
-          "v": "One M.2 ( E Key, 3052 for Wifi/BLE Module 802.11b/g/n/ac/ax (1 x PCIe, 1 X USB2.0)"
-        }
-      ],
-      "variants": null
-    },
-    {
       "id": "roxx",
       "name": "ROXX",
       "cat": "Router",
@@ -3405,6 +3352,59 @@
           ]
         ]
       }
+    },
+    {
+      "id": "itx-arl-board",
+      "name": "INV CG-XX",
+      "cat": "Intel Based Devices",
+      "order": 89,
+      "desc": "",
+      "cpu": "Intel® Core™ Ultra Processors (Series 2) (Ultra 5 & Ultra 7)",
+      "ram": "64 GB DDR5 CSODIMM (Max) (Memory to be separately ordered)",
+      "storage": "One M.2 (B Key,2280), Upto 512GB SSD, 2 x SATA3 (6Gb/s)",
+      "cell": "",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "",
+      "ports": "2 x 10/100/1000/2500 Mbps",
+      "os": "",
+      "housing": "",
+      "dims": "",
+      "weight": "",
+      "op_temp": "",
+      "images": [],
+      "use_cases": [],
+      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/itx-arl-board-datasheet.pdf",
+      "part_datasheets": {},
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "wifi",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Cellular",
+          "v": "One M.2( B Key, supports both types 3042 and 3052) with USB2.0, USB3.0 and PCIe x 1 Supporting both 4G and 5G Modems."
+        },
+        {
+          "k": "Sim",
+          "v": "2x Nano SIM"
+        },
+        {
+          "k": "Graphics",
+          "v": "Intel® Arc™ 140T GPU, 1 x 8 PCIe Gen 5 Discreet Graphics Support (Optional)"
+        },
+        {
+          "k": "Wi-Fi",
+          "v": "One M.2 ( E Key, 3052 for Wifi/BLE Module 802.11b/g/n/ac/ax (1 x PCIe, 1 X USB2.0)"
+        }
+      ],
+      "variants": null
     },
     {
       "id": "invcf",
