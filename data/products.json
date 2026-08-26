@@ -3446,11 +3446,11 @@
       "additional_specs": [],
       "variants": {
         "headers": [
-          "",
-          "",
-          "",
-          "",
-          ""
+          "Cellular",
+          "Wi-Fi",
+          "4G/5G",
+          "No of Modems",
+          "Part Number"
         ],
         "rows": [
           [
@@ -3458,7 +3458,7 @@
             "",
             "",
             "",
-            ""
+            "RDB 40"
           ]
         ]
       }
