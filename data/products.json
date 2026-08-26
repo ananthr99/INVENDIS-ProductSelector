@@ -3420,22 +3420,29 @@
       "wifi": "-",
       "rs485": "-",
       "rs232": "-",
-      "ip": "",
-      "power": "",
-      "ports": "",
+      "ip": "IP 30",
+      "power": "12 VDC",
+      "ports": "4",
       "os": "",
-      "housing": "",
-      "dims": "",
+      "housing": "Aluminum Heat Sink with CRCA Enclosure",
+      "dims": "150mm X 160mm X 52.8mm ( L X W X H) (w/o mounting options) (*Dimensions will vary depending on the mounting option chosen.)",
       "weight": "",
-      "op_temp": "",
+      "op_temp": "0 ~ 50℃",
       "images": [],
       "use_cases": [],
       "datasheet": null,
       "part_datasheets": {},
       "hidden_fields": [
-        "cell"
+        "cell",
+        "rs485",
+        "rs232"
       ],
-      "additional_specs": [],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports Additional Details",
+          "v": "Gigabit Ethernet (2.5 Gbps)"
+        }
+      ],
       "variants": null
     },
     {
