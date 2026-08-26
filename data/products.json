@@ -3467,7 +3467,7 @@
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvcd-1787653548751-xx2w.png"
       ],
       "use_cases": [],
-      "datasheet": null,
+      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvcd-datasheet.pdf",
       "part_datasheets": {},
       "hidden_fields": [
         "cell",
@@ -3484,19 +3484,19 @@
       ],
       "variants": {
         "headers": [
-          "",
-          "",
-          "",
-          "",
-          ""
+          "Cellular",
+          "Wi-Fi",
+          "PoE",
+          "No of Modem",
+          "Part Number"
         ],
         "rows": [
           [
-            "",
-            "",
-            "",
-            "",
-            ""
+            "—",
+            "—",
+            "—",
+            "Single",
+            "RVCD"
           ]
         ]
       }
