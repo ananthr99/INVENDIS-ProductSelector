@@ -81,7 +81,7 @@
   "products": [
     {
       "id": "intel-x6425E",
-      "name": "Intel X6425E",
+      "name": "Intel X6425E Quad Core Rugged Fanless PC",
       "cat": "Intel Based Devices",
       "order": 1,
       "desc": "This is a compact, fanless industrial edge computer built for reliable on-site compute, networking, and connectivity in space-constrained deployments. Its key differentiators are the Intel Atom x6425E processor, up to 32 GB RAM, modular SSD and 5G/Wi Fi options, plus rugged features like an aluminium enclosure, IP30 rating, and wide operating temperature support. It is best suited for industrial automation, IoT gateways, networking edge nodes, and remote monitoring use cases across manufacturing, utilities, retail, and smart infrastructure.",
