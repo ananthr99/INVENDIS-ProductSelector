@@ -3488,7 +3488,9 @@
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvcd-1787653548751-xx2w.png"
       ],
-      "use_cases": [],
+      "use_cases": [
+        "MultiWAN Failover"
+      ],
       "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvcd-datasheet.pdf",
       "part_datasheets": {},
       "hidden_fields": [
