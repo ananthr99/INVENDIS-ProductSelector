@@ -3320,6 +3320,34 @@
         {
           "k": "Ethernet Ports-Additional Details",
           "v": "Gigabit Ethernet 2500 Mbps"
+        },
+        {
+          "k": "USB",
+          "v": "4 x USB 3.2 gen 1, 4 x USB3.2 gen1, 2 x USB 2.0 Header"
+        },
+        {
+          "k": "HDMI",
+          "v": "2"
+        },
+        {
+          "k": "DP",
+          "v": "1"
+        },
+        {
+          "k": "Type C",
+          "v": "1 Type C Port with 15 Watt PD Support"
+        },
+        {
+          "k": "Audio",
+          "v": "1 x Mic In, 1 x Line-Out, Front Panel Audio Header"
+        },
+        {
+          "k": "COM Port (Optional)",
+          "v": "4 (RS232, RS485)"
+        },
+        {
+          "k": "Console (optional)",
+          "v": "1 x Type B Micro USB"
         }
       ],
       "variants": null
