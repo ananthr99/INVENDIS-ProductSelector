@@ -3686,7 +3686,7 @@
       "name": "RVH 44",
       "cat": "Gateway",
       "order": 95,
-      "desc": "",
+      "desc": "The SILBO RVH-44 is an industrial OpenWrt Linux IoT cellular gateway powered by a dual-core MediaTek MT7621 processor with dual-SIM 4G connectivity and 2.4GHz Wi-Fi. Housed in a compact aluminum enclosure, it features 5 Gigabit Ethernet ports, legacy serial interfaces (2x RS485, 2x RS232), a built-in Modbus gateway, and support for cloud telemetry protocols such as MQTT and Azure MQTT",
       "cpu": "MediaTek MT7621 Dual-core 880 MHz",
       "ram": "512MB DDR3",
       "storage": "32MB",
@@ -3704,7 +3704,11 @@
       "weight": "400 gm",
       "op_temp": "0 ~ 60 ˚C",
       "images": [],
-      "use_cases": [],
+      "use_cases": [
+        "Industrial IoT & Telemetry Aggregation",
+        "Remote Substation & Utility Monitoring",
+        "Secure Smart Edge Gateway for Transportation / Fleet Management"
+      ],
       "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/RVH-datasheet.pdf",
       "part_datasheets": {},
       "hidden_fields": [
