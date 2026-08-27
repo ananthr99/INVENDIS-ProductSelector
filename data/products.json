@@ -2124,7 +2124,7 @@
       "name": "XG-82-2MI",
       "cat": "Switch",
       "order": 27,
-      "desc": "The XG-82-2L graduates from simple connectivity to intelligent network control, offering full Layer 2 managed switching with 20 Gbps switching capacity, 2.5Gbps SFP uplinks, and a rich feature set spanning MSTP, IGMP Snooping, QoS, ERPS, and PoE scheduling — all configurable via Web, CLI, or SNMP. With an 8K MAC table, 15K jumbo frame support, and a 240W PoE budget spread across eight Gigabit ports, it is the natural choice for IT teams and network integrators who need granular traffic management and device powering in a single compact, DIN rail-mountable unit.",
+      "desc": "The SILBO XG-82-2MI is a compact, fanless Layer 2 smart managed switch featuring 8 Gigabit Ethernet PoE ports with a 120W total budget, paired with 2 high-speed 2.5Gbps SFP ports for fiber uplinks. Encased in a durable sheet metal housing, it offers comprehensive network management features including VLANs, QoS, IGMP Snooping, and redundant link protocols like STP/MSTP and ERPS.",
       "cpu": "â",
       "ram": "â",
       "storage": "â",
