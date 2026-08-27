@@ -3554,7 +3554,7 @@
       "name": "RVCD",
       "cat": "Switch",
       "order": 93,
-      "desc": "",
+      "desc": "The SILBO RVCD is a compact, industrial-grade Gigabit router powered by a MediaTek MT7621 processor, 512MB RAM, and OpenWrt Linux. Featuring 5 Gigabit Ethernet ports (1 WAN, 4 LAN) and a USB 3.0 port, it provides multi-WAN load balancing, advanced firewall security, and extensive VPN tunneling support (IPsec, OpenVPN, WireGuard) in a fanless sheet metal housing.",
       "cpu": "MediaTek MT7621",
       "ram": "512MB",
       "storage": "32MB",
@@ -3575,7 +3575,10 @@
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvcd-1787653548751-xx2w.png"
       ],
       "use_cases": [
-        "MultiWAN Failover"
+        "MultiWAN Failover",
+        "Secure Remote Infrastructure Access (Branch-to-Headquarters VPN)",
+        "Industrial Control & Edge IoT Gateway",
+        "High-Reliability Retail / ATM Broadband Bonding"
       ],
       "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvcd-datasheet.pdf",
       "part_datasheets": {},
