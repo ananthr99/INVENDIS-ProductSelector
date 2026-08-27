@@ -3499,7 +3499,7 @@
       "name": "RDB40",
       "cat": "Gateway",
       "order": 92,
-      "desc": "",
+      "desc": "The SILBO RDB40 is a ceiling-mounted indoor Access Point powered by OpenWrt Linux and a MediaTek MT7628 processor with 2.4GHz Wi-Fi (802.11b/g/n). It features an integrated Nordic nRF54L05 BLE 6.0 SoC with a long-range Front-End Module (FEM), support for 802.3af Active PoE IN, and 10/100 Ethernet ports.",
       "cpu": "MediaTek MT7628",
       "ram": "128 MB",
       "storage": "32 MB",
@@ -3520,8 +3520,9 @@
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rdb40-1787726970581-q7up.png"
       ],
       "use_cases": [
-        "BLE Tracking for Employee Movement",
-        "Package Tracking"
+        "Indoor Asset Tracking & Real-Time Location Services (RTLS)",
+        "Smart Building Sensor Data Aggregation",
+        "Single-Cable PoE Indoor Wi-Fi Access Point Deployment"
       ],
       "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rdb40-datasheet.pdf",
       "part_datasheets": {},
