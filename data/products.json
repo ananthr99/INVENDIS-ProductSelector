@@ -3341,7 +3341,7 @@
       "ip": "IP 30",
       "power": "12 VDC",
       "ports": "4",
-      "os": "",
+      "os": "Ubuntu/Oracle Linux/OpenWRT/Windows",
       "housing": "Aluminum Heat Sink with CRCA Enclosure",
       "dims": "150mm X 160mm X 52.8mm ( L X W X H) (w/o mounting options) (*Dimensions will vary depending on the mounting option chosen.)",
       "weight": "1800",
