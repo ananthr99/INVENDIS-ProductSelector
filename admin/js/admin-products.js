@@ -29,6 +29,8 @@ async function loadData() {
   }
 }
 
+let _dashInterval = null;
+
 function renderDashboard(account) {
   document.getElementById('dashUserName').textContent  = account.name     || account.username || '';
   document.getElementById('dashUserEmail').textContent = account.username || '';
@@ -43,7 +45,8 @@ function renderDashboard(account) {
     if (de) de.textContent = dateStr;
   }
   tick();
-  setInterval(tick, 1000);
+  clearInterval(_dashInterval);
+  _dashInterval = setInterval(tick, 1000);
 }
 
 
@@ -52,6 +55,8 @@ async function saveProduct() {
   const p = collectForm();
   if (!p.id)   { showToast('Product ID is required', 'err'); return; }
   if (!p.name) { showToast('Display name is required', 'err'); return; }
+  if (/\s/.test(p.id)) { showToast('Product ID must not contain spaces', 'err'); return; }
+  if (products.some(x => x.id === p.id && x.id !== selectedId)) { showToast(`Product ID "${p.id}" is already in use — choose a unique ID`, 'err'); return; }
 
   const lookupIdEarly = selectedId ?? p.id;
   if (p.order !== null) {

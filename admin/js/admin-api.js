@@ -79,12 +79,12 @@ function productToRow(p) {
 function rowToProduct(headers, values) {
   const p = {};
   headers.forEach((h, i) => p[h] = values[i] ?? '');
-  try { p.images          = JSON.parse(p.images          || '[]');   } catch { p.images = []; }
-  try { p.use_cases       = JSON.parse(p.use_cases       || '[]');   } catch { p.use_cases = []; }
-  try { p.variants        = JSON.parse(p.variants_json   || 'null'); } catch { p.variants = null; }
-  try { p.part_datasheets = JSON.parse(p.part_datasheets || '{}');   } catch { p.part_datasheets = {}; }
+  try { p.images          = JSON.parse(p.images          || '[]');   } catch { console.warn('[rowToProduct] bad images JSON for', p.id); p.images = []; }
+  try { p.use_cases       = JSON.parse(p.use_cases       || '[]');   } catch { console.warn('[rowToProduct] bad use_cases JSON for', p.id); p.use_cases = []; }
+  try { p.variants        = JSON.parse(p.variants_json   || 'null'); } catch { console.warn('[rowToProduct] bad variants JSON for', p.id); p.variants = null; }
+  try { p.part_datasheets = JSON.parse(p.part_datasheets || '{}');   } catch { console.warn('[rowToProduct] bad part_datasheets JSON for', p.id); p.part_datasheets = {}; }
   delete p.variants_json;
-  p.order = Number(p.order) || 0;
+  p.order = (p.order !== '' && p.order != null) ? Number(p.order) : null;
   return p;
 }
 
@@ -99,7 +99,7 @@ async function readFromGist() {
   if (!content) throw new Error('products.json not found in Gist');
   lastGistJson = content; // snapshot for rollback if a subsequent write partially fails
   const parsed = JSON.parse(content);
-  products  = (parsed.products || []).sort((a, b) => a.order - b.order);
+  products  = (parsed.products || []).sort((a, b) => (a.order ?? Infinity) - (b.order ?? Infinity))
   cats      = parsed.cats || [];
   if (parsed.dropdowns && Object.keys(parsed.dropdowns).length) {
     dropdowns = { ...parsed.dropdowns };
@@ -136,7 +136,7 @@ async function readExcel() {
   products = rawRows.slice(1)
     .filter(r => r.some(Boolean))
     .map(r => rowToProduct(headers, r))
-    .sort((a, b) => a.order - b.order);
+    .sort((a, b) => (a.order ?? Infinity) - (b.order ?? Infinity));
   const wsCats = wb.Sheets[wb.SheetNames[1]];
   if (wsCats) {
     const cRows = XLSX.utils.sheet_to_json(wsCats, { header: 1, defval: '' });

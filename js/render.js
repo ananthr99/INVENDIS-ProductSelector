@@ -10,7 +10,7 @@ function updateHeroStats() {
   let html = `<div class="hero-stat"><span class="num">${PRODUCTS.length}</span><span class="lbl">total</span></div>`;
   CATS.filter(c => c !== 'All').forEach(cat => {
     const n = PRODUCTS.filter(p => p.cat === cat).length;
-    if (n > 0) html += `<div class="hero-stat"><span class="num">${n}</span><span class="lbl">${catLabel(cat)}</span></div>`;
+    if (n > 0) html += `<div class="hero-stat"><span class="num">${n}</span><span class="lbl">${esc(catLabel(cat))}</span></div>`;
   });
   el.innerHTML = html;
 }
@@ -116,29 +116,30 @@ function renderGrid(list, r) {
   r.className = 'grid-view';
   r.innerHTML = list.map(p => {
     const imgs = PRODUCT_IMAGES[p.id];
-    const thumb = imgs?.length ? `<div class="card-thumb-wrap"><img class="card-thumb" src="${imgs[0]}" alt="${p.name}" loading="lazy"></div>` : '';
+    const thumb = imgs?.length ? `<div class="card-thumb-wrap"><img class="card-thumb" src="${imgs[0]}" alt="${esc(p.name)}" loading="lazy"></div>` : '';
     const uc = PRODUCT_USE_CASES[p.id] || [];
-    const ucHtml = uc.length ? `<div class="card-use-cases">${uc.slice(0,2).map(u=>`<span class="use-case-chip-sm">${u}</span>`).join('')}</div>` : '';
+    const ucHtml = uc.length ? `<div class="card-use-cases">${uc.slice(0,2).map(u=>`<span class="use-case-chip-sm">${esc(u)}</span>`).join('')}</div>` : '';
+    const eid = esc(JSON.stringify(p.id));
     return `
-    <div class="card ${compareSet.has(p.id)?'compare-selected':''}" onclick="openDetail('${p.id}')">
+    <div class="card ${compareSet.has(p.id)?'compare-selected':''}" role="button" tabindex="0" onclick="openDetail(${eid})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openDetail(${eid})}">
       ${thumb}
-      <span class="badge ${catBadgeClass(p.cat)}">${p.cat}</span>
-      <div class="card-name">${p.name}</div>
-      <div class="card-desc">${p.desc}</div>
+      <span class="badge ${catBadgeClass(p.cat)}">${esc(p.cat)}</span>
+      <div class="card-name">${esc(p.name)}</div>
+      <div class="card-desc">${esc(p.desc)}</div>
       <div class="card-specs">
-        ${hasCellular(p.cellular_gen)&&!isHf(p,'cellular_gen')?`<span class="spec-pill highlight">${p.cellular_gen}</span>`:''}
-        ${hasWifi(p.wifi)&&!isHf(p,'wifi')?`<span class="spec-pill highlight">${wifiLabel(p.wifi)}</span>`:''}
+        ${hasCellular(p.cellular_gen)&&!isHf(p,'cellular_gen')?`<span class="spec-pill highlight">${esc(p.cellular_gen)}</span>`:''}
+        ${hasWifi(p.wifi)&&!isHf(p,'wifi')?`<span class="spec-pill highlight">${esc(wifiLabel(p.wifi))}</span>`:''}
         ${(p.rs485===true||p.rs485==='Yes'||p.rs485==='Optional')&&!isHf(p,'rs485')?`<span class="spec-pill warn">RS485${p.rs485==='Optional'?' (Opt)':''}</span>`:''}
         ${(p.rs232===true||p.rs232==='Yes'||p.rs232==='Optional')&&!isHf(p,'rs232')?`<span class="spec-pill warn">RS232${p.rs232==='Optional'?' (Opt)':''}</span>`:''}
         ${portsCount(p)>0&&!isHf(p,'ports')?`<span class="spec-pill">${portsCount(p)} ports</span>`:''}
-        ${p.ip&&!isHf(p,'ip')?`<span class="spec-pill">${p.ip}</span>`:''}
+        ${p.ip&&!isHf(p,'ip')?`<span class="spec-pill">${esc(p.ip)}</span>`:''}
       </div>
       ${ucHtml}
       <div class="card-footer">
         <label class="compare-check" onclick="event.stopPropagation()">
-          <input type="checkbox" ${compareSet.has(p.id)?'checked':''} onchange="toggleCompare('${p.id}',this.checked)"> Compare
+          <input type="checkbox" ${compareSet.has(p.id)?'checked':''} onchange="toggleCompare(${eid},this.checked)"> Compare
         </label>
-        <span class="details-link" onclick="event.stopPropagation();openDetail('${p.id}')">Details →</span>
+        <span class="details-link" onclick="event.stopPropagation();openDetail(${eid})">Details →</span>
       </div>
     </div>
   `;
@@ -157,21 +158,22 @@ function renderList(list, r) {
     <span style="text-align:center">Compare</span>
   </div>` + list.map(p => {
     const imgs = PRODUCT_IMAGES[p.id];
-    const thumb = imgs?.length ? `<img class="list-thumb" src="${imgs[0]}" alt="${p.name}" loading="lazy">` : `<span></span>`;
+    const thumb = imgs?.length ? `<img class="list-thumb" src="${imgs[0]}" alt="${esc(p.name)}" loading="lazy">` : `<span></span>`;
+    const eid = esc(JSON.stringify(p.id));
     return `
-    <div class="list-row ${compareSet.has(p.id)?'compare-selected':''}" onclick="openDetail('${p.id}')">
+    <div class="list-row ${compareSet.has(p.id)?'compare-selected':''}" role="button" tabindex="0" onclick="openDetail(${eid})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openDetail(${eid})}">
       ${thumb}
       <div>
-        <div class="list-name">${p.name}</div>
-        <div class="list-cat"><span class="badge ${catBadgeClass(p.cat)}">${p.cat}</span></div>
+        <div class="list-name">${esc(p.name)}</div>
+        <div class="list-cat"><span class="badge ${catBadgeClass(p.cat)}">${esc(p.cat)}</span></div>
       </div>
-      <div class="list-desc">${p.desc}</div>
-      <div class="list-cell">${hasCellular(p.cellular_gen)&&!isHf(p,'cellular_gen')?`<span class="yes-pill">${p.cellular_gen}</span>`:'<span class="no-pill">-</span>'}</div>
-      <div class="list-cell">${hasWifi(p.wifi)&&!isHf(p,'wifi')?`<span class="yes-pill">${wifiLabel(p.wifi)}</span>`:'<span class="no-pill">-</span>'}</div>
+      <div class="list-desc">${esc(p.desc)}</div>
+      <div class="list-cell">${hasCellular(p.cellular_gen)&&!isHf(p,'cellular_gen')?`<span class="yes-pill">${esc(p.cellular_gen)}</span>`:'<span class="no-pill">-</span>'}</div>
+      <div class="list-cell">${hasWifi(p.wifi)&&!isHf(p,'wifi')?`<span class="yes-pill">${esc(wifiLabel(p.wifi))}</span>`:'<span class="no-pill">-</span>'}</div>
       <div class="list-cell">${(p.rs485===true||p.rs485==='Yes')&&!isHf(p,'rs485')?'<span class="yes-pill">Yes</span>':p.rs485==='Optional'&&!isHf(p,'rs485')?'<span class="yes-pill">Opt</span>':'<span class="no-pill">-</span>'}</div>
-      <div class="list-cell">${portsCount(p)>0?portsDisplay(p):'-'}</div>
+      <div class="list-cell">${portsCount(p)>0?esc(portsDisplay(p)):'-'}</div>
       <div class="list-cell" onclick="event.stopPropagation()">
-        <input type="checkbox" style="width:14px;height:14px;accent-color:#1A6FC4;cursor:pointer" ${compareSet.has(p.id)?'checked':''} onchange="toggleCompare('${p.id}',this.checked)">
+        <input type="checkbox" style="width:14px;height:14px;accent-color:#1A6FC4;cursor:pointer" ${compareSet.has(p.id)?'checked':''} onchange="toggleCompare(${eid},this.checked)">
       </div>
     </div>
   `;

@@ -1,3 +1,7 @@
+function esc(s) {
+  return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
 function catBadgeClass(c) {
   const fixed = { Router:'b-router', Gateway:'b-gateway', Switch:'b-switch', 'Energy Meter':'b-energy', Other:'b-other', PCB:'b-pcb' };
   return fixed[c] || 'b-cat-' + (c || 'other').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
@@ -19,7 +23,7 @@ function portsCount(p)   { return typeof p.ports === 'number' ? p.ports : parseI
 function portsDisplay(p) { return typeof p.ports === 'string' && p.ports.trim() ? p.ports : (p.ports > 0 ? p.ports + ' ports' : '-'); }
 
 function srow(k, v) {
-  return `<div class="spec-row"><span class="spec-key">${k}</span><span class="spec-val">${v}</span></div>`;
+  return `<div class="spec-row"><span class="spec-key">${esc(k)}</span><span class="spec-val">${esc(v)}</span></div>`;
 }
 
 function hasSerial(v) { return v === true || v === 'Yes' || v === 'Optional'; }
@@ -29,4 +33,19 @@ function rsLabel(flag, variants, colName) {
   const colIdx = variants.headers.indexOf(colName);
   if (colIdx === -1) return flag;
   return variants.rows.every(row => row[colIdx] === '✓') ? 'Yes' : 'Optional';
+}
+
+function activateModal() {
+  const modal = document.querySelector('#modalRoot [role="dialog"]');
+  if (!modal) return;
+  const focusable = Array.from(modal.querySelectorAll(
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+  ));
+  if (focusable.length) focusable[0].focus();
+  modal.addEventListener('keydown', e => {
+    if (e.key !== 'Tab') return;
+    const first = focusable[0], last = focusable[focusable.length - 1];
+    if (e.shiftKey) { if (document.activeElement === first) { e.preventDefault(); last.focus(); } }
+    else            { if (document.activeElement === last)  { e.preventDefault(); first.focus(); } }
+  });
 }

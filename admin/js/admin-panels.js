@@ -400,7 +400,7 @@ function _renderLogPage(filtered) {
       ${items.map(({ e, origIdx }) => {
         const time = new Date(e.ts).toLocaleTimeString('en-GB', { hour:'2-digit', minute:'2-digit' });
         return `<div class="log-entry">
-          <input type="checkbox" class="log-entry-cb" data-idx="${origIdx}">
+          <input type="checkbox" class="log-entry-cb" data-key="${esc(e.ts + '|' + e.user)}">
           <div class="log-entry-dot" style="margin-top:4px"></div>
           <div class="log-body">
             <div class="log-action">${esc(e.action)}${e.detail ? ' — ' + esc(e.detail) : ''}</div>
@@ -443,7 +443,7 @@ async function deleteSelectedLogs() {
   const checked = [...document.querySelectorAll('.log-entry-cb:checked')];
   if (!checked.length) { showToast('Select entries to delete first', 'err'); return; }
   if (!confirm(`Delete ${checked.length} selected log ${checked.length === 1 ? 'entry' : 'entries'}?`)) return;
-  const indices = new Set(checked.map(cb => Number(cb.dataset.idx)));
+  const keys = new Set(checked.map(cb => cb.dataset.key));
   const token = getGithubToken();
   if (!token || !CFG.gistId) { showToast('GitHub token required', 'err'); return; }
   showOverlay('Deleting selected logs…');
@@ -455,11 +455,11 @@ async function deleteSelectedLogs() {
     if (!r.ok) throw new Error(`Fetch failed (${r.status})`);
     const d = await r.json();
     const c = d.files?.['changelog.json']?.content;
-    const filtered = (c ? JSON.parse(c) : []).filter((_, i) => !indices.has(i));
+    const filtered = (c ? JSON.parse(c) : []).filter(e => !keys.has(e.ts + '|' + e.user));
     await patchChangelog(filtered);
     hideOverlay();
     renderChangelog(filtered);
-    showToast(`Deleted ${indices.size} log ${indices.size === 1 ? 'entry' : 'entries'}`, 'ok');
+    showToast(`Deleted ${keys.size} log ${keys.size === 1 ? 'entry' : 'entries'}`, 'ok');
   } catch(e) {
     hideOverlay();
     showToast('Delete failed: ' + e.message, 'err');

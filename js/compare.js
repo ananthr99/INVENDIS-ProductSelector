@@ -23,8 +23,8 @@ function updateCompareTray() {
   tray.classList.add('visible');
   const sel = PRODUCTS.filter(p => compareSet.has(p.id));
   chips.innerHTML = sel.map(p => `
-    <div class="compare-chip">${p.name}
-      <button onclick="toggleCompare('${p.id}',false)" title="Remove">×</button>
+    <div class="compare-chip">${esc(p.name)}
+      <button onclick="toggleCompare(${esc(JSON.stringify(p.id))},false)" title="Remove">×</button>
     </div>
   `).join('');
 }
@@ -49,32 +49,32 @@ function openCompareModal() {
     const vals = sel.map(p => {
       if (!key) {
         if (label==='Wi-Fi') return wifiLabel(p.wifi);
-        if (label==='Ethernet ports') return p.ports>0?p.ports+' ports':'-';
+        if (label==='Ethernet ports') return portsDisplay(p);
       }
       return val(p, key);
     });
     const allSame = vals.every(v => v === vals[0]);
     return `<tr class="${!allSame?'diff-row':''}">
-      <td>${label}</td>
-      ${sel.map((_,i) => `<td>${vals[i]}</td>`).join('')}
+      <td>${esc(label)}</td>
+      ${sel.map((_,i) => `<td>${esc(vals[i])}</td>`).join('')}
     </tr>`;
   }).join('');
 
   document.getElementById('modalRoot').innerHTML = `
     <div class="modal-overlay" onclick="if(event.target===this)closeModal()">
-      <div class="modal compare-modal">
+      <div class="modal compare-modal" role="dialog" aria-modal="true" aria-labelledby="compareModalTitle">
         <div class="modal-close-bar">
-          <button class="modal-close" onclick="closeModal()">×</button>
+          <button class="modal-close" aria-label="Close" onclick="closeModal()">×</button>
         </div>
         <div class="modal-header">
-          <div class="modal-title">Product comparison</div>
+          <div class="modal-title" id="compareModalTitle">Product Comparison</div>
           <div class="modal-desc">Rows highlighted in yellow have differing values between products.</div>
         </div>
         <div class="modal-body" style="padding:0;overflow-x:auto">
           <table class="compare-table">
             <thead><tr>
               <th>Specification</th>
-              ${sel.map(p=>`<th><span class="badge ${catBadgeClass(p.cat)}" style="margin-bottom:4px;display:inline-block">${p.cat}</span><br>${p.name}</th>`).join('')}
+              ${sel.map(p=>`<th><span class="badge ${catBadgeClass(p.cat)}" style="margin-bottom:4px;display:inline-block">${esc(p.cat)}</span><br>${esc(p.name)}</th>`).join('')}
             </tr></thead>
             <tbody>${rows}</tbody>
           </table>
@@ -87,6 +87,7 @@ function openCompareModal() {
         </div>
       </div>
     </div>`;
+    activateModal();
 }
 
 function copyCompare() {

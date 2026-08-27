@@ -38,18 +38,18 @@ function buildVariantsTable(v) {
   // Only add the Data Sheet column if at least one row has a matching file
   const hasDs = v.rows.some(row => !!PART_DATASHEETS[dsKey(row[row.length - 1])]);
 
-  const noteHtml = v.note ? `<div class="variants-note">${v.note}</div>` : '';
+  const noteHtml = v.note ? `<div class="variants-note">${esc(v.note)}</div>` : '';
   const partNoIdx = v.headers.length - 1;
 
   const thead = `<tr>
-    ${v.headers.map((h, i) => `<th${i === partNoIdx ? ' class="col-partno"' : ''}>${h}</th>`).join('')}
+    ${v.headers.map((h, i) => `<th${i === partNoIdx ? ' class="col-partno"' : ''}>${esc(h)}</th>`).join('')}
     ${hasDs ? '<th class="col-datasheet">Data Sheet</th>' : ''}
   </tr>`;
 
   const tbody = v.rows.map(row => {
     const cells = row.map((cell, i) => {
       const cls = i === partNoIdx ? ' class="cell-partno"' : cell === '✓' ? ' class="cell-yes"' : cell === '—' ? ' class="cell-no"' : '';
-      return `<td${cls}>${cell}</td>`;
+      return `<td${cls}>${esc(cell)}</td>`;
     }).join('');
     let dsCell = '';
     if (hasDs) {
@@ -91,7 +91,7 @@ function buildImageCarousel(id, name) {
   return `
     <div class="product-image-wrap loading">
       ${multi ? `<button class="carousel-btn carousel-prev" aria-label="Previous image" onclick="navigateCarousel(-1)">&#8249;</button>` : ''}
-      <img class="carousel-img" id="carouselImg" src="${imgs[0]}" alt="${name}" onload="this.style.opacity=1; this.parentElement.classList.remove('loading')">
+      <img class="carousel-img" id="carouselImg" src="${imgs[0]}" alt="${esc(name)}" onload="this.style.opacity=1; this.parentElement.classList.remove('loading')">
       ${multi ? `<button class="carousel-btn carousel-next" aria-label="Next image" onclick="navigateCarousel(1)">&#8250;</button>` : ''}
       ${multi ? `<div class="carousel-counter" id="carouselCounter">1 / ${imgs.length}</div>` : ''}
     </div>`;
@@ -99,10 +99,12 @@ function buildImageCarousel(id, name) {
 
 function navigateCarousel(dir) {
   if (!carouselImages.length) return;
-  carouselIdx = (carouselIdx + dir + carouselImages.length) % carouselImages.length;
   const img = document.getElementById('carouselImg');
+  if (!img) return;
+  carouselIdx = (carouselIdx + dir + carouselImages.length) % carouselImages.length;
   img.style.opacity = 0;
   img.parentElement.classList.add('loading');
+  img.onload = () => { img.style.opacity = 1; img.parentElement.classList.remove('loading'); };
   img.src = carouselImages[carouselIdx];
   const counter = document.getElementById('carouselCounter');
   if (counter) counter.textContent = `${carouselIdx + 1} / ${carouselImages.length}`;
@@ -145,19 +147,20 @@ function buildDatasheetsSection(id) {
 function openDetail(id) {
   const p = PRODUCTS.find(x => x.id === id);
   if (!p) return;
+  const eid = esc(JSON.stringify(p.id));
   document.getElementById('modalRoot').innerHTML = `
     <div class="modal-overlay" onclick="if(event.target===this)closeModal()">
-      <div class="modal">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalDialogTitle">
         <div class="modal-close-bar">
-          <button class="modal-close" onclick="closeModal()">×</button>
+          <button class="modal-close" aria-label="Close" onclick="closeModal()">×</button>
         </div>
         <div class="modal-header">
-          <span class="badge ${catBadgeClass(p.cat)}">${p.cat}</span>
-          <div class="modal-title">${p.name}</div>
-          <div class="modal-desc">${p.desc}</div>
+          <span class="badge ${catBadgeClass(p.cat)}">${esc(p.cat)}</span>
+          <div class="modal-title" id="modalDialogTitle">${esc(p.name)}</div>
+          <div class="modal-desc">${esc(p.desc)}</div>
         </div>
         ${buildImageCarousel(p.id, p.name)}
-        ${(PRODUCT_USE_CASES[p.id]||[]).length ? `<div class="modal-use-cases"><div class="modal-use-cases-label">Typical Use Cases</div><div class="modal-use-cases-chips">${(PRODUCT_USE_CASES[p.id]).map(u=>`<span class="use-case-chip">${u}</span>`).join('')}</div></div>` : ''}
+        ${(PRODUCT_USE_CASES[p.id]||[]).length ? `<div class="modal-use-cases"><div class="modal-use-cases-label">Typical Use Cases</div><div class="modal-use-cases-chips">${(PRODUCT_USE_CASES[p.id]).map(u=>`<span class="use-case-chip">${esc(u)}</span>`).join('')}</div></div>` : ''}
         <div class="modal-body">
           ${p.cat === 'Energy Meter' ? `
           ${anyVisible(p,'rs485','rs232','power') ? `<div class="spec-section">
@@ -201,12 +204,13 @@ function openDetail(id) {
         </div>
         <div class="modal-actions">
           <a class="btn-enquire" href="mailto:sales@invendis.com?subject=Enquiry: ${encodeURIComponent(p.name)}&body=Hi Invendis team,%0A%0AI would like to enquire about the ${encodeURIComponent(p.name)}.%0A%0APlease send me more details.%0A%0AThank you.">Enquire about this product</a>
-          <button class="btn-add-compare" onclick="toggleCompare('${p.id}',${!compareSet.has(p.id)});this.textContent=compareSet.has('${p.id}')?'Added to compare':'+ Compare'">
+          <button class="btn-add-compare" onclick="toggleCompare(${eid},${!compareSet.has(p.id)});this.textContent=compareSet.has(${eid})?'Added to compare':'+ Compare'">
             ${compareSet.has(p.id)?'Added to compare':'+ Compare'}
           </button>
         </div>
       </div>
     </div>`;
+    activateModal();
 }
 
 function closeModal() { document.getElementById('modalRoot').innerHTML = ''; }

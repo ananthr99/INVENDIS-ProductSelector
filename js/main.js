@@ -59,10 +59,12 @@ function injectCatColorStyles(catColors) {
   if (!catColors || !Object.keys(catColors).length) return;
   const FIXED = { Router:'b-router', Gateway:'b-gateway', Switch:'b-switch', 'Energy Meter':'b-energy', Other:'b-other', PCB:'b-pcb' };
   const slug  = n => 'b-cat-' + n.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+  const isSafeColor = v => /^#[0-9a-fA-F]{3,8}$|^rgb[a]?\([^)]*\)$|^hsl[a]?\([^)]*\)$|^[a-zA-Z]+$/.test(String(v||'').trim());
   let css = '';
   for (const [name, col] of Object.entries(catColors)) {
     const cls = FIXED[name] || slug(name);
-    css += `.${cls}{background:${col.bg};color:${col.fg}}\n`;
+    if (isSafeColor(col.bg) && isSafeColor(col.fg))
+      css += `.${cls}{background:${col.bg};color:${col.fg}}\n`;
   }
   let el = document.getElementById('_dynCatColors');
   if (!el) { el = document.createElement('style'); el.id = '_dynCatColors'; document.head.appendChild(el); }
@@ -122,12 +124,16 @@ function applySiteConfig(cfg) {
   }
   if (cfg.address) {
     document.querySelectorAll('[data-cfg="address"]').forEach(el => {
-      el.innerHTML = cfg.address.replace(/\n/g, '<br>');
+      el.textContent = '';
+      cfg.address.split('\n').forEach((line, i) => {
+        if (i) el.appendChild(document.createElement('br'));
+        el.appendChild(document.createTextNode(line));
+      });
     });
   }
   if (cfg.copyright) {
     document.querySelectorAll('[data-cfg="copyright"]').forEach(el => {
-      el.innerHTML = '© ' + cfg.copyright;
+      el.textContent = '© ' + cfg.copyright;
     });
   }
   if (cfg.logoInvendis) document.querySelectorAll('[data-cfg="logoInvendis"]').forEach(el => el.src = cfg.logoInvendis);
