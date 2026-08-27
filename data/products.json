@@ -3447,7 +3447,9 @@
       "dims": "200 mm x 120 mm x 55mm (WxLxH)",
       "weight": "675 Gm (Industrial Aluminium Enclosure)",
       "op_temp": "0 ~ 60 ˚C",
-      "images": [],
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/XG822L-1787823067459-bkr4.png"
+      ],
       "use_cases": [
         "Enterprise Surveillance & Security Networks",
         "Smart Campus & Enterprise Network Management",
