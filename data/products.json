@@ -3280,7 +3280,7 @@
       "os": "Ubuntu / Oracle Linux / Open WRT / Windows",
       "housing": "Aluminum Heat Sink with CRCA Enclosure, Fan/Fanless options",
       "dims": "",
-      "weight": "",
+      "weight": "1400",
       "op_temp": "",
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/itx-arl-board-1787745677267-j4ga.png",
