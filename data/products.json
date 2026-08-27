@@ -3703,7 +3703,9 @@
       "dims": "110 x 44 x 94 mm (W x H x D)",
       "weight": "400 gm",
       "op_temp": "0 ~ 60 ˚C",
-      "images": [],
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/RVH-1787824857622-zek8.png"
+      ],
       "use_cases": [
         "Industrial IoT & Telemetry Aggregation",
         "Remote Substation & Utility Monitoring",
