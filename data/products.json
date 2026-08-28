@@ -1061,63 +1061,6 @@
       }
     },
     {
-      "id": "ri44",
-      "name": "RI44",
-      "cat": "Router",
-      "order": 13,
-      "desc": "This high-performance industrial router is designed to enable reliable, high-speed connectivity across wired, Wi-Fi, and cellular networks in demanding environments. It differentiates itself with a powerful Qualcomm chipset, higher RAM capacity, PoE support, dual SIM resilience, and a feature-rich OpenWRT platform with extensive VPN and security capabilities. The device is well-suited for data-intensive applications in sectors such as smart infrastructure, surveillance, transportation, and large-scale enterprise or industrial IoT deployments.",
-      "cpu": "MediaTek MT7628",
-      "ram": "128MB",
-      "storage": "32 MB",
-      "cell": "4G",
-      "cellular_gen": "4G",
-      "wifi": "WiFi4",
-      "rs485": "No",
-      "rs232": "No",
-      "ip": "",
-      "power": "9-30 VDC",
-      "ports": "5 x 10/100 Mbps",
-      "os": "OpenWRT Linux",
-      "housing": "Sheet Metal",
-      "dims": "123.2 x 28 x 120.6mm (W x H x D)",
-      "weight": "370 g",
-      "op_temp": "0~ 50 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/ri44-1787138741728-063w.png"
-      ],
-      "use_cases": [
-        "CCTV & Video Surveillance Connectivity for ISP communication Tower"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "RI44": "assets/datasheets/RI44.pdf"
-      },
-      "hidden_fields": [
-        "ip",
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "4G/5G",
-          "No. of Modems",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "✓",
-            "Wi-Fi 4",
-            "4G",
-            "Single",
-            "RI44"
-          ]
-        ]
-      }
-    },
-    {
       "id": "iexx",
       "name": "IEXX-X-XX",
       "cat": "Gateway",
@@ -4062,6 +4005,68 @@
             "4G",
             "Single",
             "RVCP 04"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ri44",
+      "name": "RI44",
+      "cat": "Router",
+      "order": 143,
+      "desc": "This high-performance industrial router is designed to enable reliable, high-speed connectivity across wired, Wi-Fi, and cellular networks in demanding environments. It differentiates itself with a powerful Qualcomm chipset, higher RAM capacity, PoE support, dual SIM resilience, and a feature-rich OpenWRT platform with extensive VPN and security capabilities. The device is well-suited for data-intensive applications in sectors such as smart infrastructure, surveillance, transportation, and large-scale enterprise or industrial IoT deployments.",
+      "cpu": "MediaTek MT7628",
+      "ram": "128MB",
+      "storage": "32 MB",
+      "cell": "4G",
+      "cellular_gen": "4G",
+      "wifi": "WiFi4",
+      "rs485": "No",
+      "rs232": "No",
+      "ip": "",
+      "power": "9-30 VDC",
+      "ports": "5",
+      "os": "OpenWRT Linux",
+      "housing": "Sheet Metal",
+      "dims": "123.2 x 28 x 120.6mm (W x H x D)",
+      "weight": "370 g",
+      "op_temp": "0~ 50 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/ri44-1787138741728-063w.png"
+      ],
+      "use_cases": [
+        "CCTV & Video Surveillance Connectivity for ISP communication Tower"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "RI44": "assets/datasheets/RI44.pdf"
+      },
+      "hidden_fields": [
+        "ip",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports-Additional Details",
+          "v": "Fast Ethernet"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "4G/5G",
+          "No. of Modems",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "✓",
+            "Wi-Fi 4",
+            "4G",
+            "Single",
+            "RI44"
           ]
         ]
       }
