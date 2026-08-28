@@ -75,7 +75,7 @@ function buildVariantsTable(v) {
       const file = PART_DATASHEETS[pn];
       if (file && file !== 'contact_us') {
         dsCell = `<td class="cell-datasheet">
-            <button class="ds-btn ds-view" onclick="viewFile('${file}',this)">View</button>
+            <a class="ds-btn ds-view" href="${file}" target="_blank" rel="noopener">View</a>
             <button class="ds-btn ds-download" onclick="downloadFile('${file}',this)">&#x2193;</button>
            </td>`;
       } else {
