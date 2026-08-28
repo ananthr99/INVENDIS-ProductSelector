@@ -430,7 +430,10 @@
       "part_datasheets": {
         "RU60": "assets/datasheets/RU60.pdf"
       },
-      "hidden_fields": [],
+      "hidden_fields": [
+        "cell",
+        "cellular_gen"
+      ],
       "additional_specs": [
         {
           "k": "Ethernet Ports",
