@@ -268,7 +268,7 @@
       "storage": "128 MB NAND",
       "cell": "4G/5G",
       "cellular_gen": "5G",
-      "wifi": "-",
+      "wifi": "WiFi6",
       "rs485": "-",
       "rs232": "-",
       "ip": "IP30",
@@ -300,7 +300,6 @@
         "RTS65-2": "assets/datasheets/RTS65-2.pdf"
       },
       "hidden_fields": [
-        "wifi",
         "rs485",
         "rs232"
       ],
@@ -311,7 +310,7 @@
         },
         {
           "k": "SFP Ports",
-          "v": "2"
+          "v": "1/2"
         }
       ],
       "variants": {
