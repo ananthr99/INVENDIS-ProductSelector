@@ -475,7 +475,7 @@
       "rs232": "-",
       "ip": "IP30",
       "power": "9–30 VDC",
-      "ports": "6 x 10/100/1000 Mbps",
+      "ports": "6",
       "os": "OpenWRT 21/23",
       "housing": "Sheet Metal",
       "dims": "210 × 25 × 135 mm (W × H × D)",
@@ -495,8 +495,16 @@
         "RO64-2": "assets/datasheets/RO64-2.pdf",
         "RO64-1": "assets/datasheets/RO64-1.pdf"
       },
-      "hidden_fields": [],
-      "additional_specs": [],
+      "hidden_fields": [
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports-Additional Details",
+          "v": "Gigabit Ports"
+        }
+      ],
       "variants": {
         "headers": [
           "Cellular",
