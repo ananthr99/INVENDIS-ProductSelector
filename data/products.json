@@ -818,7 +818,13 @@
       "part_datasheets": {
         "RV00": "assets/datasheets/RV00.pdf"
       },
-      "hidden_fields": [],
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "ip",
+        "rs485",
+        "rs232"
+      ],
       "additional_specs": [
         {
           "k": "Ethernet Ports-Additional Details",
