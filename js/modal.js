@@ -2,16 +2,24 @@ function viewFile(url, btn) {
   const origHtml = btn ? btn.innerHTML : null;
   if (btn) { btn.disabled = true; btn.textContent = '…'; }
 
+  // Open the tab immediately while the user gesture is active (avoids popup blocker).
+  // Then navigate it to a blob URL so Content-Disposition: attachment is bypassed.
+  const newTab = window.open('', '_blank');
+  if (!newTab) {
+    if (btn) { btn.disabled = false; btn.innerHTML = origHtml; }
+    return;
+  }
+
   fetch(url)
     .then(r => r.blob())
     .then(blob => {
       const blobUrl = URL.createObjectURL(blob);
-      window.open(blobUrl, '_blank');
+      newTab.location.href = blobUrl;
       if (btn) { btn.disabled = false; btn.innerHTML = origHtml; }
       setTimeout(() => URL.revokeObjectURL(blobUrl), 60000);
     })
     .catch(() => {
-      window.open(url, '_blank');
+      newTab.location.href = url;
       if (btn) { btn.disabled = false; btn.innerHTML = origHtml; }
     });
 }
