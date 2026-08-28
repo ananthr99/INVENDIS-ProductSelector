@@ -1913,104 +1913,6 @@
       }
     },
     {
-      "id": "acmeter",
-      "name": "ET4602 (AC Meter)",
-      "cat": "Energy Meter",
-      "order": 38,
-      "desc": "Where the AC Meter (INV 4602) earns its place is in dual-source energy environments — separately tracking kWh consumption from both grid (EB) and diesel generator (DG) supplies across all three phases, giving operators a clear split of utility versus backup power costs. With 2000VAC-isolated RS485 communication, phase-wise voltage and current breakdowns, and a wide 45-65Hz frequency tolerance, it serves energy auditors, building managers, and industrial plants looking to bring accountability and precision to their power monitoring without deploying multiple devices.",
-      "cpu": "â",
-      "ram": "â",
-      "storage": "â",
-      "cell": "none",
-      "cellular_gen": "-",
-      "wifi": "-",
-      "rs485": "Yes",
-      "rs232": "No",
-      "ip": "",
-      "power": "48 VDC",
-      "ports": "0",
-      "os": "â",
-      "housing": "Panel mount",
-      "dims": "â",
-      "weight": "â",
-      "op_temp": "-10°C to 55°C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/acmeter-1787030758710-uo1u.png",
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/acmeter-1787030761403-lpj7.png"
-      ],
-      "use_cases": [
-        "Grid & Generator Energy Tracking",
-        "Industrial Power Monitoring",
-        "Facility Energy Auditing"
-      ],
-      "datasheet": "assets/datasheets/ET4602 AC Meter.pdf",
-      "part_datasheets": {},
-      "hidden_fields": [
-        "cell",
-        "cellular_gen",
-        "wifi",
-        "cpu",
-        "ram",
-        "storage",
-        "ip",
-        "power",
-        "ports",
-        "os",
-        "rs485",
-        "rs232",
-        "housing",
-        "dims",
-        "weight"
-      ],
-      "additional_specs": [
-        {
-          "k": "AC Current Measurement",
-          "v": "Average, AR, AY, AB"
-        },
-        {
-          "k": "AC Voltage Measurement",
-          "v": "Average VLL (RY, YB, BR), VLN (RN, YN, BN)"
-        },
-        {
-          "k": "Power Factor",
-          "v": "Average and Phase Wise"
-        },
-        {
-          "k": "Active Power (kW)",
-          "v": "Total and Phase Wise"
-        },
-        {
-          "k": "Apparent Power (kVA)",
-          "v": "Total and Phase Wise T"
-        },
-        {
-          "k": "Frequency (Hz)",
-          "v": "45 to 65 Hz"
-        },
-        {
-          "k": "Active Energy(kWh)",
-          "v": "Both EB and DG"
-        },
-        {
-          "k": "Isolation (RS485)",
-          "v": "2000 VAC Isolation for 1 min between communication and other circuits"
-        },
-        {
-          "k": "Power Input",
-          "v": "48 VDC"
-        },
-        {
-          "k": "Storage temperature",
-          "v": "-25°C to 70°C"
-        },
-        {
-          "k": "Humidity",
-          "v": "5% to 95% non condensing"
-        }
-      ],
-      "variants": null
-    },
-    {
       "id": "dcmeter",
       "name": "ET1641 (DC Meter)",
       "cat": "Energy Meter",
@@ -2928,6 +2830,104 @@
           ]
         ]
       }
+    },
+    {
+      "id": "acmeter",
+      "name": "ET4602 (AC Meter)",
+      "cat": "Energy Meter",
+      "order": null,
+      "desc": "Where the AC Meter (INV 4602) earns its place is in dual-source energy environments — separately tracking kWh consumption from both grid (EB) and diesel generator (DG) supplies across all three phases, giving operators a clear split of utility versus backup power costs. With 2000VAC-isolated RS485 communication, phase-wise voltage and current breakdowns, and a wide 45-65Hz frequency tolerance, it serves energy auditors, building managers, and industrial plants looking to bring accountability and precision to their power monitoring without deploying multiple devices.",
+      "cpu": "â",
+      "ram": "â",
+      "storage": "â",
+      "cell": "none",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "Yes",
+      "rs232": "No",
+      "ip": "",
+      "power": "48 VDC",
+      "ports": "0",
+      "os": "â",
+      "housing": "Panel mount",
+      "dims": "â",
+      "weight": "â",
+      "op_temp": "-10°C to 55°C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/acmeter-1787030758710-uo1u.png",
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/acmeter-1787030761403-lpj7.png"
+      ],
+      "use_cases": [
+        "Grid & Generator Energy Tracking",
+        "Industrial Power Monitoring",
+        "Facility Energy Auditing"
+      ],
+      "datasheet": "assets/datasheets/ET4602 AC Meter.pdf",
+      "part_datasheets": {},
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "wifi",
+        "cpu",
+        "ram",
+        "storage",
+        "ip",
+        "power",
+        "ports",
+        "os",
+        "rs485",
+        "rs232",
+        "housing",
+        "dims",
+        "weight"
+      ],
+      "additional_specs": [
+        {
+          "k": "AC Current Measurement",
+          "v": "Average, AR, AY, AB"
+        },
+        {
+          "k": "AC Voltage Measurement",
+          "v": "Average VLL (RY, YB, BR), VLN (RN, YN, BN)"
+        },
+        {
+          "k": "Power Factor",
+          "v": "Average and Phase Wise"
+        },
+        {
+          "k": "Active Power (kW)",
+          "v": "Total and Phase Wise"
+        },
+        {
+          "k": "Apparent Power (kVA)",
+          "v": "Total and Phase Wise T"
+        },
+        {
+          "k": "Frequency (Hz)",
+          "v": "45 to 65 Hz"
+        },
+        {
+          "k": "Active Energy(kWh)",
+          "v": "Both EB and DG"
+        },
+        {
+          "k": "Isolation (RS485)",
+          "v": "2000 VAC Isolation for 1 min between communication and other circuits"
+        },
+        {
+          "k": "Power Input",
+          "v": "48 VDC"
+        },
+        {
+          "k": "Storage temperature",
+          "v": "-25°C to 70°C"
+        },
+        {
+          "k": "Humidity",
+          "v": "5% to 95% non condensing"
+        }
+      ],
+      "variants": null
     },
     {
       "id": "MFMET4640",
