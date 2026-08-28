@@ -3346,7 +3346,7 @@
       "housing": "Aluminum Heat Sink with CRCA Enclosure, Fan/Fanless options",
       "dims": "210x203x60mm",
       "weight": "1400",
-      "op_temp": "",
+      "op_temp": "0~ 50 ˚C",
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/itx-arl-board-1787745677267-j4ga.png",
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/itx-arl-board-1787745681065-2ejm.png"
@@ -3413,6 +3413,10 @@
         {
           "k": "Console (optional)",
           "v": "1 x Type B Micro USB"
+        },
+        {
+          "k": "Weight (Fanless Design)",
+          "v": "1800 gm"
         }
       ],
       "variants": null
