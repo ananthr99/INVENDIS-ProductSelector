@@ -3465,8 +3465,10 @@
         "Mission-Critical Remote Site Networking",
         "High-Availability Outdoor Wi-Fi Coverage"
       ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rt65odu-datasheet.pdf",
-      "part_datasheets": {},
+      "datasheet": null,
+      "part_datasheets": {
+        "RT65-ODU": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rt65odu-RT65-ODU.pdf"
+      },
       "hidden_fields": [
         "rs485",
         "rs232"
