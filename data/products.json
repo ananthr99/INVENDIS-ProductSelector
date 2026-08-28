@@ -3906,7 +3906,7 @@
         "Edge Cabinet Network Integration",
         "Smart Kiosk & Edge Device Networking"
       ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xd50-datasheet.pdf",
+      "datasheet": null,
       "part_datasheets": {
         "XD50-1 Unmanaged PoE Switch": "assets/datasheets/XD-50-1.pdf"
       },
