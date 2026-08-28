@@ -1913,104 +1913,6 @@
       }
     },
     {
-      "id": "idfxx",
-      "name": "IDFXX",
-      "cat": "Router",
-      "order": 34,
-      "desc": "Optimised for telecom and negative-voltage DC power environments, the IDF runs on -48Vdc — the standard supply rail found in telecom cabinets and exchange rooms — making it a natural drop-in for carriers and tower operators who need cellular routing without additional power conversion hardware. Paired with dual SIM failover, up to 512MB RAM, and a full suite of VPN tunnelling options, it addresses the connectivity and remote management demands of telecom infrastructure, street cabinets, and distributed network nodes where -48V power is already the norm.",
-      "cpu": "MediaTek MT7621",
-      "ram": "512 MB DDR",
-      "storage": "32 MB Flash",
-      "cell": "4G/5G",
-      "cellular_gen": "5G",
-      "wifi": "WiFi5",
-      "rs485": "Yes",
-      "rs232": "No",
-      "ip": "",
-      "power": "-48 VDC",
-      "ports": "4 x 10/100/1000",
-      "os": "OpenWRT Linux",
-      "housing": "Industrial Aluminium",
-      "dims": "110 x 44 x 94 mm (W x H x D)",
-      "weight": "500 g",
-      "op_temp": "-20 ~ 60 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/idfxx-1787121319469-96hn.png"
-      ],
-      "use_cases": [
-        "Telecom Tower Connectivity",
-        "Smart Utility & Street Cabinet Networking",
-        "Remote Industrial Monitoring"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "IDF04": "assets/datasheets/IDF04.pdf",
-        "IDF54": "assets/datasheets/IDF54.pdf",
-        "IDF44": "assets/datasheets/IDF44.pdf",
-        "IDF05": "assets/datasheets/IDF05.pdf",
-        "IDF55": "assets/datasheets/IDF55.pdf",
-        "IDF45": "assets/datasheets/IDF45.pdf"
-      },
-      "hidden_fields": [
-        "ip",
-        "rs232"
-      ],
-      "additional_specs": [],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "4G/5G",
-          "No. of Modems",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "✓",
-            "-",
-            "4G",
-            "Single",
-            "IDF04"
-          ],
-          [
-            "✓",
-            "Wi-Fi 5",
-            "4G",
-            "Single",
-            "IDF54"
-          ],
-          [
-            "✓",
-            "Wi-Fi 4",
-            "4G",
-            "Single",
-            "IDF44"
-          ],
-          [
-            "✓",
-            "-",
-            "5G",
-            "Single",
-            "IDF05"
-          ],
-          [
-            "✓",
-            "Wi-Fi 5",
-            "5G",
-            "Single",
-            "IDF55"
-          ],
-          [
-            "✓",
-            "Wi-Fi 4",
-            "5G",
-            "Single",
-            "IDF45"
-          ]
-        ]
-      }
-    },
-    {
       "id": "nms",
       "name": "NMS",
       "cat": "Other",
@@ -3297,6 +3199,104 @@
             "4G",
             "Single",
             "RVCP 04"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "idfxx",
+      "name": "IDFXX",
+      "cat": "Router",
+      "order": null,
+      "desc": "Optimised for telecom and negative-voltage DC power environments, the IDF runs on -48Vdc — the standard supply rail found in telecom cabinets and exchange rooms — making it a natural drop-in for carriers and tower operators who need cellular routing without additional power conversion hardware. Paired with dual SIM failover, up to 512MB RAM, and a full suite of VPN tunnelling options, it addresses the connectivity and remote management demands of telecom infrastructure, street cabinets, and distributed network nodes where -48V power is already the norm.",
+      "cpu": "MediaTek MT7621",
+      "ram": "512 MB DDR",
+      "storage": "32 MB Flash",
+      "cell": "4G/5G",
+      "cellular_gen": "5G",
+      "wifi": "WiFi5",
+      "rs485": "Yes",
+      "rs232": "No",
+      "ip": "",
+      "power": "-48 VDC",
+      "ports": "4 x 10/100/1000",
+      "os": "OpenWRT Linux",
+      "housing": "Industrial Aluminium",
+      "dims": "110 x 44 x 94 mm (W x H x D)",
+      "weight": "500 g",
+      "op_temp": "-20 ~ 60 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/idfxx-1787121319469-96hn.png"
+      ],
+      "use_cases": [
+        "Telecom Tower Connectivity",
+        "Smart Utility & Street Cabinet Networking",
+        "Remote Industrial Monitoring"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "IDF04": "assets/datasheets/IDF04.pdf",
+        "IDF54": "assets/datasheets/IDF54.pdf",
+        "IDF44": "assets/datasheets/IDF44.pdf",
+        "IDF05": "assets/datasheets/IDF05.pdf",
+        "IDF55": "assets/datasheets/IDF55.pdf",
+        "IDF45": "assets/datasheets/IDF45.pdf"
+      },
+      "hidden_fields": [
+        "ip",
+        "rs232"
+      ],
+      "additional_specs": [],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "4G/5G",
+          "No. of Modems",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "✓",
+            "-",
+            "4G",
+            "Single",
+            "IDF04"
+          ],
+          [
+            "✓",
+            "Wi-Fi 5",
+            "4G",
+            "Single",
+            "IDF54"
+          ],
+          [
+            "✓",
+            "Wi-Fi 4",
+            "4G",
+            "Single",
+            "IDF44"
+          ],
+          [
+            "✓",
+            "-",
+            "5G",
+            "Single",
+            "IDF05"
+          ],
+          [
+            "✓",
+            "Wi-Fi 5",
+            "5G",
+            "Single",
+            "IDF55"
+          ],
+          [
+            "✓",
+            "Wi-Fi 4",
+            "5G",
+            "Single",
+            "IDF45"
           ]
         ]
       }
