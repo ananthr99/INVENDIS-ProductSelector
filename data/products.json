@@ -3402,8 +3402,10 @@
         "Vehicle & Transportation Systems",
         "Passengers Infotainment AP for Railways"
       ],
-      "datasheet": "assets/datasheets/RN50.pdf",
-      "part_datasheets": {},
+      "datasheet": null,
+      "part_datasheets": {
+        "RN 50 PCB-A": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rn50pcba-RN_50_PCB-A.pdf"
+      },
       "hidden_fields": [
         "cell",
         "cellular_gen",
