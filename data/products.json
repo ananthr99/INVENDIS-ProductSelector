@@ -3772,9 +3772,10 @@
         "Smart Campus & Enterprise Network Management",
         "Industrial Network Control & Redundancy"
       ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xg82-datasheet.pdf",
+      "datasheet": null,
       "part_datasheets": {
-        "XG82-2L Gigabit Ethernet Managed Switch": "assets/datasheets/XG-82-2L Updated.pdf"
+        "XG82-2L Gigabit Ethernet Managed Switch": "assets/datasheets/XG-82-2L Updated.pdf",
+        "XG 82-2MI Lite Managed Switch": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xg82-XG_82-2MI_Lite_Managed_Switch.pdf"
       },
       "hidden_fields": [
         "cell",
