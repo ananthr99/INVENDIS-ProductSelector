@@ -3839,9 +3839,10 @@
         "Smart Office & Campus Device Connectivity",
         "Industrial Automation Network Expansion"
       ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xf100-datasheet.pdf",
+      "datasheet": null,
       "part_datasheets": {
-        "XF-100-1 Unmanaged PoE Switch": "assets/datasheets/XF-100-1.pdf"
+        "XF-100-1 Unmanaged PoE Switch": "assets/datasheets/XF-100-1.pdf",
+        "XF50-1 Unmanaged PoE Switch": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xf100-XF50-1_Unmanaged_PoE_Switch.pdf"
       },
       "hidden_fields": [
         "cell",
