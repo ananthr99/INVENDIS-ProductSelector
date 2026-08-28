@@ -3970,7 +3970,7 @@
         "Smart Security Infrastructure",
         "Industrial Workstation Connectivity"
       ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xc80-datasheet.pdf",
+      "datasheet": null,
       "part_datasheets": {
         "XC-80-1 Unmanaged PoE Switch": "assets/datasheets/XC-80-1.pdf"
       },
