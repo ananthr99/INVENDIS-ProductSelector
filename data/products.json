@@ -2144,8 +2144,10 @@
         "Smart Campus & Enterprise Network Management",
         "Industrial Network Control & Redundancy"
       ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/XG822L-datasheet.pdf",
-      "part_datasheets": {},
+      "datasheet": null,
+      "part_datasheets": {
+        "XG 82-2L Lite Managed Switch": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/XG822L-XG_82-2L_Lite_Managed_Switch.pdf"
+      },
       "hidden_fields": [
         "cell",
         "cellular_gen",
