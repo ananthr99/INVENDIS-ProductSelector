@@ -2277,8 +2277,10 @@
         "Industrial Control & Edge IoT Gateway",
         "High-Reliability Retail / ATM Broadband Bonding"
       ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvcd-datasheet.pdf",
-      "part_datasheets": {},
+      "datasheet": null,
+      "part_datasheets": {
+        "RVCD": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvcd-RVCD.pdf"
+      },
       "hidden_fields": [
         "cell",
         "cellular_gen",
