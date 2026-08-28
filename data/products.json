@@ -890,8 +890,17 @@
         "RD04-C": "assets/datasheets/RD04-C.pdf",
         "RDS00": "assets/datasheets/RDS00.pdf"
       },
-      "hidden_fields": [],
-      "additional_specs": [],
+      "hidden_fields": [
+        "ip",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports-Additional Details",
+          "v": "Fast Ethernet Ports"
+        }
+      ],
       "variants": {
         "headers": [
           "Wi-Fi",
