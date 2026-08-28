@@ -2215,8 +2215,10 @@
         "Smart Building Sensor Data Aggregation",
         "Single-Cable PoE Indoor Wi-Fi Access Point Deployment"
       ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rdb40-datasheet.pdf",
-      "part_datasheets": {},
+      "datasheet": null,
+      "part_datasheets": {
+        "RDB 40": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rdb40-RDB_40.pdf"
+      },
       "hidden_fields": [
         "cell",
         "cellular_gen",
