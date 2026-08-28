@@ -2405,8 +2405,10 @@
         "Remote Substation & Utility Monitoring",
         "Secure Smart Edge Gateway for Transportation / Fleet Management"
       ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/RVH-datasheet.pdf",
-      "part_datasheets": {},
+      "datasheet": null,
+      "part_datasheets": {
+        "RVH 44": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/RVH-RVH_44.pdf"
+      },
       "hidden_fields": [
         "cell"
       ],
