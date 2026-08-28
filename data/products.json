@@ -273,7 +273,7 @@
       "rs232": "-",
       "ip": "IP30",
       "power": "9–30 VDC Dual Source",
-      "ports": "4× LAN 10/100/1000 +1× WAN 10/100/1000 +2× SFP",
+      "ports": "5",
       "os": "OpenWRT Linux",
       "housing": "Sheet Metal",
       "dims": "190 × 45 × 120 mm",
@@ -299,8 +299,21 @@
         "RTS65-1": "assets/datasheets/RTS65-1.pdf",
         "RTS65-2": "assets/datasheets/RTS65-2.pdf"
       },
-      "hidden_fields": [],
-      "additional_specs": [],
+      "hidden_fields": [
+        "wifi",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports-Additional Details",
+          "v": "4 x LAN (Gigabit) and 1 x WAN (Gigabit)"
+        },
+        {
+          "k": "SFP Ports",
+          "v": "2"
+        }
+      ],
       "variants": {
         "headers": [
           "Cellular",
