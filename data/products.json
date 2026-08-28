@@ -727,7 +727,10 @@
         "RV04-2": "assets/datasheets/RV04-2.pdf",
         "RV50": "assets/datasheets/RV50.pdf"
       },
-      "hidden_fields": [],
+      "hidden_fields": [
+        "rs485",
+        "rs232"
+      ],
       "additional_specs": [],
       "variants": {
         "headers": [
