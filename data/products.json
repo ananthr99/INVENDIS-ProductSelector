@@ -1004,7 +1004,7 @@
       "rs232": "No",
       "ip": "",
       "power": "12 VDC",
-      "ports": "4 x 10/100 Mbps",
+      "ports": "4",
       "os": "OpenWRT Linux",
       "housing": "Sheet Metal",
       "dims": "123.2 x 28 x 120.6mm (W x H x D)",
@@ -1023,8 +1023,17 @@
         "RE44": "assets/datasheets/RE44.pdf",
         "RE04": "assets/datasheets/RE04.pdf"
       },
-      "hidden_fields": [],
-      "additional_specs": [],
+      "hidden_fields": [
+        "ip",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports-Additional Details",
+          "v": "Fast Ethernet"
+        }
+      ],
       "variants": {
         "headers": [
           "Cellular",
