@@ -800,7 +800,7 @@
       "rs232": "No",
       "ip": "",
       "power": "12 VDC",
-      "ports": "5 X 10/100/1000",
+      "ports": "5",
       "os": "OpenWRT Linux",
       "housing": "Industrial Aluminium",
       "dims": "110 x 26 x 95 mm (W x H x D)",
@@ -819,7 +819,12 @@
         "RV00": "assets/datasheets/RV00.pdf"
       },
       "hidden_fields": [],
-      "additional_specs": [],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports-Additional Details",
+          "v": "Gigabit Ports"
+        }
+      ],
       "variants": {
         "headers": [
           "Cellular",
