@@ -1831,6 +1831,88 @@
       }
     },
     {
+      "id": "isense",
+      "name": "iSense XXX",
+      "cat": "Gateway",
+      "order": 22,
+      "desc": "The iSense is purpose-built for data-heavy industrial environments, combining 24 isolated digital inputs, 8 relay outputs, 4x RS485, analog voltage/current sensing, and dual external temperature probes into a single converged gateway. This density of I/O — backed by a dual-core processor with up to 32GB eMMC and native Modbus, SNMP, and MQTT support — makes it the go-to solution for energy monitoring, process automation, and smart infrastructure projects where deep field-level visibility drives operational decisions.",
+      "cpu": "Dual Core 0.88 GHz",
+      "ram": "512 MB + eMMC up to 32 GB",
+      "storage": "32 MB Flash",
+      "cell": "4G",
+      "cellular_gen": "4G",
+      "wifi": "WiFi5",
+      "rs485": "Yes",
+      "rs232": "Yes",
+      "ip": "",
+      "power": "20-60 VDC",
+      "ports": "",
+      "os": "Linux OS",
+      "housing": "Sheet Metal",
+      "dims": "309 x 221 x 58 mm (L x W x H)",
+      "weight": "1853 g",
+      "op_temp": "-10°C to 70°C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/isense-1786612536077-wooc.png"
+      ],
+      "use_cases": [
+        "Energy Monitoring & Power Management",
+        "Process Automation & Industrial Control",
+        "Smart Infrastructure & Remote Asset Intelligence"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "iSense Violet Plus Pro": "assets/datasheets/Isense Violet Plus Pro.pdf",
+        "iSense Green Plus Pro": "assets/datasheets/Isense Green Plus Pro.pdf",
+        "iSense Blue Plus Pro": "assets/datasheets/Isense Blue Plus Pro.pdf"
+      },
+      "hidden_fields": [
+        "ip",
+        "ports"
+      ],
+      "additional_specs": [],
+      "variants": {
+        "headers": [
+          "Wi-Fi",
+          "Cellular",
+          "4G/5G",
+          "RS485",
+          "RS232",
+          "DIO Count",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "✓",
+            "✓",
+            "4G",
+            "✓",
+            "✓",
+            "24",
+            "iSense Violet Plus Pro"
+          ],
+          [
+            "✓",
+            "✓",
+            "4G",
+            "✓",
+            "✓",
+            "12",
+            "iSense Green Plus Pro"
+          ],
+          [
+            "✓",
+            "✓",
+            "4G",
+            "✓",
+            "✓",
+            "6",
+            "iSense Blue Plus Pro"
+          ]
+        ]
+      }
+    },
+    {
       "id": "xb82",
       "name": "XB82-2",
       "cat": "Switch",
@@ -4017,88 +4099,6 @@
             "✓",
             "Single",
             "XA82-2 Unmanaged PoE Switch"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "isense",
-      "name": "iSense XXX",
-      "cat": "Gateway",
-      "order": null,
-      "desc": "The iSense is purpose-built for data-heavy industrial environments, combining 24 isolated digital inputs, 8 relay outputs, 4x RS485, analog voltage/current sensing, and dual external temperature probes into a single converged gateway. This density of I/O — backed by a dual-core processor with up to 32GB eMMC and native Modbus, SNMP, and MQTT support — makes it the go-to solution for energy monitoring, process automation, and smart infrastructure projects where deep field-level visibility drives operational decisions.",
-      "cpu": "Dual Core 0.88 GHz",
-      "ram": "512 MB + eMMC up to 32 GB",
-      "storage": "32 MB Flash",
-      "cell": "4G",
-      "cellular_gen": "4G",
-      "wifi": "WiFi5",
-      "rs485": "Yes",
-      "rs232": "Yes",
-      "ip": "",
-      "power": "20-60 VDC",
-      "ports": "",
-      "os": "Linux OS",
-      "housing": "Sheet Metal",
-      "dims": "309 x 221 x 58 mm (L x W x H)",
-      "weight": "1853 g",
-      "op_temp": "-10°C to 70°C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/isense-1786612536077-wooc.png"
-      ],
-      "use_cases": [
-        "Energy Monitoring & Power Management",
-        "Process Automation & Industrial Control",
-        "Smart Infrastructure & Remote Asset Intelligence"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "iSense Violet Plus Pro": "assets/datasheets/Isense Violet Plus Pro.pdf",
-        "iSense Green Plus Pro": "assets/datasheets/Isense Green Plus Pro.pdf",
-        "iSense Blue Plus Pro": "assets/datasheets/Isense Blue Plus Pro.pdf"
-      },
-      "hidden_fields": [
-        "ip",
-        "ports"
-      ],
-      "additional_specs": [],
-      "variants": {
-        "headers": [
-          "Wi-Fi",
-          "Cellular",
-          "4G/5G",
-          "RS485",
-          "RS232",
-          "DIO Count",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "✓",
-            "✓",
-            "4G",
-            "✓",
-            "✓",
-            "24",
-            "iSense Violet Plus Pro"
-          ],
-          [
-            "✓",
-            "✓",
-            "4G",
-            "✓",
-            "✓",
-            "12",
-            "iSense Green Plus Pro"
-          ],
-          [
-            "✓",
-            "✓",
-            "4G",
-            "✓",
-            "✓",
-            "6",
-            "iSense Blue Plus Pro"
           ]
         ]
       }
