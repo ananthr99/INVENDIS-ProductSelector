@@ -1737,6 +1737,100 @@
       }
     },
     {
+      "id": "idbxx",
+      "name": "IDBXX-X",
+      "cat": "Gateway",
+      "order": 21,
+      "desc": "Where the IDB54 stands out is its configurable WAN/LAN port — giving network administrators the flexibility to repurpose a Gigabit port based on deployment needs — paired with 512MB RAM and dual-band 802.11 b/g/n/ac Wi-Fi for high-throughput performance. Housed in a rugged aluminium shell rated for -20 to 60°C operation, it is tailored for enterprises and system integrators who need a versatile, high-performance edge router that adapts to evolving network topologies across commercial and industrial sites.",
+      "cpu": "MediaTek MT7621",
+      "ram": "512 MB DDR3",
+      "storage": "32 MB Flash",
+      "cell": "4G/5G",
+      "cellular_gen": "5G",
+      "wifi": "WiFi5",
+      "rs485": "Yes",
+      "rs232": "Yes",
+      "ip": "",
+      "power": "9-30 VDC",
+      "ports": "4",
+      "os": "OpenWRT Linux",
+      "housing": "Industrial Aluminium",
+      "dims": "110 x 44 x 94 mm (W x H x D)",
+      "weight": "400 g",
+      "op_temp": "0~ 50 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/idbxx-1786604353861-053y.png"
+      ],
+      "use_cases": [
+        "Custom Industrial Edge Application Development",
+        "Industrial Equipment Integration & Control",
+        "Adaptive Enterprise & Industrial Networking"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "IDB55": "assets/datasheets/IDB55.pdf",
+        "IDB54": "assets/datasheets/IDB54 (1).pdf"
+      },
+      "hidden_fields": [
+        "ip"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports-Additional Details",
+          "v": "Gigabit Ethernet"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "4G/5G",
+          "RS485",
+          "RS232",
+          "No. of Modems",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "✓",
+            "Wi-Fi 5",
+            "5G",
+            "✓",
+            "✓",
+            "Single",
+            "IDB55-B"
+          ],
+          [
+            "✓",
+            "Wi-Fi 5",
+            "5G",
+            "—",
+            "—",
+            "Single",
+            "IDB55"
+          ],
+          [
+            "✓",
+            "Wi-Fi 5",
+            "4G",
+            "✓",
+            "✓",
+            "Single",
+            "IDB54-B"
+          ],
+          [
+            "✓",
+            "Wi-Fi 5",
+            "4G",
+            "—",
+            "—",
+            "Single",
+            "IDB54"
+          ]
+        ]
+      }
+    },
+    {
       "id": "xa82",
       "name": "XA82-2",
       "cat": "Switch",
@@ -4005,100 +4099,6 @@
             "✓",
             "6",
             "iSense Blue Plus Pro"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "idbxx",
-      "name": "IDBXX-X",
-      "cat": "Gateway",
-      "order": null,
-      "desc": "Where the IDB54 stands out is its configurable WAN/LAN port — giving network administrators the flexibility to repurpose a Gigabit port based on deployment needs — paired with 512MB RAM and dual-band 802.11 b/g/n/ac Wi-Fi for high-throughput performance. Housed in a rugged aluminium shell rated for -20 to 60°C operation, it is tailored for enterprises and system integrators who need a versatile, high-performance edge router that adapts to evolving network topologies across commercial and industrial sites.",
-      "cpu": "MediaTek MT7621",
-      "ram": "512 MB DDR3",
-      "storage": "32 MB Flash",
-      "cell": "4G/5G",
-      "cellular_gen": "5G",
-      "wifi": "WiFi5",
-      "rs485": "Yes",
-      "rs232": "Yes",
-      "ip": "",
-      "power": "9-30 VDC",
-      "ports": "4",
-      "os": "OpenWRT Linux",
-      "housing": "Industrial Aluminium",
-      "dims": "110 x 44 x 94 mm (W x H x D)",
-      "weight": "400 g",
-      "op_temp": "0~ 50 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/idbxx-1786604353861-053y.png"
-      ],
-      "use_cases": [
-        "Custom Industrial Edge Application Development",
-        "Industrial Equipment Integration & Control",
-        "Adaptive Enterprise & Industrial Networking"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "IDB55": "assets/datasheets/IDB55.pdf",
-        "IDB54": "assets/datasheets/IDB54 (1).pdf"
-      },
-      "hidden_fields": [
-        "ip"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports-Additional Details",
-          "v": "Gigabit Ethernet"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "4G/5G",
-          "RS485",
-          "RS232",
-          "No. of Modems",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "✓",
-            "Wi-Fi 5",
-            "5G",
-            "✓",
-            "✓",
-            "Single",
-            "IDB55-B"
-          ],
-          [
-            "✓",
-            "Wi-Fi 5",
-            "5G",
-            "—",
-            "—",
-            "Single",
-            "IDB55"
-          ],
-          [
-            "✓",
-            "Wi-Fi 5",
-            "4G",
-            "✓",
-            "✓",
-            "Single",
-            "IDB54-B"
-          ],
-          [
-            "✓",
-            "Wi-Fi 5",
-            "4G",
-            "—",
-            "—",
-            "Single",
-            "IDB54"
           ]
         ]
       }
