@@ -431,7 +431,9 @@
       },
       "hidden_fields": [
         "cell",
-        "cellular_gen"
+        "cellular_gen",
+        "rs485",
+        "rs232"
       ],
       "additional_specs": [
         {
