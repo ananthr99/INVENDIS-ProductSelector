@@ -4097,7 +4097,7 @@
         "Enterprise & Smart Building Connectivity",
         "Industrial Cabinet & Field Network Expansion"
       ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xa82-datasheet.pdf",
+      "datasheet": null,
       "part_datasheets": {
         "XA82-2 Unmanaged PoE Switch": "assets/datasheets/XA-82-2.pdf"
       },
