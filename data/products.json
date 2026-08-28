@@ -4037,10 +4037,17 @@
       "datasheet": null,
       "part_datasheets": {
         "IAF44-C1": "assets/datasheets/IAF44-C1.pdf",
-        "IAF04-C1": "assets/datasheets/IAF04-C1.pdf"
+        "IAF04-C1": "assets/datasheets/IAF04-C1.pdf",
+        "IAF44-C2": "contact_us",
+        "IAF04-C2": "contact_us"
       },
       "hidden_fields": [],
-      "additional_specs": [],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports-Additional Details",
+          "v": "Fast Ethernet"
+        }
+      ],
       "variants": {
         "headers": [
           "Cellular",
