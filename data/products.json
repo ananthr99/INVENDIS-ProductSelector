@@ -4020,8 +4020,8 @@
       "rs485": "-",
       "rs232": "-",
       "ip": "",
-      "power": "9â30 VDC",
-      "ports": "4 x 10/100/1000",
+      "power": "9-30 VDC",
+      "ports": "4",
       "os": "OpenWRT Linux",
       "housing": "Industrial Aluminium",
       "dims": "110 x 44 x 94 mm (W x H x D)",
@@ -4047,7 +4047,12 @@
         "rs485",
         "rs232"
       ],
-      "additional_specs": [],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports-Additional Details",
+          "v": "Gigabit Ethernet"
+        }
+      ],
       "variants": {
         "headers": [
           "Cellular",
