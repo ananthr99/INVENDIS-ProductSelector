@@ -412,7 +412,7 @@
       "rs232": "No",
       "ip": "IP30",
       "power": "12 VDC",
-      "ports": "2 10/100/1000 Mbps",
+      "ports": "2",
       "os": "OpenWRT Linux",
       "housing": "Plastic",
       "dims": "190 x 190 x 50 mm (L x W x H)",
@@ -431,7 +431,12 @@
         "RU60": "assets/datasheets/RU60.pdf"
       },
       "hidden_fields": [],
-      "additional_specs": [],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Gigabit Ports"
+        }
+      ],
       "variants": {
         "headers": [
           "Cellular",
