@@ -2584,8 +2584,10 @@
         "Smart Building & IoT Deployment",
         "Industrial / Campus Branch Network Aggregation"
       ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xi244-2M-datasheet.pdf",
-      "part_datasheets": {},
+      "datasheet": null,
+      "part_datasheets": {
+        "XI 244-2M": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xi244-2M-XI_244-2M.pdf"
+      },
       "hidden_fields": [
         "cell",
         "cellular_gen",
