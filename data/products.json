@@ -3279,7 +3279,7 @@
       "ports": "2",
       "os": "Ubuntu / Oracle Linux / Open WRT / Windows",
       "housing": "Aluminum Heat Sink with CRCA Enclosure, Fan/Fanless options",
-      "dims": "",
+      "dims": "210x203x60mm",
       "weight": "1400",
       "op_temp": "",
       "images": [
