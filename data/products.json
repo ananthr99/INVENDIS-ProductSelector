@@ -2343,8 +2343,10 @@
         "Mobile & Temporary Event Branch Connectivity",
         "Mission-Critical Multi-WAN Industrial Routing"
       ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/RUC-datasheet.pdf",
-      "part_datasheets": {},
+      "datasheet": null,
+      "part_datasheets": {
+        "RUC 65": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/RUC-RUC_65.pdf"
+      },
       "hidden_fields": [
         "ip",
         "rs485",
