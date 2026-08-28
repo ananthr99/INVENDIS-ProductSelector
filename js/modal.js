@@ -1,3 +1,21 @@
+function viewFile(url, btn) {
+  const origHtml = btn ? btn.innerHTML : null;
+  if (btn) { btn.disabled = true; btn.textContent = '…'; }
+
+  fetch(url)
+    .then(r => r.blob())
+    .then(blob => {
+      const blobUrl = URL.createObjectURL(blob);
+      window.open(blobUrl, '_blank');
+      if (btn) { btn.disabled = false; btn.innerHTML = origHtml; }
+      setTimeout(() => URL.revokeObjectURL(blobUrl), 60000);
+    })
+    .catch(() => {
+      window.open(url, '_blank');
+      if (btn) { btn.disabled = false; btn.innerHTML = origHtml; }
+    });
+}
+
 function downloadFile(url, btn) {
   const filename = decodeURIComponent(url.split('/').pop());
   const origHtml = btn ? btn.innerHTML : null;
@@ -57,7 +75,7 @@ function buildVariantsTable(v) {
       const file = PART_DATASHEETS[pn];
       if (file && file !== 'contact_us') {
         dsCell = `<td class="cell-datasheet">
-            <a class="ds-btn ds-view" href="${file}" target="_blank" rel="noopener">View</a>
+            <button class="ds-btn ds-view" onclick="viewFile('${file}',this)">View</button>
             <button class="ds-btn ds-download" onclick="downloadFile('${file}',this)">&#x2193;</button>
            </td>`;
       } else {
@@ -131,7 +149,7 @@ function buildDatasheetsSection(id) {
         </svg>`;
   const btns = file === 'contact_us'
     ? `<a class="ds-btn ds-contact" href="mailto:sales@invendis.com?subject=${encodeURIComponent('Datasheet Request')}&body=${encodeURIComponent('Hi Invendis team,\n\nI would like to request the datasheet for this product.\n\nThank you.')}" title="Datasheet not available — contact us for more information">Contact us</a>`
-    : `<a class="ds-btn ds-view" href="${file}" target="_blank" rel="noopener">View</a>
+    : `<button class="ds-btn ds-view" onclick="viewFile('${file}',this)">View</button>
           <button class="ds-btn ds-download" onclick="downloadFile('${file}',this)">Download</button>`;
   return `
     <div class="spec-section datasheet-section">
