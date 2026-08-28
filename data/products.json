@@ -425,7 +425,7 @@
         "Retail & Commercial Space Networking",
         "Industrial Wireless Network Extension"
       ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/ru60-datasheet.pdf",
+      "datasheet": null,
       "part_datasheets": {
         "RU60": "assets/datasheets/RU60.pdf"
       },
