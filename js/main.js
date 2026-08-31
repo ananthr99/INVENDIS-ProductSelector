@@ -71,6 +71,16 @@ function injectCatColorStyles(catColors) {
   el.textContent = css;
 }
 
+// raw.githubusercontent.com serves files with Content-Disposition: attachment and blocks
+// cross-origin fetch (CORS). GitHub Pages serves the same committed files with correct
+// MIME types and no forced download. Normalise at load time so every consumer gets the
+// right URL without needing per-consumer workarounds.
+function rawToPages(url) {
+  if (!url || typeof url !== 'string') return url;
+  const m = url.match(/^https:\/\/raw\.githubusercontent\.com\/([^/]+)\/([^/]+)\/[^/]+\/(.+)$/);
+  return m ? `https://${m[1]}.github.io/${m[2]}/${m[3]}` : url;
+}
+
 function applyData(data) {
   if (!data) return;
 
@@ -89,10 +99,21 @@ function applyData(data) {
     Object.keys(PART_DATASHEETS).forEach(k => delete PART_DATASHEETS[k]);
 
     PRODUCTS = data.products.map(d => {
-      if (d.images?.length)    PRODUCT_IMAGES[d.id]    = d.images;
+      if (d.images?.length) {
+        d.images = d.images.map(rawToPages);
+        PRODUCT_IMAGES[d.id] = d.images;
+      }
       if (d.use_cases?.length) PRODUCT_USE_CASES[d.id] = d.use_cases;
-      if (d.datasheet)         PRODUCT_DATASHEETS[d.id] = d.datasheet;
-      if (d.part_datasheets)   Object.assign(PART_DATASHEETS, d.part_datasheets);
+      if (d.datasheet) {
+        d.datasheet = rawToPages(d.datasheet);
+        PRODUCT_DATASHEETS[d.id] = d.datasheet;
+      }
+      if (d.part_datasheets) {
+        Object.keys(d.part_datasheets).forEach(k => {
+          d.part_datasheets[k] = rawToPages(d.part_datasheets[k]);
+        });
+        Object.assign(PART_DATASHEETS, d.part_datasheets);
+      }
       return d;
     });
   }

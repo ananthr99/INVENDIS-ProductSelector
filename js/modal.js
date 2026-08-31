@@ -1,13 +1,4 @@
 function viewFile(url, btn) {
-  // raw.githubusercontent.com blocks cross-origin fetch (CORS) and serves files with
-  // Content-Disposition: attachment. Convert to the GitHub Pages equivalent URL, which
-  // serves the same committed file with application/pdf and no forced download.
-  const rawMatch = url.match(/^https:\/\/raw\.githubusercontent\.com\/([^/]+)\/([^/]+)\/[^/]+\/(.+)$/);
-  if (rawMatch) {
-    window.open(`https://${rawMatch[1]}.github.io/${rawMatch[2]}/${rawMatch[3]}`, '_blank', 'noopener');
-    return;
-  }
-
   const origHtml = btn ? btn.innerHTML : null;
   if (btn) { btn.disabled = true; btn.textContent = '…'; }
 
