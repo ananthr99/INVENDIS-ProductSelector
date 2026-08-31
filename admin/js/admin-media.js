@@ -32,7 +32,8 @@ function renderDatasheet() {
   } else if (currentDs === 'contact_us') {
     w.innerHTML = `<div class="ds-row"><span style="color:#1A6FC4;font-size:13px">Contact us</span><button class="ds-rm" onclick="clearDatasheet()">×</button></div>`;
   } else if (currentDs) {
-    const dsHref = currentDs.startsWith('http') ? currentDs : '../' + currentDs;
+    const rawM = currentDs.match(/^https:\/\/raw\.githubusercontent\.com\/([^/]+)\/([^/]+)\/[^/]+\/(.+)$/);
+    const dsHref = rawM ? `https://${rawM[1]}.github.io/${rawM[2]}/${rawM[3]}` : (currentDs.startsWith('http') ? currentDs : '../' + currentDs);
     w.innerHTML = `<div class="ds-row"><a href="${dsHref}" target="_blank">📄 View current datasheet</a><button class="ds-rm" onclick="clearDatasheet()">×</button></div>`;
   } else {
     w.innerHTML = '';
