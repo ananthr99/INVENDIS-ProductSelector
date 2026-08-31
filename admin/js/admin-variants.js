@@ -56,7 +56,8 @@ function _renderVariantsTable() {
       dsCell = `<span style="font-size:11px;color:#1A6FC4;white-space:nowrap">Contact us</span>
         <button type="button" onclick="removeRowDs('${esc(partNo)}')" style="${rmBtnStyle}" title="Remove">×</button>`;
     } else if (existing) {
-      const href = existing.startsWith('http') ? existing : '../' + existing;
+      const _rawM = existing.match(/^https:\/\/raw\.githubusercontent\.com\/([^/]+)\/([^/]+)\/[^/]+\/(.+)$/);
+      const href = _rawM ? `https://${_rawM[1]}.github.io/${_rawM[2]}/${_rawM[3]}` : (existing.startsWith('http') ? existing : '../' + existing);
       dsCell = `<a href="${href}" target="_blank" style="font-size:12px;color:#1A6FC4;white-space:nowrap">📄 View</a>
         <button type="button" onclick="removeRowDs('${esc(partNo)}')" style="${rmBtnStyle}" title="Remove">×</button>`;
     } else {
