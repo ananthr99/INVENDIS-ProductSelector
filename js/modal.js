@@ -13,7 +13,8 @@ function viewFile(url, btn) {
   fetch(url)
     .then(r => r.blob())
     .then(blob => {
-      const blobUrl = URL.createObjectURL(blob);
+      const pdfBlob = blob.type === 'application/pdf' ? blob : new Blob([blob], { type: 'application/pdf' });
+      const blobUrl = URL.createObjectURL(pdfBlob);
       newTab.location.href = blobUrl;
       if (btn) { btn.disabled = false; btn.innerHTML = origHtml; }
       setTimeout(() => URL.revokeObjectURL(blobUrl), 60000);
