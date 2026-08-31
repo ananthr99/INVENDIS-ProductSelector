@@ -425,7 +425,7 @@
         "Retail & Commercial Space Networking",
         "Industrial Wireless Network Extension"
       ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/ru60-datasheet.pdf",
+      "datasheet": null,
       "part_datasheets": {
         "RU60": "assets/datasheets/RU60.pdf"
       },
@@ -2144,8 +2144,10 @@
         "Smart Campus & Enterprise Network Management",
         "Industrial Network Control & Redundancy"
       ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/XG822L-datasheet.pdf",
-      "part_datasheets": {},
+      "datasheet": null,
+      "part_datasheets": {
+        "XG 82-2L Lite Managed Switch": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/XG822L-XG_82-2L_Lite_Managed_Switch.pdf"
+      },
       "hidden_fields": [
         "cell",
         "cellular_gen",
@@ -2213,8 +2215,10 @@
         "Smart Building Sensor Data Aggregation",
         "Single-Cable PoE Indoor Wi-Fi Access Point Deployment"
       ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rdb40-datasheet.pdf",
-      "part_datasheets": {},
+      "datasheet": null,
+      "part_datasheets": {
+        "RDB 40": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rdb40-RDB_40.pdf"
+      },
       "hidden_fields": [
         "cell",
         "cellular_gen",
@@ -2273,8 +2277,10 @@
         "Industrial Control & Edge IoT Gateway",
         "High-Reliability Retail / ATM Broadband Bonding"
       ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvcd-datasheet.pdf",
-      "part_datasheets": {},
+      "datasheet": null,
+      "part_datasheets": {
+        "RVCD": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvcd-RVCD.pdf"
+      },
       "hidden_fields": [
         "cell",
         "cellular_gen",
@@ -2337,8 +2343,10 @@
         "Mobile & Temporary Event Branch Connectivity",
         "Mission-Critical Multi-WAN Industrial Routing"
       ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/RUC-datasheet.pdf",
-      "part_datasheets": {},
+      "datasheet": null,
+      "part_datasheets": {
+        "RUC 65": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/RUC-RUC_65.pdf"
+      },
       "hidden_fields": [
         "ip",
         "rs485",
@@ -2399,8 +2407,10 @@
         "Remote Substation & Utility Monitoring",
         "Secure Smart Edge Gateway for Transportation / Fleet Management"
       ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/RVH-datasheet.pdf",
-      "part_datasheets": {},
+      "datasheet": null,
+      "part_datasheets": {
+        "RVH 44": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/RVH-RVH_44.pdf"
+      },
       "hidden_fields": [
         "cell"
       ],
@@ -2574,8 +2584,10 @@
         "Smart Building & IoT Deployment",
         "Industrial / Campus Branch Network Aggregation"
       ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xi244-2M-datasheet.pdf",
-      "part_datasheets": {},
+      "datasheet": null,
+      "part_datasheets": {
+        "XI 244-2M": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xi244-2M-XI_244-2M.pdf"
+      },
       "hidden_fields": [
         "cell",
         "cellular_gen",
@@ -2660,8 +2672,10 @@
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvcp-1787643260652-71vm.png"
       ],
       "use_cases": [],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvcp-datasheet.pdf",
-      "part_datasheets": {},
+      "datasheet": null,
+      "part_datasheets": {
+        "RVCP 04": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvcp-RVCP_04.pdf"
+      },
       "hidden_fields": [
         "cell",
         "wifi",
@@ -3388,8 +3402,10 @@
         "Vehicle & Transportation Systems",
         "Passengers Infotainment AP for Railways"
       ],
-      "datasheet": "assets/datasheets/RN50.pdf",
-      "part_datasheets": {},
+      "datasheet": null,
+      "part_datasheets": {
+        "RN 50 PCB-A": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rn50pcba-RN_50_PCB-A.pdf"
+      },
       "hidden_fields": [
         "cell",
         "cellular_gen",
@@ -3449,8 +3465,10 @@
         "Mission-Critical Remote Site Networking",
         "High-Availability Outdoor Wi-Fi Coverage"
       ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rt65odu-datasheet.pdf",
-      "part_datasheets": {},
+      "datasheet": null,
+      "part_datasheets": {
+        "RT65-ODU": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rt65odu-RT65-ODU.pdf"
+      },
       "hidden_fields": [
         "rs485",
         "rs232"
@@ -3505,8 +3523,10 @@
         "Smart Transportation & Roadside Infrastructure",
         "Remote Outdoor Asset Connectivity"
       ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/mt7621odu-datasheet.pdf",
-      "part_datasheets": {},
+      "datasheet": null,
+      "part_datasheets": {
+        "MT7621-01 ODU": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/mt7621odu-MT7621-01_ODU.pdf"
+      },
       "hidden_fields": [
         "rs485",
         "rs232"
@@ -3752,9 +3772,10 @@
         "Smart Campus & Enterprise Network Management",
         "Industrial Network Control & Redundancy"
       ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xg82-datasheet.pdf",
+      "datasheet": null,
       "part_datasheets": {
-        "XG82-2L Gigabit Ethernet Managed Switch": "assets/datasheets/XG-82-2L Updated.pdf"
+        "XG82-2L Gigabit Ethernet Managed Switch": "assets/datasheets/XG-82-2L Updated.pdf",
+        "XG 82-2MI Lite Managed Switch": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xg82-XG_82-2MI_Lite_Managed_Switch.pdf"
       },
       "hidden_fields": [
         "cell",
@@ -3818,9 +3839,10 @@
         "Smart Office & Campus Device Connectivity",
         "Industrial Automation Network Expansion"
       ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xf100-datasheet.pdf",
+      "datasheet": null,
       "part_datasheets": {
-        "XF-100-1 Unmanaged PoE Switch": "assets/datasheets/XF-100-1.pdf"
+        "XF-100-1 Unmanaged PoE Switch": "assets/datasheets/XF-100-1.pdf",
+        "XF50-1 Unmanaged PoE Switch": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xf100-XF50-1_Unmanaged_PoE_Switch.pdf"
       },
       "hidden_fields": [
         "cell",
@@ -3884,7 +3906,7 @@
         "Edge Cabinet Network Integration",
         "Smart Kiosk & Edge Device Networking"
       ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xd50-datasheet.pdf",
+      "datasheet": null,
       "part_datasheets": {
         "XD50-1 Unmanaged PoE Switch": "assets/datasheets/XD-50-1.pdf"
       },
@@ -3948,7 +3970,7 @@
         "Smart Security Infrastructure",
         "Industrial Workstation Connectivity"
       ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xc80-datasheet.pdf",
+      "datasheet": null,
       "part_datasheets": {
         "XC-80-1 Unmanaged PoE Switch": "assets/datasheets/XC-80-1.pdf"
       },
@@ -4012,7 +4034,7 @@
         "IP Telephony & Communication Networks",
         "Remote Edge Network Distribution"
       ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xb82-datasheet.pdf",
+      "datasheet": null,
       "part_datasheets": {
         "XB82-2 Unmanaged PoE Switch": "assets/datasheets/XB-82-2.pdf"
       },
@@ -4075,7 +4097,7 @@
         "Enterprise & Smart Building Connectivity",
         "Industrial Cabinet & Field Network Expansion"
       ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xa82-datasheet.pdf",
+      "datasheet": null,
       "part_datasheets": {
         "XA82-2 Unmanaged PoE Switch": "assets/datasheets/XA-82-2.pdf"
       },
