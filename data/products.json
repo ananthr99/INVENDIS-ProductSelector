@@ -1120,7 +1120,7 @@
       ],
       "additional_specs": [
         {
-          "k": "Ethernet Port-Additional Details",
+          "k": "Ethernet Port",
           "v": "Gigabit Ethernet"
         },
         {
