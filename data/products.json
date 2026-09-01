@@ -261,7 +261,7 @@
       "id": "rvcp",
       "name": "RVCP",
       "cat": "Router",
-      "order": 100,
+      "order": null,
       "desc": "",
       "cpu": "MediaTek MT7621, Dual Core MIPS 880MHz",
       "ram": "512MB, DDR3",
