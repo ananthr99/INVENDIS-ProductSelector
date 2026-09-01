@@ -350,145 +350,6 @@
       "variants": null
     },
     {
-      "id": "rtsxx",
-      "name": "RTSXX",
-      "cat": "Router",
-      "order": 7,
-      "desc": "A ruggedised industrial router featuring dual 5G/4G modems, Wi-Fi 6, and SFP uplinks. Built on MediaTek MT7981 with OpenWRT, it supports dual-SIM failover, DIN-rail mounting, and a wide 9–30V DC power range — ideal for demanding telecom, industrial, and remote site deployments.",
-      "cpu": "MediaTek MT7981, 1.3GHz Dual Core ARM Cortex A53",
-      "ram": "1 GB DDR4",
-      "storage": "128 MB NAND",
-      "cell": "4G/5G",
-      "cellular_gen": "5G",
-      "wifi": "WiFi6",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "IP30",
-      "power": "9–30 VDC Dual Source",
-      "ports": "5",
-      "os": "OpenWRT Linux",
-      "housing": "Sheet Metal",
-      "dims": "190 × 45 × 120 mm",
-      "weight": "700 g",
-      "op_temp": "0°C - 50°C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rtsxx-1786516658709-95je.png",
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rtsxx-1786516662516-fxsy.png"
-      ],
-      "use_cases": [
-        "SD-WAN & Branch Network Connectivity",
-        "Secure VPN & Surveillance Network Deployment"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "RTS00": "assets/datasheets/RTS00-6.pdf",
-        "RTS04-1": "assets/datasheets/RTS04-1.pdf",
-        "RTS04-2": "assets/datasheets/RTS04-2.pdf",
-        "RTS05-1": "assets/datasheets/RTS05-1.pdf",
-        "RTS05-2": "assets/datasheets/RTS05-2.pdf",
-        "RTS-60": "assets/datasheets/RTS60.pdf",
-        "RTS64-2": "assets/datasheets/RTS64-2.pdf",
-        "RTS65-1": "assets/datasheets/RTS65-1.pdf",
-        "RTS65-2": "assets/datasheets/RTS65-2.pdf",
-        "RTS64-1": "contact_us"
-      },
-      "hidden_fields": [
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports",
-          "v": "4 x LAN (Gigabit) and 1 x WAN (Gigabit)"
-        },
-        {
-          "k": "SFP Ports",
-          "v": "1/2"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "4G/5G",
-          "No. of Modems",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "—",
-            "—",
-            "—",
-            "—",
-            "RTS00"
-          ],
-          [
-            "✓",
-            "—",
-            "4G",
-            "Single",
-            "RTS04-1"
-          ],
-          [
-            "✓",
-            "—",
-            "4G",
-            "Dual",
-            "RTS04-2"
-          ],
-          [
-            "✓",
-            "—",
-            "5G",
-            "Single",
-            "RTS05-1"
-          ],
-          [
-            "✓",
-            "—",
-            "5G",
-            "Dual",
-            "RTS05-2"
-          ],
-          [
-            "—",
-            "Wi-Fi 6",
-            "—",
-            "—",
-            "RTS-60"
-          ],
-          [
-            "✓",
-            "Wi-Fi 6",
-            "4G",
-            "Single",
-            "RTS64-1"
-          ],
-          [
-            "✓",
-            "Wi-Fi 6",
-            "4G",
-            "Dual",
-            "RTS64-2"
-          ],
-          [
-            "✓",
-            "Wi-Fi 6",
-            "5G",
-            "Single",
-            "RTS65-1"
-          ],
-          [
-            "✓",
-            "Wi-Fi 6",
-            "5G",
-            "Dual",
-            "RTS65-2"
-          ]
-        ]
-      }
-    },
-    {
       "id": "ru60",
       "name": "RU60",
       "cat": "Router",
@@ -3333,6 +3194,145 @@
         }
       ],
       "variants": null
+    },
+    {
+      "id": "rtsxx",
+      "name": "RTSXX",
+      "cat": "Router",
+      "order": null,
+      "desc": "A ruggedised industrial router featuring dual 5G/4G modems, Wi-Fi 6, and SFP uplinks. Built on MediaTek MT7981 with OpenWRT, it supports dual-SIM failover, DIN-rail mounting, and a wide 9–30V DC power range — ideal for demanding telecom, industrial, and remote site deployments.",
+      "cpu": "MediaTek MT7981, 1.3GHz Dual Core ARM Cortex A53",
+      "ram": "1 GB DDR4",
+      "storage": "128 MB NAND",
+      "cell": "4G/5G",
+      "cellular_gen": "5G",
+      "wifi": "WiFi6",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "IP30",
+      "power": "9–30 VDC Dual Source",
+      "ports": "5",
+      "os": "OpenWRT Linux",
+      "housing": "Sheet Metal",
+      "dims": "190 × 45 × 120 mm",
+      "weight": "700 g",
+      "op_temp": "0°C - 50°C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rtsxx-1786516658709-95je.png",
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rtsxx-1786516662516-fxsy.png"
+      ],
+      "use_cases": [
+        "SD-WAN & Branch Network Connectivity",
+        "Secure VPN & Surveillance Network Deployment"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "RTS00": "assets/datasheets/RTS00-6.pdf",
+        "RTS04-1": "assets/datasheets/RTS04-1.pdf",
+        "RTS04-2": "assets/datasheets/RTS04-2.pdf",
+        "RTS05-1": "assets/datasheets/RTS05-1.pdf",
+        "RTS05-2": "assets/datasheets/RTS05-2.pdf",
+        "RTS-60": "assets/datasheets/RTS60.pdf",
+        "RTS64-2": "assets/datasheets/RTS64-2.pdf",
+        "RTS65-1": "assets/datasheets/RTS65-1.pdf",
+        "RTS65-2": "assets/datasheets/RTS65-2.pdf",
+        "RTS64-1": "contact_us"
+      },
+      "hidden_fields": [
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "4 x LAN (Gigabit) and 1 x WAN (Gigabit)"
+        },
+        {
+          "k": "SFP Ports",
+          "v": "1/2"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "4G/5G",
+          "No. of Modems",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "—",
+            "—",
+            "—",
+            "—",
+            "RTS00"
+          ],
+          [
+            "✓",
+            "—",
+            "4G",
+            "Single",
+            "RTS04-1"
+          ],
+          [
+            "✓",
+            "—",
+            "4G",
+            "Dual",
+            "RTS04-2"
+          ],
+          [
+            "✓",
+            "—",
+            "5G",
+            "Single",
+            "RTS05-1"
+          ],
+          [
+            "✓",
+            "—",
+            "5G",
+            "Dual",
+            "RTS05-2"
+          ],
+          [
+            "—",
+            "Wi-Fi 6",
+            "—",
+            "—",
+            "RTS-60"
+          ],
+          [
+            "✓",
+            "Wi-Fi 6",
+            "4G",
+            "Single",
+            "RTS64-1"
+          ],
+          [
+            "✓",
+            "Wi-Fi 6",
+            "4G",
+            "Dual",
+            "RTS64-2"
+          ],
+          [
+            "✓",
+            "Wi-Fi 6",
+            "5G",
+            "Single",
+            "RTS65-1"
+          ],
+          [
+            "✓",
+            "Wi-Fi 6",
+            "5G",
+            "Dual",
+            "RTS65-2"
+          ]
+        ]
+      }
     },
     {
       "id": "bcpm",
