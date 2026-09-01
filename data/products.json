@@ -330,9 +330,12 @@
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/invcf-1787733948165-323c.png"
       ],
       "use_cases": [
-        "Fleet Telematics & Autonomous Vehicle Edge Computer",
-        "Ruggedized Industrial Multi-Network Router & Edge Gateway",
-        "Interactive Smart Kiosk & Digital Signage Controller"
+        "Fleet Telematics",
+        "Autonomous Vehicle",
+        "Smart Kiosk",
+        "Digital Signage",
+        "Edge Gateway",
+        "Multi-Network Router"
       ],
       "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/invcf-datasheet.pdf",
       "part_datasheets": {},
