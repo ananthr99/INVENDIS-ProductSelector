@@ -304,6 +304,52 @@
       "variants": null
     },
     {
+      "id": "invcf",
+      "name": "INV-CF-XX",
+      "cat": "Intel Based Devices",
+      "order": 6,
+      "desc": "The INV-CF-XX is a compact, fanless industrial edge computing platform powered by the Intel X7425E processor, featuring high-speed 2.5GbE networking, 4G/5G connectivity, Wi-Fi 6 support, and flexible mounting options for industrial and IoT applications.",
+      "cpu": "Intel N150/x7425E/x7433RE/x7835RE/i3-N305/N355, 4/8 cores with 3.4GHz Turbo Frequency",
+      "ram": "32GB DDR5 SODIMM (Max)",
+      "storage": "One M.2 (B Key,2280), Upto 512GB SSD, Upto64GB eMMC",
+      "cell": "",
+      "cellular_gen": "5G",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "IP 30",
+      "power": "12 VDC",
+      "ports": "4",
+      "os": "Ubuntu/Oracle Linux/OpenWRT/Windows",
+      "housing": "Aluminum Heat Sink with CRCA Enclosure",
+      "dims": "150mm X 160mm X 52.8mm ( L X W X H) (w/o mounting options) (*Dimensions will vary depending on the mounting option chosen.)",
+      "weight": "1800",
+      "op_temp": "0 ~ 50℃",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/invcf-1787733943974-01uq.png",
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/invcf-1787733948165-323c.png"
+      ],
+      "use_cases": [
+        "Fleet Telematics & Autonomous Vehicle Edge Computer",
+        "Ruggedized Industrial Multi-Network Router & Edge Gateway",
+        "Interactive Smart Kiosk & Digital Signage Controller"
+      ],
+      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/invcf-datasheet.pdf",
+      "part_datasheets": {},
+      "hidden_fields": [
+        "cell",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports Additional Details",
+          "v": "Gigabit Ethernet (2.5 Gbps)"
+        }
+      ],
+      "variants": null
+    },
+    {
       "id": "rvcp",
       "name": "RVCP",
       "cat": "Router",
@@ -858,52 +904,6 @@
           ]
         ]
       }
-    },
-    {
-      "id": "invcf",
-      "name": "INV-CF-XX",
-      "cat": "Intel Based Devices",
-      "order": null,
-      "desc": "The INV-CF-XX is a compact, fanless industrial edge computing platform powered by the Intel X7425E processor, featuring high-speed 2.5GbE networking, 4G/5G connectivity, Wi-Fi 6 support, and flexible mounting options for industrial and IoT applications.",
-      "cpu": "Intel N150/x7425E/x7433RE/x7835RE/i3-N305/N355, 4/8 cores with 3.4GHz Turbo Frequency",
-      "ram": "32GB DDR5 SODIMM (Max)",
-      "storage": "One M.2 (B Key,2280), Upto 512GB SSD, Upto64GB eMMC",
-      "cell": "",
-      "cellular_gen": "5G",
-      "wifi": "-",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "IP 30",
-      "power": "12 VDC",
-      "ports": "4",
-      "os": "Ubuntu/Oracle Linux/OpenWRT/Windows",
-      "housing": "Aluminum Heat Sink with CRCA Enclosure",
-      "dims": "150mm X 160mm X 52.8mm ( L X W X H) (w/o mounting options) (*Dimensions will vary depending on the mounting option chosen.)",
-      "weight": "1800",
-      "op_temp": "0 ~ 50℃",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/invcf-1787733943974-01uq.png",
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/invcf-1787733948165-323c.png"
-      ],
-      "use_cases": [
-        "Fleet Telematics & Autonomous Vehicle Edge Computer",
-        "Ruggedized Industrial Multi-Network Router & Edge Gateway",
-        "Interactive Smart Kiosk & Digital Signage Controller"
-      ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/invcf-datasheet.pdf",
-      "part_datasheets": {},
-      "hidden_fields": [
-        "cell",
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports Additional Details",
-          "v": "Gigabit Ethernet (2.5 Gbps)"
-        }
-      ],
-      "variants": null
     },
     {
       "id": "itx-arl-board",
