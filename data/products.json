@@ -389,7 +389,8 @@
         "RTS-60": "assets/datasheets/RTS60.pdf",
         "RTS64-2": "assets/datasheets/RTS64-2.pdf",
         "RTS65-1": "assets/datasheets/RTS65-1.pdf",
-        "RTS65-2": "assets/datasheets/RTS65-2.pdf"
+        "RTS65-2": "assets/datasheets/RTS65-2.pdf",
+        "RTS64-1": "contact_us"
       },
       "hidden_fields": [
         "rs485",
