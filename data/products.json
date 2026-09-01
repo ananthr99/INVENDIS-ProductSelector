@@ -2019,6 +2019,76 @@
       }
     },
     {
+      "id": "xa82",
+      "name": "XA82-2",
+      "cat": "Switch",
+      "order": 25,
+      "desc": "The XA-82-2 cuts through network complexity by delivering plug-and-play Gigabit switching with zero configuration overhead — eight PoE-capable ports, two SFP uplinks, and a 240W total PoE budget ready to power cameras, access points, and IP phones straight out of the box. Its wide 9-57Vdc input range and DIN rail-mountable aluminium body make it equally at home in a control cabinet or a harsh field enclosure, serving installers and contractors who need reliable, no-fuss layer-2 connectivity without the cost of managed switch complexity.",
+      "cpu": "â",
+      "ram": "â",
+      "storage": "â",
+      "cell": "none",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "9-57 VDC",
+      "ports": "8",
+      "os": "â",
+      "housing": "Industrial Aluminium",
+      "dims": "56 mm x 110 mm x 114 mm (W x H x D)",
+      "weight": "300 g",
+      "op_temp": "0–50 °C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/xa82-1786616057198-xm2u.png"
+      ],
+      "use_cases": [
+        "CCTV & Video Surveillance Deployment",
+        "Enterprise & Smart Building Connectivity",
+        "Industrial Cabinet & Field Network Expansion"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "XA82-2 Unmanaged PoE Switch": "assets/datasheets/XA-82-2.pdf"
+      },
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "wifi",
+        "cpu",
+        "ram",
+        "storage",
+        "os",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Gigabit Ethernet (MDI/MDIX)"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "PoE ",
+          "No of Modem",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "-",
+            "-",
+            "✓",
+            "Single",
+            "XA82-2 Unmanaged PoE Switch"
+          ]
+        ]
+      }
+    },
+    {
       "id": "rvcp",
       "name": "RVCP",
       "cat": "Router",
@@ -4077,74 +4147,6 @@
             "-",
             "✓",
             "XB82-2 Unmanaged PoE Switch"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "xa82",
-      "name": "XA82-2",
-      "cat": "Switch",
-      "order": null,
-      "desc": "The XA-82-2 cuts through network complexity by delivering plug-and-play Gigabit switching with zero configuration overhead — eight PoE-capable ports, two SFP uplinks, and a 240W total PoE budget ready to power cameras, access points, and IP phones straight out of the box. Its wide 9-57Vdc input range and DIN rail-mountable aluminium body make it equally at home in a control cabinet or a harsh field enclosure, serving installers and contractors who need reliable, no-fuss layer-2 connectivity without the cost of managed switch complexity.",
-      "cpu": "â",
-      "ram": "â",
-      "storage": "â",
-      "cell": "none",
-      "cellular_gen": "-",
-      "wifi": "-",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "",
-      "power": "9-57 VDC",
-      "ports": "8",
-      "os": "â",
-      "housing": "Industrial Aluminium",
-      "dims": "56 mm x 110 mm x 114 mm (W x H x D)",
-      "weight": "300 g",
-      "op_temp": "0–50 °C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/xa82-1786616057198-xm2u.png"
-      ],
-      "use_cases": [
-        "CCTV & Video Surveillance Deployment",
-        "Enterprise & Smart Building Connectivity",
-        "Industrial Cabinet & Field Network Expansion"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "XA82-2 Unmanaged PoE Switch": "assets/datasheets/XA-82-2.pdf"
-      },
-      "hidden_fields": [
-        "cell",
-        "cellular_gen",
-        "wifi",
-        "cpu",
-        "ram",
-        "storage",
-        "os"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports",
-          "v": "Gigabit Ethernet (MDI/MDIX)"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "PoE ",
-          "No of Modem",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "-",
-            "-",
-            "✓",
-            "Single",
-            "XA82-2 Unmanaged PoE Switch"
           ]
         ]
       }
