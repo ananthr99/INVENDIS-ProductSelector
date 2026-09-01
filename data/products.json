@@ -258,10 +258,102 @@
       "variants": null
     },
     {
+      "id": "inv-cd-xx",
+      "name": "INV-CD-XX",
+      "cat": "Intel Based Devices",
+      "order": 5,
+      "desc": "This compact, fanless edge computing system is designed for AI inference, networking, and industrial applications, combining an Intel® Core™ N350 processor with flexible expansion for AI accelerators or NVMe storage. Key differentiators include dual Gigabit LAN, multiple display outputs (up to 4K), wide OS support, and robust I/O in a small form factor. It targets edge AI deployments, smart retail, industrial automation, and network security solutions.",
+      "cpu": "Intel N150/x7425E/x7433RE/x7835RE/i3-N305/N355, 4/8 cores with 3.4GHz Turbo Frequency",
+      "ram": "64GB DDR5 SODIMM (Max) (Memory to be Separately Ordered)",
+      "storage": "1x M.2 (Key-B), 512 GB SATA SSD Module (Up to 1 TB",
+      "cell": "4G/5G",
+      "cellular_gen": "5G",
+      "wifi": "WiFi6",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "IP30",
+      "power": "12V DC",
+      "ports": "2",
+      "os": "Oracle Linux v.9.5 and above Ubuntu 23, Windows 10 and above",
+      "housing": "Aluminum Heat Sink with CRCA Enclosure (Fanless Design), Sheet Metal (Fan Design)",
+      "dims": "150mmx210mmx65mm (LxWxH)",
+      "weight": "995 g",
+      "op_temp": "0 -50°C",
+      "images": [
+        "assets/images/inv-cd-xx-1.png",
+        "assets/images/inv-cd-xx-2.png",
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-cd-xx-1786515792452-i9dg.png"
+      ],
+      "use_cases": [
+        "Industrial Machine Vision & Quality Inspection",
+        "Smart Traffic & Transportation Edge Nodes",
+        "Edge Security & Surveillance with AI Analytics"
+      ],
+      "datasheet": "assets/datasheets/INV-CD-N350_Datasheet.pdf",
+      "part_datasheets": {},
+      "hidden_fields": [
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports-Additional Details",
+          "v": "Gigabit Ethernet (Realtek RTL8111H)"
+        }
+      ],
+      "variants": null
+    },
+    {
+      "id": "invcf",
+      "name": "INV-CF-XX",
+      "cat": "Intel Based Devices",
+      "order": 6,
+      "desc": "The INV-CF-XX is a compact, fanless industrial edge computing platform powered by the Intel X7425E processor, featuring high-speed 2.5GbE networking, 4G/5G connectivity, Wi-Fi 6 support, and flexible mounting options for industrial and IoT applications.",
+      "cpu": "Intel N150/x7425E/x7433RE/x7835RE/i3-N305/N355, 4/8 cores with 3.4GHz Turbo Frequency",
+      "ram": "32GB DDR5 SODIMM (Max)",
+      "storage": "One M.2 (B Key,2280), Upto 512GB SSD, Upto64GB eMMC",
+      "cell": "",
+      "cellular_gen": "5G",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "IP 30",
+      "power": "12 VDC",
+      "ports": "4",
+      "os": "Ubuntu/Oracle Linux/OpenWRT/Windows",
+      "housing": "Aluminum Heat Sink with CRCA Enclosure",
+      "dims": "150mm X 160mm X 52.8mm ( L X W X H) (w/o mounting options) (*Dimensions will vary depending on the mounting option chosen.)",
+      "weight": "1800",
+      "op_temp": "0 ~ 50℃",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/invcf-1787733943974-01uq.png",
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/invcf-1787733948165-323c.png"
+      ],
+      "use_cases": [
+        "Fleet Telematics & Autonomous Vehicle Edge Computer",
+        "Ruggedized Industrial Multi-Network Router & Edge Gateway",
+        "Interactive Smart Kiosk & Digital Signage Controller"
+      ],
+      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/invcf-datasheet.pdf",
+      "part_datasheets": {},
+      "hidden_fields": [
+        "cell",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports Additional Details",
+          "v": "Gigabit Ethernet (2.5 Gbps)"
+        }
+      ],
+      "variants": null
+    },
+    {
       "id": "rtsxx",
       "name": "RTSXX",
       "cat": "Router",
-      "order": 5,
+      "order": 7,
       "desc": "A ruggedised industrial router featuring dual 5G/4G modems, Wi-Fi 6, and SFP uplinks. Built on MediaTek MT7981 with OpenWRT, it supports dual-SIM failover, DIN-rail mounting, and a wide 9–30V DC power range — ideal for demanding telecom, industrial, and remote site deployments.",
       "cpu": "MediaTek MT7981, 1.3GHz Dual Core ARM Cortex A53",
       "ram": "1 GB DDR4",
@@ -297,7 +389,8 @@
         "RTS-60": "assets/datasheets/RTS60.pdf",
         "RTS64-2": "assets/datasheets/RTS64-2.pdf",
         "RTS65-1": "assets/datasheets/RTS65-1.pdf",
-        "RTS65-2": "assets/datasheets/RTS65-2.pdf"
+        "RTS65-2": "assets/datasheets/RTS65-2.pdf",
+        "RTS64-1": "contact_us"
       },
       "hidden_fields": [
         "rs485",
@@ -305,7 +398,7 @@
       ],
       "additional_specs": [
         {
-          "k": "Ethernet Ports-Additional Details",
+          "k": "Ethernet Ports",
           "v": "4 x LAN (Gigabit) and 1 x WAN (Gigabit)"
         },
         {
@@ -399,7 +492,7 @@
       "id": "ru60",
       "name": "RU60",
       "cat": "Router",
-      "order": 6,
+      "order": 8,
       "desc": "A compact, fanless Wi-Fi 6 (802.11ax) access point and router built on MediaTek MT7981 with OpenWRT. Supports AP, Station, Repeater, Guest Wi-Fi, and EasyMesh modes with 1 LAN + 1 WAN Gigabit port. Designed for indoor enterprise, retail, and industrial environments requiring reliable, high-throughput wireless connectivity.",
       "cpu": "MediaTek MT7981",
       "ram": "1 GB DDR4",
@@ -464,7 +557,7 @@
       "id": "roxx",
       "name": "ROXX",
       "cat": "Router",
-      "order": 7,
+      "order": 9,
       "desc": "A ruggedised industrial router combining dual 5G/4G modems with Wi-Fi 6 (EasyMesh), 2× WAN + 4× LAN GbE ports, and 1× SFP uplink. Built on MediaTek MT7981 with OpenWRT 21/23, supporting dual-SIM failover, DIN-rail mounting, and a wide 9–30V DC input — engineered for demanding telecom, industrial, and enterprise edge deployments.",
       "cpu": "MediaTek MT7981",
       "ram": "1 GB DDR4",
@@ -502,7 +595,7 @@
       ],
       "additional_specs": [
         {
-          "k": "Ethernet Ports-Additional Details",
+          "k": "Ethernet Ports",
           "v": "Gigabit Ports"
         }
       ],
@@ -557,7 +650,7 @@
       "id": "rtxx",
       "name": "RTXX",
       "cat": "Router",
-      "order": 8,
+      "order": 10,
       "desc": "The RTXX is a compact industrial router featuring MediaTek MT7981 with Wi-Fi 6, dual M.2 modem slots supporting 5G/4G/3G, and OpenWRT Linux. Designed for demanding IoT, industrial automation, and edge networking deployments, it supports dual SIM with 4 LAN and 1 WAN Gigabit Ethernet ports. It ships in a fanless sheet-metal enclosure with DIN rail mounting and wide 9–30 VDC input.",
       "cpu": "MediaTek MT7981, 1.3 GHz dual-core ARM Cortex-A53",
       "ram": "1 GB DDR4",
@@ -694,7 +787,7 @@
       "id": "rvxx",
       "name": "RVXX",
       "cat": "Router",
-      "order": 9,
+      "order": 11,
       "desc": "The RVXX is a compact industrial router built on MediaTek MT7621 featuring dual-band Wi-Fi 5, 4G/3G/2G cellular with dual SIM, and five Gigabit Ethernet ports. Running OpenWRT Linux, it supports VPN, VLAN, advanced routing and NMS remote management, making it ideal for industrial IoT, M2M, and edge-networking deployments. It ships in a fanless industrial aluminium enclosure with 12 V DC input and optional DIN rail mounting.",
       "cpu": "MediaTek MT7621",
       "ram": "512 MB DDR3",
@@ -734,7 +827,7 @@
       ],
       "additional_specs": [
         {
-          "k": "Ethernet Ports-Additional Details",
+          "k": "Ethernet Ports",
           "v": "Gigabit Ports"
         }
       ],
@@ -789,7 +882,7 @@
       "id": "rv00",
       "name": "RV00",
       "cat": "Router",
-      "order": 10,
+      "order": 12,
       "desc": "The RV00 is a compact industrial router built on MediaTek MT7621 featuring dual-band Wi-Fi 5, 4G/3G/2G cellular with dual SIM, and five Gigabit Ethernet ports. Running OpenWRT Linux, it supports VPN, VLAN, advanced routing and NMS remote management, making it ideal for industrial IoT, M2M, and edge-networking deployments. It ships in a fanless industrial aluminium enclosure with 12 V DC input and optional DIN rail mounting.",
       "cpu": "MediaTek MT7621",
       "ram": "512 MB DDR3",
@@ -828,7 +921,7 @@
       ],
       "additional_specs": [
         {
-          "k": "Ethernet Ports-Additional Details",
+          "k": "Ethernet Ports",
           "v": "Gigabit Ports"
         }
       ],
@@ -855,7 +948,7 @@
       "id": "rdxx",
       "name": "RDXX",
       "cat": "Router",
-      "order": 11,
+      "order": 13,
       "desc": "This is a rugged, industrial-grade cellular router designed to provide reliable wired and wireless connectivity for remote and mission-critical deployments. Key differentiators include dual SIM failover, OpenWRT-based flexibility, extensive VPN support, and advanced routing/firewall capabilities in a compact, fanless metal enclosure. It is ideal for industries such as IoT, smart infrastructure, transportation, and enterprise branch networking requiring secure, always-on connectivity.",
       "cpu": "MediaTek MT7628",
       "ram": "128 MB DDR2",
@@ -898,7 +991,7 @@
       ],
       "additional_specs": [
         {
-          "k": "Ethernet Ports-Additional Details",
+          "k": "Ethernet Ports",
           "v": "Fast Ethernet Ports"
         }
       ],
@@ -992,7 +1085,7 @@
       "id": "rexx",
       "name": "REXX",
       "cat": "Router",
-      "order": 12,
+      "order": 14,
       "desc": "Built for stable, always-on connectivity, this industrial router enables seamless integration of wired, Wi-Fi, and cellular networks in compact deployments. Its key strengths lie in dual SIM redundancy, highly customizable OpenWRT firmware, and a wide range of VPN and security features that support secure data transmission across distributed networks. It is best suited for sectors like industrial IoT, transportation systems, utilities, and remote enterprise sites where reliability and network control are critical.",
       "cpu": "MediaTek MT7628",
       "ram": "128/256 MB",
@@ -1030,7 +1123,7 @@
       ],
       "additional_specs": [
         {
-          "k": "Ethernet Ports-Additional Details",
+          "k": "Ethernet Ports",
           "v": "Fast Ethernet"
         }
       ],
@@ -1064,7 +1157,7 @@
       "id": "ri44",
       "name": "RI44",
       "cat": "Router",
-      "order": 13,
+      "order": 15,
       "desc": "This high-performance industrial router is designed to enable reliable, high-speed connectivity across wired, Wi-Fi, and cellular networks in demanding environments. It differentiates itself with a powerful Qualcomm chipset, higher RAM capacity, PoE support, dual SIM resilience, and a feature-rich OpenWRT platform with extensive VPN and security capabilities. The device is well-suited for data-intensive applications in sectors such as smart infrastructure, surveillance, transportation, and large-scale enterprise or industrial IoT deployments.",
       "cpu": "MediaTek MT7628",
       "ram": "128MB",
@@ -1099,7 +1192,7 @@
       ],
       "additional_specs": [
         {
-          "k": "Ethernet Ports-Additional Details",
+          "k": "Ethernet Ports",
           "v": "Fast Ethernet"
         }
       ],
@@ -1126,7 +1219,7 @@
       "id": "iexx",
       "name": "IEXX-X-XX",
       "cat": "Gateway",
-      "order": 14,
+      "order": 16,
       "desc": "This compact industrial gateway is designed to provide reliable cellular and Wi-Fi connectivity for lightweight, distributed networking applications. Its key strengths include flexible SIM options (eSIM/physical), wide input voltage range, rugged fanless design, and a versatile OpenWRT platform with strong VPN and security support. It is well-suited for IoT use cases such as remote monitoring, smart utilities, kiosks, and small-scale industrial or enterprise edge deployments.",
       "cpu": "MT7628",
       "ram": "128 MB DDR2",
@@ -1138,7 +1231,7 @@
       "rs232": "No",
       "ip": "",
       "power": "9-36 VDC",
-      "ports": "2 x 10/100",
+      "ports": "2",
       "os": "OpenWRT Linux",
       "housing": "Metal",
       "dims": "97 x 28 x 84mm (W x H x D)",
@@ -1163,7 +1256,12 @@
         "rs485",
         "rs232"
       ],
-      "additional_specs": [],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Fast Ethernet"
+        }
+      ],
       "variants": {
         "headers": [
           "Cellular",
@@ -1198,490 +1296,533 @@
       }
     },
     {
-      "id": "iaxx",
-      "name": "IAXX-X",
-      "cat": "Gateway",
-      "order": 15,
-      "desc": "This industrial-grade router is built to deliver stable cellular and Wi-Fi connectivity for compact edge deployments in challenging environments. It features dual SIM failover, a rugged aluminium enclosure with DIN rail support, and a secure OpenWRT-based platform offering advanced routing, VPN, and firewall capabilities. The device is ideal for applications such as industrial automation, remote asset monitoring, utilities, and small enterprise networks requiring dependable and secure connectivity.",
-      "cpu": "MediaTek MT7628",
-      "ram": "128 MB DDR2",
-      "storage": "32 MB Flash",
-      "cell": "4G",
+      "id": "rvcp",
+      "name": "RVCP",
+      "cat": "Router",
+      "order": null,
+      "desc": "",
+      "cpu": "MediaTek MT7621, Dual Core MIPS 880MHz",
+      "ram": "512MB, DDR3",
+      "storage": "32MB NOR Flash",
+      "cell": "",
       "cellular_gen": "4G",
-      "wifi": "WiFi4",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "12 V DC or 9-30V DC",
+      "ports": "4",
+      "os": "Open-WRT based Linux OS",
+      "housing": "Sheet Metal",
+      "dims": "190 x 30 x 100 mm (W x H x D)",
+      "weight": "520",
+      "op_temp": "0 -50°C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvcp-1787643260652-71vm.png"
+      ],
+      "use_cases": [],
+      "datasheet": null,
+      "part_datasheets": {
+        "RVCP 04": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvcp-RVCP_04.pdf"
+      },
+      "hidden_fields": [
+        "cell",
+        "wifi",
+        "ip",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Port",
+          "v": "Gigabit Ethernet"
+        },
+        {
+          "k": "SFP Ports",
+          "v": "1"
+        },
+        {
+          "k": "USB Port",
+          "v": "1 X 3.0"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "Gen",
+          "Modem",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "—",
+            "✓",
+            "4G",
+            "Single",
+            "RVCP 04"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "xi244-2M",
+      "name": "XI 244-2M",
+      "cat": "Switch",
+      "order": null,
+      "desc": "The SILBO XI-244-2L is an industrial Layer 2 managed switch featuring 24 Gigabit Ethernet PoE ports with a 240W total power budget, alongside 2 Gigabit RJ45 ports and 2 SFP fiber uplinks for flexible network aggregation. Encased in a durable aluminum enclosure, it supports advanced traffic management, redundancy protocols (STP/MSTP/ERPS), and PoE scheduling for demanding surveillance, IoT, and industrial applications.",
+      "cpu": "",
+      "ram": "",
+      "storage": "",
+      "cell": "",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "",
+      "ports": "24",
+      "os": "",
+      "housing": "",
+      "dims": "",
+      "weight": "",
+      "op_temp": "",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/xi244-2M-1787821659624-q8nr.png"
+      ],
+      "use_cases": [
+        "Commercial IP Security & Surveillance Infrastructure",
+        "Smart Building & IoT Deployment",
+        "Industrial / Campus Branch Network Aggregation"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "XI 244-2M": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xi244-2M-XI_244-2M.pdf"
+      },
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "wifi",
+        "cpu",
+        "ram",
+        "storage",
+        "ip",
+        "power",
+        "os",
+        "rs485",
+        "rs232",
+        "housing",
+        "dims",
+        "weight",
+        "op_temp"
+      ],
+      "additional_specs": [
+        {
+          "k": "Chipset",
+          "v": "EN8853D+EN8808Q*2+EN8804+3*AN8503"
+        },
+        {
+          "k": "Interface",
+          "v": "24 x 10/100/1000Mbps+4G Combo(RJ45 Or Fiber) Auto-Negotiation ports,The Fiber is SFP"
+        },
+        {
+          "k": "Transfer Method",
+          "v": "Store-and-Forward"
+        },
+        {
+          "k": "MAC Address Table",
+          "v": "32K"
+        },
+        {
+          "k": "Switching Capacity",
+          "v": "56Gbps"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Wi-Fi",
+          "Cellular",
+          "PoE",
+          "Number of Modem",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "—",
+            "—",
+            "—",
+            "—",
+            "XI 244-2M"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "rvg",
+      "name": "RVG 55",
+      "cat": "Gateway",
+      "order": null,
+      "desc": "",
+      "cpu": "MediaTek MT7621 Dual-core 880 MHz",
+      "ram": "512MB DDR3",
+      "storage": "32MB",
+      "cell": "RM 500U CNV",
+      "cellular_gen": "5G",
+      "wifi": "WiFi5",
       "rs485": "Yes",
       "rs232": "-",
-      "ip": "IP30",
+      "ip": "IP 30",
       "power": "9-30 VDC",
-      "ports": "2",
-      "os": "OpenWRT Linux",
-      "housing": "Industrial Aluminium",
-      "dims": "110 x 44 x 94mm (W x H x D)",
-      "weight": "280 g",
-      "op_temp": "-20 ~ 60 ˚C",
+      "ports": "6",
+      "os": "Open-WRT based Linux OS",
+      "housing": "",
+      "dims": "110 x 44 x 94 mm (W x H x D)",
+      "weight": "400gm",
+      "op_temp": "0 ~ 60 ˚C",
       "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/iaxx-1786598951793-g17i.png"
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvg-1787660516258-khi6.png"
       ],
-      "use_cases": [
-        "Industrial Machine Data Communication",
-        "Remote Infrastructure Management",
-        "Smart Building Network Management"
-      ],
+      "use_cases": [],
       "datasheet": null,
       "part_datasheets": {
-        "IA44-C": "assets/datasheets/IA44-C.pdf",
-        "IA44-B": "assets/datasheets/IA44-B.pdf",
-        "IA44-A": "assets/datasheets/IA44-A.pdf",
-        "IA40-C": "assets/datasheets/IA40-C.pdf"
+        "RVG 55-C": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvg-RVG_55-C.pdf",
+        "RVG 54-C": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvg-RVG_54-C.pdf",
+        "RVG 44-C": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvg-RVG_44-C.pdf"
       },
       "hidden_fields": [
         "rs232"
       ],
       "additional_specs": [
         {
-          "k": "Ethernet Port-Additional Details",
-          "v": "Fast Ethernet"
+          "k": "Ethernet Ports- Additional Details",
+          "v": "Gigabit Ethernet (Configurable WAN/LAN)"
         }
       ],
       "variants": {
         "headers": [
-          "Cellular",
+          "Celluar",
           "Wi-Fi",
-          "4G/5G",
-          "RS485",
-          "No. of Modems",
+          "Gen",
+          "Modem",
           "Part Number"
         ],
         "rows": [
           [
             "✓",
-            "Wi-Fi 4",
-            "4G",
-            "✓",
+            "Wi-Fi 5",
+            "5G",
             "Single",
-            "IA44-C"
+            "RVG 55-C"
           ],
           [
             "✓",
             "Wi-Fi 4",
             "4G",
-            "✓",
             "Single",
-            "IA44-B (4 GB eMMC)"
+            "RVG 44-C"
           ],
           [
             "✓",
-            "Wi-Fi 4",
-            "4G",
-            "—",
+            "Wi-FI 5",
+            "5G ",
             "Single",
-            "IA44-A"
-          ],
-          [
-            "—",
-            "Wi-Fi 4",
-            "—",
-            "✓",
-            "NA",
-            "IA40-C"
+            "RVG 54-C"
           ]
         ]
       }
     },
     {
-      "id": "rfnxx",
-      "name": "RFNXX",
+      "id": "RVH",
+      "name": "RVH 44",
       "cat": "Gateway",
-      "order": 16,
-      "desc": "The RFN44-A is an industrial-grade cellular router built on a MediaTek MT7628 platform with dual Nano SIM support, running an OpenWRT-based Linux OS for flexible and reliable connectivity. Housed in a fanless aluminium enclosure with a wide operating temperature range, it targets industrial automation, remote site management, and IoT deployments where rugged, dependable hardware is essential.",
-      "cpu": "MediaTek MT7628",
-      "ram": "128 MB DDR2",
-      "storage": "32 MB Flash",
-      "cell": "4G",
-      "cellular_gen": "4G",
-      "wifi": "WiFi4",
-      "rs485": "Yes",
-      "rs232": "-",
-      "ip": "IP30",
-      "power": "9-30Vdc",
-      "ports": "2",
-      "os": "OpenWRT Linux",
-      "housing": "Industrial Aluminium",
-      "dims": "112 x 35 x 99 mm (W x H x D)",
-      "weight": "297 g",
-      "op_temp": "0~ 50 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rfnxx-1786599944641-kv06.png"
-      ],
-      "use_cases": [
-        "Industrial Panel & PLC Connectivity",
-        "Telecom & Remote Site Uptime Monitoring",
-        "IoT Sensor Network Gateway"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "RFN44-A": "assets/datasheets/RFN44-A.pdf",
-        "RFN44-B": "assets/datasheets/RFN44-B.pdf",
-        "RFN44-C": "assets/datasheets/RFN44-C.pdf"
-      },
-      "hidden_fields": [
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports-Additional Details",
-          "v": "Fast Ethernet"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "RS485",
-          "DIO",
-          "4G/5G",
-          "No. of Modems",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "✓",
-            "Wi-Fi 4",
-            "—",
-            "—",
-            "4G",
-            "Single",
-            "RFN44-A"
-          ],
-          [
-            "✓",
-            "Wi-Fi 4",
-            "✓",
-            "—",
-            "4G",
-            "Single",
-            "RFN44-B (RS485)"
-          ],
-          [
-            "✓",
-            "Wi-Fi 4",
-            "—",
-            "✓",
-            "4G",
-            "Single",
-            "RFN44-C (1x DI, 1x DO)"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "iabxx",
-      "name": "IABXX-X",
-      "cat": "Gateway",
-      "order": 17,
-      "desc": "The IABXX-X is a rugged cellular router designed for reliable industrial connectivity, featuring a MediaTek MT7628 CPU with 128MB RAM and dual Nano SIM slots for flexible network redundancy. Running on OpenWRT-based Linux, it operates seamlessly across harsh environments — from -30 to 70°C storage temperatures — making it an ideal fit for IoT deployments, remote infrastructure monitoring, and industrial automation where uptime and durability are non-negotiable.",
-      "cpu": "MediaTek MT7628",
-      "ram": "128 MB DDR2",
-      "storage": "32 MB Flash",
-      "cell": "4G",
+      "order": null,
+      "desc": "The SILBO RVH-44 is an industrial OpenWrt Linux IoT cellular gateway powered by a dual-core MediaTek MT7621 processor with dual-SIM 4G connectivity and 2.4GHz Wi-Fi. Housed in a compact aluminum enclosure, it features 5 Gigabit Ethernet ports, legacy serial interfaces (2x RS485, 2x RS232), a built-in Modbus gateway, and support for cloud telemetry protocols such as MQTT and Azure MQTT",
+      "cpu": "MediaTek MT7621 Dual-core 880 MHz",
+      "ram": "512MB DDR3",
+      "storage": "32MB",
+      "cell": "",
       "cellular_gen": "4G",
       "wifi": "WiFi4",
       "rs485": "Yes",
       "rs232": "Yes",
-      "ip": "",
-      "power": "9-30 VDC",
-      "ports": "2 X 10/100",
-      "os": "OpenWRT Linux",
-      "housing": "Industrial Aluminium",
+      "ip": "IP 30",
+      "power": "9-30 Vdc",
+      "ports": "5",
+      "os": "Open-WRT based Linux OS",
+      "housing": "Industrial Aluminium or Sheet Metal",
       "dims": "110 x 44 x 94 mm (W x H x D)",
-      "weight": "427 g",
-      "op_temp": "0~ 50 ˚C",
+      "weight": "400 gm",
+      "op_temp": "0 ~ 60 ˚C",
       "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/iabxx-1787122808489-w1hl.png"
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/RVH-1787824857622-zek8.png"
       ],
       "use_cases": [
-        "Smart Energy & Utility Automation",
-        "Industrial Process Monitoring",
-        "Remote Environmental & Field Monitoring"
+        "Industrial IoT & Telemetry Aggregation",
+        "Remote Substation & Utility Monitoring",
+        "Secure Smart Edge Gateway for Transportation / Fleet Management"
       ],
       "datasheet": null,
       "part_datasheets": {
-        "IAB44-C": "assets/datasheets/IAB44-C.pdf",
-        "IAB44-B": "assets/datasheets/IAB44-B.pdf",
-        "IAB04-C": "assets/datasheets/IAB04-C.pdf"
+        "RVH 44": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/RVH-RVH_44.pdf"
       },
-      "hidden_fields": [],
+      "hidden_fields": [
+        "cell"
+      ],
       "additional_specs": [],
       "variants": {
         "headers": [
           "Cellular",
           "Wi-Fi",
-          "RS485",
-          "RS232",
-          "4G/5G",
-          "No. of Modems",
+          "Gen",
+          "Modem",
           "Part Number"
         ],
         "rows": [
           [
             "✓",
             "Wi-Fi 4",
-            "✓",
-            "✓",
-            "4G",
+            "4 G",
             "Single",
-            "IAB44-C"
-          ],
-          [
-            "✓",
-            "Wi-Fi 4",
-            "✓",
-            "✓",
-            "4G",
-            "Single",
-            "IAB44-B (4 GB eMMC)"
-          ],
-          [
-            "✓",
-            "—",
-            "✓",
-            "✓",
-            "4G",
-            "Single",
-            "IAB04-B (4 GB eMMC)"
-          ],
-          [
-            "✓",
-            "—",
-            "✓",
-            "✓",
-            "4G",
-            "Single",
-            "IAB04-C"
+            "RVH 44"
           ]
         ]
       }
     },
     {
-      "id": "iacxx",
-      "name": "IACXX-X",
-      "cat": "Gateway",
-      "order": 18,
-      "desc": "Designed to keep critical operations connected, the IACXX-X brings together dual SIM failover, 802.11 b/g/n Wi-Fi, and a wide 9-30Vdc input range into a slim, DIN rail-mountable form factor built for the factory floor. Powered by OpenWRT Linux and weighing just 400g, it delivers enterprise-grade manageability in a compact footprint — making it a practical choice for system integrators and OEMs deploying connected solutions across industrial and infrastructure environments.",
-      "cpu": "MediaTek MT7628",
-      "ram": "128 MB DDR2",
-      "storage": "32 MB Flash",
-      "cell": "4G",
-      "cellular_gen": "4G",
-      "wifi": "WiFi4",
-      "rs485": "Yes",
+      "id": "RUC",
+      "name": "RUC 65",
+      "cat": "Router",
+      "order": null,
+      "desc": "The SILBO RUC65 is a fanless, enterprise-grade 5G cellular router featuring dual-SIM redundancy, AX3000 Wi-Fi 6, and optional long-range Bluetooth 6.0 (BLE) integration. Powered by an OpenWrt Linux platform with a MediaTek MT7981 processor, it delivers up to 2.2 Gbps Sub-6 cellular speeds alongside multi-WAN failover, PoE IN support, and robust VPN tunneling capabilities.",
+      "cpu": "MediaTek MT7981 1.3GHz Dual Core ARM Cortex A53",
+      "ram": "512 MB DDR3 RAM",
+      "storage": "128 MB NAND",
+      "cell": "4G/5G",
+      "cellular_gen": "5G",
+      "wifi": "WiFi6",
+      "rs485": "No",
       "rs232": "-",
       "ip": "",
-      "power": "9-30 VDC",
-      "ports": "5",
-      "os": "OpenWRT Linux",
-      "housing": "Industrial Aluminium",
-      "dims": "110 x 44 x 94 mm (W x H x D)",
-      "weight": "400 g",
+      "power": "12 VDC",
+      "ports": "3",
+      "os": "Open-WRT based Linux OS",
+      "housing": "Plastic",
+      "dims": "105 x 200 x 105 mm (W x H x D)",
+      "weight": "590 grams",
       "op_temp": "0~ 50 ˚C",
       "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/iacxx-1786602435650-vmhe.png"
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/RUC-1787820565957-u8i6.png"
       ],
       "use_cases": [
-        "OEM Embedded Connectivity Solutions",
-        "Factory Floor Network Integration",
-        "Infrastructure Equipment Connectivity"
+        "Smart Building & IoT Edge Aggregation",
+        "Mobile & Temporary Event Branch Connectivity",
+        "Mission-Critical Multi-WAN Industrial Routing"
       ],
       "datasheet": null,
       "part_datasheets": {
-        "IAC44-C": "assets/datasheets/IAC44-C.pdf",
-        "IAC44-A": "assets/datasheets/IAC44-A.pdf",
-        "IAC04-A": "assets/datasheets/IAC04-A.pdf",
-        "IAC04-C": "assets/datasheets/IAC04-C.pdf"
+        "RUC 65": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/RUC-RUC_65.pdf"
       },
       "hidden_fields": [
         "ip",
+        "rs485",
         "rs232"
       ],
       "additional_specs": [
         {
-          "k": "Ethernet Ports-Additional Details",
-          "v": "Fast Ethernet"
+          "k": "Ethernet Ports Additional Spec",
+          "v": "1 x Gigabit WAN (PoE IN IEEE802.3at), 2 x Gigabit LAN"
         }
       ],
       "variants": {
         "headers": [
           "Cellular",
-          "Wi-Fi",
-          "RS485",
-          "4G/5G",
-          "No. of Modems",
+          "WiFi",
+          "Gen",
+          "Modem",
           "Part Number"
         ],
         "rows": [
           [
             "✓",
-            "Wi-Fi 4",
-            "✓",
-            "4G",
+            "Wi-Fi 6",
+            "5G",
             "Single",
-            "IAC44-C"
-          ],
-          [
-            "✓",
-            "Wi-Fi 4",
-            "—",
-            "4G",
-            "Single",
-            "IAC44-A"
-          ],
-          [
-            "✓",
-            "—",
-            "—",
-            "4G",
-            "Single",
-            "IAC04-A"
-          ],
-          [
-            "✓",
-            "—",
-            "✓",
-            "4G",
-            "Single",
-            "IAC04-C"
+            "RUC 65"
           ]
         ]
       }
     },
     {
-      "id": "iafxx",
-      "name": "IAFXX-X",
-      "cat": "Gateway",
-      "order": 19,
-      "desc": "The IAFXX-X steps beyond standard cellular routers by integrating rich serial I/O — including RS485, digital I/O, analog input, and a built-in RTC — making it a true industrial gateway rather than just a connectivity device. With Modbus TCP/RTU support and SMS-based remote commands, it speaks the language of industrial automation natively, targeting sectors like manufacturing, energy, and utility infrastructure where field device integration is just as critical as network uptime.",
-      "cpu": "MediaTek MT7628",
-      "ram": "128 MB DDR2",
-      "storage": "32 MB Flash",
-      "cell": "4G",
-      "cellular_gen": "4G",
-      "wifi": "WiFi4",
-      "rs485": "Yes",
-      "rs232": "No",
-      "ip": "",
-      "power": "-48 VDC",
-      "ports": "2",
-      "os": "OpenWRT Linux",
-      "housing": "Industrial Aluminium",
-      "dims": "110 x 44 x 94 mm (W x H x D)",
-      "weight": "400 g",
-      "op_temp": "0~ 50 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/iafxx-1787138159862-mpoy.png"
-      ],
-      "use_cases": [
-        "Remote Sensor & Transducer data to cloud",
-        "Drinking Water Treatment plant data to remote Cloud SCADA",
-        "Industrial Alarm & Event Monitoring"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "IAF44-C1": "assets/datasheets/IAF44-C1.pdf",
-        "IAF04-C1": "assets/datasheets/IAF04-C1.pdf",
-        "IAF44-C2": "contact_us",
-        "IAF04-C2": "contact_us"
-      },
-      "hidden_fields": [],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports-Additional Details",
-          "v": "Fast Ethernet"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "4G/5G",
-          "RS485",
-          "No. of Modems",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "✓",
-            "Wi-Fi 4",
-            "4G",
-            "—",
-            "Single",
-            "IAF44-C1"
-          ],
-          [
-            "✓",
-            "Wi-Fi 4",
-            "4G",
-            "✓",
-            "Single",
-            "IAF44-C2"
-          ],
-          [
-            "✓",
-            "—",
-            "4G",
-            "✓",
-            "Single",
-            "IAF04-C2"
-          ],
-          [
-            "—",
-            "—",
-            "4G",
-            "—",
-            "Single",
-            "IAF04-C1"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "idxx",
-      "name": "IDXX-X",
-      "cat": "Gateway",
-      "order": 20,
-      "desc": "The IDXX-X punches well above its weight class, pairing a generous 512MB RAM and Gigabit WAN/LAN ports with 802.11 b/g/n/ac dual-band Wi-Fi — a significant step up from entry-level industrial routers. This added horsepower makes it a strong candidate for bandwidth-intensive applications across smart factories, digital infrastructure, and multi-site enterprise deployments where throughput and scalability cannot be compromised.",
+      "id": "rvcd",
+      "name": "RVCD",
+      "cat": "Switch",
+      "order": null,
+      "desc": "The SILBO RVCD is a compact, industrial-grade Gigabit router powered by a MediaTek MT7621 processor, 512MB RAM, and OpenWrt Linux. Featuring 5 Gigabit Ethernet ports (1 WAN, 4 LAN) and a USB 3.0 port, it provides multi-WAN load balancing, advanced firewall security, and extensive VPN tunneling support (IPsec, OpenVPN, WireGuard) in a fanless sheet metal housing.",
       "cpu": "MediaTek MT7621",
-      "ram": "512 MB DDR3",
-      "storage": "64 MB Flash",
-      "cell": "4G",
-      "cellular_gen": "4G",
-      "wifi": "WiFi5",
+      "ram": "512MB",
+      "storage": "32MB",
+      "cell": "",
+      "cellular_gen": "-",
+      "wifi": "WiFi4",
       "rs485": "-",
       "rs232": "-",
       "ip": "",
-      "power": "9-30 VDC",
-      "ports": "4",
-      "os": "OpenWRT Linux",
-      "housing": "Industrial Aluminium",
-      "dims": "110 x 44 x 94 mm (W x H x D)",
-      "weight": "400 g",
+      "power": "12 VDC",
+      "ports": "5",
+      "os": "Open-WRT based Linux OS",
+      "housing": "Sheet Metal",
+      "dims": "110 x 26 x 95 mm (W x H x D)",
+      "weight": "200 gm",
       "op_temp": "0~ 50 ˚C",
       "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/idxx-1786603920631-nlg8.png"
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvcd-1787653548751-xx2w.png"
       ],
       "use_cases": [
-        "High-Bandwidth Smart Factory Connectivity",
-        "Multi-Site Enterprise Network Extension",
-        "Smart Energy & Utility Field Automation"
+        "MultiWAN Failover",
+        "Secure Remote Infrastructure Access (Branch-to-Headquarters VPN)",
+        "Industrial Control & Edge IoT Gateway",
+        "High-Reliability Retail / ATM Broadband Bonding"
       ],
       "datasheet": null,
       "part_datasheets": {
-        "ID55-B": "assets/datasheets/ID55-B.pdf",
-        "ID55": "assets/datasheets/ID55.pdf",
-        "ID54-B": "assets/datasheets/ID54-B.pdf",
-        "ID54": "assets/datasheets/ID54.pdf"
+        "RVCD": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvcd-RVCD.pdf"
       },
       "hidden_fields": [
+        "cell",
+        "cellular_gen",
         "ip",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Interface",
+          "v": "USB 3.0/ 2.0 Host (Optional)"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "PoE",
+          "No of Modem",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "—",
+            "—",
+            "—",
+            "Single",
+            "RVCD"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "rdb40",
+      "name": "RDB40",
+      "cat": "Gateway",
+      "order": null,
+      "desc": "The SILBO RDB40 is a ceiling-mounted indoor Access Point powered by OpenWrt Linux and a MediaTek MT7628 processor with 2.4GHz Wi-Fi (802.11b/g/n). It features an integrated Nordic nRF54L05 BLE 6.0 SoC with a long-range Front-End Module (FEM), support for 802.3af Active PoE IN, and 10/100 Ethernet ports.",
+      "cpu": "MediaTek MT7628",
+      "ram": "128 MB",
+      "storage": "32 MB",
+      "cell": "",
+      "cellular_gen": "-",
+      "wifi": "WiFi5",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "IP 30",
+      "power": "",
+      "ports": "",
+      "os": "",
+      "housing": "Plastic",
+      "dims": "190mmx190mmx40mm (W x D x H)",
+      "weight": "290 gm",
+      "op_temp": "0-50 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rdb40-1787726970581-q7up.png"
+      ],
+      "use_cases": [
+        "Indoor Asset Tracking & Real-Time Location Services (RTLS)",
+        "Smart Building Sensor Data Aggregation",
+        "Single-Cable PoE Indoor Wi-Fi Access Point Deployment"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "RDB 40": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rdb40-RDB_40.pdf"
+      },
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "ports",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "4G/5G",
+          "No of Modems",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "-",
+            "✓",
+            "-",
+            "-",
+            "RDB 40"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "XG822L",
+      "name": "XG-82-2L",
+      "cat": "Switch",
+      "order": null,
+      "desc": "The XG-82-2L graduates from simple connectivity to intelligent network control, offering full Layer 2 managed switching with 20 Gbps switching capacity, 2.5Gbps SFP uplinks, and a rich feature set spanning MSTP, IGMP Snooping, QoS, ERPS, and PoE scheduling — all configurable via Web, CLI, or SNMP. With an 8K MAC table, 15K jumbo frame support, and a 240W PoE budget spread across eight Gigabit ports, it is the natural choice for IT teams and network integrators who need granular traffic management and device powering in a single compact, DIN rail-mountable unit.",
+      "cpu": "",
+      "ram": "",
+      "storage": "",
+      "cell": "",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "Dual Input- 44-57 VDC",
+      "ports": "8",
+      "os": "",
+      "housing": "Industrial Aluminium",
+      "dims": "200 mm x 120 mm x 55mm (WxLxH)",
+      "weight": "675 Gm (Industrial Aluminium Enclosure)",
+      "op_temp": "0 ~ 60 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/XG822L-1787823067459-bkr4.png"
+      ],
+      "use_cases": [
+        "Enterprise Surveillance & Security Networks",
+        "Smart Campus & Enterprise Network Management",
+        "Industrial Network Control & Redundancy"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "XG 82-2L Lite Managed Switch": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/XG822L-XG_82-2L_Lite_Managed_Switch.pdf"
+      },
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "wifi",
+        "cpu",
+        "ram",
+        "storage",
+        "ip",
+        "os",
         "rs485",
         "rs232"
       ],
@@ -1693,281 +1834,19 @@
       ],
       "variants": {
         "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "4G/5G",
-          "RS485",
-          "No. of Modems",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "✓",
-            "Wi-Fi 5",
-            "4G",
-            "✓",
-            "Single",
-            "ID55-B (4 GB eMMC)"
-          ],
-          [
-            "✓",
-            "—",
-            "4G",
-            "—",
-            "Single",
-            "ID55"
-          ],
-          [
-            "✓",
-            "Wi-Fi 5",
-            "4G",
-            "✓",
-            "Single",
-            "ID54-B (4 GB eMMC)"
-          ],
-          [
-            "✓",
-            "—",
-            "4G",
-            "—",
-            "Single",
-            "ID54"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "idbxx",
-      "name": "IDBXX-X",
-      "cat": "Gateway",
-      "order": 21,
-      "desc": "Where the IDB54 stands out is its configurable WAN/LAN port — giving network administrators the flexibility to repurpose a Gigabit port based on deployment needs — paired with 512MB RAM and dual-band 802.11 b/g/n/ac Wi-Fi for high-throughput performance. Housed in a rugged aluminium shell rated for -20 to 60°C operation, it is tailored for enterprises and system integrators who need a versatile, high-performance edge router that adapts to evolving network topologies across commercial and industrial sites.",
-      "cpu": "MediaTek MT7621",
-      "ram": "512 MB DDR3",
-      "storage": "32 MB Flash",
-      "cell": "4G/5G",
-      "cellular_gen": "5G",
-      "wifi": "WiFi5",
-      "rs485": "Yes",
-      "rs232": "Yes",
-      "ip": "",
-      "power": "9-30 VDC",
-      "ports": "4",
-      "os": "OpenWRT Linux",
-      "housing": "Industrial Aluminium",
-      "dims": "110 x 44 x 94 mm (W x H x D)",
-      "weight": "400 g",
-      "op_temp": "0~ 50 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/idbxx-1786604353861-053y.png"
-      ],
-      "use_cases": [
-        "Custom Industrial Edge Application Development",
-        "Industrial Equipment Integration & Control",
-        "Adaptive Enterprise & Industrial Networking"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "IDB55": "assets/datasheets/IDB55.pdf",
-        "IDB54": "assets/datasheets/IDB54 (1).pdf"
-      },
-      "hidden_fields": [
-        "ip"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports",
-          "v": "Gigabit Ethernet (10/100/1000)"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "4G/5G",
-          "RS485",
-          "RS232",
-          "No. of Modems",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "✓",
-            "Wi-Fi 5",
-            "5G",
-            "✓",
-            "✓",
-            "Single",
-            "IDB55-B"
-          ],
-          [
-            "✓",
-            "Wi-Fi 5",
-            "5G",
-            "—",
-            "—",
-            "Single",
-            "IDB55"
-          ],
-          [
-            "✓",
-            "Wi-Fi 5",
-            "4G",
-            "✓",
-            "✓",
-            "Single",
-            "IDB54-B"
-          ],
-          [
-            "✓",
-            "Wi-Fi 5",
-            "4G",
-            "—",
-            "—",
-            "Single",
-            "IDB54"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "isense",
-      "name": "iSense XXX",
-      "cat": "Gateway",
-      "order": 22,
-      "desc": "The iSense is purpose-built for data-heavy industrial environments, combining 24 isolated digital inputs, 8 relay outputs, 4x RS485, analog voltage/current sensing, and dual external temperature probes into a single converged gateway. This density of I/O — backed by a dual-core processor with up to 32GB eMMC and native Modbus, SNMP, and MQTT support — makes it the go-to solution for energy monitoring, process automation, and smart infrastructure projects where deep field-level visibility drives operational decisions.",
-      "cpu": "Dual Core 0.88 GHz",
-      "ram": "512 MB + eMMC up to 32 GB",
-      "storage": "32 MB Flash",
-      "cell": "4G",
-      "cellular_gen": "4G",
-      "wifi": "WiFi5",
-      "rs485": "Yes",
-      "rs232": "Yes",
-      "ip": "",
-      "power": "20-60 VDC",
-      "ports": "",
-      "os": "Linux OS",
-      "housing": "Sheet Metal",
-      "dims": "309 x 221 x 58 mm (L x W x H)",
-      "weight": "1853 g",
-      "op_temp": "-10°C to 70°C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/isense-1786612536077-wooc.png"
-      ],
-      "use_cases": [
-        "Energy Monitoring & Power Management",
-        "Process Automation & Industrial Control",
-        "Smart Infrastructure & Remote Asset Intelligence"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "iSense Violet Plus Pro": "assets/datasheets/Isense Violet Plus Pro.pdf",
-        "iSense Green Plus Pro": "assets/datasheets/Isense Green Plus Pro.pdf",
-        "iSense Blue Plus Pro": "assets/datasheets/Isense Blue Plus Pro.pdf"
-      },
-      "hidden_fields": [
-        "ip",
-        "ports"
-      ],
-      "additional_specs": [],
-      "variants": {
-        "headers": [
           "Wi-Fi",
           "Cellular",
-          "4G/5G",
-          "RS485",
-          "RS232",
-          "DIO Count",
+          "PoE",
+          "No of Modem",
           "Part Number"
         ],
         "rows": [
           [
+            "-",
+            "-",
             "✓",
-            "✓",
-            "4G",
-            "✓",
-            "✓",
-            "24",
-            "iSense Violet Plus Pro"
-          ],
-          [
-            "✓",
-            "✓",
-            "4G",
-            "✓",
-            "✓",
-            "12",
-            "iSense Green Plus Pro"
-          ],
-          [
-            "✓",
-            "✓",
-            "4G",
-            "✓",
-            "✓",
-            "6",
-            "iSense Blue Plus Pro"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "GPONONU",
-      "name": "GPON ONU",
-      "cat": "Router",
-      "order": 78,
-      "desc": "",
-      "cpu": "",
-      "ram": "64MB SD RAM",
-      "storage": "",
-      "cell": "",
-      "cellular_gen": "-",
-      "wifi": "-",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "",
-      "power": "12 VDC",
-      "ports": "1 X 10/100/1000",
-      "os": "",
-      "housing": "Plastic",
-      "dims": "90 x 27 x 80 mm (W x H x D)",
-      "weight": "300 g",
-      "op_temp": "0~ 70 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/GPONONU-1787223696594-jx1x.png"
-      ],
-      "use_cases": [],
-      "datasheet": null,
-      "part_datasheets": {
-        "GPON ONU": "contact_us"
-      },
-      "hidden_fields": [
-        "cell",
-        "cellular_gen",
-        "wifi",
-        "cpu",
-        "storage",
-        "ip",
-        "os",
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Controller",
-          "v": "RTL9601D"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Interface",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "Controller-RTL9601D",
-            "GPON ONU"
+            "Single",
+            "XG 82-2L Lite Managed Switch"
           ]
         ]
       }
@@ -1976,7 +1855,7 @@
       "id": "itx-arl-board",
       "name": "Arrowlake ITX",
       "cat": "Intel Based Devices",
-      "order": 89,
+      "order": null,
       "desc": "The Invendis ARL Mini ITX is a high-performance industrial computing platform powered by Intel Core Ultra Processors (Series 2) with integrated NPU AI acceleration, Intel Arc 140T graphics, and up to 128GB DDR5 RAM. Housed in a aluminum heatsink enclosure with fanless or fan options, it offers dual 2.5GbE LAN ports, triple display outputs (2x HDMI, 1x DP), and extensive M.2 expansion for Wi-Fi 6, 4G/5G cellular, and NVMe storage.",
       "cpu": "Intel® Core™ Ultra Processors (Series 2) (Ultra 5 & Ultra 7)",
       "ram": "64 GB DDR5 CSODIMM (Max) (Memory to be separately ordered)",
@@ -2069,59 +1948,13 @@
       "variants": null
     },
     {
-      "id": "invcf",
-      "name": "INV-CF-XX",
-      "cat": "Intel Based Devices",
-      "order": 90,
-      "desc": "The INV-CF-XX is a compact, fanless industrial edge computing platform powered by the Intel X7425E processor, featuring high-speed 2.5GbE networking, 4G/5G connectivity, Wi-Fi 6 support, and flexible mounting options for industrial and IoT applications.",
-      "cpu": "Intel N150/x7425E/x7433RE/x7835RE/i3-N305/N355, 4/8 cores with 3.4GHz Turbo Frequency",
-      "ram": "32GB DDR5 SODIMM (Max)",
-      "storage": "One M.2 (B Key,2280), Upto 512GB SSD, Upto64GB eMMC",
-      "cell": "",
-      "cellular_gen": "5G",
-      "wifi": "-",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "IP 30",
-      "power": "12 VDC",
-      "ports": "4",
-      "os": "Ubuntu/Oracle Linux/OpenWRT/Windows",
-      "housing": "Aluminum Heat Sink with CRCA Enclosure",
-      "dims": "150mm X 160mm X 52.8mm ( L X W X H) (w/o mounting options) (*Dimensions will vary depending on the mounting option chosen.)",
-      "weight": "1800",
-      "op_temp": "0 ~ 50℃",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/invcf-1787733943974-01uq.png",
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/invcf-1787733948165-323c.png"
-      ],
-      "use_cases": [
-        "Fleet Telematics & Autonomous Vehicle Edge Computer",
-        "Ruggedized Industrial Multi-Network Router & Edge Gateway",
-        "Interactive Smart Kiosk & Digital Signage Controller"
-      ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/invcf-datasheet.pdf",
-      "part_datasheets": {},
-      "hidden_fields": [
-        "cell",
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports Additional Details",
-          "v": "Gigabit Ethernet (2.5 Gbps)"
-        }
-      ],
-      "variants": null
-    },
-    {
-      "id": "XG822L",
-      "name": "XG-82-2L",
-      "cat": "Switch",
-      "order": 91,
-      "desc": "The XG-82-2L graduates from simple connectivity to intelligent network control, offering full Layer 2 managed switching with 20 Gbps switching capacity, 2.5Gbps SFP uplinks, and a rich feature set spanning MSTP, IGMP Snooping, QoS, ERPS, and PoE scheduling — all configurable via Web, CLI, or SNMP. With an 8K MAC table, 15K jumbo frame support, and a 240W PoE budget spread across eight Gigabit ports, it is the natural choice for IT teams and network integrators who need granular traffic management and device powering in a single compact, DIN rail-mountable unit.",
+      "id": "GPONONU",
+      "name": "GPON ONU",
+      "cat": "Router",
+      "order": null,
+      "desc": "",
       "cpu": "",
-      "ram": "",
+      "ram": "64MB SD RAM",
       "storage": "",
       "cell": "",
       "cellular_gen": "-",
@@ -2129,31 +1962,26 @@
       "rs485": "-",
       "rs232": "-",
       "ip": "",
-      "power": "Dual Input- 44-57 VDC",
-      "ports": "8",
+      "power": "12 VDC",
+      "ports": "1 X 10/100/1000",
       "os": "",
-      "housing": "Industrial Aluminium",
-      "dims": "200 mm x 120 mm x 55mm (WxLxH)",
-      "weight": "675 Gm (Industrial Aluminium Enclosure)",
-      "op_temp": "0 ~ 60 ˚C",
+      "housing": "Plastic",
+      "dims": "90 x 27 x 80 mm (W x H x D)",
+      "weight": "300 g",
+      "op_temp": "0~ 70 ˚C",
       "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/XG822L-1787823067459-bkr4.png"
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/GPONONU-1787223696594-jx1x.png"
       ],
-      "use_cases": [
-        "Enterprise Surveillance & Security Networks",
-        "Smart Campus & Enterprise Network Management",
-        "Industrial Network Control & Redundancy"
-      ],
+      "use_cases": [],
       "datasheet": null,
       "part_datasheets": {
-        "XG 82-2L Lite Managed Switch": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/XG822L-XG_82-2L_Lite_Managed_Switch.pdf"
+        "GPON ONU": "contact_us"
       },
       "hidden_fields": [
         "cell",
         "cellular_gen",
         "wifi",
         "cpu",
-        "ram",
         "storage",
         "ip",
         "os",
@@ -2162,371 +1990,157 @@
       ],
       "additional_specs": [
         {
-          "k": "Ethernet Ports-Additional Details",
-          "v": "Gigabit Ethernet"
+          "k": "Controller",
+          "v": "RTL9601D"
         }
       ],
       "variants": {
         "headers": [
-          "Wi-Fi",
-          "Cellular",
-          "PoE",
-          "No of Modem",
+          "Interface",
           "Part Number"
         ],
         "rows": [
           [
-            "-",
-            "-",
-            "✓",
-            "Single",
-            "XG 82-2L Lite Managed Switch"
+            "Controller-RTL9601D",
+            "GPON ONU"
           ]
         ]
       }
     },
     {
-      "id": "rdb40",
-      "name": "RDB40",
+      "id": "isense",
+      "name": "iSense XXX",
       "cat": "Gateway",
-      "order": 92,
-      "desc": "The SILBO RDB40 is a ceiling-mounted indoor Access Point powered by OpenWrt Linux and a MediaTek MT7628 processor with 2.4GHz Wi-Fi (802.11b/g/n). It features an integrated Nordic nRF54L05 BLE 6.0 SoC with a long-range Front-End Module (FEM), support for 802.3af Active PoE IN, and 10/100 Ethernet ports.",
-      "cpu": "MediaTek MT7628",
-      "ram": "128 MB",
-      "storage": "32 MB",
-      "cell": "",
-      "cellular_gen": "-",
+      "order": null,
+      "desc": "The iSense is purpose-built for data-heavy industrial environments, combining 24 isolated digital inputs, 8 relay outputs, 4x RS485, analog voltage/current sensing, and dual external temperature probes into a single converged gateway. This density of I/O — backed by a dual-core processor with up to 32GB eMMC and native Modbus, SNMP, and MQTT support — makes it the go-to solution for energy monitoring, process automation, and smart infrastructure projects where deep field-level visibility drives operational decisions.",
+      "cpu": "Dual Core 0.88 GHz",
+      "ram": "512 MB + eMMC up to 32 GB",
+      "storage": "32 MB Flash",
+      "cell": "4G",
+      "cellular_gen": "4G",
       "wifi": "WiFi5",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "IP 30",
-      "power": "",
+      "rs485": "Yes",
+      "rs232": "Yes",
+      "ip": "",
+      "power": "20-60 VDC",
       "ports": "",
-      "os": "",
-      "housing": "Plastic",
-      "dims": "190mmx190mmx40mm (W x D x H)",
-      "weight": "290 gm",
-      "op_temp": "0-50 ˚C",
+      "os": "Linux OS",
+      "housing": "Sheet Metal",
+      "dims": "309 x 221 x 58 mm (L x W x H)",
+      "weight": "1853 g",
+      "op_temp": "-10°C to 70°C",
       "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rdb40-1787726970581-q7up.png"
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/isense-1786612536077-wooc.png"
       ],
       "use_cases": [
-        "Indoor Asset Tracking & Real-Time Location Services (RTLS)",
-        "Smart Building Sensor Data Aggregation",
-        "Single-Cable PoE Indoor Wi-Fi Access Point Deployment"
+        "Energy Monitoring & Power Management",
+        "Process Automation & Industrial Control",
+        "Smart Infrastructure & Remote Asset Intelligence"
       ],
       "datasheet": null,
       "part_datasheets": {
-        "RDB 40": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rdb40-RDB_40.pdf"
+        "iSense Violet Plus Pro": "assets/datasheets/Isense Violet Plus Pro.pdf",
+        "iSense Green Plus Pro": "assets/datasheets/Isense Green Plus Pro.pdf",
+        "iSense Blue Plus Pro": "assets/datasheets/Isense Blue Plus Pro.pdf"
       },
       "hidden_fields": [
-        "cell",
-        "cellular_gen",
-        "ports",
-        "rs485",
-        "rs232"
+        "ip",
+        "ports"
       ],
       "additional_specs": [],
+      "variants": {
+        "headers": [
+          "Wi-Fi",
+          "Cellular",
+          "4G/5G",
+          "RS485",
+          "RS232",
+          "DIO Count",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "✓",
+            "✓",
+            "4G",
+            "✓",
+            "✓",
+            "24",
+            "iSense Violet Plus Pro"
+          ],
+          [
+            "✓",
+            "✓",
+            "4G",
+            "✓",
+            "✓",
+            "12",
+            "iSense Green Plus Pro"
+          ],
+          [
+            "✓",
+            "✓",
+            "4G",
+            "✓",
+            "✓",
+            "6",
+            "iSense Blue Plus Pro"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "idbxx",
+      "name": "IDBXX-X",
+      "cat": "Gateway",
+      "order": null,
+      "desc": "Where the IDB54 stands out is its configurable WAN/LAN port — giving network administrators the flexibility to repurpose a Gigabit port based on deployment needs — paired with 512MB RAM and dual-band 802.11 b/g/n/ac Wi-Fi for high-throughput performance. Housed in a rugged aluminium shell rated for -20 to 60°C operation, it is tailored for enterprises and system integrators who need a versatile, high-performance edge router that adapts to evolving network topologies across commercial and industrial sites.",
+      "cpu": "MediaTek MT7621",
+      "ram": "512 MB DDR3",
+      "storage": "32 MB Flash",
+      "cell": "4G/5G",
+      "cellular_gen": "5G",
+      "wifi": "WiFi5",
+      "rs485": "Yes",
+      "rs232": "Yes",
+      "ip": "",
+      "power": "9-30 VDC",
+      "ports": "4",
+      "os": "OpenWRT Linux",
+      "housing": "Industrial Aluminium",
+      "dims": "110 x 44 x 94 mm (W x H x D)",
+      "weight": "400 g",
+      "op_temp": "0~ 50 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/idbxx-1786604353861-053y.png"
+      ],
+      "use_cases": [
+        "Custom Industrial Edge Application Development",
+        "Industrial Equipment Integration & Control",
+        "Adaptive Enterprise & Industrial Networking"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "IDB55": "assets/datasheets/IDB55.pdf",
+        "IDB54": "assets/datasheets/IDB54 (1).pdf"
+      },
+      "hidden_fields": [
+        "ip"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Gigabit Ethernet (10/100/1000)"
+        }
+      ],
       "variants": {
         "headers": [
           "Cellular",
           "Wi-Fi",
           "4G/5G",
-          "No of Modems",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "-",
-            "✓",
-            "-",
-            "-",
-            "RDB 40"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "rvcd",
-      "name": "RVCD",
-      "cat": "Switch",
-      "order": 93,
-      "desc": "The SILBO RVCD is a compact, industrial-grade Gigabit router powered by a MediaTek MT7621 processor, 512MB RAM, and OpenWrt Linux. Featuring 5 Gigabit Ethernet ports (1 WAN, 4 LAN) and a USB 3.0 port, it provides multi-WAN load balancing, advanced firewall security, and extensive VPN tunneling support (IPsec, OpenVPN, WireGuard) in a fanless sheet metal housing.",
-      "cpu": "MediaTek MT7621",
-      "ram": "512MB",
-      "storage": "32MB",
-      "cell": "",
-      "cellular_gen": "-",
-      "wifi": "WiFi4",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "",
-      "power": "12 VDC",
-      "ports": "5",
-      "os": "Open-WRT based Linux OS",
-      "housing": "Sheet Metal",
-      "dims": "110 x 26 x 95 mm (W x H x D)",
-      "weight": "200 gm",
-      "op_temp": "0~ 50 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvcd-1787653548751-xx2w.png"
-      ],
-      "use_cases": [
-        "MultiWAN Failover",
-        "Secure Remote Infrastructure Access (Branch-to-Headquarters VPN)",
-        "Industrial Control & Edge IoT Gateway",
-        "High-Reliability Retail / ATM Broadband Bonding"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "RVCD": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvcd-RVCD.pdf"
-      },
-      "hidden_fields": [
-        "cell",
-        "cellular_gen",
-        "ip",
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Interface",
-          "v": "USB 3.0/ 2.0 Host (Optional)"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "PoE",
-          "No of Modem",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "—",
-            "—",
-            "—",
-            "Single",
-            "RVCD"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "RUC",
-      "name": "RUC 65",
-      "cat": "Router",
-      "order": 94,
-      "desc": "The SILBO RUC65 is a fanless, enterprise-grade 5G cellular router featuring dual-SIM redundancy, AX3000 Wi-Fi 6, and optional long-range Bluetooth 6.0 (BLE) integration. Powered by an OpenWrt Linux platform with a MediaTek MT7981 processor, it delivers up to 2.2 Gbps Sub-6 cellular speeds alongside multi-WAN failover, PoE IN support, and robust VPN tunneling capabilities.",
-      "cpu": "MediaTek MT7981 1.3GHz Dual Core ARM Cortex A53",
-      "ram": "512 MB DDR3 RAM",
-      "storage": "128 MB NAND",
-      "cell": "4G/5G",
-      "cellular_gen": "5G",
-      "wifi": "WiFi6",
-      "rs485": "No",
-      "rs232": "-",
-      "ip": "",
-      "power": "12 VDC",
-      "ports": "3",
-      "os": "Open-WRT based Linux OS",
-      "housing": "Plastic",
-      "dims": "105 x 200 x 105 mm (W x H x D)",
-      "weight": "590 grams",
-      "op_temp": "0~ 50 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/RUC-1787820565957-u8i6.png"
-      ],
-      "use_cases": [
-        "Smart Building & IoT Edge Aggregation",
-        "Mobile & Temporary Event Branch Connectivity",
-        "Mission-Critical Multi-WAN Industrial Routing"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "RUC 65": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/RUC-RUC_65.pdf"
-      },
-      "hidden_fields": [
-        "ip",
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports Additional Spec",
-          "v": "1 x Gigabit WAN (PoE IN IEEE802.3at), 2 x Gigabit LAN"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "WiFi",
-          "Gen",
-          "Modem",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "✓",
-            "Wi-Fi 6",
-            "5G",
-            "Single",
-            "RUC 65"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "RVH",
-      "name": "RVH 44",
-      "cat": "Gateway",
-      "order": 95,
-      "desc": "The SILBO RVH-44 is an industrial OpenWrt Linux IoT cellular gateway powered by a dual-core MediaTek MT7621 processor with dual-SIM 4G connectivity and 2.4GHz Wi-Fi. Housed in a compact aluminum enclosure, it features 5 Gigabit Ethernet ports, legacy serial interfaces (2x RS485, 2x RS232), a built-in Modbus gateway, and support for cloud telemetry protocols such as MQTT and Azure MQTT",
-      "cpu": "MediaTek MT7621 Dual-core 880 MHz",
-      "ram": "512MB DDR3",
-      "storage": "32MB",
-      "cell": "",
-      "cellular_gen": "4G",
-      "wifi": "WiFi4",
-      "rs485": "Yes",
-      "rs232": "Yes",
-      "ip": "IP 30",
-      "power": "9-30 Vdc",
-      "ports": "5",
-      "os": "Open-WRT based Linux OS",
-      "housing": "Industrial Aluminium or Sheet Metal",
-      "dims": "110 x 44 x 94 mm (W x H x D)",
-      "weight": "400 gm",
-      "op_temp": "0 ~ 60 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/RVH-1787824857622-zek8.png"
-      ],
-      "use_cases": [
-        "Industrial IoT & Telemetry Aggregation",
-        "Remote Substation & Utility Monitoring",
-        "Secure Smart Edge Gateway for Transportation / Fleet Management"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "RVH 44": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/RVH-RVH_44.pdf"
-      },
-      "hidden_fields": [
-        "cell"
-      ],
-      "additional_specs": [],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "Gen",
-          "Modem",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "✓",
-            "Wi-Fi 4",
-            "4 G",
-            "Single",
-            "RVH 44"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "inv-cd-xx",
-      "name": "INV-CD-XX",
-      "cat": "Intel Based Devices",
-      "order": 96,
-      "desc": "This compact, fanless edge computing system is designed for AI inference, networking, and industrial applications, combining an Intel® Core™ N350 processor with flexible expansion for AI accelerators or NVMe storage. Key differentiators include dual Gigabit LAN, multiple display outputs (up to 4K), wide OS support, and robust I/O in a small form factor. It targets edge AI deployments, smart retail, industrial automation, and network security solutions.",
-      "cpu": "Intel N150/x7425E/x7433RE/x7835RE/i3-N305/N355, 4/8 cores with 3.4GHz Turbo Frequency",
-      "ram": "64GB DDR5 SODIMM (Max) (Memory to be Separately Ordered)",
-      "storage": "1x M.2 (Key-B), 512 GB SATA SSD Module (Up to 1 TB",
-      "cell": "4G/5G",
-      "cellular_gen": "5G",
-      "wifi": "WiFi6",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "IP30",
-      "power": "12V DC",
-      "ports": "2",
-      "os": "Oracle Linux v.9.5 and above Ubuntu 23, Windows 10 and above",
-      "housing": "Aluminum Heat Sink with CRCA Enclosure (Fanless Design), Sheet Metal (Fan Design)",
-      "dims": "150mmx210mmx65mm (LxWxH)",
-      "weight": "995 g",
-      "op_temp": "0 -50°C",
-      "images": [
-        "assets/images/inv-cd-xx-1.png",
-        "assets/images/inv-cd-xx-2.png",
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-cd-xx-1786515792452-i9dg.png"
-      ],
-      "use_cases": [
-        "Industrial Machine Vision & Quality Inspection",
-        "Smart Traffic & Transportation Edge Nodes",
-        "Edge Security & Surveillance with AI Analytics"
-      ],
-      "datasheet": "assets/datasheets/INV-CD-N350_Datasheet.pdf",
-      "part_datasheets": {},
-      "hidden_fields": [
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports-Additional Details",
-          "v": "Gigabit Ethernet (Realtek RTL8111H)"
-        }
-      ],
-      "variants": null
-    },
-    {
-      "id": "rvg",
-      "name": "RVG 55",
-      "cat": "Gateway",
-      "order": 97,
-      "desc": "",
-      "cpu": "MediaTek MT7621 Dual-core 880 MHz",
-      "ram": "512MB DDR3",
-      "storage": "32MB",
-      "cell": "RM 500U CNV",
-      "cellular_gen": "5G",
-      "wifi": "WiFi5",
-      "rs485": "Yes",
-      "rs232": "-",
-      "ip": "IP 30",
-      "power": "9-30 VDC",
-      "ports": "6",
-      "os": "Open-WRT based Linux OS",
-      "housing": "",
-      "dims": "110 x 44 x 94 mm (W x H x D)",
-      "weight": "400gm",
-      "op_temp": "0 ~ 60 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvg-1787660516258-khi6.png"
-      ],
-      "use_cases": [],
-      "datasheet": null,
-      "part_datasheets": {
-        "RVG 55-C": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvg-RVG_55-C.pdf",
-        "RVG 54-C": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvg-RVG_54-C.pdf",
-        "RVG 44-C": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvg-RVG_44-C.pdf"
-      },
-      "hidden_fields": [
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports- Additional Details",
-          "v": "Gigabit Ethernet (Configurable WAN/LAN)"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Celluar",
-          "Wi-Fi",
-          "Gen",
-          "Modem",
+          "RS485",
+          "RS232",
+          "No. of Modems",
           "Part Number"
         ],
         "rows": [
@@ -2534,184 +2148,576 @@
             "✓",
             "Wi-Fi 5",
             "5G",
+            "✓",
+            "✓",
             "Single",
-            "RVG 55-C"
+            "IDB55-B"
           ],
           [
             "✓",
-            "Wi-Fi 4",
+            "Wi-Fi 5",
+            "5G",
+            "—",
+            "—",
+            "Single",
+            "IDB55"
+          ],
+          [
+            "✓",
+            "Wi-Fi 5",
             "4G",
+            "✓",
+            "✓",
             "Single",
-            "RVG 44-C"
+            "IDB54-B"
           ],
           [
             "✓",
-            "Wi-FI 5",
-            "5G ",
+            "Wi-Fi 5",
+            "4G",
+            "—",
+            "—",
             "Single",
-            "RVG 54-C"
+            "IDB54"
           ]
         ]
       }
     },
     {
-      "id": "xi244-2M",
-      "name": "XI 244-2M",
-      "cat": "Switch",
-      "order": 98,
-      "desc": "The SILBO XI-244-2L is an industrial Layer 2 managed switch featuring 24 Gigabit Ethernet PoE ports with a 240W total power budget, alongside 2 Gigabit RJ45 ports and 2 SFP fiber uplinks for flexible network aggregation. Encased in a durable aluminum enclosure, it supports advanced traffic management, redundancy protocols (STP/MSTP/ERPS), and PoE scheduling for demanding surveillance, IoT, and industrial applications.",
-      "cpu": "",
-      "ram": "",
-      "storage": "",
-      "cell": "",
-      "cellular_gen": "-",
-      "wifi": "-",
+      "id": "idxx",
+      "name": "IDXX-X",
+      "cat": "Gateway",
+      "order": null,
+      "desc": "The IDXX-X punches well above its weight class, pairing a generous 512MB RAM and Gigabit WAN/LAN ports with 802.11 b/g/n/ac dual-band Wi-Fi — a significant step up from entry-level industrial routers. This added horsepower makes it a strong candidate for bandwidth-intensive applications across smart factories, digital infrastructure, and multi-site enterprise deployments where throughput and scalability cannot be compromised.",
+      "cpu": "MediaTek MT7621",
+      "ram": "512 MB DDR3",
+      "storage": "64 MB Flash",
+      "cell": "4G",
+      "cellular_gen": "4G",
+      "wifi": "WiFi5",
       "rs485": "-",
       "rs232": "-",
       "ip": "",
-      "power": "",
-      "ports": "24",
-      "os": "",
-      "housing": "",
-      "dims": "",
-      "weight": "",
-      "op_temp": "",
+      "power": "9-30 VDC",
+      "ports": "4",
+      "os": "OpenWRT Linux",
+      "housing": "Industrial Aluminium",
+      "dims": "110 x 44 x 94 mm (W x H x D)",
+      "weight": "400 g",
+      "op_temp": "0~ 50 ˚C",
       "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/xi244-2M-1787821659624-q8nr.png"
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/idxx-1786603920631-nlg8.png"
       ],
       "use_cases": [
-        "Commercial IP Security & Surveillance Infrastructure",
-        "Smart Building & IoT Deployment",
-        "Industrial / Campus Branch Network Aggregation"
+        "High-Bandwidth Smart Factory Connectivity",
+        "Multi-Site Enterprise Network Extension",
+        "Smart Energy & Utility Field Automation"
       ],
       "datasheet": null,
       "part_datasheets": {
-        "XI 244-2M": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xi244-2M-XI_244-2M.pdf"
+        "ID55-B": "assets/datasheets/ID55-B.pdf",
+        "ID55": "assets/datasheets/ID55.pdf",
+        "ID54-B": "assets/datasheets/ID54-B.pdf",
+        "ID54": "assets/datasheets/ID54.pdf"
       },
       "hidden_fields": [
-        "cell",
-        "cellular_gen",
-        "wifi",
-        "cpu",
-        "ram",
-        "storage",
-        "ip",
-        "power",
-        "os",
-        "rs485",
-        "rs232",
-        "housing",
-        "dims",
-        "weight",
-        "op_temp"
-      ],
-      "additional_specs": [
-        {
-          "k": "Chipset",
-          "v": "EN8853D+EN8808Q*2+EN8804+3*AN8503"
-        },
-        {
-          "k": "Interface",
-          "v": "24 x 10/100/1000Mbps+4G Combo(RJ45 Or Fiber) Auto-Negotiation ports,The Fiber is SFP"
-        },
-        {
-          "k": "Transfer Method",
-          "v": "Store-and-Forward"
-        },
-        {
-          "k": "MAC Address Table",
-          "v": "32K"
-        },
-        {
-          "k": "Switching Capacity",
-          "v": "56Gbps"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Wi-Fi",
-          "Cellular",
-          "PoE",
-          "Number of Modem",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "—",
-            "—",
-            "—",
-            "—",
-            "XI 244-2M"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "rvcp",
-      "name": "RVCP",
-      "cat": "Router",
-      "order": 100,
-      "desc": "",
-      "cpu": "MediaTek MT7621, Dual Core MIPS 880MHz",
-      "ram": "512MB, DDR3",
-      "storage": "32MB NOR Flash",
-      "cell": "",
-      "cellular_gen": "4G",
-      "wifi": "-",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "",
-      "power": "12 V DC or 9-30V DC",
-      "ports": "4",
-      "os": "Open-WRT based Linux OS",
-      "housing": "Sheet Metal",
-      "dims": "190 x 30 x 100 mm (W x H x D)",
-      "weight": "520",
-      "op_temp": "0 -50°C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvcp-1787643260652-71vm.png"
-      ],
-      "use_cases": [],
-      "datasheet": null,
-      "part_datasheets": {
-        "RVCP 04": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvcp-RVCP_04.pdf"
-      },
-      "hidden_fields": [
-        "cell",
-        "wifi",
         "ip",
         "rs485",
         "rs232"
       ],
       "additional_specs": [
         {
-          "k": "Ethernet Port-Additional Details",
+          "k": "Ethernet Ports-Additional Details",
           "v": "Gigabit Ethernet"
-        },
-        {
-          "k": "SFP Ports",
-          "v": "1"
-        },
-        {
-          "k": "USB Port",
-          "v": "1 X 3.0"
         }
       ],
       "variants": {
         "headers": [
           "Cellular",
           "Wi-Fi",
-          "Gen",
-          "Modem",
+          "4G/5G",
+          "RS485",
+          "No. of Modems",
           "Part Number"
         ],
         "rows": [
           [
+            "✓",
+            "Wi-Fi 5",
+            "4G",
+            "✓",
+            "Single",
+            "ID55-B (4 GB eMMC)"
+          ],
+          [
+            "✓",
+            "—",
+            "4G",
+            "—",
+            "Single",
+            "ID55"
+          ],
+          [
+            "✓",
+            "Wi-Fi 5",
+            "4G",
+            "✓",
+            "Single",
+            "ID54-B (4 GB eMMC)"
+          ],
+          [
+            "✓",
+            "—",
+            "4G",
+            "—",
+            "Single",
+            "ID54"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "iafxx",
+      "name": "IAFXX-X",
+      "cat": "Gateway",
+      "order": null,
+      "desc": "The IAFXX-X steps beyond standard cellular routers by integrating rich serial I/O — including RS485, digital I/O, analog input, and a built-in RTC — making it a true industrial gateway rather than just a connectivity device. With Modbus TCP/RTU support and SMS-based remote commands, it speaks the language of industrial automation natively, targeting sectors like manufacturing, energy, and utility infrastructure where field device integration is just as critical as network uptime.",
+      "cpu": "MediaTek MT7628",
+      "ram": "128 MB DDR2",
+      "storage": "32 MB Flash",
+      "cell": "4G",
+      "cellular_gen": "4G",
+      "wifi": "WiFi4",
+      "rs485": "Yes",
+      "rs232": "No",
+      "ip": "",
+      "power": "-48 VDC",
+      "ports": "2",
+      "os": "OpenWRT Linux",
+      "housing": "Industrial Aluminium",
+      "dims": "110 x 44 x 94 mm (W x H x D)",
+      "weight": "400 g",
+      "op_temp": "0~ 50 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/iafxx-1787138159862-mpoy.png"
+      ],
+      "use_cases": [
+        "Remote Sensor & Transducer data to cloud",
+        "Drinking Water Treatment plant data to remote Cloud SCADA",
+        "Industrial Alarm & Event Monitoring"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "IAF44-C1": "assets/datasheets/IAF44-C1.pdf",
+        "IAF04-C1": "assets/datasheets/IAF04-C1.pdf",
+        "IAF44-C2": "contact_us",
+        "IAF04-C2": "contact_us"
+      },
+      "hidden_fields": [],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports-Additional Details",
+          "v": "Fast Ethernet"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "4G/5G",
+          "RS485",
+          "No. of Modems",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "✓",
+            "Wi-Fi 4",
+            "4G",
+            "—",
+            "Single",
+            "IAF44-C1"
+          ],
+          [
+            "✓",
+            "Wi-Fi 4",
+            "4G",
+            "✓",
+            "Single",
+            "IAF44-C2"
+          ],
+          [
+            "✓",
+            "—",
+            "4G",
+            "✓",
+            "Single",
+            "IAF04-C2"
+          ],
+          [
+            "—",
+            "—",
+            "4G",
+            "—",
+            "Single",
+            "IAF04-C1"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "iacxx",
+      "name": "IACXX-X",
+      "cat": "Gateway",
+      "order": null,
+      "desc": "Designed to keep critical operations connected, the IACXX-X brings together dual SIM failover, 802.11 b/g/n Wi-Fi, and a wide 9-30Vdc input range into a slim, DIN rail-mountable form factor built for the factory floor. Powered by OpenWRT Linux and weighing just 400g, it delivers enterprise-grade manageability in a compact footprint — making it a practical choice for system integrators and OEMs deploying connected solutions across industrial and infrastructure environments.",
+      "cpu": "MediaTek MT7628",
+      "ram": "128 MB DDR2",
+      "storage": "32 MB Flash",
+      "cell": "4G",
+      "cellular_gen": "4G",
+      "wifi": "WiFi4",
+      "rs485": "Yes",
+      "rs232": "-",
+      "ip": "",
+      "power": "9-30 VDC",
+      "ports": "5",
+      "os": "OpenWRT Linux",
+      "housing": "Industrial Aluminium",
+      "dims": "110 x 44 x 94 mm (W x H x D)",
+      "weight": "400 g",
+      "op_temp": "0~ 50 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/iacxx-1786602435650-vmhe.png"
+      ],
+      "use_cases": [
+        "OEM Embedded Connectivity Solutions",
+        "Factory Floor Network Integration",
+        "Infrastructure Equipment Connectivity"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "IAC44-C": "assets/datasheets/IAC44-C.pdf",
+        "IAC44-A": "assets/datasheets/IAC44-A.pdf",
+        "IAC04-A": "assets/datasheets/IAC04-A.pdf",
+        "IAC04-C": "assets/datasheets/IAC04-C.pdf"
+      },
+      "hidden_fields": [
+        "ip",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports-Additional Details",
+          "v": "Fast Ethernet"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "RS485",
+          "4G/5G",
+          "No. of Modems",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "✓",
+            "Wi-Fi 4",
+            "✓",
+            "4G",
+            "Single",
+            "IAC44-C"
+          ],
+          [
+            "✓",
+            "Wi-Fi 4",
+            "—",
+            "4G",
+            "Single",
+            "IAC44-A"
+          ],
+          [
+            "✓",
+            "—",
+            "—",
+            "4G",
+            "Single",
+            "IAC04-A"
+          ],
+          [
+            "✓",
             "—",
             "✓",
             "4G",
             "Single",
-            "RVCP 04"
+            "IAC04-C"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "iabxx",
+      "name": "IABXX-X",
+      "cat": "Gateway",
+      "order": null,
+      "desc": "The IABXX-X is a rugged cellular router designed for reliable industrial connectivity, featuring a MediaTek MT7628 CPU with 128MB RAM and dual Nano SIM slots for flexible network redundancy. Running on OpenWRT-based Linux, it operates seamlessly across harsh environments — from -30 to 70°C storage temperatures — making it an ideal fit for IoT deployments, remote infrastructure monitoring, and industrial automation where uptime and durability are non-negotiable.",
+      "cpu": "MediaTek MT7628",
+      "ram": "128 MB DDR2",
+      "storage": "32 MB Flash",
+      "cell": "4G",
+      "cellular_gen": "4G",
+      "wifi": "WiFi4",
+      "rs485": "Yes",
+      "rs232": "Yes",
+      "ip": "",
+      "power": "9-30 VDC",
+      "ports": "2 X 10/100",
+      "os": "OpenWRT Linux",
+      "housing": "Industrial Aluminium",
+      "dims": "110 x 44 x 94 mm (W x H x D)",
+      "weight": "427 g",
+      "op_temp": "0~ 50 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/iabxx-1787122808489-w1hl.png"
+      ],
+      "use_cases": [
+        "Smart Energy & Utility Automation",
+        "Industrial Process Monitoring",
+        "Remote Environmental & Field Monitoring"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "IAB44-C": "assets/datasheets/IAB44-C.pdf",
+        "IAB44-B": "assets/datasheets/IAB44-B.pdf",
+        "IAB04-C": "assets/datasheets/IAB04-C.pdf"
+      },
+      "hidden_fields": [],
+      "additional_specs": [],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "RS485",
+          "RS232",
+          "4G/5G",
+          "No. of Modems",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "✓",
+            "Wi-Fi 4",
+            "✓",
+            "✓",
+            "4G",
+            "Single",
+            "IAB44-C"
+          ],
+          [
+            "✓",
+            "Wi-Fi 4",
+            "✓",
+            "✓",
+            "4G",
+            "Single",
+            "IAB44-B (4 GB eMMC)"
+          ],
+          [
+            "✓",
+            "—",
+            "✓",
+            "✓",
+            "4G",
+            "Single",
+            "IAB04-B (4 GB eMMC)"
+          ],
+          [
+            "✓",
+            "—",
+            "✓",
+            "✓",
+            "4G",
+            "Single",
+            "IAB04-C"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "rfnxx",
+      "name": "RFNXX",
+      "cat": "Gateway",
+      "order": null,
+      "desc": "The RFN44-A is an industrial-grade cellular router built on a MediaTek MT7628 platform with dual Nano SIM support, running an OpenWRT-based Linux OS for flexible and reliable connectivity. Housed in a fanless aluminium enclosure with a wide operating temperature range, it targets industrial automation, remote site management, and IoT deployments where rugged, dependable hardware is essential.",
+      "cpu": "MediaTek MT7628",
+      "ram": "128 MB DDR2",
+      "storage": "32 MB Flash",
+      "cell": "4G",
+      "cellular_gen": "4G",
+      "wifi": "WiFi4",
+      "rs485": "Yes",
+      "rs232": "-",
+      "ip": "IP30",
+      "power": "9-30Vdc",
+      "ports": "2",
+      "os": "OpenWRT Linux",
+      "housing": "Industrial Aluminium",
+      "dims": "112 x 35 x 99 mm (W x H x D)",
+      "weight": "297 g",
+      "op_temp": "0~ 50 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rfnxx-1786599944641-kv06.png"
+      ],
+      "use_cases": [
+        "Industrial Panel & PLC Connectivity",
+        "Telecom & Remote Site Uptime Monitoring",
+        "IoT Sensor Network Gateway"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "RFN44-A": "assets/datasheets/RFN44-A.pdf",
+        "RFN44-B": "assets/datasheets/RFN44-B.pdf",
+        "RFN44-C": "assets/datasheets/RFN44-C.pdf"
+      },
+      "hidden_fields": [
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports-Additional Details",
+          "v": "Fast Ethernet"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "RS485",
+          "DIO",
+          "4G/5G",
+          "No. of Modems",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "✓",
+            "Wi-Fi 4",
+            "—",
+            "—",
+            "4G",
+            "Single",
+            "RFN44-A"
+          ],
+          [
+            "✓",
+            "Wi-Fi 4",
+            "✓",
+            "—",
+            "4G",
+            "Single",
+            "RFN44-B (RS485)"
+          ],
+          [
+            "✓",
+            "Wi-Fi 4",
+            "—",
+            "✓",
+            "4G",
+            "Single",
+            "RFN44-C (1x DI, 1x DO)"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "iaxx",
+      "name": "IAXX-X",
+      "cat": "Gateway",
+      "order": null,
+      "desc": "This industrial-grade router is built to deliver stable cellular and Wi-Fi connectivity for compact edge deployments in challenging environments. It features dual SIM failover, a rugged aluminium enclosure with DIN rail support, and a secure OpenWRT-based platform offering advanced routing, VPN, and firewall capabilities. The device is ideal for applications such as industrial automation, remote asset monitoring, utilities, and small enterprise networks requiring dependable and secure connectivity.",
+      "cpu": "MediaTek MT7628",
+      "ram": "128 MB DDR2",
+      "storage": "32 MB Flash",
+      "cell": "4G",
+      "cellular_gen": "4G",
+      "wifi": "WiFi4",
+      "rs485": "Yes",
+      "rs232": "-",
+      "ip": "IP30",
+      "power": "9-30 VDC",
+      "ports": "2",
+      "os": "OpenWRT Linux",
+      "housing": "Industrial Aluminium",
+      "dims": "110 x 44 x 94mm (W x H x D)",
+      "weight": "280 g",
+      "op_temp": "-20 ~ 60 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/iaxx-1786598951793-g17i.png"
+      ],
+      "use_cases": [
+        "Industrial Machine Data Communication",
+        "Remote Infrastructure Management",
+        "Smart Building Network Management"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "IA44-C": "assets/datasheets/IA44-C.pdf",
+        "IA44-B": "assets/datasheets/IA44-B.pdf",
+        "IA44-A": "assets/datasheets/IA44-A.pdf",
+        "IA40-C": "assets/datasheets/IA40-C.pdf"
+      },
+      "hidden_fields": [
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Port-Additional Details",
+          "v": "Fast Ethernet"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "4G/5G",
+          "RS485",
+          "No. of Modems",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "✓",
+            "Wi-Fi 4",
+            "4G",
+            "✓",
+            "Single",
+            "IA44-C"
+          ],
+          [
+            "✓",
+            "Wi-Fi 4",
+            "4G",
+            "✓",
+            "Single",
+            "IA44-B (4 GB eMMC)"
+          ],
+          [
+            "✓",
+            "Wi-Fi 4",
+            "4G",
+            "—",
+            "Single",
+            "IA44-A"
+          ],
+          [
+            "—",
+            "Wi-Fi 4",
+            "—",
+            "✓",
+            "NA",
+            "IA40-C"
           ]
         ]
       }
