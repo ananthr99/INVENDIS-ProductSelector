@@ -157,26 +157,15 @@ async function logChange(action, detail, changes, diff) {
   const token = getGithubToken();
   if (!token || !CFG.gistId) return;
   try {
-    let entries = [];
-    try {
-      const r = await fetch(`https://api.github.com/gists/${CFG.gistId}`, {
-        headers: { Authorization: `Bearer ${token}` }
-      });
-      if (r.ok) {
-        const d = await r.json();
-        const c = d.files?.['changelog.json']?.content;
-        if (c) entries = JSON.parse(c);
-      }
-    } catch {}
     const user = (msalInst.getAllAccounts()[0]?.username || 'unknown').toLowerCase();
     const entry = { ts: new Date().toISOString(), user, action, detail: detail || '', changes: changes || '' };
     if (diff && diff.length) entry.diff = diff;
-    entries.unshift(entry);
-    if (entries.length > 500) entries = entries.slice(0, 500);
+    changelogEntries.unshift(entry);
+    if (changelogEntries.length > 500) changelogEntries = changelogEntries.slice(0, 500);
     await fetch(`https://api.github.com/gists/${CFG.gistId}`, {
       method: 'PATCH',
       headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
-      body: JSON.stringify({ files: { 'changelog.json': { content: JSON.stringify(entries, null, 2) } } })
+      body: JSON.stringify({ files: { 'changelog.json': { content: JSON.stringify(changelogEntries, null, 2) } } })
     });
   } catch {}
 }

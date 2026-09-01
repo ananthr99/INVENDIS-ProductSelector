@@ -103,6 +103,7 @@ let products    = [];
 let cats        = [];
 let dropdowns   = JSON.parse(JSON.stringify(DEFAULT_DROPDOWNS));
 let selectedId  = null;
+let changelogEntries = []; // cached changelog from last readFromGist(); avoids extra GET in logChange
 let lastGistJson  = null; // snapshot of last successfully written Gist content, used for rollback
 let _syncRepoJson = null; // repo JSON fetched by loadSyncComparison(), used by overwriteGistFromRepo()
 let _syncGistJson = null; // gist JSON fetched by loadSyncComparison(), used by overwriteRepoFromGist()

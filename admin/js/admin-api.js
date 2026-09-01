@@ -98,6 +98,7 @@ async function readFromGist() {
   const content = data.files?.['products.json']?.content;
   if (!content) throw new Error('products.json not found in Gist');
   lastGistJson = content; // snapshot for rollback if a subsequent write partially fails
+  try { changelogEntries = JSON.parse(data.files?.['changelog.json']?.content || '[]'); } catch { changelogEntries = []; }
   const parsed = JSON.parse(content);
   products  = (parsed.products || []).sort((a, b) => (a.order ?? Infinity) - (b.order ?? Infinity))
   cats      = parsed.cats || [];
@@ -232,7 +233,11 @@ async function pushToGist(jsonStr) {
     },
     body: JSON.stringify(payload)
   });
-  if (!res.ok) throw new Error(`GitHub Gist ${res.status}: ${await res.text()}`);
+  if (!res.ok) {
+    const body = await res.text();
+    if (res.status === 403 && body.includes('rate limit')) throw new Error('GitHub API rate limit exceeded — please wait a few minutes and try again.');
+    throw new Error(`GitHub Gist ${res.status}: ${body}`);
+  }
   return res.json();
 }
 
@@ -278,7 +283,11 @@ async function pushFileToGitHub(repoPath, buffer, commitMessage) {
     },
     body: JSON.stringify(body)
   });
-  if (!res.ok) throw new Error(`GitHub upload ${res.status}: ${await res.text()}`);
+  if (!res.ok) {
+    const body = await res.text();
+    if (res.status === 403 && body.includes('rate limit')) throw new Error('GitHub API rate limit exceeded — please wait a few minutes and try again.');
+    throw new Error(`GitHub upload ${res.status}: ${body}`);
+  }
 
   return `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${repoPath}`;
 }
