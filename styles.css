@@ -391,7 +391,7 @@ select.active-filter { border-color: var(--blue); background-color: var(--blue-p
 .spec-pill.warn { background: var(--warn-bg); color: var(--warn-text); border-color: #F0D090; }
 
 .card-use-cases { display: flex; flex-wrap: wrap; gap: 4px; margin: 6px 0 2px; }
-.use-case-chip-sm { font-size: 10px; font-weight: 500; padding: 2px 7px; border-radius: 20px; background: #EAF2FB; color: #1A6FC4; border: 1px solid #C4DCF5; white-space: nowrap; }
+.use-case-chip-sm { font-size: 10px; font-weight: 500; padding: 2px 7px; border-radius: 20px; background: #EAF2FB; color: #1A6FC4; border: 1px solid #C4DCF5; white-space: nowrap; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
 .use-case-chip-more { background: #F3F4F6; color: #6B7280; border-color: #D1D5DB; }
 
 .card-footer {

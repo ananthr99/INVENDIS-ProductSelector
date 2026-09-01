@@ -70,7 +70,7 @@ function render() {
   syncURL();
 }
 
-function renderPagination(totalPages, total) {
+function renderPagination(totalPages) {
   const el = document.getElementById('pagination');
   if (totalPages <= 1) { el.innerHTML = ''; return; }
 
@@ -154,7 +154,7 @@ function renderGrid(list, r) {
     const imgs = PRODUCT_IMAGES[p.id];
     const thumb = imgs?.length ? `<div class="card-thumb-wrap"><img class="card-thumb" src="${imgs[0]}" alt="${esc(p.name)}" loading="lazy"></div>` : '';
     const uc = PRODUCT_USE_CASES[p.id] || [];
-    const ucHtml = uc.length ? `<div class="card-use-cases">${uc.map(u=>`<span class="use-case-chip-sm">${esc(u)}</span>`).join('')}</div>` : '';
+    const ucHtml = uc.length ? `<div class="card-use-cases">${uc.map(u=>`<span class="use-case-chip-sm" title="${esc(u)}">${esc(u)}</span>`).join('')}</div>` : '';
     const eid = esc(JSON.stringify(p.id));
     return `
     <div class="card ${compareSet.has(p.id)?'compare-selected':''}" role="button" tabindex="0" onclick="openDetail(${eid})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openDetail(${eid})}">
