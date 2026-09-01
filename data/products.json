@@ -258,102 +258,6 @@
       "variants": null
     },
     {
-      "id": "itx-arl-board",
-      "name": "Arrowlake ITX",
-      "cat": "Intel Based Devices",
-      "order": 89,
-      "desc": "The Invendis ARL Mini ITX is a high-performance industrial computing platform powered by Intel Core Ultra Processors (Series 2) with integrated NPU AI acceleration, Intel Arc 140T graphics, and up to 128GB DDR5 RAM. Housed in a aluminum heatsink enclosure with fanless or fan options, it offers dual 2.5GbE LAN ports, triple display outputs (2x HDMI, 1x DP), and extensive M.2 expansion for Wi-Fi 6, 4G/5G cellular, and NVMe storage.",
-      "cpu": "Intel® Core™ Ultra Processors (Series 2) (Ultra 5 & Ultra 7)",
-      "ram": "64 GB DDR5 CSODIMM (Max) (Memory to be separately ordered)",
-      "storage": "One M.2 (B Key,2280), Upto 512GB SSD, 2 x SATA3 (6Gb/s)",
-      "cell": "",
-      "cellular_gen": "-",
-      "wifi": "-",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "",
-      "power": "",
-      "ports": "2",
-      "os": "Ubuntu / Oracle Linux / Open WRT / Windows",
-      "housing": "Aluminum Heat Sink with CRCA Enclosure, Fan/Fanless options",
-      "dims": "210x203x60mm",
-      "weight": "1400",
-      "op_temp": "0~ 50 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/itx-arl-board-1787745677267-j4ga.png",
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/itx-arl-board-1787745681065-2ejm.png"
-      ],
-      "use_cases": [
-        "AI-Powered Edge Vision & Video Analytics",
-        "Industrial IoT Gateway & Automation Controller",
-        "High-Performance Interactive Kiosks & Digital Signage"
-      ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/itx-arl-board-datasheet.pdf",
-      "part_datasheets": {},
-      "hidden_fields": [
-        "cell",
-        "cellular_gen",
-        "wifi",
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Cellular",
-          "v": "One M.2( B Key, supports both types 3042 and 3052) with USB2.0, USB3.0 and PCIe x 1 Supporting both 4G and 5G Modems."
-        },
-        {
-          "k": "Sim",
-          "v": "2x Nano SIM"
-        },
-        {
-          "k": "Graphics",
-          "v": "Intel® Arc™ 140T GPU, 1 x 8 PCIe Gen 5 Discreet Graphics Support (Optional)"
-        },
-        {
-          "k": "Wi-Fi",
-          "v": "One M.2 ( E Key, 3052 for Wifi/BLE Module 802.11b/g/n/ac/ax (1 x PCIe, 1 X USB2.0)"
-        },
-        {
-          "k": "Ethernet Ports-Additional Details",
-          "v": "Gigabit Ethernet 2500 Mbps"
-        },
-        {
-          "k": "USB",
-          "v": "4 x USB 3.2 gen 1, 4 x USB3.2 gen1, 2 x USB 2.0 Header"
-        },
-        {
-          "k": "HDMI",
-          "v": "2"
-        },
-        {
-          "k": "DP",
-          "v": "1"
-        },
-        {
-          "k": "Type C",
-          "v": "1 Type C Port with 15 Watt PD Support"
-        },
-        {
-          "k": "Audio",
-          "v": "1 x Mic In, 1 x Line-Out, Front Panel Audio Header"
-        },
-        {
-          "k": "COM Port (Optional)",
-          "v": "4 (RS232, RS485)"
-        },
-        {
-          "k": "Console (optional)",
-          "v": "1 x Type B Micro USB"
-        },
-        {
-          "k": "Weight (Fanless Design)",
-          "v": "1800 gm"
-        }
-      ],
-      "variants": null
-    },
-    {
       "id": "invcf",
       "name": "INV-CF-XX",
       "cat": "Intel Based Devices",
@@ -1000,6 +904,102 @@
           ]
         ]
       }
+    },
+    {
+      "id": "itx-arl-board",
+      "name": "Arrowlake ITX",
+      "cat": "Intel Based Devices",
+      "order": null,
+      "desc": "The Invendis ARL Mini ITX is a high-performance industrial computing platform powered by Intel Core Ultra Processors (Series 2) with integrated NPU AI acceleration, Intel Arc 140T graphics, and up to 128GB DDR5 RAM. Housed in a aluminum heatsink enclosure with fanless or fan options, it offers dual 2.5GbE LAN ports, triple display outputs (2x HDMI, 1x DP), and extensive M.2 expansion for Wi-Fi 6, 4G/5G cellular, and NVMe storage.",
+      "cpu": "Intel® Core™ Ultra Processors (Series 2) (Ultra 5 & Ultra 7)",
+      "ram": "64 GB DDR5 CSODIMM (Max) (Memory to be separately ordered)",
+      "storage": "One M.2 (B Key,2280), Upto 512GB SSD, 2 x SATA3 (6Gb/s)",
+      "cell": "",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "",
+      "ports": "2",
+      "os": "Ubuntu / Oracle Linux / Open WRT / Windows",
+      "housing": "Aluminum Heat Sink with CRCA Enclosure, Fan/Fanless options",
+      "dims": "210x203x60mm",
+      "weight": "1400",
+      "op_temp": "0~ 50 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/itx-arl-board-1787745677267-j4ga.png",
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/itx-arl-board-1787745681065-2ejm.png"
+      ],
+      "use_cases": [
+        "AI-Powered Edge Vision & Video Analytics",
+        "Industrial IoT Gateway & Automation Controller",
+        "High-Performance Interactive Kiosks & Digital Signage"
+      ],
+      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/itx-arl-board-datasheet.pdf",
+      "part_datasheets": {},
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "wifi",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Cellular",
+          "v": "One M.2( B Key, supports both types 3042 and 3052) with USB2.0, USB3.0 and PCIe x 1 Supporting both 4G and 5G Modems."
+        },
+        {
+          "k": "Sim",
+          "v": "2x Nano SIM"
+        },
+        {
+          "k": "Graphics",
+          "v": "Intel® Arc™ 140T GPU, 1 x 8 PCIe Gen 5 Discreet Graphics Support (Optional)"
+        },
+        {
+          "k": "Wi-Fi",
+          "v": "One M.2 ( E Key, 3052 for Wifi/BLE Module 802.11b/g/n/ac/ax (1 x PCIe, 1 X USB2.0)"
+        },
+        {
+          "k": "Ethernet Ports-Additional Details",
+          "v": "Gigabit Ethernet 2500 Mbps"
+        },
+        {
+          "k": "USB",
+          "v": "4 x USB 3.2 gen 1, 4 x USB3.2 gen1, 2 x USB 2.0 Header"
+        },
+        {
+          "k": "HDMI",
+          "v": "2"
+        },
+        {
+          "k": "DP",
+          "v": "1"
+        },
+        {
+          "k": "Type C",
+          "v": "1 Type C Port with 15 Watt PD Support"
+        },
+        {
+          "k": "Audio",
+          "v": "1 x Mic In, 1 x Line-Out, Front Panel Audio Header"
+        },
+        {
+          "k": "COM Port (Optional)",
+          "v": "4 (RS232, RS485)"
+        },
+        {
+          "k": "Console (optional)",
+          "v": "1 x Type B Micro USB"
+        },
+        {
+          "k": "Weight (Fanless Design)",
+          "v": "1800 gm"
+        }
+      ],
+      "variants": null
     },
     {
       "id": "GPONONU",
