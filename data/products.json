@@ -1296,6 +1296,97 @@
       }
     },
     {
+      "id": "iaxx",
+      "name": "IAXX-X",
+      "cat": "Gateway",
+      "order": 17,
+      "desc": "This industrial-grade router is built to deliver stable cellular and Wi-Fi connectivity for compact edge deployments in challenging environments. It features dual SIM failover, a rugged aluminium enclosure with DIN rail support, and a secure OpenWRT-based platform offering advanced routing, VPN, and firewall capabilities. The device is ideal for applications such as industrial automation, remote asset monitoring, utilities, and small enterprise networks requiring dependable and secure connectivity.",
+      "cpu": "MediaTek MT7628",
+      "ram": "128 MB DDR2",
+      "storage": "32 MB Flash",
+      "cell": "4G",
+      "cellular_gen": "4G",
+      "wifi": "WiFi4",
+      "rs485": "Yes",
+      "rs232": "-",
+      "ip": "IP30",
+      "power": "9-30 VDC",
+      "ports": "2",
+      "os": "OpenWRT Linux",
+      "housing": "Industrial Aluminium",
+      "dims": "110 x 44 x 94mm (W x H x D)",
+      "weight": "280 g",
+      "op_temp": "-20 ~ 60 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/iaxx-1786598951793-g17i.png"
+      ],
+      "use_cases": [
+        "Industrial Machine Data Communication",
+        "Remote Infrastructure Management",
+        "Smart Building Network Management"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "IA44-C": "assets/datasheets/IA44-C.pdf",
+        "IA44-B": "assets/datasheets/IA44-B.pdf",
+        "IA44-A": "assets/datasheets/IA44-A.pdf",
+        "IA40-C": "assets/datasheets/IA40-C.pdf"
+      },
+      "hidden_fields": [
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Fast Ethernet"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "4G/5G",
+          "RS485",
+          "No. of Modems",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "✓",
+            "Wi-Fi 4",
+            "4G",
+            "✓",
+            "Single",
+            "IA44-C"
+          ],
+          [
+            "✓",
+            "Wi-Fi 4",
+            "4G",
+            "✓",
+            "Single",
+            "IA44-B (4 GB eMMC)"
+          ],
+          [
+            "✓",
+            "Wi-Fi 4",
+            "4G",
+            "—",
+            "Single",
+            "IA44-A"
+          ],
+          [
+            "—",
+            "Wi-Fi 4",
+            "—",
+            "✓",
+            "NA",
+            "IA40-C"
+          ]
+        ]
+      }
+    },
+    {
       "id": "rvcp",
       "name": "RVCP",
       "cat": "Router",
@@ -2627,97 +2718,6 @@
             "4G",
             "Single",
             "RFN44-C (1x DI, 1x DO)"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "iaxx",
-      "name": "IAXX-X",
-      "cat": "Gateway",
-      "order": null,
-      "desc": "This industrial-grade router is built to deliver stable cellular and Wi-Fi connectivity for compact edge deployments in challenging environments. It features dual SIM failover, a rugged aluminium enclosure with DIN rail support, and a secure OpenWRT-based platform offering advanced routing, VPN, and firewall capabilities. The device is ideal for applications such as industrial automation, remote asset monitoring, utilities, and small enterprise networks requiring dependable and secure connectivity.",
-      "cpu": "MediaTek MT7628",
-      "ram": "128 MB DDR2",
-      "storage": "32 MB Flash",
-      "cell": "4G",
-      "cellular_gen": "4G",
-      "wifi": "WiFi4",
-      "rs485": "Yes",
-      "rs232": "-",
-      "ip": "IP30",
-      "power": "9-30 VDC",
-      "ports": "2",
-      "os": "OpenWRT Linux",
-      "housing": "Industrial Aluminium",
-      "dims": "110 x 44 x 94mm (W x H x D)",
-      "weight": "280 g",
-      "op_temp": "-20 ~ 60 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/iaxx-1786598951793-g17i.png"
-      ],
-      "use_cases": [
-        "Industrial Machine Data Communication",
-        "Remote Infrastructure Management",
-        "Smart Building Network Management"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "IA44-C": "assets/datasheets/IA44-C.pdf",
-        "IA44-B": "assets/datasheets/IA44-B.pdf",
-        "IA44-A": "assets/datasheets/IA44-A.pdf",
-        "IA40-C": "assets/datasheets/IA40-C.pdf"
-      },
-      "hidden_fields": [
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Port-Additional Details",
-          "v": "Fast Ethernet"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "4G/5G",
-          "RS485",
-          "No. of Modems",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "✓",
-            "Wi-Fi 4",
-            "4G",
-            "✓",
-            "Single",
-            "IA44-C"
-          ],
-          [
-            "✓",
-            "Wi-Fi 4",
-            "4G",
-            "✓",
-            "Single",
-            "IA44-B (4 GB eMMC)"
-          ],
-          [
-            "✓",
-            "Wi-Fi 4",
-            "4G",
-            "—",
-            "Single",
-            "IA44-A"
-          ],
-          [
-            "—",
-            "Wi-Fi 4",
-            "—",
-            "✓",
-            "NA",
-            "IA40-C"
           ]
         ]
       }
