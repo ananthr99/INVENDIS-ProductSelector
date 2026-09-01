@@ -4079,7 +4079,7 @@
       "rs232": "-",
       "ip": "",
       "power": "12 VDC / 9-30 VDC",
-      "ports": "5 X 10/100/1000 (M12 Connector)",
+      "ports": "5",
       "os": "OpenWRT Linux",
       "housing": "Sheet Metal",
       "dims": "",
@@ -4099,9 +4099,15 @@
         "cell",
         "cellular_gen",
         "rs485",
-        "rs232"
+        "rs232",
+        "weight"
       ],
-      "additional_specs": [],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Gigabit Ports (M12 Connector)"
+        }
+      ],
       "variants": {
         "headers": [
           "Wi-Fi",
