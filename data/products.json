@@ -2694,6 +2694,69 @@
       }
     },
     {
+      "id": "rt65odu",
+      "name": "RT65-ODU",
+      "cat": "Router",
+      "order": 34,
+      "desc": "Built for high-demand edge deployments, the RT65 ODU steps up where entry-level routers fall short — a 1GHz dual-core ARM Cortex A53, 1GB DDR4 RAM, and 802.11b/g/n/ac/ax Wi-Fi with Easy Mesh support give it the processing muscle to handle simultaneous MultiWAN failover across Ethernet, cellular, and Wi-Fi links. Housed in an IP67-rated enclosure with 8 cellular and 5 Wi-Fi antenna connectors, it is engineered for high-availability outdoor and industrial installations — from smart transportation hubs to mission-critical remote sites — where network resilience and raw throughput cannot be left to chance.",
+      "cpu": "MediaTek MT7981 1.3GHz dual core ARM Cortex A53",
+      "ram": "1 GB DDR4",
+      "storage": "128 MB NAND",
+      "cell": "5G",
+      "cellular_gen": "5G",
+      "wifi": "WiFi6",
+      "rs485": "No",
+      "rs232": "No",
+      "ip": "IP67",
+      "power": "9-30 VDC",
+      "ports": "5",
+      "os": "OpenWRT Linux",
+      "housing": "IP67 Enclosure",
+      "dims": "110 x 55 x 144 mm (W x H x D)",
+      "weight": "480 g",
+      "op_temp": "0 ~ 50˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rt65odu-1787119700265-ewjt.png"
+      ],
+      "use_cases": [
+        "Smart Transportation & Traffic Connectivity",
+        "Mission-Critical Remote Site Networking",
+        "High-Availability Outdoor Wi-Fi Coverage"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "RT65-ODU": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rt65odu-RT65-ODU.pdf"
+      },
+      "hidden_fields": [
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Gigabit Ports"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "4G/5G",
+          "No. of Modems",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "✓",
+            "Wi-Fi 6",
+            "5G",
+            "Single",
+            "RT65-ODU"
+          ]
+        ]
+      }
+    },
+    {
       "id": "rvcp",
       "name": "RVCP",
       "cat": "Router",
@@ -4049,64 +4112,6 @@
             "5G",
             "Single",
             "RN 50 PCB-A"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "rt65odu",
-      "name": "RT65-ODU",
-      "cat": "Router",
-      "order": null,
-      "desc": "Built for high-demand edge deployments, the RT65 ODU steps up where entry-level routers fall short — a 1GHz dual-core ARM Cortex A53, 1GB DDR4 RAM, and 802.11b/g/n/ac/ax Wi-Fi with Easy Mesh support give it the processing muscle to handle simultaneous MultiWAN failover across Ethernet, cellular, and Wi-Fi links. Housed in an IP67-rated enclosure with 8 cellular and 5 Wi-Fi antenna connectors, it is engineered for high-availability outdoor and industrial installations — from smart transportation hubs to mission-critical remote sites — where network resilience and raw throughput cannot be left to chance.",
-      "cpu": "MediaTek MT7981 1.3GHz dual core ARM Cortex A53",
-      "ram": "1 GB DDR4",
-      "storage": "128 MB NAND",
-      "cell": "5G",
-      "cellular_gen": "5G",
-      "wifi": "WiFi6",
-      "rs485": "No",
-      "rs232": "No",
-      "ip": "IP67",
-      "power": "9-30 VDC",
-      "ports": "5 x 10/100/1000",
-      "os": "OpenWRT Linux",
-      "housing": "IP67 Enclosure",
-      "dims": "110 x 55 x 144 mm (W x H x D)",
-      "weight": "480 g",
-      "op_temp": "0 ~ 50˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rt65odu-1787119700265-ewjt.png"
-      ],
-      "use_cases": [
-        "Smart Transportation & Traffic Connectivity",
-        "Mission-Critical Remote Site Networking",
-        "High-Availability Outdoor Wi-Fi Coverage"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "RT65-ODU": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rt65odu-RT65-ODU.pdf"
-      },
-      "hidden_fields": [
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "4G/5G",
-          "No. of Modems",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "✓",
-            "Wi-Fi 6",
-            "5G",
-            "Single",
-            "RT65-ODU"
           ]
         ]
       }
