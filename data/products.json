@@ -258,66 +258,6 @@
       "variants": null
     },
     {
-      "id": "GPONONU",
-      "name": "GPON ONU",
-      "cat": "Router",
-      "order": 78,
-      "desc": "",
-      "cpu": "",
-      "ram": "64MB SD RAM",
-      "storage": "",
-      "cell": "",
-      "cellular_gen": "-",
-      "wifi": "-",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "",
-      "power": "12 VDC",
-      "ports": "1 X 10/100/1000",
-      "os": "",
-      "housing": "Plastic",
-      "dims": "90 x 27 x 80 mm (W x H x D)",
-      "weight": "300 g",
-      "op_temp": "0~ 70 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/GPONONU-1787223696594-jx1x.png"
-      ],
-      "use_cases": [],
-      "datasheet": null,
-      "part_datasheets": {
-        "GPON ONU": "contact_us"
-      },
-      "hidden_fields": [
-        "cell",
-        "cellular_gen",
-        "wifi",
-        "cpu",
-        "storage",
-        "ip",
-        "os",
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Controller",
-          "v": "RTL9601D"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Interface",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "Controller-RTL9601D",
-            "GPON ONU"
-          ]
-        ]
-      }
-    },
-    {
       "id": "itx-arl-board",
       "name": "Arrowlake ITX",
       "cat": "Intel Based Devices",
@@ -1057,6 +997,66 @@
             "4G",
             "Single",
             "RVCP 04"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "GPONONU",
+      "name": "GPON ONU",
+      "cat": "Router",
+      "order": null,
+      "desc": "",
+      "cpu": "",
+      "ram": "64MB SD RAM",
+      "storage": "",
+      "cell": "",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "12 VDC",
+      "ports": "1 X 10/100/1000",
+      "os": "",
+      "housing": "Plastic",
+      "dims": "90 x 27 x 80 mm (W x H x D)",
+      "weight": "300 g",
+      "op_temp": "0~ 70 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/GPONONU-1787223696594-jx1x.png"
+      ],
+      "use_cases": [],
+      "datasheet": null,
+      "part_datasheets": {
+        "GPON ONU": "contact_us"
+      },
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "wifi",
+        "cpu",
+        "storage",
+        "ip",
+        "os",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Controller",
+          "v": "RTL9601D"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Interface",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "Controller-RTL9601D",
+            "GPON ONU"
           ]
         ]
       }
