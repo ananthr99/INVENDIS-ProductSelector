@@ -258,80 +258,6 @@
       "variants": null
     },
     {
-      "id": "rvg",
-      "name": "RVG 55",
-      "cat": "Gateway",
-      "order": 97,
-      "desc": "",
-      "cpu": "MediaTek MT7621 Dual-core 880 MHz",
-      "ram": "512MB DDR3",
-      "storage": "32MB",
-      "cell": "RM 500U CNV",
-      "cellular_gen": "5G",
-      "wifi": "WiFi5",
-      "rs485": "Yes",
-      "rs232": "-",
-      "ip": "IP 30",
-      "power": "9-30 VDC",
-      "ports": "6",
-      "os": "Open-WRT based Linux OS",
-      "housing": "",
-      "dims": "110 x 44 x 94 mm (W x H x D)",
-      "weight": "400gm",
-      "op_temp": "0 ~ 60 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvg-1787660516258-khi6.png"
-      ],
-      "use_cases": [],
-      "datasheet": null,
-      "part_datasheets": {
-        "RVG 55-C": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvg-RVG_55-C.pdf",
-        "RVG 54-C": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvg-RVG_54-C.pdf",
-        "RVG 44-C": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvg-RVG_44-C.pdf"
-      },
-      "hidden_fields": [
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports- Additional Details",
-          "v": "Gigabit Ethernet (Configurable WAN/LAN)"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Celluar",
-          "Wi-Fi",
-          "Gen",
-          "Modem",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "✓",
-            "Wi-Fi 5",
-            "5G",
-            "Single",
-            "RVG 55-C"
-          ],
-          [
-            "✓",
-            "Wi-Fi 4",
-            "4G",
-            "Single",
-            "RVG 44-C"
-          ],
-          [
-            "✓",
-            "Wi-FI 5",
-            "5G ",
-            "Single",
-            "RVG 54-C"
-          ]
-        ]
-      }
-    },
-    {
       "id": "xi244-2M",
       "name": "XI 244-2M",
       "cat": "Switch",
@@ -489,6 +415,80 @@
             "4G",
             "Single",
             "RVCP 04"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "rvg",
+      "name": "RVG 55",
+      "cat": "Gateway",
+      "order": null,
+      "desc": "",
+      "cpu": "MediaTek MT7621 Dual-core 880 MHz",
+      "ram": "512MB DDR3",
+      "storage": "32MB",
+      "cell": "RM 500U CNV",
+      "cellular_gen": "5G",
+      "wifi": "WiFi5",
+      "rs485": "Yes",
+      "rs232": "-",
+      "ip": "IP 30",
+      "power": "9-30 VDC",
+      "ports": "6",
+      "os": "Open-WRT based Linux OS",
+      "housing": "",
+      "dims": "110 x 44 x 94 mm (W x H x D)",
+      "weight": "400gm",
+      "op_temp": "0 ~ 60 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvg-1787660516258-khi6.png"
+      ],
+      "use_cases": [],
+      "datasheet": null,
+      "part_datasheets": {
+        "RVG 55-C": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvg-RVG_55-C.pdf",
+        "RVG 54-C": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvg-RVG_54-C.pdf",
+        "RVG 44-C": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvg-RVG_44-C.pdf"
+      },
+      "hidden_fields": [
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports- Additional Details",
+          "v": "Gigabit Ethernet (Configurable WAN/LAN)"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Celluar",
+          "Wi-Fi",
+          "Gen",
+          "Modem",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "✓",
+            "Wi-Fi 5",
+            "5G",
+            "Single",
+            "RVG 55-C"
+          ],
+          [
+            "✓",
+            "Wi-Fi 4",
+            "4G",
+            "Single",
+            "RVG 44-C"
+          ],
+          [
+            "✓",
+            "Wi-FI 5",
+            "5G ",
+            "Single",
+            "RVG 54-C"
           ]
         ]
       }
