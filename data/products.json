@@ -398,7 +398,7 @@
       ],
       "additional_specs": [
         {
-          "k": "Ethernet Ports-Additional Details",
+          "k": "Ethernet Ports",
           "v": "4 x LAN (Gigabit) and 1 x WAN (Gigabit)"
         },
         {
