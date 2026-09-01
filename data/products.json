@@ -2223,6 +2223,75 @@
       }
     },
     {
+      "id": "xd50",
+      "name": "XD50-1",
+      "cat": "Switch",
+      "order": 28,
+      "desc": "The XD-80-1 cuts through network complexity by delivering plug-and-play Gigabit switching with zero configuration overhead — five PoE-capable ports, two SFP uplinks, and a 240W total PoE budget ready to power cameras, access points, and IP phones straight out of the box. Its wide 9-57Vdc input range and DIN rail-mountable aluminium body make it equally at home in a control cabinet or a harsh field enclosure, serving installers and contractors who need reliable, no-fuss layer-2 connectivity without the cost of managed switch complexity.",
+      "cpu": "â",
+      "ram": "â",
+      "storage": "â",
+      "cell": "none",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "9-30 VDC",
+      "ports": "5 x 10/100",
+      "os": "",
+      "housing": "Sheet Metal",
+      "dims": "27 mm x 112 mm x 94 mm (W x H x D)",
+      "weight": "307 g",
+      "op_temp": "0~ 50 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/xd50-1786618369532-d69m.png"
+      ],
+      "use_cases": [
+        "EV Charger controller connectivity",
+        "Edge Cabinet Network Integration",
+        "Smart Kiosk & Edge Device Networking"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "XD50-1 Unmanaged PoE Switch": "assets/datasheets/XD-50-1.pdf"
+      },
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "wifi",
+        "cpu",
+        "ram",
+        "storage",
+        "ip",
+        "os",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Fast Ethernet"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "PoE",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "-",
+            "-",
+            "✓",
+            "XD50-1 Unmanaged PoE Switch"
+          ]
+        ]
+      }
+    },
+    {
       "id": "rvcp",
       "name": "RVCP",
       "cat": "Router",
@@ -4090,70 +4159,6 @@
             "✓",
             "Single",
             "XF50-1 Unmanaged PoE Switch"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "xd50",
-      "name": "XD50-1",
-      "cat": "Switch",
-      "order": null,
-      "desc": "The XD-80-1 cuts through network complexity by delivering plug-and-play Gigabit switching with zero configuration overhead — five PoE-capable ports, two SFP uplinks, and a 240W total PoE budget ready to power cameras, access points, and IP phones straight out of the box. Its wide 9-57Vdc input range and DIN rail-mountable aluminium body make it equally at home in a control cabinet or a harsh field enclosure, serving installers and contractors who need reliable, no-fuss layer-2 connectivity without the cost of managed switch complexity.",
-      "cpu": "â",
-      "ram": "â",
-      "storage": "â",
-      "cell": "none",
-      "cellular_gen": "-",
-      "wifi": "-",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "",
-      "power": "9-30 VDC",
-      "ports": "5 x 10/100",
-      "os": "",
-      "housing": "Sheet Metal",
-      "dims": "27 mm x 112 mm x 94 mm (W x H x D)",
-      "weight": "307 g",
-      "op_temp": "0~ 50 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/xd50-1786618369532-d69m.png"
-      ],
-      "use_cases": [
-        "EV Charger controller connectivity",
-        "Edge Cabinet Network Integration",
-        "Smart Kiosk & Edge Device Networking"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "XD50-1 Unmanaged PoE Switch": "assets/datasheets/XD-50-1.pdf"
-      },
-      "hidden_fields": [
-        "cell",
-        "cellular_gen",
-        "wifi",
-        "cpu",
-        "ram",
-        "storage",
-        "ip",
-        "os",
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "PoE",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "-",
-            "-",
-            "✓",
-            "XD50-1 Unmanaged PoE Switch"
           ]
         ]
       }
