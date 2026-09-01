@@ -554,6 +554,99 @@
       }
     },
     {
+      "id": "roxx",
+      "name": "ROXX",
+      "cat": "Router",
+      "order": 9,
+      "desc": "A ruggedised industrial router combining dual 5G/4G modems with Wi-Fi 6 (EasyMesh), 2× WAN + 4× LAN GbE ports, and 1× SFP uplink. Built on MediaTek MT7981 with OpenWRT 21/23, supporting dual-SIM failover, DIN-rail mounting, and a wide 9–30V DC input — engineered for demanding telecom, industrial, and enterprise edge deployments.",
+      "cpu": "MediaTek MT7981",
+      "ram": "1 GB DDR4",
+      "storage": "128 MB NAND",
+      "cell": "4G/5G",
+      "cellular_gen": "5G",
+      "wifi": "WiFi6",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "IP30",
+      "power": "9–30 VDC",
+      "ports": "6",
+      "os": "OpenWRT 21/23",
+      "housing": "Sheet Metal",
+      "dims": "210 × 25 × 135 mm (W × H × D)",
+      "weight": "950 g",
+      "op_temp": "0°C-50°C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/roxx-1786520658941-g4je.png"
+      ],
+      "use_cases": [
+        "Telecom Backhaul & Site Connectivity",
+        "Enterprise Edge Network with Dual Active for Load Balancing"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "RO65-2": "assets/datasheets/RO65-2.pdf",
+        "RO65-1": "assets/datasheets/RO65-1.pdf",
+        "RO64-2": "assets/datasheets/RO64-2.pdf",
+        "RO64-1": "assets/datasheets/RO64-1.pdf"
+      },
+      "hidden_fields": [
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports-Additional Details",
+          "v": "Gigabit Ports"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "4G/5G",
+          "No. of Modems",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "✓",
+            "Wi-Fi 6",
+            "5G",
+            "Dual",
+            "RO65-2"
+          ],
+          [
+            "✓",
+            "Wi-Fi 6",
+            "5G",
+            "Single",
+            "RO65-1"
+          ],
+          [
+            "—",
+            "Wi-Fi 6",
+            "—",
+            "—",
+            "RO60"
+          ],
+          [
+            "✓",
+            "Wi-Fi 6",
+            "4G",
+            "Dual",
+            "RO64-2"
+          ],
+          [
+            "✓",
+            "Wi-Fi 6",
+            "4G",
+            "Single",
+            "RO64-1"
+          ]
+        ]
+      }
+    },
+    {
       "id": "rvcp",
       "name": "RVCP",
       "cat": "Router",
@@ -2620,99 +2713,6 @@
             "5G",
             "Dual",
             "RT65-2"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "roxx",
-      "name": "ROXX",
-      "cat": "Router",
-      "order": null,
-      "desc": "A ruggedised industrial router combining dual 5G/4G modems with Wi-Fi 6 (EasyMesh), 2× WAN + 4× LAN GbE ports, and 1× SFP uplink. Built on MediaTek MT7981 with OpenWRT 21/23, supporting dual-SIM failover, DIN-rail mounting, and a wide 9–30V DC input — engineered for demanding telecom, industrial, and enterprise edge deployments.",
-      "cpu": "MediaTek MT7981",
-      "ram": "1 GB DDR4",
-      "storage": "128 MB NAND",
-      "cell": "4G/5G",
-      "cellular_gen": "5G",
-      "wifi": "WiFi6",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "IP30",
-      "power": "9–30 VDC",
-      "ports": "6",
-      "os": "OpenWRT 21/23",
-      "housing": "Sheet Metal",
-      "dims": "210 × 25 × 135 mm (W × H × D)",
-      "weight": "950 g",
-      "op_temp": "0°C-50°C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/roxx-1786520658941-g4je.png"
-      ],
-      "use_cases": [
-        "Telecom Backhaul & Site Connectivity",
-        "Enterprise Edge Network with Dual Active for Load Balancing"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "RO65-2": "assets/datasheets/RO65-2.pdf",
-        "RO65-1": "assets/datasheets/RO65-1.pdf",
-        "RO64-2": "assets/datasheets/RO64-2.pdf",
-        "RO64-1": "assets/datasheets/RO64-1.pdf"
-      },
-      "hidden_fields": [
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports-Additional Details",
-          "v": "Gigabit Ports"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "4G/5G",
-          "No. of Modems",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "✓",
-            "Wi-Fi 6",
-            "5G",
-            "Dual",
-            "RO65-2"
-          ],
-          [
-            "✓",
-            "Wi-Fi 6",
-            "5G",
-            "Single",
-            "RO65-1"
-          ],
-          [
-            "—",
-            "Wi-Fi 6",
-            "—",
-            "—",
-            "RO60"
-          ],
-          [
-            "✓",
-            "Wi-Fi 6",
-            "4G",
-            "Dual",
-            "RO64-2"
-          ],
-          [
-            "✓",
-            "Wi-Fi 6",
-            "4G",
-            "Single",
-            "RO64-1"
           ]
         ]
       }
