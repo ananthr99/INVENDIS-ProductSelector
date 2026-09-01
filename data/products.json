@@ -2991,6 +2991,88 @@
       }
     },
     {
+      "id": "miniups",
+      "name": "Mini UPS",
+      "cat": "Other",
+      "order": 38,
+      "desc": "The Mini UPS keeps low-voltage devices alive through power cuts, delivering up to 10 hours of backup from its user-replaceable 38Whr battery via dual 12V output ports. With auto turn-on, built-in short circuit and thermal protection, it is a practical fit for network installers and system integrators looking to add affordable power resilience to routers, IP cameras, and access points without the bulk of a traditional UPS.",
+      "cpu": "â",
+      "ram": "â",
+      "storage": "â",
+      "cell": "none",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "No",
+      "rs232": "No",
+      "ip": "",
+      "power": "12V in / 12V out (2A/3A)",
+      "ports": "0",
+      "os": "â",
+      "housing": "Plastic",
+      "dims": "â",
+      "weight": "â",
+      "op_temp": "â",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/miniups-1787031823007-0u2g.png"
+      ],
+      "use_cases": [
+        "Router & Modem Power Backup",
+        "CCTV & Security Continuity",
+        "Smart Device Power Resilience"
+      ],
+      "datasheet": "assets/datasheets/Mini UPS_Metal Enclosure_Datasheet 1.pdf",
+      "part_datasheets": {},
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "wifi",
+        "cpu",
+        "ram",
+        "storage",
+        "ip",
+        "power",
+        "ports",
+        "os",
+        "rs485",
+        "rs232",
+        "housing",
+        "dims",
+        "weight",
+        "op_temp"
+      ],
+      "additional_specs": [
+        {
+          "k": "Input/Output",
+          "v": "12 V Input, 12V/2A/3A Output"
+        },
+        {
+          "k": "Output Port",
+          "v": "Dual Output port"
+        },
+        {
+          "k": "Battery",
+          "v": "User replaceable (18650/26650), overcharge and discharge protection. Thermal protection"
+        },
+        {
+          "k": "Power",
+          "v": "19 Whr, backup time 3-5 hours/ 38 Whr, backup time 9-10 hours"
+        },
+        {
+          "k": "On/Off",
+          "v": "Auto turn on feature"
+        },
+        {
+          "k": "LED Indicators",
+          "v": "Charging and output power status indicators"
+        },
+        {
+          "k": "Protection",
+          "v": "Short Circuit Protection"
+        }
+      ],
+      "variants": null
+    },
+    {
       "id": "rvcp",
       "name": "RVCP",
       "cat": "Router",
@@ -3948,88 +4030,6 @@
         {
           "k": "Resolution",
           "v": "0.1kW/kVA"
-        }
-      ],
-      "variants": null
-    },
-    {
-      "id": "miniups",
-      "name": "Mini UPS",
-      "cat": "Other",
-      "order": null,
-      "desc": "The Mini UPS keeps low-voltage devices alive through power cuts, delivering up to 10 hours of backup from its user-replaceable 38Whr battery via dual 12V output ports. With auto turn-on, built-in short circuit and thermal protection, it is a practical fit for network installers and system integrators looking to add affordable power resilience to routers, IP cameras, and access points without the bulk of a traditional UPS.",
-      "cpu": "â",
-      "ram": "â",
-      "storage": "â",
-      "cell": "none",
-      "cellular_gen": "-",
-      "wifi": "-",
-      "rs485": "No",
-      "rs232": "No",
-      "ip": "",
-      "power": "12V in / 12V out (2A/3A)",
-      "ports": "0",
-      "os": "â",
-      "housing": "Plastic",
-      "dims": "â",
-      "weight": "â",
-      "op_temp": "â",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/miniups-1787031823007-0u2g.png"
-      ],
-      "use_cases": [
-        "Router & Modem Power Backup",
-        "CCTV & Security Continuity",
-        "Smart Device Power Resilience"
-      ],
-      "datasheet": "assets/datasheets/Mini UPS_Metal Enclosure_Datasheet 1.pdf",
-      "part_datasheets": {},
-      "hidden_fields": [
-        "cell",
-        "cellular_gen",
-        "wifi",
-        "cpu",
-        "ram",
-        "storage",
-        "ip",
-        "power",
-        "ports",
-        "os",
-        "rs485",
-        "rs232",
-        "housing",
-        "dims",
-        "weight",
-        "op_temp"
-      ],
-      "additional_specs": [
-        {
-          "k": "Input/Output",
-          "v": "12 V Input, 12V/2A/3A Output"
-        },
-        {
-          "k": "Output Port",
-          "v": "Dual Output port"
-        },
-        {
-          "k": "Battery",
-          "v": "User replaceable (18650/26650), overcharge and discharge protection. Thermal protection"
-        },
-        {
-          "k": "Power",
-          "v": "19 Whr, backup time 3-5 hours/ 38 Whr, backup time 9-10 hours"
-        },
-        {
-          "k": "On/Off",
-          "v": "Auto turn on feature"
-        },
-        {
-          "k": "LED Indicators",
-          "v": "Charging and output power status indicators"
-        },
-        {
-          "k": "Protection",
-          "v": "Short Circuit Protection"
         }
       ],
       "variants": null
