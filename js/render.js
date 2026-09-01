@@ -63,7 +63,7 @@ function render() {
     return;
   }
   const page = list.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
-  if (viewMode === 'grid') renderGrid(page, r);
+  if (viewMode === 'grid') { renderGrid(page, r); truncateUseCasePills(); }
   else renderList(page, r);
   renderPagination(totalPages, list.length);
   updateCompareTray();
@@ -112,13 +112,49 @@ function goPage(p) {
   window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
+function truncateUseCasePills() {
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.card-use-cases').forEach(container => {
+      const chips = Array.from(container.querySelectorAll('.use-case-chip-sm'));
+      if (!chips.length) return;
+
+      const firstTop = chips[0].getBoundingClientRect().top;
+      const chipH = chips[0].getBoundingClientRect().height;
+      const gap = 4;
+
+      // Find first chip that falls on row 3+
+      let cutIdx = chips.length;
+      for (let i = 1; i < chips.length; i++) {
+        const row = Math.round((chips[i].getBoundingClientRect().top - firstTop) / (chipH + gap));
+        if (row >= 2) { cutIdx = i; break; }
+      }
+
+      if (cutIdx >= chips.length) return;
+
+      for (let i = cutIdx; i < chips.length; i++) chips[i].style.display = 'none';
+
+      const moreChip = document.createElement('span');
+      moreChip.className = 'use-case-chip-sm use-case-chip-more';
+      moreChip.textContent = `+${chips.length - cutIdx} more`;
+      container.appendChild(moreChip);
+
+      // If "+N more" itself wrapped to row 3, retire one more chip
+      const moreRow = Math.round((moreChip.getBoundingClientRect().top - firstTop) / (chipH + gap));
+      if (moreRow >= 2 && cutIdx > 0) {
+        chips[--cutIdx].style.display = 'none';
+        moreChip.textContent = `+${chips.length - cutIdx} more`;
+      }
+    });
+  });
+}
+
 function renderGrid(list, r) {
   r.className = 'grid-view';
   r.innerHTML = list.map(p => {
     const imgs = PRODUCT_IMAGES[p.id];
     const thumb = imgs?.length ? `<div class="card-thumb-wrap"><img class="card-thumb" src="${imgs[0]}" alt="${esc(p.name)}" loading="lazy"></div>` : '';
     const uc = PRODUCT_USE_CASES[p.id] || [];
-    const ucHtml = uc.length ? `<div class="card-use-cases">${uc.slice(0,2).map(u=>`<span class="use-case-chip-sm">${esc(u)}</span>`).join('')}</div>` : '';
+    const ucHtml = uc.length ? `<div class="card-use-cases">${uc.map(u=>`<span class="use-case-chip-sm">${esc(u)}</span>`).join('')}</div>` : '';
     const eid = esc(JSON.stringify(p.id));
     return `
     <div class="card ${compareSet.has(p.id)?'compare-selected':''}" role="button" tabindex="0" onclick="openDetail(${eid})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openDetail(${eid})}">
