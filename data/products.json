@@ -3073,6 +3073,100 @@
       "variants": null
     },
     {
+      "id": "MFMET4640",
+      "name": "ET 4640 (Multi-Function Meter)",
+      "cat": "Energy Meter",
+      "order": 39,
+      "desc": "The Multi-Function Meter puts comprehensive three-phase power visibility into a single panel-mountable unit, simultaneously tracking voltage, current, active/reactive/apparent power, energy consumption, and power factor across all phases with quadrant-wise reactive energy breakdown. With a programmable CT primary, onboard RTC, and data storage, it gives energy managers, facility engineers, and utilities the granular electrical insight needed to drive efficiency, detect anomalies, and meet metering compliance requirements across commercial and industrial installations.",
+      "cpu": "",
+      "ram": "",
+      "storage": "",
+      "cell": "",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "",
+      "ports": "",
+      "os": "",
+      "housing": "",
+      "dims": "",
+      "weight": "",
+      "op_temp": "",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/MFMET4640-1787136837806-6zw4.png"
+      ],
+      "use_cases": [
+        "Energy Consumption Monitoring",
+        "Industrial Power Quality Analysis",
+        "Utility & Compliance Metering"
+      ],
+      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/MFMET4640-datasheet.pdf",
+      "part_datasheets": {},
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "wifi",
+        "cpu",
+        "ram",
+        "storage",
+        "ip",
+        "power",
+        "ports",
+        "os",
+        "rs485",
+        "rs232",
+        "housing",
+        "dims",
+        "weight",
+        "op_temp"
+      ],
+      "additional_specs": [
+        {
+          "k": "Meter Type",
+          "v": "Three phase multi functional panel mountable meter"
+        },
+        {
+          "k": "Voltage",
+          "v": "Phase Wise- LL, LN, Max and Min Values"
+        },
+        {
+          "k": "Current",
+          "v": "L1, L2, L3- Max and Min Values and neutral current"
+        },
+        {
+          "k": "Line Frequency",
+          "v": "Hz"
+        },
+        {
+          "k": "Current Rating",
+          "v": "CT Primary Programmable (CTS 1A/5A)"
+        },
+        {
+          "k": "Aux Supply",
+          "v": "85-270V AC/DC"
+        },
+        {
+          "k": "Voltage Range",
+          "v": "60-415 V (Line to Line)"
+        },
+        {
+          "k": "Current",
+          "v": "CT Primary Programmable, Secondary 5A"
+        },
+        {
+          "k": "PF Range",
+          "v": "0.5 lag to unity to 0.5 lead"
+        },
+        {
+          "k": "Resolution",
+          "v": "0.1kW/kVA"
+        }
+      ],
+      "variants": null
+    },
+    {
       "id": "rvcp",
       "name": "RVCP",
       "cat": "Router",
@@ -3936,100 +4030,6 @@
         {
           "k": "Humidity",
           "v": "5% to 95% non condensing"
-        }
-      ],
-      "variants": null
-    },
-    {
-      "id": "MFMET4640",
-      "name": "ET 4640 (Multi-Function Meter)",
-      "cat": "Energy Meter",
-      "order": null,
-      "desc": "The Multi-Function Meter puts comprehensive three-phase power visibility into a single panel-mountable unit, simultaneously tracking voltage, current, active/reactive/apparent power, energy consumption, and power factor across all phases with quadrant-wise reactive energy breakdown. With a programmable CT primary, onboard RTC, and data storage, it gives energy managers, facility engineers, and utilities the granular electrical insight needed to drive efficiency, detect anomalies, and meet metering compliance requirements across commercial and industrial installations.",
-      "cpu": "",
-      "ram": "",
-      "storage": "",
-      "cell": "",
-      "cellular_gen": "-",
-      "wifi": "-",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "",
-      "power": "",
-      "ports": "",
-      "os": "",
-      "housing": "",
-      "dims": "",
-      "weight": "",
-      "op_temp": "",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/MFMET4640-1787136837806-6zw4.png"
-      ],
-      "use_cases": [
-        "Energy Consumption Monitoring",
-        "Industrial Power Quality Analysis",
-        "Utility & Compliance Metering"
-      ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/MFMET4640-datasheet.pdf",
-      "part_datasheets": {},
-      "hidden_fields": [
-        "cell",
-        "cellular_gen",
-        "wifi",
-        "cpu",
-        "ram",
-        "storage",
-        "ip",
-        "power",
-        "ports",
-        "os",
-        "rs485",
-        "rs232",
-        "housing",
-        "dims",
-        "weight",
-        "op_temp"
-      ],
-      "additional_specs": [
-        {
-          "k": "Meter Type",
-          "v": "Three phase multi functional panel mountable meter"
-        },
-        {
-          "k": "Voltage",
-          "v": "Phase Wise- LL, LN, Max and Min Values"
-        },
-        {
-          "k": "Current",
-          "v": "L1, L2, L3- Max and Min Values and neutral current"
-        },
-        {
-          "k": "Line Frequency",
-          "v": "Hz"
-        },
-        {
-          "k": "Current Rating",
-          "v": "CT Primary Programmable (CTS 1A/5A)"
-        },
-        {
-          "k": "Aux Supply",
-          "v": "85-270V AC/DC"
-        },
-        {
-          "k": "Voltage Range",
-          "v": "60-415 V (Line to Line)"
-        },
-        {
-          "k": "Current",
-          "v": "CT Primary Programmable, Secondary 5A"
-        },
-        {
-          "k": "PF Range",
-          "v": "0.5 lag to unity to 0.5 lead"
-        },
-        {
-          "k": "Resolution",
-          "v": "0.1kW/kVA"
         }
       ],
       "variants": null
