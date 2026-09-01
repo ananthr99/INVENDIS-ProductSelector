@@ -258,70 +258,6 @@
       "variants": null
     },
     {
-      "id": "RUC",
-      "name": "RUC 65",
-      "cat": "Router",
-      "order": 94,
-      "desc": "The SILBO RUC65 is a fanless, enterprise-grade 5G cellular router featuring dual-SIM redundancy, AX3000 Wi-Fi 6, and optional long-range Bluetooth 6.0 (BLE) integration. Powered by an OpenWrt Linux platform with a MediaTek MT7981 processor, it delivers up to 2.2 Gbps Sub-6 cellular speeds alongside multi-WAN failover, PoE IN support, and robust VPN tunneling capabilities.",
-      "cpu": "MediaTek MT7981 1.3GHz Dual Core ARM Cortex A53",
-      "ram": "512 MB DDR3 RAM",
-      "storage": "128 MB NAND",
-      "cell": "4G/5G",
-      "cellular_gen": "5G",
-      "wifi": "WiFi6",
-      "rs485": "No",
-      "rs232": "-",
-      "ip": "",
-      "power": "12 VDC",
-      "ports": "3",
-      "os": "Open-WRT based Linux OS",
-      "housing": "Plastic",
-      "dims": "105 x 200 x 105 mm (W x H x D)",
-      "weight": "590 grams",
-      "op_temp": "0~ 50 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/RUC-1787820565957-u8i6.png"
-      ],
-      "use_cases": [
-        "Smart Building & IoT Edge Aggregation",
-        "Mobile & Temporary Event Branch Connectivity",
-        "Mission-Critical Multi-WAN Industrial Routing"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "RUC 65": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/RUC-RUC_65.pdf"
-      },
-      "hidden_fields": [
-        "ip",
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports Additional Spec",
-          "v": "1 x Gigabit WAN (PoE IN IEEE802.3at), 2 x Gigabit LAN"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "WiFi",
-          "Gen",
-          "Modem",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "✓",
-            "Wi-Fi 6",
-            "5G",
-            "Single",
-            "RUC 65"
-          ]
-        ]
-      }
-    },
-    {
       "id": "RVH",
       "name": "RVH 44",
       "cat": "Gateway",
@@ -656,6 +592,70 @@
             "4G",
             "Single",
             "RVCP 04"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "RUC",
+      "name": "RUC 65",
+      "cat": "Router",
+      "order": null,
+      "desc": "The SILBO RUC65 is a fanless, enterprise-grade 5G cellular router featuring dual-SIM redundancy, AX3000 Wi-Fi 6, and optional long-range Bluetooth 6.0 (BLE) integration. Powered by an OpenWrt Linux platform with a MediaTek MT7981 processor, it delivers up to 2.2 Gbps Sub-6 cellular speeds alongside multi-WAN failover, PoE IN support, and robust VPN tunneling capabilities.",
+      "cpu": "MediaTek MT7981 1.3GHz Dual Core ARM Cortex A53",
+      "ram": "512 MB DDR3 RAM",
+      "storage": "128 MB NAND",
+      "cell": "4G/5G",
+      "cellular_gen": "5G",
+      "wifi": "WiFi6",
+      "rs485": "No",
+      "rs232": "-",
+      "ip": "",
+      "power": "12 VDC",
+      "ports": "3",
+      "os": "Open-WRT based Linux OS",
+      "housing": "Plastic",
+      "dims": "105 x 200 x 105 mm (W x H x D)",
+      "weight": "590 grams",
+      "op_temp": "0~ 50 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/RUC-1787820565957-u8i6.png"
+      ],
+      "use_cases": [
+        "Smart Building & IoT Edge Aggregation",
+        "Mobile & Temporary Event Branch Connectivity",
+        "Mission-Critical Multi-WAN Industrial Routing"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "RUC 65": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/RUC-RUC_65.pdf"
+      },
+      "hidden_fields": [
+        "ip",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports Additional Spec",
+          "v": "1 x Gigabit WAN (PoE IN IEEE802.3at), 2 x Gigabit LAN"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "WiFi",
+          "Gen",
+          "Modem",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "✓",
+            "Wi-Fi 6",
+            "5G",
+            "Single",
+            "RUC 65"
           ]
         ]
       }
