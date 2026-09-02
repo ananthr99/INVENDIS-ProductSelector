@@ -17,13 +17,13 @@ async function loadData() {
   try {
     await resolveFolder();
     await loadAdminConfig();
+    fetchRateLimit(); // initial estimate; overwritten by accurate headers from readFromGist below
     await readExcel();
     renderSidebar();
     showScreen('dash');
     switchTab('dashboard');
     renderDashboard(accs[0]);
     updateTokenBanner();
-    fetchRateLimit();
   } catch(e) {
     showToast('Load error: ' + (e.message || 'unknown error'), 'err');
     showScreen('login');

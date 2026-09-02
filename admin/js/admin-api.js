@@ -93,6 +93,7 @@ async function readFromGist() {
   if (!gistId) throw new Error('gistId not set in onedrive-config.js — cannot load products');
   const _ghdr = getGithubToken() ? { Authorization: `Bearer ${getGithubToken()}` } : {};
   const res  = await fetch(`https://api.github.com/gists/${gistId}`, { headers: _ghdr });
+  updateRateLimit(res.headers);
   if (!res.ok) throw new Error(`Gist fetch failed (${res.status})`);
   const data    = await res.json();
   const content = data.files?.['products.json']?.content;
