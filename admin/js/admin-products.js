@@ -23,6 +23,7 @@ async function loadData() {
     switchTab('dashboard');
     renderDashboard(accs[0]);
     updateTokenBanner();
+    fetchRateLimit();
   } catch(e) {
     showToast('Load error: ' + (e.message || 'unknown error'), 'err');
     showScreen('login');

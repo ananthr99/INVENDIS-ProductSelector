@@ -233,6 +233,7 @@ async function pushToGist(jsonStr) {
     },
     body: JSON.stringify(payload)
   });
+  updateRateLimit(res.headers);
   if (!res.ok) {
     const body = await res.text();
     if (res.status === 403 && body.includes('rate limit')) throw new Error('GitHub API rate limit exceeded — please wait a few minutes and try again.');
@@ -241,6 +242,32 @@ async function pushToGist(jsonStr) {
   return res.json();
 }
 
+
+// ─── GitHub Rate Limit ───────────────────────────────────────────────────────
+function updateRateLimit(headers) {
+  const remaining = parseInt(headers.get('X-RateLimit-Remaining'), 10);
+  const limit     = parseInt(headers.get('X-RateLimit-Limit'),     10);
+  const reset     = parseInt(headers.get('X-RateLimit-Reset'),     10);
+  if (isNaN(remaining) || isNaN(limit)) return;
+  rateLimitInfo = { remaining, limit, reset };
+  if (typeof renderRateLimit === 'function') renderRateLimit();
+}
+
+async function fetchRateLimit() {
+  const token = getGithubToken();
+  if (!token || token === 'YOUR_GITHUB_TOKEN') return;
+  try {
+    const res = await fetch('https://api.github.com/rate_limit', {
+      headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' }
+    });
+    if (!res.ok) return;
+    const data = await res.json();
+    const core = data.resources?.core;
+    if (!core) return;
+    rateLimitInfo = { remaining: core.remaining, limit: core.limit, reset: core.reset };
+    if (typeof renderRateLimit === 'function') renderRateLimit();
+  } catch {}
+}
 
 // ─── GitHub File Upload ───────────────────────────────────────────────────────
 function arrayBufferToBase64(buffer) {
@@ -283,6 +310,7 @@ async function pushFileToGitHub(repoPath, buffer, commitMessage) {
     },
     body: JSON.stringify(body)
   });
+  updateRateLimit(res.headers);
   if (!res.ok) {
     const body = await res.text();
     if (res.status === 403 && body.includes('rate limit')) throw new Error('GitHub API rate limit exceeded — please wait a few minutes and try again.');

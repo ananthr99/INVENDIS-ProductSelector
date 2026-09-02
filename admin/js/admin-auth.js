@@ -29,6 +29,7 @@ async function saveGithubToken() {
   document.getElementById('ghTokenInput').value = '';
   renderSetupStatus();
   updateTokenBanner();
+  fetchRateLimit();
 }
 
 async function loadAdminConfig() {

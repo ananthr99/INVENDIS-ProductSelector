@@ -53,6 +53,32 @@ function updateTokenBanner() {
   if (banner) banner.style.display = getGithubToken() ? 'none' : 'flex';
 }
 
+function renderRateLimit() {
+  const badge = document.getElementById('rateLimitBadge');
+  const fill  = document.getElementById('rateLimitFill');
+  const text  = document.getElementById('rateLimitText');
+  if (!badge) return;
+
+  const { remaining, limit, reset } = rateLimitInfo;
+  if (remaining === null || !getGithubToken()) { badge.style.display = 'none'; return; }
+
+  badge.style.display = 'flex';
+  fill.style.width = Math.max(0, Math.min(100, (remaining / limit) * 100)) + '%';
+
+  badge.classList.remove('warn', 'crit');
+  if (remaining < 100)      badge.classList.add('crit');
+  else if (remaining < 500) badge.classList.add('warn');
+
+  const minsLeft  = reset ? Math.ceil((reset * 1000 - Date.now()) / 60000) : null;
+  const resetTime = reset ? new Date(reset * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '';
+
+  text.textContent = remaining.toLocaleString() + ' left';
+  if (minsLeft !== null && remaining < 500) text.textContent += ` · resets in ${minsLeft}m`;
+
+  badge.title = `GitHub API: ${remaining.toLocaleString()} / ${limit.toLocaleString()} requests remaining`
+    + (resetTime ? `\nResets at ${resetTime}${minsLeft !== null ? ` (in ~${minsLeft} min)` : ''}` : '');
+}
+
 // ─── Activity Log ─────────────────────────────────────────────────────────────
 function diffProduct(old, neu, imgCount, hadDs) {
   if (!old) {

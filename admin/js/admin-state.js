@@ -127,6 +127,7 @@ let _newCatColorIdx   = 4; // palette index for the next cat to be added (defaul
 let isSiteDirty  = false;
 let currentTab   = 'dashboard';
 let msalInst;
+let rateLimitInfo = { remaining: null, limit: null, reset: null };
 
 // ─── Tab Switching ────────────────────────────────────────────────────────────
 function switchTab(name) {
