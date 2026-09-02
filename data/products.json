@@ -449,10 +449,80 @@
       "variants": null
     },
     {
+      "id": "dcmeter",
+      "name": "ET1641 (DC Meter)",
+      "cat": "Energy Meter",
+      "order": 41,
+      "desc": "The DC Meter monitors up to four independent current channels alongside a DC voltage input across a 20-60V range — self-powered directly from the rectifier it measures, eliminating the need for a separate auxiliary supply. With 1% FSR accuracy, derived power and energy readings up to 65kW and 100,000 kWh, it is purpose-built for battery systems, solar installations, telecom rectifiers, and EV charging infrastructure where precise DC energy accountability is non-negotiable",
+      "cpu": "â",
+      "ram": "â",
+      "storage": "â",
+      "cell": "none",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "Yes",
+      "rs232": "No",
+      "ip": "",
+      "power": "20â60 VDC self-powered",
+      "ports": "0",
+      "os": "â",
+      "housing": "Panel mount",
+      "dims": "â",
+      "weight": "â",
+      "op_temp": "â",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/dcmeter-1787137006487-aowj.png"
+      ],
+      "use_cases": [
+        "Telecom Power Monitoring",
+        "Solar & Battery System Analytics",
+        "EV Charging & DC Infrastructure"
+      ],
+      "datasheet": "assets/datasheets/ET1641 DC Meter.pdf",
+      "part_datasheets": {},
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "wifi",
+        "cpu",
+        "ram",
+        "storage",
+        "ip",
+        "power",
+        "ports",
+        "os",
+        "rs485",
+        "rs232",
+        "housing",
+        "dims",
+        "weight",
+        "op_temp"
+      ],
+      "additional_specs": [
+        {
+          "k": "Range of Measurement Parameters-DC Voltage",
+          "v": "20-60 VDC"
+        },
+        {
+          "k": "Range of Measurement Parameters-DC Current",
+          "v": "1-100A/200A DC"
+        },
+        {
+          "k": "Resolution of Measurement Parameters-DC Voltage",
+          "v": "0.1V or better"
+        },
+        {
+          "k": "Resolution of Measurement Parameters-DC Current",
+          "v": "0.2A or better"
+        }
+      ],
+      "variants": null
+    },
+    {
       "id": "acmeter",
       "name": "ET4602 (AC Meter)",
       "cat": "Energy Meter",
-      "order": 40,
+      "order": null,
       "desc": "Where the AC Meter (INV 4602) earns its place is in dual-source energy environments — separately tracking kWh consumption from both grid (EB) and diesel generator (DG) supplies across all three phases, giving operators a clear split of utility versus backup power costs. With 2000VAC-isolated RS485 communication, phase-wise voltage and current breakdowns, and a wide 45-65Hz frequency tolerance, it serves energy auditors, building managers, and industrial plants looking to bring accountability and precision to their power monitoring without deploying multiple devices.",
       "cpu": "â",
       "ram": "â",
@@ -542,76 +612,6 @@
         {
           "k": "Humidity",
           "v": "5% to 95% non condensing"
-        }
-      ],
-      "variants": null
-    },
-    {
-      "id": "dcmeter",
-      "name": "ET1641 (DC Meter)",
-      "cat": "Energy Meter",
-      "order": 41,
-      "desc": "The DC Meter monitors up to four independent current channels alongside a DC voltage input across a 20-60V range — self-powered directly from the rectifier it measures, eliminating the need for a separate auxiliary supply. With 1% FSR accuracy, derived power and energy readings up to 65kW and 100,000 kWh, it is purpose-built for battery systems, solar installations, telecom rectifiers, and EV charging infrastructure where precise DC energy accountability is non-negotiable",
-      "cpu": "â",
-      "ram": "â",
-      "storage": "â",
-      "cell": "none",
-      "cellular_gen": "-",
-      "wifi": "-",
-      "rs485": "Yes",
-      "rs232": "No",
-      "ip": "",
-      "power": "20â60 VDC self-powered",
-      "ports": "0",
-      "os": "â",
-      "housing": "Panel mount",
-      "dims": "â",
-      "weight": "â",
-      "op_temp": "â",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/dcmeter-1787137006487-aowj.png"
-      ],
-      "use_cases": [
-        "Telecom Power Monitoring",
-        "Solar & Battery System Analytics",
-        "EV Charging & DC Infrastructure"
-      ],
-      "datasheet": "assets/datasheets/ET1641 DC Meter.pdf",
-      "part_datasheets": {},
-      "hidden_fields": [
-        "cell",
-        "cellular_gen",
-        "wifi",
-        "cpu",
-        "ram",
-        "storage",
-        "ip",
-        "power",
-        "ports",
-        "os",
-        "rs485",
-        "rs232",
-        "housing",
-        "dims",
-        "weight",
-        "op_temp"
-      ],
-      "additional_specs": [
-        {
-          "k": "Range of Measurement Parameters-DC Voltage",
-          "v": "20-60 VDC"
-        },
-        {
-          "k": "Range of Measurement Parameters-DC Current",
-          "v": "1-100A/200A DC"
-        },
-        {
-          "k": "Resolution of Measurement Parameters-DC Voltage",
-          "v": "0.1V or better"
-        },
-        {
-          "k": "Resolution of Measurement Parameters-DC Current",
-          "v": "0.2A or better"
         }
       ],
       "variants": null
