@@ -4052,7 +4052,7 @@
     {
       "id": "GPONONU",
       "name": "GPON ONU",
-      "cat": "Router",
+      "cat": "Gateway",
       "order": null,
       "desc": "",
       "cpu": "",
