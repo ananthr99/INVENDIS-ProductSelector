@@ -3790,7 +3790,7 @@
     {
       "id": "rvcp",
       "name": "RVCP",
-      "cat": "Router",
+      "cat": "Gateway",
       "order": null,
       "desc": "",
       "cpu": "MediaTek MT7621, Dual Core MIPS 880MHz",
