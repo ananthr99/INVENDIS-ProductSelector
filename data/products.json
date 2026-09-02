@@ -2123,71 +2123,6 @@
       }
     },
     {
-      "id": "xb82",
-      "name": "XB82-2",
-      "cat": "Switch",
-      "order": 27,
-      "desc": "The XB-82-2 cuts through network complexity by delivering plug-and-play Gigabit switching with zero configuration overhead — eight PoE-capable ports, two SFP uplinks, and a 240W total PoE budget ready to power cameras, access points, and IP phones straight out of the box. Its wide 9-57Vdc input range and DIN rail-mountable aluminium body make it equally at home in a control cabinet or a harsh field enclosure, serving installers and contractors who need reliable, no-fuss layer-2 connectivity without the cost of managed switch complexity.",
-      "cpu": "â",
-      "ram": "â",
-      "storage": "â",
-      "cell": "none",
-      "cellular_gen": "-",
-      "wifi": "-",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "",
-      "power": "9-57 VDC",
-      "ports": "10",
-      "os": "â",
-      "housing": "Industrial Aluminium",
-      "dims": "56 mm x 110 mm x 114 mm",
-      "weight": "451 g",
-      "op_temp": "0~ 50 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/xb82-1786698669725-9cdo.png"
-      ],
-      "use_cases": [
-        "Wireless Access Point Aggregation",
-        "IP Telephony & Communication Networks",
-        "Remote Edge Network Distribution"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "XB82-2 Unmanaged PoE Switch": "assets/datasheets/XB-82-2.pdf"
-      },
-      "hidden_fields": [
-        "cpu",
-        "ram",
-        "storage",
-        "os",
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "SFP",
-          "v": "2"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "PoE Out",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "-",
-            "-",
-            "✓",
-            "XB82-2 Unmanaged PoE Switch"
-          ]
-        ]
-      }
-    },
-    {
       "id": "xc80",
       "name": "XC80-1",
       "cat": "Switch",
@@ -3179,6 +3114,71 @@
             "5G",
             "Single",
             "IDF45"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "xb82",
+      "name": "XB82-2",
+      "cat": "Switch",
+      "order": null,
+      "desc": "The XB-82-2 cuts through network complexity by delivering plug-and-play Gigabit switching with zero configuration overhead — eight PoE-capable ports, two SFP uplinks, and a 240W total PoE budget ready to power cameras, access points, and IP phones straight out of the box. Its wide 9-57Vdc input range and DIN rail-mountable aluminium body make it equally at home in a control cabinet or a harsh field enclosure, serving installers and contractors who need reliable, no-fuss layer-2 connectivity without the cost of managed switch complexity.",
+      "cpu": "â",
+      "ram": "â",
+      "storage": "â",
+      "cell": "none",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "9-57 VDC",
+      "ports": "10",
+      "os": "â",
+      "housing": "Industrial Aluminium",
+      "dims": "56 mm x 110 mm x 114 mm",
+      "weight": "451 g",
+      "op_temp": "0~ 50 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/xb82-1786698669725-9cdo.png"
+      ],
+      "use_cases": [
+        "Wireless Access Point Aggregation",
+        "IP Telephony & Communication Networks",
+        "Remote Edge Network Distribution"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "XB82-2 Unmanaged PoE Switch": "assets/datasheets/XB-82-2.pdf"
+      },
+      "hidden_fields": [
+        "cpu",
+        "ram",
+        "storage",
+        "os",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "SFP",
+          "v": "2"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "PoE Out",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "-",
+            "-",
+            "✓",
+            "XB82-2 Unmanaged PoE Switch"
           ]
         ]
       }
