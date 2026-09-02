@@ -2123,88 +2123,6 @@
       }
     },
     {
-      "id": "pc3xx",
-      "name": "PC3XX",
-      "cat": "Switch",
-      "order": 34,
-      "desc": "Stripped back to the essentials, the PC310 is a ultra-compact serial-to-IP gateway that bridges RS485 field devices with modern IP networks through a minimal yet capable footprint of just 80 x 26 x 78 mm. Running OpenWRT Linux on a 12-24V supply, it slots effortlessly into existing DIN rail enclosures across building automation, metering, and light industrial applications where space is tight and simplicity of deployment matters most.",
-      "cpu": "MediaTek MT7628",
-      "ram": "128 MB DDR2",
-      "storage": "32 MB Flash",
-      "cell": "none",
-      "cellular_gen": "-",
-      "wifi": "WiFi4/2.4GHz",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "",
-      "power": "12V-24V",
-      "ports": "1",
-      "os": "OpenWRT Linux",
-      "housing": "Sheet Metal",
-      "dims": "80 x  26  x  78 mm (W x H x D)",
-      "weight": "400 g",
-      "op_temp": "0~ 50 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/pc3xx-1786620992114-lmpi.png"
-      ],
-      "use_cases": [
-        "Energy Meter & Utility Device Integration",
-        "Building Automation Connectivity",
-        "Legacy Device Network Enablement"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "PC310": "assets/datasheets/PC310.pdf",
-        "PC311": "assets/datasheets/PC311.pdf",
-        "PC312": "assets/datasheets/PC312.pdf"
-      },
-      "hidden_fields": [
-        "cell",
-        "cellular_gen",
-        "ip",
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports",
-          "v": "Fast Ethernet"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "RS485",
-          "No. of RS485 Ports",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "-",
-            "-",
-            "✓",
-            "1",
-            "PC310"
-          ],
-          [
-            "-",
-            "-",
-            "✓",
-            "2",
-            "PC311"
-          ],
-          [
-            "-",
-            "✓",
-            "✓",
-            "1",
-            "PC312"
-          ]
-        ]
-      }
-    },
-    {
       "id": "mcx",
       "name": "MC-X (Media Converter)",
       "cat": "Other",
@@ -2674,6 +2592,88 @@
             "5G",
             "Single",
             "IDF45"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "pc3xx",
+      "name": "PC3XX",
+      "cat": "Switch",
+      "order": null,
+      "desc": "Stripped back to the essentials, the PC310 is a ultra-compact serial-to-IP gateway that bridges RS485 field devices with modern IP networks through a minimal yet capable footprint of just 80 x 26 x 78 mm. Running OpenWRT Linux on a 12-24V supply, it slots effortlessly into existing DIN rail enclosures across building automation, metering, and light industrial applications where space is tight and simplicity of deployment matters most.",
+      "cpu": "MediaTek MT7628",
+      "ram": "128 MB DDR2",
+      "storage": "32 MB Flash",
+      "cell": "none",
+      "cellular_gen": "-",
+      "wifi": "WiFi4/2.4GHz",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "12V-24V",
+      "ports": "1",
+      "os": "OpenWRT Linux",
+      "housing": "Sheet Metal",
+      "dims": "80 x  26  x  78 mm (W x H x D)",
+      "weight": "400 g",
+      "op_temp": "0~ 50 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/pc3xx-1786620992114-lmpi.png"
+      ],
+      "use_cases": [
+        "Energy Meter & Utility Device Integration",
+        "Building Automation Connectivity",
+        "Legacy Device Network Enablement"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "PC310": "assets/datasheets/PC310.pdf",
+        "PC311": "assets/datasheets/PC311.pdf",
+        "PC312": "assets/datasheets/PC312.pdf"
+      },
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "ip",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Fast Ethernet"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "RS485",
+          "No. of RS485 Ports",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "-",
+            "-",
+            "✓",
+            "1",
+            "PC310"
+          ],
+          [
+            "-",
+            "-",
+            "✓",
+            "2",
+            "PC311"
+          ],
+          [
+            "-",
+            "✓",
+            "✓",
+            "1",
+            "PC312"
           ]
         ]
       }
