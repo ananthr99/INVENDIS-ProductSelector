@@ -2260,7 +2260,7 @@
       "name": "RVCP",
       "cat": "Gateway",
       "order": 28,
-      "desc": "",
+      "desc": "RVCP 04-1 is a rugged, fanless 4G/3G/2G dual-SIM cellular router built on the MediaTek MT7621 platform, delivering reliable industrial connectivity with 4 Gigabit Ethernet ports, SFP, and advanced multi-WAN failover — all running on an Open-WRT Linux OS.",
       "cpu": "MediaTek MT7621, Dual Core MIPS 880MHz",
       "ram": "512MB, DDR3",
       "storage": "32MB NOR Flash",
@@ -2280,7 +2280,11 @@
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvcp-1787643260652-71vm.png"
       ],
-      "use_cases": [],
+      "use_cases": [
+        "Primary WAN Failover for Retail & Branch Offices",
+        "Remote SCADA/Industrial Site Connectivity",
+        "Fleet of Distributed IoT/Metering Gateways with Centralized Management"
+      ],
       "datasheet": null,
       "part_datasheets": {
         "RVCP 04": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvcp-RVCP_04.pdf"
