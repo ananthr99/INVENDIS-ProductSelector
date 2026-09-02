@@ -2123,73 +2123,6 @@
       }
     },
     {
-      "id": "xg82",
-      "name": "XG-82-2MI",
-      "cat": "Switch",
-      "order": 32,
-      "desc": "The SILBO XG-82-2MI is a compact, fanless Layer 2 smart managed switch featuring 8 Gigabit Ethernet PoE ports with a 120W total budget, paired with 2 high-speed 2.5Gbps SFP ports for fiber uplinks. Encased in a durable sheet metal housing, it offers comprehensive network management features including VLANs, QoS, IGMP Snooping, and redundant link protocols like STP/MSTP and ERPS.",
-      "cpu": "â",
-      "ram": "â",
-      "storage": "â",
-      "cell": "none",
-      "cellular_gen": "-",
-      "wifi": "-",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "",
-      "power": "44-57 VDC",
-      "ports": "8 x 10/100/1000 Mbps",
-      "os": "â",
-      "housing": "Industrial Aluminium",
-      "dims": "200 mm x 120 mm x 55mm (WxLxH)",
-      "weight": "675 g",
-      "op_temp": "0~ 60 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/xg82-1787723995591-8t37.png"
-      ],
-      "use_cases": [
-        "Enterprise Surveillance & Security Networks",
-        "Smart Campus & Enterprise Network Management",
-        "Industrial Network Control & Redundancy"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "XG82-2L Gigabit Ethernet Managed Switch": "assets/datasheets/XG-82-2L Updated.pdf",
-        "XG 82-2MI Lite Managed Switch": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xg82-XG_82-2MI_Lite_Managed_Switch.pdf"
-      },
-      "hidden_fields": [
-        "cell",
-        "cellular_gen",
-        "wifi",
-        "cpu",
-        "ram",
-        "storage",
-        "ip",
-        "os",
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "PoE",
-          "No of Modems",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "-",
-            "-",
-            "✓",
-            "Single",
-            "XG 82-2MI Lite Managed Switch"
-          ]
-        ]
-      }
-    },
-    {
       "id": "xi244-2M",
       "name": "XI 244-2M",
       "cat": "Switch",
@@ -2833,6 +2766,73 @@
             "5G",
             "Single",
             "IDF45"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "xg82",
+      "name": "XG-82-2MI",
+      "cat": "Switch",
+      "order": null,
+      "desc": "The SILBO XG-82-2MI is a compact, fanless Layer 2 smart managed switch featuring 8 Gigabit Ethernet PoE ports with a 120W total budget, paired with 2 high-speed 2.5Gbps SFP ports for fiber uplinks. Encased in a durable sheet metal housing, it offers comprehensive network management features including VLANs, QoS, IGMP Snooping, and redundant link protocols like STP/MSTP and ERPS.",
+      "cpu": "â",
+      "ram": "â",
+      "storage": "â",
+      "cell": "none",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "44-57 VDC",
+      "ports": "8 x 10/100/1000 Mbps",
+      "os": "â",
+      "housing": "Industrial Aluminium",
+      "dims": "200 mm x 120 mm x 55mm (WxLxH)",
+      "weight": "675 g",
+      "op_temp": "0~ 60 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/xg82-1787723995591-8t37.png"
+      ],
+      "use_cases": [
+        "Enterprise Surveillance & Security Networks",
+        "Smart Campus & Enterprise Network Management",
+        "Industrial Network Control & Redundancy"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "XG82-2L Gigabit Ethernet Managed Switch": "assets/datasheets/XG-82-2L Updated.pdf",
+        "XG 82-2MI Lite Managed Switch": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xg82-XG_82-2MI_Lite_Managed_Switch.pdf"
+      },
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "wifi",
+        "cpu",
+        "ram",
+        "storage",
+        "ip",
+        "os",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "PoE",
+          "No of Modems",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "-",
+            "-",
+            "✓",
+            "Single",
+            "XG 82-2MI Lite Managed Switch"
           ]
         ]
       }
