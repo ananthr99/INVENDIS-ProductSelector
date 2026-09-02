@@ -2912,7 +2912,7 @@
       ],
       "additional_specs": [
         {
-          "k": "Ethernet Ports-Additional Details",
+          "k": "Ethernet Ports",
           "v": "Gigabit Ethernet"
         }
       ],
