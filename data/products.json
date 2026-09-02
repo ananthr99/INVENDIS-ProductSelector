@@ -2623,6 +2623,7 @@
         "XB82-2 Unmanaged PoE Switch": "assets/datasheets/XB-82-2.pdf"
       },
       "hidden_fields": [
+        "cellular_gen",
         "cpu",
         "ram",
         "storage",
