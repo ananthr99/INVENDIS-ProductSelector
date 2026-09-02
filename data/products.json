@@ -2258,6 +2258,75 @@
       }
     },
     {
+      "id": "xc80",
+      "name": "XC80-1",
+      "cat": "Switch",
+      "order": 28,
+      "desc": "The XC-80-1 cuts through network complexity by delivering plug-and-play Gigabit switching with zero configuration overhead — eight PoE-capable ports, two SFP uplinks, and a 240W total PoE budget ready to power cameras, access points, and IP phones straight out of the box. Its wide 9-57Vdc input range and DIN rail-mountable aluminium body make it equally at home in a control cabinet or a harsh field enclosure, serving installers and contractors who need reliable, no-fuss layer-2 connectivity without the cost of managed switch complexity.",
+      "cpu": "â",
+      "ram": "â",
+      "storage": "â",
+      "cell": "none",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "9-30 VDC",
+      "ports": "8",
+      "os": "â",
+      "housing": "Sheet Metal",
+      "dims": "45 mm x 110 mm x 95 mm (W x H x D)",
+      "weight": "386 g",
+      "op_temp": "0~ 50 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/xc80-1786699708540-nzt4.png"
+      ],
+      "use_cases": [
+        "Factory Floor Device Connectivity",
+        "Smart Security Infrastructure",
+        "Industrial Workstation Connectivity"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "XC-80-1 Unmanaged PoE Switch": "assets/datasheets/XC-80-1.pdf"
+      },
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "wifi",
+        "cpu",
+        "ram",
+        "storage",
+        "ip",
+        "os",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Fast Ethernet"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "PoE ",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "-",
+            "-",
+            "✓",
+            "XC-80-1 Unmanaged PoE Switch"
+          ]
+        ]
+      }
+    },
+    {
       "id": "dcmeter",
       "name": "ET1641 (DC Meter)",
       "cat": "Energy Meter",
@@ -3365,75 +3434,6 @@
             "-",
             "✓",
             "XD50-1 Unmanaged PoE Switch"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "xc80",
-      "name": "XC80-1",
-      "cat": "Switch",
-      "order": null,
-      "desc": "The XC-80-1 cuts through network complexity by delivering plug-and-play Gigabit switching with zero configuration overhead — eight PoE-capable ports, two SFP uplinks, and a 240W total PoE budget ready to power cameras, access points, and IP phones straight out of the box. Its wide 9-57Vdc input range and DIN rail-mountable aluminium body make it equally at home in a control cabinet or a harsh field enclosure, serving installers and contractors who need reliable, no-fuss layer-2 connectivity without the cost of managed switch complexity.",
-      "cpu": "â",
-      "ram": "â",
-      "storage": "â",
-      "cell": "none",
-      "cellular_gen": "-",
-      "wifi": "-",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "",
-      "power": "9-30 VDC",
-      "ports": "8",
-      "os": "â",
-      "housing": "Sheet Metal",
-      "dims": "45 mm x 110 mm x 95 mm (W x H x D)",
-      "weight": "386 g",
-      "op_temp": "0~ 50 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/xc80-1786699708540-nzt4.png"
-      ],
-      "use_cases": [
-        "Factory Floor Device Connectivity",
-        "Smart Security Infrastructure",
-        "Industrial Workstation Connectivity"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "XC-80-1 Unmanaged PoE Switch": "assets/datasheets/XC-80-1.pdf"
-      },
-      "hidden_fields": [
-        "cell",
-        "cellular_gen",
-        "wifi",
-        "cpu",
-        "ram",
-        "storage",
-        "ip",
-        "os",
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports",
-          "v": "Fast Ethernet"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "PoE ",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "-",
-            "-",
-            "✓",
-            "XC-80-1 Unmanaged PoE Switch"
           ]
         ]
       }
