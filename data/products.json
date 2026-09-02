@@ -1014,7 +1014,8 @@
       ],
       "datasheet": null,
       "part_datasheets": {
-        "RV00": "assets/datasheets/RV00.pdf"
+        "RV00": "assets/datasheets/RV00.pdf",
+        "—": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rv00-_.pdf"
       },
       "hidden_fields": [
         "cell",
