@@ -123,7 +123,7 @@
       ],
       "additional_specs": [
         {
-          "k": "Ethernet Ports- Additional Details",
+          "k": "Ethernet Ports",
           "v": "Gigabit Ethernet, (2x I226 Intel) , 2x RTL8125BG(Realtek)"
         }
       ],
