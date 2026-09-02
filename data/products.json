@@ -3020,6 +3020,73 @@
       }
     },
     {
+      "id": "rn50pcba",
+      "name": "RN50-PCBA",
+      "cat": "PCB",
+      "order": 38,
+      "desc": "The RN50-PCB-A is a board-level cellular router designed for OEMs and product integrators who need to embed carrier-grade MultiWAN connectivity — with Ethernet, cellular, and Wi-Fi failover — directly into their own hardware platforms. Its M12 connectors, PoE input, and slim 209 x 30mm profile make it a natural fit for space-constrained vehicle-mounted systems, industrial panels, and ruggedised equipment where off-the-shelf box routers are simply not an option.",
+      "cpu": "MediaTek MT7621",
+      "ram": "256/512 MB DDR3",
+      "storage": "32/64 MB Flash",
+      "cell": "none",
+      "cellular_gen": "-",
+      "wifi": "WiFi5",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "Active PoE 44-57 VDC",
+      "ports": "2",
+      "os": "OpenWRT Linux",
+      "housing": "Industrial Aluminium",
+      "dims": "209 x 30 x 154 mm (W x H x D)",
+      "weight": "",
+      "op_temp": "0 ~ 50˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rn50pcba-1786956166244-5pmy.png"
+      ],
+      "use_cases": [
+        "Vehicle & Transportation Systems",
+        "Passengers Infotainment AP for Railways"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "RN 50 PCB-A": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rn50pcba-RN_50_PCB-A.pdf"
+      },
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "ip",
+        "rs485",
+        "rs232",
+        "housing",
+        "weight"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Gigabit Ports (M12 Connector)"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Wi-Fi",
+          "Cellular",
+          "Gen",
+          "No of Modem",
+          "Final Product"
+        ],
+        "rows": [
+          [
+            "WiFi-5",
+            "-",
+            "5G",
+            "Single",
+            "RN 50 PCB-A"
+          ]
+        ]
+      }
+    },
+    {
       "id": "dcmeter",
       "name": "ET1641 (DC Meter)",
       "cat": "Energy Meter",
@@ -3526,73 +3593,6 @@
             "-",
             "Single",
             "RVW 50"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "rn50pcba",
-      "name": "RN50-PCBA",
-      "cat": "PCB",
-      "order": null,
-      "desc": "The RN50-PCB-A is a board-level cellular router designed for OEMs and product integrators who need to embed carrier-grade MultiWAN connectivity — with Ethernet, cellular, and Wi-Fi failover — directly into their own hardware platforms. Its M12 connectors, PoE input, and slim 209 x 30mm profile make it a natural fit for space-constrained vehicle-mounted systems, industrial panels, and ruggedised equipment where off-the-shelf box routers are simply not an option.",
-      "cpu": "MediaTek MT7621",
-      "ram": "256/512 MB DDR3",
-      "storage": "32/64 MB Flash",
-      "cell": "none",
-      "cellular_gen": "-",
-      "wifi": "WiFi5",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "",
-      "power": "Active PoE 44-57 VDC",
-      "ports": "2",
-      "os": "OpenWRT Linux",
-      "housing": "Industrial Aluminium",
-      "dims": "209 x 30 x 154 mm (W x H x D)",
-      "weight": "",
-      "op_temp": "0 ~ 50˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rn50pcba-1786956166244-5pmy.png"
-      ],
-      "use_cases": [
-        "Vehicle & Transportation Systems",
-        "Passengers Infotainment AP for Railways"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "RN 50 PCB-A": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rn50pcba-RN_50_PCB-A.pdf"
-      },
-      "hidden_fields": [
-        "cell",
-        "cellular_gen",
-        "ip",
-        "rs485",
-        "rs232",
-        "housing",
-        "weight"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports",
-          "v": "Gigabit Ports (M12 Connector)"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Wi-Fi",
-          "Cellular",
-          "Gen",
-          "No of Modem",
-          "Final Product"
-        ],
-        "rows": [
-          [
-            "WiFi-5",
-            "-",
-            "5G",
-            "Single",
-            "RN 50 PCB-A"
           ]
         ]
       }
