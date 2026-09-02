@@ -3347,6 +3347,69 @@
       }
     },
     {
+      "id": "mt7621odu",
+      "name": "MT7621-01 ODU",
+      "cat": "Outdoor Unit",
+      "order": 43,
+      "desc": "The MT 7621 ODU takes cellular routing outdoors, packaged in an IP66-rated ABS/PC enclosure that mounts directly on walls or poles — eliminating the need for separate weatherproof cabinets and the cabling complexity that comes with them. Powered entirely over a single Ethernet cable via 802.3af/at PoE, it supports 4G LTE Cat 4 speeds up to 150 Mbps with dual SIM failover, making it a field-ready solution for outdoor surveillance, remote kiosks, and transportation infrastructure where indoor-mounted routers simply cannot reach.",
+      "cpu": "MediaTek MT7621",
+      "ram": "512 MB DDR2",
+      "storage": "32 MB Flash",
+      "cell": "4G",
+      "cellular_gen": "4G",
+      "wifi": "-",
+      "rs485": "No",
+      "rs232": "No",
+      "ip": "IP66",
+      "power": "Active PoE 48â57V",
+      "ports": "2",
+      "os": "OpenWRT Linux",
+      "housing": "ABS/PC IP66 Housing",
+      "dims": "140 x 75 x 224 mm (W x H x D)",
+      "weight": "950 g",
+      "op_temp": "-0 ~ 50 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/mt7621odu-1786951698336-5qx3.png"
+      ],
+      "use_cases": [
+        "Outdoor CCTV & Perimeter Surveillance",
+        "Smart Transportation & Roadside Infrastructure",
+        "Remote Outdoor Asset Connectivity"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "MT7621-01 ODU": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/mt7621odu-MT7621-01_ODU.pdf"
+      },
+      "hidden_fields": [
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "1 x 10/100/1000 (External with PoE IN), 1 x 10/100/1000 (Internal for Configuration)"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Wi-Fi",
+          "Cellular",
+          "Gen",
+          "No of Model",
+          "Final Product"
+        ],
+        "rows": [
+          [
+            "-",
+            "✓",
+            "4G",
+            "Single",
+            "MT7621-01 ODU"
+          ]
+        ]
+      }
+    },
+    {
       "id": "rvw50",
       "name": "RVW 50 with M12",
       "cat": "PCB",
@@ -3639,69 +3702,6 @@
             "5G",
             "Single",
             "RT65-ODU"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "mt7621odu",
-      "name": "MT7621-01 ODU",
-      "cat": "Outdoor Unit",
-      "order": null,
-      "desc": "The MT 7621 ODU takes cellular routing outdoors, packaged in an IP66-rated ABS/PC enclosure that mounts directly on walls or poles — eliminating the need for separate weatherproof cabinets and the cabling complexity that comes with them. Powered entirely over a single Ethernet cable via 802.3af/at PoE, it supports 4G LTE Cat 4 speeds up to 150 Mbps with dual SIM failover, making it a field-ready solution for outdoor surveillance, remote kiosks, and transportation infrastructure where indoor-mounted routers simply cannot reach.",
-      "cpu": "MediaTek MT7621",
-      "ram": "512 MB DDR2",
-      "storage": "32 MB Flash",
-      "cell": "4G",
-      "cellular_gen": "4G",
-      "wifi": "-",
-      "rs485": "No",
-      "rs232": "No",
-      "ip": "IP66",
-      "power": "Active PoE 48â57V",
-      "ports": "2",
-      "os": "OpenWRT Linux",
-      "housing": "ABS/PC IP66 Housing",
-      "dims": "140 x 75 x 224 mm (W x H x D)",
-      "weight": "950 g",
-      "op_temp": "-0 ~ 50 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/mt7621odu-1786951698336-5qx3.png"
-      ],
-      "use_cases": [
-        "Outdoor CCTV & Perimeter Surveillance",
-        "Smart Transportation & Roadside Infrastructure",
-        "Remote Outdoor Asset Connectivity"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "MT7621-01 ODU": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/mt7621odu-MT7621-01_ODU.pdf"
-      },
-      "hidden_fields": [
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports",
-          "v": "1 x 10/100/1000 (External with PoE IN), 1 x 10/100/1000 (Internal for Configuration)"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Wi-Fi",
-          "Cellular",
-          "Gen",
-          "No of Model",
-          "Final Product"
-        ],
-        "rows": [
-          [
-            "-",
-            "✓",
-            "4G",
-            "Single",
-            "MT7621-01 ODU"
           ]
         ]
       }
