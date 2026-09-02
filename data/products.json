@@ -6,7 +6,8 @@
     "Energy Meter",
     "Other",
     "PCB",
-    "Intel Based Devices"
+    "Intel Based Devices",
+    "Outdoor Unit"
   ],
   "catColors": {
     "Router": {
@@ -36,6 +37,10 @@
     "Intel Based Devices": {
       "bg": "#FEF2F2",
       "fg": "#991B1B"
+    },
+    "Outdoor Unit": {
+      "bg": "#EEF2FF",
+      "fg": "#3730A3"
     }
   },
   "dropdowns": {
