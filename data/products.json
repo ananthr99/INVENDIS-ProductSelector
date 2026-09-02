@@ -3087,6 +3087,70 @@
       }
     },
     {
+      "id": "rvw50",
+      "name": "RVW 50 with M12",
+      "cat": "PCB",
+      "order": 39,
+      "desc": "Engineered for vehicle and transit applications, the RVW 50 with M12 swaps standard RJ45 ports for vibration-resistant M12 connectors across its 1+3 Gigabit interfaces, making it inherently suited to the shock and movement demands of rolling stock, fleet vehicles, and mobile command units. Powered over a single PoE cable at 44-57VDC and supporting Multi-WAN failover with Easy Mesh Wi-Fi, it delivers uninterrupted in-vehicle connectivity without the connector reliability concerns that plague conventional router deployments in motion.",
+      "cpu": "MediaTek MT7621",
+      "ram": "512 MB DDR3",
+      "storage": "32 MB Flash",
+      "cell": "none",
+      "cellular_gen": "-",
+      "wifi": "WiFi5",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "12 VDC / 9-30 VDC",
+      "ports": "5",
+      "os": "OpenWRT Linux",
+      "housing": "Sheet Metal",
+      "dims": "",
+      "weight": "",
+      "op_temp": "0 ~ 70˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvw50-1787139223379-b4ct.png"
+      ],
+      "use_cases": [
+        "Transit & Passenger Connectivity",
+        "Mobile Field Operations",
+        "Industrial Fleet Networking"
+      ],
+      "datasheet": null,
+      "part_datasheets": {},
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "rs485",
+        "rs232",
+        "weight"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Gigabit Ports (M12 Connector)"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Wi-Fi",
+          "Cellular",
+          "Gen",
+          "No of Modem",
+          "Final Product"
+        ],
+        "rows": [
+          [
+            "WiFi-5",
+            "-",
+            "-",
+            "Single",
+            "RVW 50"
+          ]
+        ]
+      }
+    },
+    {
       "id": "dcmeter",
       "name": "ET1641 (DC Meter)",
       "cat": "Energy Meter",
@@ -3529,70 +3593,6 @@
             "5G",
             "Single",
             "IDF45"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "rvw50",
-      "name": "RVW 50 with M12",
-      "cat": "PCB",
-      "order": null,
-      "desc": "Engineered for vehicle and transit applications, the RVW 50 with M12 swaps standard RJ45 ports for vibration-resistant M12 connectors across its 1+3 Gigabit interfaces, making it inherently suited to the shock and movement demands of rolling stock, fleet vehicles, and mobile command units. Powered over a single PoE cable at 44-57VDC and supporting Multi-WAN failover with Easy Mesh Wi-Fi, it delivers uninterrupted in-vehicle connectivity without the connector reliability concerns that plague conventional router deployments in motion.",
-      "cpu": "MediaTek MT7621",
-      "ram": "512 MB DDR3",
-      "storage": "32 MB Flash",
-      "cell": "none",
-      "cellular_gen": "-",
-      "wifi": "WiFi5",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "",
-      "power": "12 VDC / 9-30 VDC",
-      "ports": "5",
-      "os": "OpenWRT Linux",
-      "housing": "Sheet Metal",
-      "dims": "",
-      "weight": "",
-      "op_temp": "0 ~ 70˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvw50-1787139223379-b4ct.png"
-      ],
-      "use_cases": [
-        "Transit & Passenger Connectivity",
-        "Mobile Field Operations",
-        "Industrial Fleet Networking"
-      ],
-      "datasheet": null,
-      "part_datasheets": {},
-      "hidden_fields": [
-        "cell",
-        "cellular_gen",
-        "rs485",
-        "rs232",
-        "weight"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports",
-          "v": "Gigabit Ports (M12 Connector)"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Wi-Fi",
-          "Cellular",
-          "Gen",
-          "No of Modem",
-          "Final Product"
-        ],
-        "rows": [
-          [
-            "WiFi-5",
-            "-",
-            "-",
-            "Single",
-            "RVW 50"
           ]
         ]
       }
