@@ -1671,6 +1671,98 @@
       }
     },
     {
+      "id": "iacxx",
+      "name": "IACXX-X",
+      "cat": "Gateway",
+      "order": 21,
+      "desc": "Designed to keep critical operations connected, the IACXX-X brings together dual SIM failover, 802.11 b/g/n Wi-Fi, and a wide 9-30Vdc input range into a slim, DIN rail-mountable form factor built for the factory floor. Powered by OpenWRT Linux and weighing just 400g, it delivers enterprise-grade manageability in a compact footprint — making it a practical choice for system integrators and OEMs deploying connected solutions across industrial and infrastructure environments.",
+      "cpu": "MediaTek MT7628",
+      "ram": "128 MB DDR2",
+      "storage": "32 MB Flash",
+      "cell": "4G",
+      "cellular_gen": "4G",
+      "wifi": "WiFi4",
+      "rs485": "Yes",
+      "rs232": "-",
+      "ip": "",
+      "power": "9-30 VDC",
+      "ports": "5",
+      "os": "OpenWRT Linux",
+      "housing": "Industrial Aluminium",
+      "dims": "110 x 44 x 94 mm (W x H x D)",
+      "weight": "400 g",
+      "op_temp": "0~ 50 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/iacxx-1786602435650-vmhe.png"
+      ],
+      "use_cases": [
+        "OEM Embedded Connectivity Solutions",
+        "Factory Floor Network Integration",
+        "Infrastructure Equipment Connectivity"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "IAC44-C": "assets/datasheets/IAC44-C.pdf",
+        "IAC44-A": "assets/datasheets/IAC44-A.pdf",
+        "IAC04-A": "assets/datasheets/IAC04-A.pdf",
+        "IAC04-C": "assets/datasheets/IAC04-C.pdf"
+      },
+      "hidden_fields": [
+        "ip",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Fast Ethernet"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "RS485",
+          "4G/5G",
+          "No. of Modems",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "✓",
+            "Wi-Fi 4",
+            "✓",
+            "4G",
+            "Single",
+            "IAC44-C"
+          ],
+          [
+            "✓",
+            "Wi-Fi 4",
+            "—",
+            "4G",
+            "Single",
+            "IAC44-A"
+          ],
+          [
+            "✓",
+            "—",
+            "—",
+            "4G",
+            "Single",
+            "IAC04-A"
+          ],
+          [
+            "✓",
+            "—",
+            "✓",
+            "4G",
+            "Single",
+            "IAC04-C"
+          ]
+        ]
+      }
+    },
+    {
       "id": "dcmeter",
       "name": "ET1641 (DC Meter)",
       "cat": "Energy Meter",
@@ -3342,98 +3434,6 @@
             "—",
             "Single",
             "IAF04-C1"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "iacxx",
-      "name": "IACXX-X",
-      "cat": "Gateway",
-      "order": null,
-      "desc": "Designed to keep critical operations connected, the IACXX-X brings together dual SIM failover, 802.11 b/g/n Wi-Fi, and a wide 9-30Vdc input range into a slim, DIN rail-mountable form factor built for the factory floor. Powered by OpenWRT Linux and weighing just 400g, it delivers enterprise-grade manageability in a compact footprint — making it a practical choice for system integrators and OEMs deploying connected solutions across industrial and infrastructure environments.",
-      "cpu": "MediaTek MT7628",
-      "ram": "128 MB DDR2",
-      "storage": "32 MB Flash",
-      "cell": "4G",
-      "cellular_gen": "4G",
-      "wifi": "WiFi4",
-      "rs485": "Yes",
-      "rs232": "-",
-      "ip": "",
-      "power": "9-30 VDC",
-      "ports": "5",
-      "os": "OpenWRT Linux",
-      "housing": "Industrial Aluminium",
-      "dims": "110 x 44 x 94 mm (W x H x D)",
-      "weight": "400 g",
-      "op_temp": "0~ 50 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/iacxx-1786602435650-vmhe.png"
-      ],
-      "use_cases": [
-        "OEM Embedded Connectivity Solutions",
-        "Factory Floor Network Integration",
-        "Infrastructure Equipment Connectivity"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "IAC44-C": "assets/datasheets/IAC44-C.pdf",
-        "IAC44-A": "assets/datasheets/IAC44-A.pdf",
-        "IAC04-A": "assets/datasheets/IAC04-A.pdf",
-        "IAC04-C": "assets/datasheets/IAC04-C.pdf"
-      },
-      "hidden_fields": [
-        "ip",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports",
-          "v": "Fast Ethernet"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "RS485",
-          "4G/5G",
-          "No. of Modems",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "✓",
-            "Wi-Fi 4",
-            "✓",
-            "4G",
-            "Single",
-            "IAC44-C"
-          ],
-          [
-            "✓",
-            "Wi-Fi 4",
-            "—",
-            "4G",
-            "Single",
-            "IAC44-A"
-          ],
-          [
-            "✓",
-            "—",
-            "—",
-            "4G",
-            "Single",
-            "IAC04-A"
-          ],
-          [
-            "✓",
-            "—",
-            "✓",
-            "4G",
-            "Single",
-            "IAC04-C"
           ]
         ]
       }
