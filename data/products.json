@@ -1181,6 +1181,78 @@
       }
     },
     {
+      "id": "rexx",
+      "name": "REXX",
+      "cat": "Router",
+      "order": 15,
+      "desc": "Built for stable, always-on connectivity, this industrial router enables seamless integration of wired, Wi-Fi, and cellular networks in compact deployments. Its key strengths lie in dual SIM redundancy, highly customizable OpenWRT firmware, and a wide range of VPN and security features that support secure data transmission across distributed networks. It is best suited for sectors like industrial IoT, transportation systems, utilities, and remote enterprise sites where reliability and network control are critical.",
+      "cpu": "MediaTek MT7628",
+      "ram": "128/256 MB",
+      "storage": "32 MB Flash",
+      "cell": "4G",
+      "cellular_gen": "4G",
+      "wifi": "WiFi4",
+      "rs485": "No",
+      "rs232": "No",
+      "ip": "",
+      "power": "12 VDC",
+      "ports": "4",
+      "os": "OpenWRT Linux",
+      "housing": "Sheet Metal",
+      "dims": "123.2 x 28 x 120.6mm (W x H x D)",
+      "weight": "360 g",
+      "op_temp": "0~ 50 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rexx-1787138691544-n5qi.png"
+      ],
+      "use_cases": [
+        "Digital Signage & Remote Display Networks",
+        "Environmental & Field Data Collection",
+        "Secure Enterprise Backup Network"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "RE44": "assets/datasheets/RE44.pdf",
+        "RE04": "assets/datasheets/RE04.pdf"
+      },
+      "hidden_fields": [
+        "ip",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Fast Ethernet"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "4G/5G",
+          "No. of Modems",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "✓",
+            "Wi-Fi 4",
+            "4G",
+            "Dual",
+            "RE44"
+          ],
+          [
+            "✓",
+            "—",
+            "4G",
+            "Dual",
+            "RE04"
+          ]
+        ]
+      }
+    },
+    {
       "id": "dcmeter",
       "name": "ET1641 (DC Meter)",
       "cat": "Energy Meter",
@@ -3357,78 +3429,6 @@
             "4G",
             "Single",
             "RI44"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "rexx",
-      "name": "REXX",
-      "cat": "Router",
-      "order": null,
-      "desc": "Built for stable, always-on connectivity, this industrial router enables seamless integration of wired, Wi-Fi, and cellular networks in compact deployments. Its key strengths lie in dual SIM redundancy, highly customizable OpenWRT firmware, and a wide range of VPN and security features that support secure data transmission across distributed networks. It is best suited for sectors like industrial IoT, transportation systems, utilities, and remote enterprise sites where reliability and network control are critical.",
-      "cpu": "MediaTek MT7628",
-      "ram": "128/256 MB",
-      "storage": "32 MB Flash",
-      "cell": "4G",
-      "cellular_gen": "4G",
-      "wifi": "WiFi4",
-      "rs485": "No",
-      "rs232": "No",
-      "ip": "",
-      "power": "12 VDC",
-      "ports": "4",
-      "os": "OpenWRT Linux",
-      "housing": "Sheet Metal",
-      "dims": "123.2 x 28 x 120.6mm (W x H x D)",
-      "weight": "360 g",
-      "op_temp": "0~ 50 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rexx-1787138691544-n5qi.png"
-      ],
-      "use_cases": [
-        "Digital Signage & Remote Display Networks",
-        "Environmental & Field Data Collection",
-        "Secure Enterprise Backup Network"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "RE44": "assets/datasheets/RE44.pdf",
-        "RE04": "assets/datasheets/RE04.pdf"
-      },
-      "hidden_fields": [
-        "ip",
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports",
-          "v": "Fast Ethernet"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "4G/5G",
-          "No. of Modems",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "✓",
-            "Wi-Fi 4",
-            "4G",
-            "Dual",
-            "RE44"
-          ],
-          [
-            "✓",
-            "—",
-            "4G",
-            "Dual",
-            "RE04"
           ]
         ]
       }
