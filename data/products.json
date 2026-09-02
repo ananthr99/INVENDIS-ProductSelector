@@ -1852,6 +1852,99 @@
       }
     },
     {
+      "id": "idxx",
+      "name": "IDXX-X",
+      "cat": "Gateway",
+      "order": 23,
+      "desc": "The IDXX-X punches well above its weight class, pairing a generous 512MB RAM and Gigabit WAN/LAN ports with 802.11 b/g/n/ac dual-band Wi-Fi — a significant step up from entry-level industrial routers. This added horsepower makes it a strong candidate for bandwidth-intensive applications across smart factories, digital infrastructure, and multi-site enterprise deployments where throughput and scalability cannot be compromised.",
+      "cpu": "MediaTek MT7621",
+      "ram": "512 MB DDR3",
+      "storage": "64 MB Flash",
+      "cell": "4G",
+      "cellular_gen": "4G",
+      "wifi": "WiFi5",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "9-30 VDC",
+      "ports": "4",
+      "os": "OpenWRT Linux",
+      "housing": "Industrial Aluminium",
+      "dims": "110 x 44 x 94 mm (W x H x D)",
+      "weight": "400 g",
+      "op_temp": "0~ 50 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/idxx-1786603920631-nlg8.png"
+      ],
+      "use_cases": [
+        "High-Bandwidth Smart Factory Connectivity",
+        "Multi-Site Enterprise Network Extension",
+        "Smart Energy & Utility Field Automation"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "ID55-B": "assets/datasheets/ID55-B.pdf",
+        "ID55": "assets/datasheets/ID55.pdf",
+        "ID54-B": "assets/datasheets/ID54-B.pdf",
+        "ID54": "assets/datasheets/ID54.pdf"
+      },
+      "hidden_fields": [
+        "ip",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Gigabit Ethernet"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "4G/5G",
+          "RS485",
+          "No. of Modems",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "✓",
+            "Wi-Fi 5",
+            "4G",
+            "✓",
+            "Single",
+            "ID55-B (4 GB eMMC)"
+          ],
+          [
+            "✓",
+            "—",
+            "4G",
+            "—",
+            "Single",
+            "ID55"
+          ],
+          [
+            "✓",
+            "Wi-Fi 5",
+            "4G",
+            "✓",
+            "Single",
+            "ID54-B (4 GB eMMC)"
+          ],
+          [
+            "✓",
+            "—",
+            "4G",
+            "—",
+            "Single",
+            "ID54"
+          ]
+        ]
+      }
+    },
+    {
       "id": "dcmeter",
       "name": "ET1641 (DC Meter)",
       "cat": "Energy Meter",
@@ -3341,99 +3434,6 @@
             "—",
             "Single",
             "IDB54"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "idxx",
-      "name": "IDXX-X",
-      "cat": "Gateway",
-      "order": null,
-      "desc": "The IDXX-X punches well above its weight class, pairing a generous 512MB RAM and Gigabit WAN/LAN ports with 802.11 b/g/n/ac dual-band Wi-Fi — a significant step up from entry-level industrial routers. This added horsepower makes it a strong candidate for bandwidth-intensive applications across smart factories, digital infrastructure, and multi-site enterprise deployments where throughput and scalability cannot be compromised.",
-      "cpu": "MediaTek MT7621",
-      "ram": "512 MB DDR3",
-      "storage": "64 MB Flash",
-      "cell": "4G",
-      "cellular_gen": "4G",
-      "wifi": "WiFi5",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "",
-      "power": "9-30 VDC",
-      "ports": "4",
-      "os": "OpenWRT Linux",
-      "housing": "Industrial Aluminium",
-      "dims": "110 x 44 x 94 mm (W x H x D)",
-      "weight": "400 g",
-      "op_temp": "0~ 50 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/idxx-1786603920631-nlg8.png"
-      ],
-      "use_cases": [
-        "High-Bandwidth Smart Factory Connectivity",
-        "Multi-Site Enterprise Network Extension",
-        "Smart Energy & Utility Field Automation"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "ID55-B": "assets/datasheets/ID55-B.pdf",
-        "ID55": "assets/datasheets/ID55.pdf",
-        "ID54-B": "assets/datasheets/ID54-B.pdf",
-        "ID54": "assets/datasheets/ID54.pdf"
-      },
-      "hidden_fields": [
-        "ip",
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports",
-          "v": "Gigabit Ethernet"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "4G/5G",
-          "RS485",
-          "No. of Modems",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "✓",
-            "Wi-Fi 5",
-            "4G",
-            "✓",
-            "Single",
-            "ID55-B (4 GB eMMC)"
-          ],
-          [
-            "✓",
-            "—",
-            "4G",
-            "—",
-            "Single",
-            "ID55"
-          ],
-          [
-            "✓",
-            "Wi-Fi 5",
-            "4G",
-            "✓",
-            "Single",
-            "ID54-B (4 GB eMMC)"
-          ],
-          [
-            "✓",
-            "—",
-            "4G",
-            "—",
-            "Single",
-            "ID54"
           ]
         ]
       }
