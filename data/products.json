@@ -978,6 +978,72 @@
       }
     },
     {
+      "id": "rv00",
+      "name": "RV00",
+      "cat": "Router",
+      "order": 13,
+      "desc": "The RV00 is a compact industrial router built on MediaTek MT7621 featuring dual-band Wi-Fi 5, 4G/3G/2G cellular with dual SIM, and five Gigabit Ethernet ports. Running OpenWRT Linux, it supports VPN, VLAN, advanced routing and NMS remote management, making it ideal for industrial IoT, M2M, and edge-networking deployments. It ships in a fanless industrial aluminium enclosure with 12 V DC input and optional DIN rail mounting.",
+      "cpu": "MediaTek MT7621",
+      "ram": "512 MB DDR3",
+      "storage": "32/64 MB Flash",
+      "cell": "none",
+      "cellular_gen": "-",
+      "wifi": "WiFi4",
+      "rs485": "No",
+      "rs232": "No",
+      "ip": "",
+      "power": "12 VDC",
+      "ports": "5",
+      "os": "OpenWRT Linux",
+      "housing": "Industrial Aluminium",
+      "dims": "110 x 26 x 95 mm (W x H x D)",
+      "weight": "200 g",
+      "op_temp": "0~ 50 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rv00-1786528984998-xos5.png"
+      ],
+      "use_cases": [
+        "M2M Communication & Remote Asset Connectivity",
+        "Transportation & Fleet Connectivity",
+        "Backup Connectivity for Small Industrial Remote Sites"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "RV00": "assets/datasheets/RV00.pdf"
+      },
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "ip",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Gigabit Ports"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "4G/5G",
+          "No. of Modems",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "—",
+            "—",
+            "—",
+            "—",
+            "—"
+          ]
+        ]
+      }
+    },
+    {
       "id": "dcmeter",
       "name": "ET1641 (DC Meter)",
       "cat": "Energy Meter",
@@ -3363,72 +3429,6 @@
             "✓",
             "✓",
             "RDS44"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "rv00",
-      "name": "RV00",
-      "cat": "Router",
-      "order": null,
-      "desc": "The RV00 is a compact industrial router built on MediaTek MT7621 featuring dual-band Wi-Fi 5, 4G/3G/2G cellular with dual SIM, and five Gigabit Ethernet ports. Running OpenWRT Linux, it supports VPN, VLAN, advanced routing and NMS remote management, making it ideal for industrial IoT, M2M, and edge-networking deployments. It ships in a fanless industrial aluminium enclosure with 12 V DC input and optional DIN rail mounting.",
-      "cpu": "MediaTek MT7621",
-      "ram": "512 MB DDR3",
-      "storage": "32/64 MB Flash",
-      "cell": "none",
-      "cellular_gen": "-",
-      "wifi": "WiFi4",
-      "rs485": "No",
-      "rs232": "No",
-      "ip": "",
-      "power": "12 VDC",
-      "ports": "5",
-      "os": "OpenWRT Linux",
-      "housing": "Industrial Aluminium",
-      "dims": "110 x 26 x 95 mm (W x H x D)",
-      "weight": "200 g",
-      "op_temp": "0~ 50 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rv00-1786528984998-xos5.png"
-      ],
-      "use_cases": [
-        "M2M Communication & Remote Asset Connectivity",
-        "Transportation & Fleet Connectivity",
-        "Backup Connectivity for Small Industrial Remote Sites"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "RV00": "assets/datasheets/RV00.pdf"
-      },
-      "hidden_fields": [
-        "cell",
-        "cellular_gen",
-        "ip",
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports",
-          "v": "Gigabit Ports"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "4G/5G",
-          "No. of Modems",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "—",
-            "—",
-            "—",
-            "—",
-            "—"
           ]
         ]
       }
