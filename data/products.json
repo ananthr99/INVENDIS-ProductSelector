@@ -2992,6 +2992,98 @@
       }
     },
     {
+      "id": "xi244-2M",
+      "name": "XI 244-2M",
+      "cat": "Switch",
+      "order": 39,
+      "desc": "The SILBO XI-244-2L is an industrial Layer 2 managed switch featuring 24 Gigabit Ethernet PoE ports with a 240W total power budget, alongside 2 Gigabit RJ45 ports and 2 SFP fiber uplinks for flexible network aggregation. Encased in a durable aluminum enclosure, it supports advanced traffic management, redundancy protocols (STP/MSTP/ERPS), and PoE scheduling for demanding surveillance, IoT, and industrial applications.",
+      "cpu": "",
+      "ram": "",
+      "storage": "",
+      "cell": "",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "",
+      "ports": "24",
+      "os": "",
+      "housing": "",
+      "dims": "",
+      "weight": "",
+      "op_temp": "",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/xi244-2M-1787821659624-q8nr.png"
+      ],
+      "use_cases": [
+        "Commercial IP Security & Surveillance Infrastructure",
+        "Smart Building & IoT Deployment",
+        "Industrial / Campus Branch Network Aggregation"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "XI 244-2M": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xi244-2M-XI_244-2M.pdf"
+      },
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "wifi",
+        "cpu",
+        "ram",
+        "storage",
+        "ip",
+        "power",
+        "os",
+        "rs485",
+        "rs232",
+        "housing",
+        "dims",
+        "weight",
+        "op_temp"
+      ],
+      "additional_specs": [
+        {
+          "k": "Chipset",
+          "v": "EN8853D+EN8808Q*2+EN8804+3*AN8503"
+        },
+        {
+          "k": "Interface",
+          "v": "24 x 10/100/1000Mbps+4G Combo(RJ45 Or Fiber) Auto-Negotiation ports,The Fiber is SFP"
+        },
+        {
+          "k": "Transfer Method",
+          "v": "Store-and-Forward"
+        },
+        {
+          "k": "MAC Address Table",
+          "v": "32K"
+        },
+        {
+          "k": "Switching Capacity",
+          "v": "56Gbps"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Wi-Fi",
+          "Cellular",
+          "PoE",
+          "Number of Modem",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "—",
+            "—",
+            "—",
+            "—",
+            "XI 244-2M"
+          ]
+        ]
+      }
+    },
+    {
       "id": "rvw50",
       "name": "RVW 50 with M12",
       "cat": "PCB",
@@ -3543,98 +3635,6 @@
             "✓",
             "1",
             "PC312"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "xi244-2M",
-      "name": "XI 244-2M",
-      "cat": "Switch",
-      "order": null,
-      "desc": "The SILBO XI-244-2L is an industrial Layer 2 managed switch featuring 24 Gigabit Ethernet PoE ports with a 240W total power budget, alongside 2 Gigabit RJ45 ports and 2 SFP fiber uplinks for flexible network aggregation. Encased in a durable aluminum enclosure, it supports advanced traffic management, redundancy protocols (STP/MSTP/ERPS), and PoE scheduling for demanding surveillance, IoT, and industrial applications.",
-      "cpu": "",
-      "ram": "",
-      "storage": "",
-      "cell": "",
-      "cellular_gen": "-",
-      "wifi": "-",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "",
-      "power": "",
-      "ports": "24",
-      "os": "",
-      "housing": "",
-      "dims": "",
-      "weight": "",
-      "op_temp": "",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/xi244-2M-1787821659624-q8nr.png"
-      ],
-      "use_cases": [
-        "Commercial IP Security & Surveillance Infrastructure",
-        "Smart Building & IoT Deployment",
-        "Industrial / Campus Branch Network Aggregation"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "XI 244-2M": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xi244-2M-XI_244-2M.pdf"
-      },
-      "hidden_fields": [
-        "cell",
-        "cellular_gen",
-        "wifi",
-        "cpu",
-        "ram",
-        "storage",
-        "ip",
-        "power",
-        "os",
-        "rs485",
-        "rs232",
-        "housing",
-        "dims",
-        "weight",
-        "op_temp"
-      ],
-      "additional_specs": [
-        {
-          "k": "Chipset",
-          "v": "EN8853D+EN8808Q*2+EN8804+3*AN8503"
-        },
-        {
-          "k": "Interface",
-          "v": "24 x 10/100/1000Mbps+4G Combo(RJ45 Or Fiber) Auto-Negotiation ports,The Fiber is SFP"
-        },
-        {
-          "k": "Transfer Method",
-          "v": "Store-and-Forward"
-        },
-        {
-          "k": "MAC Address Table",
-          "v": "32K"
-        },
-        {
-          "k": "Switching Capacity",
-          "v": "56Gbps"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Wi-Fi",
-          "Cellular",
-          "PoE",
-          "Number of Modem",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "—",
-            "—",
-            "—",
-            "—",
-            "XI 244-2M"
           ]
         ]
       }
