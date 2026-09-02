@@ -3898,7 +3898,7 @@
       ],
       "additional_specs": [
         {
-          "k": "Ethernet Ports Additional Spec",
+          "k": "Ethernet Ports",
           "v": "1 x Gigabit WAN (PoE IN IEEE802.3at), 2 x Gigabit LAN"
         }
       ],
