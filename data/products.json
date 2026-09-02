@@ -3543,7 +3543,7 @@
       "id": "rvw50",
       "name": "RVW 50 with M12",
       "cat": "PCB",
-      "order": null,
+      "order": 46,
       "desc": "Engineered for vehicle and transit applications, the RVW 50 with M12 swaps standard RJ45 ports for vibration-resistant M12 connectors across its 1+3 Gigabit interfaces, making it inherently suited to the shock and movement demands of rolling stock, fleet vehicles, and mobile command units. Powered over a single PoE cable at 44-57VDC and supporting Multi-WAN failover with Easy Mesh Wi-Fi, it delivers uninterrupted in-vehicle connectivity without the connector reliability concerns that plague conventional router deployments in motion.",
       "cpu": "MediaTek MT7621",
       "ram": "512 MB DDR3",
