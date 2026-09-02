@@ -353,100 +353,6 @@
       "variants": null
     },
     {
-      "id": "iabxx",
-      "name": "IABXX-X",
-      "cat": "Gateway",
-      "order": 19,
-      "desc": "The IABXX-X is a rugged cellular router designed for reliable industrial connectivity, featuring a MediaTek MT7628 CPU with 128MB RAM and dual Nano SIM slots for flexible network redundancy. Running on OpenWRT-based Linux, it operates seamlessly across harsh environments — from -30 to 70°C storage temperatures — making it an ideal fit for IoT deployments, remote infrastructure monitoring, and industrial automation where uptime and durability are non-negotiable.",
-      "cpu": "MediaTek MT7628",
-      "ram": "128 MB DDR2",
-      "storage": "32 MB Flash",
-      "cell": "4G",
-      "cellular_gen": "4G",
-      "wifi": "WiFi4",
-      "rs485": "Yes",
-      "rs232": "Yes",
-      "ip": "",
-      "power": "9-30 VDC",
-      "ports": "2",
-      "os": "OpenWRT Linux",
-      "housing": "Industrial Aluminium",
-      "dims": "110 x 44 x 94 mm (W x H x D)",
-      "weight": "427 g",
-      "op_temp": "0~ 50 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/iabxx-1787122808489-w1hl.png"
-      ],
-      "use_cases": [
-        "Smart Energy & Utility Automation",
-        "Industrial Process Monitoring",
-        "Remote Environmental & Field Monitoring"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "IAB44-C": "assets/datasheets/IAB44-C.pdf",
-        "IAB44-B": "assets/datasheets/IAB44-B.pdf",
-        "IAB04-C": "assets/datasheets/IAB04-C.pdf",
-        "IAB04-B": "contact_us"
-      },
-      "hidden_fields": [],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports",
-          "v": "Fast Ethernet"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "RS485",
-          "RS232",
-          "4G/5G",
-          "No. of Modems",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "✓",
-            "Wi-Fi 4",
-            "✓",
-            "✓",
-            "4G",
-            "Single",
-            "IAB44-C"
-          ],
-          [
-            "✓",
-            "Wi-Fi 4",
-            "✓",
-            "✓",
-            "4G",
-            "Single",
-            "IAB44-B (4 GB eMMC)"
-          ],
-          [
-            "✓",
-            "—",
-            "✓",
-            "✓",
-            "4G",
-            "Single",
-            "IAB04-B (4 GB eMMC)"
-          ],
-          [
-            "✓",
-            "—",
-            "✓",
-            "✓",
-            "4G",
-            "Single",
-            "IAB04-C"
-          ]
-        ]
-      }
-    },
-    {
       "id": "iacxx",
       "name": "IACXX-X",
       "cat": "Gateway",
@@ -2213,6 +2119,100 @@
         }
       ],
       "variants": null
+    },
+    {
+      "id": "iabxx",
+      "name": "IABXX-X",
+      "cat": "Gateway",
+      "order": null,
+      "desc": "The IABXX-X is a rugged cellular router designed for reliable industrial connectivity, featuring a MediaTek MT7628 CPU with 128MB RAM and dual Nano SIM slots for flexible network redundancy. Running on OpenWRT-based Linux, it operates seamlessly across harsh environments — from -30 to 70°C storage temperatures — making it an ideal fit for IoT deployments, remote infrastructure monitoring, and industrial automation where uptime and durability are non-negotiable.",
+      "cpu": "MediaTek MT7628",
+      "ram": "128 MB DDR2",
+      "storage": "32 MB Flash",
+      "cell": "4G",
+      "cellular_gen": "4G",
+      "wifi": "WiFi4",
+      "rs485": "Yes",
+      "rs232": "Yes",
+      "ip": "",
+      "power": "9-30 VDC",
+      "ports": "2",
+      "os": "OpenWRT Linux",
+      "housing": "Industrial Aluminium",
+      "dims": "110 x 44 x 94 mm (W x H x D)",
+      "weight": "427 g",
+      "op_temp": "0~ 50 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/iabxx-1787122808489-w1hl.png"
+      ],
+      "use_cases": [
+        "Smart Energy & Utility Automation",
+        "Industrial Process Monitoring",
+        "Remote Environmental & Field Monitoring"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "IAB44-C": "assets/datasheets/IAB44-C.pdf",
+        "IAB44-B": "assets/datasheets/IAB44-B.pdf",
+        "IAB04-C": "assets/datasheets/IAB04-C.pdf",
+        "IAB04-B": "contact_us"
+      },
+      "hidden_fields": [],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Fast Ethernet"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "RS485",
+          "RS232",
+          "4G/5G",
+          "No. of Modems",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "✓",
+            "Wi-Fi 4",
+            "✓",
+            "✓",
+            "4G",
+            "Single",
+            "IAB44-C"
+          ],
+          [
+            "✓",
+            "Wi-Fi 4",
+            "✓",
+            "✓",
+            "4G",
+            "Single",
+            "IAB44-B (4 GB eMMC)"
+          ],
+          [
+            "✓",
+            "—",
+            "✓",
+            "✓",
+            "4G",
+            "Single",
+            "IAB04-B (4 GB eMMC)"
+          ],
+          [
+            "✓",
+            "—",
+            "✓",
+            "✓",
+            "4G",
+            "Single",
+            "IAB04-C"
+          ]
+        ]
+      }
     },
     {
       "id": "rfnxx",
