@@ -2951,7 +2951,7 @@
       "rs232": "-",
       "ip": "",
       "power": "44-57 VDC",
-      "ports": "8 x 10/100/1000 Mbps",
+      "ports": "8",
       "os": "â",
       "housing": "Industrial Aluminium",
       "dims": "200 mm x 120 mm x 55mm (WxLxH)",
@@ -2982,7 +2982,12 @@
         "rs485",
         "rs232"
       ],
-      "additional_specs": [],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Gigabit Ports"
+        }
+      ],
       "variants": {
         "headers": [
           "Cellular",
