@@ -1087,7 +1087,8 @@
         "RD04-B": "assets/datasheets/RD04-B.pdf",
         "RD44-C": "assets/datasheets/RD44-C.pdf",
         "RD04-C": "assets/datasheets/RD04-C.pdf",
-        "RDS00": "assets/datasheets/RDS00.pdf"
+        "RDS00": "assets/datasheets/RDS00.pdf",
+        "RDS44": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rdxx-RDS44.pdf"
       },
       "hidden_fields": [
         "ip",
