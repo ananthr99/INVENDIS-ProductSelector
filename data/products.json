@@ -2254,6 +2254,76 @@
       }
     },
     {
+      "id": "rvcp",
+      "name": "RVCP",
+      "cat": "Gateway",
+      "order": 28,
+      "desc": "",
+      "cpu": "MediaTek MT7621, Dual Core MIPS 880MHz",
+      "ram": "512MB, DDR3",
+      "storage": "32MB NOR Flash",
+      "cell": "",
+      "cellular_gen": "4G",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "12 V DC or 9-30V DC",
+      "ports": "4",
+      "os": "Open-WRT based Linux OS",
+      "housing": "Sheet Metal",
+      "dims": "190 x 30 x 100 mm (W x H x D)",
+      "weight": "520",
+      "op_temp": "0 -50°C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvcp-1787643260652-71vm.png"
+      ],
+      "use_cases": [],
+      "datasheet": null,
+      "part_datasheets": {
+        "RVCP 04": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvcp-RVCP_04.pdf"
+      },
+      "hidden_fields": [
+        "cell",
+        "wifi",
+        "ip",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Port",
+          "v": "Gigabit Ethernet"
+        },
+        {
+          "k": "SFP Ports",
+          "v": "1"
+        },
+        {
+          "k": "USB Port",
+          "v": "1 X 3.0"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "Gen",
+          "Modem",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "—",
+            "✓",
+            "4G",
+            "Single",
+            "RVCP 04"
+          ]
+        ]
+      }
+    },
+    {
       "id": "rvw50",
       "name": "RVW 50 with M12",
       "cat": "PCB",
@@ -3784,76 +3854,6 @@
         "headers": [],
         "rows": [
           []
-        ]
-      }
-    },
-    {
-      "id": "rvcp",
-      "name": "RVCP",
-      "cat": "Gateway",
-      "order": null,
-      "desc": "",
-      "cpu": "MediaTek MT7621, Dual Core MIPS 880MHz",
-      "ram": "512MB, DDR3",
-      "storage": "32MB NOR Flash",
-      "cell": "",
-      "cellular_gen": "4G",
-      "wifi": "-",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "",
-      "power": "12 V DC or 9-30V DC",
-      "ports": "4",
-      "os": "Open-WRT based Linux OS",
-      "housing": "Sheet Metal",
-      "dims": "190 x 30 x 100 mm (W x H x D)",
-      "weight": "520",
-      "op_temp": "0 -50°C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvcp-1787643260652-71vm.png"
-      ],
-      "use_cases": [],
-      "datasheet": null,
-      "part_datasheets": {
-        "RVCP 04": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvcp-RVCP_04.pdf"
-      },
-      "hidden_fields": [
-        "cell",
-        "wifi",
-        "ip",
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Port",
-          "v": "Gigabit Ethernet"
-        },
-        {
-          "k": "SFP Ports",
-          "v": "1"
-        },
-        {
-          "k": "USB Port",
-          "v": "1 X 3.0"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "Gen",
-          "Modem",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "—",
-            "✓",
-            "4G",
-            "Single",
-            "RVCP 04"
-          ]
         ]
       }
     },
