@@ -3707,6 +3707,104 @@
       }
     },
     {
+      "id": "nms",
+      "name": "NMS",
+      "cat": "Other",
+      "order": 48,
+      "desc": "An NMS (Network Management System) provides centralized visibility and control of network devices, enabling real-time monitoring of device health, performance, configuration, firmware, and connectivity. It supports remote configuration, auto-provisioning, alerts, analytics, secure access, and scalable management of large device networks.",
+      "cpu": "Software platform",
+      "ram": "â",
+      "storage": "â",
+      "cell": "none",
+      "cellular_gen": "-",
+      "wifi": "-",
+      "rs485": "No",
+      "rs232": "No",
+      "ip": "",
+      "power": "â",
+      "ports": "0",
+      "os": "Web-based, OpenWRT compatible",
+      "housing": "Software / Cloud",
+      "dims": "â",
+      "weight": "â",
+      "op_temp": "â",
+      "images": [
+        "assets/images/NMS.jpg"
+      ],
+      "use_cases": [
+        "Remote Monitoring for EV Charging Stations",
+        "IoT-Based Milk Collection & Distribution Monitoring",
+        "Water Storage & Distribution Monitoring"
+      ],
+      "datasheet": null,
+      "part_datasheets": {},
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "wifi",
+        "cpu",
+        "ram",
+        "storage",
+        "ip",
+        "power",
+        "ports",
+        "os",
+        "rs485",
+        "rs232",
+        "housing",
+        "dims",
+        "weight",
+        "op_temp"
+      ],
+      "additional_specs": [
+        {
+          "k": "Centralized Monitoring",
+          "v": "View health, performance, and status of all routers  on a single dashboard."
+        },
+        {
+          "k": "Remote Configuration",
+          "v": "Push updates, modify settings, and change  firmware remotely."
+        },
+        {
+          "k": "Auto-Provisioning",
+          "v": "Automatically configure new routers when added  to the network."
+        },
+        {
+          "k": "Secure Management",
+          "v": "HTTPS, VPN, SSH, and encrypted communication."
+        },
+        {
+          "k": "Real-Time Analytics",
+          "v": "Monitor uptime, signal strength, bandwidth usage,  and connected clients."
+        },
+        {
+          "k": "Event & Alert Logging",
+          "v": "Receive alerts for device disconnection, high  usage, or firmware failure."
+        },
+        {
+          "k": "Supports Multi-Vendor Device Compatibility",
+          "v": "Compatible with OpenWRT-based devices"
+        },
+        {
+          "k": "Scalability",
+          "v": "0 to 10,000+ devices"
+        },
+        {
+          "k": "Protocol Support",
+          "v": "HTTP(S), SSH"
+        },
+        {
+          "k": "Alerts & Logging",
+          "v": "Email"
+        },
+        {
+          "k": "Web Interface",
+          "v": "Responsive UI, Role-Based Access, Device Grouping"
+        }
+      ],
+      "variants": null
+    },
+    {
       "id": "dcmeter",
       "name": "ET1641 (DC Meter)",
       "cat": "Energy Meter",
@@ -4108,104 +4206,6 @@
           []
         ]
       }
-    },
-    {
-      "id": "nms",
-      "name": "NMS",
-      "cat": "Other",
-      "order": null,
-      "desc": "An NMS (Network Management System) provides centralized visibility and control of network devices, enabling real-time monitoring of device health, performance, configuration, firmware, and connectivity. It supports remote configuration, auto-provisioning, alerts, analytics, secure access, and scalable management of large device networks.",
-      "cpu": "Software platform",
-      "ram": "â",
-      "storage": "â",
-      "cell": "none",
-      "cellular_gen": "-",
-      "wifi": "-",
-      "rs485": "No",
-      "rs232": "No",
-      "ip": "",
-      "power": "â",
-      "ports": "0",
-      "os": "Web-based, OpenWRT compatible",
-      "housing": "Software / Cloud",
-      "dims": "â",
-      "weight": "â",
-      "op_temp": "â",
-      "images": [
-        "assets/images/NMS.jpg"
-      ],
-      "use_cases": [
-        "Remote Monitoring for EV Charging Stations",
-        "IoT-Based Milk Collection & Distribution Monitoring",
-        "Water Storage & Distribution Monitoring"
-      ],
-      "datasheet": null,
-      "part_datasheets": {},
-      "hidden_fields": [
-        "cell",
-        "cellular_gen",
-        "wifi",
-        "cpu",
-        "ram",
-        "storage",
-        "ip",
-        "power",
-        "ports",
-        "os",
-        "rs485",
-        "rs232",
-        "housing",
-        "dims",
-        "weight",
-        "op_temp"
-      ],
-      "additional_specs": [
-        {
-          "k": "Centralized Monitoring",
-          "v": "View health, performance, and status of all routers  on a single dashboard."
-        },
-        {
-          "k": "Remote Configuration",
-          "v": "Push updates, modify settings, and change  firmware remotely."
-        },
-        {
-          "k": "Auto-Provisioning",
-          "v": "Automatically configure new routers when added  to the network."
-        },
-        {
-          "k": "Secure Management",
-          "v": "HTTPS, VPN, SSH, and encrypted communication."
-        },
-        {
-          "k": "Real-Time Analytics",
-          "v": "Monitor uptime, signal strength, bandwidth usage,  and connected clients."
-        },
-        {
-          "k": "Event & Alert Logging",
-          "v": "Receive alerts for device disconnection, high  usage, or firmware failure."
-        },
-        {
-          "k": "Supports Multi-Vendor Device Compatibility",
-          "v": "Compatible with OpenWRT-based devices"
-        },
-        {
-          "k": "Scalability",
-          "v": "0 to 10,000+ devices"
-        },
-        {
-          "k": "Protocol Support",
-          "v": "HTTP(S), SSH"
-        },
-        {
-          "k": "Alerts & Logging",
-          "v": "Email"
-        },
-        {
-          "k": "Web Interface",
-          "v": "Responsive UI, Role-Based Access, Device Grouping"
-        }
-      ],
-      "variants": null
     }
   ]
 }
