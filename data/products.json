@@ -1315,6 +1315,86 @@
       }
     },
     {
+      "id": "iexx",
+      "name": "IEXX-X-XX",
+      "cat": "Gateway",
+      "order": 17,
+      "desc": "This compact industrial gateway is designed to provide reliable cellular and Wi-Fi connectivity for lightweight, distributed networking applications. Its key strengths include flexible SIM options (eSIM/physical), wide input voltage range, rugged fanless design, and a versatile OpenWRT platform with strong VPN and security support. It is well-suited for IoT use cases such as remote monitoring, smart utilities, kiosks, and small-scale industrial or enterprise edge deployments.",
+      "cpu": "MT7628",
+      "ram": "128 MB DDR2",
+      "storage": "32 MB Flash",
+      "cell": "4G",
+      "cellular_gen": "4G",
+      "wifi": "WiFi4",
+      "rs485": "No",
+      "rs232": "No",
+      "ip": "",
+      "power": "9-36 VDC",
+      "ports": "2",
+      "os": "OpenWRT Linux",
+      "housing": "Metal",
+      "dims": "97 x 28 x 84mm (W x H x D)",
+      "weight": "280 g",
+      "op_temp": "-20 ~ 60 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/iexx-1786535373955-vsb7.png"
+      ],
+      "use_cases": [
+        "Smart Metering & Utility Data Collection using eSIM",
+        "Remote Equipment Monitoring using dual profile eSIM",
+        "Kiosk & Self-Service Terminal Connectivity using Multi profile eSIM"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "IE44-A": "assets/datasheets/IE44A.pdf",
+        "IE44-C": "assets/datasheets/IE44C.pdf",
+        "IE44-A-EX1": "assets/datasheets/IE44A-EX1.pdf"
+      },
+      "hidden_fields": [
+        "ip",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Fast Ethernet"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "4G/5G",
+          "No. of Modems",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "✓",
+            "Wi-Fi 4",
+            "4G",
+            "Single",
+            "IE44-A"
+          ],
+          [
+            "✓",
+            "Wi-Fi 4",
+            "4G",
+            "Single",
+            "IE44-C"
+          ],
+          [
+            "✓",
+            "Wi-Fi 4",
+            "4G",
+            "Single",
+            "IE44-A-EX1 (e-SIM)"
+          ]
+        ]
+      }
+    },
+    {
       "id": "dcmeter",
       "name": "ET1641 (DC Meter)",
       "cat": "Energy Meter",
@@ -3349,86 +3429,6 @@
             "✓",
             "NA",
             "IA40-C"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "iexx",
-      "name": "IEXX-X-XX",
-      "cat": "Gateway",
-      "order": null,
-      "desc": "This compact industrial gateway is designed to provide reliable cellular and Wi-Fi connectivity for lightweight, distributed networking applications. Its key strengths include flexible SIM options (eSIM/physical), wide input voltage range, rugged fanless design, and a versatile OpenWRT platform with strong VPN and security support. It is well-suited for IoT use cases such as remote monitoring, smart utilities, kiosks, and small-scale industrial or enterprise edge deployments.",
-      "cpu": "MT7628",
-      "ram": "128 MB DDR2",
-      "storage": "32 MB Flash",
-      "cell": "4G",
-      "cellular_gen": "4G",
-      "wifi": "WiFi4",
-      "rs485": "No",
-      "rs232": "No",
-      "ip": "",
-      "power": "9-36 VDC",
-      "ports": "2",
-      "os": "OpenWRT Linux",
-      "housing": "Metal",
-      "dims": "97 x 28 x 84mm (W x H x D)",
-      "weight": "280 g",
-      "op_temp": "-20 ~ 60 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/iexx-1786535373955-vsb7.png"
-      ],
-      "use_cases": [
-        "Smart Metering & Utility Data Collection using eSIM",
-        "Remote Equipment Monitoring using dual profile eSIM",
-        "Kiosk & Self-Service Terminal Connectivity using Multi profile eSIM"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "IE44-A": "assets/datasheets/IE44A.pdf",
-        "IE44-C": "assets/datasheets/IE44C.pdf",
-        "IE44-A-EX1": "assets/datasheets/IE44A-EX1.pdf"
-      },
-      "hidden_fields": [
-        "ip",
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports",
-          "v": "Fast Ethernet"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "4G/5G",
-          "No. of Modems",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "✓",
-            "Wi-Fi 4",
-            "4G",
-            "Single",
-            "IE44-A"
-          ],
-          [
-            "✓",
-            "Wi-Fi 4",
-            "4G",
-            "Single",
-            "IE44-C"
-          ],
-          [
-            "✓",
-            "Wi-Fi 4",
-            "4G",
-            "Single",
-            "IE44-A-EX1 (e-SIM)"
           ]
         ]
       }
