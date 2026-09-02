@@ -77,8 +77,8 @@
     "heroSubtitle": "Invendis Product Catalogue of 2026",
     "footerBrandText": "Industrial IoT Hardware — Routers, Gateways, Switches, and Energy Meters.",
     "copyright": "2026 Invendis Technologies India Private Limited. All rights reserved.",
-    "invendisUrl": "https://www.invendis.com",
-    "silboUrl": "https://www.silbonetworks.com",
+    "invendisUrl": "https://invendis.com/",
+    "silboUrl": "https://silbonetworks.com/",
     "logoInvendis": "assets/invendis_logo.png?v=1786874244316",
     "logoSilbo": "assets/silbo_logo.png?v=1786874246879",
     "logoMii": "assets/make-in-india.png?v=1786874249642"
@@ -123,7 +123,7 @@
       ],
       "additional_specs": [
         {
-          "k": "Ethernet Ports- Additional Details",
+          "k": "Ethernet Ports",
           "v": "Gigabit Ethernet, (2x I226 Intel) , 2x RTL8125BG(Realtek)"
         }
       ],
@@ -167,7 +167,7 @@
       ],
       "additional_specs": [
         {
-          "k": "Ethernet Ports-Additional Details",
+          "k": "Ethernet Ports",
           "v": "Gigabit Ethernet (RTL8111H)"
         }
       ],
@@ -212,7 +212,7 @@
       ],
       "additional_specs": [
         {
-          "k": "Ethernet Ports-Additional Details",
+          "k": "Ethernet Ports",
           "v": "Gigabit Ethernet ((Realtek RTL8111H)"
         }
       ],
@@ -302,7 +302,7 @@
       ],
       "additional_specs": [
         {
-          "k": "Ethernet Ports-Additional Details",
+          "k": "Ethernet Ports",
           "v": "Gigabit Ethernet (Realtek RTL8111H)"
         }
       ],
@@ -351,7 +351,7 @@
       ],
       "additional_specs": [
         {
-          "k": "Ethernet Ports Additional Details",
+          "k": "Ethernet Ports",
           "v": "Gigabit Ethernet (2.5 Gbps)"
         }
       ],
@@ -1014,7 +1014,8 @@
       ],
       "datasheet": null,
       "part_datasheets": {
-        "RV00": "assets/datasheets/RV00.pdf"
+        "RV00": "assets/datasheets/RV00.pdf",
+        "—": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rv00-_.pdf"
       },
       "hidden_fields": [
         "cell",
@@ -1086,7 +1087,8 @@
         "RD04-B": "assets/datasheets/RD04-B.pdf",
         "RD44-C": "assets/datasheets/RD44-C.pdf",
         "RD04-C": "assets/datasheets/RD04-C.pdf",
-        "RDS00": "assets/datasheets/RDS00.pdf"
+        "RDS00": "assets/datasheets/RDS00.pdf",
+        "RDS44": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rdxx-RDS44.pdf"
       },
       "hidden_fields": [
         "ip",
@@ -2258,7 +2260,7 @@
       "name": "RVCP",
       "cat": "Gateway",
       "order": 28,
-      "desc": "",
+      "desc": "RVCP 04-1 is a rugged, fanless 4G/3G/2G dual-SIM cellular router built on the MediaTek MT7621 platform, delivering reliable industrial connectivity with 4 Gigabit Ethernet ports, SFP, and advanced multi-WAN failover — all running on an Open-WRT Linux OS.",
       "cpu": "MediaTek MT7621, Dual Core MIPS 880MHz",
       "ram": "512MB, DDR3",
       "storage": "32MB NOR Flash",
@@ -2278,7 +2280,11 @@
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvcp-1787643260652-71vm.png"
       ],
-      "use_cases": [],
+      "use_cases": [
+        "Primary WAN Failover for Retail & Branch Offices",
+        "Remote SCADA/Industrial Site Connectivity",
+        "Fleet of Distributed IoT/Metering Gateways with Centralized Management"
+      ],
       "datasheet": null,
       "part_datasheets": {
         "RVCP 04": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvcp-RVCP_04.pdf"
@@ -2453,7 +2459,7 @@
       "name": "GPON ONU",
       "cat": "Gateway",
       "order": 31,
-      "desc": "",
+      "desc": "A compact, single-port GPON ONU (Optical Network Unit) built on the RTL9601D chipset, designed to terminate fiber-optic GPON connections and deliver Gigabit Ethernet connectivity to end-user premises in FTTH deployments.",
       "cpu": "",
       "ram": "64MB SD RAM",
       "storage": "",
@@ -2473,7 +2479,11 @@
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/GPONONU-1787223696594-jx1x.png"
       ],
-      "use_cases": [],
+      "use_cases": [
+        "Residential FTTH Last-Mile Termination",
+        "Small Office / Retail Fiber Connectivity",
+        "MDU (Multi-Dwelling Unit) Bulk Rollouts"
+      ],
       "datasheet": null,
       "part_datasheets": {
         "GPON ONU": "contact_us"
@@ -2613,6 +2623,7 @@
         "XB82-2 Unmanaged PoE Switch": "assets/datasheets/XB-82-2.pdf"
       },
       "hidden_fields": [
+        "cellular_gen",
         "cpu",
         "ram",
         "storage",
@@ -2901,7 +2912,7 @@
       ],
       "additional_specs": [
         {
-          "k": "Ethernet Ports-Additional Details",
+          "k": "Ethernet Ports",
           "v": "Gigabit Ethernet"
         }
       ],
@@ -2940,7 +2951,7 @@
       "rs232": "-",
       "ip": "",
       "power": "44-57 VDC",
-      "ports": "8 x 10/100/1000 Mbps",
+      "ports": "8",
       "os": "â",
       "housing": "Industrial Aluminium",
       "dims": "200 mm x 120 mm x 55mm (WxLxH)",
@@ -2971,7 +2982,12 @@
         "rs485",
         "rs232"
       ],
-      "additional_specs": [],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Gigabit Ports"
+        }
+      ],
       "variants": {
         "headers": [
           "Cellular",
@@ -3381,6 +3397,7 @@
         "MT7621-01 ODU": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/mt7621odu-MT7621-01_ODU.pdf"
       },
       "hidden_fields": [
+        "wifi",
         "rs485",
         "rs232"
       ],
