@@ -1318,7 +1318,7 @@
       "id": "iexx",
       "name": "IEXX-X-XX",
       "cat": "Gateway",
-      "order": 17,
+      "order": null,
       "desc": "This compact industrial gateway is designed to provide reliable cellular and Wi-Fi connectivity for lightweight, distributed networking applications. Its key strengths include flexible SIM options (eSIM/physical), wide input voltage range, rugged fanless design, and a versatile OpenWRT platform with strong VPN and security support. It is well-suited for IoT use cases such as remote monitoring, smart utilities, kiosks, and small-scale industrial or enterprise edge deployments.",
       "cpu": "MT7628",
       "ram": "128 MB DDR2",
