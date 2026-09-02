@@ -3084,6 +3084,73 @@
       }
     },
     {
+      "id": "rvcd",
+      "name": "RVCD",
+      "cat": "Switch",
+      "order": 40,
+      "desc": "The SILBO RVCD is a compact, industrial-grade Gigabit router powered by a MediaTek MT7621 processor, 512MB RAM, and OpenWrt Linux. Featuring 5 Gigabit Ethernet ports (1 WAN, 4 LAN) and a USB 3.0 port, it provides multi-WAN load balancing, advanced firewall security, and extensive VPN tunneling support (IPsec, OpenVPN, WireGuard) in a fanless sheet metal housing.",
+      "cpu": "MediaTek MT7621",
+      "ram": "512MB",
+      "storage": "32MB",
+      "cell": "",
+      "cellular_gen": "-",
+      "wifi": "WiFi4",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "12 VDC",
+      "ports": "5",
+      "os": "Open-WRT based Linux OS",
+      "housing": "Sheet Metal",
+      "dims": "110 x 26 x 95 mm (W x H x D)",
+      "weight": "200 gm",
+      "op_temp": "0~ 50 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvcd-1787653548751-xx2w.png"
+      ],
+      "use_cases": [
+        "MultiWAN Failover",
+        "Secure Remote Infrastructure Access (Branch-to-Headquarters VPN)",
+        "Industrial Control & Edge IoT Gateway",
+        "High-Reliability Retail / ATM Broadband Bonding"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "RVCD": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvcd-RVCD.pdf"
+      },
+      "hidden_fields": [
+        "cell",
+        "cellular_gen",
+        "ip",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Interface",
+          "v": "USB 3.0/ 2.0 Host (Optional)"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "PoE",
+          "No of Modem",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "—",
+            "—",
+            "—",
+            "Single",
+            "RVCD"
+          ]
+        ]
+      }
+    },
+    {
       "id": "rvw50",
       "name": "RVW 50 with M12",
       "cat": "PCB",
@@ -4039,73 +4106,6 @@
         "headers": [],
         "rows": [
           []
-        ]
-      }
-    },
-    {
-      "id": "rvcd",
-      "name": "RVCD",
-      "cat": "Switch",
-      "order": null,
-      "desc": "The SILBO RVCD is a compact, industrial-grade Gigabit router powered by a MediaTek MT7621 processor, 512MB RAM, and OpenWrt Linux. Featuring 5 Gigabit Ethernet ports (1 WAN, 4 LAN) and a USB 3.0 port, it provides multi-WAN load balancing, advanced firewall security, and extensive VPN tunneling support (IPsec, OpenVPN, WireGuard) in a fanless sheet metal housing.",
-      "cpu": "MediaTek MT7621",
-      "ram": "512MB",
-      "storage": "32MB",
-      "cell": "",
-      "cellular_gen": "-",
-      "wifi": "WiFi4",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "",
-      "power": "12 VDC",
-      "ports": "5",
-      "os": "Open-WRT based Linux OS",
-      "housing": "Sheet Metal",
-      "dims": "110 x 26 x 95 mm (W x H x D)",
-      "weight": "200 gm",
-      "op_temp": "0~ 50 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvcd-1787653548751-xx2w.png"
-      ],
-      "use_cases": [
-        "MultiWAN Failover",
-        "Secure Remote Infrastructure Access (Branch-to-Headquarters VPN)",
-        "Industrial Control & Edge IoT Gateway",
-        "High-Reliability Retail / ATM Broadband Bonding"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "RVCD": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvcd-RVCD.pdf"
-      },
-      "hidden_fields": [
-        "cell",
-        "cellular_gen",
-        "ip",
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Interface",
-          "v": "USB 3.0/ 2.0 Host (Optional)"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "PoE",
-          "No of Modem",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "—",
-            "—",
-            "—",
-            "Single",
-            "RVCD"
-          ]
         ]
       }
     },
