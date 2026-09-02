@@ -1491,6 +1491,92 @@
       }
     },
     {
+      "id": "rfnxx",
+      "name": "RFNXX",
+      "cat": "Gateway",
+      "order": 19,
+      "desc": "The RFN44-A is an industrial-grade cellular router built on a MediaTek MT7628 platform with dual Nano SIM support, running an OpenWRT-based Linux OS for flexible and reliable connectivity. Housed in a fanless aluminium enclosure with a wide operating temperature range, it targets industrial automation, remote site management, and IoT deployments where rugged, dependable hardware is essential.",
+      "cpu": "MediaTek MT7628",
+      "ram": "128 MB DDR2",
+      "storage": "32 MB Flash",
+      "cell": "4G",
+      "cellular_gen": "4G",
+      "wifi": "WiFi4",
+      "rs485": "Yes",
+      "rs232": "-",
+      "ip": "IP30",
+      "power": "9-30Vdc",
+      "ports": "2",
+      "os": "OpenWRT Linux",
+      "housing": "Industrial Aluminium",
+      "dims": "112 x 35 x 99 mm (W x H x D)",
+      "weight": "297 g",
+      "op_temp": "0~ 50 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rfnxx-1786599944641-kv06.png"
+      ],
+      "use_cases": [
+        "Industrial Panel & PLC Connectivity",
+        "Telecom & Remote Site Uptime Monitoring",
+        "IoT Sensor Network Gateway"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "RFN44-A": "assets/datasheets/RFN44-A.pdf",
+        "RFN44-B": "assets/datasheets/RFN44-B.pdf",
+        "RFN44-C": "assets/datasheets/RFN44-C.pdf"
+      },
+      "hidden_fields": [
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Fast Ethernet"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "RS485",
+          "DIO",
+          "4G/5G",
+          "No. of Modems",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "✓",
+            "Wi-Fi 4",
+            "—",
+            "—",
+            "4G",
+            "Single",
+            "RFN44-A"
+          ],
+          [
+            "✓",
+            "Wi-Fi 4",
+            "✓",
+            "—",
+            "4G",
+            "Single",
+            "RFN44-B (RS485)"
+          ],
+          [
+            "✓",
+            "Wi-Fi 4",
+            "—",
+            "✓",
+            "4G",
+            "Single",
+            "RFN44-C (1x DI, 1x DO)"
+          ]
+        ]
+      }
+    },
+    {
       "id": "dcmeter",
       "name": "ET1641 (DC Meter)",
       "cat": "Energy Meter",
@@ -3348,92 +3434,6 @@
             "4G",
             "Single",
             "IAB04-C"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "rfnxx",
-      "name": "RFNXX",
-      "cat": "Gateway",
-      "order": null,
-      "desc": "The RFN44-A is an industrial-grade cellular router built on a MediaTek MT7628 platform with dual Nano SIM support, running an OpenWRT-based Linux OS for flexible and reliable connectivity. Housed in a fanless aluminium enclosure with a wide operating temperature range, it targets industrial automation, remote site management, and IoT deployments where rugged, dependable hardware is essential.",
-      "cpu": "MediaTek MT7628",
-      "ram": "128 MB DDR2",
-      "storage": "32 MB Flash",
-      "cell": "4G",
-      "cellular_gen": "4G",
-      "wifi": "WiFi4",
-      "rs485": "Yes",
-      "rs232": "-",
-      "ip": "IP30",
-      "power": "9-30Vdc",
-      "ports": "2",
-      "os": "OpenWRT Linux",
-      "housing": "Industrial Aluminium",
-      "dims": "112 x 35 x 99 mm (W x H x D)",
-      "weight": "297 g",
-      "op_temp": "0~ 50 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rfnxx-1786599944641-kv06.png"
-      ],
-      "use_cases": [
-        "Industrial Panel & PLC Connectivity",
-        "Telecom & Remote Site Uptime Monitoring",
-        "IoT Sensor Network Gateway"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "RFN44-A": "assets/datasheets/RFN44-A.pdf",
-        "RFN44-B": "assets/datasheets/RFN44-B.pdf",
-        "RFN44-C": "assets/datasheets/RFN44-C.pdf"
-      },
-      "hidden_fields": [
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports",
-          "v": "Fast Ethernet"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "RS485",
-          "DIO",
-          "4G/5G",
-          "No. of Modems",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "✓",
-            "Wi-Fi 4",
-            "—",
-            "—",
-            "4G",
-            "Single",
-            "RFN44-A"
-          ],
-          [
-            "✓",
-            "Wi-Fi 4",
-            "✓",
-            "—",
-            "4G",
-            "Single",
-            "RFN44-B (RS485)"
-          ],
-          [
-            "✓",
-            "Wi-Fi 4",
-            "—",
-            "✓",
-            "4G",
-            "Single",
-            "RFN44-C (1x DI, 1x DO)"
           ]
         ]
       }
