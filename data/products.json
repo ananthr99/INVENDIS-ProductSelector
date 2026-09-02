@@ -2190,7 +2190,7 @@
       "id": "idfxx",
       "name": "IDFXX",
       "cat": "Router",
-      "order": 40,
+      "order": null,
       "desc": "Optimised for telecom and negative-voltage DC power environments, the IDF runs on -48Vdc — the standard supply rail found in telecom cabinets and exchange rooms — making it a natural drop-in for carriers and tower operators who need cellular routing without additional power conversion hardware. Paired with dual SIM failover, up to 512MB RAM, and a full suite of VPN tunnelling options, it addresses the connectivity and remote management demands of telecom infrastructure, street cabinets, and distributed network nodes where -48V power is already the norm.",
       "cpu": "MediaTek MT7621",
       "ram": "512 MB DDR",
