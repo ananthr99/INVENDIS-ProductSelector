@@ -1763,6 +1763,95 @@
       }
     },
     {
+      "id": "iafxx",
+      "name": "IAFXX-X",
+      "cat": "Gateway",
+      "order": 22,
+      "desc": "The IAFXX-X steps beyond standard cellular routers by integrating rich serial I/O — including RS485, digital I/O, analog input, and a built-in RTC — making it a true industrial gateway rather than just a connectivity device. With Modbus TCP/RTU support and SMS-based remote commands, it speaks the language of industrial automation natively, targeting sectors like manufacturing, energy, and utility infrastructure where field device integration is just as critical as network uptime.",
+      "cpu": "MediaTek MT7628",
+      "ram": "128 MB DDR2",
+      "storage": "32 MB Flash",
+      "cell": "4G",
+      "cellular_gen": "4G",
+      "wifi": "WiFi4",
+      "rs485": "Yes",
+      "rs232": "No",
+      "ip": "",
+      "power": "-48 VDC",
+      "ports": "2",
+      "os": "OpenWRT Linux",
+      "housing": "Industrial Aluminium",
+      "dims": "110 x 44 x 94 mm (W x H x D)",
+      "weight": "400 g",
+      "op_temp": "0~ 50 ˚C",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/iafxx-1787138159862-mpoy.png"
+      ],
+      "use_cases": [
+        "Remote Sensor & Transducer data to cloud",
+        "Drinking Water Treatment plant data to remote Cloud SCADA",
+        "Industrial Alarm & Event Monitoring"
+      ],
+      "datasheet": null,
+      "part_datasheets": {
+        "IAF44-C1": "assets/datasheets/IAF44-C1.pdf",
+        "IAF04-C1": "assets/datasheets/IAF04-C1.pdf",
+        "IAF44-C2": "contact_us",
+        "IAF04-C2": "contact_us"
+      },
+      "hidden_fields": [],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Fast Ethernet"
+        }
+      ],
+      "variants": {
+        "headers": [
+          "Cellular",
+          "Wi-Fi",
+          "4G/5G",
+          "RS485",
+          "No. of Modems",
+          "Part Number"
+        ],
+        "rows": [
+          [
+            "✓",
+            "Wi-Fi 4",
+            "4G",
+            "—",
+            "Single",
+            "IAF44-C1"
+          ],
+          [
+            "✓",
+            "Wi-Fi 4",
+            "4G",
+            "✓",
+            "Single",
+            "IAF44-C2"
+          ],
+          [
+            "✓",
+            "—",
+            "4G",
+            "✓",
+            "Single",
+            "IAF04-C2"
+          ],
+          [
+            "—",
+            "—",
+            "4G",
+            "—",
+            "Single",
+            "IAF04-C1"
+          ]
+        ]
+      }
+    },
+    {
       "id": "dcmeter",
       "name": "ET1641 (DC Meter)",
       "cat": "Energy Meter",
@@ -3345,95 +3434,6 @@
             "—",
             "Single",
             "ID54"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "iafxx",
-      "name": "IAFXX-X",
-      "cat": "Gateway",
-      "order": null,
-      "desc": "The IAFXX-X steps beyond standard cellular routers by integrating rich serial I/O — including RS485, digital I/O, analog input, and a built-in RTC — making it a true industrial gateway rather than just a connectivity device. With Modbus TCP/RTU support and SMS-based remote commands, it speaks the language of industrial automation natively, targeting sectors like manufacturing, energy, and utility infrastructure where field device integration is just as critical as network uptime.",
-      "cpu": "MediaTek MT7628",
-      "ram": "128 MB DDR2",
-      "storage": "32 MB Flash",
-      "cell": "4G",
-      "cellular_gen": "4G",
-      "wifi": "WiFi4",
-      "rs485": "Yes",
-      "rs232": "No",
-      "ip": "",
-      "power": "-48 VDC",
-      "ports": "2",
-      "os": "OpenWRT Linux",
-      "housing": "Industrial Aluminium",
-      "dims": "110 x 44 x 94 mm (W x H x D)",
-      "weight": "400 g",
-      "op_temp": "0~ 50 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/iafxx-1787138159862-mpoy.png"
-      ],
-      "use_cases": [
-        "Remote Sensor & Transducer data to cloud",
-        "Drinking Water Treatment plant data to remote Cloud SCADA",
-        "Industrial Alarm & Event Monitoring"
-      ],
-      "datasheet": null,
-      "part_datasheets": {
-        "IAF44-C1": "assets/datasheets/IAF44-C1.pdf",
-        "IAF04-C1": "assets/datasheets/IAF04-C1.pdf",
-        "IAF44-C2": "contact_us",
-        "IAF04-C2": "contact_us"
-      },
-      "hidden_fields": [],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports",
-          "v": "Fast Ethernet"
-        }
-      ],
-      "variants": {
-        "headers": [
-          "Cellular",
-          "Wi-Fi",
-          "4G/5G",
-          "RS485",
-          "No. of Modems",
-          "Part Number"
-        ],
-        "rows": [
-          [
-            "✓",
-            "Wi-Fi 4",
-            "4G",
-            "—",
-            "Single",
-            "IAF44-C1"
-          ],
-          [
-            "✓",
-            "Wi-Fi 4",
-            "4G",
-            "✓",
-            "Single",
-            "IAF44-C2"
-          ],
-          [
-            "✓",
-            "—",
-            "4G",
-            "✓",
-            "Single",
-            "IAF04-C2"
-          ],
-          [
-            "—",
-            "—",
-            "4G",
-            "—",
-            "Single",
-            "IAF04-C1"
           ]
         ]
       }
