@@ -4152,7 +4152,7 @@
       "id": "bcpm",
       "name": "ET7022 (BCPM)",
       "cat": "Energy Meter",
-      "order": null,
+      "order": 53,
       "desc": "Designed to bring circuit-level visibility to distribution boards, the Branch Circuit Power Meter tracks active power, energy, and power factor across individual single and three-phase branches — giving electrical teams a granular breakdown of consumption that a single main meter cannot provide. Its DIN rail form factor, Modbus RS485 communication, and wide 85-270V auxiliary supply make it a straightforward retrofit into existing panels for data centres, commercial buildings, and industrial facilities focused on load profiling and energy cost allocation.",
       "cpu": "â",
       "ram": "â",
