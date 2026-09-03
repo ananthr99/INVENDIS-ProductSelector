@@ -3090,6 +3090,10 @@
         {
           "k": "Ethernet Ports",
           "v": "Gigabit Ethernet"
+        },
+        {
+          "k": "SFP",
+          "v": "2"
         }
       ],
       "variants": {
