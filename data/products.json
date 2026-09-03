@@ -85,66 +85,6 @@
   },
   "products": [
     {
-      "id": "inv-ce-xx",
-      "name": "INV-CE-XX",
-      "cat": "Intel Based Devices",
-      "order": 2,
-      "desc": "A rugged, fanless SD-WAN edge appliance powered by Intel X7425E, designed for high-performance networking at distributed sites. It combines multi-WAN connectivity (Ethernet, 4G/5G, Wi-Fi) with flexible OS support and industrial-grade reliability, making it ideal for seamless failover, traffic optimization, and edge computing. Best suited for telecom, industrial IoT, smart infrastructure, and enterprise branch deployments.",
-      "cpu": "Intel X7425E/X7433RE/X7835RE/x7809C/i3-N305/N350 Quad Core/Octa Core with 3.9 GHz turbo frequency",
-      "ram": "Up to Up to 32GB DDR4 or 64 GB SODIMM DDR5",
-      "storage": "Up to 512 GB SSD and up to 64 GB eMMC",
-      "cell": "4G/5G",
-      "cellular_gen": "5G",
-      "wifi": "WiFi6",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "IP30",
-      "power": "12 VDC",
-      "ports": "4",
-      "os": "Ubuntu/Oracle Linux/OpenWRT/Windows",
-      "housing": "Aluminum Heat Sink with CRCA Enclosure",
-      "dims": "150mm X 160mm X 52.8mm ( L X W X H) (w/o mounting options) (*Dimensions will vary depending on the mounting option chosen.)",
-      "weight": "1800",
-      "op_temp": "0 ~ 50℃",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-ce-xx-1787034276436-nw65.png",
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-ce-xx-1787034279559-vg60.png"
-      ],
-      "use_cases": [
-        "Enterprise Branch Connectivity",
-        "Infotainment System for Vehicles"
-      ],
-      "datasheet": "assets/datasheets/Intel X7425E SDWAN Box.pdf",
-      "part_datasheets": {},
-      "hidden_fields": [
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports",
-          "v": "Gigabit Ethernet (RTL8111H)/2.5 Gb Ethernet"
-        },
-        {
-          "k": "USB 2.0",
-          "v": "2"
-        },
-        {
-          "k": "HDMI",
-          "v": "1"
-        },
-        {
-          "k": "USB Console",
-          "v": "1"
-        },
-        {
-          "k": "Mounting",
-          "v": "Desktop Mount/ Wall Mount / 19 inch rack mount / Vesa Mount"
-        }
-      ],
-      "variants": null
-    },
-    {
       "id": "inv-cea-xx",
       "name": "INV-CEA-XX",
       "cat": "Intel Based Devices",
@@ -4250,6 +4190,66 @@
           []
         ]
       }
+    },
+    {
+      "id": "inv-ce-xx",
+      "name": "INV-CE-XX",
+      "cat": "Intel Based Devices",
+      "order": null,
+      "desc": "A rugged, fanless SD-WAN edge appliance powered by Intel X7425E, designed for high-performance networking at distributed sites. It combines multi-WAN connectivity (Ethernet, 4G/5G, Wi-Fi) with flexible OS support and industrial-grade reliability, making it ideal for seamless failover, traffic optimization, and edge computing. Best suited for telecom, industrial IoT, smart infrastructure, and enterprise branch deployments.",
+      "cpu": "Intel X7425E/X7433RE/X7835RE/x7809C/i3-N305/N350 Quad Core/Octa Core with 3.9 GHz turbo frequency",
+      "ram": "Up to Up to 32GB DDR4 or 64 GB SODIMM DDR5",
+      "storage": "Up to 512 GB SSD and up to 64 GB eMMC",
+      "cell": "4G/5G",
+      "cellular_gen": "5G",
+      "wifi": "WiFi6",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "IP30",
+      "power": "12 VDC",
+      "ports": "4",
+      "os": "Ubuntu/Oracle Linux/OpenWRT/Windows",
+      "housing": "Aluminum Heat Sink with CRCA Enclosure",
+      "dims": "150mm X 160mm X 52.8mm ( L X W X H) (w/o mounting options) (*Dimensions will vary depending on the mounting option chosen.)",
+      "weight": "1800",
+      "op_temp": "0 ~ 50℃",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-ce-xx-1787034276436-nw65.png",
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-ce-xx-1787034279559-vg60.png"
+      ],
+      "use_cases": [
+        "Enterprise Branch Connectivity",
+        "Infotainment System for Vehicles"
+      ],
+      "datasheet": "assets/datasheets/Intel X7425E SDWAN Box.pdf",
+      "part_datasheets": {},
+      "hidden_fields": [
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Gigabit Ethernet (RTL8111H)/2.5 Gb Ethernet"
+        },
+        {
+          "k": "USB 2.0",
+          "v": "2"
+        },
+        {
+          "k": "HDMI",
+          "v": "1"
+        },
+        {
+          "k": "USB Console",
+          "v": "1"
+        },
+        {
+          "k": "Mounting",
+          "v": "Desktop Mount/ Wall Mount / 19 inch rack mount / Vesa Mount"
+        }
+      ],
+      "variants": null
     },
     {
       "id": "inv-cb",
