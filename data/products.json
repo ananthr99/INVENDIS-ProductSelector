@@ -85,24 +85,24 @@
   },
   "products": [
     {
-      "id": "intel-x6425E",
-      "name": "Intel X6425E Quad Core Rugged Fanless PC",
+      "id": "inv-cb",
+      "name": "INV-CB-XX",
       "cat": "Intel Based Devices",
       "order": 1,
       "desc": "This is a compact, fanless industrial edge computer built for reliable on-site compute, networking, and connectivity in space-constrained deployments. Its key differentiators are the Intel Atom x6425E processor, up to 32 GB RAM, modular SSD and 5G/Wi Fi options, plus rugged features like an aluminium enclosure, IP30 rating, and wide operating temperature support. It is best suited for industrial automation, IoT gateways, networking edge nodes, and remote monitoring use cases across manufacturing, utilities, retail, and smart infrastructure.",
-      "cpu": "Intel X86 Atom, X6425E, 4 cores with base frequency 2GHz and Turbo Frequency of upto 3GHz",
+      "cpu": "Intel X6425E, Quad Core with 3 GHz turbo frequency",
       "ram": "Up to 32 GB DDR4 3200 MHz",
-      "storage": "1x M.2 (Key-B), 512 GB SATA SSD Module (Up to 1 TB)",
-      "cell": "5G",
+      "storage": "Upto 512 GB SSD",
+      "cell": "Dual SIM M.2 Modem 5G/4G/3G",
       "cellular_gen": "5G",
       "wifi": "WiFi6",
       "rs485": "-",
       "rs232": "-",
       "ip": "IP30",
-      "power": "19 VDC",
+      "power": "19 VDC/24 VDC",
       "ports": "4",
-      "os": "Oracle Linux v9.5 / Ubuntu 23 / Windows 10+",
-      "housing": "Aluminium",
+      "os": "Oracle Linux v9.5 / Ubuntu 23 / Windows",
+      "housing": "Aluminium Heat Sink with CRCA Enclosure",
       "dims": "150x210x65mm (LxWxH)",
       "weight": "1800g",
       "op_temp": "0 -50°C",
@@ -125,6 +125,96 @@
         {
           "k": "Ethernet Ports",
           "v": "Gigabit Ethernet, (2x I226 Intel) , 2x RTL8125BG(Realtek)"
+        },
+        {
+          "k": "Mounting",
+          "v": "Desktop Mount/ Wall Mount"
+        },
+        {
+          "k": "USB 2.0",
+          "v": "2"
+        },
+        {
+          "k": "HDMI",
+          "v": "1"
+        },
+        {
+          "k": "Micro USB Console",
+          "v": "1"
+        }
+      ],
+      "variants": null
+    },
+    {
+      "id": "inv-cd-xx",
+      "name": "INV-CD-XX",
+      "cat": "Intel Based Devices",
+      "order": 2,
+      "desc": "This compact, fanless edge computing system is designed for AI inference, networking, and industrial applications, combining an Intel® Core™ N350 processor with flexible expansion for AI accelerators or NVMe storage. Key differentiators include dual Gigabit LAN, multiple display outputs (up to 4K), wide OS support, and robust I/O in a small form factor. It targets edge AI deployments, smart retail, industrial automation, and network security solutions.",
+      "cpu": "Intel X7425E/X7433RE/X7835RE/i3-N305/N350 Quad Core/Octa Core with 3.9 GHz turbo frequency",
+      "ram": "Up to 32GB DDR4 or 64 GB SODIMM DDR5",
+      "storage": "Up to 512 GB SSD and up to 64GB eMMC Optional",
+      "cell": "4G/5G",
+      "cellular_gen": "5G",
+      "wifi": "WiFi6",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "IP30",
+      "power": "12V DC",
+      "ports": "2",
+      "os": "Ubuntu/Oracle Linux/OpenWRT/Windows",
+      "housing": "Aluminum Heat Sink with CRCA Enclosure (Fanless Design), Sheet Metal (Fan Design)",
+      "dims": "150mmx210mmx65mm (LxWxH)",
+      "weight": "995 g",
+      "op_temp": "0 -50°C",
+      "images": [
+        "assets/images/inv-cd-xx-1.png",
+        "assets/images/inv-cd-xx-2.png",
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-cd-xx-1786515792452-i9dg.png"
+      ],
+      "use_cases": [
+        "Industrial Machine Vision & Quality Inspection",
+        "Smart Traffic & Transportation Edge Nodes",
+        "Edge Security & Surveillance with AI Analytics"
+      ],
+      "datasheet": "assets/datasheets/INV-CD-N350_Datasheet.pdf",
+      "part_datasheets": {},
+      "hidden_fields": [
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Gigabit Ethernet (Realtek RTL8111H)"
+        },
+        {
+          "k": "USB 3.0",
+          "v": "2"
+        },
+        {
+          "k": "USB 2.0",
+          "v": "4"
+        },
+        {
+          "k": "HDMI",
+          "v": "2"
+        },
+        {
+          "k": "PCIe",
+          "v": "2 for AI Accelerator/NVMe"
+        },
+        {
+          "k": "RS 232 (Optional)",
+          "v": "2"
+        },
+        {
+          "k": "Dual Channel LVDS (Optional)",
+          "v": "1"
+        },
+        {
+          "k": "Mounting",
+          "v": "Desktop Mount/ Wall Mount / 19 inch rack mount / Vesa Mount"
         }
       ],
       "variants": null
@@ -133,11 +223,11 @@
       "id": "inv-ce-xx",
       "name": "INV-CE-XX",
       "cat": "Intel Based Devices",
-      "order": 2,
+      "order": 3,
       "desc": "A rugged, fanless SD-WAN edge appliance powered by Intel X7425E, designed for high-performance networking at distributed sites. It combines multi-WAN connectivity (Ethernet, 4G/5G, Wi-Fi) with flexible OS support and industrial-grade reliability, making it ideal for seamless failover, traffic optimization, and edge computing. Best suited for telecom, industrial IoT, smart infrastructure, and enterprise branch deployments.",
-      "cpu": "Intel N150/x7425E/x7433RE/x7835RE/i3-N305/N355, 4/8 cores with 3.4GHz Turbo Frequency",
-      "ram": "32GB DDR5 SODIMM (Max) (Memory to be separately ordered)",
-      "storage": "One M.2 (B Key,2280), Upto 512GB SSD, Upto64GB eMMC",
+      "cpu": "Intel X7425E/X7433RE/X7835RE/x7809C/i3-N305/N350 Quad Core/Octa Core with 3.9 GHz turbo frequency",
+      "ram": "Up to Up to 32GB DDR4 or 64 GB SODIMM DDR5",
+      "storage": "Up to 512 GB SSD and up to 64 GB eMMC",
       "cell": "4G/5G",
       "cellular_gen": "5G",
       "wifi": "WiFi6",
@@ -168,7 +258,23 @@
       "additional_specs": [
         {
           "k": "Ethernet Ports",
-          "v": "Gigabit Ethernet (RTL8111H)"
+          "v": "Gigabit Ethernet (RTL8111H)/2.5 Gb Ethernet"
+        },
+        {
+          "k": "USB 2.0",
+          "v": "2"
+        },
+        {
+          "k": "HDMI",
+          "v": "1"
+        },
+        {
+          "k": "USB Console",
+          "v": "1"
+        },
+        {
+          "k": "Mounting",
+          "v": "Desktop Mount/ Wall Mount / 19 inch rack mount / Vesa Mount"
         }
       ],
       "variants": null
@@ -177,12 +283,12 @@
       "id": "inv-cea-xx",
       "name": "INV-CEA-XX",
       "cat": "Intel Based Devices",
-      "order": 3,
+      "order": 4,
       "desc": "The INV-CEA-XX is a fanless industrial gateway designed for high-performance edge computing and robust connectivity, featuring an Intel X7425E processor and extensive cellular/Wi-Fi expansion capabilities. It differentiates itself through its quad-Gigabit Ethernet ports, dual isolated serial interfaces (RS232/RS485), and flexible mounting options, making it highly adaptable for harsh environments. This device is primarily targeted at industrial automation, telecommunications, and smart city infrastructure where reliable, long-term operation is critical.",
-      "cpu": "Intel N150/x7425E/x7433RE/x7835RE/i3-N305/N355, 4/8 cores with 3.4GHz Turbo Frequency",
-      "ram": "64GB DDR5 SODIMM (Max) (Memory to be Separately Ordered)",
-      "storage": "One M.2 (B Key,2280), Upto 512GB SSD, Upto 64GB eMMC ((Memory to be Separately Ordered)",
-      "cell": "4G/5G",
+      "cpu": "Intel X7425E/X7433RE/X7835RE/x7809C/i3-N305/N350 Quad Core/Octa Core  with 3.9 GHz turbo frequency",
+      "ram": "Up to Up to 32GB DDR4 or 64 GB SODIMM DDR5",
+      "storage": "Upto 512 GB SSD and 64GB eMMC",
+      "cell": "Dual M.2 Modem 5G/4G/3G",
       "cellular_gen": "5G",
       "wifi": "WiFi6",
       "rs485": "-",
@@ -190,7 +296,7 @@
       "ip": "",
       "power": "12V DC",
       "ports": "4",
-      "os": "Ubuntu / Oracle Linux / OpenWRT / Windows",
+      "os": "Ubuntu/Oracle Linux/OpenWRT/Windows",
       "housing": "Aluminum Heat Sink with CRCA Enclosure",
       "dims": "150 X 250 X 55mm ( L X W X H)",
       "weight": "1700",
@@ -214,6 +320,34 @@
         {
           "k": "Ethernet Ports",
           "v": "Gigabit Ethernet ((Realtek RTL8111H)"
+        },
+        {
+          "k": "USB 2.0",
+          "v": "4"
+        },
+        {
+          "k": "HDMI",
+          "v": "1"
+        },
+        {
+          "k": "Micro USB Console",
+          "v": "1"
+        },
+        {
+          "k": "RS485",
+          "v": "2"
+        },
+        {
+          "k": "RS 232",
+          "v": "2"
+        },
+        {
+          "k": "DI/O",
+          "v": "4"
+        },
+        {
+          "k": "Mounting",
+          "v": "Desktop Mount/ Wall Mount / 19 inch rack mount / Vesa Mount"
         }
       ],
       "variants": null
@@ -222,11 +356,11 @@
       "id": "inv-ci-xx",
       "name": "INV-CI-XX",
       "cat": "Intel Based Devices",
-      "order": 4,
+      "order": 5,
       "desc": "INV CI XX is a compact, Intel® X7425E-powered industrial computer designed for reliable edge computing and industrial automation. It features multiple Ethernet ports, optional 4G/5G connectivity, Wi-Fi, and flexible storage options for secure, high-performance deployments.",
-      "cpu": "Intel N150/x7425E/x7433RE/x7835RE/i3-N305/N355, 4/8 cores with 3.4GHz Turbo Frequency",
-      "ram": "64GB DDR5 SODIMM (Max) (Memory to be Separately Ordered)",
-      "storage": "One M.2 (B Key,2280), Upto 512GB SSD, Upto 64GB eMMC ((Memory to be Separately Ordered)",
+      "cpu": "Intel X7425E/X7433RE/X7835RE/x7809C/i3-N305/N350 Quad Core/Octa Core with 3.9 GHz turbo frequency",
+      "ram": "Up to Up to 32GB DDR4 or 64 GB SODIMM DDR5",
+      "storage": "Upto 512 GB SSD and 64GB eMMC",
       "cell": "4G/5G",
       "cellular_gen": "5G",
       "wifi": "WiFi6",
@@ -263,110 +397,15 @@
       "variants": null
     },
     {
-      "id": "inv-cd-xx",
-      "name": "INV-CD-XX",
-      "cat": "Intel Based Devices",
-      "order": 5,
-      "desc": "This compact, fanless edge computing system is designed for AI inference, networking, and industrial applications, combining an Intel® Core™ N350 processor with flexible expansion for AI accelerators or NVMe storage. Key differentiators include dual Gigabit LAN, multiple display outputs (up to 4K), wide OS support, and robust I/O in a small form factor. It targets edge AI deployments, smart retail, industrial automation, and network security solutions.",
-      "cpu": "Intel N150/x7425E/x7433RE/x7835RE/i3-N305/N355, 4/8 cores with 3.4GHz Turbo Frequency",
-      "ram": "64GB DDR5 SODIMM (Max) (Memory to be Separately Ordered)",
-      "storage": "1x M.2 (Key-B), 512 GB SATA SSD Module (Up to 1 TB",
-      "cell": "4G/5G",
-      "cellular_gen": "5G",
-      "wifi": "WiFi6",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "IP30",
-      "power": "12V DC",
-      "ports": "2",
-      "os": "Oracle Linux v.9.5 and above Ubuntu 23, Windows 10 and above",
-      "housing": "Aluminum Heat Sink with CRCA Enclosure (Fanless Design), Sheet Metal (Fan Design)",
-      "dims": "150mmx210mmx65mm (LxWxH)",
-      "weight": "995 g",
-      "op_temp": "0 -50°C",
-      "images": [
-        "assets/images/inv-cd-xx-1.png",
-        "assets/images/inv-cd-xx-2.png",
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-cd-xx-1786515792452-i9dg.png"
-      ],
-      "use_cases": [
-        "Industrial Machine Vision & Quality Inspection",
-        "Smart Traffic & Transportation Edge Nodes",
-        "Edge Security & Surveillance with AI Analytics"
-      ],
-      "datasheet": "assets/datasheets/INV-CD-N350_Datasheet.pdf",
-      "part_datasheets": {},
-      "hidden_fields": [
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports",
-          "v": "Gigabit Ethernet (Realtek RTL8111H)"
-        }
-      ],
-      "variants": null
-    },
-    {
-      "id": "invcf",
-      "name": "INV-CF-XX",
-      "cat": "Intel Based Devices",
-      "order": 6,
-      "desc": "The INV-CF-XX is a compact, fanless industrial edge computing platform powered by the Intel X7425E processor, featuring high-speed 2.5GbE networking, 4G/5G connectivity, Wi-Fi 6 support, and flexible mounting options for industrial and IoT applications.",
-      "cpu": "Intel N150/x7425E/x7433RE/x7835RE/i3-N305/N355, 4/8 cores with 3.4GHz Turbo Frequency",
-      "ram": "32GB DDR5 SODIMM (Max)",
-      "storage": "One M.2 (B Key,2280), Upto 512GB SSD, Upto64GB eMMC",
-      "cell": "",
-      "cellular_gen": "5G",
-      "wifi": "-",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "IP 30",
-      "power": "12 VDC",
-      "ports": "4",
-      "os": "Ubuntu/Oracle Linux/OpenWRT/Windows",
-      "housing": "Aluminum Heat Sink with CRCA Enclosure",
-      "dims": "150mm X 160mm X 52.8mm ( L X W X H) (w/o mounting options) (*Dimensions will vary depending on the mounting option chosen.)",
-      "weight": "1800",
-      "op_temp": "0 ~ 50℃",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/invcf-1787733943974-01uq.png",
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/invcf-1787733948165-323c.png"
-      ],
-      "use_cases": [
-        "Fleet Telematics",
-        "Autonomous Vehicle",
-        "Smart Kiosk",
-        "Digital Signage",
-        "Edge Gateway",
-        "Multi-Network Router"
-      ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/invcf-datasheet.pdf",
-      "part_datasheets": {},
-      "hidden_fields": [
-        "cell",
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports",
-          "v": "Gigabit Ethernet (2.5 Gbps)"
-        }
-      ],
-      "variants": null
-    },
-    {
       "id": "itx-arl-board",
       "name": "Arrowlake ITX",
       "cat": "Intel Based Devices",
-      "order": 7,
+      "order": 6,
       "desc": "The Invendis ARL Mini ITX is a high-performance industrial computing platform powered by Intel Core Ultra Processors (Series 2) with integrated NPU AI acceleration, Intel Arc 140T graphics, and up to 128GB DDR5 RAM. Housed in a aluminum heatsink enclosure with fanless or fan options, it offers dual 2.5GbE LAN ports, triple display outputs (2x HDMI, 1x DP), and extensive M.2 expansion for Wi-Fi 6, 4G/5G cellular, and NVMe storage.",
-      "cpu": "Intel® Core™ Ultra Processors (Series 2) (Ultra 5 & Ultra 7)",
-      "ram": "64 GB DDR5 CSODIMM (Max) (Memory to be separately ordered)",
-      "storage": "One M.2 (B Key,2280), Upto 512GB SSD, 2 x SATA3 (6Gb/s)",
-      "cell": "",
+      "cpu": "Intel® Core™ Ultra Processors (Series 2) (Ultra 5 & Ultra 7), 14/16 Cores, 5.1GHz  Turbo Frequency CPU, GPU, NPU",
+      "ram": "128 GB DDR5 CSODIMM (Max)",
+      "storage": "One M.2 (B Key,2280) with PCIe X 4 NVME, 2 x SATA3 (6Gb/s)",
+      "cell": "One M.2( B Key, supports both types 3042 and 3052) with USB2.0, USB3.0 and  PCIe x 1 Supporting both 4G and 5G Modems",
       "cellular_gen": "-",
       "wifi": "-",
       "rs485": "-",
@@ -375,7 +414,7 @@
       "power": "",
       "ports": "2",
       "os": "Ubuntu / Oracle Linux / Open WRT / Windows",
-      "housing": "Aluminum Heat Sink with CRCA Enclosure, Fan/Fanless options",
+      "housing": "Aluminium Heat Sink with CRCA Enclosure",
       "dims": "210x203x60mm",
       "weight": "1400",
       "op_temp": "0~ 50 ˚C",
@@ -391,17 +430,12 @@
       "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/itx-arl-board-datasheet.pdf",
       "part_datasheets": {},
       "hidden_fields": [
-        "cell",
         "cellular_gen",
         "wifi",
         "rs485",
         "rs232"
       ],
       "additional_specs": [
-        {
-          "k": "Cellular",
-          "v": "One M.2( B Key, supports both types 3042 and 3052) with USB2.0, USB3.0 and PCIe x 1 Supporting both 4G and 5G Modems."
-        },
         {
           "k": "Sim",
           "v": "2x Nano SIM"
@@ -449,6 +483,59 @@
         {
           "k": "Weight (Fanless Design)",
           "v": "1800 gm"
+        },
+        {
+          "k": "Mounting",
+          "v": "Desktop Mount/ Wall Mount / 19 inch rack mount / Vesa Mount"
+        }
+      ],
+      "variants": null
+    },
+    {
+      "id": "invcf",
+      "name": "INV-CF-XX",
+      "cat": "Intel Based Devices",
+      "order": 7,
+      "desc": "The INV-CF-XX is a compact, fanless industrial edge computing platform powered by the Intel X7425E processor, featuring high-speed 2.5GbE networking, 4G/5G connectivity, Wi-Fi 6 support, and flexible mounting options for industrial and IoT applications.",
+      "cpu": "Intel N150/x7425E/x7433RE/x7835RE/i3-N305/N355, 4/8 cores with 3.4GHz Turbo Frequency",
+      "ram": "32GB DDR5 SODIMM (Max)",
+      "storage": "One M.2 (B Key,2280), Upto 512GB SSD, Upto64GB eMMC",
+      "cell": "",
+      "cellular_gen": "5G",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "IP 30",
+      "power": "12 VDC",
+      "ports": "4",
+      "os": "Ubuntu/Oracle Linux/OpenWRT/Windows",
+      "housing": "Aluminum Heat Sink with CRCA Enclosure",
+      "dims": "150mm X 160mm X 52.8mm ( L X W X H) (w/o mounting options) (*Dimensions will vary depending on the mounting option chosen.)",
+      "weight": "1800",
+      "op_temp": "0 ~ 50℃",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/invcf-1787733943974-01uq.png",
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/invcf-1787733948165-323c.png"
+      ],
+      "use_cases": [
+        "Fleet Telematics",
+        "Autonomous Vehicle",
+        "Smart Kiosk",
+        "Digital Signage",
+        "Edge Gateway",
+        "Multi-Network Router"
+      ],
+      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/invcf-datasheet.pdf",
+      "part_datasheets": {},
+      "hidden_fields": [
+        "cell",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Gigabit Ethernet (2.5 Gbps)"
         }
       ],
       "variants": null
@@ -459,16 +546,16 @@
       "cat": "Router",
       "order": 8,
       "desc": "A ruggedised industrial router featuring dual 5G/4G modems, Wi-Fi 6, and SFP uplinks. Built on MediaTek MT7981 with OpenWRT, it supports dual-SIM failover, DIN-rail mounting, and a wide 9–30V DC power range — ideal for demanding telecom, industrial, and remote site deployments.",
-      "cpu": "MediaTek MT7981, 1.3GHz Dual Core ARM Cortex A53",
+      "cpu": "MT7981 ARM Cortex A53 Dual Core with 1.3 GHz Frequency",
       "ram": "1 GB DDR4",
       "storage": "128 MB NAND",
-      "cell": "4G/5G",
+      "cell": "Dual M.2 Modem 4G/3G/2G",
       "cellular_gen": "5G",
       "wifi": "WiFi6",
       "rs485": "-",
       "rs232": "-",
       "ip": "IP30",
-      "power": "9–30 VDC Dual Source",
+      "power": "9-30/12 VDC",
       "ports": "5",
       "os": "OpenWRT Linux",
       "housing": "Sheet Metal",
@@ -508,6 +595,10 @@
         {
           "k": "SFP Ports",
           "v": "1/2"
+        },
+        {
+          "k": "USB 3.0",
+          "v": "1"
         }
       ],
       "variants": {
@@ -663,16 +754,16 @@
       "cat": "Router",
       "order": 10,
       "desc": "A ruggedised industrial router combining dual 5G/4G modems with Wi-Fi 6 (EasyMesh), 2× WAN + 4× LAN GbE ports, and 1× SFP uplink. Built on MediaTek MT7981 with OpenWRT 21/23, supporting dual-SIM failover, DIN-rail mounting, and a wide 9–30V DC input — engineered for demanding telecom, industrial, and enterprise edge deployments.",
-      "cpu": "MediaTek MT7981",
+      "cpu": "MT7981 ARM Cortex A53 Dual Core with 1.3 GHz Frequency",
       "ram": "1 GB DDR4",
-      "storage": "128 MB NAND",
-      "cell": "4G/5G",
+      "storage": "128 MB NAND/32MB NOR and 4GB/8GB eMMC",
+      "cell": "Dual M.2 Modem 5G/4G/3G",
       "cellular_gen": "5G",
       "wifi": "WiFi6",
       "rs485": "-",
       "rs232": "-",
       "ip": "IP30",
-      "power": "9–30 VDC",
+      "power": "12 VDC",
       "ports": "6",
       "os": "OpenWRT 21/23",
       "housing": "Sheet Metal",
@@ -701,6 +792,14 @@
         {
           "k": "Ethernet Ports",
           "v": "Gigabit Ports"
+        },
+        {
+          "k": "SFP",
+          "v": "1"
+        },
+        {
+          "k": "USB 3.0",
+          "v": "1"
         }
       ],
       "variants": {
@@ -756,16 +855,16 @@
       "cat": "Router",
       "order": 11,
       "desc": "The RTXX is a compact industrial router featuring MediaTek MT7981 with Wi-Fi 6, dual M.2 modem slots supporting 5G/4G/3G, and OpenWRT Linux. Designed for demanding IoT, industrial automation, and edge networking deployments, it supports dual SIM with 4 LAN and 1 WAN Gigabit Ethernet ports. It ships in a fanless sheet-metal enclosure with DIN rail mounting and wide 9–30 VDC input.",
-      "cpu": "MediaTek MT7981, 1.3 GHz dual-core ARM Cortex-A53",
-      "ram": "1 GB DDR4",
+      "cpu": "MT7981 ARM Cortex A53 Dual Core with 1.3 GHz Frequency",
+      "ram": "1GB DDR 4",
       "storage": "128 MB NAND",
-      "cell": "4G/5G",
+      "cell": "Dual M.2 Modem 5G/4G/3G",
       "cellular_gen": "5G",
       "wifi": "WiFi6",
       "rs485": "No",
       "rs232": "No",
       "ip": "",
-      "power": "9-30 VDC",
+      "power": "12 VDC",
       "ports": "5",
       "os": "OpenWRT Linux",
       "housing": "Sheet Metal",
@@ -893,16 +992,16 @@
       "cat": "Router",
       "order": 12,
       "desc": "The RVXX is a compact industrial router built on MediaTek MT7621 featuring dual-band Wi-Fi 5, 4G/3G/2G cellular with dual SIM, and five Gigabit Ethernet ports. Running OpenWRT Linux, it supports VPN, VLAN, advanced routing and NMS remote management, making it ideal for industrial IoT, M2M, and edge-networking deployments. It ships in a fanless industrial aluminium enclosure with 12 V DC input and optional DIN rail mounting.",
-      "cpu": "MediaTek MT7621",
-      "ram": "512 MB DDR3",
+      "cpu": "MT7621 MIPS Dual Core with 880 MHz Frequency",
+      "ram": "512 MB DDR 3",
       "storage": "32 MB Flash",
-      "cell": "4G",
+      "cell": "Dual M.2 Modem 4G/3G/2G",
       "cellular_gen": "4G",
       "wifi": "WiFi5",
       "rs485": "No",
       "rs232": "No",
       "ip": "",
-      "power": "12 VDC",
+      "power": "9-30/12 VDC",
       "ports": "5",
       "os": "OpenWRT Linux",
       "housing": "Industrial Aluminium",
@@ -927,7 +1026,8 @@
       },
       "hidden_fields": [
         "rs485",
-        "rs232"
+        "rs232",
+        "housing"
       ],
       "additional_specs": [
         {
