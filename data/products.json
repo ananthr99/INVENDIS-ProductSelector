@@ -104,7 +104,7 @@
       "os": "Oracle Linux v9.5 / Ubuntu 23 / Windows",
       "housing": "Aluminium Heat Sink with CRCA Enclosure",
       "dims": "150x210x65mm (LxWxH)",
-      "weight": "1800g",
+      "weight": "1800 gm",
       "op_temp": "0 -50°C",
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/intel-x6425E-1786510520709-0jr1.png",
