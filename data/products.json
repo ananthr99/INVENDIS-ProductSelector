@@ -869,7 +869,7 @@
       "os": "OpenWRT Linux",
       "housing": "Sheet Metal",
       "dims": "110 x 55 x 144 mm (W x H x D)",
-      "weight": "480 g",
+      "weight": "480 gm",
       "op_temp": "0~ 50 ˚C",
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rtxx-1786524726723-byku.png"
