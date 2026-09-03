@@ -102,7 +102,7 @@
       "power": "19 VDC/24 VDC",
       "ports": "4",
       "os": "Oracle Linux v9.5 / Ubuntu 23 / Windows",
-      "housing": "Aluminium",
+      "housing": "Aluminium Heat Sink with CRCA Enclosure",
       "dims": "150x210x65mm (LxWxH)",
       "weight": "1800g",
       "op_temp": "0 -50°C",
