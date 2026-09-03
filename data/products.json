@@ -1445,7 +1445,7 @@
       "os": "OpenWRT Linux",
       "housing": "Metal",
       "dims": "97 x 28 x 84mm (W x H x D)",
-      "weight": "280 g",
+      "weight": "280 gm",
       "op_temp": "-20 ~ 60 ˚C",
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/iexx-1786535373955-vsb7.png"
