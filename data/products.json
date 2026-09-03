@@ -3227,7 +3227,7 @@
       "os": "",
       "housing": "",
       "dims": "",
-      "weight": "",
+      "weight": "3150 gm",
       "op_temp": "",
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/xi244-2M-1787821659624-q8nr.png"
@@ -3255,7 +3255,6 @@
         "rs232",
         "housing",
         "dims",
-        "weight",
         "op_temp"
       ],
       "additional_specs": [
