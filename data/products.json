@@ -353,6 +353,50 @@
       "variants": null
     },
     {
+      "id": "inv-ci-xx",
+      "name": "INV-CI-XX",
+      "cat": "Intel Based Devices",
+      "order": 5,
+      "desc": "INV CI XX is a compact, Intel® X7425E-powered industrial computer designed for reliable edge computing and industrial automation. It features multiple Ethernet ports, optional 4G/5G connectivity, Wi-Fi, and flexible storage options for secure, high-performance deployments.",
+      "cpu": "Intel X7425E/X7433RE/X7835RE/x7809C/i3-N305/N350 Quad Core/Octa Core with 3.9 GHz turbo frequency",
+      "ram": "Up to Up to 32GB DDR4 or 64 GB SODIMM DDR5",
+      "storage": "Upto 512 GB SSD and 64GB eMMC",
+      "cell": "4G/5G",
+      "cellular_gen": "5G",
+      "wifi": "WiFi6",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "12 VDC",
+      "ports": "6",
+      "os": "Ubuntu / Oracle / OpenWRT /Windows/ VyOS",
+      "housing": "Sheet Metal",
+      "dims": "232mmx 202 x 44mm",
+      "weight": "1500",
+      "op_temp": "0 ~ 50℃",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-ci-xx-1787128620619-qggb.png"
+      ],
+      "use_cases": [
+        "Multi-Site Enterprise WAN Management",
+        "Video Surveillance & Security Networks",
+        "Industrial Gateway / Edge Computing"
+      ],
+      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/inv-ci-xx-datasheet.pdf",
+      "part_datasheets": {},
+      "hidden_fields": [
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Gigabit Ethernet (Realtek RTL8111H)"
+        }
+      ],
+      "variants": null
+    },
+    {
       "id": "rtsxx",
       "name": "RTSXX",
       "cat": "Router",
@@ -4264,50 +4308,6 @@
         {
           "k": "Ethernet Ports",
           "v": "Gigabit Ethernet (2.5 Gbps)"
-        }
-      ],
-      "variants": null
-    },
-    {
-      "id": "inv-ci-xx",
-      "name": "INV-CI-XX",
-      "cat": "Intel Based Devices",
-      "order": null,
-      "desc": "INV CI XX is a compact, Intel® X7425E-powered industrial computer designed for reliable edge computing and industrial automation. It features multiple Ethernet ports, optional 4G/5G connectivity, Wi-Fi, and flexible storage options for secure, high-performance deployments.",
-      "cpu": "Intel X7425E/X7433RE/X7835RE/x7809C/i3-N305/N350 Quad Core/Octa Core with 3.9 GHz turbo frequency",
-      "ram": "Up to Up to 32GB DDR4 or 64 GB SODIMM DDR5",
-      "storage": "Upto 512 GB SSD and 64GB eMMC",
-      "cell": "4G/5G",
-      "cellular_gen": "5G",
-      "wifi": "WiFi6",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "",
-      "power": "12 VDC",
-      "ports": "6",
-      "os": "Ubuntu / Oracle / OpenWRT /Windows/ VyOS",
-      "housing": "Sheet Metal",
-      "dims": "232mmx 202 x 44mm",
-      "weight": "1500",
-      "op_temp": "0 ~ 50℃",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-ci-xx-1787128620619-qggb.png"
-      ],
-      "use_cases": [
-        "Multi-Site Enterprise WAN Management",
-        "Video Surveillance & Security Networks",
-        "Industrial Gateway / Edge Computing"
-      ],
-      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/inv-ci-xx-datasheet.pdf",
-      "part_datasheets": {},
-      "hidden_fields": [
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports",
-          "v": "Gigabit Ethernet (Realtek RTL8111H)"
         }
       ],
       "variants": null
