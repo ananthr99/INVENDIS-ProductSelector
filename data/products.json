@@ -165,7 +165,7 @@
       "os": "Ubuntu/Oracle Linux/OpenWRT/Windows",
       "housing": "Aluminum Heat Sink with CRCA Enclosure (Fanless Design), Sheet Metal (Fan Design)",
       "dims": "150mmx210mmx65mm (LxWxH)",
-      "weight": "995 g",
+      "weight": "995 gm",
       "op_temp": "0 -50°C",
       "images": [
         "assets/images/inv-cd-xx-1.png",
