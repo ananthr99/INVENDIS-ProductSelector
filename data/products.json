@@ -129,6 +129,18 @@
         {
           "k": "Mounting",
           "v": "Desktop Mount/ Wall Mount"
+        },
+        {
+          "k": "USB 2.0",
+          "v": "2"
+        },
+        {
+          "k": "HDMI",
+          "v": "1"
+        },
+        {
+          "k": "Micro USB Console",
+          "v": "1"
         }
       ],
       "variants": null
