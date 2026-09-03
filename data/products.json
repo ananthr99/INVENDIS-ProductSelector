@@ -3027,6 +3027,10 @@
         {
           "k": "Ethernet Ports",
           "v": "Fast Ethernet Ports (MDI/MDIX)"
+        },
+        {
+          "k": "Type",
+          "v": "Unmanaged Switch"
         }
       ],
       "variants": {
