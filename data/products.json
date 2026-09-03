@@ -3645,7 +3645,7 @@
       "os": "OpenWRT Linux",
       "housing": "IP67 Enclosure",
       "dims": "110 x 55 x 144 mm (W x H x D)",
-      "weight": "480 g",
+      "weight": "480 gm",
       "op_temp": "0 ~ 50˚C",
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rt65odu-1787119700265-ewjt.png"
