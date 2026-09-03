@@ -3581,7 +3581,7 @@
       "os": "OpenWRT Linux",
       "housing": "ABS/PC IP66 Housing",
       "dims": "140 x 75 x 224 mm (W x H x D)",
-      "weight": "950 g",
+      "weight": "950 gm",
       "op_temp": "-0 ~ 50 ˚C",
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/mt7621odu-1786951698336-5qx3.png"
