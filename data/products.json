@@ -117,7 +117,7 @@
       ],
       "datasheet": "assets/datasheets/Intel X6425 Based Industrial PC.pdf",
       "part_datasheets": {},
-      "hidden": true,
+      "hidden": false,
       "hidden_fields": [
         "rs485",
         "rs232"
