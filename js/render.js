@@ -7,9 +7,10 @@ function updateHeroStats() {
     'Intel Based Devices':'Intel devices'
   };
   function catLabel(c) { return labels[c] || c.toLowerCase(); }
-  let html = `<div class="hero-stat"><span class="num">${PRODUCTS.length}</span><span class="lbl">total</span></div>`;
+  const visibleProducts = PRODUCTS.filter(p => !p.hidden);
+  let html = `<div class="hero-stat"><span class="num">${visibleProducts.length}</span><span class="lbl">total</span></div>`;
   CATS.filter(c => c !== 'All').forEach(cat => {
-    const n = PRODUCTS.filter(p => p.cat === cat).length;
+    const n = visibleProducts.filter(p => p.cat === cat).length;
     if (n > 0) html += `<div class="hero-stat"><span class="num">${n}</span><span class="lbl">${esc(catLabel(cat))}</span></div>`;
   });
   el.innerHTML = html;
@@ -18,7 +19,8 @@ function updateHeroStats() {
 function buildCatTabs() {
   const tabs = document.getElementById('catTabs');
   const counts = {};
-  CATS.forEach(c => { counts[c] = c === 'All' ? PRODUCTS.length : PRODUCTS.filter(p => p.cat === c).length; });
+  const visible = PRODUCTS.filter(p => !p.hidden);
+  CATS.forEach(c => { counts[c] = c === 'All' ? visible.length : visible.filter(p => p.cat === c).length; });
   tabs.innerHTML = '';
   CATS.forEach(c => {
     const btn = document.createElement('button');

@@ -165,6 +165,12 @@ function diffProduct(old, neu, imgCount, hadDs) {
     diff.push({ type: 'list', label: 'Hidden Fields', added: addedHF, removed: removedHF });
   }
 
+  if (!!(old.hidden) !== !!(neu.hidden)) {
+    const wasHidden = !!(old.hidden);
+    changes.push(wasHidden ? 'made visible in catalogue' : 'hidden from catalogue');
+    diff.push({ type: 'field', label: 'Visibility', old: wasHidden ? 'Hidden' : 'Visible', new: wasHidden ? 'Visible' : 'Hidden' });
+  }
+
   if (JSON.stringify(old.additional_specs || []) !== JSON.stringify(neu.additional_specs || [])) {
     changes.push('additional specs updated');
     diff.push({ type: 'specs', old: old.additional_specs || [], new: neu.additional_specs || [] });
