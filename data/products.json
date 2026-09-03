@@ -2451,7 +2451,7 @@
       "os": "Open-WRT based Linux OS",
       "housing": "Sheet Metal",
       "dims": "190 x 30 x 100 mm (W x H x D)",
-      "weight": "520",
+      "weight": "520 gm",
       "op_temp": "0 -50°C",
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvcp-1787643260652-71vm.png"
