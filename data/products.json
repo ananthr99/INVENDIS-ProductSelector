@@ -299,7 +299,7 @@
       "os": "Ubuntu/Oracle Linux/OpenWRT/Windows",
       "housing": "Aluminum Heat Sink with CRCA Enclosure",
       "dims": "150 X 250 X 55mm ( L X W X H)",
-      "weight": "1700",
+      "weight": "1700 gm",
       "op_temp": "0 ~ 50℃",
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-cea-xx-1786441526355-8a7c.png",
