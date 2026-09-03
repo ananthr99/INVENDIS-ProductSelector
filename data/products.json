@@ -416,7 +416,7 @@
       "os": "Ubuntu / Oracle Linux / Open WRT / Windows",
       "housing": "Aluminium Heat Sink with CRCA Enclosure",
       "dims": "210x203x60mm",
-      "weight": "1400",
+      "weight": "1400 gm",
       "op_temp": "0~ 50 ˚C",
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/itx-arl-board-1787745677267-j4ga.png",
