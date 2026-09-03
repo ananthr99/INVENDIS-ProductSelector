@@ -1525,7 +1525,7 @@
       "os": "OpenWRT Linux",
       "housing": "Industrial Aluminium",
       "dims": "110 x 44 x 94mm (W x H x D)",
-      "weight": "280 g",
+      "weight": "280 gm",
       "op_temp": "-20 ~ 60 ˚C",
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/iaxx-1786598951793-g17i.png"
