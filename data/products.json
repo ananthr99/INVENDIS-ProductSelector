@@ -284,7 +284,7 @@
       "cat": "Intel Based Devices",
       "order": 5,
       "desc": "This compact, fanless edge computing system is designed for AI inference, networking, and industrial applications, combining an Intel® Core™ N350 processor with flexible expansion for AI accelerators or NVMe storage. Key differentiators include dual Gigabit LAN, multiple display outputs (up to 4K), wide OS support, and robust I/O in a small form factor. It targets edge AI deployments, smart retail, industrial automation, and network security solutions.",
-      "cpu": "Intel N150/x7425E/x7433RE/x7835RE/i3-N305/N355, 4/8 cores with 3.4GHz Turbo Frequency",
+      "cpu": "Intel X7425E/X7433RE/X7835RE/i3-N305/N350 Quad Core/Octa Core with 3.9 GHz turbo frequency",
       "ram": "Up to 32GB DDR4 or 64 GB SODIMM DDR5",
       "storage": "Up to 512 GB SSD and up to 64GB eMMC Optional",
       "cell": "4G/5G",
@@ -295,7 +295,7 @@
       "ip": "IP30",
       "power": "12V DC",
       "ports": "2",
-      "os": "Oracle Linux v.9.5 and above Ubuntu 23, Windows 10 and above",
+      "os": "Ubuntu/Oracle Linux/OpenWRT/Windows",
       "housing": "Aluminum Heat Sink with CRCA Enclosure (Fanless Design), Sheet Metal (Fan Design)",
       "dims": "150mmx210mmx65mm (LxWxH)",
       "weight": "995 g",
@@ -320,6 +320,34 @@
         {
           "k": "Ethernet Ports",
           "v": "Gigabit Ethernet (Realtek RTL8111H)"
+        },
+        {
+          "k": "USB 3.0",
+          "v": "2"
+        },
+        {
+          "k": "USB 2.0",
+          "v": "4"
+        },
+        {
+          "k": "HDMI",
+          "v": "2"
+        },
+        {
+          "k": "PCIe",
+          "v": "2 for AI Accelerator/NVMe"
+        },
+        {
+          "k": "RS 232 (Optional)",
+          "v": "2"
+        },
+        {
+          "k": "Dual Channel LVDS (Optional)",
+          "v": "1"
+        },
+        {
+          "k": "Mounting",
+          "v": "Desktop Mount/ Wall Mount / 19 inch rack mount / Vesa Mount"
         }
       ],
       "variants": null
