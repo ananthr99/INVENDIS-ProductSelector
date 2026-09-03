@@ -2148,9 +2148,9 @@
       "cat": "Gateway",
       "order": 25,
       "desc": "The iSense is purpose-built for data-heavy industrial environments, combining 24 isolated digital inputs, 8 relay outputs, 4x RS485, analog voltage/current sensing, and dual external temperature probes into a single converged gateway. This density of I/O — backed by a dual-core processor with up to 32GB eMMC and native Modbus, SNMP, and MQTT support — makes it the go-to solution for energy monitoring, process automation, and smart infrastructure projects where deep field-level visibility drives operational decisions.",
-      "cpu": "Dual Core 0.88 GHz",
-      "ram": "512 MB + eMMC up to 32 GB",
-      "storage": "32 MB Flash",
+      "cpu": "MT7621 MIPS Dual Core with 880 MHz Frequency",
+      "ram": "512MB RAM, eMMC support up to 32GB",
+      "storage": "512 MB",
       "cell": "4G",
       "cellular_gen": "4G",
       "wifi": "WiFi5",
@@ -2158,7 +2158,7 @@
       "rs232": "Yes",
       "ip": "",
       "power": "20-60 VDC",
-      "ports": "",
+      "ports": "4",
       "os": "Linux OS",
       "housing": "Sheet Metal",
       "dims": "309 x 221 x 58 mm (L x W x H)",
@@ -2179,10 +2179,14 @@
         "iSense Blue Plus Pro": "assets/datasheets/Isense Blue Plus Pro.pdf"
       },
       "hidden_fields": [
-        "ip",
-        "ports"
+        "ip"
       ],
-      "additional_specs": [],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": ""
+        }
+      ],
       "variants": {
         "headers": [
           "Wi-Fi",
