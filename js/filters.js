@@ -5,6 +5,7 @@ function getFiltered() {
   const fPorts = document.getElementById('fPorts').value;
   const fSerial = document.getElementById('fSerial').value;
   const results = PRODUCTS.filter(p => {
+    if (p.hidden) return false;
     if (activeCat !== 'All' && p.cat !== activeCat) return false;
     if (q) {
       const haystack = [

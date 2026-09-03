@@ -115,6 +115,7 @@ let currentImgs = [];   // existing image URLs for the selected product
 let pendingImgs = [];   // [{file, dataUrl}] not yet uploaded
 let pendingDs      = null; // File object pending upload
 let isDirty = false;
+let _productHidden = false;
 let currentDs      = '';   // current datasheet URL
 let currentPartDs  = {};   // existing part_datasheets {partNo: url}
 let pendingPartDs  = [];   // [{partNo, file}] not yet uploaded

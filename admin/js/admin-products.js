@@ -206,8 +206,8 @@ function renderSidebar() {
     (!sidebarCat || p.cat === sidebarCat) &&
     (!q || (p.name||'').toLowerCase().includes(q) || (p.id||'').toLowerCase().includes(q)));
   document.getElementById('productList').innerHTML = fp.length
-    ? fp.map(p => `<div class="product-item ${p.id === selectedId ? 'active' : ''}" onclick="selectProduct('${esc(p.id)}')">
-        <div class="product-item-name">${esc(p.name || p.id)}</div>
+    ? fp.map(p => `<div class="product-item ${p.id === selectedId ? 'active' : ''}${p.hidden ? ' product-item-hidden' : ''}" onclick="selectProduct('${esc(p.id)}')">
+        <div class="product-item-name">${p.hidden ? '<span class="hidden-badge">Hidden</span>' : ''}${esc(p.name || p.id)}</div>
         <div class="product-item-cat">${esc(p.cat || '—')}</div></div>`).join('')
     : '<div style="padding:16px;color:#9ca3af;font-size:13px;text-align:center">No products</div>';
 }

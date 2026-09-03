@@ -168,6 +168,7 @@ function buildJsonData() {
       COLS.filter(c => c !== 'variants_json').forEach(c => { out[c] = p[c] ?? null; });
       out.images            = Array.isArray(p.images)           ? p.images           : [];
       out.use_cases         = Array.isArray(p.use_cases)       ? p.use_cases       : [];
+      out.hidden            = !!(p.hidden);
       out.hidden_fields     = Array.isArray(p.hidden_fields)   ? p.hidden_fields   : [];
       out.additional_specs  = Array.isArray(p.additional_specs) ? p.additional_specs : [];
       out.variants          = p.variants        ?? null;

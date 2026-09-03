@@ -53,6 +53,7 @@ function normWifi(v) {
 }
 
 function populateForm(p) {
+  _productHidden = !!(p.hidden);
   renderFormDropdowns();
   renderVisibilityToggles(p.hidden_fields || []);
   [['fId',p.id],['fName',p.name],['fOrder',p.order??''],['fDesc',p.desc],
@@ -79,6 +80,7 @@ function populateForm(p) {
   pendingDs  = null;
   renderDatasheet();
   isDirty = false;
+  updateVisibilityBtn();
 }
 
 function collectForm() {
@@ -94,6 +96,7 @@ function collectForm() {
     op_temp: v('fOpTemp'), use_cases: getUseCaseTags(),
     additional_specs: getAdditionalSpecs(),
     hidden_fields: getHiddenFields(),
+    hidden: _productHidden,
     variants: null, part_datasheets: {}
   };
 }
@@ -211,4 +214,25 @@ function getHiddenFields() {
     if (inp?.closest('.field')?.classList.contains('field-hidden')) hidden.push(fieldKey);
   });
   return hidden;
+}
+
+// ─── Product Visibility Toggle ────────────────────────────────────────────────
+function updateVisibilityBtn() {
+  const btn = document.getElementById('btnVisibility');
+  if (!btn) return;
+  if (_productHidden) {
+    btn.innerHTML = `${EYE_SHUT}&ensp;Hidden from catalogue`;
+    btn.className = 'btn-visibility btn-visibility-hidden';
+    btn.title = 'Hidden from public catalogue — click to show';
+  } else {
+    btn.innerHTML = `${EYE_OPEN}&ensp;Visible in catalogue`;
+    btn.className = 'btn-visibility btn-visibility-visible';
+    btn.title = 'Visible in public catalogue — click to hide';
+  }
+}
+
+function toggleProductVisibility() {
+  _productHidden = !_productHidden;
+  isDirty = true;
+  updateVisibilityBtn();
 }
