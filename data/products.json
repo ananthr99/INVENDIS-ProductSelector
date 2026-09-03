@@ -3094,6 +3094,14 @@
         {
           "k": "SFP",
           "v": "2"
+        },
+        {
+          "k": "PoE Budget",
+          "v": "240W, 30W Max per port"
+        },
+        {
+          "k": "Switch Type",
+          "v": "MANAGED PoE Switch"
         }
       ],
       "variants": {
