@@ -117,7 +117,6 @@
       ],
       "datasheet": "assets/datasheets/Intel X6425 Based Industrial PC.pdf",
       "part_datasheets": {},
-      "hidden": false,
       "hidden_fields": [
         "rs485",
         "rs232"
@@ -180,7 +179,6 @@
       ],
       "datasheet": "assets/datasheets/INV-CD-N350_Datasheet.pdf",
       "part_datasheets": {},
-      "hidden": false,
       "hidden_fields": [
         "rs485",
         "rs232"
@@ -253,7 +251,6 @@
       ],
       "datasheet": "assets/datasheets/Intel X7425E SDWAN Box.pdf",
       "part_datasheets": {},
-      "hidden": false,
       "hidden_fields": [
         "rs485",
         "rs232"
@@ -314,7 +311,6 @@
       ],
       "datasheet": "assets/datasheets/Brief Specs Intel X7425E Alder Lake Industrial Automation PC (2) (1).pdf",
       "part_datasheets": {},
-      "hidden": false,
       "hidden_fields": [
         "ip",
         "rs485",
@@ -388,7 +384,6 @@
       ],
       "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/inv-ci-xx-datasheet.pdf",
       "part_datasheets": {},
-      "hidden": false,
       "hidden_fields": [
         "rs485",
         "rs232"
@@ -434,7 +429,6 @@
       ],
       "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/itx-arl-board-datasheet.pdf",
       "part_datasheets": {},
-      "hidden": false,
       "hidden_fields": [
         "cellular_gen",
         "wifi",
@@ -533,7 +527,6 @@
       ],
       "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/invcf-datasheet.pdf",
       "part_datasheets": {},
-      "hidden": false,
       "hidden_fields": [
         "cell",
         "rs485",
@@ -590,7 +583,6 @@
         "RTS65-2": "assets/datasheets/RTS65-2.pdf",
         "RTS64-1": "contact_us"
       },
-      "hidden": false,
       "hidden_fields": [
         "rs485",
         "rs232"
@@ -725,7 +717,6 @@
       "part_datasheets": {
         "RU60": "assets/datasheets/RU60.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "cell",
         "cellular_gen",
@@ -793,7 +784,6 @@
         "RO64-2": "assets/datasheets/RO64-2.pdf",
         "RO64-1": "assets/datasheets/RO64-1.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "rs485",
         "rs232"
@@ -903,7 +893,6 @@
         "RT65-2": "assets/datasheets/RT65-2.pdf",
         "RT66-2": "contact_us"
       },
-      "hidden": false,
       "hidden_fields": [
         "ip",
         "rs485",
@@ -1035,7 +1024,6 @@
         "RV04-2": "assets/datasheets/RV04-2.pdf",
         "RV50": "assets/datasheets/RV50.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "rs485",
         "rs232",
@@ -1129,7 +1117,6 @@
         "RV00": "assets/datasheets/RV00.pdf",
         "—": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rv00-_.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "cell",
         "cellular_gen",
@@ -1203,7 +1190,6 @@
         "RDS00": "assets/datasheets/RDS00.pdf",
         "RDS44": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rdxx-RDS44.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "ip",
         "rs485",
@@ -1336,7 +1322,6 @@
         "RE44": "assets/datasheets/RE44.pdf",
         "RE04": "assets/datasheets/RE04.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "ip",
         "rs485",
@@ -1406,7 +1391,6 @@
       "part_datasheets": {
         "RI44": "assets/datasheets/RI44.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "ip",
         "rs485",
@@ -1473,7 +1457,6 @@
         "IE44-C": "assets/datasheets/IE44C.pdf",
         "IE44-A-EX1": "assets/datasheets/IE44A-EX1.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "ip",
         "rs485",
@@ -1555,7 +1538,6 @@
         "IA44-A": "assets/datasheets/IA44-A.pdf",
         "IA40-C": "assets/datasheets/IA40-C.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "rs232"
       ],
@@ -1646,7 +1628,6 @@
         "RFN44-B": "assets/datasheets/RFN44-B.pdf",
         "RFN44-C": "assets/datasheets/RFN44-C.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "rs232"
       ],
@@ -1734,7 +1715,6 @@
         "IAB04-C": "assets/datasheets/IAB04-C.pdf",
         "IAB04-B": "contact_us"
       },
-      "hidden": false,
       "hidden_fields": [],
       "additional_specs": [
         {
@@ -1829,7 +1809,6 @@
         "IAC04-A": "assets/datasheets/IAC04-A.pdf",
         "IAC04-C": "assets/datasheets/IAC04-C.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "ip",
         "rs232"
@@ -1922,7 +1901,6 @@
         "IAF44-C2": "contact_us",
         "IAF04-C2": "contact_us"
       },
-      "hidden": false,
       "hidden_fields": [],
       "additional_specs": [
         {
@@ -2012,7 +1990,6 @@
         "ID54-B": "assets/datasheets/ID54-B.pdf",
         "ID54": "assets/datasheets/ID54.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "ip",
         "rs485",
@@ -2106,7 +2083,6 @@
         "IDB55-B": "contact_us",
         "IDB54-B": "contact_us"
       },
-      "hidden": false,
       "hidden_fields": [
         "ip"
       ],
@@ -2202,7 +2178,6 @@
         "iSense Green Plus Pro": "assets/datasheets/Isense Green Plus Pro.pdf",
         "iSense Blue Plus Pro": "assets/datasheets/Isense Blue Plus Pro.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "ip",
         "ports"
@@ -2281,7 +2256,6 @@
         "RVG 54-C": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvg-RVG_54-C.pdf",
         "RVG 44-C": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvg-RVG_44-C.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "rs232"
       ],
@@ -2358,7 +2332,6 @@
       "part_datasheets": {
         "RVH 44": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/RVH-RVH_44.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "cell"
       ],
@@ -2416,7 +2389,6 @@
       "part_datasheets": {
         "RVCP 04": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvcp-RVCP_04.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "cell",
         "wifi",
@@ -2491,7 +2463,6 @@
       "part_datasheets": {
         "RUC 65": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/RUC-RUC_65.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "ip",
         "rs485",
@@ -2556,7 +2527,6 @@
       "part_datasheets": {
         "RDB 40": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rdb40-RDB_40.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "cell",
         "cellular_gen",
@@ -2618,7 +2588,6 @@
       "part_datasheets": {
         "GPON ONU": "contact_us"
       },
-      "hidden": false,
       "hidden_fields": [
         "cell",
         "cellular_gen",
@@ -2683,7 +2652,6 @@
       "part_datasheets": {
         "XA82-2 Unmanaged PoE Switch": "assets/datasheets/XA-82-2.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "cell",
         "cellular_gen",
@@ -2754,7 +2722,6 @@
       "part_datasheets": {
         "XB82-2 Unmanaged PoE Switch": "assets/datasheets/XB-82-2.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "cellular_gen",
         "cpu",
@@ -2821,7 +2788,6 @@
       "part_datasheets": {
         "XC-80-1 Unmanaged PoE Switch": "assets/datasheets/XC-80-1.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "cell",
         "cellular_gen",
@@ -2891,7 +2857,6 @@
       "part_datasheets": {
         "XD50-1 Unmanaged PoE Switch": "assets/datasheets/XD-50-1.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "cell",
         "cellular_gen",
@@ -2962,7 +2927,6 @@
         "XF-100-1 Unmanaged PoE Switch": "assets/datasheets/XF-100-1.pdf",
         "XF50-1 Unmanaged PoE Switch": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xf100-XF50-1_Unmanaged_PoE_Switch.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "cell",
         "cellular_gen",
@@ -3034,7 +2998,6 @@
       "part_datasheets": {
         "XG 82-2L Lite Managed Switch": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/XG822L-XG_82-2L_Lite_Managed_Switch.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "cell",
         "cellular_gen",
@@ -3107,7 +3070,6 @@
         "XG82-2L Gigabit Ethernet Managed Switch": "assets/datasheets/XG-82-2L Updated.pdf",
         "XG 82-2MI Lite Managed Switch": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xg82-XG_82-2MI_Lite_Managed_Switch.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "cell",
         "cellular_gen",
@@ -3179,7 +3141,6 @@
       "part_datasheets": {
         "XI 244-2M": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/xi244-2M-XI_244-2M.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "cell",
         "cellular_gen",
@@ -3273,7 +3234,6 @@
       "part_datasheets": {
         "RVCD": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rvcd-RVCD.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "cell",
         "cellular_gen",
@@ -3342,7 +3302,6 @@
         "PC311": "assets/datasheets/PC311.pdf",
         "PC312": "assets/datasheets/PC312.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "cell",
         "cellular_gen",
@@ -3419,7 +3378,6 @@
       ],
       "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/mcx-datasheet.pdf",
       "part_datasheets": {},
-      "hidden": false,
       "hidden_fields": [
         "cell",
         "cellular_gen",
@@ -3538,7 +3496,6 @@
       "part_datasheets": {
         "MT7621-01 ODU": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/mt7621odu-MT7621-01_ODU.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "wifi",
         "rs485",
@@ -3603,7 +3560,6 @@
       "part_datasheets": {
         "RT65-ODU": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rt65odu-RT65-ODU.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "rs485",
         "rs232"
@@ -3666,7 +3622,6 @@
       "part_datasheets": {
         "RN 50 PCB-A": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/rn50pcba-RN_50_PCB-A.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "cell",
         "cellular_gen",
@@ -3733,7 +3688,6 @@
       ],
       "datasheet": null,
       "part_datasheets": {},
-      "hidden": false,
       "hidden_fields": [
         "cell",
         "cellular_gen",
@@ -3805,7 +3759,6 @@
         "IDF55": "assets/datasheets/IDF55.pdf",
         "IDF45": "assets/datasheets/IDF45.pdf"
       },
-      "hidden": false,
       "hidden_fields": [
         "ip",
         "rs232"
@@ -3902,7 +3855,6 @@
       ],
       "datasheet": null,
       "part_datasheets": {},
-      "hidden": false,
       "hidden_fields": [
         "cell",
         "cellular_gen",
@@ -4001,7 +3953,6 @@
       ],
       "datasheet": "assets/datasheets/Mini UPS_Metal Enclosure_Datasheet 1.pdf",
       "part_datasheets": {},
-      "hidden": false,
       "hidden_fields": [
         "cell",
         "cellular_gen",
@@ -4084,7 +4035,6 @@
       ],
       "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/MFMET4640-datasheet.pdf",
       "part_datasheets": {},
-      "hidden": false,
       "hidden_fields": [
         "cell",
         "cellular_gen",
@@ -4180,7 +4130,6 @@
       ],
       "datasheet": "assets/datasheets/ET4602 AC Meter.pdf",
       "part_datasheets": {},
-      "hidden": false,
       "hidden_fields": [
         "cell",
         "cellular_gen",
@@ -4278,7 +4227,6 @@
       ],
       "datasheet": "assets/datasheets/ET1641 DC Meter.pdf",
       "part_datasheets": {},
-      "hidden": false,
       "hidden_fields": [
         "cell",
         "cellular_gen",
@@ -4349,7 +4297,6 @@
       ],
       "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/bcpm-datasheet.pdf",
       "part_datasheets": {},
-      "hidden": false,
       "hidden_fields": [
         "cell",
         "cellular_gen",
@@ -4376,6 +4323,49 @@
           []
         ]
       }
+    },
+    {
+      "id": "id04",
+      "name": "ID04",
+      "cat": "Gateway",
+      "order": 60,
+      "desc": "",
+      "cpu": "MT7621 MIPS Dual Core with 880 MHz Frequency",
+      "ram": "512 MB DDR 3",
+      "storage": "64 MB",
+      "cell": "Single M.2 Modem 4G/3G/2G",
+      "cellular_gen": "4G",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "9-30 VDC",
+      "ports": "4",
+      "os": "",
+      "housing": "Industrial Aluminium",
+      "dims": "",
+      "weight": "",
+      "op_temp": "",
+      "images": [],
+      "use_cases": [],
+      "datasheet": null,
+      "part_datasheets": {},
+      "hidden_fields": [
+        "wifi",
+        "cpu",
+        "rs485"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Gigabit Ethernet"
+        },
+        {
+          "k": "RS 485",
+          "v": "1"
+        }
+      ],
+      "variants": null
     }
   ]
 }
