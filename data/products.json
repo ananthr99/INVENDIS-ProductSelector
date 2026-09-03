@@ -1598,10 +1598,10 @@
       "cat": "Gateway",
       "order": 19,
       "desc": "The RFN44-A is an industrial-grade cellular router built on a MediaTek MT7628 platform with dual Nano SIM support, running an OpenWRT-based Linux OS for flexible and reliable connectivity. Housed in a fanless aluminium enclosure with a wide operating temperature range, it targets industrial automation, remote site management, and IoT deployments where rugged, dependable hardware is essential.",
-      "cpu": "MediaTek MT7628",
+      "cpu": "MT7628, Single Core with 580 MHz Frequency",
       "ram": "128 MB DDR2",
       "storage": "32 MB Flash",
-      "cell": "4G",
+      "cell": "Dual Sim 4G/3G/2G",
       "cellular_gen": "4G",
       "wifi": "WiFi4",
       "rs485": "Yes",
@@ -1635,6 +1635,14 @@
         {
           "k": "Ethernet Ports",
           "v": "Fast Ethernet"
+        },
+        {
+          "k": "RS485",
+          "v": "1"
+        },
+        {
+          "k": "DIO",
+          "v": "2"
         }
       ],
       "variants": {
@@ -2148,9 +2156,9 @@
       "cat": "Gateway",
       "order": 25,
       "desc": "The iSense is purpose-built for data-heavy industrial environments, combining 24 isolated digital inputs, 8 relay outputs, 4x RS485, analog voltage/current sensing, and dual external temperature probes into a single converged gateway. This density of I/O — backed by a dual-core processor with up to 32GB eMMC and native Modbus, SNMP, and MQTT support — makes it the go-to solution for energy monitoring, process automation, and smart infrastructure projects where deep field-level visibility drives operational decisions.",
-      "cpu": "Dual Core 0.88 GHz",
-      "ram": "512 MB + eMMC up to 32 GB",
-      "storage": "32 MB Flash",
+      "cpu": "MT7621 MIPS Dual Core with 880 MHz Frequency",
+      "ram": "512MB RAM, eMMC support up to 32GB",
+      "storage": "512 MB",
       "cell": "4G",
       "cellular_gen": "4G",
       "wifi": "WiFi5",
@@ -2158,9 +2166,9 @@
       "rs232": "Yes",
       "ip": "",
       "power": "20-60 VDC",
-      "ports": "",
-      "os": "Linux OS",
-      "housing": "Sheet Metal",
+      "ports": "4",
+      "os": "Open WRT based Linux OS",
+      "housing": "Industrial Aluminium",
       "dims": "309 x 221 x 58 mm (L x W x H)",
       "weight": "1853 g",
       "op_temp": "-10°C to 70°C",
@@ -2179,10 +2187,42 @@
         "iSense Blue Plus Pro": "assets/datasheets/Isense Blue Plus Pro.pdf"
       },
       "hidden_fields": [
-        "ip",
-        "ports"
+        "ip"
       ],
-      "additional_specs": [],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Gigabit Ethernet"
+        },
+        {
+          "k": "DI",
+          "v": "24 with isolation"
+        },
+        {
+          "k": "Relay outputs",
+          "v": "8"
+        },
+        {
+          "k": "External Temperature Sensors",
+          "v": "2"
+        },
+        {
+          "k": "RS485",
+          "v": "3"
+        },
+        {
+          "k": "RS232",
+          "v": "1"
+        },
+        {
+          "k": "USB",
+          "v": "1"
+        },
+        {
+          "k": "Mounting",
+          "v": "Table Top"
+        }
+      ],
       "variants": {
         "headers": [
           "Wi-Fi",
@@ -4323,6 +4363,49 @@
           []
         ]
       }
+    },
+    {
+      "id": "id04",
+      "name": "ID04",
+      "cat": "Gateway",
+      "order": 60,
+      "desc": "",
+      "cpu": "MT7621 MIPS Dual Core with 880 MHz Frequency",
+      "ram": "512 MB DDR 3",
+      "storage": "64 MB",
+      "cell": "Single M.2 Modem 4G/3G/2G",
+      "cellular_gen": "4G",
+      "wifi": "-",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "9-30 VDC",
+      "ports": "4",
+      "os": "OpenWRT Linux 21",
+      "housing": "Industrial Aluminium",
+      "dims": "",
+      "weight": "",
+      "op_temp": "",
+      "images": [],
+      "use_cases": [],
+      "datasheet": null,
+      "part_datasheets": {},
+      "hidden_fields": [
+        "wifi",
+        "cpu",
+        "rs485"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Gigabit Ethernet"
+        },
+        {
+          "k": "RS 485",
+          "v": "1"
+        }
+      ],
+      "variants": null
     }
   ]
 }
