@@ -372,7 +372,7 @@
       "os": "Ubuntu / Oracle / OpenWRT /Windows/ VyOS",
       "housing": "Sheet Metal",
       "dims": "232mmx 202 x 44mm",
-      "weight": "1500",
+      "weight": "1500 gm",
       "op_temp": "0 ~ 50℃",
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-ci-xx-1787128620619-qggb.png"
