@@ -703,7 +703,7 @@
       "os": "OpenWRT Linux",
       "housing": "Plastic",
       "dims": "190 x 190 x 50 mm (L x W x H)",
-      "weight": "350g",
+      "weight": "350 gm",
       "op_temp": "−20°C to 60°C",
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/ru60-1786524861223-6f3m.png"
