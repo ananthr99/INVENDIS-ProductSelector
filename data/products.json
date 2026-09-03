@@ -1598,10 +1598,10 @@
       "cat": "Gateway",
       "order": 19,
       "desc": "The RFN44-A is an industrial-grade cellular router built on a MediaTek MT7628 platform with dual Nano SIM support, running an OpenWRT-based Linux OS for flexible and reliable connectivity. Housed in a fanless aluminium enclosure with a wide operating temperature range, it targets industrial automation, remote site management, and IoT deployments where rugged, dependable hardware is essential.",
-      "cpu": "MediaTek MT7628",
+      "cpu": "MT7628, Single Core with 580 MHz Frequency",
       "ram": "128 MB DDR2",
       "storage": "32 MB Flash",
-      "cell": "4G",
+      "cell": "Dual Sim 4G/3G/2G",
       "cellular_gen": "4G",
       "wifi": "WiFi4",
       "rs485": "Yes",
@@ -1635,6 +1635,14 @@
         {
           "k": "Ethernet Ports",
           "v": "Fast Ethernet"
+        },
+        {
+          "k": "RS485",
+          "v": "1"
+        },
+        {
+          "k": "DIO",
+          "v": "2"
         }
       ],
       "variants": {
