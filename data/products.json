@@ -2953,6 +2953,10 @@
         {
           "k": "Ethernet Ports",
           "v": "Fast Ethernet"
+        },
+        {
+          "k": "Type",
+          "v": "Unmanaged Switch"
         }
       ],
       "variants": {
