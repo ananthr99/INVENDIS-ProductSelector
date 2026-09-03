@@ -2159,8 +2159,8 @@
       "ip": "",
       "power": "20-60 VDC",
       "ports": "4",
-      "os": "Linux OS",
-      "housing": "Sheet Metal",
+      "os": "Open WRT based Linux OS",
+      "housing": "Industrial Aluminium",
       "dims": "309 x 221 x 58 mm (L x W x H)",
       "weight": "1853 g",
       "op_temp": "-10°C to 70°C",
@@ -2184,7 +2184,35 @@
       "additional_specs": [
         {
           "k": "Ethernet Ports",
-          "v": ""
+          "v": "Gigabit Ethernet"
+        },
+        {
+          "k": "DI",
+          "v": "24 with isolation"
+        },
+        {
+          "k": "Relay outputs",
+          "v": "8"
+        },
+        {
+          "k": "External Temperature Sensors",
+          "v": "2"
+        },
+        {
+          "k": "RS485",
+          "v": "3"
+        },
+        {
+          "k": "RS232",
+          "v": "1"
+        },
+        {
+          "k": "USB",
+          "v": "1"
+        },
+        {
+          "k": "Mounting",
+          "v": "Table Top"
         }
       ],
       "variants": {
