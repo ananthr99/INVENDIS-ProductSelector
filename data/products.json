@@ -403,7 +403,7 @@
       "order": 6,
       "desc": "The Invendis ARL Mini ITX is a high-performance industrial computing platform powered by Intel Core Ultra Processors (Series 2) with integrated NPU AI acceleration, Intel Arc 140T graphics, and up to 128GB DDR5 RAM. Housed in a aluminum heatsink enclosure with fanless or fan options, it offers dual 2.5GbE LAN ports, triple display outputs (2x HDMI, 1x DP), and extensive M.2 expansion for Wi-Fi 6, 4G/5G cellular, and NVMe storage.",
       "cpu": "Intel® Core™ Ultra Processors (Series 2) (Ultra 5 & Ultra 7), 14/16 Cores, 5.1GHz  Turbo Frequency CPU, GPU, NPU",
-      "ram": "128 GB DDR5 CSODIMM (Max)",
+      "ram": "128 GB DDR5 CSODIMM",
       "storage": "One M.2 (B Key,2280) with PCIe X 4 NVME, 2 x SATA3 (6Gb/s)",
       "cell": "One M.2( B Key, supports both types 3042 and 3052) with USB2.0, USB3.0 and  PCIe x 1 Supporting both 4G and 5G Modems",
       "cellular_gen": "-",
