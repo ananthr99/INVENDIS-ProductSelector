@@ -2017,7 +2017,7 @@
       "os": "OpenWRT Linux",
       "housing": "Industrial Aluminium",
       "dims": "110 x 44 x 94 mm (W x H x D)",
-      "weight": "400 g",
+      "weight": "400 gm",
       "op_temp": "0~ 50 ˚C",
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/idxx-1786603920631-nlg8.png"
