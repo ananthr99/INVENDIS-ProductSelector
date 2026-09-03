@@ -3929,8 +3929,8 @@
       "order": 48,
       "desc": "An NMS (Network Management System) provides centralized visibility and control of network devices, enabling real-time monitoring of device health, performance, configuration, firmware, and connectivity. It supports remote configuration, auto-provisioning, alerts, analytics, secure access, and scalable management of large device networks.",
       "cpu": "Software platform",
-      "ram": "â",
-      "storage": "â",
+      "ram": "-",
+      "storage": "-",
       "cell": "none",
       "cellular_gen": "-",
       "wifi": "-",
@@ -3941,9 +3941,9 @@
       "ports": "0",
       "os": "Web-based, OpenWRT compatible",
       "housing": "Software / Cloud",
-      "dims": "â",
-      "weight": "â",
-      "op_temp": "â",
+      "dims": "-",
+      "weight": "-",
+      "op_temp": "-",
       "images": [
         "assets/images/NMS.jpg"
       ],
