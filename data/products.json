@@ -2880,6 +2880,10 @@
         {
           "k": "Ethernet Ports",
           "v": "Fast Ethernet"
+        },
+        {
+          "k": "Switch Type",
+          "v": "Unmanaged Switch"
         }
       ],
       "variants": {
