@@ -754,16 +754,16 @@
       "cat": "Router",
       "order": 10,
       "desc": "A ruggedised industrial router combining dual 5G/4G modems with Wi-Fi 6 (EasyMesh), 2× WAN + 4× LAN GbE ports, and 1× SFP uplink. Built on MediaTek MT7981 with OpenWRT 21/23, supporting dual-SIM failover, DIN-rail mounting, and a wide 9–30V DC input — engineered for demanding telecom, industrial, and enterprise edge deployments.",
-      "cpu": "MediaTek MT7981",
+      "cpu": "MT7981 ARM Cortex A53 Dual Core with 1.3 GHz Frequency",
       "ram": "1 GB DDR4",
-      "storage": "128 MB NAND",
-      "cell": "4G/5G",
+      "storage": "128 MB NAND/32MB NOR and 4GB/8GB eMMC",
+      "cell": "Dual M.2 Modem 5G/4G/3G",
       "cellular_gen": "5G",
       "wifi": "WiFi6",
       "rs485": "-",
       "rs232": "-",
       "ip": "IP30",
-      "power": "9–30 VDC",
+      "power": "12 VDC",
       "ports": "6",
       "os": "OpenWRT 21/23",
       "housing": "Sheet Metal",
@@ -792,6 +792,14 @@
         {
           "k": "Ethernet Ports",
           "v": "Gigabit Ports"
+        },
+        {
+          "k": "SFP",
+          "v": "1"
+        },
+        {
+          "k": "USB 3.0",
+          "v": "1"
         }
       ],
       "variants": {
