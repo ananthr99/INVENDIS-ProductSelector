@@ -197,6 +197,10 @@
         {
           "k": "USB Console",
           "v": "1"
+        },
+        {
+          "k": "Mounting",
+          "v": "Desktop Mount/ Wall Mount / 19 inch rack mount / Vesa Mount"
         }
       ],
       "variants": null
