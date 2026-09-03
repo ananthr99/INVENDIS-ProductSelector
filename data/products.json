@@ -2206,7 +2206,7 @@
       "os": "Open WRT based Linux OS",
       "housing": "Industrial Aluminium",
       "dims": "309 x 221 x 58 mm (L x W x H)",
-      "weight": "1853 g",
+      "weight": "1853 gm",
       "op_temp": "-10°C to 70°C",
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/isense-1786612536077-wooc.png"
