@@ -2525,7 +2525,7 @@
       "os": "Open-WRT based Linux OS",
       "housing": "Plastic",
       "dims": "105 x 200 x 105 mm (W x H x D)",
-      "weight": "590 grams",
+      "weight": "590 gm",
       "op_temp": "0~ 50 ˚C",
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/RUC-1787820565957-u8i6.png"
