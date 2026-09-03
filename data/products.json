@@ -560,7 +560,7 @@
       "os": "OpenWRT Linux",
       "housing": "Sheet Metal",
       "dims": "190 × 45 × 120 mm",
-      "weight": "700 g",
+      "weight": "700 gm",
       "op_temp": "0°C - 50°C",
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rtsxx-1786516658709-95je.png",
