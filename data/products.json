@@ -1155,16 +1155,16 @@
       "cat": "Router",
       "order": 14,
       "desc": "This is a rugged, industrial-grade cellular router designed to provide reliable wired and wireless connectivity for remote and mission-critical deployments. Key differentiators include dual SIM failover, OpenWRT-based flexibility, extensive VPN support, and advanced routing/firewall capabilities in a compact, fanless metal enclosure. It is ideal for industries such as IoT, smart infrastructure, transportation, and enterprise branch networking requiring secure, always-on connectivity.",
-      "cpu": "MediaTek MT7628",
+      "cpu": "MT7628, Single Core with 580 MHz Frequency",
       "ram": "128 MB DDR2",
       "storage": "32 MB Flash",
-      "cell": "4G",
+      "cell": "Dual Sim 4G/3G/2G",
       "cellular_gen": "4G",
       "wifi": "WiFi4/2.4GHz",
       "rs485": "No",
       "rs232": "No",
       "ip": "",
-      "power": "9-30 VDC",
+      "power": "9-30/12VDC",
       "ports": "5",
       "os": "OpenWRT Linux",
       "housing": "Sheet Metal",
@@ -1198,7 +1198,11 @@
       "additional_specs": [
         {
           "k": "Ethernet Ports",
-          "v": "Fast Ethernet Ports"
+          "v": "Fast Ethernet"
+        },
+        {
+          "k": "RS 485",
+          "v": "1"
         }
       ],
       "variants": {
@@ -1692,7 +1696,7 @@
       "cat": "Gateway",
       "order": 20,
       "desc": "The IABXX-X is a rugged cellular router designed for reliable industrial connectivity, featuring a MediaTek MT7628 CPU with 128MB RAM and dual Nano SIM slots for flexible network redundancy. Running on OpenWRT-based Linux, it operates seamlessly across harsh environments — from -30 to 70°C storage temperatures — making it an ideal fit for IoT deployments, remote infrastructure monitoring, and industrial automation where uptime and durability are non-negotiable.",
-      "cpu": "MediaTek MT7628",
+      "cpu": "MT7628, Single Core with 580 MHz Frequency",
       "ram": "128 MB DDR2",
       "storage": "32 MB Flash",
       "cell": "4G",
@@ -1728,6 +1732,30 @@
         {
           "k": "Ethernet Ports",
           "v": "Fast Ethernet"
+        },
+        {
+          "k": "RS485",
+          "v": "1"
+        },
+        {
+          "k": "DI/O",
+          "v": "1"
+        },
+        {
+          "k": "RS232",
+          "v": "1"
+        },
+        {
+          "k": "AI",
+          "v": "2"
+        },
+        {
+          "k": "USB 2.0",
+          "v": "1"
+        },
+        {
+          "k": "DC Output",
+          "v": "1"
         }
       ],
       "variants": {
@@ -1786,10 +1814,10 @@
       "cat": "Gateway",
       "order": 21,
       "desc": "Designed to keep critical operations connected, the IACXX-X brings together dual SIM failover, 802.11 b/g/n Wi-Fi, and a wide 9-30Vdc input range into a slim, DIN rail-mountable form factor built for the factory floor. Powered by OpenWRT Linux and weighing just 400g, it delivers enterprise-grade manageability in a compact footprint — making it a practical choice for system integrators and OEMs deploying connected solutions across industrial and infrastructure environments.",
-      "cpu": "MediaTek MT7628",
+      "cpu": "MT7628, Single Core with 580 MHz Frequency",
       "ram": "128 MB DDR2",
       "storage": "32 MB Flash",
-      "cell": "4G",
+      "cell": "Single M.2 Modem 4G/3G/2G",
       "cellular_gen": "4G",
       "wifi": "WiFi4",
       "rs485": "Yes",
@@ -1825,6 +1853,14 @@
         {
           "k": "Ethernet Ports",
           "v": "Fast Ethernet"
+        },
+        {
+          "k": "RS 485",
+          "v": "1"
+        },
+        {
+          "k": "DI/O",
+          "v": "2"
         }
       ],
       "variants": {
@@ -3054,6 +3090,18 @@
         {
           "k": "Ethernet Ports",
           "v": "Gigabit Ethernet"
+        },
+        {
+          "k": "SFP",
+          "v": "2"
+        },
+        {
+          "k": "PoE Budget",
+          "v": "240W, 30W Max per port"
+        },
+        {
+          "k": "Switch Type",
+          "v": "MANAGED PoE Switch"
         }
       ],
       "variants": {
@@ -3508,17 +3556,17 @@
       "cat": "Outdoor Unit",
       "order": 43,
       "desc": "The MT 7621 ODU takes cellular routing outdoors, packaged in an IP66-rated ABS/PC enclosure that mounts directly on walls or poles — eliminating the need for separate weatherproof cabinets and the cabling complexity that comes with them. Powered entirely over a single Ethernet cable via 802.3af/at PoE, it supports 4G LTE Cat 4 speeds up to 150 Mbps with dual SIM failover, making it a field-ready solution for outdoor surveillance, remote kiosks, and transportation infrastructure where indoor-mounted routers simply cannot reach.",
-      "cpu": "MediaTek MT7621",
-      "ram": "512 MB DDR2",
-      "storage": "32 MB Flash",
-      "cell": "4G",
+      "cpu": "MT7621 MIPS Dual Core with 880 MHz Frequency",
+      "ram": "512 MB DDR 3",
+      "storage": "32 MB",
+      "cell": "Single M.2 Modem 4G/3G/2G",
       "cellular_gen": "4G",
       "wifi": "-",
       "rs485": "No",
       "rs232": "No",
       "ip": "IP66",
-      "power": "Active PoE 48â57V",
-      "ports": "2",
+      "power": "Active PoE (IEEE 802.3af/at (48V-57V))",
+      "ports": "1",
       "os": "OpenWRT Linux",
       "housing": "ABS/PC IP66 Housing",
       "dims": "140 x 75 x 224 mm (W x H x D)",
@@ -3544,7 +3592,7 @@
       "additional_specs": [
         {
           "k": "Ethernet Ports",
-          "v": "1 x 10/100/1000 (External with PoE IN), 1 x 10/100/1000 (Internal for Configuration)"
+          "v": "Gigabit Ethernet."
         }
       ],
       "variants": {
