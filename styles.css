@@ -814,6 +814,7 @@ select.active-filter { border-color: var(--blue); background-color: var(--blue-p
 .compare-table td:first-child { color: var(--text-muted); font-size: 12px; background: var(--off-white); }
 .compare-table tr.diff-row td:not(:first-child) { background: #FEFDF0; font-weight: 500; }
 .compare-table tr:last-child td { border-bottom: none; }
+.compare-table td.compare-na { color: #9ca3af; font-style: italic; }
 
 /* ── Variants table ── */
 .variants-section { margin-top: 4px; }

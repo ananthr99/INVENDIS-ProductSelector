@@ -34,19 +34,36 @@ function clearCompare() { compareSet.clear(); render(); }
 function openCompareModal() {
   const sel = PRODUCTS.filter(p => compareSet.has(p.id));
   if (sel.length < 2) { showToast('Please select at least 2 products to compare.'); return; }
+  // [label, data-key, hidden_fields-key (null = never hideable)]
   const fields = [
-    ['Category','cat'],['CPU','cpu'],['RAM','ram'],['Cellular','cellular_gen'],
-    ['Wi-Fi',null],['Ethernet ports',null],['Power input','power'],
-    ['RS485','rs485'],['RS232','rs232'],['IP rating','ip'],['Enclosure','housing'],
-    ['Dimensions','dims'],['Weight','weight'],['Operating temp','op_temp'],['OS','os']
+    ['Category',       'cat',          null],
+    ['CPU',            'cpu',          'cpu'],
+    ['RAM',            'ram',          'ram'],
+    ['Cellular',       'cellular_gen', 'cellular_gen'],
+    ['Wi-Fi',          null,           'wifi'],
+    ['Ethernet ports', null,           'ports'],
+    ['Power input',    'power',        'power'],
+    ['RS485',          'rs485',        'rs485'],
+    ['RS232',          'rs232',        'rs232'],
+    ['IP rating',      'ip',           'ip'],
+    ['Enclosure',      'housing',      'housing'],
+    ['Dimensions',     'dims',         'dims'],
+    ['Weight',         'weight',       'weight'],
+    ['Operating temp', 'op_temp',      'op_temp'],
+    ['OS',             'os',           'os'],
   ];
   function val(p, key) {
     if (!key) return '-';
     if (key==='rs485'||key==='rs232') return hasSerial(p[key]) ? p[key] : '-';
     return p[key]||'-';
   }
-  const rows = fields.map(([label,key]) => {
+  const rows = fields.map(([label, key, hKey]) => {
+    // Hide row when every product in the comparison has this field hidden
+    if (hKey && sel.every(p => isHf(p, hKey))) return '';
+
     const vals = sel.map(p => {
+      // Field is hidden for this product but visible in at least one other → N/A
+      if (hKey && isHf(p, hKey)) return null;
       if (!key) {
         if (label==='Wi-Fi') return wifiLabel(p.wifi);
         if (label==='Ethernet ports') return portsDisplay(p);
@@ -56,9 +73,12 @@ function openCompareModal() {
     const allSame = vals.every(v => v === vals[0]);
     return `<tr class="${!allSame?'diff-row':''}">
       <td>${esc(label)}</td>
-      ${sel.map((_,i) => `<td>${esc(vals[i])}</td>`).join('')}
+      ${vals.map(v => v === null
+        ? `<td class="compare-na">Not applicable</td>`
+        : `<td>${esc(v)}</td>`
+      ).join('')}
     </tr>`;
-  }).join('');
+  }).filter(Boolean).join('');
 
   document.getElementById('modalRoot').innerHTML = `
     <div class="modal-overlay" onclick="if(event.target===this)closeModal()">
