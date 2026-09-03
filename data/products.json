@@ -2320,7 +2320,7 @@
       "os": "Open-WRT based Linux OS",
       "housing": "Industrial Aluminium",
       "dims": "110 x 44 x 94 mm (W x H x D)",
-      "weight": "400gm",
+      "weight": "400 gm",
       "op_temp": "0 ~ 60 ˚C",
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/rvg-1787660516258-khi6.png"
