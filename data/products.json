@@ -852,7 +852,7 @@
       "rs485": "No",
       "rs232": "No",
       "ip": "",
-      "power": "9-30 VDC",
+      "power": "12 VDC",
       "ports": "5",
       "os": "OpenWRT Linux",
       "housing": "Sheet Metal",
