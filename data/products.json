@@ -280,6 +280,79 @@
       "variants": null
     },
     {
+      "id": "inv-cea-xx",
+      "name": "INV-CEA-XX",
+      "cat": "Intel Based Devices",
+      "order": 4,
+      "desc": "The INV-CEA-XX is a fanless industrial gateway designed for high-performance edge computing and robust connectivity, featuring an Intel X7425E processor and extensive cellular/Wi-Fi expansion capabilities. It differentiates itself through its quad-Gigabit Ethernet ports, dual isolated serial interfaces (RS232/RS485), and flexible mounting options, making it highly adaptable for harsh environments. This device is primarily targeted at industrial automation, telecommunications, and smart city infrastructure where reliable, long-term operation is critical.",
+      "cpu": "Intel X7425E/X7433RE/X7835RE/x7809C/i3-N305/N350 Quad Core/Octa Core  with 3.9 GHz turbo frequency",
+      "ram": "Up to Up to 32GB DDR4 or 64 GB SODIMM DDR5",
+      "storage": "Upto 512 GB SSD and 64GB eMMC",
+      "cell": "Dual M.2 Modem 5G/4G/3G",
+      "cellular_gen": "5G",
+      "wifi": "WiFi6",
+      "rs485": "-",
+      "rs232": "-",
+      "ip": "",
+      "power": "12V DC",
+      "ports": "4",
+      "os": "Ubuntu/Oracle Linux/OpenWRT/Windows",
+      "housing": "Aluminum Heat Sink with CRCA Enclosure",
+      "dims": "150 X 250 X 55mm ( L X W X H)",
+      "weight": "1700",
+      "op_temp": "0 ~ 50℃",
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-cea-xx-1786441526355-8a7c.png",
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-cea-xx-1786441531237-gu5u.png"
+      ],
+      "use_cases": [
+        "Industrial Automation & Control",
+        "Machine Monitoring & OEE System"
+      ],
+      "datasheet": "assets/datasheets/Brief Specs Intel X7425E Alder Lake Industrial Automation PC (2) (1).pdf",
+      "part_datasheets": {},
+      "hidden_fields": [
+        "ip",
+        "rs485",
+        "rs232"
+      ],
+      "additional_specs": [
+        {
+          "k": "Ethernet Ports",
+          "v": "Gigabit Ethernet ((Realtek RTL8111H)"
+        },
+        {
+          "k": "USB 2.0",
+          "v": "4"
+        },
+        {
+          "k": "HDMI",
+          "v": "1"
+        },
+        {
+          "k": "Micro USB Console",
+          "v": "1"
+        },
+        {
+          "k": "RS485",
+          "v": "2"
+        },
+        {
+          "k": "RS 232",
+          "v": "2"
+        },
+        {
+          "k": "DI/O",
+          "v": "4"
+        },
+        {
+          "k": "Mounting",
+          "v": "Desktop Mount/ Wall Mount / 19 inch rack mount / Vesa Mount"
+        }
+      ],
+      "variants": null
+    },
+    {
       "id": "rtsxx",
       "name": "RTSXX",
       "cat": "Router",
@@ -4235,79 +4308,6 @@
         {
           "k": "Ethernet Ports",
           "v": "Gigabit Ethernet (Realtek RTL8111H)"
-        }
-      ],
-      "variants": null
-    },
-    {
-      "id": "inv-cea-xx",
-      "name": "INV-CEA-XX",
-      "cat": "Intel Based Devices",
-      "order": null,
-      "desc": "The INV-CEA-XX is a fanless industrial gateway designed for high-performance edge computing and robust connectivity, featuring an Intel X7425E processor and extensive cellular/Wi-Fi expansion capabilities. It differentiates itself through its quad-Gigabit Ethernet ports, dual isolated serial interfaces (RS232/RS485), and flexible mounting options, making it highly adaptable for harsh environments. This device is primarily targeted at industrial automation, telecommunications, and smart city infrastructure where reliable, long-term operation is critical.",
-      "cpu": "Intel X7425E/X7433RE/X7835RE/x7809C/i3-N305/N350 Quad Core/Octa Core  with 3.9 GHz turbo frequency",
-      "ram": "Up to Up to 32GB DDR4 or 64 GB SODIMM DDR5",
-      "storage": "Upto 512 GB SSD and 64GB eMMC",
-      "cell": "Dual M.2 Modem 5G/4G/3G",
-      "cellular_gen": "5G",
-      "wifi": "WiFi6",
-      "rs485": "-",
-      "rs232": "-",
-      "ip": "",
-      "power": "12V DC",
-      "ports": "4",
-      "os": "Ubuntu/Oracle Linux/OpenWRT/Windows",
-      "housing": "Aluminum Heat Sink with CRCA Enclosure",
-      "dims": "150 X 250 X 55mm ( L X W X H)",
-      "weight": "1700",
-      "op_temp": "0 ~ 50℃",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-cea-xx-1786441526355-8a7c.png",
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/inv-cea-xx-1786441531237-gu5u.png"
-      ],
-      "use_cases": [
-        "Industrial Automation & Control",
-        "Machine Monitoring & OEE System"
-      ],
-      "datasheet": "assets/datasheets/Brief Specs Intel X7425E Alder Lake Industrial Automation PC (2) (1).pdf",
-      "part_datasheets": {},
-      "hidden_fields": [
-        "ip",
-        "rs485",
-        "rs232"
-      ],
-      "additional_specs": [
-        {
-          "k": "Ethernet Ports",
-          "v": "Gigabit Ethernet ((Realtek RTL8111H)"
-        },
-        {
-          "k": "USB 2.0",
-          "v": "4"
-        },
-        {
-          "k": "HDMI",
-          "v": "1"
-        },
-        {
-          "k": "Micro USB Console",
-          "v": "1"
-        },
-        {
-          "k": "RS485",
-          "v": "2"
-        },
-        {
-          "k": "RS 232",
-          "v": "2"
-        },
-        {
-          "k": "DI/O",
-          "v": "4"
-        },
-        {
-          "k": "Mounting",
-          "v": "Desktop Mount/ Wall Mount / 19 inch rack mount / Vesa Mount"
         }
       ],
       "variants": null
