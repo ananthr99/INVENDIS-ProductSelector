@@ -546,16 +546,16 @@
       "cat": "Router",
       "order": 8,
       "desc": "A ruggedised industrial router featuring dual 5G/4G modems, Wi-Fi 6, and SFP uplinks. Built on MediaTek MT7981 with OpenWRT, it supports dual-SIM failover, DIN-rail mounting, and a wide 9–30V DC power range — ideal for demanding telecom, industrial, and remote site deployments.",
-      "cpu": "MediaTek MT7981, 1.3GHz Dual Core ARM Cortex A53",
+      "cpu": "MT7981 ARM Cortex A53 Dual Core with 1.3 GHz Frequency",
       "ram": "1 GB DDR4",
       "storage": "128 MB NAND",
-      "cell": "4G/5G",
+      "cell": "Dual M.2 Modem 4G/3G/2G",
       "cellular_gen": "5G",
       "wifi": "WiFi6",
       "rs485": "-",
       "rs232": "-",
       "ip": "IP30",
-      "power": "9–30 VDC Dual Source",
+      "power": "9-30/12 VDC",
       "ports": "5",
       "os": "OpenWRT Linux",
       "housing": "Sheet Metal",
@@ -595,6 +595,10 @@
         {
           "k": "SFP Ports",
           "v": "1/2"
+        },
+        {
+          "k": "USB 3.0",
+          "v": "1"
         }
       ],
       "variants": {
