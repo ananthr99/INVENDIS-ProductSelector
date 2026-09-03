@@ -1155,16 +1155,16 @@
       "cat": "Router",
       "order": 14,
       "desc": "This is a rugged, industrial-grade cellular router designed to provide reliable wired and wireless connectivity for remote and mission-critical deployments. Key differentiators include dual SIM failover, OpenWRT-based flexibility, extensive VPN support, and advanced routing/firewall capabilities in a compact, fanless metal enclosure. It is ideal for industries such as IoT, smart infrastructure, transportation, and enterprise branch networking requiring secure, always-on connectivity.",
-      "cpu": "MediaTek MT7628",
+      "cpu": "MT7628, Single Core with 580 MHz Frequency",
       "ram": "128 MB DDR2",
       "storage": "32 MB Flash",
-      "cell": "4G",
+      "cell": "Dual Sim 4G/3G/2G",
       "cellular_gen": "4G",
       "wifi": "WiFi4/2.4GHz",
       "rs485": "No",
       "rs232": "No",
       "ip": "",
-      "power": "9-30 VDC",
+      "power": "9-30/12VDC",
       "ports": "5",
       "os": "OpenWRT Linux",
       "housing": "Sheet Metal",
@@ -1198,7 +1198,11 @@
       "additional_specs": [
         {
           "k": "Ethernet Ports",
-          "v": "Fast Ethernet Ports"
+          "v": "Fast Ethernet"
+        },
+        {
+          "k": "RS 485",
+          "v": "1"
         }
       ],
       "variants": {
