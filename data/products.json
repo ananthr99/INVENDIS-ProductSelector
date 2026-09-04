@@ -4472,16 +4472,16 @@
     },
     {
       "id": "id04",
-      "name": "ID54",
+      "name": "ID04-B",
       "cat": "Gateway",
       "order": 60,
-      "desc": "",
+      "desc": "The ID04-B is an industrial-grade 4G cellular gateway with dual SIM support, Gigabit Ethernet ports, and OpenWRT Linux, designed for reliable remote connectivity and network management in demanding environments.",
       "cpu": "MT7621 MIPS Dual Core with 880 MHz Frequency",
       "ram": "512 MB DDR 3",
       "storage": "64 MB",
       "cell": "Single M.2 Modem 5G/4G/3G/2G",
       "cellular_gen": "4G",
-      "wifi": "WiFi5",
+      "wifi": "-",
       "rs485": "-",
       "rs232": "-",
       "ip": "",
@@ -4491,15 +4491,21 @@
       "housing": "Industrial Aluminium",
       "dims": "",
       "weight": "390 gm",
-      "op_temp": "",
+      "op_temp": "0-50 ˚C",
       "images": [],
-      "use_cases": [],
+      "use_cases": [
+        "Remote Industrial Equipment Monitoring",
+        "Smart ATM & Kiosk Networking",
+        "Fleet & Mobile Asset Connectivity"
+      ],
       "datasheet": null,
       "part_datasheets": {},
       "hidden": false,
       "hidden_fields": [
+        "wifi",
         "cpu",
-        "rs485"
+        "rs485",
+        "rs232"
       ],
       "additional_specs": [
         {
@@ -4525,7 +4531,7 @@
             "—",
             "4G",
             "Single Modem",
-            "ID54"
+            "ID04-B"
           ]
         ]
       }
