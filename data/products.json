@@ -4492,9 +4492,7 @@
       "dims": "",
       "weight": "390 gm",
       "op_temp": "0-50 ˚C",
-      "images": [
-        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/id04-1788502738159-h72q.png"
-      ],
+      "images": [],
       "use_cases": [
         "Remote Industrial Equipment Monitoring",
         "Smart ATM & Kiosk Networking",
