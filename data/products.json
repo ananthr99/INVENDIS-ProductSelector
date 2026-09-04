@@ -4515,9 +4515,20 @@
       "variants": {
         "headers": [
           "Cellular",
-          "Wi-Fi"
+          "Wi-Fi",
+          "4G/5G",
+          "No of Modem",
+          "Part Number"
         ],
-        "rows": []
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
       }
     }
   ]
