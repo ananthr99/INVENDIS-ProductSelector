@@ -4479,7 +4479,7 @@
       "cpu": "MT7621 MIPS Dual Core with 880 MHz Frequency",
       "ram": "512 MB DDR 3",
       "storage": "64 MB",
-      "cell": "Single M.2 Modem 5G/4G/3G/2G",
+      "cell": "Single M.2 Modem 4G/3G/2G",
       "cellular_gen": "4G",
       "wifi": "-",
       "rs485": "-",
@@ -4492,14 +4492,18 @@
       "dims": "",
       "weight": "390 gm",
       "op_temp": "0-50 ˚C",
-      "images": [],
+      "images": [
+        "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/id04-1788502738159-h72q.png"
+      ],
       "use_cases": [
         "Remote Industrial Equipment Monitoring",
         "Smart ATM & Kiosk Networking",
         "Fleet & Mobile Asset Connectivity"
       ],
-      "datasheet": null,
-      "part_datasheets": {},
+      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/id04-datasheet.pdf",
+      "part_datasheets": {
+        "ID04-B": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/id04-ID04-B.pdf"
+      },
       "hidden": false,
       "hidden_fields": [
         "wifi",
