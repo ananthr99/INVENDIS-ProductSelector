@@ -4472,16 +4472,16 @@
     },
     {
       "id": "id04",
-      "name": "ID04",
+      "name": "ID54",
       "cat": "Gateway",
       "order": 60,
       "desc": "",
       "cpu": "MT7621 MIPS Dual Core with 880 MHz Frequency",
       "ram": "512 MB DDR 3",
       "storage": "64 MB",
-      "cell": "Single M.2 Modem 4G/3G/2G",
+      "cell": "Single M.2 Modem 5G/4G/3G/2G",
       "cellular_gen": "4G",
-      "wifi": "-",
+      "wifi": "WiFi5",
       "rs485": "-",
       "rs232": "-",
       "ip": "",
@@ -4490,7 +4490,7 @@
       "os": "OpenWRT Linux 21",
       "housing": "Industrial Aluminium",
       "dims": "",
-      "weight": "",
+      "weight": "390 gm",
       "op_temp": "",
       "images": [],
       "use_cases": [],
@@ -4498,7 +4498,6 @@
       "part_datasheets": {},
       "hidden": false,
       "hidden_fields": [
-        "wifi",
         "cpu",
         "rs485"
       ],
@@ -4526,7 +4525,7 @@
             "—",
             "4G",
             "Single Modem",
-            "ID04"
+            "ID54"
           ]
         ]
       }
