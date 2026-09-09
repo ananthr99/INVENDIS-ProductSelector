@@ -2641,6 +2641,7 @@
       "hidden_fields": [
         "cell",
         "cellular_gen",
+        "power",
         "ports",
         "rs485",
         "rs232"
