@@ -251,7 +251,7 @@
         "Enterprise Branch Connectivity",
         "Infotainment System for Vehicles"
       ],
-      "datasheet": "assets/datasheets/Intel X7425E SDWAN Box.pdf",
+      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/inv-ce-xx-datasheet.pdf",
       "part_datasheets": {},
       "hidden": false,
       "hidden_fields": [
