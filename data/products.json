@@ -3269,10 +3269,10 @@
       "power": "",
       "ports": "24",
       "os": "",
-      "housing": "",
-      "dims": "",
+      "housing": "19” Rack mountable 1U enclosure",
+      "dims": "440x220x44.5 MM",
       "weight": "3150 gm",
-      "op_temp": "",
+      "op_temp": "-10℃~+60℃",
       "images": [
         "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/images/xi244-2M-1787821659624-q8nr.png"
       ],
@@ -3297,10 +3297,7 @@
         "power",
         "os",
         "rs485",
-        "rs232",
-        "housing",
-        "dims",
-        "op_temp"
+        "rs232"
       ],
       "additional_specs": [
         {
