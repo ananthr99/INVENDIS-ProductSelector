@@ -178,7 +178,7 @@
         "Smart Traffic & Transportation Edge Nodes",
         "Edge Security & Surveillance with AI Analytics"
       ],
-      "datasheet": "assets/datasheets/INV-CD-N350_Datasheet.pdf",
+      "datasheet": "https://raw.githubusercontent.com/ananthr99/INVENDIS-ProductSelector/main/assets/datasheets/inv-cd-xx-datasheet.pdf",
       "part_datasheets": {},
       "hidden": false,
       "hidden_fields": [
